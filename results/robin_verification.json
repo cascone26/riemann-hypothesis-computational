@@ -1,0 +1,7 @@
+{
+  "n_max": 100000,
+  "violations": 0,
+  "worst_ratio": 0.985818611972329,
+  "worst_n": 10080,
+  "n_checked": 94960
+}
