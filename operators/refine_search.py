@@ -12,13 +12,16 @@ using the first 100 zeros and optimizing (a, b) at each (alpha, beta) grid point
 
 Key question: Is alpha=0.876 genuinely special, or does alpha=1.0
 (Berry-Keating) work just as well with the right coefficients?
+
+Performance: Uses numpy trapezoid integration instead of scipy.quad for speed.
 """
 
 import numpy as np
 from scipy.optimize import minimize
-from scipy.integrate import quad
 import os
+import sys
 import time
+import json
 
 import matplotlib
 matplotlib.use('Agg')
@@ -29,6 +32,15 @@ PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "results")
 os.makedirs(PLOTS_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+# Precompute integration grid (log-spaced for better resolution near origin)
+X_GRID = np.logspace(np.log10(0.01), np.log10(500), 2000)
+X_DIFF = np.diff(X_GRID)  # for trapezoid rule
+
+
+def flush_print(*args, **kwargs):
+    print(*args, **kwargs)
+    sys.stdout.flush()
 
 
 # =============================================================================
@@ -49,62 +61,71 @@ def load_zeros(count=100):
 
 
 # =============================================================================
-# WKB COUNTING FUNCTION
+# FAST WKB COUNTING FUNCTION (vectorized numpy)
 # =============================================================================
 
-def N_wkb(E, a, alpha, b, beta, x_range=(0.01, 300)):
+def N_wkb_fast(E, a, alpha, b, beta):
     """
     WKB counting function for H = U(x)p + V(x)/p
     where U(x) = a*x^alpha, V(x) = b*x^beta.
 
     N_WKB(E) = (1/2pi) * integral of sqrt(E^2 - 4*U(x)*V(x)) / U(x) dx
     over the classically allowed region where E^2 >= 4*U(x)*V(x).
+
+    Uses precomputed X_GRID with trapezoid rule for speed.
     """
-    def integrand(x):
-        U = a * x**alpha
-        V = b * x**beta
-        disc = E**2 - 4 * U * V
-        if disc <= 0 or U <= 0:
-            return 0.0
-        return np.sqrt(disc) / U
-
-    try:
-        result, _ = quad(integrand, x_range[0], x_range[1],
-                         limit=200, epsabs=1e-8, epsrel=1e-8)
-        return result / (2 * np.pi)
-    except:
-        return 0.0
+    U = a * X_GRID**alpha
+    V = b * X_GRID**beta
+    disc = E**2 - 4 * U * V
+    # Classically allowed region: disc > 0
+    mask = disc > 0
+    integrand = np.zeros_like(X_GRID)
+    integrand[mask] = np.sqrt(disc[mask]) / U[mask]
+    # Trapezoid rule
+    result = np.trapezoid(integrand, X_GRID)
+    return result / (2 * np.pi)
 
 
-def N_wkb_vectorized(zeros, a, alpha, b, beta):
-    """Compute N_WKB at each zero location."""
-    return np.array([N_wkb(E, a, alpha, b, beta) for E in zeros])
+def N_wkb_batch(zeros, a, alpha, b, beta):
+    """Compute N_WKB at all zero locations. Returns array."""
+    # Precompute U, V on the grid once
+    U = a * X_GRID**alpha
+    V = b * X_GRID**beta
+    product_4UV = 4 * U * V
+
+    results = np.empty(len(zeros))
+    for i, E in enumerate(zeros):
+        disc = E**2 - product_4UV
+        mask = disc > 0
+        integrand = np.zeros_like(X_GRID)
+        integrand[mask] = np.sqrt(disc[mask]) / U[mask]
+        results[i] = np.trapezoid(integrand, X_GRID) / (2 * np.pi)
+    return results
 
 
 # =============================================================================
 # SCORING
 # =============================================================================
 
-def score(a, alpha, b, beta, zeros):
+def score_fast(a, alpha, b, beta, zeros):
     """
     Score = (1/n) * sum((N_WKB(t_n) - n)^2)
     where t_n is the n-th zero and we expect N_WKB(t_n) ~ n.
     """
-    n_zeros = len(zeros)
-    total = 0.0
-    for i, t_n in enumerate(zeros):
-        n = i + 1  # expected count at the n-th zero
-        n_wkb = N_wkb(t_n, a, alpha, b, beta)
-        total += (n_wkb - n)**2
-    return total / n_zeros
+    if a <= 0 or b <= 0:
+        return 1e10
+    try:
+        n_wkb = N_wkb_batch(zeros, a, alpha, b, beta)
+        ns = np.arange(1, len(zeros) + 1, dtype=float)
+        return np.mean((n_wkb - ns)**2)
+    except:
+        return 1e10
 
 
 def score_ab(params, alpha, beta, zeros):
     """Score function for optimizing (a, b) at fixed (alpha, beta)."""
     a, b = params
-    if a <= 0 or b <= 0:
-        return 1e10
-    return score(a, alpha, b, beta, zeros)
+    return score_fast(a, alpha, b, beta, zeros)
 
 
 # =============================================================================
@@ -137,19 +158,19 @@ def refine_search(zeros, n_alpha=50, n_beta=50):
                 opt = minimize(score_ab, [a0, b0],
                                args=(alpha, beta, zeros),
                                method='Nelder-Mead',
-                               options={'maxiter': 300, 'xatol': 1e-4, 'fatol': 1e-6})
+                               options={'maxiter': 200, 'xatol': 1e-3, 'fatol': 1e-5})
                 s = opt.fun
                 a_opt, b_opt = opt.x
             except:
                 s = 1e10
                 a_opt, b_opt = a0, b0
 
-            # Also try a wider starting point
+            # Also try a second starting point
             try:
-                opt2 = minimize(score_ab, [1.0, 1.0],
+                opt2 = minimize(score_ab, [1.0, 5.0],
                                 args=(alpha, beta, zeros),
                                 method='Nelder-Mead',
-                                options={'maxiter': 300, 'xatol': 1e-4, 'fatol': 1e-6})
+                                options={'maxiter': 200, 'xatol': 1e-3, 'fatol': 1e-5})
                 if opt2.fun < s:
                     s = opt2.fun
                     a_opt, b_opt = opt2.x
@@ -165,12 +186,12 @@ def refine_search(zeros, n_alpha=50, n_beta=50):
                 global_best_params = (alpha, beta, a_opt, b_opt, s)
 
             done = i * n_beta + j + 1
-            if done % 100 == 0 or done == total:
+            if done % 50 == 0 or done == total:
                 elapsed = time.time() - start_time
                 rate = done / elapsed if elapsed > 0 else 0
                 eta = (total - done) / rate if rate > 0 else 0
-                print(f"  [{done}/{total}] best={global_best_score:.6f} "
-                      f"({elapsed:.0f}s elapsed, ~{eta:.0f}s remaining)")
+                flush_print(f"  [{done}/{total}] best={global_best_score:.6f} "
+                            f"({elapsed:.0f}s elapsed, ~{eta:.0f}s remaining)")
 
     return alphas, betas, score_grid, best_ab_grid, global_best_params
 
@@ -184,9 +205,9 @@ def check_berry_keating(zeros):
     Check alpha=1.0 specifically (Berry-Keating limit).
     Optimize over (beta, a, b).
     """
-    print("\n" + "=" * 60)
-    print("BERRY-KEATING CHECK: alpha = 1.0")
-    print("=" * 60)
+    flush_print("\n" + "=" * 60)
+    flush_print("BERRY-KEATING CHECK: alpha = 1.0")
+    flush_print("=" * 60)
 
     betas_fine = np.linspace(-0.5, 0.5, 100)
     results = []
@@ -203,8 +224,8 @@ def check_berry_keating(zeros):
 
     results.sort(key=lambda x: x[0])
     best = results[0]
-    print(f"  Best at alpha=1.0: beta={best[1]:.4f}, a={best[2]:.4f}, b={best[3]:.4f}")
-    print(f"  Score: {best[0]:.6f}")
+    flush_print(f"  Best at alpha=1.0: beta={best[1]:.4f}, a={best[2]:.4f}, b={best[3]:.4f}")
+    flush_print(f"  Score: {best[0]:.6f}")
     return best
 
 
@@ -217,18 +238,17 @@ def plot_heatmap(alphas, betas, score_grid, global_best, bk_result, zeros):
 
     # --- Panel 1: Heatmap ---
     ax = axes[0, 0]
-    # Use log scale for better visualization
     log_scores = np.log10(np.clip(score_grid, 1e-6, None))
     im = ax.pcolormesh(betas, alphas, log_scores, cmap='viridis_r', shading='auto')
     cbar = plt.colorbar(im, ax=ax)
     cbar.set_label('log10(score)')
     ax.set_xlabel('beta')
     ax.set_ylabel('alpha')
-    ax.set_title('Score vs (alpha, beta) — optimized (a, b) at each point')
+    ax.set_title('Score vs (alpha, beta) -- optimized (a, b) at each point')
 
-    # Mark the winner and Berry-Keating
     alpha_best, beta_best = global_best[0], global_best[1]
-    ax.plot(beta_best, alpha_best, 'r*', markersize=15, label=f'Best: ({alpha_best:.3f}, {beta_best:.3f})')
+    ax.plot(beta_best, alpha_best, 'r*', markersize=15,
+            label=f'Best: ({alpha_best:.3f}, {beta_best:.3f})')
     ax.axhline(y=1.0, color='white', linestyle='--', alpha=0.5, label='alpha=1 (Berry-Keating)')
     ax.axhline(y=0.876, color='orange', linestyle='--', alpha=0.5, label='alpha=0.876 (original)')
     ax.legend(fontsize=8, loc='lower right')
@@ -239,7 +259,8 @@ def plot_heatmap(alphas, betas, score_grid, global_best, bk_result, zeros):
     ax.semilogy(alphas, best_over_beta, 'b-', linewidth=2)
     ax.axvline(x=0.876, color='orange', linestyle='--', alpha=0.7, label='alpha=0.876')
     ax.axvline(x=1.0, color='red', linestyle='--', alpha=0.7, label='alpha=1.0 (BK)')
-    ax.axvline(x=alpha_best, color='green', linestyle='--', alpha=0.7, label=f'best={alpha_best:.3f}')
+    ax.axvline(x=alpha_best, color='green', linestyle='--', alpha=0.7,
+               label=f'best={alpha_best:.3f}')
     ax.set_xlabel('alpha')
     ax.set_ylabel('Best score (log scale)')
     ax.set_title('Best score vs alpha (minimized over beta, a, b)')
@@ -251,39 +272,43 @@ def plot_heatmap(alphas, betas, score_grid, global_best, bk_result, zeros):
     alpha_b, beta_b, a_b, b_b = global_best[:4]
     n_show = 30
     ns = np.arange(1, n_show + 1)
-    n_wkb_vals = N_wkb_vectorized(zeros[:n_show], a_b, alpha_b, b_b, beta_b)
+    n_wkb_vals = N_wkb_batch(zeros[:n_show], a_b, alpha_b, b_b, beta_b)
 
     ax.plot(ns, ns, 'k--', linewidth=1, label='Perfect: N=n')
     ax.plot(ns, n_wkb_vals, 'bo-', markersize=4, linewidth=1, label='N_WKB(t_n)')
     ax.set_xlabel('Zero index n')
     ax.set_ylabel('N_WKB(t_n)')
-    ax.set_title(f'Zero-by-zero: best params (a={a_b:.2f}, alpha={alpha_b:.3f}, b={b_b:.2f}, beta={beta_b:.3f})')
+    ax.set_title(f'Zero-by-zero: a={a_b:.2f}, alpha={alpha_b:.3f}, '
+                 f'b={b_b:.2f}, beta={beta_b:.3f}')
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     # --- Panel 4: Residuals ---
     ax = axes[1, 1]
     residuals = n_wkb_vals - ns
-    ax.bar(ns, residuals, color='steelblue', alpha=0.7)
+    ax.bar(ns - 0.15, residuals, width=0.3, color='steelblue', alpha=0.7,
+           label=f'Best (score={global_best[4]:.4f})')
     ax.axhline(y=0, color='k', linewidth=0.5)
+
+    # Berry-Keating residuals
+    bk_s, bk_beta, bk_a, bk_b = bk_result
+    n_wkb_bk = N_wkb_batch(zeros[:n_show], bk_a, 1.0, bk_b, bk_beta)
+    residuals_bk = n_wkb_bk - ns
+    ax.bar(ns + 0.15, residuals_bk, width=0.3, color='red', alpha=0.5,
+           label=f'BK alpha=1 (score={bk_s:.4f})')
+
     ax.set_xlabel('Zero index n')
     ax.set_ylabel('N_WKB(t_n) - n')
-    ax.set_title(f'Residuals (score={global_best[4]:.6f})')
-    ax.grid(True, alpha=0.3)
-
-    # Also show Berry-Keating residuals
-    bk_s, bk_beta, bk_a, bk_b = bk_result
-    n_wkb_bk = N_wkb_vectorized(zeros[:n_show], bk_a, 1.0, bk_b, bk_beta)
-    residuals_bk = n_wkb_bk - ns
-    ax.bar(ns + 0.3, residuals_bk, width=0.3, color='red', alpha=0.5, label=f'BK alpha=1 (score={bk_s:.4f})')
+    ax.set_title('Residuals: Best vs Berry-Keating')
     ax.legend(fontsize=8)
+    ax.grid(True, alpha=0.3)
 
     plt.suptitle('Refinement Search: H = a*x^alpha * p + b*x^beta / p',
                  fontsize=14, fontweight='bold')
     plt.tight_layout()
     plt.savefig(os.path.join(PLOTS_DIR, 'search_refinement.png'), dpi=150)
     plt.close()
-    print(f"\nPlot saved to {os.path.join(PLOTS_DIR, 'search_refinement.png')}")
+    flush_print(f"\nPlot saved to {os.path.join(PLOTS_DIR, 'search_refinement.png')}")
 
 
 # =============================================================================
@@ -291,40 +316,44 @@ def plot_heatmap(alphas, betas, score_grid, global_best, bk_result, zeros):
 # =============================================================================
 
 def main():
-    print("=" * 60)
-    print("FINE-GRAINED REFINEMENT SEARCH")
-    print("=" * 60)
-    print("Searching around winning operator: U=4.63*x^0.876, V=19.16*x^(-0.167)")
-    print("Using first 100 zeros for scoring\n")
+    flush_print("=" * 60)
+    flush_print("FINE-GRAINED REFINEMENT SEARCH")
+    flush_print("=" * 60)
+    flush_print("Searching around winning operator: U=4.63*x^0.876, V=19.16*x^(-0.167)")
+    flush_print("Using first 100 zeros for scoring\n")
 
     zeros = load_zeros(100)
-    print(f"Loaded {len(zeros)} zeros (range: {zeros[0]:.4f} to {zeros[-1]:.4f})")
+    flush_print(f"Loaded {len(zeros)} zeros (range: {zeros[0]:.4f} to {zeros[-1]:.4f})")
+
+    # Quick sanity check: score the original winner
+    s_orig = score_fast(4.63, 0.876, 19.16, -0.167, zeros)
+    flush_print(f"Original winner score (100 zeros): {s_orig:.6f}")
 
     # --- Main grid search ---
-    print(f"\nGrid search: alpha in [0.7, 1.0] x beta in [-0.5, 0.5], 50x50 = 2500 points")
-    print("At each point, optimizing (a, b) via Nelder-Mead...\n")
+    flush_print(f"\nGrid search: alpha in [0.7, 1.0] x beta in [-0.5, 0.5], 50x50 = 2500 points")
+    flush_print("At each point, optimizing (a, b) via Nelder-Mead...\n")
 
     alphas, betas, score_grid, best_ab_grid, global_best = refine_search(zeros)
     alpha_best, beta_best, a_best, b_best, s_best = global_best
 
-    print(f"\n{'=' * 60}")
-    print(f"GLOBAL BEST:")
-    print(f"  alpha = {alpha_best:.6f}")
-    print(f"  beta  = {beta_best:.6f}")
-    print(f"  a     = {a_best:.6f}")
-    print(f"  b     = {b_best:.6f}")
-    print(f"  score = {s_best:.6f}")
-    print(f"{'=' * 60}")
+    flush_print(f"\n{'=' * 60}")
+    flush_print(f"GLOBAL BEST:")
+    flush_print(f"  alpha = {alpha_best:.6f}")
+    flush_print(f"  beta  = {beta_best:.6f}")
+    flush_print(f"  a     = {a_best:.6f}")
+    flush_print(f"  b     = {b_best:.6f}")
+    flush_print(f"  score = {s_best:.6f}")
+    flush_print(f"{'=' * 60}")
 
     # --- Berry-Keating comparison ---
     bk_result = check_berry_keating(zeros)
     bk_score = bk_result[0]
 
-    print(f"\n{'=' * 60}")
-    print(f"COMPARISON: alpha=0.876 vs alpha=1.0 (Berry-Keating)")
-    print(f"{'=' * 60}")
+    flush_print(f"\n{'=' * 60}")
+    flush_print(f"COMPARISON: alpha=0.876 vs alpha=1.0 (Berry-Keating)")
+    flush_print(f"{'=' * 60}")
 
-    # Score at exact alpha=0.876
+    # Score at exact alpha=0.876 with optimized a,b
     opt_876 = minimize(score_ab, [4.63, 19.16],
                        args=(0.876, -0.167, zeros),
                        method='Nelder-Mead',
@@ -332,50 +361,56 @@ def main():
     s_876 = opt_876.fun
     a_876, b_876 = opt_876.x
 
-    print(f"  alpha=0.876, beta=-0.167 (original): score={s_876:.6f} (a={a_876:.4f}, b={b_876:.4f})")
-    print(f"  alpha=1.0   (Berry-Keating best):     score={bk_score:.6f}")
-    print(f"  Global best:                           score={s_best:.6f}")
+    flush_print(f"  alpha=0.876, beta=-0.167 (original): score={s_876:.6f} "
+                f"(a={a_876:.4f}, b={b_876:.4f})")
+    flush_print(f"  alpha=1.0   (Berry-Keating best):     score={bk_score:.6f}")
+    flush_print(f"  Global best:                           score={s_best:.6f}")
     ratio = bk_score / s_best if s_best > 0 else float('inf')
-    print(f"\n  Berry-Keating is {ratio:.1f}x worse than global best")
+    flush_print(f"\n  Berry-Keating is {ratio:.1f}x worse than global best")
     if ratio > 2:
-        print(f"  --> alpha != 1 is SIGNIFICANTLY better. Berry-Keating is NOT optimal.")
+        flush_print("  --> alpha != 1 is SIGNIFICANTLY better. Berry-Keating is NOT optimal.")
     elif ratio > 1.2:
-        print(f"  --> alpha != 1 is moderately better.")
+        flush_print("  --> alpha != 1 is moderately better.")
     else:
-        print(f"  --> Berry-Keating is competitive. alpha=1 may be sufficient.")
+        flush_print("  --> Berry-Keating is competitive. alpha=1 may be sufficient.")
 
     # --- Zero-by-zero comparison for first 30 zeros ---
-    print(f"\n{'=' * 60}")
-    print(f"ZERO-BY-ZERO COMPARISON (first 30 zeros)")
-    print(f"{'=' * 60}")
-    print(f"  {'n':>3} {'t_n':>12} {'N_WKB(best)':>12} {'N_WKB(BK)':>12} {'err_best':>10} {'err_BK':>10}")
-    print(f"  {'-' * 63}")
+    flush_print(f"\n{'=' * 60}")
+    flush_print(f"ZERO-BY-ZERO COMPARISON (first 30 zeros)")
+    flush_print(f"{'=' * 60}")
+    flush_print(f"  {'n':>3} {'t_n':>12} {'N_WKB(best)':>12} {'N_WKB(BK)':>12} "
+                f"{'err_best':>10} {'err_BK':>10}")
+    flush_print(f"  {'-' * 63}")
 
     bk_s, bk_beta, bk_a, bk_b = bk_result
+    n_wkb_best_30 = N_wkb_batch(zeros[:30], a_best, alpha_best, b_best, beta_best)
+    n_wkb_bk_30 = N_wkb_batch(zeros[:30], bk_a, 1.0, bk_b, bk_beta)
+
     for i in range(30):
         t_n = zeros[i]
         n = i + 1
-        n_best = N_wkb(t_n, a_best, alpha_best, b_best, beta_best)
-        n_bk = N_wkb(t_n, bk_a, 1.0, bk_b, bk_beta)
+        n_best = n_wkb_best_30[i]
+        n_bk = n_wkb_bk_30[i]
         err_best = n_best - n
         err_bk = n_bk - n
-        print(f"  {n:>3} {t_n:>12.4f} {n_best:>12.4f} {n_bk:>12.4f} {err_best:>+10.4f} {err_bk:>+10.4f}")
+        flush_print(f"  {n:>3} {t_n:>12.4f} {n_best:>12.4f} {n_bk:>12.4f} "
+                     f"{err_best:>+10.4f} {err_bk:>+10.4f}")
 
     # --- Check: how special is the valley in alpha? ---
-    print(f"\n{'=' * 60}")
-    print(f"ALPHA SENSITIVITY (best score at each alpha, optimized over everything else)")
-    print(f"{'=' * 60}")
+    flush_print(f"\n{'=' * 60}")
+    flush_print(f"ALPHA SENSITIVITY (best score at each alpha, optimized over everything else)")
+    flush_print(f"{'=' * 60}")
 
     alpha_check = [0.70, 0.75, 0.80, 0.85, 0.876, 0.90, 0.95, 1.00]
     for ac in alpha_check:
-        # Find best beta for this alpha from the grid
         idx = np.argmin(np.abs(alphas - ac))
         best_j = np.nanargmin(score_grid[idx, :])
         s_here = score_grid[idx, best_j]
         a_here = best_ab_grid[idx, best_j, 0]
         b_here = best_ab_grid[idx, best_j, 1]
         beta_here = betas[best_j]
-        print(f"  alpha={ac:.3f}: score={s_here:.6f} (beta={beta_here:.3f}, a={a_here:.2f}, b={b_here:.2f})")
+        flush_print(f"  alpha={ac:.3f}: score={s_here:.6f} "
+                     f"(beta={beta_here:.3f}, a={a_here:.2f}, b={b_here:.2f})")
 
     # --- Plot ---
     plot_heatmap(alphas, betas, score_grid, global_best, bk_result, zeros)
@@ -407,10 +442,9 @@ def main():
         "grid_size": "50x50",
     }
 
-    import json
     with open(os.path.join(RESULTS_DIR, "refine_search.json"), "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\nResults saved to {os.path.join(RESULTS_DIR, 'refine_search.json')}")
+    flush_print(f"\nResults saved to {os.path.join(RESULTS_DIR, 'refine_search.json')}")
 
 
 if __name__ == "__main__":
