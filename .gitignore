@@ -1,0 +1,12 @@
+.lake/
+__pycache__/
+*.pyc
+data/zeros_odlyzko_2M
+.DS_Store
+.lake/
+__pycache__/
+*.pyc
+data/zeros_odlyzko_2M
+.DS_Store
+RiemannLean/.lake/
+RiemannLean/.git/

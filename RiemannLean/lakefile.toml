@@ -1,0 +1,10 @@
+name = "RiemannLean"
+version = "0.1.0"
+defaultTargets = ["RiemannLean"]
+
+[[lean_lib]]
+name = "RiemannLean"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
