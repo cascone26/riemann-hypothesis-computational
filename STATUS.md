@@ -145,10 +145,19 @@ riemann/
 └── exact_gue.py                   — Fredholm determinant computation
 ```
 
+## Completed Since Last Update
+- [x] Lean 4 + Mathlib building — Robin's + Lagarias inequalities compile
+- [x] 2024 Riemann Operator implemented — reduces to Dirichlet eta function
+- [x] Dirichlet eta zeros match zeta zeros to 0.01 precision (29/29 matched)
+- [x] MathOverflow post drafted (heat kernel dimension finding)
+- [x] Findings summary written (proto-arXiv paper)
+- [x] Git repo initialized, initial commit
+- [x] Parameterized operator search running (H = U(x)p + V(x)/p family)
+
 ## What's Next (Priority Order)
-1. Get Lean project building with Mathlib, verify Robin's inequality statement compiles
-2. Fix Wu-Sprung WKB inversion formula
-3. Implement 2024 Riemann Operator (arXiv:2408.15135) numerically
-4. Implement Connes' 2025 Zeta Spectral Triples
-5. Design parameterized operator search (the open direction nobody has tried)
-6. Create MathOverflow account and post first results
+1. Complete parameterized operator search, analyze results
+2. Implement Connes' 2025 Zeta Spectral Triples
+3. Create MathOverflow account and post (Jacob: 2 min)
+4. Submit Robin's inequality to Mathlib as PR
+5. Begin proving Robin's inequality for specific small n computationally in Lean
+6. Write up heat kernel + operator survey as arXiv preprint
