@@ -1,0 +1,12 @@
+{
+  "gamma_exact_empirical": 1.5408855694221362,
+  "gamma_bk": 1.0,
+  "gamma_optimal": 1.0967741935483872,
+  "alpha_bk": 1.0,
+  "alpha_opt": 0.9693877551020408,
+  "rms_bk": 58.16786054171152,
+  "rms_opt": 0.7728256853481615,
+  "opt_wins_count": 95,
+  "n_zeros": 100,
+  "hypothesis": "N_WKB ~ E^gamma where gamma = 1 + 2*(1-alpha)/(alpha+beta). BK: gamma=1 (linear). Optimal: gamma>1 (superlinear). Exact N(E) ~ E^1.541 over first 100 zeros. alpha<1 captures the log correction that BK misses on finite zero ranges."
+}
