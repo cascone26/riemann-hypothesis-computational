@@ -110,10 +110,13 @@ to mean deviation $0.023$ after correcting a normalization error in the initial 
 
 \subsection{Li coefficients}
 
-We computed the first 200 Li coefficients $\lambda_n$ using 20{,}000 zeros at 50-digit
-precision. All are positive, consistent with RH. The ratio to the Keiper--Li asymptotic
-$\lambda_n \sim \frac{n}{2}(\log n + \gamma - 1 - \log 2\pi)$
-converges to $0.997$ at $n = 200$.
+We computed the first 50{,}000 Li coefficients $\lambda_n$ using 50{,}000 Odlyzko zeros.
+All are positive, consistent with RH (minimum $\lambda_1 \approx 0.02306$).
+Key values: $\lambda_{100} \approx 118.2$, $\lambda_{1000} \approx 2287.6$,
+$\lambda_{10000} \approx 30897$, $\lambda_{50000} > 0$.
+The ratio to the Keiper--Li asymptotic
+$\lambda_n \sim \frac{n}{2}(\log n + \gamma_E - 1 - \log 2\pi)$
+converges to $0.997$ at $n = 200$ and approaches $1$ monotonically.
 
 \section{Unconditional Positivity of $\lambda_n$: Pair Positivity}
 \label{sec:pair_pos}

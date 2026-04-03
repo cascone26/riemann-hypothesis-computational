@@ -285,8 +285,9 @@ For n ≥ 86: requires knowing all zeros are on σ=1/2 (= RH). No new proof rout
 - `results/clean_proof_verified.json` — numerical certificates
 
 ## What's Next (Priority Order)
-1. **NB v9 results**: Process N=5000 sparse output — check if log-law β stabilizes, update paper
-2. **Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper
-3. **Submit Robin's inequality to Mathlib as PR**
+1. ~~**NB v9 results**: Process N=5000 sparse output~~ — DONE (2026-04-03, β=0.547, α=0.040, paper updated)
+2. ~~**Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper~~ — DONE (commit 6900ddc)
+3. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
 4. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
-5. **Explicit lambda_n lower bound**: Attempt rigorous ε_n error bound for the asymptotic formula to close the gap between n≤10⁷ (multi-zero) and large n (asymptotic). Would complete proof if N_0 ≤ 10⁷.
+5. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
+6. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.

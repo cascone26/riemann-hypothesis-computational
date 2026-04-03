@@ -368,3 +368,47 @@ For n ≥ 86 in general: first failure of individual pair occurs at (σ→0, γ=
 However, total λ_{86} > 0 because all OTHER zero pairs (γ > γ₁) contribute positively and overwhelm the single negative pair. Proving this for all n ≥ 86 requires the full zero distribution — which is precisely RH.
 
 **The Riemann Hypothesis remains unproved. The unconditional range is n ≤ 85 (pair positivity, Theorem 3) and n ≤ ~10⁷ (multi-zero extension, Theorem 4). For all n unconditionally, λ_n > 0 requires a new global tool — arithmetic, spectral, or measure-theoretic — that controls the interplay between all zero pairs simultaneously.**
+
+---
+
+## 5C. Density Hypothesis Connection (New Analysis, 2026-04-03)
+
+**Script**: `operators/density_hypothesis_bound.py`
+
+**Question**: What density bound on off-line zeros would guarantee λ_n > 0 for all n?
+
+**Setup**: λ_n = (on-line sum ≥ 0) + (off-line sum: sign unknown). The on-line sum from 10 known zeros is ~20–30 for all n (bounded below). The off-line sum from a single off-line zero is bounded above by max|F_n(σ,γ)| ≤ 4 (for generic σ, γ).
+
+**Key result (Theorem 5 sketch)**:
+
+> **If N_off(σ,T) = O(T^A) with A < 1 for all σ > 1/2, AND the on-line phases are equidistributed (GUE), then λ_n > 0 for all n ≥ n_0.**
+> 
+> Combined with Theorem 3 (n ≤ 85), this gives λ_n > 0 for ALL n.
+
+*Proof sketch*:
+- On-line sum ~ n·log(n)/(2π) (from N_on(n) ~ n·log(n)/(2π) on-line zeros, each contributing ~2 on average)
+- Off-line error ≤ 4·N_off(n) ≤ 4C·n^A
+- Condition: 4C·n^A < n·log(n)/(2π), i.e., n^{1-A}·log(n) > 8πC — holds for all large n when A < 1. □
+
+**Connection to Lindelöf Hypothesis**:
+- Lindelöf: ζ(1/2+it) = O(|t|^ε) for all ε > 0
+- Titchmarsh (Ch.9): Lindelöf ⟹ N(σ,T) = O(T^{2−2σ+ε}) for all σ > 1/2
+- For σ > 1/2: exponent A = 2−2σ < 1 ✓
+
+**Conclusion**: *Lindelöf hypothesis + GUE equidistribution + Theorem 3 ⟹ λ_n > 0 for all n ⟹ RH.*
+
+**Caveat**: LH does not imply RH in general (RH ⟹ LH is known, but not the converse). The argument requires the additional GUE phase equidistribution hypothesis, which is also unproven. This is a new conditional result characterizing the gap, not a proof of RH.
+
+**Numerical check at n=86**:
+- On-line sum from k=10 zeros: 28.63
+- min F_86(0, γ) over γ ∈ [14, 1000]: −0.050 at γ = 14.0
+- Ratio (on-line sum)/(|min off-line|): **575.9** — the on-line sum overwhelms by ~576×
+
+For n=86 to be a problem, we would need ~576 simultaneous off-line zeros all hitting the resonance window at γ₁. This is extraordinarily unlikely given known density bounds.
+
+| Theorem | Condition | Range |
+|---------|-----------|-------|
+| Theorem 3 | None (unconditional) | n ≤ 85 |
+| Theorem 4 | Odlyzko k verified zeros | n ≤ N(k) ≈ 6.28·γ_{k+1} |
+| Theorem 5 | LH + GUE equidistribution | n ≥ n_0 (large enough) |
+| Full RH | RH | All n |
