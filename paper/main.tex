@@ -44,8 +44,10 @@ previously reported apparent decay rate $\alpha \approx 0.308$ as a numerical ar
 adaptive quadrature on oscillatory integrands, with the corrected rate $\alpha \approx 0.071$
 ($N \ge 1000$) still not stabilized; and
 (6)~an unconditional analytic proof that the Li coefficients satisfy $\lambda_n > 0$
-for all $n = 1, \ldots, 85$ (Theorem~\ref{thm:pair_pos}), based on a boundary characterization
-of the functional pair contribution $F_n(\sigma,\gamma)$, together with a multi-zero extension
+for all $n \leq 85$ (Theorem~\ref{thm:pair_pos}), based on a boundary characterization
+of the functional pair contribution $F_n(\sigma,\gamma)$; an extension to $n = 86$
+(Corollary~\ref{cor:n86}) using the classical zero-free region of
+Mossinghoff--Trudgian--Yang~\cite{mty2022}; and a multi-zero extension
 certifying $\lambda_n > 0$ for $n \le \approx 10^7$ using the Odlyzko verified-zero dataset
 (Theorem~\ref{thm:multi_zero}).
 \end{abstract}
@@ -183,15 +185,45 @@ The threshold $n = 85$ is exact: it equals $\lfloor (2\pi - y^*)/\arctan(1/\gamm
 where $y^* \approx 0.211$ at $\gamma_1$. This threshold is \emph{determined entirely by} $\gamma_1$.
 \end{remark}
 
-\begin{remark}[Critical $\sigma$ threshold and sharpness of $n=85$]
+\begin{remark}[Extension to $n=86$ via the classical zero-free region]
+\label{rem:n86}
 The failure at $n=86$ is a near-miss: $F_{86}(0,\gamma_1) = -0.00348$, barely negative.
 A refined analysis shows $F_{86}(\sigma,\gamma_1) > 0$ for all $\sigma > \sigma_c \approx 0.0104$.
-Thus $\lambda_{86} > 0$ unconditionally if one can certify that \emph{no} zero has $\mathrm{Re}(\rho) < 0.0104$
-near $\gamma_1$ — a zero-free strip of width $\approx 0.01$ near the real axis.
-No such strip is currently known, making $n=85$ the sharp unconditional bound.
-By contrast, $n=87$ requires $\sigma_c \approx 0.19$ and $n=88$ requires $\sigma_c \approx 0.36$,
-so $n=86$ is uniquely close to being certifiable by an unconditional zero-free strip.
+The classical zero-free region of Mossinghoff, Trudgian, and Yang~\cite{mty2022}
+certifies $\zeta(\sigma+it) \neq 0$ for $\sigma \geq 1 - 1/(5.558691\log|t|)$, $|t| \geq 2$.
+By the functional equation $\zeta(s) = \chi(s)\zeta(1-s)$, non-trivial zeros are symmetric under
+$\rho \leftrightarrow 1-\rho$, so the zero-free region near $\sigma = 1$ implies a matching
+zero-free strip near $\sigma = 0$:
+\[
+  \delta := \frac{1}{5.558691\log\gamma_1} = \frac{1}{5.558691 \times 2.6486} \approx 0.0679.
+\]
+Since $\delta = 0.0679 \gg \sigma_c = 0.0104$ (a $6.5\times$ margin), all non-trivial zeros near
+height $\gamma_1$ satisfy $\mathrm{Re}(\rho) > 0.0679 > \sigma_c$, giving $F_{86}(\sigma,\gamma_1) > 0$.
+For all other zeros $\gamma \geq \gamma^*$ (where $\gamma^* \in (\gamma_1,\gamma_2)$ is the unique
+crossing where $F_{86}(0,\cdot)$ changes sign, with no actual zero in $(\gamma_1,\gamma_2)$),
+$F_{86}(0,\gamma) > 0$ follows from the boundary condition.
+Therefore $\lambda_{86} > 0$ unconditionally; see Corollary~\ref{cor:n86} below.
+By contrast, $n=87$ requires $\sigma_c \approx 0.19$, far beyond any known zero-free strip.
 \end{remark}
+
+\begin{corollary}[Unconditional positivity for $n \leq 86$]
+\label{cor:n86}
+$\lambda_n > 0$ for all $n \leq 86$.
+\end{corollary}
+
+\begin{proof}
+For $n \leq 85$, this is Theorem~\ref{thm:pair_pos}.
+For $n = 86$: the boundary condition $86\arctan(1/\gamma) + \arctan(\sinh(86\log r)) < 2\pi$
+holds for all $\gamma \geq \gamma^* \approx 14.52$ (with $\gamma^*$ the unique solution
+where equality holds). Since all non-trivial zeros have $\gamma \geq \gamma_1 = 14.135$,
+and the only zero with $\gamma < \gamma^*$ is $\gamma_1$ itself (as $\gamma_2 = 21.022 > \gamma^*$),
+it remains to certify $F_{86}(\sigma_{\rho_1},\gamma_1) > 0$ for the first zero $\rho_1$.
+The classical zero-free region \cite{mty2022} gives $\sigma_{\rho_1} \geq \delta = 0.0679 > \sigma_c = 0.0104$.
+Since $F_{86}(\sigma,\gamma_1)$ is increasing in $\sigma$ (as $\sigma = 0$ is the unique minimum
+of the pair contribution), $F_{86}(\sigma_{\rho_1},\gamma_1) > 0$.
+Therefore every term in $\lambda_{86} = \sum_\rho F_{86}(\mathrm{Re}(\rho),|\mathrm{Im}(\rho)|)$
+is positive, so $\lambda_{86} > 0$.
+\end{proof}
 
 \subsection{Multi-zero extension}
 \label{sec:thm4}
@@ -603,6 +635,12 @@ Ph.D.\ thesis, Uppsala University, 1950.
 \bibitem{li1997}
 X.-J.~Li, ``The positivity of a sequence of numbers and the Riemann hypothesis,''
 \textit{J.\ Number Theory}, 65, 325--333, 1997.
+
+\bibitem{mty2022}
+M.~J.~Mossinghoff, T.~S.~Trudgian, and A.~Yang,
+``Explicit zero-free regions for the Riemann zeta-function,''
+\textit{Res.\ Number Theory}, 10, paper no.\ 9, 2024.
+arXiv:2212.06867.
 
 \end{thebibliography}
 
