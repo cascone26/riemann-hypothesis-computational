@@ -1,0 +1,54 @@
+{
+  "lambda_min": 0.0230572543788361,
+  "lambda_min_n": 1,
+  "all_positive_n_max": 5000,
+  "all_positive": true,
+  "resonance_violations": {
+    "sigma=0.51,gamma=2.0": {
+      "description": "Small height, small offset",
+      "n_star": 3668
+    },
+    "sigma=0.55,gamma=10.0": {
+      "description": "Medium height, medium offset",
+      "n_star": null
+    },
+    "sigma=0.501,gamma=100.0": {
+      "description": "Medium height, tiny offset",
+      "n_star": null
+    },
+    "sigma=0.501,gamma=1000.0": {
+      "description": "Large height, tiny offset",
+      "n_star": null
+    }
+  },
+  "exclusion_boundary": {
+    "1": 0.005,
+    "2": 0.01,
+    "5": 0.05,
+    "10": 0.3,
+    "20": null,
+    "50": null
+  },
+  "coverage_gap": {
+    "n_max": 5000,
+    "T_lmfdb": 2000000.0,
+    "n_max_needed_for_full_coverage": 6283185,
+    "delta_at_T_lmfdb": 628.3185307179587,
+    "conclusion": "Off-line zeros (if any) must have Im(\u03c1) > 2.00e+06"
+  },
+  "lambda_bounds": {
+    "lambda_min": 0.0230572543788361,
+    "lambda_min_n": 1,
+    "lambda_bound_heuristic": 1.094460125e-06,
+    "lambda_bound_proven": 0.22,
+    "lambda_lower_bound": 0.0,
+    "delta_min": 0.002959
+  },
+  "proof_status": {
+    "proven_for_finite_n": true,
+    "proven_for_all_n": false,
+    "direct_rh_verification_height": 2000000.0,
+    "remaining_gap": "\u03b3 > 2\u00d710^6",
+    "mathematical_gap": "Analytic proof of \u03bb_n > 0 for all n"
+  }
+}

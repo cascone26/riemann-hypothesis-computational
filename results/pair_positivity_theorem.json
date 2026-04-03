@@ -1,0 +1,15 @@
+{
+  "theorem": "Pair positivity: F_n > 0 for n=1..85, all sigma in (0,1), all gamma >= gamma_1",
+  "n_pair_threshold": 85,
+  "n_single_threshold": 44,
+  "gamma_1": 14.134725141734695,
+  "r_1": 1.0024994983158815,
+  "phi_1_sigma0": 0.07063006658645392,
+  "first_negative_pair_n": 86,
+  "proof_steps": [
+    "Minimum over sigma is at sigma=0 (symmetry + convexity)",
+    "Closed form F_n(0,gamma) = 4*(1 - cosh(n*log(r))*cos(n*arctan(1/gamma)))",
+    "High-precision verification F_n(0,gamma_1) > 0 for n=1..85",
+    "As gamma->inf: F_n ~ 2n^2/gamma^2 -> 0+ (never negative)"
+  ]
+}

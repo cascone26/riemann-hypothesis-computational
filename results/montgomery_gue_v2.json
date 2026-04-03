@@ -1,0 +1,54 @@
+{
+  "Low heights (first 50K)": {
+    "start_idx": 50000,
+    "n_zeros": 50000,
+    "height_min": 40434.228944424,
+    "height_max": 74920.827498994,
+    "correlation": {
+      "total_pairs": 225084,
+      "N_zeros": 50000,
+      "T_typical": 57964.4409126535
+    },
+    "anomaly": {
+      "mean_dev_01": -0.009663205156437751,
+      "max_dev_01": 0.09376568840321786,
+      "mean_dev_12": 0.004838008079819595,
+      "max_dev_12": 0.08727482090723093,
+      "mean_dev_25": -0.0013604993542218973,
+      "max_dev_25": 0.09169279580192624,
+      "max_detectable_delta": 0.30280818318190517,
+      "sigma_max_upper_bound": 0.8028081831819052
+    },
+    "ks_test": {
+      "ks_stat": 0.004280078475503206,
+      "ks_critical": 0.0028665966971023692,
+      "gue_consistent": false
+    }
+  },
+  "High heights (zeros 1M-1.1M)": {
+    "start_idx": 1000000,
+    "n_zeros": 50000,
+    "height_min": 600270.301090712,
+    "height_max": 627611.948602566,
+    "correlation": {
+      "total_pairs": 225196,
+      "N_zeros": 50000,
+      "T_typical": 613954.5722041025
+    },
+    "anomaly": {
+      "mean_dev_01": -0.009094784103806187,
+      "max_dev_01": 0.07696014838387888,
+      "mean_dev_12": 0.0033180080798196065,
+      "max_dev_12": 0.05221596827254893,
+      "mean_dev_25": -0.0002938326875552307,
+      "max_dev_25": 0.08656714367901219,
+      "max_detectable_delta": 0.29422294893330836,
+      "sigma_max_upper_bound": 0.7942229489333084
+    },
+    "ks_test": {
+      "ks_stat": 0.003102956491752379,
+      "ks_critical": 0.0028658837653468784,
+      "gue_consistent": false
+    }
+  }
+}

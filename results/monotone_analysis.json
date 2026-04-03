@@ -1,0 +1,9 @@
+{
+  "monotone_increasing": true,
+  "min_delta": 0.06913466250989586,
+  "min_delta_n": 1,
+  "neg_delta_count": 0,
+  "partial_sum_dip_count": 0,
+  "global_min_partial": 0.023095708966121033,
+  "n_crossover_1": 44.42406420791058
+}

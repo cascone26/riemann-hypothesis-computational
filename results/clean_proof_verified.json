@@ -1,0 +1,14 @@
+{
+  "theorem": "Pair positivity: F_n(0,gamma) > 0 for n=1..85, all gamma >= gamma_1",
+  "proof_method": "Boundary analysis: cosh(x)*cos(y) < 1 iff y in (arctan(sinh(x)), 2pi - arctan(sinh(x)))",
+  "key_inequality": "log(r) < arctan(1/gamma) for gamma > 1 [f'(t) = (1-t)/(1+t^2) > 0 for t in (0,1)]",
+  "arctan_sinh_inequality": "arctan(sinh(x)) < x for x > 0 [g'(x) = sech(x)-1 < 0]",
+  "max_LHS_at_gamma1": 6.214173286663029,
+  "max_LHS_n": 85,
+  "two_pi": 6.283185307179586,
+  "gap": 0.06901202051655705,
+  "n_threshold": 85,
+  "n_fails": 86,
+  "F86_gamma1": 1.0008698103552944,
+  "mpmath_precision_digits": 50
+}
