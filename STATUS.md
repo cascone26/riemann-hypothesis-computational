@@ -88,16 +88,54 @@ The parameterized search over H = f(x)p + g(x) is genuinely open territory (see 
 
 ---
 
-## Month 7-12 — Nyman-Beurling Backup: RESEARCH COMPLETE
+## Month 7-12 — Nyman-Beurling Backup: ACTIVE COMPUTATION
 
 ### Research
 See `research/nyman_beurling.md` — full survey of criterion, Baez-Duarte reformulation, computational approaches.
 
-### Nyman-Beurling Distance Computed
-- d_N decreasing from 0.57 (N=1) to 0.12 (N=25)
-- **Consistent with RH** (distance → 0)
-- Convergence rate ~1% per term — slow but steady
-- Log-scale plot shows power-law decay
+### Nyman-Beurling Distance — v7 (DEFINITIVE RESULT, 2026-04-02)
+Scripts: `nyman_beurling/compute_distance_v[2-7].py`, results: `results/nyman_beurling_v7.json`
+
+**Approach**: Báez-Duarte reformulation, d²_N = 1 - b^T G^{-1} b, truncated SVD.
+- G_{jk} = ∫₁^∞ {u/j}{u/k}/u² du  (u=1/t substitution, exact cell summation)
+- b_k = (1 + log k - γ)/k  (exact analytic formula)
+- G_{jk}: closed-form. For each m, n-range is [n_lo, n_hi] = [(j·m)//k, (j·m+j-1)//k].
+  Cell integral = (b-a)/(jk) − (n/j + m/k)·log(b/a) + mn·(1/a − 1/b)
+  m=0 cell included (u ∈ [1,j) contributes with lower boundary clamped to 1)
+  Tail cutoff: M = max(k+1, 100000//j + 1), tail error < 1/(4·j·M) ~ 3e-6
+
+**Key results (v7, N=1..1000)**:
+- All 1000 G_N matrices: **full rank**, zero monotonicity violations
+- d_N: 0.56058 (N=1) → 0.10007 (N=100) → 0.09371 (N=200) → 0.08552 (N=500) → 0.08040 (N=1000)
+- Power law fit N=100..1000: d_N ~ 0.1540 × N^{-0.0951}
+- Power law fit N=500..1000: d_N ~ 0.1495 × N^{-0.0906}
+- Running α in windows: 0.021 (N=700..799) → 0.039 (N=800..899) → 0.069 (N=900..999)
+- Báez-Duarte c_max: 0.938 (N=100) → 1.119 (N=1000)  [well-behaved]
+- **Consistent with RH** (d_N → 0 as N → ∞)
+
+**v8 results (N=1..2000, 178s build + 400s solve)**:
+- d_1000=0.08040 → d_1500=0.07847 → d_2000=0.07765
+- Power law fit N=1000..2000: α = 0.0492; N=1500..2000: α = 0.0419
+- Local windows (50-pt): α ranges 0.014..0.161, median ~0.03-0.04, NOT stabilizing
+- Log law A/log(N)^β with β=0.359 fits slightly better than power law (RSS 9.8e-6 vs 1.1e-5)
+- Extrapolation: d_10000 ≈ 0.072 (power), 0.072 (log); d_100000 ≈ 0.064 (power), 0.067 (log)
+- **Interpretation**: logarithmic decay d_N ~ A/log(N)^β (β≈0.36) is the best fit; power law α is still decreasing
+- All 2000 matrices full rank, λ_min = 3.64e-7 at N=2000, cond ~ 1.4e7
+
+**CRITICAL FINDING — v5/v6 α≈0.308 was a numerical artifact**:
+- scipy.quad without enough breakpoints for large j,k underestimates G_{jk} (misses oscillatory mass)
+- Underestimated G → overestimated G^{-1} → underestimated d²_N → falsely fast apparent convergence
+- d_200 discrepancy: v5 gave 0.08016 vs v7's 0.09371 (17% error in v5 due to bad integration)
+- The question "is α = 1/3 exactly?" is now moot — the rate is much slower and likely logarithmic
+
+**Bug history**: v2 direct-solve failed N~40; v3 truncated SVD wrong (fake zero evals N~70); v4 negative evals N>110; v5 breakpoints helped but scipy still underestimates G_{jk} for large j,k; v6 extended to N=300 but collapsed at N~280; v7 fully analytic, no scipy, 10-50x faster; v8 extends to N=2000 (178s matrix + 400s solve).
+
+### Weil/Connes Operator ε_N Scaling
+Scripts: `operators/epsilon_n_scaling.py`, `operators/epsilon_n_scaling_v2.py`
+- 11 data points: N=20..1000, ε_N decreasing (0.351 → 0.145)
+- Power law: ε_N ~ 0.606 × N^{-0.226}
+- ε_N < 0.1 needs N ≈ 2848; slow but consistent with RH
+- "Frozen" eigenvalue at 1.82974 = bottom of archimedean mode cluster (n=±4)
 
 ---
 
@@ -145,7 +183,7 @@ riemann/
 └── exact_gue.py                   — Fredholm determinant computation
 ```
 
-## Completed Since Last Update (2026-04-02)
+## Completed Since Last Update (2026-04-02, session 3)
 - [x] Lean 4 + Mathlib building — Robin's + Lagarias inequalities compile
 - [x] 2024 Riemann Operator implemented — reduces to Dirichlet eta function
 - [x] Dirichlet eta zeros match zeta zeros to 0.01 precision (29/29 matched)
@@ -157,6 +195,17 @@ riemann/
 - [x] Alpha drift test: optimal α → 1 as N → ∞ (finite-range artifact, not intrinsic)
 - [x] BK coefficient problem: b=14321 is a pure IR regularization artifact (b ∝ 1/x_lo²)
 - [x] Connes v2 built: N=30→120, off-diagonal archimedean terms added (running)
+- [x] NB v7 built: fully analytic G_{jk} (u-domain cell summation, no scipy), N=1000 in 40s
+- [x] NB v5/v6 α≈0.308 identified as numerical artifact from scipy integration error
+- [x] NB v7 definitive result: d_1000=0.08040, α≈0.09 (still decreasing), c_max~1.1 (stable)
+- [x] NB v8 complete: N=2000 (178s+400s), d_2000=0.07765, log-law d~A/log(N)^0.36 fits best
+- [x] Paper NB section completely rewritten (was 10-line placeholder, now 4 subsections with full results)
+- [x] Paper Abstract updated with 5th contribution (NB result + scipy artifact disclosure)
+- [x] Paper Conclusion updated with NB discussion and Connes epsilon_N scaling
+- [x] Paper Intro updated: NB criterion introduced, "four directions" → "five directions"
+- [x] Connes epsilon_N power-law fit added to paper: ε_N ~ 0.606·N^{-0.226}, ε<0.1 at N≈2848
+- [x] Two new bibitems: Báez-Duarte 2003, Nyman 1950
+- [x] NB v9 running (PID 2458): sparse N up to 5000, ~40 min matrix build
 
 ## Key Analytical Results (2026-04-02)
 - WKB exponent formula: γ = 1 + 2*(1-α)/(α+β) — exact, derived analytically
@@ -165,10 +214,10 @@ riemann/
 - α drift: 0.918 (N=50) → 0.994 (N=1000) — converging to 1 asymptotically
 - BK b=14321 artifact: b = e²/(4·a·x_lo²), changes 100× when x_lo changes 10×
 - Conclusion: no simple WKB operator can locate individual zeros; need Connes approach
+- Connes epsilon_N ~ 0.606·N^{-0.226}: ε<0.1 needs N≈2848; frozen mode at 1.830 stable from N=120
 
 ## What's Next (Priority Order)
-1. Connes v2 results: did N=120 improve zero matching beyond 12/20?
-2. Try larger lambda (sqrt(30), sqrt(50)) in Connes to include more primes
-3. Create MathOverflow account and post heat kernel + alpha findings
-4. Submit Robin's inequality to Mathlib as PR
-5. Write up alpha drift + BK coefficient findings as a section in the arXiv paper
+1. **NB v9 results**: Process N=5000 sparse output — check if log-law β stabilizes, update paper
+2. **Commit paper**: git add + commit the updated main.tex and rebuilt PDF
+3. **Submit Robin's inequality to Mathlib as PR**
+4. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT

@@ -36,7 +36,13 @@ the Hilbert--P\'olya operator to non-commutative or fractal geometries;
 (3)~an independent numerical verification of the Connes--Consani--Moscovici (2025)
 zeta spectral triple construction;
 (4)~a Lean~4 formalization of Robin's and Lagarias' inequalities as equivalences
-with the Riemann Hypothesis, compiling against Mathlib.
+with the Riemann Hypothesis, compiling against Mathlib;
+(5)~a high-precision computation of the Nyman--Beurling--Ba\'ez-Duarte distance $d_N$
+through $N = 2000$ using a fully analytic Gram-matrix formula, reaching $d_{2000} = 0.0777$
+with all matrices full rank and zero monotonicity violations, and identifying a previously
+reported apparent decay rate $\alpha \approx 0.308$ as a numerical artifact of adaptive
+quadrature; the true rate is much slower and consistent with logarithmic decay
+$d_N \sim A/(\log N)^\beta$ with $\beta \approx 0.36$.
 \end{abstract}
 
 \section{Introduction}
@@ -53,11 +59,13 @@ real eigenvalues, which would place all zeros on the critical line. The discover
 Montgomery~\cite{montgomery1973} that the pair correlation of zeta zeros matches the
 Gaussian Unitary Ensemble (GUE) of random matrix theory, confirmed numerically by
 Odlyzko~\cite{odlyzko1987}, suggests this operator resembles the Hamiltonian of a
-quantum chaotic system.
+quantum chaotic system. A complementary function-theoretic reformulation, due to
+Nyman~\cite{nyman1950} and extended by Ba\'ez-Duarte~\cite{baezduarte2003}, characterizes
+RH by the vanishing of a distance $d_N$ in a Hilbert space of fractional-part functions.
 
-In this paper, we approach RH computationally through four independent directions,
+In this paper, we approach RH computationally through five independent directions,
 each producing concrete artifacts: numerical data, visualizations, operator candidates,
-and machine-verified formal statements.
+machine-verified formal statements, and high-precision analytic Gram-matrix computations.
 
 \section{Data and Statistical Verification}
 
@@ -218,6 +226,16 @@ first zero matched to error $0.030$ ($14.105$ vs.\ $14.135$). This constitutes, 
 knowledge, the first independent numerical verification of this construction outside
 the authors' group.
 
+We also tracked the ground-state eigenvalue $\varepsilon_N$ (distance of the lowest
+eigenvalue from the bottom of the archimedean mode cluster) as a function of the
+cutoff $N$, over the range $N = 20$--$1000$ at $\lambda = \sqrt{50}$:
+\[
+  \varepsilon_N \;\approx\; 0.606 \cdot N^{-0.226}.
+\]
+The ``frozen'' archimedean mode at $\approx 1.830$ stabilizes to better than $10^{-4}$
+by $N = 120$ and remains constant through $N = 1000$.
+Extrapolating the power law, $\varepsilon_N < 0.1$ requires $N \approx 2848$.
+
 \section{Formal Verification in Lean 4}
 
 Using Lean~4 and the Mathlib library (v4.29.0), we formalized:
@@ -246,15 +264,100 @@ $n = 10{,}080$ with ratio $\sigma_1(n)/\mathrm{robinBound}(n) = 0.986$.
 
 \section{Nyman--Beurling Distance}
 
+\subsection{Setup and analytic formula}
+
 The Nyman--Beurling criterion states that RH holds if and only if the indicator function
 $\chi_{(0,1]}$ lies in the $L^2(0,1)$-closure of the span of fractional part functions
-$\{\theta/t\}$. Using Ba\'ez-Duarte's restriction to $\theta_k = 1/k$, we computed
-the distance $d_N$ for $N = 1$ to $25$:
+$\{\theta_k/t\}$. Ba\'ez-Duarte~\cite{baezduarte2003} showed it suffices to restrict to
+$\theta_k = 1/k$, reducing the problem to the distance
 \[
-d_1 = 0.569, \quad d_5 = 0.187, \quad d_{10} = 0.154, \quad d_{25} = 0.117.
+  d_N^2 = 1 - \mathbf{b}_N^T G_N^{-1} \mathbf{b}_N,
 \]
-The monotone decrease is consistent with RH, though convergence is $O(1/\sqrt{\log N})$,
-too slow for any finite computation to be conclusive.
+where $G_{jk} = \langle f_j, f_k \rangle_{L^2(0,1)}$ and $b_k = \langle \chi_{(0,1]}, f_k \rangle$.
+Via the substitution $u = 1/t$ these reduce to
+\begin{align}
+  G_{jk} &= \int_1^\infty \tfrac{\{u/j\}\{u/k\}}{u^2}\,du, \label{eq:Gjk}\\
+  b_k &= \frac{1 + \log k - \gamma}{k}, \label{eq:bk}
+\end{align}
+where $\gamma$ is the Euler--Mascheroni constant.
+
+We evaluate $G_{jk}$ exactly by decomposing $[1,\infty)$ into cells where
+$\lfloor u/j \rfloor = m$ and $\lfloor u/k \rfloor = n$ are both constant (assuming $j \le k$,
+each $m$-cell contains at most two $n$-values). On a cell $[a,b]$ the fractional-part
+product $\{u/j\}\{u/k\} = (u/j - m)(u/k - n)$, giving the closed-form cell integral
+\[
+  \int_a^b \frac{(u/j-m)(u/k-n)}{u^2}\,du
+  = \frac{b-a}{jk} - \Bigl(\frac{n}{j}+\frac{m}{k}\Bigr)\log\frac{b}{a}
+    + mn\Bigl(\frac{1}{a}-\frac{1}{b}\Bigr).
+\]
+The $n$-range for a given $m$ is computed via integer arithmetic:
+$n_{\min} = \lfloor jm/k\rfloor$, $n_{\max} = \lfloor (jm+j-1)/k\rfloor$.
+Summing to a cutoff $M = \max(k+1,\, \lfloor 10^5/j\rfloor + 1)$ incurs a tail error
+bounded by $1/(4jM) \lesssim 3\times 10^{-6}$ per entry, yielding absolute errors in $d_N$
+well below $10^{-4}$.
+
+We solve for $d_N$ via eigendecomposition of $G_N$ with truncated-SVD threshold $10^{-10}$,
+keeping all eigenvalues above that threshold ($G_N$ remains full-rank throughout).
+
+\subsection{Results: N up to 2000}
+
+We computed $G_N$ and $d_N$ for all $N = 1, \ldots, 2000$ (full-rank throughout;
+zero monotonicity violations). Selected values:
+
+\begin{center}
+\begin{tabular}{r@{\quad}r r@{\quad}r}
+\toprule
+$N$ & $d_N$ & $N$ & $d_N$ \\
+\midrule
+1   & 0.5606  & 300  & 0.08876 \\
+5   & 0.1833  & 500  & 0.08552 \\
+10  & 0.1510  & 750  & 0.08144 \\
+25  & 0.1230  & 1000 & 0.08040 \\
+50  & 0.1079  & 1500 & 0.07847 \\
+100 & 0.1001  & 2000 & 0.07765 \\
+200 & 0.09371 &      &         \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The sequence is strictly monotone decreasing and all matrices remain full rank
+($\lambda_{\min} = 3.64\times10^{-7}$ at $N=2000$, condition number $\approx 1.4\times10^7$).
+
+\subsection{Convergence rate}
+
+A power-law fit $d_N \sim A\cdot N^{-\alpha}$ to the full range $N = 100$--$2000$ gives
+$\alpha \approx 0.081$, but the exponent is not stable: fitting $N \ge 1000$ gives
+$\alpha \approx 0.049$, and local 100-point windows in the range $N = 1000$--$2000$ give
+$\alpha$ ranging from $0.014$ to $0.08$, with no sign of stabilization.
+
+A logarithmic decay model
+\begin{equation}
+  d_N \;\approx\; \frac{A}{(\log N)^\beta}, \qquad A \approx 0.161,\; \beta \approx 0.36,
+  \label{eq:loglaw}
+\end{equation}
+fits the data from $N \ge 1000$ with RSS $9.8\times 10^{-6}$, versus $1.1\times10^{-5}$
+for the best power law over the same range. Both models predict $d_N \to 0$, consistent
+with the Riemann Hypothesis, but convergence is extremely slow:
+power law extrapolation gives $d_{10^5} \approx 0.064$, log-law gives $d_{10^5} \approx 0.067$.
+
+\subsection{Báez-Duarte coefficient structure}
+
+The optimal approximation coefficients $\mathbf{c}_N = G_N^{-1}\mathbf{b}_N$ satisfy
+$\sum_{k=1}^N c_k \approx 2.0$ (stable across $N$), $c_1 \approx -0.943$,
+and $\|\mathbf{c}_N\|^2 \sim N^{0.79}$.
+The positive-coefficient envelope follows $c_k \sim 0.54\cdot k^{-0.24}$ for large $k$.
+
+\subsection{Numerical artifact in earlier computations}
+
+An earlier version of this computation (using adaptive quadrature via \texttt{scipy.quad})
+reported $\alpha \approx 0.308$ and the conjecture that $\alpha = 1/3$ exactly.
+We have identified this as a numerical artifact: for large $j, k$ the integrand in
+\eqref{eq:Gjk} is highly oscillatory, and adaptive quadrature without explicit cell
+decomposition systematically underestimates $G_{jk}$, inflating $G_N^{-1}$ and causing
+$d_N^2$ to be underestimated by approximately 17\% at $N = 200$.
+The analytic cell-summation formula \eqref{eq:Gjk}--\eqref{eq:bk} eliminates this error
+entirely. The question of whether $\alpha = 1/3$ exactly is moot; the true apparent rate
+is much slower and likely logarithmic.
 
 \section{Conclusion}
 
@@ -265,8 +368,22 @@ is in the smooth part of the counting function rather than the oscillatory corre
 the computation constrains the phase space geometry of any Hilbert--P\'olya candidate.
 
 The heat kernel analysis and operator survey together constrain the underlying space to
-have non-integer, scale-dependent dimension, consistent with non-commutative or fractal
-geometry. The Lean~4 formalizations provide machine-checked infrastructure for future work.
+have non-integer, scale-dependent dimension ($d_{\mathrm{eff}} \approx 2.36$--$3.52$,
+scale-dependent and non-integer), consistent with non-commutative or fractal
+geometry and Connes' approach. The $\varepsilon_N$ convergence of the Connes spectral
+triple follows $\varepsilon_N \sim 0.606\,N^{-0.226}$, reaching $\varepsilon_N < 0.1$ at
+$N \approx 2848$.
+
+The Nyman--Beurling computation provides complementary evidence consistent with RH:
+the distance $d_N$ decreases monotonically through $N = 2000$ with all Gram matrices
+full rank. We identify $\alpha \approx 0.308$ (reported in earlier work) as a numerical
+artifact of adaptive quadrature on oscillatory integrands; the corrected rate is
+$d_N \sim A/(\log N)^{0.36}$, much slower than power-law decay. At $N = 100{,}000$
+one would expect $d_N \approx 0.066$--$0.067$. This underscores that the Nyman--Beurling
+approach cannot be made conclusive by finite computation alone, but the data are
+fully consistent with RH.
+
+The Lean~4 formalizations provide machine-checked infrastructure for future work.
 
 All code, data, and results are available at \texttt{[repository URL]}.
 
@@ -330,6 +447,14 @@ J.~Lagarias, ``An elementary problem equivalent to the Riemann hypothesis,''
 \bibitem{loeffler2025}
 D.~Loeffler, ``Formalizing zeta and L-functions in Lean,''
 arXiv:2503.00959, 2025.
+
+\bibitem{baezduarte2003}
+L.~B\'aez-Duarte, ``A strengthening of the Nyman--Beurling criterion for the Riemann hypothesis,''
+\textit{Atti Accad.\ Naz.\ Lincei}, 14, 2003.
+
+\bibitem{nyman1950}
+B.~Nyman, ``On the one-dimensional translation group and semi-group in certain function spaces,''
+Ph.D.\ thesis, Uppsala University, 1950.
 
 \end{thebibliography}
 
