@@ -216,8 +216,12 @@ is maximized at $\gamma = \gamma_1$. Computation at $(n=85,\gamma_1)$ with 50-di
 
 \textbf{Extension to all $\sigma\in(0,1)$}: A dense numerical scan over
 $200$ values of $\sigma$, $700$ values of $\gamma\in[\gamma_1,1000]$, and all $n=1,\ldots,85$
-confirms $F_n(\sigma,\gamma)>0$ everywhere. For $\gamma > 1000$ the analytic bound
-$F_n > 2n^2/\gamma^2 > 0$ applies. A Lipschitz argument certifies the gaps between grid points.
+confirms $F_n(\sigma,\gamma)>0$ everywhere. For $\gamma > 1000$ and $n \le 85$, the
+boundary condition $n\arctan(1/\gamma) + \arctan(\sinh(n\log r)) \le 85/1000 + O(1/\gamma^2)
+\ll 2\pi$ holds trivially, so $F_n(0,\gamma) > 0$; the monotonicity argument then gives
+$F_n(\sigma,\gamma) > 0$.
+(Equivalently, for large $\gamma$: $F_n(0,\gamma) \approx 2n^2/\gamma^2 \cdot (1 - 1/(4\gamma^2)) > n^2/\gamma^2 > 0$.)
+A Lipschitz argument certifies the gaps between grid points.
 \end{proof}
 
 \begin{remark}
@@ -291,7 +295,8 @@ For $n > 85$ in the safe zones, the same methodology applies: since $F_n(0,\gamm
 and both $\arctan(1/\gamma)$ and $\log\sqrt{1+\gamma^{-2}}$ are strictly decreasing in $\gamma$,
 we have $F_n(0,\gamma) > 0$ for all $\gamma \ge \gamma_1$. A dense scan over $200$ values
 of $\sigma\in[0,1]$ at each such $n$ then confirms $F_n(\sigma,\gamma) > 0$ uniformly
-(Lipschitz argument certifies gaps; for $\gamma > 1000$ the analytic bound $F_n > 2n^2/\gamma^2>0$ applies).
+(Lipschitz argument certifies gaps; for $\gamma > 1000$ the boundary condition holds trivially
+giving $F_n(0,\gamma) > n^2/\gamma^2 > 0$).
 Hence $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$ and $\gamma \geq \gamma_1$.
 
 \textbf{Type II (window endpoints):}
@@ -682,11 +687,14 @@ The barriers are a limitation of the $\gamma_1$-only analysis, not a signal of n
 An off-critical-line zero $\varrho_0 = \sigma_0 + i\gamma_0$ with $\sigma_0 < \tfrac{1}{2}$
 has a functional equation partner at $1 - \bar\varrho_0 = (1-\sigma_0) + i\gamma_0$.
 Setting $\Delta\sigma = \tfrac{1}{2} - \sigma_0 > 0$, the two Li parameters satisfy
-$|\alpha_0| = e^{+\Delta\sigma/\gamma_0^2 + O(\Delta\sigma^2)}$ and $|\beta_0| = |\alpha_0|^{-1}$.
+$|\alpha_0| = e^{+\Delta\sigma/\gamma_0^2 + O(\Delta\sigma^3/\gamma_0^6)}$ and $|\beta_0| = |\alpha_0|^{-1}$.
+(More precisely, $\log|\alpha_0| = \Delta\sigma/(\gamma_0^2 + \tfrac{1}{4}) + O(\Delta\sigma^3/\gamma_0^6)$;
+the $\tfrac{1}{4}$ correction is $\le 0.13\%$ for $\gamma_0 \ge \gamma_1$.)
 Their combined oscillating amplitude at the shared angular frequency $\theta_0$ is
 \begin{equation}
-  |\alpha_0|^n + |\beta_0|^n \;=\; 2\cosh\!\Bigl(\tfrac{n\,\Delta\sigma}{\gamma_0^2}\Bigr).
+  |\alpha_0|^n + |\beta_0|^n \;\approx\; 2\cosh\!\Bigl(\tfrac{n\,\Delta\sigma}{\gamma_0^2}\Bigr),
 \end{equation}
+with relative error $O(\gamma_0^{-2})$ from the $\tfrac{1}{4}$ correction.
 On-critical-line zeros have $|\alpha_j| = 1$ exactly
 (at $\sigma=\tfrac{1}{2}$: $|\rho-1| = \sqrt{\tfrac{1}{4}+\gamma^2} = |\rho|$, so $|(\rho-1)/\rho|=1$), contributing
 constant amplitude~2. A rogue pair contributes $2\cosh(n\Delta\sigma/\gamma_0^2) > 2$.
