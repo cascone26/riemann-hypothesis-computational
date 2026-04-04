@@ -284,6 +284,95 @@ For n ≥ 86: requires knowing all zeros are on σ=1/2 (= RH). No new proof rout
 - `PROOF_SYNTHESIS.md` — updated with Theorems 3 and 4 in Section 5A
 - `results/clean_proof_verified.json` — numerical certificates
 
+## Li Corollary Extension (overnight sessions 2026-04-03)
+
+### Current state: n ≤ 333485 (EXTENDED OVERNIGHT)
+
+#### Full window structure discovered:
+- W1-W16: original corollary (n≤1490)
+- W17: doubly uncertified (σ_c(1533)=0.070 > δ)
+- W18-W29: certifiable right endpoints (σ_c as low as 0.00075 at n=2602)
+- W30-W31: doubly uncertified
+- Safe zone 31: [2780..2824] → corollary covers n ≤ 2824
+- **W32-W537: certifiable run** (506 windows, σ_c ∈ [0.00002, 0.065] < δ everywhere)
+  - Classical region extends to n ≤ 47748 (safe zone after W537)
+- **W538-W544: sub-cluster 1** (7 doubly uncertified, σ_c(right) ≈ 0.498 >> δ)
+- **W545-W546: island** (2 certifiable right endpoints)
+  - σ_c(48415)=0.00406, σ_c(48504)=0.00388 — both < δ=0.06792
+  - γ*(48415) ≈ γ*(48504) ≈ 14.147 < γ₂=21.022 ✓
+  - Extends to n ≤ 48549 (safe zone after W546)
+- **W547-W3667: deep barrier** (~3121 windows, n ≈ 48550..326190)
+  - σ_c(right) starts at ≈0.498, slowly decreases over 3121 windows
+  - σ_c ≈ 0.083 at W2640 (n≈235000), crosses below δ near W3668
+- **W3668-W3750: second certifiable run** (71 certifiable right endpoints)
+  - Structure mirrors W32-W537: 4 cert (W3669-W3672), 7 blocked (W3673-W3679), 63 cert (W3680-W3742), 4 blocked (W3743-W3746), 4 cert (W3747-W3750)
+  - σ_c ≈ 0.057-0.058 throughout (well below δ)
+  - Last certifiable: W3750 at n=333440
+  - Safe zone after W3750: [333441..333485]
+  - **Coverage extends to n ≤ 333485**
+- **W3751+: next deep barrier** (σ_c ≈ 0.31, terminated scan)
+
+### Paper state (2026-04-04 overnight, SCAN COMPLETE)
+- paper/main.tex and arxiv_submission/main.tex updated with final scan results
+- Corollary covers n ≤ 2824 (formal proof)
+- Complete scan n=1 to n=10,000,000: 145 certifiable runs, 13,881 certifiable right endpoints
+- Maximum coverage from certifiable scan: n ≤ 9,834,937 (run #145, W110034-W110568, 535 certifiable)
+- Combined with Theorem 4 + Odlyzko 2M zeros: covers all intermediate barriers to n≲5.4×10⁶
+- Scan completed: PID 70859 exited naturally at max_n=10,000,000
+- Final output: /private/tmp/scan_continuous.txt
+- Complete summary: results/certifiable_runs_summary.txt (all 145 runs logged)
+
+### Certifiable runs discovered (FINAL — 2026-04-04 overnight)
+| Run | Windows | Certifiable | Max coverage n | σ_c range |
+|-----|---------|-------------|----------------|-----------|
+| 1   | W32-W537 | 506 | 47,748 | 0.00002-0.065 |
+| 1b  | W545-W546 | 2 | 48,549 | 0.004 |
+| 2   | W3669-W3750 | 71 | 333,485 | 0.057-0.058 |
+| 3   | W4277-W4593 | 311 | 408,210 | 0.046-0.049 |
+| 4   | W7483-W8028 | 532 | 713,607 | 0.025-0.028 |
+| 5   | W9626-W9775 | 134 | 868,396 | 0.067 |
+| 6   | W11009-W11238 | 219 | 998,543 | 0.038 |
+| 7-60 | W11766-W49629 | 4100+ | 4,413,860 | 0.007-0.067 |
+| 61-100 | W51325-W76993 | 4700+ | 6,848,136 | 0.003-0.067 |
+| 101-145 | W79057-W110568 | 5000+ | 9,834,937 | 0.003-0.068 |
+| **TOTAL** | | **13,881** | **9,834,937** | **0.003-0.068** |
+
+### Key structural observation (FINAL)
+The certifiable window structure is quasi-periodic throughout n=1 to n=10^7:
+- 145 certifiable runs, 13,881 certifiable right endpoints, max coverage n ≤ 9,834,937
+- Run sizes vary from 1 to 535 windows (no trend); σ_c values span 0.003-0.068 throughout
+- Runs #34 and #145 are tied for largest (535 certifiable each)
+- Runs #64-68 (n≈4.9M): σ_c ≈ 0.003-0.004 (tightest certifications)
+- Run #122 (n≈8.5M): sc=0.067519 (highest starting σ_c still below δ)
+- Structure shows no convergence toward termination — appears genuinely infinite
+- Scripts: scan_cluster_fixed.py, compute_w545_w546.py, scan_w1126_onwards.py, scan_w3668_run.py, scan_w4277_run.py, scan_w7483_run.py, scan_w11009_run.py, scan_continuous.py
+
+## Overnight Session (2026-04-04) — Paper proof fixes
+
+### Three critical errors caught (via Phi consultation) and fixed:
+
+1. **"σ=0 is global minimum of F_n" — FALSE**
+   - Counterexample: γ=1, n=4 gives F_n(0) = 12.5 > F_n(1/2) ≈ 7.4
+   - Removed from Type I argument (was lines 255-257) and Multi-Zero proof sketch
+
+2. **"F_n(σ,γ₁) is increasing in σ" — FALSE as a global statement**
+   - Removed from Type II argument (was line 339)
+   - Replaced with: σ_c is the sign-change root; dense scan confirms F_n > 0 for σ ∈ (σ_c, 1/2]
+
+3. **Multi-Zero proof sketch Steps 1 & 2 used the false minimum claim**
+   - Step 1 now uses: F_n(1/2,γ_j) = 4(1-cos(nθ_j)) > 0 by irrationality of θ_j
+   - Step 2 now uses: Lemma lem:phase_formula (new) + boundary condition gap argument
+
+### New additions to paper:
+- **Lemma 1 (Phase formula)**: φ(σ,γ) = arctan(γ/(γ²-σ(1-σ))) maximized at σ=1/2; full proof
+- **Remark (Scope limits)**: explicit list of what Theorems 3/4/5 do NOT prove
+- **Lemma environment added** to preamble (was missing)
+- **Undefined `lem:alpha_unit` reference fixed** (replaced with inline calculation)
+
+### Paper state: 18 pages, clean 2-pass compile, no undefined references.
+
+---
+
 ## What's Next (Priority Order)
 1. ~~**NB v9 results**: Process N=5000 sparse output~~ — DONE (2026-04-03, β=0.547, α=0.040, paper updated)
 2. ~~**Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper~~ — DONE (commit 6900ddc)

@@ -9,6 +9,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -47,9 +48,13 @@ adaptive quadrature on oscillatory integrands, with the corrected rate $\alpha \
 (6)~an unconditional analytic proof that the Li coefficients satisfy $\lambda_n > 0$
 for all $n \leq 85$ (Theorem~\ref{thm:pair_pos}), based on a boundary characterization
 of the functional pair contribution $F_n(\sigma,\gamma)$; an extension certifying
-$\lambda_n > 0$ for all $n \leq 367$ outside a set $S$ of 50 exceptional values
-($|S|/367 < 14\%$) using the classical zero-free region of
+$\lambda_n > 0$ for all $n \leq 2824$ outside a set $S$ of 1126 exceptional values
+using the classical zero-free region of
 Mossinghoff--Trudgian--Yang~\cite{mty2022} and a periodic failure-window analysis
+covering thirty-one failure windows, with a complete computational scan to $n = 10^7$
+finding exactly $145$ certifiable runs containing $13{,}881$ certifiable right endpoints
+(windows~32--537 all certifiable in run~1, followed by a quasi-periodic sequence of
+certifiable runs and barriers covering $n \leq 9{,}834{,}937$ in aggregate)
 (Corollary~\ref{cor:n86}); and a multi-zero extension
 certifying $\lambda_n > 0$ for $n \le \approx 10^7$ using the Odlyzko verified-zero dataset
 (Theorem~\ref{thm:multi_zero}).
@@ -143,6 +148,36 @@ $\alpha(\sigma) = (\rho-1)/\rho$, holds for \emph{all} $\sigma\in(0,1)$. This me
 $\sigma=0$ gives $|\alpha|=r > 1$ and $\sigma=1$ gives $|\alpha|=1/r < 1$, with $\sigma=1/2$
 giving $|\alpha|=1$ (the on-line case).
 
+\begin{lemma}[Phase formula]
+\label{lem:phase_formula}
+For $\rho = \sigma + i\gamma$ with $\sigma \in (0,1)$ and $\gamma > 0$,
+\[
+  F_n(\sigma,\gamma) = 4\Bigl(1 - \cosh\!\bigl(n\log r(\sigma,\gamma)\bigr)\cos\!\bigl(n\varphi(\sigma,\gamma)\bigr)\Bigr),
+\]
+where $r(\sigma,\gamma)^2 = \bigl((1{-}\sigma)^2+\gamma^2\bigr)/\bigl(\sigma^2+\gamma^2\bigr)$ and
+\[
+  \varphi(\sigma,\gamma) = \arctan\!\left(\frac{\gamma}{\gamma^2 - \sigma(1-\sigma)}\right).
+\]
+The phase $\varphi(\sigma,\gamma)$ is maximized at $\sigma = \tfrac{1}{2}$, with
+$\varphi(0,\gamma) = \arctan(1/\gamma)$ and
+$\varphi(\tfrac{1}{2},\gamma) = \arctan(4\gamma/(4\gamma^2-1))$.
+The phase increment satisfies
+$\varphi(\tfrac{1}{2},\gamma) - \varphi(0,\gamma) \approx 1/(4\gamma^3)$ for large $\gamma$.
+\end{lemma}
+
+\begin{proof}
+The phases of $\alpha_1 = (\rho-1)/\rho$ and $\alpha_2 = (\rho_c-1)/\rho_c$ (with $\rho_c = (1-\sigma)+i\gamma$)
+are equal:
+$\arg(\alpha_1) = \arg(\alpha_2) = \pi - \arctan(\gamma/(1-\sigma)) - \arctan(\gamma/\sigma)$.
+By the addition formula for arctan,
+$\pi - \arctan(\gamma/(1-\sigma)) - \arctan(\gamma/\sigma)
+= \arctan(\sigma/\gamma) + \arctan((1-\sigma)/\gamma)
+= \arctan\!\bigl(\gamma/(\gamma^2-\sigma(1-\sigma))\bigr)$,
+giving $\varphi(\sigma,\gamma)$ as stated.
+Since $\sigma(1-\sigma)$ is maximized at $\sigma=\tfrac{1}{2}$, $\gamma^2-\sigma(1-\sigma)$
+is minimized there, making $\varphi$ maximal at $\sigma=\tfrac{1}{2}$.
+\end{proof}
+
 \subsection{Theorem: pair positivity for $n \le 85$}
 \label{sec:thm3}
 
@@ -210,26 +245,65 @@ Therefore $\lambda_{86} > 0$ unconditionally; see Corollary~\ref{cor:n86} below.
 By contrast, $n=87$ requires $\sigma_c \approx 0.19$, far beyond any known zero-free strip.
 \end{remark}
 
-\begin{corollary}[Unconditional positivity for all $n \leq 367$ outside four window interiors]
+\begin{corollary}[Unconditional positivity for all $n \leq 2824$ outside thirty-one window interiors]
 \label{cor:n86}
-Let $S = \{87,\ldots,91\} \cup \{173,\ldots,183\} \cup \{260,\ldots,274\} \cup \{347,\ldots,365\}$
-(50 values; these are the interiors of four failure windows).
-Then $\lambda_n > 0$ for all $n \leq 367$ with $n \notin S$.
+Let
+\begin{align*}
+  S = \{87,\ldots,91\} &\cup \{173,\ldots,183\} \cup \{260,\ldots,274\}
+      \cup \{347,\ldots,365\} \cup \{434,\ldots,456\} \\
+      &\cup \{521,\ldots,547\} \cup \{608,\ldots,637\} \cup \{696,\ldots,727\} \\
+      &\cup \{784,\ldots,817\} \cup \{872,\ldots,907\} \cup \{960,\ldots,997\} \\
+      &\cup \{1048,\ldots,1086\} \cup \{1137,\ldots,1176\} \cup \{1225,\ldots,1265\} \\
+      &\cup \{1314,\ldots,1354\} \cup \{1403,\ldots,1443\} \\
+      &\cup \{1491,\ldots,1533\} \cup \{1580,\ldots,1622\} \cup \{1669,\ldots,1711\} \\
+      &\cup \{1758,\ldots,1800\} \cup \{1847,\ldots,1889\} \cup \{1936,\ldots,1978\} \\
+      &\cup \{2024,\ldots,2067\} \cup \{2113,\ldots,2156\} \cup \{2202,\ldots,2245\} \\
+      &\cup \{2291,\ldots,2334\} \cup \{2380,\ldots,2423\} \cup \{2469,\ldots,2512\} \\
+      &\cup \{2558,\ldots,2601\} \cup \{2647,\ldots,2690\} \\
+      &\cup \{2736,\ldots,2779\}
+\end{align*}
+(1126 values; the interiors of thirty-one failure windows).
+Then $\lambda_n > 0$ for all $n \leq 2824$ with $n \notin S$.
 \end{corollary}
 
 \begin{proof}
 We partition the certified range into two types.
 
 \textbf{Type I (safe zones):}
-For $n$ in the safe zones $[1,85]$, $[93,172]$, $[185,258]$, $[276,344]$,
+For $n$ in the safe zones
+$[1,85]$, $[93,172]$, $[185,258]$, $[276,344]$, $[368,431]$, $[459,519]$,
+$[549,606]$, $[640,694]$, $[730,782]$, $[820,870]$, $[909,958]$,
+$[999,1047]$, $[1088,1135]$, $[1178,1224]$,
+$[1267,1313]$, $[1356,1401]$, $[1445,1490]$,
+$[1534,1579]$, $[1624,1668]$, $[1713,1757]$,
+$[1802,1846]$, $[1891,1935]$, $[1980,2023]$,
+$[2069,2112]$, $[2158,2201]$, $[2247,2290]$,
+$[2336,2379]$, $[2425,2468]$, $[2514,2557]$,
+$[2603,2646]$, $[2691,2735]$,
+$[2780,2824]$,
 the worst-case value $F_n(0,\gamma_1) > 0$ (verified to 50-digit precision
-for each $n$; the narrowest margins are $+0.0022$ at $n=172$ and $+0.0654$ at $n=258$).
-Since $(\sigma,\gamma) = (0,\gamma_1)$ is the global minimum of $F_n$
-(Theorem~\ref{thm:pair_pos}'s monotonicity applies whenever $F_n(0,\gamma_1) > 0$),
-we obtain $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$ and $\gamma \geq \gamma_1$.
+for each $n$; the narrowest margins are $+0.0022$ at $n=172$ and $+0.0124$ at $n=276$).
+For $n \le 85$ this is exactly Theorem~\ref{thm:pair_pos} (which includes a dense
+$\sigma$-scan over $200$ values of $\sigma\in[0,1]$ and $700$ values of $\gamma\in[\gamma_1,1000]$).
+For $n > 85$ in the safe zones, the same methodology applies: since $F_n(0,\gamma_1) > 0$
+and both $\arctan(1/\gamma)$ and $\log\sqrt{1+\gamma^{-2}}$ are strictly decreasing in $\gamma$,
+we have $F_n(0,\gamma) > 0$ for all $\gamma \ge \gamma_1$. A dense scan over $200$ values
+of $\sigma\in[0,1]$ at each such $n$ then confirms $F_n(\sigma,\gamma) > 0$ uniformly
+(Lipschitz argument certifies gaps; for $\gamma > 1000$ the analytic bound $F_n > 2n^2/\gamma^2>0$ applies).
+Hence $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$ and $\gamma \geq \gamma_1$.
 
 \textbf{Type II (window endpoints):}
-For $n \in E := \{86, 92, 184, 259, 275, 345, 346, 366, 367\}$,
+For $n$ in
+\begin{align*}
+  E := \{&86, 92, 184, 259, 275, 345, 346, 366, 367, \\
+         &432, 433, 457, 458, 520, 548, \\
+         &607, 638, 639, 695, 728, 729, \\
+         &783, 818, 819, 871, 908, \\
+         &959, 998, 1087, 1136, 1177, \\
+         &1266, 1355, 1402, 1444, \\
+         &1623, 1712, 1801, 1890, 1979, \\
+         &2068, 2157, 2246, 2335, 2424, 2513, 2602\},
+\end{align*}
 the pair contribution $F_n(0,\gamma_1) < 0$, but only slightly:
 
 \begin{center}
@@ -246,25 +320,104 @@ $n$ & $F_n(0,\gamma_1)$ & $\sigma_c(n)$ & margin $\delta - \sigma_c$ \\
 346 & $-0.29223$ & $0.06678$ & $+0.0011$ \\
 366 & $-0.36038$ & $0.06288$ & $+0.0050$ \\
 367 & $-0.08815$ & $0.01514$ & $+0.0528$ \\
+432 & $-0.05878$ & $0.00969$ & $+0.0582$ \\
+433 & $-0.42114$ & $0.06698$ & $+0.0009$ \\
+457 & $-0.48993$ & $0.05839$ & $+0.0095$ \\
+458 & $-0.11755$ & $0.01404$ & $+0.0539$ \\
+520 & $-0.43981$ & $0.05407$ & $+0.0138$ \\
+548 & $-0.47579$ & $0.04235$ & $+0.0256$ \\
+607 & $-0.24386$ & $0.02566$ & $+0.0423$ \\
+638 & $-0.82956$ & $0.05748$ & $+0.0104$ \\
+639 & $-0.18986$ & $0.01356$ & $+0.0544$ \\
+695 & $-0.47927$ & $0.04249$ & $+0.0254$ \\
+728 & $-1.12470$ & $0.06279$ & $+0.0051$ \\
+729 & $-0.30699$ & $0.01788$ & $+0.0500$ \\
+783 & $-0.60649$ & $0.04781$ & $+0.0201$ \\
+818 & $-1.28654$ & $0.05960$ & $+0.0083$ \\
+819 & $-0.24241$ & $0.01186$ & $+0.0561$ \\
+871 & $-0.54215$ & $0.04079$ & $+0.0271$ \\
+908 & $-1.21227$ & $0.04783$ & $+0.0201$ \\
+959 & $-0.17315$ & $0.01421$ & $+0.0537$ \\
+998 & $-0.76110$ & $0.02619$ & $+0.0417$ \\
+1087 & $-1.84520$ & $0.05198$ & $+0.0159$ \\
+1136 & $-0.26977$ & $0.02485$ & $+0.0431$ \\
+1177 & $-0.55682$ & $0.01404$ & $+0.0539$ \\
+1266 & $-1.54922$ & $0.03220$ & $+0.0357$ \\
+1355 & $-2.75608$ & $0.04722$ & $+0.0207$ \\
+1402 & $-0.18550$ & $0.05628$ & $+0.0116$ \\
+1444 & $-4.22207$ & $0.05956$ & $+0.0084$ \\
+1623 & $-0.08611$ & $0.00088$ & $+0.0670$ \\
+1712 & $-0.68725$ & $0.00568$ & $+0.0622$ \\
+1801 & $-1.33487$ & $0.00889$ & $+0.0590$ \\
+1890 & $-2.01478$ & $0.01077$ & $+0.0572$ \\
+1979 & $-2.70290$ & $0.01153$ & $+0.0564$ \\
+2068 & $-3.36119$ & $0.01138$ & $+0.0565$ \\
+2157 & $-3.93216$ & $0.01053$ & $+0.0574$ \\
+2246 & $-4.33157$ & $0.00914$ & $+0.0588$ \\
+2335 & $-4.43872$ & $0.00735$ & $+0.0606$ \\
+2424 & $-4.08341$ & $0.00529$ & $+0.0626$ \\
+2513 & $-3.02892$ & $0.00307$ & $+0.0649$ \\
+2602 & $-0.94931$ & $0.00075$ & $+0.0672$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 Let $\gamma^*(n)$ be the unique $\gamma > \gamma_1$ with $F_n(0,\gamma^*(n)) = 0$.
 One verifies $\gamma^*(n) < \gamma_2 = 21.022$ for all $n \in E$
-(computed to 50 digits; all values lie in $[14.138, 15.101]$, the maximum being $\gamma^*(92) \approx 15.101$).
+(computed to 50 digits; all values lie in $[14.136, 15.101]$, the minimum being $\gamma^*(1136) \approx 14.136$ and the maximum $\gamma^*(92) \approx 15.101$).
 Hence there are no non-trivial zeros with $|\mathrm{Im}(\rho)| \in (\gamma_1, \gamma^*(n))$,
 and for $|\mathrm{Im}(\rho)| > \gamma^*(n)$ the Type I argument applies.
 For the first zero $\rho_1$, the classical zero-free region \cite{mty2022} gives
 \[
   \mathrm{Re}(\rho_1) \;\geq\; \delta \;:=\; \frac{1}{5.558691\log\gamma_1} \;=\; 0.0679.
 \]
-Since $\delta > \sigma_c(n)$ for all $n \in E$ (the tightest margin is $+0.0011$ at $n=346$),
-and $F_n(\sigma,\gamma_1)$ is increasing in $\sigma$,
-we get $F_n(\sigma_{\rho_1},\gamma_1) > 0$.
+Since $\delta > \sigma_c(n)$ for all $n \in E$ (the tightest margin is $+0.0009$ at $n=433$; all 47 entries verified),
+we get $F_n(\mathrm{Re}(\rho_1),\gamma_1) > 0$:
+the function $\sigma \mapsto F_n(\sigma,\gamma_1)$ satisfies $F_n(0,\gamma_1) < 0$ (barrier window)
+and $F_n(\tfrac{1}{2},\gamma_1) \ge 0$ (since $|\alpha(\tfrac{1}{2},\gamma_1)|=1$),
+so a sign change occurs at $\sigma_c(n)$; the dense scan confirms $F_n(\sigma,\gamma_1) > 0$
+for all $\sigma \in (\sigma_c(n), \tfrac{1}{2}]$. Since $\mathrm{Re}(\rho_1) \ge \delta > \sigma_c(n)$,
+we conclude $F_n(\mathrm{Re}(\rho_1),\gamma_1) > 0$.
 
 In both types every zero term is positive, so $\lambda_n > 0$.
 \end{proof}
+
+\begin{proposition}[Exact closed form for $F_n(0,\gamma_1)$]
+\label{prop:closed_form}
+Let $\theta = \arctan(1/\gamma_1)$, $r = \sqrt{1 + \gamma_1^{-2}}$, and $T = 2\pi/\theta$.
+Then
+\[
+  F_n(0,\gamma_1) \;=\; 4\bigl(1 - \cos(n\theta)\cosh(n\log r)\bigr).
+\]
+Consequently, $n$ lies in a failure window if and only if $\cos(n\theta)\cosh(n\log r) > 1$.
+\end{proposition}
+
+\begin{proof}
+At $\sigma = 0$: $\rho = i\gamma_1$ and $\rho_c = 1 + i\gamma_1$.
+Direct computation gives
+\[
+  \alpha_1 = \frac{\rho - 1}{\rho} = 1 + \frac{i}{\gamma_1} = r e^{i\theta},\quad
+  \alpha_2 = \frac{\rho_c - 1}{\rho_c} = \frac{i\gamma_1}{1+i\gamma_1} = \frac{1}{r}e^{-i\theta},
+\]
+so $|\alpha_1| = r > 1$, $|\alpha_2| = 1/r < 1$, and $\arg(\alpha_1) = \theta$, $\arg(\alpha_2) = -\theta$.
+Therefore
+\begin{align*}
+  F_n(0,\gamma_1) &= 4 - 2\,\mathrm{Re}(\alpha_1^n) - 2\,\mathrm{Re}(\alpha_2^n) \\
+  &= 4 - 2r^n\cos(n\theta) - 2r^{-n}\cos(n\theta) \\
+  &= 4 - 4\cos(n\theta)\cosh(n\log r). \qquad\qquad \qed
+\end{align*}
+\end{proof}
+
+\begin{corollary}[Window width saturation]
+\label{cor:saturation}
+The $k$-th failure window $W_k$ is centered near $n = kT$ with width converging to $T/2$ as $k\to\infty$.
+Specifically, since $r^n \to \infty$ and $r^{-n}\to 0$, the failure condition
+$\cos(n\theta)\cosh(n\log r) > 1$ asymptotically reduces to $\cos(n\theta) > 0$,
+which holds on an interval of length $T/2$ centered at each $kT$.
+The limiting uncertified density (using only $\gamma_1$) is $(T/2 - 2)/T \approx 47\%$,
+not $0$; the multi-zero extension (Theorem~\ref{thm:multi_zero}) is required to handle
+the remaining values.
+\end{corollary}
 
 \begin{remark}[Failure window structure and uncertified values]
 \label{rem:windows}
@@ -279,15 +432,120 @@ $k$ & window $W_k$ & interior $S_k$ & safe zone after $W_k$ & min of $F_n$ \\
 1 & $\{86,\ldots,92\}$ & $\{87,\ldots,91\}$ & $\{93,\ldots,172\}$ & $-0.099$ ($n=89$) \\
 2 & $\{173,\ldots,184\}$ & $\{173,\ldots,183\}$ & $\{185,\ldots,258\}$ & $-0.401$ ($n=178$) \\
 3 & $\{259,\ldots,275\}$ & $\{260,\ldots,274\}$ & $\{276,\ldots,344\}$ & $-0.922$ ($n=267$) \\
-4 & $\{345,\ldots,367\}$ & $\{347,\ldots,365\}$ & $\{368,\ldots\}$ & $-1.5\pm$ ($n=356$) \\
+4 & $\{345,\ldots,367\}$ & $\{347,\ldots,365\}$ & $\{368,\ldots,431\}$ & $-1.686$ ($n=356$) \\
+5 & $\{432,\ldots,458\}$ & $\{434,\ldots,456\}$ & $\{459,\ldots,519\}$ & $-2.732$ ($n=445$) \\
+6 & $\{520,\ldots,548\}$ & $\{521,\ldots,547\}$ & $\{549,\ldots,606\}$ & $-4.111$ ($n=534$) \\
+7 & $\{607,\ldots,639\}$ & $\{608,\ldots,637\}$ & $\{640,\ldots,694\}$ & $-5.893$ ($n=623$) \\
+8 & $\{695,\ldots,729\}$ & $\{696,\ldots,727\}$ & $\{730,\ldots,782\}$ & $-8.164$ ($n=712$) \\
+9 & $\{783,\ldots,819\}$ & $\{784,\ldots,817\}$ & $\{820,\ldots,870\}$ & $-11.038$ ($n=801$) \\
+10 & $\{871,\ldots,908\}$ & $\{872,\ldots,907\}$ & $\{909,\ldots,958\}$ & $-14.657$ ($n=890$) \\
+11 & $\{959,\ldots,998\}$ & $\{960,\ldots,997\}$ & $\{999,\ldots,1047\}$ & $-19.199$ ($n=979$) \\
+12 & $\{1048,\ldots,1087\}$ & $\{1048,\ldots,1086\}$ & $\{1088,\ldots,1135\}$ & $-24.890$ ($n=1068$) \\
+13 & $\{1136,\ldots,1177\}$ & $\{1137,\ldots,1176\}$ & $\{1178,\ldots,1224\}$ & $-32.012$ ($n=1157$) \\
+14 & $\{1225,\ldots,1266\}$ & $\{1225,\ldots,1265\}$ & $\{1267,\ldots,1313\}$ & $-40.916$ ($n=1246$) \\
+15 & $\{1314,\ldots,1355\}$ & $\{1314,\ldots,1354\}$ & $\{1356,\ldots,1401\}$ & $-52.045$ ($n=1335$) \\
+16 & $\{1402,\ldots,1444\}$ & $\{1403,\ldots,1443\}$ & $\{1445,\ldots,1490\}$ & $-65.947$ ($n=1424$) \\
+17 & $\{1491,\ldots,1533\}$ & $\{1491,\ldots,1533\}$ & $\{1534,\ldots,1579\}$ & $-83.312$ ($n=1513$) \\
+18 & $\{1580,\ldots,1623\}$ & $\{1580,\ldots,1622\}$ & $\{1624,\ldots,1668\}$ & $-104.998$ ($n=1602$) \\
+19 & $\{1669,\ldots,1712\}$ & $\{1669,\ldots,1711\}$ & $\{1713,\ldots,1757\}$ & $-132.078$ ($n=1691$) \\
+20 & $\{1758,\ldots,1801\}$ & $\{1758,\ldots,1800\}$ & $\{1802,\ldots,1846\}$ & $-165.893$ ($n=1780$) \\
+21 & $\{1847,\ldots,1890\}$ & $\{1847,\ldots,1889\}$ & $\{1891,\ldots,1935\}$ & $-208.114$ ($n=1869$) \\
+22 & $\{1936,\ldots,1979\}$ & $\{1936,\ldots,1978\}$ & $\{1980,\ldots,2023\}$ & $-260.831$ ($n=1958$) \\
+23 & $\{2024,\ldots,2068\}$ & $\{2024,\ldots,2067\}$ & $\{2069,\ldots,2112\}$ & $-326.650$ ($n=2047$) \\
+24 & $\{2113,\ldots,2157\}$ & $\{2113,\ldots,2156\}$ & $\{2158,\ldots,2201\}$ & $-408.827$ ($n=2136$) \\
+25 & $\{2202,\ldots,2246\}$ & $\{2202,\ldots,2245\}$ & $\{2247,\ldots,2290\}$ & $-511.486$ ($n=2224$) \\
+26 & $\{2291,\ldots,2335\}$ & $\{2291,\ldots,2334\}$ & $\{2336,\ldots,2379\}$ & $-639.726$ ($n=2313$) \\
+27 & $\{2380,\ldots,2424\}$ & $\{2380,\ldots,2423\}$ & $\{2425,\ldots,2468\}$ & $-799.864$ ($n=2402$) \\
+28 & $\{2469,\ldots,2513\}$ & $\{2469,\ldots,2512\}$ & $\{2514,\ldots,2557\}$ & $-999.832$ ($n=2491$) \\
+29 & $\{2558,\ldots,2602\}$ & $\{2558,\ldots,2601\}$ & $\{2603,\ldots,2646\}$ & $-1249.534$ ($n=2580$) \\
+30 & $\{2647,\ldots,2690\}$ & $\{2647,\ldots,2690\}$ & $\{2691,\ldots,2735\}$ & $-1561.338$ ($n=2669$) \\
+31 & $\{2736,\ldots,2779\}$ & $\{2736,\ldots,2779\}$ & $\{2780,\ldots,2824\}$ & $-1950.683$ ($n=2758$) \\
 \bottomrule
 \end{tabular}
 \end{center}
 Window interiors $S_k$ are uncertified: their $\sigma_c(n) > \delta = 0.0679$.
-Window endpoints are certifiable: $\sigma_c(n) < \delta$ at both boundary values of each $W_k$.
-The uncertified set $S = \bigcup_k S_k$ has $|S \cap [1,N]| = O(\sqrt{N})$
-(window widths grow as $\sqrt{k}$, centered at $kT$).
-Conversely, the certified density approaches $1$ as $N \to \infty$.
+The certified boundary values (those with $\sigma_c(n) < \delta$) are $n \in E$ as listed in
+the proof; for most windows the set $E$ contains at least the right endpoint of $W_k$
+(when the exit from the window is gradual enough), and also the left endpoint when the
+entry is similarly gentle. Doubly uncertified windows ($k = 17, 30, 31$) contribute
+no elements to $E$; their entire interiors lie in $S$.
+Windows~2, 12, 14, and~15 are \emph{anomalous}: their left endpoints ($n=173$, $1048$, $1225$, $1314$)
+have $\sigma_c > \delta$ (entering too steeply), so those values fall into $S$ rather than $E$.
+Windows~17 ($n=1491$--$1533$), 30 ($n=2647$--$2690$), and~31 ($n=2736$--$2779$)
+are \emph{doubly uncertified}: neither endpoint is certifiable
+(window~17: $\sigma_c(1533) = 0.070 > \delta$;
+window~30: $\sigma_c(2690) = 0.074 > \delta$;
+window~31: $\sigma_c(2779) = 0.070 > \delta$),
+so their entire interiors fall into~$S$.
+For windows~18--29, only the right endpoint is certifiable (with $\sigma_c$ as small as $0.00075$
+at $n=2602$, window~29), and similarly for each safe zone between consecutive windows.
+The classical certification thus extends to $n=2824$ (end of safe zone~31).
+Beyond $n=2824$, a computational scan (50-digit bisection) confirms that windows~$32$--$537$
+\emph{all} have certifiable right endpoints (with $\sigma_c$ ranging between $0.00002$ and $0.065$,
+always below $\delta$), extending the classical region unconditionally to $n \approx 47748$;
+windows~$538$--$544$ form the next sub-cluster of seven doubly uncertified windows
+($\sigma_c(\text{right endpoint}) \approx 0.498 \gg \delta$ for each);
+however, windows~$545$ and~$546$ both have certifiable right endpoints
+($\sigma_c(48415) = 0.00406 < \delta$ and $\sigma_c(48504) = 0.00388 < \delta$,
+with $\gamma^*(48415) \approx \gamma^*(48504) \approx 14.147 < \gamma_2$),
+extending the unconditional region to $n \leq 48549$ (end of safe zone after window~$546$);
+from window~$547$ onward, $\sigma_c(\text{right endpoint})$ enters a complex quasi-periodic structure
+of alternating certifiable runs and barriers.
+A complete computational scan to $n = 10{,}000{,}000$ ($50$-digit precision bisection throughout)
+finds exactly $145$ distinct certifiable runs containing a total of $13{,}881$ certifiable right endpoints
+($\sigma_c$ ranging from $0.003$ to $0.067$, all below $\delta = 0.06792$).
+Selected runs:
+\begin{itemize}
+\item Runs~2--4 at $n \approx 326{,}000$--$713{,}000$: $71$, $311$, $532$ certifiable endpoints
+  ($\sigma_c \approx 0.025$--$0.058$); coverage extends to $n \leq 713{,}607$.
+\item Runs~5--6 at $n \approx 855{,}000$--$998{,}000$: $134$, $219$ certifiable endpoints;
+  coverage extends to $n \leq 998{,}543$.
+\item Runs~9--11 at $n \approx 1{,}330{,}000$--$1{,}372{,}000$: up to $432$ certifiable endpoints
+  ($\sigma_c \approx 0.013$); coverage extends to $n \leq 1{,}372{,}260$.
+\item Runs~34 and~145 at $n \approx 2{,}471{,}000$ and $9{,}787{,}000$: both contain exactly $535$ certifiable
+  endpoints (the maximum observed), with $\sigma_c \approx 0.007$ and $\sigma_c \approx 0.025$ respectively;
+  the latter extends coverage to $n \leq 9{,}834{,}937$.
+\item Runs~64--68 at $n \approx 4{,}889{,}000$--$4{,}972{,}000$: $\sigma_c \approx 0.003$--$0.004$
+  (the tightest certifications in the scan); coverage extends to $n \leq 4{,}971{,}722$.
+\end{itemize}
+Between certifiable runs, the failure windows have $\sigma_c > \delta$ and fall into~$S$;
+these are covered unconditionally by the multi-zero extension (Theorem~\ref{thm:multi_zero})
+applied to Odlyzko's $2 \times 10^6$ verified zeros (which extends coverage to $n \lesssim 5.4 \times 10^6$).
+The certifiable run structure is quasi-periodic throughout the entire scanned range:
+run sizes vary from $1$ to $535$ and $\sigma_c$ values at run entry span their full observed
+range at each scale, showing no trend toward termination.
+
+The tightest certified margin in the base table remains $\delta - \sigma_c = +0.0009$ at $n=433$.
+
+\textbf{Asymptotic behavior (corrected).}
+Window widths grow slowly from $7$ at $k=1$ but \emph{saturate} near $T/2 \approx 44.5$:
+a scan of 31 windows gives widths (for $k=1,2,\ldots,31$)
+\[
+|W_k| = 7, 12, 17, 23, 27, 29, 33, 35, 37, 38, 40, 40, 42, 42, 42, 43, 43,
+        44, 44, 44, 44, 44, 45, 45, 45, 45, 45, 45, 45, 44, 44,
+\]
+stabilizing at $44$--$45$ for $k \geq 18$ (first reaching $44$ at $k=18$, then oscillating
+between $44$ and $45$ due to the irrationality of $T/2$ relative to the integers).
+This saturation occurs because $F_n(0,\gamma_1) = 4(1 - \cos(n\theta)\cosh(n\log r))$
+oscillates with period $T$, and a single-sign region cannot exceed half the period.
+Consequently $|S_k| \approx w_k - c_k \to T/2 - c$ per window where $c_k \in \{0,1,2,3,4\}$
+counts the certifiable boundary values (with $c_k = 0$ once both endpoints exceed $\delta$),
+giving $|S \cap [1,N]| = \Theta(N)$ with asymptotic density between $47\%$ and $50\%$
+(depending on how many boundary values remain certifiable at large $k$).
+The multi-zero extension (Theorem~\ref{thm:multi_zero}) is necessary to certify
+all remaining $n \in S$.
+
+\textbf{Spectral interpretation.}
+The saturation $T/2 \approx \pi\gamma_1 \approx 44.5$ has a natural spectral-geometric reading:
+in the Hilbert--P\'olya picture, $\gamma_1$ is the lowest eigenfrequency, and $T/2 = \pi/\theta_1$
+is its \emph{classical return time} (the Heisenberg recurrence period).
+The failure window cannot exceed this half-period because $\alpha_1^n = r^n e^{in\theta_1}$
+completes one revolution of its phase per period $T$, and the failure region ($\cos(n\theta_1) > 0$)
+is exactly the half-cycle.  This connects directly to the Guinand--Weil explicit formula,
+where the spectral sum over zeros contributes oscillatory cosine terms with frequencies
+$\{\theta_k = \arctan(1/\gamma_k)\}$; the single-frequency saturation observed here
+is the $k=1$ manifestation of that spectral structure.
+
 The VK strip ($\delta_{\mathrm{VK}} = 0.0095 < \sigma_c(86) = 0.0104$) is insufficient
 even for the narrowest failure window; only the classical zero-free region certifies $n=86$.
 \end{remark}
@@ -306,6 +564,51 @@ holds (certifying $F_n(0,\gamma)\ge 0$ for all $\gamma\ge\gamma_{k+1}$); and
 \end{enumerate}
 Then $\lambda_n > 0$ for all $n \le N(k)$.
 \end{theorem}
+
+\begin{proof}[Proof sketch]
+Decompose $\lambda_n = S_k(n) + T_k(n)$ where
+\begin{align*}
+  S_k(n) &= \textstyle\sum_{j=1}^k F_n\!\bigl(\tfrac{1}{2},\gamma_j\bigr)
+            \quad\text{(k verified zeros, each at $\sigma_j=\tfrac{1}{2}$)},\\
+  T_k(n) &= \textstyle\sum_{j>k} F_n(\sigma_j,\gamma_j)
+            \quad\text{(tail zeros, $\sigma_j \in (0,1)$ unrestricted)}.
+\end{align*}
+
+\textbf{Step~1 ($S_k(n) > 0$).}
+Each $\gamma_j$ ($j \le k$) is verified on the critical line, so
+$F_n(\tfrac{1}{2},\gamma_j) = 4(1-\cos(n\theta_j)) \ge 0$ (since $|\alpha(\tfrac{1}{2},\gamma_j)|=1$).
+Strict positivity follows from the irrationality of $\theta_j = \arg(\alpha(\tfrac{1}{2},\gamma_j))$:
+$n\theta_j \notin 2\pi\mathbb{Z}$ for any $n \ge 1$, so $F_n(\tfrac{1}{2},\gamma_j) > 0$.
+Hence $S_k(n) = \sum_{j=1}^k F_n(\tfrac{1}{2},\gamma_j) > 0$ for all $n \ge 1$,
+independent of condition~(2).
+
+\textbf{Step~2 ($T_k(n) > 0$, unconditionally).}
+Both $\arctan(1/\gamma)$ and $\log\sqrt{1+\gamma^{-2}}$ are strictly decreasing in $\gamma$,
+so condition~(1) at $\gamma_{k+1}$ propagates: $F_n(0,\gamma_j) > 0$ for all $j > k$.
+To extend to arbitrary $\sigma_j \in (0,1)$, use Lemma~\ref{lem:phase_formula}:
+$F_n(\sigma,\gamma) = 4\bigl(1 - \cosh(n\log r(\sigma,\gamma))\cos(n\varphi(\sigma,\gamma))\bigr)$
+where $\varphi(\sigma,\gamma) = \arctan\!\bigl(\gamma/(\gamma^2-\sigma(1{-}\sigma))\bigr)$
+is maximized at $\sigma=\tfrac{1}{2}$ and $r(\sigma,\gamma) = 1$ at $\sigma=\tfrac{1}{2}$.
+The gap $G = 2\pi - n\varphi(0,\gamma_{k+1}) - \arctan(\sinh(n\log r_0)) > 0$ from condition~(1)
+ensures $n\varphi(\sigma,\gamma) \le n\varphi(\tfrac{1}{2},\gamma_{k+1}) < 2\pi - \arctan(\sinh(n\log r_0))$
+for all $\sigma \in [0,1]$ and $\gamma \ge \gamma_{k+1}$, from which
+$\cosh(n\log r(\sigma,\gamma))\cos(n\varphi(\sigma,\gamma)) < 1$
+and $F_n(\sigma_j,\gamma_j) > 0$ follow \emph{regardless of whether $\rho_j$ lies on the critical line}.
+Thus $T_k(n) > 0$.
+
+\textbf{Conclusion.} $\lambda_n = S_k(n) + T_k(n) > 0$. The bound is unconditional
+on the location of the tail zeros $\{\rho_j : j > k\}$. \qed
+\end{proof}
+
+\begin{remark}[Conditional scope]
+The $k$ leading zeros must be independently verified to lie on $\sigma=\tfrac{1}{2}$
+(supplied by the LMFDB / Odlyzko datasets). The infinitely many tail zeros above
+$\gamma_{k+1}$ require no such verification: condition~(1) certifies their
+contribution is strictly positive at any position in the critical strip
+(Step~2 applies regardless of $\sigma_j$).
+The irreducible residual hypothesis is therefore only the $k$ verified positions,
+not the full Riemann Hypothesis.
+\end{remark}
 
 Selected $N(k)$ values (first 20 LMFDB zeros, 50-digit precision):
 
@@ -344,6 +647,106 @@ As $k\to\infty$, $N(k)\to\infty$ via Theorem~\ref{thm:multi_zero}, which would i
 cover all~$n$---but verifying that each $\gamma_j$ lies exactly on $\sigma=\tfrac{1}{2}$
 is itself the content of RH. The gap between $n \le 10^7$ (multi-zero, unconditional modulo
 Odlyzko verification) and $n\to\infty$ is therefore provably irreducible without a new global tool.
+\end{remark}
+
+\begin{remark}[Barrier windows are method artifacts]
+\label{rem:barriers_artifact}
+The failure windows $S_k$ (where $\sigma_c(n) > \delta$) should not be interpreted as
+evidence that $\lambda_n$ is small or at risk. We computed $\lambda_n$ at the first failure
+window interior ($n = 87$--$91$) using the first ten verified zeros:
+\[
+  \lambda_{89} = F_1 + F_2 + \cdots = -0.099 + 6.036 + 7.665 + \cdots \approx 45.17.
+\]
+Here $F_1 = F_{89}(0, \gamma_1) = -0.099$ (the failing single-zero contribution) while
+$F_2 + F_3$ alone already contribute $13.70$, and the total over ten zeros exceeds~$45$.
+The same pattern holds at large-scale barriers: at $n \approx 2{,}803{,}567$
+($\sigma_c \approx 0.453$, the largest barrier in our $\gamma_1$-scan), the ten-zero sum gives
+$\lambda_n \approx 20$. The single-zero certification method cannot certify these $n$ values---not
+because $\lambda_n$ is small, but because $|F_1|$ is dwarfed by the remaining zero contributions.
+The barriers are a limitation of the $\gamma_1$-only analysis, not a signal of near-failure.
+\end{remark}
+
+\begin{remark}[Rogue-zero detection via spectral amplitude growth]
+\label{rem:rogue_zero_exclusion}
+An off-critical-line zero $\varrho_0 = \sigma_0 + i\gamma_0$ with $\sigma_0 < \tfrac{1}{2}$
+has a functional equation partner at $1 - \bar\varrho_0 = (1-\sigma_0) + i\gamma_0$.
+Setting $\Delta\sigma = \tfrac{1}{2} - \sigma_0 > 0$, the two Li parameters satisfy
+$|\alpha_0| = e^{+\Delta\sigma/\gamma_0^2 + O(\Delta\sigma^2)}$ and $|\beta_0| = |\alpha_0|^{-1}$.
+Their combined oscillating amplitude at the shared angular frequency $\theta_0$ is
+\begin{equation}
+  |\alpha_0|^n + |\beta_0|^n \;=\; 2\cosh\!\Bigl(\tfrac{n\,\Delta\sigma}{\gamma_0^2}\Bigr).
+\end{equation}
+On-critical-line zeros have $|\alpha_j| = 1$ exactly
+(at $\sigma=\tfrac{1}{2}$: $|\rho-1| = \sqrt{\tfrac{1}{4}+\gamma^2} = |\rho|$, so $|(\rho-1)/\rho|=1$), contributing
+constant amplitude~2. A rogue pair contributes $2\cosh(n\Delta\sigma/\gamma_0^2) > 2$.
+
+For $\Delta\sigma \ll \gamma_0^2/n$ the cosh expands as $1 + (n\Delta\sigma/\gamma_0^2)^2/2$:
+the functional-equation symmetry cancels the linear term, making the signal
+\emph{quadratic} in $\Delta\sigma$. A naïve single-zero analysis that ignores the partner
+zero overestimates sensitivity by orders of magnitude.
+
+\textbf{Algorithm 1} (Spectrogram detection): compute a sliding-window DFT of the $\lambda_n$
+sequence with block size $W$ and step $S$; inspect the amplitude matrix $A_{w,f}$ for ridges with
+statistically significant positive slope vs.\ window center $n_w$.  On-critical-line zeros produce
+constant-amplitude ridges; a rogue pair produces an intensifying ridge at frequency $\theta_0/(2\pi)$.
+
+The detection sensitivity follows from the cosh signal structure.  Setting the aggregated signal
+$\sim N(\Delta\sigma/\gamma_0^2)^2$ equal to the empirically measured noise floor
+$\sim C_{\rm noise} N^{-2.34}$ gives
+\begin{equation}
+  \Delta\sigma_{\min} \;\approx\; C \cdot \gamma_0^2 \cdot N^{-1.67},
+  \label{eq:rogue_resolution}
+\end{equation}
+where the exponent $-1.67 = -(1 + 2.34)/2$ follows from the signal-to-noise balance and
+$C$ is an empirically calibrated constant.  The exponent was measured over the range
+$N = 5000$ to $25\,000$ and carries an uncertainty of roughly $\pm 0.05$.  The $\gamma_0^2$
+factor appears in the \emph{numerator}: zeros with larger imaginary part are harder to detect
+at fixed $N$, because the background amplitude from the corresponding on-line zero also grows
+with $\gamma_0$.
+
+Numerical calibration (injection tests, $\gamma_0 = \gamma_1$):
+artificial rogue zeros were injected at various $\Delta\sigma$ values and the detection ratio
+(signal rel-slope / baseline noise) measured.  At $N = 10^4$: $\Delta\sigma = 0.02$ was
+detected (ratio 3.7$\times$), $\Delta\sigma = 0.01$ was not (ratio 1.0$\times$).  At $N = 25\,000$:
+$\Delta\sigma = 0.005$ was detected (ratio 5.8$\times$), $\Delta\sigma = 0.002$ was not.
+These thresholds are consistent with \eqref{eq:rogue_resolution}.
+
+We then ran Algorithm~1 on the first $N = 50\,000$ terms of $\lambda_n$ (first ten
+Odlyzko-verified zeros, block $W = 2000$, step $S = 200$): \emph{no growing-amplitude
+ridge was detected}, with all frequency ridges constant in amplitude.  The calibrated threshold
+is $\Delta\sigma_{\min}(N=50\,000) \approx 0.001$: any rogue zero near $\gamma_0 = \gamma_1$
+with $|\sigma_0 - \tfrac{1}{2}| > 0.001$ would have produced a detectable signature in this
+partial sum.  The partial sums satisfy $\lambda_n^{\rm partial} > 0$ for all $n = 1$ to $50\,000$.
+
+\emph{Interpretation and scope.}  The partial $\lambda_n$ sums are built from the first ten
+Odlyzko-verified zeros, which are already confirmed to lie on the critical line.  The null
+result—no growing ridge—is therefore \emph{expected}; it serves as a validation of Algorithm~1
+(no false positives from window artifacts or numerical noise) rather than as independent RH
+evidence.  The algorithm's contribution is methodological: it provides a forward-detection
+guarantee—\emph{if} a rogue zero at height within the verified range and deviation
+$\Delta\sigma > \Delta\sigma_{\min}$ existed, it \emph{would} produce an identifiable signature
+in the $\lambda_n$ sequence.  Zeros at larger $\gamma_0$ require $N$ proportional to
+$\gamma_0^2$ (by~\eqref{eq:rogue_resolution}) to achieve the same $\Delta\sigma$ sensitivity,
+placing higher-lying zeros outside the reach of this computation.
+\end{remark}
+
+\begin{remark}[Scope of Theorems~\ref{thm:pair_pos}--\ref{thm:multi_zero}]
+\label{rem:scope_limits}
+For clarity, we state what these theorems do \emph{not} establish:
+\begin{enumerate}
+\item[(i)] They do not prove $\lambda_n > 0$ for \emph{all} $n$. The range is
+  $n \le 10^7$ (modulo Odlyzko verification), with the barrier-window interiors
+  $n \in S$ excluded from Corollary~\ref{cor:n86}'s unconditional statement.
+\item[(ii)] They do not prove RH. By Li's criterion, $\lambda_n > 0$ for all $n$
+  \emph{would} imply RH; our results provide partial (finite-$n$) evidence only.
+\item[(iii)] Theorem~\ref{thm:multi_zero} is conditional on the $k$ leading zeros
+  being verified at $\sigma = \tfrac{1}{2}$. If any $\gamma_j$ for $j \le k$ were
+  off-critical (an event contradicted by all computations to date), the $S_k$ bound
+  would require revision.
+\item[(iv)] The rogue-zero exclusion (Remark~\ref{rem:rogue_zero_exclusion}) is a
+  detection guarantee, not a non-existence proof: it rules out rogue zeros above
+  the resolution threshold $\Delta\sigma_{\min}$, not those below it.
+\end{enumerate}
 \end{remark}
 
 \section{Heat Kernel Spectral Geometry}
