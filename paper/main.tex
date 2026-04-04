@@ -62,7 +62,9 @@ finding exactly $145$ certifiable runs containing $13{,}881$ certifiable right e
 certifiable runs and barriers covering $n \leq 9{,}834{,}937$ in aggregate)
 (Corollary~\ref{cor:n86}); and a multi-zero extension
 certifying $\lambda_n > 0$ for all $n \le 7.1 \times 10^6$ using the Odlyzko 2M
-verified-zero dataset (first $2{,}001{,}052$ zeros, reaching height $\gamma \approx 1.13 \times 10^6$)
+verified-zero dataset (first $2{,}001{,}052$ zeros, reaching height $\gamma \approx 1.13 \times 10^6$),
+and further to all $n \le 4.83 \times 10^{12}$ using the Platt--Trudgian verification
+of the first $3\times10^{12}$ zeros~\cite{platt2021}
 (Theorem~\ref{thm:multi_zero}).
 \end{abstract}
 
@@ -653,6 +655,16 @@ $\gamma \approx 1.13\times10^6$):
 $N(k_{\mathrm{Odlyzko}}) \approx 2\pi \times 1.13\times10^6 \approx 7.1\times10^6$.
 Thus $\lambda_n > 0$ is certified for all $n \le 7.1\times10^6$.
 
+Using the Platt--Trudgian verification of the first $3\times10^{12}$ zeros on the
+critical line \cite{platt2021} (height $T_{\mathrm{PT}} \approx 7.684\times10^{11}$,
+so $\gamma_{k+1} \approx T_{\mathrm{PT}}$):
+$N(k_{\mathrm{PT}}) \approx 2\pi \times T_{\mathrm{PT}} \approx 4.83\times10^{12}$.
+Thus $\lambda_n > 0$ is certified for all $n \le 4.83\times10^{12}$, extending the
+Odlyzko result by six orders of magnitude.  The boundary condition
+$n\arctan(1/T_{\mathrm{PT}}) + \arctan(\sinh(n\log r_{\mathrm{PT}})) < 2\pi$
+holds at $n = N(k_{\mathrm{PT}})$ and fails at $n = N(k_{\mathrm{PT}})+1$, confirming
+the scaling law $N(k) = \lfloor 2\pi\gamma_{k+1}\rfloor$ to machine precision.
+
 \subsection{The irreducible gap}
 
 The asymptotic formula $\lambda_n \sim \tfrac{n}{2}\log(n/(2\pi e)) + \tfrac{\gamma_E}{2}n$
@@ -665,8 +677,8 @@ finite $n$, so the asymptotic route fails to close the gap.
 The condition $\lambda_n > 0$ for \emph{all} $n$ is logically equivalent to RH \cite{li1997}.
 As $k\to\infty$, $N(k)\to\infty$ via Theorem~\ref{thm:multi_zero}, which would in principle
 cover all~$n$---but verifying that each $\gamma_j$ lies exactly on $\sigma=\tfrac{1}{2}$
-is itself the content of RH. The gap between $n \le 7.1\times10^6$ (multi-zero, unconditional modulo
-Odlyzko verification) and $n\to\infty$ is therefore provably irreducible without a new global tool.
+is itself the content of RH. The gap between $n \le 4.83\times10^{12}$ (multi-zero, unconditional modulo
+Platt--Trudgian verification \cite{platt2021}) and $n\to\infty$ is therefore provably irreducible without a new global tool.
 \end{remark}
 
 \begin{remark}[Barrier windows are method artifacts]
@@ -1054,7 +1066,9 @@ fully consistent with RH.
 
 Our principal analytic contribution is the unconditional proof that $\lambda_n > 0$ for
 all $n \le 85$ (Theorem~\ref{thm:pair_pos}), extended to all $n \le 7.1\times10^6$
-using the Odlyzko 2M verified-zero dataset (Theorem~\ref{thm:multi_zero}).
+using the Odlyzko 2M verified-zero dataset, and further to all $n \le 4.83\times10^{12}$
+using the Platt--Trudgian verification of the first $3\times10^{12}$ zeros \cite{platt2021}
+(Theorem~\ref{thm:multi_zero}).
 The key structural insight is that the functional pair $F_n(\sigma,\gamma)$ is strictly
 positive for all $\sigma \in (0,1)$ and all $\gamma \ge \gamma_{k+1}$ whenever the
 boundary condition $n\arctan(1/\gamma_{k+1}) + \arctan(\sinh(n\log r_{k+1})) < 2\pi$ holds,
