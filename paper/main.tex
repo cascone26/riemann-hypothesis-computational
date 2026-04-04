@@ -56,10 +56,9 @@ finding exactly $145$ certifiable runs containing $13{,}881$ certifiable right e
 (windows~32--537 all certifiable in run~1, followed by a quasi-periodic sequence of
 certifiable runs and barriers covering $n \leq 9{,}834{,}937$ in aggregate)
 (Corollary~\ref{cor:n86}); and a multi-zero extension
-certifying $\lambda_n > 0$ for $n \le 7.1 \times 10^6$ using the Odlyzko verified-zero dataset
+certifying $\lambda_n > 0$ for all $n \le 7.1 \times 10^6$ using the Odlyzko 2M
+verified-zero dataset (first $2{,}001{,}052$ zeros, reaching height $\gamma \approx 1.13 \times 10^6$)
 (Theorem~\ref{thm:multi_zero}).
-The Odlyzko 2M verified-zero dataset (first $2{,}001{,}052$ zeros, reaching height
-$\gamma \approx 1.13 \times 10^6$) gives $N(k_{\mathrm{Odlyzko}}) \approx 7.1 \times 10^6$.
 \end{abstract}
 
 \section{Introduction}
@@ -1047,6 +1046,20 @@ models are numerically indistinguishable at this scale, with both extrapolating 
 $d_{10^5} \approx 0.058$--$0.061$. This underscores that the Nyman--Beurling
 approach cannot be made conclusive by finite computation alone, but the data are
 fully consistent with RH.
+
+Our principal analytic contribution is the unconditional proof that $\lambda_n > 0$ for
+all $n \le 85$ (Theorem~\ref{thm:pair_pos}), extended to all $n \le 7.1\times10^6$
+using the Odlyzko 2M verified-zero dataset (Theorem~\ref{thm:multi_zero}).
+The key structural insight is that the functional pair $F_n(\sigma,\gamma)$ is strictly
+positive for all $\sigma \in (0,1)$ and all $\gamma \ge \gamma_{k+1}$ whenever the
+boundary condition $n\arctan(1/\gamma_{k+1}) + \arctan(\sinh(n\log r_{k+1})) < 2\pi$ holds,
+by a monotonicity argument on $h(\sigma) = \cosh(n\log r)\cos(n\varphi)$ exploiting
+$dr/d\sigma < 0$ and $d\varphi/d\sigma > 0$.  This certifies positivity unconditionally
+on the tail zeros without assuming their location.  Corollary~\ref{cor:n86} further
+extends the certified range through a quasi-periodic failure-window analysis,
+confirming $\lambda_n > 0$ at $13{,}881$ right-endpoint values in 145 certifiable runs
+up to $n = 9{,}834{,}937$.  The irreducible gap---verifying $\lambda_n > 0$ for \emph{all}
+$n$---remains logically equivalent to RH and cannot be closed by finite computation.
 
 The Lean~4 formalizations provide machine-checked infrastructure for future work.
 
