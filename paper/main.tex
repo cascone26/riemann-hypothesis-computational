@@ -480,9 +480,9 @@ Using Lean~4 and the Mathlib library (v4.29.0), we formalized:
 \item The statement of Robin's inequality as an equivalence with RH:
 \begin{verbatim}
 theorem robin_iff_RH :
-    RiemannHypothesis ↔
-      ∀ n : ℕ, n > 5040 →
-        (sigma 1 n : ℝ) < robinBound n
+    RiemannHypothesis <->
+      forall n : Nat, n > 5040 ->
+        (sigma 1 n : Real) < robinBound n
 \end{verbatim}
 \item The analogous statement for Lagarias' inequality.
 \item Machine-verified values $\sigma_1(n)$ for 11 highly composite numbers
