@@ -556,12 +556,11 @@ even for the narrowest failure window; only the classical zero-free region certi
 \begin{theorem}[Multi-Zero Extension]
 \label{thm:multi_zero}
 Given the first $k$ verified zeros $\gamma_1 < \cdots < \gamma_k$ (all on the critical line),
-define $N(k)$ as the largest contiguous $n$ starting from $1$ such that:
-\begin{enumerate}
-\item the boundary condition $n\arctan(1/\gamma_{k+1}) + \arctan(\sinh(n\log r_{k+1})) < 2\pi$
-holds (certifying $F_n(0,\gamma)\ge 0$ for all $\gamma\ge\gamma_{k+1}$); and
-\item the finite sum $\sum_{j=1}^k F_n(0,\gamma_j) > 0$.
-\end{enumerate}
+define $N(k)$ as the largest $n$ such that the boundary condition
+\[
+  n\arctan(1/\gamma_{k+1}) + \arctan\!\bigl(\sinh(n\log r_{k+1})\bigr) < 2\pi
+\]
+holds (where $r_{k+1} = \sqrt{1+\gamma_{k+1}^{-2}}$).
 Then $\lambda_n > 0$ for all $n \le N(k)$.
 \end{theorem}
 
@@ -574,38 +573,43 @@ Decompose $\lambda_n = S_k(n) + T_k(n)$ where
             \quad\text{(tail zeros, $\sigma_j \in (0,1)$ unrestricted)}.
 \end{align*}
 
-\textbf{Step~1 ($S_k(n) > 0$).}
+\textbf{Step~1 ($S_k(n) \ge 0$).}
 Each $\gamma_j$ ($j \le k$) is verified on the critical line, so
-$F_n(\tfrac{1}{2},\gamma_j) = 4(1-\cos(n\theta_j)) \ge 0$ (since $|\alpha(\tfrac{1}{2},\gamma_j)|=1$).
-Strict positivity follows from the irrationality of $\theta_j = \arg(\alpha(\tfrac{1}{2},\gamma_j))$:
-$n\theta_j \notin 2\pi\mathbb{Z}$ for any $n \ge 1$, so $F_n(\tfrac{1}{2},\gamma_j) > 0$.
-Hence $S_k(n) = \sum_{j=1}^k F_n(\tfrac{1}{2},\gamma_j) > 0$ for all $n \ge 1$,
-independent of condition~(2).
+$F_n(\tfrac{1}{2},\gamma_j) = 4(1-\cos(n\theta_j)) \ge 0$ since $|\alpha(\tfrac{1}{2},\gamma_j)|=1$.
+Hence $S_k(n) = \sum_{j=1}^k F_n(\tfrac{1}{2},\gamma_j) \ge 0$ for all $n \ge 1$.
 
-\textbf{Step~2 ($T_k(n) > 0$, unconditionally).}
+\textbf{Step~2 ($T_k(n) > 0$, unconditionally in $\sigma_j$).}
 Both $\arctan(1/\gamma)$ and $\log\sqrt{1+\gamma^{-2}}$ are strictly decreasing in $\gamma$,
-so condition~(1) at $\gamma_{k+1}$ propagates: $F_n(0,\gamma_j) > 0$ for all $j > k$.
-To extend to arbitrary $\sigma_j \in (0,1)$, use Lemma~\ref{lem:phase_formula}:
-$F_n(\sigma,\gamma) = 4\bigl(1 - \cosh(n\log r(\sigma,\gamma))\cos(n\varphi(\sigma,\gamma))\bigr)$
-where $\varphi(\sigma,\gamma) = \arctan\!\bigl(\gamma/(\gamma^2-\sigma(1{-}\sigma))\bigr)$
-is maximized at $\sigma=\tfrac{1}{2}$ and $r(\sigma,\gamma) = 1$ at $\sigma=\tfrac{1}{2}$.
-The gap $G = 2\pi - n\varphi(0,\gamma_{k+1}) - \arctan(\sinh(n\log r_0)) > 0$ from condition~(1)
-ensures $n\varphi(\sigma,\gamma) \le n\varphi(\tfrac{1}{2},\gamma_{k+1}) < 2\pi - \arctan(\sinh(n\log r_0))$
-for all $\sigma \in [0,1]$ and $\gamma \ge \gamma_{k+1}$, from which
-$\cosh(n\log r(\sigma,\gamma))\cos(n\varphi(\sigma,\gamma)) < 1$
-and $F_n(\sigma_j,\gamma_j) > 0$ follow \emph{regardless of whether $\rho_j$ lies on the critical line}.
-Thus $T_k(n) > 0$.
+so the boundary condition at $\gamma_{k+1}$ propagates: $F_n(0,\gamma) > 0$ for all
+$\gamma \ge \gamma_{k+1}$.  To extend to arbitrary $\sigma \in (0,1)$, consider
+\[
+  h(\sigma) = \cosh\!\bigl(n\log r(\sigma,\gamma)\bigr)\cos\!\bigl(n\varphi(\sigma,\gamma)\bigr).
+\]
+If $n\varphi(\sigma,\gamma) \ge \pi/2$ then $\cos(n\varphi) \le 0$ so $h \le 0 < 1$.
+Otherwise ($n\varphi < \pi/2$), by Lemma~\ref{lem:phase_formula}:
+$r(\sigma,\gamma)$ is strictly decreasing in $\sigma$ on $[0,\tfrac{1}{2}]$ (reaching $1$ at $\sigma=\tfrac{1}{2}$),
+so $dr/d\sigma < 0$; and $\varphi(\sigma,\gamma)$ is strictly increasing toward its
+maximum at $\sigma = \tfrac{1}{2}$, so $d\varphi/d\sigma > 0$.
+Differentiating $h$ in $\sigma$:
+the $\cosh'$ term contributes $n\sinh(n\log r)\cdot(dr/d\sigma)/r \cdot \cos(n\varphi) < 0$
+(since $dr/d\sigma < 0$, $\cos > 0$, $\sinh > 0$), and the $\cos'$ term contributes
+$-n\cosh(n\log r)\sin(n\varphi)\cdot(d\varphi/d\sigma) < 0$
+(since $d\varphi/d\sigma > 0$, $\sin(n\varphi) > 0$ for $n\varphi \in (0,\pi/2)$).
+Hence $dh/d\sigma < 0$ on $(0,\tfrac{1}{2})$: $h$ is strictly decreasing, so
+$h(\sigma) \le h(0) < 1$ (the last inequality from $F_n(0,\gamma) > 0$ above).
+Thus $F_n(\sigma,\gamma) = 4(1-h(\sigma)) > 0$ for all $\sigma \in (0,1)$ and $\gamma \ge \gamma_{k+1}$,
+regardless of whether $\rho_j$ lies on the critical line.  Hence $T_k(n) > 0$.
 
-\textbf{Conclusion.} $\lambda_n = S_k(n) + T_k(n) > 0$. The bound is unconditional
-on the location of the tail zeros $\{\rho_j : j > k\}$. \qed
+\textbf{Conclusion.} $\lambda_n = S_k(n) + T_k(n) \ge 0 + T_k(n) > 0$.
+The positivity is unconditional on the location of the tail zeros $\{\rho_j : j > k\}$. \qed
 \end{proof}
 
 \begin{remark}[Conditional scope]
 The $k$ leading zeros must be independently verified to lie on $\sigma=\tfrac{1}{2}$
 (supplied by the LMFDB / Odlyzko datasets). The infinitely many tail zeros above
-$\gamma_{k+1}$ require no such verification: condition~(1) certifies their
-contribution is strictly positive at any position in the critical strip
-(Step~2 applies regardless of $\sigma_j$).
+$\gamma_{k+1}$ require no such verification: the boundary condition certifies their
+contribution is strictly positive at any position $\sigma \in (0,1)$ in the critical strip
+(Step~2 applies regardless of $\sigma_j$, by the monotonicity-of-$h$ argument).
 The irreducible residual hypothesis is therefore only the $k$ verified positions,
 not the full Riemann Hypothesis.
 \end{remark}
@@ -618,15 +622,16 @@ Selected $N(k)$ values (first 20 LMFDB zeros, 50-digit precision):
 \toprule
 $k$ & $\gamma_k$ & $\gamma_{k+1}$ & $N(k)$ \\
 \midrule
-1  & 14.135 & 21.022 & \textbf{85} \\
+1  & 14.135 & 21.022 & \textbf{129} \\
 2  & 21.022 & 25.011 & \textbf{154} \\
 5  & 32.935 & 37.586 & \textbf{233} \\
 10 & 49.774 & 52.970 & \textbf{329} \\
-20 & 77.145 & (end) & \textbf{481+} \\
+20 & 77.145 & 79.337 & \textbf{495} \\
 \bottomrule
 \end{tabular}
-\caption{$N(k)$: unconditional certified range using $k$ verified zeros.
-Scaling law: $N(k) \approx 2\pi\gamma_{k+1}$.}
+\caption{$N(k)$: unconditional certified range using $k$ verified zeros (boundary condition only).
+Scaling law: $N(k) \approx 2\pi\gamma_{k+1}$.  At $k=1$, $N(1)=129$ extends Theorem~\ref{thm:pair_pos}
+(which covers $n\le 85$ unconditionally) through the first failure-window interior $\{87,\ldots,91\}$.}
 \end{table}
 
 Using the Odlyzko dataset (verified zeros to $\gamma \approx 1.5\times10^6$):
