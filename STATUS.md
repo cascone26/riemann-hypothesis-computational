@@ -373,10 +373,34 @@ The certifiable window structure is quasi-periodic throughout n=1 to n=10^7:
 
 ---
 
+## Session (2026-04-05 overnight) — Comprehensive mathematical review pass
+
+### Five additional errors found and fixed (4 commits: 630c64e, 9fdfae7, 7e41339, 90b934d):
+
+1. **Dead condition (2) in Multi-Zero theorem** — Theorem listed condition (2) but proof said independent of it. Removed.
+2. **Unproven irrationality claim in Step 1** — "S_k(n) > 0 by irrationality of θ_j" requires transcendence of zeta zero imaginary parts (open problem). Fixed to "S_k(n) ≥ 0 trivially".
+3. **Step 2 symmetry gap** — dh/dσ < 0 proved only on (0,1/2) but conclusion stated for all (0,1). Added explicit F_n(σ,γ) = F_n(1-σ,γ) symmetry argument.
+4. **Inconsistent N(k_Odlyzko)** — three different values: 5.4×10^6, 9.4×10^6, 10^7. Computed correctly: 2M zeros → γ_max ≈ 1.13×10^6 → N(k) = 7,115,647 ≈ 7.1×10^6. Fixed everywhere.
+5. **Wrong analytic lower bound** — "F_n > 2n²/γ²" is wrong (it's an upper bound). Python confirmed F_n < 2n²/γ². Replaced with boundary condition argument + correct lower bound n²/γ².
+6. **Wrong O(Δσ²) rogue-zero formula** — actual error is O(Δσ³/γ⁶), not O(Δσ²). Added precise formula with 0.13% bound.
+7. **Abstract redundant sentence** — duplicate Odlyzko dataset description merged into single sentence.
+8. **Conclusion missing Li theorem summary** — the main analytic result (λ_n > 0 for n ≤ 7.1×10^6) was completely absent from the Conclusion. Added paragraph.
+
+### Git log (10 commits total):
+- 90b934d — Abstract + Conclusion cleanup
+- 7e41339 — Wrong analytic bound + O() notation
+- 9fdfae7 — N(k_Odlyzko) correction + Step 2 symmetry gap
+- 630c64e — Multi-Zero dead condition + rigorous dh/dσ
+
+### Paper state: 10 commits, comprehensive math review complete, no known mathematical errors.
+
+---
+
 ## What's Next (Priority Order)
 1. ~~**NB v9 results**: Process N=5000 sparse output~~ — DONE (2026-04-03, β=0.547, α=0.040, paper updated)
 2. ~~**Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper~~ — DONE (commit 6900ddc)
-3. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
-4. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
-5. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
-6. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.
+3. ~~**Comprehensive math review pass**~~ — DONE (2026-04-05, 4 additional commits, all known errors fixed)
+4. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
+5. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
+6. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
+7. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.
