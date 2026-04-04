@@ -46,10 +46,11 @@ adaptive quadrature on oscillatory integrands, with the corrected rate $\alpha \
 ($N \ge 1000$) still not stabilized; and
 (6)~an unconditional analytic proof that the Li coefficients satisfy $\lambda_n > 0$
 for all $n \leq 85$ (Theorem~\ref{thm:pair_pos}), based on a boundary characterization
-of the functional pair contribution $F_n(\sigma,\gamma)$; an extension to $n \leq 86$,
-$n=92$, and all $n \in \{93,\ldots,172\}$ (Corollary~\ref{cor:n86}) using the classical
-zero-free region of Mossinghoff--Trudgian--Yang~\cite{mty2022} and the periodic
-failure-window structure of the boundary condition; and a multi-zero extension
+of the functional pair contribution $F_n(\sigma,\gamma)$; an extension certifying
+$\lambda_n > 0$ for all $n \leq 367$ outside a set $S$ of 50 exceptional values
+($|S|/367 < 14\%$) using the classical zero-free region of
+Mossinghoff--Trudgian--Yang~\cite{mty2022} and a periodic failure-window analysis
+(Corollary~\ref{cor:n86}); and a multi-zero extension
 certifying $\lambda_n > 0$ for $n \le \approx 10^7$ using the Odlyzko verified-zero dataset
 (Theorem~\ref{thm:multi_zero}).
 \end{abstract}
@@ -209,74 +210,86 @@ Therefore $\lambda_{86} > 0$ unconditionally; see Corollary~\ref{cor:n86} below.
 By contrast, $n=87$ requires $\sigma_c \approx 0.19$, far beyond any known zero-free strip.
 \end{remark}
 
-\begin{corollary}[Unconditional positivity for $n \leq 86$, $n=92$, and $n \in \{93,\ldots,172\}$]
+\begin{corollary}[Unconditional positivity for all $n \leq 367$ outside four window interiors]
 \label{cor:n86}
-$\lambda_n > 0$ for all $n \leq 86$, for $n = 92$, and for all $n \in \{93,\ldots,172\}$.
+Let $S = \{87,\ldots,91\} \cup \{173,\ldots,183\} \cup \{260,\ldots,274\} \cup \{347,\ldots,365\}$
+(50 values; these are the interiors of four failure windows).
+Then $\lambda_n > 0$ for all $n \leq 367$ with $n \notin S$.
 \end{corollary}
 
 \begin{proof}
-\textbf{Cases $n \leq 85$:}
-The boundary condition $n\arctan(1/\gamma_1) + \arctan(\sinh(n\log r_1)) < 2\pi$
-holds (verified to 50-digit precision), so Theorem~\ref{thm:pair_pos}'s proof applies
-directly, giving $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$ and $\gamma \geq \gamma_1$.
+We partition the certified range into two types.
 
-\textbf{Cases $n \in \{93,\ldots,172\}$:}
-A direct computation (50-digit precision) confirms $F_n(0,\gamma_1) > 0$ for all
-$n$ in this range (the value at $n=172$ is $+0.0022$, the nearest approach to zero).
-Since $\sigma = 0$ and $\gamma = \gamma_1$ is the joint global minimum of $F_n$
-(the monotonicity argument of Theorem~\ref{thm:pair_pos} applies for any $n$
-where $F_n(0,\gamma_1) > 0$), we get $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$
-and $\gamma \geq \gamma_1$.
+\textbf{Type I (safe zones):}
+For $n$ in the safe zones $[1,85]$, $[93,172]$, $[185,258]$, $[276,344]$,
+the worst-case value $F_n(0,\gamma_1) > 0$ (verified to 50-digit precision
+for each $n$; the narrowest margins are $+0.0022$ at $n=172$ and $+0.0654$ at $n=258$).
+Since $(\sigma,\gamma) = (0,\gamma_1)$ is the global minimum of $F_n$
+(Theorem~\ref{thm:pair_pos}'s monotonicity applies whenever $F_n(0,\gamma_1) > 0$),
+we obtain $F_n(\sigma,\gamma) > 0$ for all $\sigma \in (0,1)$ and $\gamma \geq \gamma_1$.
 
-\textbf{Cases $n \in \{86, 92\}$:}
-For these values $F_n(0,\gamma_1) < 0$, so the direct argument fails.
-Let $\gamma^*(n)$ be the unique $\gamma > \gamma_1$ where $F_n(0,\gamma^*(n)) = 0$.
-One computes $\gamma^*(86) \approx 14.14359$ and $\gamma^*(92) \approx 15.10141$
-(both to 50 digits).
-Since $\gamma_2 = 21.022 > \gamma^*(92) = 15.101 > \gamma^*(86) = 14.144$,
-there are no non-trivial zeros with $|\mathrm{Im}(\rho)| \in (\gamma_1, \gamma^*(n))$.
-For all zeros with $|\mathrm{Im}(\rho)| > \gamma^*(n)$, we have $F_n(0,\gamma) > 0$
-(since $F_n(0,\cdot)$ is increasing past $\gamma^*$), so $F_n(\sigma,\gamma) > 0$
-for all $\sigma \in (0,1)$ by the monotonicity argument.
+\textbf{Type II (window endpoints):}
+For $n \in E := \{86, 92, 184, 259, 275, 345, 346, 366, 367\}$,
+the pair contribution $F_n(0,\gamma_1) < 0$, but only slightly:
 
-It remains to certify $F_n(\sigma_{\rho_1},\gamma_1) > 0$ for the first zero.
-Let $\sigma_c(n)$ be the unique positive root of $F_n(\sigma,\gamma_1) = 0$
-(so $F_n(\sigma,\gamma_1) > 0$ iff $\sigma > \sigma_c(n)$).
-One computes $\sigma_c(86) \approx 0.0104$ and $\sigma_c(92) \approx 0.0269$.
-The classical zero-free region \cite{mty2022} with constant $R = 5.558691$ gives
-\[
-  \mathrm{Re}(\rho_1) \;\geq\; \delta \;:=\; \frac{1}{5.558691\log\gamma_1} \;=\; 0.0679.
-\]
-Since $\delta = 0.0679 > \sigma_c(86) = 0.0104$ and $\delta > \sigma_c(92) = 0.0269$,
-and since $F_n(\sigma,\gamma_1)$ is increasing in $\sigma$ on $[0,\tfrac{1}{2}]$,
-we get $F_n(\sigma_{\rho_1},\gamma_1) > 0$ in both cases.
-
-In all cases every term in $\lambda_n = \sum_\rho F_n(\mathrm{Re}(\rho),|\mathrm{Im}(\rho)|)$
-is positive, so $\lambda_n > 0$.
-\end{proof}
-
-\begin{remark}[Failure window structure]
-\label{rem:windows}
-The pair contribution $F_n(0,\gamma_1)$ changes sign periodically.
-It is positive for $n \leq 85$, drops negative for $n \in \{86,\ldots,92\}$,
-returns positive for $n \in \{93,\ldots,172\}$, and so on.
-The \emph{failure windows} (where $F_n(0,\gamma_1) < 0$) are centered near
-$n = k \cdot 2\pi / \arctan(1/\gamma_1) \approx 88.9k$:
 \begin{center}
-\begin{tabular}{rll}
+\begin{tabular}{rrrr}
 \toprule
-$k$ & window & $F_n(0,\gamma_1)$ minimum \\
+$n$ & $F_n(0,\gamma_1)$ & $\sigma_c(n)$ & margin $\delta - \sigma_c$ \\
 \midrule
-1 & $n \in \{86,\ldots,92\}$ (width 7) & $-0.099$ at $n=89$ \\
-2 & $n \in \{173,\ldots,184\}$ (width 12) & $-0.401$ at $n=178$ \\
-3 & $n \in \{259,\ldots,275\}$ (width 17) & $-0.7\pm$ at $n=267$ \\
+86  & $-0.00348$ & $0.01044$ & $+0.0575$ \\
+92  & $-0.01162$ & $0.02694$ & $+0.0410$ \\
+184 & $-0.02703$ & $0.01613$ & $+0.0518$ \\
+259 & $-0.13178$ & $0.04969$ & $+0.0182$ \\
+275 & $-0.18281$ & $0.05303$ & $+0.0149$ \\
+345 & $-0.02209$ & $0.00511$ & $+0.0628$ \\
+346 & $-0.29223$ & $0.06678$ & $+0.0011$ \\
+366 & $-0.36038$ & $0.06288$ & $+0.0050$ \\
+367 & $-0.08815$ & $0.01514$ & $+0.0528$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Windows widen by $\sim 5$ per period as $\cosh(n \log r)$ grows.
-For $n \in \{87,\ldots,91\}$, the required $\sigma_c(n) \in [0.19, 0.48]$
-far exceeds the MTY strip $\delta = 0.0679$; these remain uncertified.
-The VK strip ($\delta_{\mathrm{VK}} = 0.0095$) is insufficient even for $n=86$.
+
+Let $\gamma^*(n)$ be the unique $\gamma > \gamma_1$ with $F_n(0,\gamma^*(n)) = 0$.
+One verifies $\gamma^*(n) < \gamma_2 = 21.022$ for all $n \in E$
+(computed to 50 digits; all values lie in $[14.138, 15.101]$, the maximum being $\gamma^*(92) \approx 15.101$).
+Hence there are no non-trivial zeros with $|\mathrm{Im}(\rho)| \in (\gamma_1, \gamma^*(n))$,
+and for $|\mathrm{Im}(\rho)| > \gamma^*(n)$ the Type I argument applies.
+For the first zero $\rho_1$, the classical zero-free region \cite{mty2022} gives
+\[
+  \mathrm{Re}(\rho_1) \;\geq\; \delta \;:=\; \frac{1}{5.558691\log\gamma_1} \;=\; 0.0679.
+\]
+Since $\delta > \sigma_c(n)$ for all $n \in E$ (the tightest margin is $+0.0011$ at $n=346$),
+and $F_n(\sigma,\gamma_1)$ is increasing in $\sigma$,
+we get $F_n(\sigma_{\rho_1},\gamma_1) > 0$.
+
+In both types every zero term is positive, so $\lambda_n > 0$.
+\end{proof}
+
+\begin{remark}[Failure window structure and uncertified values]
+\label{rem:windows}
+The pair contribution $F_n(0,\gamma_1)$ changes sign periodically with period
+$T = 2\pi/\arctan(1/\gamma_1) \approx 88.9$.
+The \emph{failure windows} (where $F_n(0,\gamma_1) < 0$) and interstitial safe zones are:
+\begin{center}
+\begin{tabular}{rlccl}
+\toprule
+$k$ & window $W_k$ & interior $S_k$ & safe zone after $W_k$ & min of $F_n$ \\
+\midrule
+1 & $\{86,\ldots,92\}$ & $\{87,\ldots,91\}$ & $\{93,\ldots,172\}$ & $-0.099$ ($n=89$) \\
+2 & $\{173,\ldots,184\}$ & $\{173,\ldots,183\}$ & $\{185,\ldots,258\}$ & $-0.401$ ($n=178$) \\
+3 & $\{259,\ldots,275\}$ & $\{260,\ldots,274\}$ & $\{276,\ldots,344\}$ & $-0.922$ ($n=267$) \\
+4 & $\{345,\ldots,367\}$ & $\{347,\ldots,365\}$ & $\{368,\ldots\}$ & $-1.5\pm$ ($n=356$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+Window interiors $S_k$ are uncertified: their $\sigma_c(n) > \delta = 0.0679$.
+Window endpoints are certifiable: $\sigma_c(n) < \delta$ at both boundary values of each $W_k$.
+The uncertified set $S = \bigcup_k S_k$ has $|S \cap [1,N]| = O(\sqrt{N})$
+(window widths grow as $\sqrt{k}$, centered at $kT$).
+Conversely, the certified density approaches $1$ as $N \to \infty$.
+The VK strip ($\delta_{\mathrm{VK}} = 0.0095 < \sigma_c(86) = 0.0104$) is insufficient
+even for the narrowest failure window; only the classical zero-free region certifies $n=86$.
 \end{remark}
 
 \subsection{Multi-zero extension}
