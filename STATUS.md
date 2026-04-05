@@ -396,11 +396,42 @@ The certifiable window structure is quasi-periodic throughout n=1 to n=10^7:
 
 ---
 
+## Overnight Session (2026-04-05) — N=10000 Li Certificate COMPLETE
+
+### Unconditional Li certificate: λ_n > 0 for n=1..10000
+
+**Method**: Cauchy DFT on |s|=5, M=2200 eval points, K=1790 DFT coefficients, dps=855.
+**Runtime**: ~55 min total (eval 3119s + DFT ~480s + lambda recurrence)
+**Key value**: λ_10000 = 34736.5797322416
+**All 10000 values positive**: confirmed, min = λ_1 = 0.023095709
+
+### R_n slope at N=10000
+- Observed: 1.0081
+- Predicted pre-asymptotic (under RH): 0.9821 at n=10000
+- |R_n|/(√n log²n) ∈ [0.13, 0.41] for n=2..10000
+- R_n sign: positive for n=2,3,4,5; negative for n=6..10000 (9995/9999 neg) — Chebyshev-bias phenomenon
+
+### Paper updates applied (6 locations)
+- Abstract: "n ≤ 5000 (and n ≤ 10000 in preparation)" → "n ≤ 10000"
+- Theorem: N_max = 5000 (confirmed) → N_max = 10000 (confirmed)
+- Selected values: added λ_7500=24990.43, λ_10000=34736.58
+- R_n slope paragraph: updated to N=10000 data
+- Conclusion: "in preparation" → confirmed, added λ_10000 value
+- LP class: "first 5000 cases" → "first 10000 cases"
+
+### Additional paper improvements (via Phi consultation)
+- Zero-exclusion: "off-critical-line zero quartet" → "functional-equation quartet" with full quartet description
+- R_n sign: added Chebyshev-bias framing and GUE equidistribution context
+- R_n sign: corrected n=2..5 explanation (low-n artifact before oscillatory structure establishes)
+
+---
+
 ## What's Next (Priority Order)
 1. ~~**NB v9 results**: Process N=5000 sparse output~~ — DONE (2026-04-03, β=0.547, α=0.040, paper updated)
 2. ~~**Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper~~ — DONE (commit 6900ddc)
 3. ~~**Comprehensive math review pass**~~ — DONE (2026-04-05, 4 additional commits, all known errors fixed)
-4. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
-5. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
-6. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
-7. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.
+4. ~~**N=10000 unconditional Li certificate**~~ — DONE (2026-04-05 overnight, all 10000 positive, paper updated)
+5. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
+6. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
+7. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
+8. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.
