@@ -426,12 +426,28 @@ The certifiable window structure is quasi-periodic throughout n=1 to n=10^7:
 
 ---
 
+## Prism Session (2026-04-05 overnight) — Paper Finalized for arXiv
+
+### Prism pass complete (all inconsistencies resolved):
+- polya1926 bibitem added (cite was missing), ki2009 phantom removed (was uncited)
+- Stale "n=1..5000" → "n=1..10000" in zero-exclusion and Chebyshev paragraphs
+- Partial-sum convergence table added: 50k-zero conditional values vs unconditional (0.17% at n=10 to 11.1% at n=10000)
+- Error analysis strengthened: operation-count bound — accumulated fp error < 10^{-848} vs truncation bound 10^{-18}
+- Conclusion cross-validation claim corrected: "at n≤1000 to 9-10 digits; λ_10000 = 34736.5797322416"
+- All li_unconditional scripts + JSON results (N=1000/2000/5000/10000) pushed to GitHub
+
+### GitHub: cascone26/riemann-hypothesis-computational — PUBLIC, reproducible
+### Phi verdict: "paper is submission-ready"
+
+---
+
 ## What's Next (Priority Order)
 1. ~~**NB v9 results**: Process N=5000 sparse output~~ — DONE (2026-04-03, β=0.547, α=0.040, paper updated)
 2. ~~**Commit paper + Theorems 3/4**: git add + commit pair positivity results to paper~~ — DONE (commit 6900ddc)
 3. ~~**Comprehensive math review pass**~~ — DONE (2026-04-05, 4 additional commits, all known errors fixed)
 4. ~~**N=10000 unconditional Li certificate**~~ — DONE (2026-04-05 overnight, all 10000 positive, paper updated)
-5. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
-6. **arXiv submission**: Upload main.tex + PNG plots to arXiv math.NT
-7. **Explicit lambda_n lower bound**: Characterized (lambda_asymptotic_bound.py). Gap confirmed irreducible without RH. N_0 ~ exp(exp(1/c²)) unconditionally.
-8. **New proof attack**: Try Density Hypothesis approach — zero density A(σ,T) bounds + Li integral formula to close gap from n>85 to all n.
+5. ~~**Prism consistency pass**~~ — DONE (2026-04-05 overnight, all inconsistencies fixed, paper final)
+6. **arXiv submission**: math.NT primary, math.NA cross-list — confirm author name, then submit
+7. **Cover letter for Math of Comp**: 3 sentences (what/why/why MathComp)
+8. **Math of Comp submission**: link arXiv ID, submit
+9. **Submit Robin's inequality to Mathlib as PR** — Lean file compiled, needs PR to Mathlib
