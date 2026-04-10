@@ -25,7 +25,7 @@ Lean 4 formalization, Robin's inequality, Lagarias inequality, WKB quantization
 - [x] No external figures (no .eps/.pdf/.png files needed)
 - [x] Repository URL updated: https://github.com/cascone26/riemann-hypothesis-computational
 - [x] MSC codes added as comment in preamble
-- [ ] Author email/affiliation — Jacob may want to add: Grand Canyon University
+- [x] Author affiliation added: Grand Canyon University (April 9, 2026)
 - [ ] arXiv submission form: https://arxiv.org/submit
   - File: arxiv_submission/main.tex
   - Primary: math.NT

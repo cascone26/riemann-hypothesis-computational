@@ -1,0 +1,429 @@
+  === RUN #1: W32-W537 (506 certifiable), coverage n ≤ 47748 ===
+  === RUN #1b: W545-W546 island (2 certifiable), coverage n ≤ 48549 ===
+  === RUN #2: W3669-W3750 (71 certifiable), coverage n ≤ 333485 ===
+  === RUN #3: W4277-W4593 (311 certifiable), coverage n ≤ 408210 ===
+  === RUN #4: W7483-W8028 (532 certifiable), coverage n ≤ 713607 ===
+  === RUN #5: W9626-W9775 (134 certifiable), coverage n ≤ 868396 ===
+  === RUN #6: W11009-W11238 (219 certifiable), coverage n ≤ 998543 ===
+  === RUN #7 starts at W11766 (n=1045558, sc=0.054128) ===
+  === RUN #7 ends at W11771 (n=1046003) ===
+  6 certifiable windows, coverage n ≤ 1046047
+  === RUN #8 starts at W11774 (n=1046269, sc=0.054233) ===
+  === RUN #8 ends at W11929 (n=1060058) ===
+  156 certifiable windows, coverage n ≤ 1060103
+  === RUN #9 starts at W14969 (n=1330494, sc=0.013609) ===
+  === RUN #9 ends at W14972 (n=1330761) ===
+  4 certifiable windows, coverage n ≤ 1330805
+  === RUN #10 starts at W14977 (n=1331205, sc=0.013706) ===
+  === RUN #10 ends at W15408 (n=1369547) ===
+  432 certifiable windows, coverage n ≤ 1369591
+  === RUN #11 starts at W15413 (n=1369991, sc=0.013336) ===
+  === RUN #11 ends at W15423 (n=1370881) ===
+  11 certifiable windows, coverage n ≤ 1370926
+  === RUN #12 starts at W15437 (n=1372126, sc=0.013318) ===
+  === RUN #12 ends at W15438 (n=1372215) ===
+  2 certifiable windows, coverage n ≤ 1372260
+  === RUN #13 starts at W17120 (n=1521845, sc=0.049306) ===
+  === RUN #13 ends at W17122 (n=1522023) ===
+  3 certifiable windows, coverage n ≤ 1522067
+  === RUN #14 starts at W17135 (n=1523179, sc=0.049317) ===
+  === RUN #14 ends at W17147 (n=1524247) ===
+  13 certifiable windows, coverage n ≤ 1524291
+  === RUN #15 starts at W17150 (n=1524513, sc=0.049327) ===
+  === RUN #15 ends at W17415 (n=1548088) ===
+  266 certifiable windows, coverage n ≤ 1548132
+  === RUN #16 starts at W17417 (n=1548265, sc=0.048541) ===
+  === RUN #16 ends at W17426 (n=1549066) ===
+  10 certifiable windows, coverage n ≤ 1549111
+  === RUN #17 starts at W18337 (n=1630108, sc=0.034007) ===
+  === RUN #17 ends at W18344 (n=1630731) ===
+  8 certifiable windows, coverage n ≤ 1630775
+  === RUN #18 starts at W18348 (n=1631086, sc=0.034059) ===
+  === RUN #18 ends at W18706 (n=1662934) ===
+  359 certifiable windows, coverage n ≤ 1662978
+  === RUN #19 starts at W18712 (n=1663467, sc=0.033385) ===
+  === RUN #19 ends at W18714 (n=1663645) ===
+  3 certifiable windows, coverage n ≤ 1663690
+  === RUN #20 starts at W20540 (n=1826085, sc=0.019943) ===
+  === RUN #20 ends at W20543 (n=1826352) ===
+  4 certifiable windows, coverage n ≤ 1826396
+  === RUN #21 starts at W20555 (n=1827419, sc=0.019972) ===
+  === RUN #21 ends at W20568 (n=1828576) ===
+  14 certifiable windows, coverage n ≤ 1828620
+  === RUN #22 starts at W20570 (n=1828753, sc=0.020001) ===
+  === RUN #22 ends at W20847 (n=1853395) ===
+  278 certifiable windows, coverage n ≤ 1853440
+  === RUN #23 starts at W23961 (n=2130414, sc=0.034693) ===
+  === RUN #23 ends at W23964 (n=2130681) ===
+  4 certifiable windows, coverage n ≤ 2130725
+  === RUN #24 starts at W23976 (n=2131748, sc=0.034709) ===
+  === RUN #24 ends at W23988 (n=2132816) ===
+  13 certifiable windows, coverage n ≤ 2132860
+  === RUN #25 starts at W23991 (n=2133082, sc=0.034726) ===
+  === RUN #25 ends at W24050 (n=2138331) ===
+  60 certifiable windows, coverage n ≤ 2138375
+  === RUN #26 starts at W24586 (n=2186013, sc=0.042650) ===
+  === RUN #26 ends at W24743 (n=2199980) ===
+  158 certifiable windows, coverage n ≤ 2200024
+  === RUN #27 starts at W24747 (n=2200335, sc=0.051339) ===
+  === RUN #27 ends at W24754 (n=2200958) ===
+  8 certifiable windows, coverage n ≤ 2201003
+  === RUN #28 starts at W25666 (n=2282089, sc=0.058090) ===
+  === RUN #28 ends at W25670 (n=2282445) ===
+  5 certifiable windows, coverage n ≤ 2282489
+  === RUN #29 starts at W25677 (n=2283067, sc=0.058118) ===
+  === RUN #29 ends at W25685 (n=2283779) ===
+  9 certifiable windows, coverage n ≤ 2283824
+  === RUN #30 starts at W25700 (n=2285113, sc=0.058068) ===
+  === RUN #30 ends at W25700 (n=2285113) ===
+  1 certifiable windows, coverage n ≤ 2285158
+  === RUN #31 starts at W25962 (n=2308421, sc=0.066182) ===
+  === RUN #31 ends at W25968 (n=2308955) ===
+  7 certifiable windows, coverage n ≤ 2308999
+  === RUN #32 starts at W25975 (n=2309577, sc=0.066193) ===
+  === RUN #32 ends at W26081 (n=2319007) ===
+  107 certifiable windows, coverage n ≤ 2319051
+  === RUN #33 starts at W26091 (n=2319896, sc=0.065902) ===
+  === RUN #33 ends at W26096 (n=2320341) ===
+  6 certifiable windows, coverage n ≤ 2320386
+  === RUN #34 starts at W27790 (n=2471038, sc=0.007305) ===
+  === RUN #34 ends at W28324 (n=2518542) ===
+  535 certifiable windows, coverage n ≤ 2518587
+  === RUN #35 starts at W31162 (n=2771008, sc=0.047306) ===
+  === RUN #35 ends at W31527 (n=2803478) ===
+  366 certifiable windows, coverage n ≤ 2803522
+  === RUN #36 starts at W32063 (n=2851160, sc=0.045919) ===
+  === RUN #36 ends at W32072 (n=2851961) ===
+  10 certifiable windows, coverage n ≤ 2852005
+  === RUN #37 starts at W32077 (n=2852405, sc=0.045931) ===
+  === RUN #37 ends at W32083 (n=2852939) ===
+  7 certifiable windows, coverage n ≤ 2852984
+  === RUN #38 starts at W35266 (n=3136096, sc=0.017389) ===
+  === RUN #38 ends at W35736 (n=3177907) ===
+  471 certifiable windows, coverage n ≤ 3177951
+  === RUN #39 starts at W35742 (n=3178440, sc=0.017188) ===
+  === RUN #39 ends at W35747 (n=3178885) ===
+  6 certifiable windows, coverage n ≤ 3178930
+  === RUN #40 starts at W38491 (n=3422989, sc=0.061044) ===
+  === RUN #40 ends at W39004 (n=3468625) ===
+  514 certifiable windows, coverage n ≤ 3468669
+  === RUN #41 starts at W41063 (n=3651792, sc=0.009876) ===
+  === RUN #41 ends at W41068 (n=3652237) ===
+  6 certifiable windows, coverage n ≤ 3652281
+  === RUN #42 starts at W41078 (n=3653126, sc=0.009893) ===
+  === RUN #42 ends at W41137 (n=3658375) ===
+  60 certifiable windows, coverage n ≤ 3658419
+  === RUN #43 starts at W41142 (n=3658819, sc=0.009899) ===
+  === RUN #43 ends at W41145 (n=3659086) ===
+  4 certifiable windows, coverage n ≤ 3659131
+  === RUN #44 starts at W42155 (n=3748935, sc=0.009634) ===
+  === RUN #44 ends at W42207 (n=3753561) ===
+  53 certifiable windows, coverage n ≤ 3753605
+  === RUN #45 starts at W42743 (n=3801243, sc=0.009497) ===
+  === RUN #45 ends at W42773 (n=3803912) ===
+  31 certifiable windows, coverage n ≤ 3803956
+  === RUN #46 starts at W42779 (n=3804445, sc=0.009517) ===
+  === RUN #46 ends at W42788 (n=3805246) ===
+  10 certifiable windows, coverage n ≤ 3805291
+  === RUN #47 starts at W42942 (n=3818946, sc=0.064915) ===
+  === RUN #47 ends at W42949 (n=3819569) ===
+  8 certifiable windows, coverage n ≤ 3819613
+  === RUN #48 starts at W42957 (n=3820280, sc=0.064914) ===
+  === RUN #48 ends at W43064 (n=3829799) ===
+  108 certifiable windows, coverage n ≤ 3829843
+  === RUN #49 starts at W43072 (n=3830510, sc=0.064746) ===
+  === RUN #49 ends at W43076 (n=3830866) ===
+  5 certifiable windows, coverage n ≤ 3830911
+  === RUN #50 starts at W44876 (n=3990993, sc=0.056843) ===
+  === RUN #50 ends at W44880 (n=3991349) ===
+  5 certifiable windows, coverage n ≤ 3991393
+  === RUN #51 starts at W44884 (n=3991704, sc=0.056871) ===
+  === RUN #51 ends at W44896 (n=3992772) ===
+  13 certifiable windows, coverage n ≤ 3992816
+  === RUN #52 starts at W44905 (n=3993572, sc=0.056850) ===
+  === RUN #52 ends at W44908 (n=3993839) ===
+  4 certifiable windows, coverage n ≤ 3993884
+  === RUN #53 starts at W45946 (n=4086179, sc=0.040966) ===
+  === RUN #53 ends at W46193 (n=4108152) ===
+  248 certifiable windows, coverage n ≤ 4108196
+  === RUN #54 starts at W46200 (n=4108774, sc=0.040763) ===
+  === RUN #54 ends at W46208 (n=4109486) ===
+  9 certifiable windows, coverage n ≤ 4109531
+  === RUN #55 starts at W48079 (n=4275929, sc=0.021308) ===
+  === RUN #55 ends at W48081 (n=4276107) ===
+  3 certifiable windows, coverage n ≤ 4276151
+  === RUN #56 starts at W48087 (n=4276640, sc=0.021337) ===
+  === RUN #56 ends at W48561 (n=4318807) ===
+  475 certifiable windows, coverage n ≤ 4318851
+  === RUN #57 starts at W48570 (n=4319607, sc=0.025460) ===
+  === RUN #57 ends at W48572 (n=4319785) ===
+  3 certifiable windows, coverage n ≤ 4319830
+  === RUN #58 starts at W49472 (n=4399849, sc=0.029224) ===
+  === RUN #58 ends at W49473 (n=4399938) ===
+  2 certifiable windows, coverage n ≤ 4399982
+  === RUN #59 starts at W49483 (n=4400827, sc=0.029244) ===
+  === RUN #59 ends at W49614 (n=4412481) ===
+  132 certifiable windows, coverage n ≤ 4412525
+  === RUN #60 starts at W49621 (n=4413103, sc=0.029177) ===
+  === RUN #60 ends at W49629 (n=4413815) ===
+  9 certifiable windows, coverage n ≤ 4413860
+  === RUN #61 starts at W51325 (n=4564690, sc=0.044999) ===
+  === RUN #61 ends at W51330 (n=4565135) ===
+  6 certifiable windows, coverage n ≤ 4565179
+  === RUN #62 starts at W51340 (n=4566024, sc=0.045003) ===
+  === RUN #62 ends at W51816 (n=4608369) ===
+  477 certifiable windows, coverage n ≤ 4608413
+  === RUN #63 starts at W51820 (n=4608724, sc=0.048849) ===
+  === RUN #63 ends at W51825 (n=4609169) ===
+  6 certifiable windows, coverage n ≤ 4609214
+  === RUN #64 starts at W54969 (n=4888857, sc=0.003665) ===
+  === RUN #64 ends at W54971 (n=4889035) ===
+  3 certifiable windows, coverage n ≤ 4889079
+  === RUN #65 starts at W54980 (n=4889835, sc=0.003687) ===
+  === RUN #65 ends at W55028 (n=4894105) ===
+  49 certifiable windows, coverage n ≤ 4894150
+  === RUN #66 starts at W55556 (n=4941076, sc=0.003625) ===
+  === RUN #66 ends at W55557 (n=4941165) ===
+  2 certifiable windows, coverage n ≤ 4941209
+  === RUN #67 starts at W55564 (n=4941787, sc=0.003652) ===
+  === RUN #67 ends at W55889 (n=4970699) ===
+  326 certifiable windows, coverage n ≤ 4970743
+  === RUN #68 starts at W55900 (n=4971677, sc=0.003640) ===
+  === RUN #68 ends at W55900 (n=4971677) ===
+  1 certifiable windows, coverage n ≤ 4971722
+  === RUN #69 starts at W58767 (n=5226723, sc=0.042789) ===
+  === RUN #69 ends at W59293 (n=5273516) ===
+  527 certifiable windows, coverage n ≤ 5273560
+  === RUN #70 starts at W59297 (n=5273871, sc=0.031453) ===
+  === RUN #70 ends at W59301 (n=5274227) ===
+  5 certifiable windows, coverage n ≤ 5274272
+  === RUN #71 starts at W61341 (n=5455704, sc=0.066521) ===
+  === RUN #71 ends at W61348 (n=5456327) ===
+  8 certifiable windows, coverage n ≤ 5456371
+  === RUN #72 starts at W61354 (n=5456860, sc=0.066525) ===
+  === RUN #72 ends at W61372 (n=5458462) ===
+  19 certifiable windows, coverage n ≤ 5458506
+  === RUN #73 starts at W61374 (n=5458639, sc=0.066510) ===
+  === RUN #73 ends at W61386 (n=5459707) ===
+  13 certifiable windows, coverage n ≤ 5459751
+  === RUN #74 starts at W62297 (n=5540749, sc=0.023065) ===
+  === RUN #74 ends at W62301 (n=5541105) ===
+  5 certifiable windows, coverage n ≤ 5541149
+  === RUN #75 starts at W62308 (n=5541727, sc=0.023082) ===
+  === RUN #75 ends at W62496 (n=5558452) ===
+  189 certifiable windows, coverage n ≤ 5558496
+  === RUN #76 starts at W62498 (n=5558629, sc=0.023019) ===
+  === RUN #76 ends at W62504 (n=5559163) ===
+  7 certifiable windows, coverage n ≤ 5559208
+  === RUN #77 starts at W63033 (n=5606223, sc=0.043212) ===
+  === RUN #77 ends at W63034 (n=5606312) ===
+  2 certifiable windows, coverage n ≤ 5606356
+  === RUN #78 starts at W63041 (n=5606934, sc=0.043233) ===
+  === RUN #78 ends at W63218 (n=5622680) ===
+  178 certifiable windows, coverage n ≤ 5622724
+  === RUN #79 starts at W64398 (n=5727652, sc=0.066705) ===
+  === RUN #79 ends at W64403 (n=5728097) ===
+  6 certifiable windows, coverage n ≤ 5728141
+  === RUN #80 starts at W64412 (n=5728897, sc=0.066707) ===
+  === RUN #80 ends at W64521 (n=5738594) ===
+  110 certifiable windows, coverage n ≤ 5738638
+  === RUN #81 starts at W64526 (n=5739038, sc=0.066594) ===
+  === RUN #81 ends at W64536 (n=5739928) ===
+  11 certifiable windows, coverage n ≤ 5739973
+  === RUN #82 starts at W64550 (n=5741173, sc=0.066568) ===
+  === RUN #82 ends at W64550 (n=5741173) ===
+  1 certifiable windows, coverage n ≤ 5741218
+  === RUN #83 starts at W66244 (n=5891870, sc=0.054424) ===
+  === RUN #83 ends at W66716 (n=5933859) ===
+  473 certifiable windows, coverage n ≤ 5933903
+  === RUN #84 starts at W66725 (n=5934659, sc=0.012200) ===
+  === RUN #84 ends at W66731 (n=5935193) ===
+  7 certifiable windows, coverage n ≤ 5935238
+  === RUN #85 starts at W68428 (n=6086157, sc=0.014879) ===
+  === RUN #85 ends at W68434 (n=6086691) ===
+  7 certifiable windows, coverage n ≤ 6086735
+  === RUN #86 starts at W68443 (n=6087491, sc=0.014889) ===
+  === RUN #86 ends at W68714 (n=6111599) ===
+  272 certifiable windows, coverage n ≤ 6111644
+  === RUN #87 starts at W69626 (n=6192730, sc=0.058078) ===
+  === RUN #87 ends at W69631 (n=6193175) ===
+  6 certifiable windows, coverage n ≤ 6193219
+  === RUN #88 starts at W69637 (n=6193708, sc=0.058088) ===
+  === RUN #88 ends at W69973 (n=6223599) ===
+  337 certifiable windows, coverage n ≤ 6223643
+  === RUN #89 starts at W69975 (n=6223776, sc=0.051366) ===
+  === RUN #89 ends at W69981 (n=6224310) ===
+  7 certifiable windows, coverage n ≤ 6224355
+  === RUN #90 starts at W71848 (n=6390397, sc=0.034694) ===
+  === RUN #90 ends at W71855 (n=6391020) ===
+  8 certifiable windows, coverage n ≤ 6391064
+  === RUN #91 starts at W71863 (n=6391731, sc=0.031712) ===
+  === RUN #91 ends at W72114 (n=6414060) ===
+  252 certifiable windows, coverage n ≤ 6414104
+  === RUN #92 starts at W73721 (n=6557017, sc=0.067046) ===
+  === RUN #92 ends at W73753 (n=6559864) ===
+  33 certifiable windows, coverage n ≤ 6559908
+  === RUN #93 starts at W73762 (n=6560664, sc=0.067018) ===
+  === RUN #93 ends at W73767 (n=6561109) ===
+  6 certifiable windows, coverage n ≤ 6561154
+  === RUN #94 starts at W75269 (n=6694726, sc=0.030218) ===
+  === RUN #94 ends at W75276 (n=6695349) ===
+  8 certifiable windows, coverage n ≤ 6695393
+  === RUN #95 starts at W75284 (n=6696060, sc=0.030224) ===
+  === RUN #95 ends at W75317 (n=6698996) ===
+  34 certifiable windows, coverage n ≤ 6699040
+  === RUN #96 starts at W75853 (n=6746678, sc=0.024392) ===
+  === RUN #96 ends at W76031 (n=6762513) ===
+  179 certifiable windows, coverage n ≤ 6762557
+  === RUN #97 starts at W76034 (n=6762779, sc=0.024351) ===
+  === RUN #97 ends at W76043 (n=6763580) ===
+  10 certifiable windows, coverage n ≤ 6763625
+  === RUN #98 starts at W76954 (n=6844622, sc=0.032313) ===
+  === RUN #98 ends at W76962 (n=6845334) ===
+  9 certifiable windows, coverage n ≤ 6845378
+  === RUN #99 starts at W76965 (n=6845600, sc=0.032325) ===
+  === RUN #99 ends at W76978 (n=6846757) ===
+  13 certifiable windows, coverage n ≤ 6846801
+  === RUN #100 starts at W76987 (n=6847557, sc=0.032319) ===
+  === RUN #100 ends at W76993 (n=6848091) ===
+  7 certifiable windows, coverage n ≤ 6848136
+  === RUN #101 starts at W79057 (n=7031703, sc=0.047944) ===
+  === RUN #101 ends at W79063 (n=7032237) ===
+  7 certifiable windows, coverage n ≤ 7032281
+  === RUN #102 starts at W79065 (n=7032414, sc=0.047960) ===
+  === RUN #102 ends at W79591 (n=7079207) ===
+  527 certifiable windows, coverage n ≤ 7079251
+  === RUN #103 starts at W81189 (n=7221364, sc=0.063249) ===
+  === RUN #103 ends at W81189 (n=7221364) ===
+  1 certifiable windows, coverage n ≤ 7221408
+  === RUN #104 starts at W81197 (n=7222075, sc=0.063264) ===
+  === RUN #104 ends at W81257 (n=7227413) ===
+  61 certifiable windows, coverage n ≤ 7227457
+  === RUN #105 starts at W81263 (n=7227946, sc=0.063218) ===
+  === RUN #105 ends at W81271 (n=7228658) ===
+  9 certifiable windows, coverage n ≤ 7228703
+  === RUN #106 starts at W82450 (n=7333541, sc=0.004898) ===
+  === RUN #106 ends at W82459 (n=7334342) ===
+  10 certifiable windows, coverage n ≤ 7334386
+  === RUN #107 starts at W82462 (n=7334608, sc=0.004912) ===
+  === RUN #107 ends at W82794 (n=7364143) ===
+  333 certifiable windows, coverage n ≤ 7364187
+  === RUN #108 starts at W83330 (n=7411825, sc=0.048019) ===
+  === RUN #108 ends at W83360 (n=7414494) ===
+  31 certifiable windows, coverage n ≤ 7414538
+  === RUN #109 starts at W83365 (n=7414938, sc=0.048015) ===
+  === RUN #109 ends at W83371 (n=7415472) ===
+  7 certifiable windows, coverage n ≤ 7415517
+  === RUN #110 starts at W86533 (n=7696761, sc=0.026176) ===
+  === RUN #110 ends at W87024 (n=7740440) ===
+  492 certifiable windows, coverage n ≤ 7740484
+  === RUN #111 starts at W87030 (n=7740973, sc=0.028476) ===
+  === RUN #111 ends at W87035 (n=7741418) ===
+  6 certifiable windows, coverage n ≤ 7741463
+  === RUN #112 starts at W89779 (n=7985522, sc=0.041960) ===
+  === RUN #112 ends at W90271 (n=8029290) ===
+  493 certifiable windows, coverage n ≤ 8029334
+  === RUN #113 starts at W90279 (n=8030001, sc=0.044160) ===
+  === RUN #113 ends at W90279 (n=8030001) ===
+  1 certifiable windows, coverage n ≤ 8030046
+  === RUN #114 starts at W92003 (n=8183367, sc=0.065267) ===
+  === RUN #114 ends at W92013 (n=8184257) ===
+  11 certifiable windows, coverage n ≤ 8184301
+  === RUN #115 starts at W92016 (n=8184523, sc=0.065270) ===
+  === RUN #115 ends at W92403 (n=8218951) ===
+  388 certifiable windows, coverage n ≤ 8218995
+  === RUN #116 starts at W92405 (n=8219128, sc=0.057564) ===
+  === RUN #116 ends at W92412 (n=8219751) ===
+  8 certifiable windows, coverage n ≤ 8219796
+  === RUN #117 starts at W93443 (n=8311468, sc=0.010857) ===
+  === RUN #117 ends at W93474 (n=8314226) ===
+  32 certifiable windows, coverage n ≤ 8314270
+  === RUN #118 starts at W93480 (n=8314759, sc=0.008678) ===
+  === RUN #118 ends at W93482 (n=8314937) ===
+  3 certifiable windows, coverage n ≤ 8314982
+  === RUN #119 starts at W94010 (n=8361908, sc=0.010786) ===
+  === RUN #119 ends at W94081 (n=8368224) ===
+  72 certifiable windows, coverage n ≤ 8368268
+  === RUN #120 starts at W94091 (n=8369113, sc=0.010793) ===
+  === RUN #120 ends at W94096 (n=8369558) ===
+  6 certifiable windows, coverage n ≤ 8369603
+  === RUN #121 starts at W95275 (n=8474441, sc=0.065279) ===
+  === RUN #121 ends at W95530 (n=8497126) ===
+  256 certifiable windows, coverage n ≤ 8497170
+  === RUN #122 starts at W95533 (n=8497392, sc=0.067519) ===
+  === RUN #122 ends at W95542 (n=8498193) ===
+  10 certifiable windows, coverage n ≤ 8498238
+  === RUN #123 starts at W96143 (n=8551658, sc=0.032319) ===
+  === RUN #123 ends at W96143 (n=8551658) ===
+  1 certifiable windows, coverage n ≤ 8551702
+  === RUN #124 starts at W96151 (n=8552369, sc=0.045900) ===
+  === RUN #124 ends at W96185 (n=8555394) ===
+  35 certifiable windows, coverage n ≤ 8555438
+  === RUN #125 starts at W96193 (n=8556105, sc=0.032325) ===
+  === RUN #125 ends at W96196 (n=8556372) ===
+  4 certifiable windows, coverage n ≤ 8556417
+  === RUN #126 starts at W97213 (n=8646844, sc=0.049919) ===
+  === RUN #126 ends at W97218 (n=8647289) ===
+  6 certifiable windows, coverage n ≤ 8647333
+  === RUN #127 starts at W97221 (n=8647555, sc=0.049932) ===
+  === RUN #127 ends at W97486 (n=8671130) ===
+  266 certifiable windows, coverage n ≤ 8671174
+  === RUN #128 starts at W97488 (n=8671307, sc=0.049789) ===
+  === RUN #128 ends at W97501 (n=8672464) ===
+  14 certifiable windows, coverage n ≤ 8672508
+  === RUN #129 starts at W97512 (n=8673442, sc=0.049777) ===
+  === RUN #129 ends at W97516 (n=8673798) ===
+  5 certifiable windows, coverage n ≤ 8673843
+  === RUN #130 starts at W99354 (n=8837305, sc=0.039941) ===
+  === RUN #130 ends at W99849 (n=8881340) ===
+  496 certifiable windows, coverage n ≤ 8881384
+  === RUN #131 starts at W99858 (n=8882140, sc=0.020517) ===
+  === RUN #131 ends at W99860 (n=8882318) ===
+  3 certifiable windows, coverage n ≤ 8882363
+  === RUN #132 starts at W100760 (n=8962382, sc=0.024474) ===
+  === RUN #132 ends at W100761 (n=8962471) ===
+  2 certifiable windows, coverage n ≤ 8962515
+  === RUN #133 starts at W100772 (n=8963360, sc=0.023968) ===
+  === RUN #133 ends at W100922 (n=8976793) ===
+  151 certifiable windows, coverage n ≤ 8976837
+  === RUN #134 starts at W100933 (n=8977771, sc=0.025671) ===
+  === RUN #134 ends at W100937 (n=8978128) ===
+  5 certifiable windows, coverage n ≤ 8978172
+  === RUN #135 starts at W101487 (n=9027283, sc=0.041985) ===
+  === RUN #135 ends at W101566 (n=9034083) ===
+  80 certifiable windows, coverage n ≤ 9034127
+  === RUN #136 starts at W101568 (n=9034260, sc=0.042017) ===
+  === RUN #136 ends at W101580 (n=9035328) ===
+  13 certifiable windows, coverage n ≤ 9035372
+  === RUN #137 starts at W101592 (n=9036395, sc=0.041941) ===
+  === RUN #137 ends at W101594 (n=9036573) ===
+  3 certifiable windows, coverage n ≤ 9036618
+  === RUN #138 starts at W102618 (n=9127668, sc=0.067019) ===
+  === RUN #138 ends at W102618 (n=9127668) ===
+  1 certifiable windows, coverage n ≤ 9127712
+  === RUN #139 starts at W102633 (n=9129003, sc=0.067018) ===
+  === RUN #139 ends at W102642 (n=9129803) ===
+  10 certifiable windows, coverage n ≤ 9129847
+  === RUN #140 starts at W102648 (n=9130337, sc=0.067005) ===
+  === RUN #140 ends at W103091 (n=9169745) ===
+  444 certifiable windows, coverage n ≤ 9169790
+  === RUN #141 starts at W106257 (n=9451256, sc=0.046941) ===
+  === RUN #141 ends at W106258 (n=9451345) ===
+  2 certifiable windows, coverage n ≤ 9451523
+  === RUN #142 starts at W106268 (n=9452234, sc=0.046960) ===
+  === RUN #142 ends at W106295 (n=9454682) ===
+  28 certifiable windows, coverage n ≤ 9454815
+  === RUN #143 starts at W106831 (n=9503507, sc=0.063287) ===
+  === RUN #143 ends at W107177 (n=9534232) ===
+  347 certifiable windows, coverage n ≤ 9533276
+  === RUN #144 starts at W107188 (n=9535210, sc=0.063243) ===
+  === RUN #144 ends at W107189 (n=9535299) ===
+  2 certifiable windows, coverage n ≤ 9534344
+  === RUN #145 starts at W110034 (n=9786969, sc=0.025015) ===
+  === RUN #145 ends at W110568 (n=9834893) ===
+  535 certifiable windows, coverage n ≤ 9834937
+
+=== SCAN COMPLETE: n=1 to n=10,000,000 ===
+Total certifiable runs: 145
+Total certifiable right endpoints: 13,881
+Maximum single-gamma_1 coverage: n <= 9,834,937
