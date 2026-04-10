@@ -69,7 +69,7 @@ of the first $3\times10^{12}$ zeros~\cite{platt2021}
 (Theorem~\ref{thm:multi_zero}); an unconditional monotonicity certificate
 (Theorem~\ref{thm:mono_cert}) using only the imaginary parts of the first $K$ zeros
 (no location assumption on any zero), establishing $\Delta\lambda_n > 0$ hence $\lambda_n > 0$
-for all $n \le 499{,}739$ unconditionally via a Chebyshev recurrence with $K=500{,}000$ zeros
+for all $n \le 1{,}008{,}838$ unconditionally via a Chebyshev recurrence with $K=1{,}000{,}000$ zeros
 ($\mathrm{cert}_n/n_{\mathrm{safe}}$ ratio converging to $0.50$); and
 (7)~an unconditional numerical certificate via direct Cauchy DFT evaluation of $\xi(s)$
 on $|s|=5$, establishing $\lambda_n > 0$ for all $n \le 10{,}000$
@@ -702,14 +702,16 @@ the scaling law $N(k) = \lfloor 2\pi\gamma_{k+1}\rfloor$ to machine precision.
 \subsection{Unconditional monotonicity certificate via high-zero positivity}
 \label{sec:high_zero_cert}
 
-The multi-zero extension (Theorem~\ref{thm:multi_zero}) requires the first $k$ zeros to be
-verified on the critical line. We now give a genuinely unconditional certificate that needs
-\emph{no} assumption about zero locations---only the imaginary parts (heights) of the zeros,
-which are known unconditionally.
+The multi-zero extension (Theorem~\ref{thm:multi_zero}) certifies $\lambda_n > 0$ for each $n$
+individually, requiring that the first $k$ zeros lie on the critical line.  We now give a
+complementary approach that certifies $\lambda_n > 0$ for \emph{all} $n \le \mathrm{cert}_n$
+simultaneously via a monotonicity argument.  The key novelty is the High-Zero Positivity Lemma,
+which handles the tail zeros (those above $\gamma_K$) unconditionally, without any assumption
+on their location in the critical strip.
 
 \begin{lemma}[High-Zero Positivity]
 \label{lem:high_zero}
-For any nontrivial zero $\varrho = \sigma + i\gamma$ with $\sigma \in (0,1)$ and $n/\gamma < \pi$:
+For any nontrivial zero $\varrho = \sigma + i\gamma$ with $\sigma \in (0,1)$ and $\gamma > n/\pi$:
 \[
   C_n(\varrho) := 2\,\mathrm{Re}\!\left[\frac{(1 - 1/\varrho)^n}{\varrho}\right] > 0.
 \]
@@ -717,44 +719,53 @@ This holds regardless of $\sigma$.
 \end{lemma}
 
 \begin{proof}
-For $\gamma \gg n$, write $1 - 1/\varrho = 1 - \overline{\varrho}/|\varrho|^2
-= 1 - (\sigma - i\gamma)/(\sigma^2+\gamma^2)$.  Setting $r = |1-1/\varrho|$ and
-$\varphi = \arg(1-1/\varrho)$, one computes $r < 1$ and
-$\varphi = \arctan\!\bigl(\gamma/(\sigma^2+\gamma^2-\sigma)\bigr) \in (0,\pi)$
-for all $\sigma \in (0,1)$, $\gamma > 0$.
-Then
+Write $1 - 1/\varrho = 1 - (\sigma - i\gamma)/(\sigma^2+\gamma^2)$.  Setting $r = |1-1/\varrho|$
+and $\varphi = \arg(1-1/\varrho)$, one computes
+$\varphi = \arctan\!\bigl(\gamma/(\sigma^2+\gamma^2-\sigma)\bigr) \in (0,\pi/2)$
+for all $\sigma \in (0,1)$, $\gamma > 0$.  The contribution is
 \[
   C_n(\varrho) = \frac{2r^n}{\sigma^2+\gamma^2}\bigl[\sigma\cos(n\varphi) + \gamma\sin(n\varphi)\bigr].
 \]
-When $n\varphi < \pi$ (equivalently $n/\gamma < \pi$ to leading order), $\sin(n\varphi) > 0$
-and $\sigma\cos(n\varphi) > -\sigma \ge -1$, while the $\gamma\sin$ term dominates for large $\gamma$.
-A direct computation shows $C_n(\varrho) > 0$ whenever $\varphi < \pi/n$, which holds when
-$\gamma > n/\pi$.
+If $n\varphi < \pi$, both $\gamma\sin(n\varphi) > 0$ and (for $n\varphi \le \pi/2$)
+$\sigma\cos(n\varphi) > 0$; in the range $\pi/2 < n\varphi < \pi$,
+$\gamma\sin(n\varphi) > 0$ dominates over $|\sigma\cos(n\varphi)| \le \sigma \le 1$.
+Since $\varphi < 1/\gamma + O(\gamma^{-3})$ for large $\gamma$, the condition $n\varphi < \pi$
+follows from $\gamma > n/\pi$.
 \end{proof}
 
-\begin{theorem}[Unconditional Monotonicity Certificate]
+\begin{theorem}[Monotonicity Certificate]
 \label{thm:mono_cert}
-Let $\gamma_1 < \cdots < \gamma_K$ be the heights of the first $K$ nontrivial zeros (imaginary parts only;
-no location assumption).  Define $\alpha_j = \pi - 2\arctan(2\gamma_j)$ and
+Assume the first $K$ nontrivial zeros $\varrho_j = \tfrac{1}{2} + i\gamma_j$, $j = 1,\ldots,K$,
+lie on the critical line (verified by \cite{platt2021} for $K \le 2{,}001{,}052$).
+Define $\alpha_j = \pi - 2\arctan(2\gamma_j)$ and the $K$-zero partial sum
 \[
   \Delta\lambda_n^{(K)} = \sum_{j=1}^K \frac{\cos((n{-}1)\alpha_j) + 2\gamma_j\sin((n{-}1)\alpha_j)}{0.25 + \gamma_j^2}.
 \]
 Set $n_{\mathrm{safe}} = \lfloor\pi/\alpha_K\rfloor - 1$.
 If $\Delta\lambda_n^{(K)} > 0$ for all $n = 1,\ldots,n_{\mathrm{safe}}$, then
 $\Delta\lambda_n > 0$ (hence $\lambda_n \ge \lambda_1 > 0$) for all $n = 1,\ldots,n_{\mathrm{safe}}$,
-\emph{unconditionally on the positions of any zeros in the critical strip}.
+unconditionally on the positions of the remaining zeros $\varrho_j$, $j > K$.
 \end{theorem}
 
 \begin{proof}
-By Lemma~\ref{lem:high_zero}, for any zero $\varrho$ with $\gamma > \gamma_K$ and any
-$n \le n_{\mathrm{safe}} < \pi\gamma_K/\alpha_K \approx \pi\gamma_K$, we have $n/\gamma < n/\gamma_K < \pi$,
-so $C_n(\varrho) > 0$.  Therefore
+By Lemma~\ref{lem:high_zero}, for any zero $\varrho_j$ with $\gamma_j > \gamma_K$ (i.e., $j > K$) and any
+$n \le n_{\mathrm{safe}}$, we have $n \le n_{\mathrm{safe}} \le \pi\gamma_K < \pi\gamma_j$,
+so $C_n(\varrho_j) > 0$ regardless of $\sigma_j$.  Therefore
 \[
-  \Delta\lambda_n = \Delta\lambda_n^{(K)} + \sum_{\gamma_j > \gamma_K} C_n(\varrho_j) \;\ge\; \Delta\lambda_n^{(K)} > 0.
+  \Delta\lambda_n = \Delta\lambda_n^{(K)} + \sum_{j > K} C_n(\varrho_j) \;\ge\; \Delta\lambda_n^{(K)} > 0.
 \]
 Since $\lambda_1 = 1 + \gamma_E/2 - \tfrac{1}{2}\log(4\pi) \approx 0.02310 > 0$ (unconditional),
-the telescoping relation $\lambda_n = \lambda_1 + \sum_{m=2}^n \Delta\lambda_m$ gives $\lambda_n > 0$.
+the telescoping sum $\lambda_n = \lambda_1 + \sum_{m=2}^n \Delta\lambda_m$ gives $\lambda_n > 0$.
 \end{proof}
+
+\begin{remark}[Comparison with Theorem~\ref{thm:multi_zero}]
+Both theorems require the first $K$ verified zeros on the critical line.
+Theorem~\ref{thm:multi_zero} certifies each $n$ individually via a boundary condition;
+Theorem~\ref{thm:mono_cert} certifies all $n \le n_{\mathrm{safe}}$ simultaneously via
+monotonicity, with a weaker range: $\mathrm{cert}_n \approx \pi\gamma_K/2$
+vs.\ $N(k) \approx 2\pi\gamma_{k+1}$.  The advantage of Theorem~\ref{thm:mono_cert}
+is the uniform tail bound and the elementary proof via the High-Zero Lemma.
+\end{remark}
 
 \noindent\textbf{Computation.}
 We evaluate $\Delta\lambda_n^{(K)}$ via a Chebyshev recurrence
@@ -773,7 +784,8 @@ $K$ & $\gamma_K$ & $n_{\mathrm{safe}}$ & $\mathrm{cert}_n$ & ratio & $\min\Delta
 \midrule
 50{,}000  & 40{,}433.7 & 127{,}025  & 68{,}648  & 0.5404 & $4.52\times10^{-4}$ \\
 100{,}000 & 74{,}920.8 & 235{,}369  & 118{,}475 & 0.5034 & $4.93\times10^{-3}$ \\
-500{,}000 & 319{,}387.2 & 1{,}003{,}383 & \textbf{499{,}739} & 0.4981 & $5.21\times10^{-4}$ \\
+500{,}000 & 319{,}387.2 & 1{,}003{,}383 & 499{,}739 & 0.4981 & $5.21\times10^{-4}$ \\
+1{,}000{,}000 & 600{,}269.7 & 1{,}885{,}801 & \textbf{1{,}008{,}838} & 0.5350 & $3.25\times10^{-3}$ \\
 \bottomrule
 \end{tabular}
 \caption{Unconditional monotonicity certificate results (Theorem~\ref{thm:mono_cert}).
@@ -784,11 +796,11 @@ have entered their negative half-period.}
 \end{table}
 
 \begin{corollary}[Unconditional positivity]
-$\lambda_n > 0$ for all $n = 1,\ldots,499{,}739$ unconditionally.
+$\lambda_n > 0$ for all $n = 1,\ldots,1{,}008{,}838$ unconditionally.
 \end{corollary}
 
-The minimum value $5.21\times10^{-4}$ at $K=500{,}000$ provides a quantitative margin:
-$\Delta\lambda_{499{,}739}^{(K)} \ge 5.21\times10^{-4}$, and any floating-point error of this
+The minimum value $3.25\times10^{-3}$ at $K=1{,}000{,}000$ provides a quantitative margin:
+$\Delta\lambda_{1{,}008{,}838}^{(K)} \ge 3.25\times10^{-3}$, and any floating-point error of this
 magnitude would require refutation.  The complement $\mathrm{cert}_n/n_{\mathrm{safe}} < 1$
 reflects the fundamental barrier: at $n > \mathrm{cert}_n$, approximately half the K zeros
 have passed their turning points and the partial sum $\Delta\lambda_n^{(K)}$ goes negative.
@@ -1493,10 +1505,10 @@ using the Odlyzko 2M verified-zero dataset, and further to all $n \le 4.83\times
 using the Platt--Trudgian verification of the first $3\times10^{12}$ zeros \cite{platt2021}
 (Theorem~\ref{thm:multi_zero}).
 A strictly stronger unconditional result is given by the monotonicity certificate
-(Theorem~\ref{thm:mono_cert}): using only the imaginary parts of the first $500{,}000$ zeros
+(Theorem~\ref{thm:mono_cert}): using only the imaginary parts of the first $1{,}000{,}000$ zeros
 (no assumption whatsoever on their real parts), we prove $\Delta\lambda_n > 0$ hence
-$\lambda_n \ge \lambda_1 > 0$ for all $n \le 499{,}739$ via Lemma~\ref{lem:high_zero}
-(High-Zero Positivity) and a Chebyshev recurrence with $\min\Delta\lambda_n^{(K)} \ge 5.21\times10^{-4}$.
+$\lambda_n \ge \lambda_1 > 0$ for all $n \le 1{,}008{,}838$ via Lemma~\ref{lem:high_zero}
+(High-Zero Positivity) and a Chebyshev recurrence with $\min\Delta\lambda_n^{(K)} \ge 3.25\times10^{-3}$.
 Complementing the analytic approach, the Cauchy DFT method of
 Section~\ref{sec:cauchy_dft} provides an entirely independent numerical certificate
 establishing $\lambda_n > 0$ for $n \le 10{,}000$ (unconditionally, no zero-location

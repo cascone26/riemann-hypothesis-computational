@@ -590,8 +590,8 @@ Threshold: C_n(ρ) > 0 whenever γ > n/π ≈ 0.318n.
 | **50,000** | **40,433.69** | **127,025** | **68,648** | **0.5404** | 0.0004516 | 5.9s |
 | **100,000** | **74,920.83** | **235,369** | **118,475** | **0.5034** | 0.0049343 | 20.8s |
 | **500,000** | **319,387.22** | **1,003,383** | **499,739** | **0.4981** | 0.0005207 | 552s |
-| **1,000,000** | **600,269.68** | **1,885,801** | *(running)* | — | — | — |
-| **2,000,000** | **1,132,490.66** | **~3,558,000** | *(pending)* | — | — | — |
+| **1,000,000** | **600,269.68** | **1,885,801** | **1,008,838** | **0.5350** | **0.0032512** | 18970s |
+| **2,000,000** | **1,131,944.47** | **3,556,107** | *(running)* | — | — | — |
 
 **Ratio converging to ~0.50**: at K=500k, ratio=0.4981. Expected K=2M cert_n ≈ 1.78M.
 
@@ -602,8 +602,8 @@ Threshold: C_n(ρ) > 0 whenever γ > n/π ≈ 0.318n.
 
 ### Gap Status After This Session
 
-- Unconditional range: n = 1..499,739 (K=500k done); K=1M/2M still running
-- Expected after K=2M: n ≤ ~1.78M (unconditional, ~2 hours to complete)
+- Unconditional range: n = 1..1,008,838 (K=1M done 2026-04-10); K=2M running
+- Expected after K=2M: n ≤ ~1.78M (unconditional, ~5 hrs remaining)
 - Main gap: n > ~1.78M (after K=2M) to 4.83×10^12 (Platt-Trudgian covers but requires zeros on σ=1/2)
 - For n > cert_n(K=2M): unverified zeros with γ in 3×10^10..∞ enter negative half-period → High-Zero Lemma no longer helps for that n
 
@@ -618,8 +618,8 @@ Threshold: C_n(ρ) > 0 whenever γ > n/π ≈ 0.318n.
 6. ~~**20M Platt-Trudgian cert**~~ — DONE (2026-04-09, λ_n > 0 for n ≤ 41,002,197,265)
 7. ~~**High-Zero Positivity Lemma + cert_n=29,022**~~ — DONE (2026-04-09, unconditional for n ≤ 29,022)
 8. ~~**Extend cert to K=500k zeros**~~ — DONE (2026-04-09, cert_n=499,739, unconditional, cert_2M_fast.py)
-9. **K=1M cert running** (PID 52115, /tmp/cert_fast_output.txt, exp cert_n ~940k)
-10. **K=2M cert pending** (will run auto after K=1M, exp cert_n ~1.78M, ~2.5 hrs)
+9. ~~**K=1M cert**~~ — DONE (2026-04-10, cert_n=1,008,838, ratio=0.5350, unconditional)
+10. **K=2M cert running** (PID 52115, /tmp/cert_fast_output.txt, exp cert_n ~1.78M, ETA ~5hrs)
 9. **NB extension N=2100..5000**: Collect body results, update paper
 10. **arXiv submission**: math.NT primary, math.NA cross-list — confirm author name, then submit
 11. **Cover letter for Math of Comp**: 3 sentences (what/why/why MathComp)

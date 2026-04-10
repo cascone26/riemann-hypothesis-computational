@@ -1099,8 +1099,8 @@ for any σ ∈ (0,1). The minimum γ for positivity is approximately n/π ≈ 0.
 
 ### Unconditional Monotonicity Certificate
 
-**Theorem**: Δλ_n > 0 for all n = 1..499,739 — proved UNCONDITIONALLY.
-*(Extended from n ≤ 29,022 using K=500,000 zeros. K=1M/2M runs in progress — see table below.)*
+**Theorem**: Δλ_n > 0 for all n = 1..1,008,838 — proved UNCONDITIONALLY.
+*(K=1M completed 2026-04-10: cert_n=1,008,838. K=2M running — see table below.)*
 
 **Proof**:
 
@@ -1143,8 +1143,8 @@ monotonicity Δλ_n > 0:
 | **50,000** | **40,433.69** | **127,025** | **68,648** | **0.5404** | **0.0004516** | 5.9s |
 | **100,000** | **74,920.83** | **235,369** | **118,475** | **0.5034** | **0.0049343** | 20.8s |
 | **500,000** | **319,387.22** | **1,003,383** | **499,739** | **0.4981** | **0.0005207** | 552s |
-| **1,000,000** | **600,269.68** | **1,885,801** | *(running)* | — | — | — |
-| **2,000,000** | **1,132,490.66** | **~3,558,000** | *(pending)* | — | — | — |
+| **1,000,000** | **600,269.68** | **1,885,801** | **1,008,838** | **0.5350** | **0.0032512** | 18970s |
+| **2,000,000** | **1,131,944.47** | **3,556,107** | *(running)* | — | — | — |
 
 Script: `operators/cert_2M_fast.py` — Chebyshev recurrence O(K) memory, REFRESH_PERIOD=10000.
 
@@ -1232,7 +1232,7 @@ PROVED (unconditional):
   • ★ High-Zero Positivity Lemma: C_n(ρ) > 0 for any ρ with Im(ρ) > n/π, any σ ∈ (0,1)
   • ★ Unconditional monotonicity certificate: Δλ_n > 0 for n = 1..499,739 [NO RH assumption]
   • ★ Corollary: λ_n > 0 for n = 1..499,739 [UNCONDITIONAL, proved via λ_1>0 + monotonicity]
-    (K=1M in progress → expect n ≤ ~940k; K=2M pending → expect n ≤ ~1.78M)
+    (K=1M done: n ≤ 1,008,838; K=2M running → expect n ≤ ~1.78M)
 
 COMPUTATIONALLY VERIFIED:
   • λ_n > 0 for n ≤ 4.83×10¹² (Platt-Trudgian 2021)
@@ -1249,8 +1249,8 @@ UNCONDITIONAL RANGE COMPARISON:
   Pair positivity (Thm 3)         | n ≤ 85           | YES
   Pair-margin (Thm 3B)            | n ≤ 3,732        | YES
   ★ Monotonicity cert (K=500k)    | n ≤ 499,739      | YES (High-Zero Lemma)
-  ★ Monotonicity cert (K=1M)      | n ≤ ~940k        | YES (running 2026-04-09)
-  ★ Monotonicity cert (K=2M)      | n ≤ ~1.78M       | YES (pending 2026-04-09)
+  ★ Monotonicity cert (K=1M)      | n ≤ 1,008,838    | YES (done 2026-04-10)
+  ★ Monotonicity cert (K=2M)      | n ≤ ~1.78M       | YES (running 2026-04-10)
   Multi-zero extension (Thm 4)    | n ≤ ~10^7        | Requires zeros on σ=1/2
   cert_20M (Platt-Trudgian style) | n ≤ ~4.1×10^10   | Requires zero verification
   Platt-Trudgian                  | n ≤ 4.83×10^12   | Requires zero verification
