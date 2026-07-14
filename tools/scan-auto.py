@@ -24,10 +24,16 @@ NTFY_TOPIC   = 'jacob-cobo-80c6d2b9e9c4'
 ANALYZER     = '/tmp/scan-analyzer.py'
 DB_TOOL      = '/tmp/scan-db.py'
 SCAFFOLD     = '/tmp/scan-scaffold.py'
+HURST        = '/tmp/scan-hurst.py'
+GUE          = '/tmp/scan-gue.py'
+LPPL         = '/tmp/scan-lppl.py'
 SCRIPT_TMPL  = '/tmp/dense_sys_{}.py'
 LOG_TMPL     = '/tmp/dense_sys_{}.log'
 REPORT_TMPL  = '/tmp/dense_sys_{}_report.json'
 SCAFFOLD_TMPL= '/tmp/dense_sys_{}_scaffold.md'
+HURST_TMPL   = '/tmp/dense_sys_{}_hurst.json'
+GUE_TMPL     = '/tmp/dense_sys_{}_gue.json'
+LPPL_TMPL    = '/tmp/dense_sys_{}_lppl.json'
 RC_THRESH   = 1.5e-12
 DEEP_THRESH = 1e-10
 POLL_SEC    = 3
@@ -167,16 +173,61 @@ def analyze_scan(label):
                             capture_output=True, text=True)
         if r3.returncode == 0:
             log(f'  Scaffold → {scaffold_path}')
-            ntfy(
-                f'Scan {label} post-processing done\n'
-                f'Report: {report_path}\n'
-                f'Scaffold: {scaffold_path}\n'
-                f'DB: /tmp/riemann_events.db\n'
-                f'Run: python3 /tmp/scan-db.py records',
-                f'Scan {label} — Data Ready'
-            )
         else:
             log(f'  Scaffold error: {r3.stderr[:100]}')
+
+    # Step 4: Hurst exponent on λ₁ sequence
+    hurst_path = HURST_TMPL.format(label)
+    if Path(HURST).exists():
+        r4 = subprocess.run(['python3', HURST, log_path, '--json', hurst_path],
+                            capture_output=True, text=True)
+        if r4.returncode == 0:
+            log(f'  Hurst → {hurst_path}')
+            # Extract H value from output
+            for line in r4.stdout.splitlines():
+                if 'Hurst (DFA)' in line or 'Hurst (R/S)' in line:
+                    log(f'  {line.strip()}')
+        else:
+            log(f'  Hurst error: {r4.stderr[:100]}')
+
+    # Step 5: GUE spacing test on BC events
+    gue_path = GUE_TMPL.format(label)
+    db_path = '/tmp/riemann_events.db'
+    if Path(GUE).exists() and Path(db_path).exists():
+        r5 = subprocess.run(['python3', GUE, db_path, '--json', gue_path],
+                            capture_output=True, text=True)
+        if r5.returncode == 0:
+            log(f'  GUE → {gue_path}')
+            for line in r5.stdout.splitlines():
+                if 'Best fit' in line or 'variance' in line:
+                    log(f'  {line.strip()}')
+        else:
+            log(f'  GUE error: {r5.stderr[:100]}')
+
+    # Step 6: LPPL log-periodic test on blob humps
+    lppl_path = LPPL_TMPL.format(label)
+    if Path(LPPL).exists():
+        r6 = subprocess.run(['python3', LPPL, log_path, '--json', lppl_path],
+                            capture_output=True, text=True)
+        if r6.returncode == 0:
+            log(f'  LPPL → {lppl_path}')
+            for line in r6.stdout.splitlines():
+                if 'LOG-PERIODIC' in line or 'blobs show' in line:
+                    log(f'  {line.strip()}')
+        else:
+            log(f'  LPPL error: {r6.stderr[:100]}')
+
+    ntfy(
+        f'Scan {label} post-processing done\n'
+        f'Report: {report_path}\n'
+        f'Scaffold: {scaffold_path}\n'
+        f'Hurst: {hurst_path}\n'
+        f'GUE: {gue_path}\n'
+        f'LPPL: {lppl_path}\n'
+        f'DB: /tmp/riemann_events.db\n'
+        f'Run: python3 /tmp/scan-db.py records',
+        f'Scan {label} — Data Ready'
+    )
 
 def main():
     labels = sys.argv[1:] if len(sys.argv) > 1 else []
