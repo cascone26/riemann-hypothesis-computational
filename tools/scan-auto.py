@@ -91,11 +91,9 @@ def launch_scan(label):
     result = subprocess.run(['pgrep', '-f', f'dense_sys_{label}.py'], capture_output=True, text=True)
     if result.stdout.strip():
         log(f'  Launched {label} scan (PID {result.stdout.strip()})')
-        ntfy(f'Scan {label} launched\nRange: {label} range started\nLog: {log_path}', f'Scan {label} Started')
         return True
     else:
         log(f'  WARNING: Could not verify {label} scan started')
-        ntfy(f'WARNING: {label} scan may not have started. Check /tmp/dense_sys_{label}.log', 'Scan Launch Warning')
         return False
 
 def tail_scan(label, start_line=0):
@@ -132,10 +130,9 @@ def tail_scan(label, start_line=0):
                 a = alc(l1, l2)
                 nd_flag = ' [ND!]' if a >= 99.0 else ''
                 log(f'  BC at lsq {lsq}: λ₁={l1:.3e} λ₂={l2:.3e} ALC={a:.1f}%{nd_flag}')
-                ntfy(
-                    f'BC event lsq {lsq}\nλ₁={l1:.3e} λ₂={l2:.3e}\nALC={a:.1f}%{nd_flag}\nScan: {label} (#{bc_this_scan} this scan)',
-                    f'BC Event — Scan {label}'
-                )
+                # ntfy only if λ₁ goes positive (disproves RH) or hits an extraordinary threshold
+                if l1 > 0 or l2 > 0:
+                    ntfy(f'*** POSITIVE EIGENVALUE ***\nlsq {lsq}: λ₁={l1:.3e} λ₂={l2:.3e}\nRH MAY BE DISPROVED', 'CRITICAL — Positive λ')
 
         start_line = len(lines)
         time.sleep(POLL_SEC)
@@ -217,17 +214,7 @@ def analyze_scan(label):
         else:
             log(f'  LPPL error: {r6.stderr[:100]}')
 
-    ntfy(
-        f'Scan {label} post-processing done\n'
-        f'Report: {report_path}\n'
-        f'Scaffold: {scaffold_path}\n'
-        f'Hurst: {hurst_path}\n'
-        f'GUE: {gue_path}\n'
-        f'LPPL: {lppl_path}\n'
-        f'DB: /tmp/riemann_events.db\n'
-        f'Run: python3 /tmp/scan-db.py records',
-        f'Scan {label} — Data Ready'
-    )
+    log(f'  Post-processing complete for {label}')
 
 def main():
     labels = sys.argv[1:] if len(sys.argv) > 1 else []
@@ -237,7 +224,6 @@ def main():
         sys.exit(1)
 
     log(f'scan-auto.py starting. Sequence: {" → ".join(labels)}')
-    ntfy(f'Scan sequencer started\nSequence: {" → ".join(labels)}', 'Riemann Auto-Scanner')
 
     for i, label in enumerate(labels):
         log_path = LOG_TMPL.format(label)
@@ -255,7 +241,6 @@ def main():
                 log(f'  Creating {label} scan from {prev_label}...')
                 if not make_next_script(prev_label, label):
                     log(f'  ERROR: Cannot create {label} scan. Stopping.')
-                    ntfy(f'FATAL: Cannot create {label} scan — stopping sequence.', 'Riemann Auto-Scanner ERROR')
                     sys.exit(1)
                 launch_scan(label)
 
@@ -265,13 +250,11 @@ def main():
 
         if done:
             log(f'  {label} scan complete. {bc_count} BCs detected this scan.')
-            ntfy(f'Scan {label} DONE\n{bc_count} BC events detected\nRunning analysis...', f'Scan {label} Complete')
             analyze_scan(label)
         else:
             log(f'  {label} scan monitoring interrupted')
 
     log('All scans in sequence complete.')
-    ntfy(f'All scans complete: {" → ".join(labels)}', 'Riemann Sequence Done')
 
 if __name__ == '__main__':
     main()
