@@ -1,0 +1,10 @@
+{
+  "test": "Hankel/Stieltjes moment test for Li coefficients (Track 1)",
+  "verdict": "FAILS at N=2 \u2014 (lambda_n) is NOT a moment sequence",
+  "lambda_1": 0.023095708966121033,
+  "lambda_2": 0.09234573522804668,
+  "lambda_3": 0.2076389205543248,
+  "det_H2": -0.003732166735646288,
+  "log_concave_at_1": true,
+  "note": "H_2=[[l1,l2],[l2,l3]] not PD since l1*l3 < l2^2. Sequence is log-concave, opposite of moment requirement. Moment-sequence route to RH is dead. Does NOT contradict RH (which only needs lambda_n>0, verified)."
+}

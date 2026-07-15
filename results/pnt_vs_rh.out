@@ -1,0 +1,16 @@
+pnt_vs_rh 2026-07-12 13:49:40
+
+lsq=50 N=250 L=3.9120
+  pred_sc=2.2545e-04
+  true    : sc=1.3511e-04  ratio=0.599  lam0=-4.5240e-12
+  shifted : sc=4.8291e-03  ratio=21.420  lam0=-9.6908e+00
+  random  : sc=1.5091e-03  ratio=6.694  lam0=-4.4345e+00
+  [4s]
+
+lsq=100 N=500 L=4.6052
+  pred_sc=1.6496e-04
+  true    : sc=4.3309e-05  ratio=0.263  lam0=-4.0736e-06
+  shifted : sc=nan  ratio=nan  lam0=-1.4599e+01
+  random  : sc=5.4478e-03  ratio=33.025  lam0=-7.8922e+00
+  [145s]
+

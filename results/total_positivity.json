@@ -1,0 +1,37 @@
+{
+  "dps": 150,
+  "n_max": 60,
+  "log_concave": true,
+  "ratio_monotone": true,
+  "hankel_orders": {
+    "2": {
+      "all_positive": false,
+      "min_det": -7.05569931125014e-05
+    },
+    "3": {
+      "all_positive": false,
+      "min_det": -1.4704650435292944e-13
+    },
+    "4": {
+      "all_positive": true,
+      "min_det": 0.0
+    },
+    "5": {
+      "all_positive": true,
+      "min_det": 0.0
+    },
+    "6": {
+      "all_positive": false,
+      "min_det": -7.678998681949021e-73
+    },
+    "8": {
+      "all_positive": true,
+      "min_det": 0.0
+    },
+    "10": {
+      "all_positive": false,
+      "min_det": -2.053351441901581e-238
+    }
+  },
+  "toeplitz_2x2_violations": 0
+}

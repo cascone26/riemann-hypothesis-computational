@@ -1,0 +1,17 @@
+Null-space coverage analysis
+
+lsq=625 (DEEP): D_null=0, aligned=3, coverage=0/0 (ratio=0.000), lam_min=-5.8035e-08
+lsq=605 (not deep): D_null=0, aligned=4, coverage=0/0 (ratio=0.000), lam_min=-1.2247e-05
+lsq=715 (DEEP): D_null=1, aligned=4, coverage=0/1 (ratio=0.000), lam_min=-9.3373e-06
+lsq=710 (not deep): D_null=1, aligned=5, coverage=0/1 (ratio=0.000), lam_min=-6.4691e-12
+lsq=780 (DEEP): D_null=1, aligned=3, coverage=0/1 (ratio=0.000), lam_min=-8.2424e-06
+lsq=800 (not deep): D_null=1, aligned=8, coverage=0/1 (ratio=0.000), lam_min=-1.9881e-06
+
+SUMMARY
+  lsq  deep  D_null  aligned  covered   ratio
+  625     Y       0        3        0   0.000
+  605     N       0        4        0   0.000
+  715     Y       1        4        0   0.000
+  710     N       1        5        0   0.000
+  780     Y       1        3        0   0.000
+  800     N       1        8        0   0.000

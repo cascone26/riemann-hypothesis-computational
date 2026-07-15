@@ -1,0 +1,107 @@
+
+============================================================
+c=13, N_our=100, dps=80, T=400
+  CvS: lam_min=2.07696e-59  build+eig=1651.8s
+
+  [cvs_eigvec(c=13)] |F(gamma_k)|/max at known zeros:
+   *  gamma=14.1347: |F|/max=8.8240e-07
+   *  gamma=21.0220: |F|/max=1.4911e-08
+   *  gamma=25.0109: |F|/max=1.8513e-09
+   *  gamma=30.4249: |F|/max=4.3758e-11
+   *  gamma=32.9351: |F|/max=1.7021e-11
+   *  gamma=37.5862: |F|/max=8.8548e-13
+   *  gamma=40.9187: |F|/max=8.2805e-14
+   *  gamma=43.3271: |F|/max=3.1733e-14
+  Running extract_zeros...
+  extract_zeros: 1.7s
+    k=1: detected=14.134725  err=1.4097e-17
+    k=2: detected=21.02204  err=2.09659e-17
+    k=3: detected=25.010858  err=2.4944e-17
+    k=4: detected=30.424876  err=3.03436e-17
+    k=5: detected=32.935062  err=3.28471e-17
+    k=6: detected=37.586178  err=3.74858e-17
+
+  Our tau: lam_min=-1.8260e-12  build+eig=0.9s
+  near-null K=23
+
+  [our_min_kinetic(c=13)] |F(gamma_k)|/max at known zeros:
+   *  gamma=14.1347: |F|/max=7.2248e-06
+   *  gamma=21.0220: |F|/max=9.1272e-06
+      gamma=25.0109: |F|/max=2.9097e-05
+      gamma=30.4249: |F|/max=2.7909e-05
+      gamma=32.9351: |F|/max=1.9402e-05
+      gamma=37.5862: |F|/max=2.4452e-05
+      gamma=40.9187: |F|/max=1.1533e-05
+      gamma=43.3271: |F|/max=2.7439e-05
+
+============================================================
+c=23, N_our=100, dps=80, T=400
+  CvS: lam_min=-2.19929e-80  build+eig=1875.9s
+
+  [cvs_eigvec(c=23)] |F(gamma_k)|/max at known zeros:
+   *  gamma=14.1347: |F|/max=6.2766e-05
+   *  gamma=21.0220: |F|/max=1.2156e-05
+   *  gamma=25.0109: |F|/max=3.9341e-06
+   *  gamma=30.4249: |F|/max=2.5046e-07
+   *  gamma=32.9351: |F|/max=1.4078e-07
+   *  gamma=37.5862: |F|/max=1.2835e-08
+   *  gamma=40.9187: |F|/max=1.6519e-09
+   *  gamma=43.3271: |F|/max=7.6805e-10
+  Running extract_zeros...
+  extract_zeros: 1.6s
+    k=1: detected=14.134725  err=7.10383e-17
+    k=2: detected=21.02204  err=1.05653e-16
+    k=3: detected=25.010858  err=1.257e-16
+    k=4: detected=30.424876  err=1.52909e-16
+    k=5: detected=32.935062  err=1.65525e-16
+    k=6: detected=37.586178  err=1.88901e-16
+
+  Our tau: lam_min=-7.7795e-14  build+eig=1.2s
+  near-null K=43
+
+  [our_min_kinetic(c=23)] |F(gamma_k)|/max at known zeros:
+      gamma=14.1347: |F|/max=1.8344e-05
+   *  gamma=21.0220: |F|/max=9.4360e-06
+   *  gamma=25.0109: |F|/max=2.1676e-05
+      gamma=30.4249: |F|/max=1.7731e-05
+   *  gamma=32.9351: |F|/max=5.0086e-06
+   *  gamma=37.5862: |F|/max=6.0409e-06
+   *  gamma=40.9187: |F|/max=7.4207e-06
+      gamma=43.3271: |F|/max=1.1327e-05
+
+============================================================
+c=50, N_our=100, dps=80, T=400
+  CvS: lam_min=-2.964e-27  build+eig=2002.5s
+
+  [cvs_eigvec(c=50)] |F(gamma_k)|/max at known zeros:
+   *  gamma=14.1347: |F|/max=8.6045e-05
+   *  gamma=21.0220: |F|/max=9.0451e-05
+   *  gamma=25.0109: |F|/max=2.2374e-04
+   *  gamma=30.4249: |F|/max=1.5835e-04
+   *  gamma=32.9351: |F|/max=5.3791e-05
+   *  gamma=37.5862: |F|/max=1.4041e-04
+   *  gamma=40.9187: |F|/max=1.4037e-04
+   *  gamma=43.3271: |F|/max=6.9153e-05
+  Running extract_zeros...
+  extract_zeros: 1.6s
+    k=1: detected=14.134725  err=3.53257e-16
+    k=2: detected=21.02204  err=5.25386e-16
+    k=3: detected=25.010858  err=6.25075e-16
+    k=4: detected=30.424876  err=7.60383e-16
+    k=5: detected=32.935062  err=8.23117e-16
+    k=6: detected=37.586178  err=9.39359e-16
+
+  Our tau: lam_min=-1.5797e-10  build+eig=0.7s
+  near-null K=81
+
+  [our_min_kinetic(c=50)] |F(gamma_k)|/max at known zeros:
+   *  gamma=14.1347: |F|/max=2.1489e-05
+   *  gamma=21.0220: |F|/max=1.2879e-06
+   *  gamma=25.0109: |F|/max=1.2157e-05
+   *  gamma=30.4249: |F|/max=8.2497e-07
+   *  gamma=32.9351: |F|/max=8.1002e-06
+   *  gamma=37.5862: |F|/max=3.2724e-06
+   *  gamma=40.9187: |F|/max=3.1933e-06
+   *  gamma=43.3271: |F|/max=3.2736e-07
+
+Saved: /Users/scones/projects/riemann/operators/../results/cvs_fourier_mellin.json

@@ -1,0 +1,27 @@
+Null space intrinsicness test
+Testing: do eigenvectors of V_null change when σ moves from 0.5?
+
+lsq=50, N=250
+  σ=0.500: dim=97 lam_min=-4.1018e-12
+  σ=0.500: dim= 97 lam_min=-4.1018e-12  mean_cos=1.0000 min_cos=1.0000  → SAME (1s)
+  σ=0.505: dim= 46 lam_min=-7.1993e-02  mean_cos=0.7702 min_cos=0.0005  → DIFFERENT (1s)
+  σ=0.510: dim= 26 lam_min=-1.4310e-01  mean_cos=0.7526 min_cos=0.0001  → DIFFERENT (1s)
+  σ=0.520: dim= 18 lam_min=-2.8244e-01  mean_cos=0.7042 min_cos=0.0000  → DIFFERENT (1s)
+  σ=0.550: dim= 11 lam_min=-6.7748e-01  mean_cos=0.6595 min_cos=0.0004  → DIFFERENT (1s)
+  σ=0.600: dim=  7 lam_min=-1.2639e+00  mean_cos=0.2283 min_cos=0.0006  → DIFFERENT (2s)
+  [lsq=50 done in 9s]
+
+lsq=100, N=500
+  σ=0.500: dim=197 lam_min=-4.0737e-06
+  σ=0.500: dim=197 lam_min=-4.0737e-06  mean_cos=1.0000 min_cos=1.0000  → SAME (9s)
+  σ=0.505: dim= 59 lam_min=-1.3242e-01  mean_cos=0.0123 min_cos=0.0000  → DIFFERENT (5s)
+  σ=0.510: dim= 34 lam_min=-2.6276e-01  mean_cos=0.0060 min_cos=0.0000  → DIFFERENT (6s)
+  σ=0.520: dim= 21 lam_min=-5.1697e-01  mean_cos=0.0049 min_cos=0.0000  → DIFFERENT (5s)
+  σ=0.550: dim= 12 lam_min=-1.2290e+00  mean_cos=0.0044 min_cos=0.0000  → DIFFERENT (29s)
+  σ=0.600: dim=  9 lam_min=-2.2600e+00  mean_cos=0.0043 min_cos=0.0000  → DIFFERENT (6s)
+  [lsq=100 done in 98s]
+
+INTERPRETATION:
+  mean_cos ≈ 1.0: null space is intrinsic (good for proof)
+  mean_cos << 1.0: null space changes with σ (circular dependency confirmed)
+  See /Users/scones/projects/riemann/results/null_space_intrinsic.out

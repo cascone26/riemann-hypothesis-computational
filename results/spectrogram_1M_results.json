@@ -1,0 +1,9 @@
+{
+  "N_max": 1000000,
+  "all_positive": true,
+  "min_lambda_n": 0.013535199544232256,
+  "min_lambda_n_at": 1,
+  "growing_ridges": 21,
+  "delta_sigma_min": 6.915000442149414e-08,
+  "runtime_s": 376.97162318229675
+}

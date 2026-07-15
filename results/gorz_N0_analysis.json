@@ -1,0 +1,157 @@
+{
+  "method": "gorz_N0_explicit_stability",
+  "results": [
+    {
+      "d": 2,
+      "Delta_d": 2.0,
+      "eps_d": 0.5,
+      "C_d_emp": null,
+      "N0_delta": 3,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 3,
+      "Delta_d": 1.7320508075688772,
+      "eps_d": 0.09375,
+      "C_d_emp": null,
+      "N0_delta": 3,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 4,
+      "Delta_d": 1.4839275686054516,
+      "eps_d": 0.006951603673130115,
+      "C_d_emp": null,
+      "N0_delta": 114,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 5,
+      "Delta_d": 1.355626179974266,
+      "eps_d": 0.0003712772748090647,
+      "C_d_emp": null,
+      "N0_delta": 4082,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 6,
+      "Delta_d": 1.2334131803851882,
+      "eps_d": 1.1052318641343913e-05,
+      "C_d_emp": null,
+      "N0_delta": 216584,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 7,
+      "Delta_d": 1.1544053947399682,
+      "eps_d": 2.7133741742036445e-07,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 8,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 9,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 10,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 11,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 12,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 13,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 14,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 15,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 16,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 17,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 18,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 19,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    },
+    {
+      "d": 20,
+      "Delta_d": 0.0,
+      "eps_d": 0.0,
+      "C_d_emp": null,
+      "N0_delta": Infinity,
+      "N0_Cd": Infinity
+    }
+  ]
+}
