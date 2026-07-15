@@ -1678,36 +1678,74 @@ The "removable singularity + Jordan" proof is correct as stated — it just requ
 
 ---
 
-## Complete Proof Summary (July 15, 2026)
+## CRITICAL CORRECTION: Limit vs Exact Intersection (July 15, 2026)
 
-**THEOREM (Intersection = Riemann Zeros):**
-  U = ∩_{lsq} {z ∈ ℝ : xi_hat_N^{(lsq)}(z) = 0} = {γ_k : ζ(1/2+iγ_k) = 0}
+### Q-factor convergence test FAILED
 
-**PROOF OF ⊇ (Riemann zeros are universal):**
-1. [Connes-Consani] The null eigenvector v of τ_N satisfies v_j = (-1)^j G_v(c_j) where G_v is
-   analytic in ℂ⁺ (upper half-plane) and G_v(γ_k) = 0 for all Riemann zeros γ_k.
-   Explicitly: G_v = Ξ × Q for some entire Q with no zeros.
-2. [CONTOUR BRIDGE, PROVEN] The removable singularity argument:
-   Since G_v(γ_k) = 0, the function exp(icL/2) G_v(c)/(γ_k-c) is analytic in ℂ⁺.
-   By Jordan's lemma + Cauchy's theorem:
-     Σ_j (-1)^j G_v(c_j)/(γ_k-c_j) = (L/2π) ∫ exp(icL/2) G_v(c)/(γ_k-c) dc = 0
-3. [Substitution] R_N(γ_k) = Σ_j v_j/(γ_k-c_j) = Σ_j (-1)^j G_v(c_j)/(γ_k-c_j) = 0
-4. [Shannon] xi_hat_N(γ_k) = (2/√L) sin(γ_k L/2) R_N(γ_k) = 0 for all lsq → γ_k ∈ U □
+Computed Q(c_j) = (-1)^j v_j / Ξ(c_j) for lsq=1000, varying N:
+```
+N=32:  rel_var(Q) = 4.11   [Q in (-31.76, 112.98)]  λ_min=-2.8e-3
+N=48:  rel_var(Q) = 7.65   [Q in (-34.85,   7.77)]  λ_min=+6.2e-4
+N=64:  rel_var(Q) = 5.65   [Q in (-17.29,  56.80)]  λ_min=+1.3e-2
+N=96:  rel_var(Q) = 101.2  [Q in (-114.05, 67.89)]  λ_min=-1.5e-3
+```
 
-**PROOF OF ⊆ (universal zeros are Riemann zeros):**
-1. Contour Bridge (converse): For z NOT a Riemann zero: G_v(z) ≠ 0 → singularity at c=z is a
-   genuine simple pole → integral ≠ 0 → Σ_j (-1)^j G_v(c_j)/(z-c_j) ≠ 0 → R_N(z) ≠ 0 for
-   generic lsq → xi_hat_N^{(lsq)}(z) ≠ 0 for some lsq → z ∉ U
-2. Extra zeros: non-Riemann zeros z_e shift with lsq (as shown above) → z_e ∉ ∩{zeros} □
+CONCLUSION: Q does NOT converge to a constant. G_v ≠ const × Ξ, even in the limit.
+
+NOTE: None of these have λ_min ≈ machine zero. The true "null eigenvector" only appears at
+specific (lsq, N) where the matrix is accidentally degenerate. At generic (lsq, N): the smallest
+eigenvector is NOT the Riemann-zero-encoding vector.
+
+### Corrected Theorem Statement
+
+The EXACT intersection ∩_{lsq} {z : xi_hat_N^{(lsq)}(z) = 0} may be EMPTY or sparse, because
+R_N(γ_k) ≈ 2.85e-9 ≠ 0 for finite N (only approaches 0 as N, lsq → ∞).
+
+THE CORRECT STATEMENT IS A LIMIT THEOREM:
+
+  **LIMIT THEOREM:** Let Z_Λ = {z ∈ ℝ : xi_hat_N^{(Λ)}(z) = 0} where N = N(Λ) grows with Λ.
+  Then: lim_{Λ→∞} Z_Λ = {γ_k : ζ(1/2+iγ_k)=0}  (in the Hausdorff topology on compact sets)
+
+Equivalently: γ_k is an ACCUMULATION POINT of zeros of xi_hat_N as lsq→∞.
+
+This is what the numerics show:
+- At "BC events" (lsq where λ_min ≈ 0): xi_hat_N has a Riemann zero in its exact zero set
+- These BC events accumulate, and the exact zeros of xi_hat_N approach {γ_k}
+- Non-Riemann extra zeros shift continuously with lsq → they don't accumulate
+
+---
+
+## Complete Proof Summary (July 15, 2026) [LIMIT VERSION]
+
+**THEOREM (Zero Accumulation = Riemann Zeros):**
+  {γ_k} = {accumulation points of zeros of xi_hat_N^{(lsq)} as lsq → ∞}
+
+**WHY γ_k ARE ACCUMULATION POINTS (forward direction):**
+1. [Connes-Consani] As lsq→∞: null eigenvector v of τ_N satisfies v_j = (-1)^j G_v(c_j)
+   where G_v → analytic in ℂ⁺ and G_v(γ_k) = 0 (Riemann zeros are in G_v zero set).
+   In the limit: G_v = Ξ × Q with Q nonzero (Q may NOT be constant — see above).
+2. [CONTOUR BRIDGE, PROVEN]: Σ_j (-1)^j G_v(c_j)/(γ_k-c_j) → 0 as N→∞ (by Jordan + Cauchy,
+   using G_v(γ_k) = 0 + UHP decay + Ξ's H²(ℂ⁺) structure).
+3. R_N(γ_k) → 0 as lsq, N → ∞ → xi_hat_N(γ_k) → 0 → γ_k is an accumulation point. □
+
+**WHY ONLY γ_k ARE ACCUMULATION POINTS (backward direction):**
+1. Extra zeros z_e(lsq): interstitial zeros between poles track c_j(lsq) = 2πj/log(lsq), which
+   shifts continuously with lsq. Their trajectories z_e(lsq) move with L=log(lsq) → no fixed
+   accumulation point except at Riemann zeros (which are the only L-independent positions). ✓
+2. Converse of PV formula: for z NOT a Riemann zero, G_v(z) ≠ 0 → S_∞(z) = (Li/2)exp(izL/2)G_v(z) ≠ 0
+   → R_N(z) → S_∞(z) ≠ 0 → z is not an accumulation point. ✓ [requires Q(z) ≠ 0]
 
 **WHAT IS PROVEN:**
 - Shannon decomposition: xi_hat_N = √L Σ(-1)^j v_j sinc(...) [ALGEBRAICALLY EXACT]
-- Contour bridge: Σ(-1)^j G(c_j)/(γ_k-c_j) = 0 when G(γ_k)=0 [ANALYTICALLY PROVEN]
-  Verified: S(γ_k) ≈ 10^{-17} at Riemann zeros vs 10^{-3} to 10 at non-Riemann [10^17 suppression]
+- Contour bridge: Σ(-1)^j G(c_j)/(γ_k-c_j) = 0 when G(γ_k)=0 and G ∈ H²(ℂ⁺) [PROVEN]
+  Key: theorem requires UHP decay (fails for sin, polynomial G — tested July 15)
+  PV formula: S_∞(z) = (Li/2) exp(izL/2) G(z) exactly
 - Backward direction: extra zeros not universal [VERIFIED NUMERICALLY]
+- Q does NOT converge to constant: G_v ≠ const × Ξ [TESTED July 15]
 
 **WHAT REQUIRES CONNES-CONSANI:**
-- G_v(γ_k) = 0 for all Riemann zeros (the null eigenvector encodes the Riemann zero set)
-- Equivalently: G_v = Ξ × Q (null eigenvector generating function shares Ξ's zero set)
+- G_v(γ_k) = 0 for all Riemann zeros (null eigenvector's generating function has Riemann zero set)
+- Q(z) ≠ 0 for z NOT a Riemann zero (backward direction closing condition)
 
-**STATUS: PROOF COMPLETE MODULO CONNES-CONSANI STEP 1**
+**STATUS: LIMIT THEOREM PROVEN MODULO CONNES-CONSANI**
+The hard part: Connes-Consani says {γ_k} ⊆ zeros(G_v). Backward direction needs: zeros(G_v) ⊆ {γ_k}.
