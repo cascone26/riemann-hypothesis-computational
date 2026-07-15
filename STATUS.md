@@ -2245,3 +2245,54 @@ non-Riemann extra zeros shift continuously with lsq and don't accumulate.
   - Forward: G_v(γ_k)=0 + H²(ℂ⁺) → accumulation at Riemann zeros
   - Backward: extra zeros shift → only accumulation points are Riemann zeros [Q nonzero needed]
 - STILL REQUIRES: Connes-Consani (G_v analytic in UHP, zeros of G_v = Riemann zeros)
+
+---
+
+## Session July 15, 2026 — Full BC Database Analysis
+
+### BC Database State (500 events, lsq 3361-28935)
+
+**Record holders (as of July 15):**
+- Smallest |λ₁|: lsq=8861, |λ|=6.462e-13, ALC=99.06%
+- Highest ALC: lsq=28636, ALC=99.99%, |λ|=8.738e-12
+
+**CRITICAL DISTINCTION:**
+- |λ₁| (absolute size) and ALC (degeneracy of even/odd pair) are DIFFERENT metrics
+- ALC=99.99% at lsq=28636 means the two eigenvalues are nearly equal in RATIO — but both ~8.7e-12
+- |λ|=6.5e-13 at lsq=8861 means the ground state eigenvalue is TINY in absolute terms
+- For the Limit Theorem proof, we need |λ₁| → 0, not ALC → 100%
+
+**High-ALC cluster at log(lsq)≈10.26:**
+Top 10 by ALC are ALL from lsq 28500-28700 (log≈10.26). 
+Possible cause: prime p≈lsq (log(p)≈L) creates near-zero P matrix term → even/odd modes degenerate.
+But this pushes |λ| UP (to ~8e-12), not down. NOT the record we need.
+
+**124 events with |λ|<1e-12** (double-precision floor region).
+All may be hitting machine precision floor (~6e-13). Multi-precision needed to go further.
+
+**BC density by log(lsq):**
+- [8,9):  45 events  (lsq 2980-8103)
+- [9,10): 209 events (lsq 8103-22026)
+- [10,11): 246 events (lsq 22026-59874, PARTIAL — scanning ongoing)
+
+**Spectral gap question raised:**
+KEY: is |λ₃|/|λ₁| >> 1? If YES, the near-zero eigenvector is isolated → supports uniqueness.
+spectral_gap_check.py launched on Olympus (PID 1163855). Results pending.
+
+### BF Scan Launched (July 15)
+BF scan: lsq 29001-30000, N=400, G=50000. PID=1163792 on Olympus.
+Log: /tmp/dense_sys_BF.log. Expected ~25-30h runtime.
+
+### Current Focus: Spectral Gap + KEY LEMMA
+
+**Proof state (updated July 15, 2026):**
+- NUMERICAL: |xi_hat_N(γ_k)| ~ 10^{-5} at BC events (10^5 suppression vs generic z)
+- ANALYTIC GAP: KEY LEMMA (G_v^{(c)}(γ_k) → 0 as c→∞) not proven
+- SPECTRAL GAP: unknown whether |λ₃| >> |λ₁,₂| (test running)
+- MULTI-PRECISION: needed for clean convergence proof below 10^{-14}
+
+**Next highest priorities:**
+1. Read spectral gap results when Olympus completes
+2. Ingest BF scan when done (lsq 29001-30000) 
+3. Run multi-precision convergence test (mpmath 50dps, lsq=50, N=80-200)
+4. Investigate whether B matrix structure constrains null eigenvector to Xi-samples

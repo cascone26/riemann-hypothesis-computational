@@ -2018,3 +2018,101 @@ CURRENT STATUS: xi_hat(γ_k) → 0 [verified], Q → const [not yet verified].
 
 Verifying Q convergence requires much larger N (N ≫ 400) or multi-precision arithmetic (as in
 the CvS paper: N=250, c=100, achieves λ ≈ 10^{-334} in 500-digit precision).
+
+### Convergence Tests (July 15, 2026)
+
+**Test 1 (lsq=7825, N=100..800): NON-MONOTONE**
+BC event at lsq=7825 is N=400-specific. At other N: eigenvalue is far from zero.
+Convergence requires N→∞ and lsq→∞ together; not monotone for fixed lsq.
+
+**Test 2 (small lsq regime, monotone when stable):**
+Best results (projected even null mode):
+  lsq=50, N=150: λ_gs=-2.9e-7,  xi_hat(γ₁)=1.1e-7, xi_hat(γ₂)=1.2e-7  ← best double-precision
+  lsq=50, N=80:  λ_gs=-1.4e-12, xi_hat(γ₁)=1.2e-5, xi_hat(γ₂)=1.9e-4
+  lsq=97, N=80:  λ_gs=-4.8e-12, xi_hat(γ₁)=3.5e-5, xi_hat(γ₂)=2.5e-3
+
+DOUBLE-PRECISION LIMITATION: When λ_gs hits machine precision (~1e-14), the eigenvector
+is numerically undefined → xi_hat fluctuates non-monotonically. Clean convergence requires
+multi-precision arithmetic (CvS paper: 500-digit precision, N=250, lsq=100, λ=10^{-334}).
+
+SUMMARY: xi_hat(γ_k) IS suppressed (10^5-10^7 smaller than at generic z) at numerically
+stable BC events. But the trend to zero requires high-precision arithmetic for rigorous verification.
+
+### BE Scan Results (lsq 28501-29000)
+
+New BC cluster found at lsq=28537-28551:
+  28537: l1=-7.997e-11, l2=-6.150e-12  (DEEP)
+  28543: l1=-5.359e-12, l2=-5.344e-12  (DEEP, ALC≈99.7%)
+  28544: l1=-6.714e-12, l2=-6.702e-12  (DEEP, ALC≈99.8%)
+  28545: l1=-2.909e-12, l2=-2.897e-12  (DEEP, ALC≈99.6%)
+  28549: l1=-8.534e-12, l2=-8.532e-12  (DEEP, ALC≈99.98%)
+  28551: l1=-9.643e-13, l2=-7.115e-13  (RECORD-CLASS, ALC≈73.8%)
+
+The cluster at log(28543) ≈ 10.259 is part of the resonance structure (L≈10.26 > previous peak L≈9.42).
+
+---
+
+## Session July 15, 2026 — BC Database Analysis + Spectral Gap
+
+### BC Database State (500 total events, lsq 3361-28935)
+After BE scan ingestion: 500 BC events in /tmp/riemann_events.db on Olympus.
+
+**Density by log(lsq):**
+- log in [8,9)   : 45 BCs  (lsq 2980-8103)
+- log in [9,10)  : 209 BCs (lsq 8103-22026)
+- log in [10,11) : 246 BCs (lsq 22026-59874)
+Density is INCREASING with log(lsq) — consistent with prime counting function growth.
+
+**CRITICAL DISTINCTION: |λ| vs ALC**
+These are DIFFERENT metrics measuring different things:
+
+1. |λ_1| (absolute ground state): measures how close to zero the smallest eigenvalue is.
+   Record: lsq=8861, |λ|=6.462e-13 (double-precision floor)
+   
+2. ALC = 100×min(|λ_1|,|λ_2|)/max(|λ_1|,|λ_2|): measures degeneracy of the even/odd pair.
+   Record: lsq=28636, ALC=99.99% (but |λ|=8.7e-12 — 10x LARGER than record |λ|!)
+
+For the Limit Theorem proof:
+- We need |λ_1| → 0 (eigenvalue goes to zero) — this is the KEY condition
+- High ALC confirms we're projecting to the right (even) parity mode
+- But ALC=100% with |λ|=1e-11 is NOT a near-zero eigenvalue
+
+The double-precision floor prevents seeing |λ| below ~6e-13. All "RECORD-CLASS" events
+(|λ|<1.5e-12) may be hitting this floor. Multi-precision arithmetic needed to go further.
+
+**HIGH-ALC CLUSTER at log(lsq)≈10.26:**
+Top 10 by ALC are ALL from lsq=28500-28700, ALL with ALC=99.97-99.99%, but |λ|=5e-12 to 9e-12.
+Possible explanation: prime p≈lsq=28591 (prime, log=10.26) creates a near-zero P matrix term
+when log(p)/L ≈ 1. This makes even/odd modes nearly degenerate (ALC→100%) but pushes the
+eigenvalue value up (further from zero), not down.
+
+**EVENTS WITH BOTH small |λ| AND high ALC:**
+124 events with |λ|<1e-12, most also ALC>85%. Top quality combinations:
+- lsq=8861:  |λ|=6.46e-13, ALC=99.06%  ← RECORD |λ|, high ALC
+- lsq=13473: |λ|=7.18e-13, ALC=99.85%  ← strong candidate
+- lsq=12410: |λ|=7.31e-13, ALC=98.84%
+- lsq=6569:  |λ|=7.58e-13, ALC=99.90%
+- lsq=7933:  |λ|=7.49e-13, ALC=99.13%
+
+### Spectral Gap Question
+KEY QUESTION FOR PROOF: Is there a spectral gap?
+i.e., does |λ_3|/|λ_1| >> 1 (λ_3 = third most negative eigenvalue)?
+
+If YES: the near-zero eigenvector is isolated → uniqueness is numerical clear.
+If NO: there are many near-zero modes, and uniqueness is not guaranteed.
+
+Launched spectral_gap_check.py on Olympus to check |λ_3| at top BC events (lsq=7825,8861,13473).
+
+### BF Scan Launched
+BF scan (lsq 29001-30000, N=400, G=50000) launched on Olympus.
+PID=1163792. Log: /tmp/dense_sys_BF.log on Olympus.
+Expected runtime: ~25-30 hours (same as BE).
+
+### Resonance Analysis
+bc_analysis.py checked if BC events occur at log(lsq) = m × γ_k/n. 
+Result: weak 5% matches to γ₂/2 and γ₄/3 for the high-ALC cluster at L≈10.26.
+BUT: these are spurious — the 5% tolerance window is too wide. No clear resonance structure.
+
+The BC events do NOT obviously cluster at L = m×γ_k for integer m. This means the BC events
+are caused by prime structure (number-theoretic resonances in the P matrix) rather than direct
+zero resonances. The forward direction proof must not rely on such a correspondence.
