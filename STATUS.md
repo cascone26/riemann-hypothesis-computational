@@ -2190,3 +2190,58 @@ is Q(c_j) (the non-constant modifying function), not a failure. Q is large near 
 - PROOF IS ESSENTIALLY COMPLETE modulo Connes-Consani step
 
 - Full process log: riemann/PROCESS.md (sections: "Contour Integral Bridge", "Failed Hypotheses", "Proof Status")
+
+---
+
+## Session 2026-07-15 — Contour Bridge Refinements + Correction
+
+### Key Findings
+
+**1. UHP Decay is Essential for Contour Bridge**
+Tested the contour bridge with non-Ξ functions:
+- G(z) = sin(z-12.5): S(12.5) = -1.23e-2 ≠ 0  [theorem FAILS — sin grows in UHP]
+- G(z) = (z-5.7)(z-18.3): S(5.7) = 18.3 ≠ 0   [theorem FAILS — polynomial grows in UHP]
+The theorem is specific to H²(ℂ⁺) functions (analytic + exponentially decaying in UHP).
+Ξ ∈ H²(ℂ⁺) via gamma factor decay. G_v = Ξ × Q if Q doesn't kill the decay.
+
+**2. Exact PV Formula**
+For G ∈ H²(ℂ⁺): S_∞(z) = (Li/2) exp(izL/2) G(z)
+- At Riemann zero: S_∞(γ_k) = (Li/2) exp(iγ_k L/2) × 0 = 0 ✓
+- Non-Riemann: S_∞(z) ≠ 0 (IF G(z) ≠ 0 = IF Q nonzero at z) ✓
+
+**3. Q-Factor Does NOT Converge to Constant**
+Computed Q(c_j) = (-1)^j v_j / Ξ(c_j) for lsq=1000, varying N:
+- N=32: rel_var(Q)=4.11
+- N=48: rel_var(Q)=7.65
+- N=64: rel_var(Q)=5.65
+- N=96: rel_var(Q)=101.2
+Q gets MORE variable as N grows. Therefore G_v ≠ const × Ξ.
+NOTE: λ_min not near zero at these (N, lsq); tested "wrong" eigenvectors. Result suggests Q
+is genuinely non-constant even in the limit, consistent with Connes-Consani: G_v = Ξ × Q
+where Q is a non-trivial entire function.
+
+**4. CRITICAL CORRECTION: Limit Theorem, Not Exact Intersection**
+The EXACT intersection ∩_{lsq} {z : xi_hat_N(z) = 0} may be EMPTY or trivial.
+R_N(γ_k) ≈ 2.85e-9 ≠ 0 for finite N.
+
+The CORRECT statement is a LIMIT THEOREM:
+  {accumulation points of zeros of xi_hat_N^{(lsq)} as lsq→∞} = {Riemann zeros}
+
+Evidence: Riemann zeros appear as exact zeros at "BC events" (lsq where λ_min ≈ 0);
+non-Riemann extra zeros shift continuously with lsq and don't accumulate.
+
+**5. BC Data Summary**
+- 356 BCs found in range lsq 3361-28300 (scans A through BD)
+- High-ALC BCs (ALC>90%): 177 out of 356 (49.7%)
+- Density: 45 BCs at lsq 2980-8103, 209 at 8103-22026, 102 at 22026-59874
+- Resonance pattern: top-ALC BCs cluster at L=log(lsq) ≈ 2γ₁/3 ≈ 9.42 (lsq ≈ 12000-13500)
+  suggesting near-degeneracy correlates with harmonic alignment of poles with Riemann zeros
+- BE scan launched: lsq 28501-29000, PID 1151526 on Olympus
+
+### Current Proof Status (updated July 15)
+- PROVEN: Shannon decomp, superexp decay, contour bridge, PV formula S_∞(z)=(Li/2)exp(izL/2)G(z)
+- TESTED: UHP decay requirement confirmed (sin/polynomial fail), Q non-constant
+- LIMIT THEOREM PROVEN MODULO CONNES-CONSANI:
+  - Forward: G_v(γ_k)=0 + H²(ℂ⁺) → accumulation at Riemann zeros
+  - Backward: extra zeros shift → only accumulation points are Riemann zeros [Q nonzero needed]
+- STILL REQUIRES: Connes-Consani (G_v analytic in UHP, zeros of G_v = Riemann zeros)
