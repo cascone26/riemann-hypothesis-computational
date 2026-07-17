@@ -1,0 +1,109 @@
+{
+  "timestamp": "1784325243.6850328",
+  "total_theorems": 4,
+  "avg_time_ms": 0.10967254638671875,
+  "max_time_ms": 0.3669261932373047,
+  "min_time_ms": 0.01811981201171875,
+  "results": [
+    {
+      "name": "robin_inequality_of_RH",
+      "theorem_name": "robin_inequality_of_RH",
+      "generation_time_ms": 0.3669261932373047,
+      "sub_goals": [
+        "forall n: \u2115",
+        "assume RiemannHypothesis) : \u2200 n : \u2115, n > 5040",
+        "show (sigma 1 n : \u211d) < robinBound n"
+      ],
+      "tactics": [
+        "intros",
+        "sorry",
+        "ring",
+        "simp",
+        "apply",
+        "intro",
+        "simp_all",
+        "norm_num",
+        "nlinarith",
+        "field_simp",
+        "exact"
+      ],
+      "sketch_hash": "c674f0d35d8847cde0b111fd415261741d88bb1b3c6689645336345333d91302",
+      "sketch_strategy": "direct"
+    },
+    {
+      "name": "RH_of_robin_inequality",
+      "theorem_name": "RH_of_robin_inequality",
+      "generation_time_ms": 0.031948089599609375,
+      "sub_goals": [
+        "forall n: \u2115",
+        "assume \u2200 n : \u2115, n > 5040",
+        "show (sigma 1 n : \u211d) < robinBound n) : RiemannHypothesis"
+      ],
+      "tactics": [
+        "intros",
+        "sorry",
+        "ring",
+        "simp",
+        "apply",
+        "intro",
+        "simp_all",
+        "norm_num",
+        "nlinarith",
+        "field_simp",
+        "exact"
+      ],
+      "sketch_hash": "2a754f03f2944865aed01bb72784b4833b434a3b0bcd02e6d4115a9543570c76",
+      "sketch_strategy": "direct"
+    },
+    {
+      "name": "lagarias_inequality_of_RH",
+      "theorem_name": "lagarias_inequality_of_RH",
+      "generation_time_ms": 0.021696090698242188,
+      "sub_goals": [
+        "forall n: \u2115",
+        "assume RiemannHypothesis) : \u2200 n : \u2115, n \u2265 1",
+        "show (sigma 1 n : \u211d) \u2264 lagariasBound n"
+      ],
+      "tactics": [
+        "intros",
+        "sorry",
+        "ring",
+        "simp",
+        "apply",
+        "intro",
+        "simp_all",
+        "norm_num",
+        "nlinarith",
+        "field_simp",
+        "exact"
+      ],
+      "sketch_hash": "d2e4b88f8a648559c4aec167fd0fbbc53eec15f4f390e4d95e5afa52c89e5773",
+      "sketch_strategy": "direct"
+    },
+    {
+      "name": "RH_of_lagarias_inequality",
+      "theorem_name": "RH_of_lagarias_inequality",
+      "generation_time_ms": 0.01811981201171875,
+      "sub_goals": [
+        "forall n: \u2115",
+        "assume \u2200 n : \u2115, n \u2265 1",
+        "show (sigma 1 n : \u211d) \u2264 lagariasBound n) : RiemannHypothesis"
+      ],
+      "tactics": [
+        "intros",
+        "sorry",
+        "ring",
+        "simp",
+        "apply",
+        "intro",
+        "simp_all",
+        "norm_num",
+        "nlinarith",
+        "field_simp",
+        "exact"
+      ],
+      "sketch_hash": "3a0a0740cb87ccbbc9c976e27e60df7ecedc6ea2a6e3779067f4fd8d3b9ef8f5",
+      "sketch_strategy": "direct"
+    }
+  ]
+}

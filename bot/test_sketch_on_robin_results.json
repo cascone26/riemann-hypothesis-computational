@@ -1,0 +1,52 @@
+{
+  "test": "increment_3_real_theorems",
+  "lean_file": "/Users/scones/projects/riemann/RiemannLean/RiemannLean/RobinInequality.lean",
+  "timestamp": 1784325267.388948,
+  "summary": {
+    "total": 4,
+    "successful": 4,
+    "errors": 0,
+    "avg_time_ms": 0.2453923225402832,
+    "max_time_ms": 0.7960796356201172,
+    "min_time_ms": 0.022649765014648438,
+    "meets_spec": true
+  },
+  "results": [
+    {
+      "original_name": "robin_inequality_of_RH",
+      "parsed_name": "robin_inequality_of_RH",
+      "status": "success",
+      "generation_time_ms": 0.7631778717041016,
+      "sub_goals_count": 3,
+      "tactics_count": 11,
+      "sketch_hash": "377a6d0cbde05e4becb11b2e8c695af5bdae1440ac8c20e7df8bad367e0cc3ef"
+    },
+    {
+      "original_name": "RH_of_robin_inequality",
+      "parsed_name": "RH_of_robin_inequality",
+      "status": "success",
+      "generation_time_ms": 0.12612342834472656,
+      "sub_goals_count": 3,
+      "tactics_count": 11,
+      "sketch_hash": "76e18185fd6407e0cf797e3b791ff03dd193efd798fdd4b8fd1d68e94c31d998"
+    },
+    {
+      "original_name": "lagarias_inequality_of_RH",
+      "parsed_name": "lagarias_inequality_of_RH",
+      "status": "success",
+      "generation_time_ms": 0.02384185791015625,
+      "sub_goals_count": 3,
+      "tactics_count": 11,
+      "sketch_hash": "54dd02a79cdb284a29f9e68bcb7611e07a44b8e74776f1f1d5b938403b834fc6"
+    },
+    {
+      "original_name": "RH_of_lagarias_inequality",
+      "parsed_name": "RH_of_lagarias_inequality",
+      "status": "success",
+      "generation_time_ms": 0.019788742065429688,
+      "sub_goals_count": 3,
+      "tactics_count": 11,
+      "sketch_hash": "95d19bc5af77c51c9e6eb38d3a5558d205928a5c5d1c12d11db7ccc086497b3b"
+    }
+  ]
+}
