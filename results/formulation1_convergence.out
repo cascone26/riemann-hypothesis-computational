@@ -1,0 +1,13 @@
+=== Formulation #1 convergence with correct G ===
+G_correct(N, L=2.648) = max(60000, 500×N²/L²)
+
+       N         G         ev0(γ₁)       ev0(13.8)     ratio  dt
+---------------------------------------------------------------------------
+      10     60000   -2.429234e+00   -2.371779e+00    1.0242  (0.2s)
+      20     60000   -2.537259e+00   -2.456294e+00    1.0330  (0.2s)
+      30     60000   -2.583373e+00   -2.501793e+00    1.0326  (0.4s)
+/Users/scones/projects/riemann/operators/formulation1_convergence.py:44: RuntimeWarning: invalid value encountered in divide
+  (1/np.sqrt(L))*np.exp(0.5j*d*L)*2*np.sin(0.5*d*L)/d)
+      40     87526   -2.595640e+00   -2.527718e+00    1.0269  (0.9s)
+      50    127320   -2.606221e+00   -2.540267e+00    1.0260  (2.6s)
+      64    195070   -2.620178e+00   -2.547372e+00    1.0286  (52.5s)

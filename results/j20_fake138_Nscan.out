@@ -1,0 +1,15 @@
+j=20 N-sweep: riem lsq=7262, fake13.8 lsq=9010
+Goal: show sel_fake13.8 grows with N (false negative at N=64 is finite-N artifact)
+
+Sieving primes... done. riem K=976, fake K=1169
+
+    N        ev0_riem        ev0_fake           sel  dt
+-----------------------------------------------------------------
+   64     -9.4899e-10     -6.1586e-13          0.00  (0s) ← FALSE NEG
+  128     -1.7328e-05     -4.5145e-13          0.00  (1s) ← FALSE NEG
+  192     -4.1376e-04     -2.7910e-13          0.00  (3s) ← FALSE NEG
+  256     -1.6197e-03     -5.9584e-13          0.00  (5s) ← FALSE NEG
+  384     -2.6783e-03     -3.2123e-10          0.00  (14s) ← FALSE NEG
+  512     -2.5334e-03     -1.0253e-06          0.00  (21s) ← FALSE NEG
+
+Done.

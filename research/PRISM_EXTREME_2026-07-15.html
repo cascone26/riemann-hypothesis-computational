@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRISM II — Cross-Reach via the Codex</title>
+<style>
+:root{
+  --ink-950:#0a0d12; --ink-900:#12161d;
+  --paper-050:#eef1ee; --paper-100:#e2e7e1;
+  --text:#dde3e1; --text-dim:#93a09b; --text-strong:#f4f7f5;
+  --brass:#d6a44e; --cyan:#5aa6a1; --rust:#c1613f; --violet:#8b7fc7;
+  --rule:rgba(221,227,225,0.14); --card-bg:rgba(255,255,255,0.02); --card-border:rgba(221,227,225,0.10);
+  --shadow:0 1px 2px rgba(0,0,0,0.4);
+}
+@media (prefers-color-scheme: light){
+  :root{ --text:#20261f; --text-dim:#5c655b; --text-strong:#0e120e;
+    --rule:rgba(20,26,20,0.14); --card-bg:rgba(20,26,20,0.025); --card-border:rgba(20,26,20,0.12);
+    --shadow:0 1px 2px rgba(20,26,20,0.08); }
+  body{ background:var(--paper-050); }
+}
+:root[data-theme="dark"]{ --text:#dde3e1; --text-dim:#93a09b; --text-strong:#f4f7f5;
+  --rule:rgba(221,227,225,0.14); --card-bg:rgba(255,255,255,0.02); --card-border:rgba(221,227,225,0.10); }
+:root[data-theme="dark"] body{ background:var(--ink-950); }
+:root[data-theme="light"]{ --text:#20261f; --text-dim:#5c655b; --text-strong:#0e120e;
+  --rule:rgba(20,26,20,0.14); --card-bg:rgba(20,26,20,0.025); --card-border:rgba(20,26,20,0.12); }
+:root[data-theme="light"] body{ background:var(--paper-050); }
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background:var(--ink-950); color:var(--text); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.62; }
+.display{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; }
+.mono{ font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
+a{ color:var(--brass); }
+.wrap{ max-width:900px; margin:0 auto; padding:0 24px; }
+
+header{ padding:64px 0 36px; border-bottom:1px solid var(--rule); }
+.eyebrow{ font-family:ui-monospace,monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:flex; gap:10px; align-items:center; }
+.eyebrow .dot{ width:5px; height:5px; border-radius:50%; background:var(--violet); display:inline-block; }
+h1{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-size:clamp(2rem,4.2vw,2.9rem); color:var(--text-strong); font-weight:500; margin:16px 0 8px; }
+.subtitle{ color:var(--text-dim); max-width:64ch; font-size:1.02rem; }
+.callout{ border-left:2px solid var(--violet); padding:6px 0 6px 18px; margin:22px 0; max-width:66ch; font-size:0.94rem; }
+.callout.no-overlap{ border-left-color:var(--rust); }
+
+section{ padding:48px 0; border-bottom:1px solid var(--rule); }
+section:last-of-type{ border-bottom:none; }
+.section-eyebrow{ font-family:ui-monospace,monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--violet); margin-bottom:8px; display:block; }
+h2{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-size:1.7rem; font-weight:500; color:var(--text-strong); margin:0 0 10px; }
+.dek{ color:var(--text-dim); max-width:66ch; font-size:0.98rem; }
+
+.frame-list{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:20px; max-width:740px; }
+.frame-item{ display:grid; grid-template-columns:30px 1fr; gap:14px; }
+.frame-num{ font-family:ui-monospace,monospace; color:var(--violet); font-size:0.9rem; padding-top:2px; }
+.frame-item h3{ margin:0 0 4px; font-size:1rem; color:var(--text-strong); font-weight:600; }
+.frame-item p{ margin:0; font-size:0.95rem; max-width:70ch; }
+
+.table-scroll{ overflow-x:auto; border:1px solid var(--card-border); border-radius:3px; margin-top:18px; }
+table{ border-collapse:collapse; width:100%; min-width:600px; font-size:0.9rem; }
+thead th{ text-align:left; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); padding:11px 15px; border-bottom:1px solid var(--card-border); background:var(--card-bg); white-space:nowrap; }
+tbody td{ padding:11px 15px; border-bottom:1px solid var(--rule); vertical-align:top; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody td.tech{ font-weight:600; color:var(--text-strong); white-space:nowrap; }
+tbody td.idx{ font-family:ui-monospace,monospace; color:var(--violet); }
+
+.band{ border-left:3px solid var(--band-color); background:linear-gradient(to right, color-mix(in srgb, var(--band-color) 7%, transparent), transparent 60%); padding:20px 22px 22px; margin-bottom:14px; border-radius:0 3px 3px 0; }
+.band-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+.band-name{ font-family:ui-monospace,monospace; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--band-color); font-weight:700; }
+.band-desc{ font-size:0.83rem; color:var(--text-dim); }
+.idea-list{ display:flex; flex-direction:column; gap:12px; }
+.idea{ font-size:0.92rem; }
+.idea .name{ color:var(--text-strong); font-weight:600; }
+.idea .tag{ font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); }
+.spectrum-key{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px; font-size:0.76rem; color:var(--text-dim); }
+.spectrum-key span{ display:inline-flex; align-items:center; gap:6px; }
+.spectrum-key i{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+.rank{ font-family:ui-monospace,monospace; color:var(--violet); font-weight:700; }
+.deadends{ margin-top:20px; padding:14px 16px; border:1px dashed var(--card-border); border-radius:3px; font-size:0.84rem; color:var(--text-dim); }
+footer{ padding:36px 0 60px; font-size:0.82rem; color:var(--text-dim); }
+footer code{ font-family:ui-monospace,monospace; color:var(--text); background:var(--card-bg); padding:1px 5px; border-radius:2px; }
+@media (max-width:640px){ header{ padding:44px 0 26px; } section{ padding:36px 0; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> PRISM session II &middot; Cross-reach via Tony's Codex &middot; 2026-07-15</div>
+    <h1 class="display">Cross-Reach via the Codex</h1>
+    <p class="subtitle">Second wide-net pass on RH. Reach by the move, not by lexical similarity — Tony's own documented fix. Nobody greps 382 primers for "Riemann." You grep for the operation: positivity certificate, spectral rigidity, aperiodic order, replica landscape.</p>
+    <div class="callout">Built from the Forge thread-alphabet + the 382-primer Codex mirror. Every mechanism below traces to a real primer file, not a vibe.</div>
+    <div class="callout no-overlap"><strong>Zero overlap with round 1</strong> (sphere packing, function fields, PT-symmetry, Beurling, RMT local law, Connes&ndash;Consani, Lee&ndash;Yang, automated proving, ML attribution, tensor networks, DPPs) and zero re-opening of anything in LEDGER's DEAD ENDS table.</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <span class="section-eyebrow">Frame &middot; 6 inversions</span>
+  <h2>Tony-flavored reframings</h2>
+  <ol class="frame-list">
+    <li class="frame-item"><div class="frame-num">01</div><div><h3>Coastline Principle</h3><p>RH isn't fundamentally number theory — it's one instance of "positivity of a structured landscape against a discrete adversarial comb," recurring at the atomic scale (spin glasses), crystallographic scale (quasicrystals), neural scale (associative memory). Reach the right lens by affordance, not by field-of-origin.</p></div></li>
+    <li class="frame-item"><div class="frame-num">02</div><div><h3>Moiré / dimensional-upgrade</h3><p>"Superpose-and-slide &gt; move-and-remember; seam dominates." Stop treating N&rarr;&infin; as the only lever. Superpose two already-computed finite objects (two lsq values, two N's, real-prime τ vs. bad-Beurling τ) and read the seam directly.</p></div></li>
+    <li class="frame-item"><div class="frame-num">03</div><div><h3>Reach-by-the-move</h3><p>Tony's own documented fix — keying the Codex by keyword failed (`project_reach_experiment_operation_tag`). Key by Forge-thread operation instead (verify-before-commit, anchor-to-exemplar, deposit) and let that surface the personas below.</p></div></li>
+    <li class="frame-item"><div class="frame-num">04</div><div><h3>Nexus five missing organs, on the project itself</h3><p>Decide / continuity / world-model / uncertainty / verify. Continuity and verify are strong (PROCESS.md, LEDGER). <strong>Decide, world-model, and uncertainty are the weak organs</strong> — no stated picture of what a proof looks like, no calibrated credence, no explicit next-experiment rule.</p></div></li>
+    <li class="frame-item"><div class="frame-num">05</div><div><h3>Pre-mortem, Tony edition</h3><p>If the answer is already in the Codex, mis-filed. Don't grep for "Riemann" or "zeta" — grep for the operations the current attempts perform.</p></div></li>
+    <li class="frame-item"><div class="frame-num">06</div><div><h3>Strip further via assembly theory</h3><p>Is there a well-defined "assembly index" for Spec(Z) built multiplicatively from primes — the way assembly theory measures a molecule's minimum construction-path length? A different pure-problem stripping than round 1's quadratic form.</p></div></li>
+  </ol>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (a) &middot; Primer panel</span>
+  <h2>14 Codex primers, blind to each other</h2>
+  <p class="dek">Each names one mechanism, traced to a real primer file.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Primer</th><th>Mechanism</th></tr></thead>
+      <tbody>
+        <tr><td class="tech">ising-and-spin-glass-on-gpu</td><td>τ_N's Rayleigh-quotient landscape as a spin-glass Hamiltonian. Compute the <strong>overlap distribution P(q)</strong> between independent replicas — two delta peaks = single-basin landscape; continuous P(q) = replica-symmetry-broken and genuinely rugged.</td></tr>
+        <tr><td class="tech">renormalization-group</td><td>N&rarr;&infin; as an RG flow. Recast the measured power laws in λ_min(N) and the spectral gap as flow to a fixed point; extract a critical exponent; ask if the fixed point is IR-stable.</td></tr>
+        <tr><td class="tech">aperiodic-order-and-quasicrystals</td><td>Dyson's conjecture: zeros as a 1-D Fourier quasicrystal. Use the <strong>cut-and-project method</strong> (periodic lattice, higher dimension, irrational slice, bounded acceptance window &rarr; pure-point diffraction, O(1) membership test) to search for the lattice underlying {γ_n}.</td></tr>
+        <tr><td class="tech">efficient-hopfield-and-ebm-on-gpu</td><td>Modern continuous Hopfield network (softmax-attention-shaped) with known zeros as stored patterns. Read the trained energy landscape for structure predicting un-stored zeros.</td></tr>
+        <tr><td class="tech">game-theory</td><td>Positivity as a two-player zero-sum game — prime-adversary vs. certifier, trained adversarially (GAN-style) instead of a fixed one-sided optimizer.</td></tr>
+        <tr><td class="tech">topology (persistent homology)</td><td>Persistent homology of near-zero eigenvector components across scales — topological invariants invisible to scalar statistics.</td></tr>
+        <tr><td class="tech">complex-networks</td><td>Correlation-threshold graph on eigenvector components; community detection — does the 23-dim near-kernel resolve into sub-communities?</td></tr>
+        <tr><td class="tech">multifractal extension</td><td>Full multifractal f(α) spectrum of the heat-kernel measure, richer than the existing single effective-dimension (d≈2.46) result.</td></tr>
+        <tr><td class="tech">information-theory (RIP)</td><td>Primes-at-{log p} as a sparse signal, archimedean kernel as sensing matrix — is Weil positivity a restricted-isometry-property statement in disguise?</td></tr>
+        <tr><td class="tech">probabilistic-computing-and-pbits</td><td>Physical p-bit/Ising annealer (D-Wave-class) to sample τ_N ground states on real hardware — a different compute substrate with its own noise floor.</td></tr>
+        <tr><td class="tech">dynamical-systems-and-attractors</td><td>Near-zero eigenvector shapes across N as orbits of a discrete dynamical system — hunt bifurcations, not just smooth convergence.</td></tr>
+        <tr><td class="tech">category-theory</td><td>Objects = L-functions, morphisms = functorial transfers. Formalize Spec(Z)'s missing motive as a categorical colimit.</td></tr>
+        <tr><td class="tech">constructor-and-assembly-theory</td><td>Assembly index for the integers under multiplicative construction — does it encode anything Frobenius-eigenvalue-like?</td></tr>
+        <tr><td class="tech">gematria / number-theology</td><td>Deliberately absurd: numerological search on 23 and 1.82974. Same sane cousin as round 1's OEIS check — flagged honestly as the joke-mechanism.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (b) &middot; Forge thread deck</span>
+  <h2>Tony's thread-alphabet as technique</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Thread</th><th>Applied this round</th></tr></thead>
+      <tbody>
+        <tr><td class="tech">orient-before-act</td><td>Before any new experiment: check the Codex for the same move under a different name, keyed by affordance not keyword.</td></tr>
+        <tr><td class="tech">deposit / write-back</td><td>Every negative result becomes an automatic LEDGER row via script hook, not a manually-remembered fact.</td></tr>
+        <tr><td class="tech">anchor-to-exemplar</td><td>For each primer mechanism above, find one existing solved analogue and match its form before inventing new formalism.</td></tr>
+        <tr><td class="tech">verify-before-commit</td><td>Any new candidate certificate gets checked by an independent second method before being logged as a result.</td></tr>
+        <tr><td class="tech">no-silent-fork</td><td>One-time cross-consistency diff across OBSTRUCTION_MAP / LEDGER / STATUS — do any silently disagree?</td></tr>
+        <tr><td class="tech">Moiré / superpose-and-slide</td><td>Overlay τ_N at two already-swept lsq values and diff cell-by-cell instead of studying either alone.</td></tr>
+        <tr><td class="tech">Cana (seal-gated promotion)</td><td>Explicit promotion ladder for LEDGER's "STRONGEST RESULTS": raw &rarr; verified twice &rarr; sealed.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (c) &middot; Banded spectrum</span>
+  <h2>Grounded &rarr; absurd</h2>
+  <div class="spectrum-key">
+    <span><i style="background:#5aa6a1"></i>Grounded</span>
+    <span><i style="background:#7fae6a"></i>Clever</span>
+    <span><i style="background:#d6a44e"></i>Exotic</span>
+    <span><i style="background:#cc8347"></i>Moonshot</span>
+    <span><i style="background:#c1613f"></i>Absurd</span>
+  </div>
+
+  <div class="band" style="--band-color:#5aa6a1;">
+    <div class="band-head"><span class="band-name">Grounded</span><span class="band-desc">zero new computation — existing data, re-analyzed</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Moiré overlay diff</span> (lsq=14 vs. 49, already on Olympus) — <span class="tag">produces</span> a seam pattern from data that already exists.</div>
+      <div class="idea"><span class="name">Multifractal f(α) spectrum</span> from existing heat-kernel data — <span class="tag">produces</span> a richer signature than d≈2.46 alone.</div>
+      <div class="idea"><span class="name">No-silent-fork audit</span> across OBSTRUCTION_MAP/LEDGER/STATUS — <span class="tag">produces</span> a consistency check, cheap insurance.</div>
+      <div class="idea"><span class="name">Persistent homology pass</span> on existing eigenvector data — <span class="tag">produces</span> topological invariants nothing currently looks for.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#7fae6a;">
+    <div class="band-head"><span class="band-name">Clever</span><span class="band-desc">new but standard, GPU-ready</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Spin-glass overlap distribution P(q)</span> + Binder cumulant on the Rayleigh landscape — <span class="tag">produces</span> a direct ruggedness/single-basin diagnostic.</div>
+      <div class="idea"><span class="name">Complex-networks community detection</span> on the eigenvector-correlation graph — <span class="tag">produces</span> a possible decomposition of the 23-dim kernel.</div>
+      <div class="idea"><span class="name">RG fixed-point re-extraction</span> from existing sweep data — <span class="tag">produces</span> a critical exponent, new lens on old numbers.</div>
+      <div class="idea"><span class="name">RIP reframing</span> of prime-comb vs. kernel — <span class="tag">produces</span> a check against a mature, never-applied bound.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#d6a44e;">
+    <div class="band-head"><span class="band-name">Exotic</span><span class="band-desc">real literature, non-trivial build</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Modern Hopfield/EBM</span> on known zeros as stored patterns — <span class="tag">produces</span> a novel angle tied to Tony's own Engram-OS lineage.</div>
+      <div class="idea"><span class="name">Dyson quasicrystal cut-and-project search</span> — <span class="tag">produces</span>, if found, a lattice underlying {γ_n} — a real open conjecture.</div>
+      <div class="idea"><span class="name">GAN-style adversarial certifier</span> — <span class="tag">produces</span> a trainable, categorically different search dynamic.</div>
+      <div class="idea"><span class="name">Category-theoretic colimit formalization</span> — <span class="tag">produces</span> real machinery for round 1's hand-waved constraint-break idea.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#cc8347;">
+    <div class="band-head"><span class="band-name">Moonshot</span><span class="band-desc">multi-month, may need external resources</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Physical p-bit/Ising hardware run</span> — <span class="tag">needs</span> external annealer access; different noise floor than GPU floats.</div>
+      <div class="idea"><span class="name">Assembly-index invariant for Spec(Z)</span> — <span class="tag">produces</span> a genuinely new candidate invariant, if it exists.</div>
+      <div class="idea"><span class="name">Dynamical-systems bifurcation hunt</span> across the N-sequence — <span class="tag">produces</span> evidence of a phase transition, or rules one out.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#c1613f;">
+    <div class="band-head"><span class="band-name">Absurd</span><span class="band-desc">every one with a sane cousin</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Consult a prime whisperer / gematria the constants</span> &rarr; <span class="tag">sane cousin</span> the OEIS/numerology check on 23 &amp; 1.82974, now doubly motivated since Tony's Codex files numerology seriously.</div>
+      <div class="idea"><span class="name">Grow a biological neural culture and train it on the zeros</span> &rarr; <span class="tag">sane cousin</span> the modern-Hopfield/EBM version above, no wet lab required.</div>
+      <div class="idea"><span class="name">Ask Incthought to embody Riemann and just ask him</span> &rarr; <span class="tag">sane cousin</span> a structured 20-minute channel-the-figure session, zero infra, sometimes surfaces a technique the figure was actually known for.</div>
+      <div class="idea"><span class="name">Wire Olympus into the Filament Floor scene registry as a walkable 3D room</span> &rarr; <span class="tag">sane cousin</span> a real Theoria-standard visualizer of the τ_N spectrum — eyes catch what statistics don't.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Converge</span>
+  <h2>Ranked — checked against round 1 + LEDGER, nothing duplicated</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>#</th><th>Thread</th><th>Produces</th></tr></thead>
+      <tbody>
+        <tr><td class="idx rank">1</td><td class="tech">Moiré overlay diff</td><td>Buildable now, zero new compute, highest EV-per-effort.</td></tr>
+        <tr><td class="idx rank">2</td><td class="tech">Multifractal f(α) spectrum</td><td>Buildable now, richer than the current dimension result.</td></tr>
+        <tr><td class="idx rank">3</td><td class="tech">Persistent homology / TDA pass</td><td>Buildable now, standard libraries, existing data.</td></tr>
+        <tr><td class="idx rank">4</td><td class="tech">RG fixed-point re-analysis</td><td>Buildable now, new lens on old sweep data.</td></tr>
+        <tr><td class="idx rank">5</td><td class="tech">Spin-glass overlap distribution P(q)</td><td>New but standard, GPU-ready, directly diagnostic.</td></tr>
+        <tr><td class="idx rank">6</td><td class="tech">Dyson quasicrystal cut-and-project search</td><td>Real open conjecture, moderate build, large payoff if found.</td></tr>
+        <tr><td class="idx rank">7</td><td class="tech">Modern Hopfield/EBM</td><td>Moderate build, ties into Tony's own Engram-OS lineage.</td></tr>
+        <tr><td class="idx rank">8</td><td class="tech">GAN-style adversarial certifier</td><td>Moderate-to-hard, trainable adversarial search.</td></tr>
+        <tr><td class="idx rank">9</td><td class="tech">Physical p-bit/Ising hardware run</td><td>Moonshot, needs external hardware access.</td></tr>
+        <tr><td class="idx rank">10</td><td class="tech">Category-theoretic colimit / assembly-index</td><td>Moonshot, literature-and-formalization heavy.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="deadends"><strong>Not re-litigated:</strong> round 1's full converge list, plus LEDGER's DEAD ENDS table (Hankel/moment, Track 2 PSWF, WKB operator search, Platt-Trudgian cert past ceiling, re-coordinatized Li/NB/Jensen/de Branges, Lean formalization, naive sensitivity/perturbation).</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Sources pulled from the Codex mirror: arXiv:1806.03558, arXiv:1306.4566, arXiv:2008.02217, Amit&ndash;Gutfreund&ndash;Sompolinsky 1985, de Bruijn 1981. Plain-text companion: <code>PRISM_EXTREME_2026-07-15.md</code>, same directory.</div>
+</footer>
+</body>
+</html>

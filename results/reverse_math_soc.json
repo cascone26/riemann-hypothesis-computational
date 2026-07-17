@@ -1,0 +1,162 @@
+{
+  "reverse_math": {
+    "robin_inequality": "sigma(n) < exp(gamma) * n * ln(ln(n)) for n > 5040",
+    "equivalence": "Robin 1984: Robin's iff RH",
+    "logical_complexity": "Pi^0_1 (computable for each n, universal statement)",
+    "proof_strength_estimate": {
+      "lower_bound": "ACA_0 (arithmetic comprehension)",
+      "likely": "ATR_0 (arithmetic transfinite recursion)",
+      "ordinal_ACA0": "epsilon_0",
+      "ordinal_ATR0": "Gamma_0 (Feferman-Schutte)",
+      "implication": "A proof of RH likely needs proof-theoretic ordinal >= Gamma_0"
+    },
+    "worst_ratio_verified": 0.98581861197384,
+    "worst_n": 10080
+  },
+  "soc": {
+    "scaling_exponent_beta": 1.1165162998694595,
+    "verdict": "possibly_soc",
+    "perturbation_results": [
+      {
+        "eps": 0.0001,
+        "mean_delta": 8.020320762276901e-05,
+        "max_delta": 0.00037981400937919796,
+        "std_delta": 6.0528028519188686e-05,
+        "tail_exponent": -5.600754358349272
+      },
+      {
+        "eps": 0.0001623776739188721,
+        "mean_delta": 0.00013095688222151912,
+        "max_delta": 0.0006251256383813519,
+        "std_delta": 9.774689089782274e-05,
+        "tail_exponent": -6.244605848243835
+      },
+      {
+        "eps": 0.00026366508987303583,
+        "mean_delta": 0.00021022354704492945,
+        "max_delta": 0.001070465632787343,
+        "std_delta": 0.00015654598505527442,
+        "tail_exponent": -6.077236268858218
+      },
+      {
+        "eps": 0.00042813323987193956,
+        "mean_delta": 0.0003448744025365796,
+        "max_delta": 0.001727586699989403,
+        "std_delta": 0.0002602439788633936,
+        "tail_exponent": -6.023646425763027
+      },
+      {
+        "eps": 0.0006951927961775605,
+        "mean_delta": 0.0005484102705824682,
+        "max_delta": 0.002685683492194002,
+        "std_delta": 0.0004161070927183491,
+        "tail_exponent": -5.7351462911994595
+      },
+      {
+        "eps": 0.0011288378916846883,
+        "mean_delta": 0.0009137706335138367,
+        "max_delta": 0.004287053385848338,
+        "std_delta": 0.0006842453802216932,
+        "tail_exponent": -5.987024086434817
+      },
+      {
+        "eps": 0.0018329807108324356,
+        "mean_delta": 0.0014833649040958336,
+        "max_delta": 0.006823708982873544,
+        "std_delta": 0.001108968145112297,
+        "tail_exponent": -5.8057063493446694
+      },
+      {
+        "eps": 0.002976351441631319,
+        "mean_delta": 0.0024374617362957324,
+        "max_delta": 0.010975845402751094,
+        "std_delta": 0.0018281538278562244,
+        "tail_exponent": -6.002004144943059
+      },
+      {
+        "eps": 0.004832930238571752,
+        "mean_delta": 0.0038272695053869557,
+        "max_delta": 0.01927561356543772,
+        "std_delta": 0.0029096813295297454,
+        "tail_exponent": -5.933613025273763
+      },
+      {
+        "eps": 0.007847599703514606,
+        "mean_delta": 0.00616614212498388,
+        "max_delta": 0.030078138643198304,
+        "std_delta": 0.004551456711977888,
+        "tail_exponent": -5.731977066207443
+      },
+      {
+        "eps": 0.012742749857031334,
+        "mean_delta": 0.010134395894033943,
+        "max_delta": 0.047185847063038744,
+        "std_delta": 0.007635310481000849,
+        "tail_exponent": -5.945826518284437
+      },
+      {
+        "eps": 0.0206913808111479,
+        "mean_delta": 0.017877570735645845,
+        "max_delta": 0.08559302798499879,
+        "std_delta": 0.013169926570157814,
+        "tail_exponent": -5.9773232011560316
+      },
+      {
+        "eps": 0.03359818286283781,
+        "mean_delta": 0.03216156338049088,
+        "max_delta": 0.17123957247943014,
+        "std_delta": 0.02351395084302486,
+        "tail_exponent": -5.500046127098404
+      },
+      {
+        "eps": 0.05455594781168514,
+        "mean_delta": 0.05803791108662448,
+        "max_delta": 0.2598512163200497,
+        "std_delta": 0.04408120160558367,
+        "tail_exponent": -6.009697353270413
+      },
+      {
+        "eps": 0.08858667904100823,
+        "mean_delta": 0.10946857073535601,
+        "max_delta": 0.46389683170945684,
+        "std_delta": 0.07994723603801981,
+        "tail_exponent": -6.092208977286657
+      },
+      {
+        "eps": 0.14384498882876628,
+        "mean_delta": 0.20523413958236744,
+        "max_delta": 0.7662973192027377,
+        "std_delta": 0.14006662826420002,
+        "tail_exponent": -7.193968280316548
+      },
+      {
+        "eps": 0.23357214690901212,
+        "mean_delta": 0.38864933732364865,
+        "max_delta": 1.1944418745279526,
+        "std_delta": 0.25506390130806234,
+        "tail_exponent": -9.079472553886538
+      },
+      {
+        "eps": 0.3792690190732246,
+        "mean_delta": 0.7232465361164754,
+        "max_delta": 2.3090826333976304,
+        "std_delta": 0.4877223264727071,
+        "tail_exponent": -11.771884471032202
+      },
+      {
+        "eps": 0.615848211066026,
+        "mean_delta": 1.3622385062224305,
+        "max_delta": 3.9800754280124506,
+        "std_delta": 0.8989053618441354,
+        "tail_exponent": -12.692150726970995
+      },
+      {
+        "eps": 1.0,
+        "mean_delta": 2.575200184407015,
+        "max_delta": 7.747093256698734,
+        "std_delta": 1.6432358314305937,
+        "tail_exponent": -13.00949680664264
+      }
+    ]
+  }
+}

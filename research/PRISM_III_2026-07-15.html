@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRISM III — Total Internal Reflection</title>
+<style>
+:root{
+  --ink-950:#0a0d12; --ink-900:#12161d;
+  --paper-050:#eef1ee;
+  --text:#dde3e1; --text-dim:#93a09b; --text-strong:#f4f7f5;
+  --brass:#d6a44e; --cyan:#5aa6a1; --rust:#c1613f; --coral:#c2607a;
+  --rule:rgba(221,227,225,0.14); --card-bg:rgba(255,255,255,0.02); --card-border:rgba(221,227,225,0.10);
+}
+@media (prefers-color-scheme: light){
+  :root{ --text:#20261f; --text-dim:#5c655b; --text-strong:#0e120e;
+    --rule:rgba(20,26,20,0.14); --card-bg:rgba(20,26,20,0.025); --card-border:rgba(20,26,20,0.12); }
+  body{ background:var(--paper-050); }
+}
+:root[data-theme="dark"]{ --text:#dde3e1; --text-dim:#93a09b; --text-strong:#f4f7f5;
+  --rule:rgba(221,227,225,0.14); --card-bg:rgba(255,255,255,0.02); --card-border:rgba(221,227,225,0.10); }
+:root[data-theme="dark"] body{ background:var(--ink-950); }
+:root[data-theme="light"]{ --text:#20261f; --text-dim:#5c655b; --text-strong:#0e120e;
+  --rule:rgba(20,26,20,0.14); --card-bg:rgba(20,26,20,0.025); --card-border:rgba(20,26,20,0.12); }
+:root[data-theme="light"] body{ background:var(--paper-050); }
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background:var(--ink-950); color:var(--text); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.62; }
+.mono{ font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
+a{ color:var(--brass); }
+.wrap{ max-width:920px; margin:0 auto; padding:0 24px; }
+
+header{ padding:64px 0 36px; border-bottom:1px solid var(--rule); }
+.eyebrow{ font-family:ui-monospace,monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:flex; gap:10px; align-items:center; }
+.eyebrow .dot{ width:5px; height:5px; border-radius:50%; background:var(--coral); display:inline-block; }
+h1{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-size:clamp(2rem,4.2vw,2.9rem); color:var(--text-strong); font-weight:500; margin:16px 0 8px; }
+.subtitle{ color:var(--text-dim); max-width:66ch; font-size:1.02rem; }
+.callout{ border-left:2px solid var(--coral); padding:6px 0 6px 18px; margin:20px 0; max-width:70ch; font-size:0.94rem; }
+.callout.marquee{ border-left-color:var(--brass); background:linear-gradient(to right, color-mix(in srgb, var(--brass) 8%, transparent), transparent 70%); padding:14px 18px; border-radius:0 3px 3px 0; }
+
+section{ padding:48px 0; border-bottom:1px solid var(--rule); }
+section:last-of-type{ border-bottom:none; }
+.section-eyebrow{ font-family:ui-monospace,monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; display:block; }
+h2{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-size:1.7rem; font-weight:500; color:var(--text-strong); margin:0 0 10px; }
+.dek{ color:var(--text-dim); max-width:66ch; font-size:0.98rem; }
+
+.frame-list{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:20px; max-width:760px; }
+.frame-item{ display:grid; grid-template-columns:30px 1fr; gap:14px; }
+.frame-num{ font-family:ui-monospace,monospace; color:var(--coral); font-size:0.9rem; padding-top:2px; }
+.frame-item h3{ margin:0 0 4px; font-size:1rem; color:var(--text-strong); font-weight:600; }
+.frame-item p{ margin:0; font-size:0.95rem; max-width:72ch; }
+
+.table-scroll{ overflow-x:auto; border:1px solid var(--card-border); border-radius:3px; margin-top:18px; }
+table{ border-collapse:collapse; width:100%; min-width:600px; font-size:0.89rem; }
+thead th{ text-align:left; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); padding:11px 15px; border-bottom:1px solid var(--card-border); background:var(--card-bg); white-space:nowrap; }
+tbody td{ padding:11px 15px; border-bottom:1px solid var(--rule); vertical-align:top; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody td.tech{ font-weight:600; color:var(--text-strong); white-space:nowrap; }
+tbody tr.marquee td{ background:linear-gradient(to right, color-mix(in srgb, var(--brass) 9%, transparent), transparent 80%); }
+tbody td.idx{ font-family:ui-monospace,monospace; color:var(--coral); }
+
+.band{ border-left:3px solid var(--band-color); background:linear-gradient(to right, color-mix(in srgb, var(--band-color) 7%, transparent), transparent 60%); padding:20px 22px 22px; margin-bottom:14px; border-radius:0 3px 3px 0; }
+.band-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+.band-name{ font-family:ui-monospace,monospace; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--band-color); font-weight:700; }
+.band-desc{ font-size:0.83rem; color:var(--text-dim); }
+.idea-list{ display:flex; flex-direction:column; gap:12px; }
+.idea{ font-size:0.92rem; }
+.idea .name{ color:var(--text-strong); font-weight:600; }
+.idea .tag{ font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); }
+.spectrum-key{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px; font-size:0.76rem; color:var(--text-dim); }
+.spectrum-key span{ display:inline-flex; align-items:center; gap:6px; }
+.spectrum-key i{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+.rank{ font-family:ui-monospace,monospace; color:var(--coral); font-weight:700; }
+.deadends{ margin-top:20px; padding:14px 16px; border:1px dashed var(--card-border); border-radius:3px; font-size:0.84rem; color:var(--text-dim); }
+footer{ padding:36px 0 60px; font-size:0.82rem; color:var(--text-dim); }
+footer code{ font-family:ui-monospace,monospace; color:var(--text); background:var(--card-bg); padding:1px 5px; border-radius:2px; }
+@media (max-width:640px){ header{ padding:44px 0 26px; } section{ padding:36px 0; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> PRISM session III &middot; widest pass &middot; 2026-07-15</div>
+    <h1>Total Internal Reflection</h1>
+    <p class="subtitle">Third and widest pass on RH. Same reach-by-the-move rule as round II, pushed into fields nobody checks for a number theory problem: ecology, immunology, cryptography, linguistics, law, music, meteorology, and the exact procedural history of how Fermat's Last Theorem actually got solved.</p>
+    <div class="callout">Zero overlap with round I (sphere packing, function fields, PT-symmetry, Beurling, RMT local law, Connes&ndash;Consani, Lee&ndash;Yang, automated proving, ML attribution, tensor networks, DPPs) or round II (spin glass, RG, quasicrystals, Hopfield/EBM, game theory, TDA, complex networks, multifractal, RIP, p-bits, dynamical systems, category theory, assembly theory). Checked against LEDGER's DEAD ENDS — nothing reopened.</div>
+    <div class="callout marquee"><strong>Marquee find:</strong> May's 1972 random-matrix stability criterion for ecosystems (σ√(SC)&lt;1) &mdash; real food webs survive it by <em>not being random</em>: weak interactions dominate, structure is modular. Direct, unused structural question for τ_N: does positivity survive because the prime-comb coupling matrix is food-web-structured, not despite looking random?</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <span class="section-eyebrow">Frame &middot; 5 wilder inversions</span>
+  <h2>Reframings this round</h2>
+  <ol class="frame-list">
+    <li class="frame-item"><div class="frame-num">01</div><div><h3>Predictability horizon</h3><p>Weather forecasting has a rigorous Lyapunov-time beyond which only statistics are predictable, not individual states. Maybe the right target isn't "prove RH" but a predictability-horizon theorem, with the on-line property falling out as a consequence of the statistical regime.</p></div></li>
+    <li class="frame-item"><div class="frame-num">02</div><div><h3>The Wiles template</h3><p>FLT was solved by finding an unrelated "shadow conjecture" (Taniyama&ndash;Shimura) and inventing new machinery to prove that instead. Nobody has systematically searched for RH's shadow conjecture.</p></div></li>
+    <li class="frame-item"><div class="frame-num">03</div><div><h3>Meta-spin-glass on the project itself</h3><p>Apply round II's ruggedness diagnostic to the research process, not the math: is the sequence of dead-ends in LEDGER rugged (thrashing) or smooth (converging)?</p></div></li>
+    <li class="frame-item"><div class="frame-num">04</div><div><h3>Hostile referee, not hostile adversary</h3><p>If a complete proof landed tomorrow, what would a skeptical referee attack first? Build that case-based skepticism in now, using the precedent of every historical false RH-proof submission.</p></div></li>
+    <li class="frame-item"><div class="frame-num">05</div><div><h3>A different sense channel</h3><p>What would positivity holding-with-room-to-spare sound like versus barely holding? Sonify τ_N's spectrum and listen for dissonance &mdash; a channel none of the scalar diagnostics use.</p></div></li>
+  </ol>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (a) &middot; Primer panel</span>
+  <h2>18 far-field mechanisms</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Primer</th><th>Mechanism</th></tr></thead>
+      <tbody>
+        <tr class="marquee"><td class="tech">ecology</td><td>May's criterion σ√(SC)&lt;1 &mdash; real ecosystems dodge random-matrix instability via non-random structure (weak-interaction predominance, modularity). Run the equivalent diagnostic on τ_N's off-diagonal decay.</td></tr>
+        <tr><td class="tech">evolutionary-biology</td><td>NK fitness landscape + genetic algorithm search for magic-function-like test functions; landscape ruggedness (K) as a difficulty diagnostic.</td></tr>
+        <tr><td class="tech">immunology</td><td>Affinity maturation: mutation + selection + a retained memory pool of near-misses, not just a plain GA.</td></tr>
+        <tr><td class="tech">non-equilibrium-stat-mech</td><td>Jarzynski/Crooks fluctuation theorems &mdash; an exact identity, not just an inequality, for the "work" of moving a test function across the prime comb.</td></tr>
+        <tr><td class="tech">levy-stable-and-heavy-tailed-processes</td><td>Stable-law limit theorems applied directly to the heavy-tailed error terms in the explicit formula.</td></tr>
+        <tr><td class="tech">self-organized-criticality</td><td>Is the rock-stable 23-dim near-kernel an SOC invariant &mdash; self-tuned criticality, with avalanche statistics to check.</td></tr>
+        <tr><td class="tech">scaling-laws-and-allometry</td><td>Cross-check the project's measured power-law exponents against known biological universality classes.</td></tr>
+        <tr><td class="tech">simulation-based-inference (ABC)</td><td>Approximate Bayesian Computation &rarr; an actual calibrated posterior credence for RH, not just "PSD at machine precision."</td></tr>
+        <tr><td class="tech">legal-research-and-reasoning</td><td>Case-based reasoning over OBSTRUCTION_MAP as a precedent bank &mdash; systematizes "what to try next."</td></tr>
+        <tr><td class="tech">music-theory-and-harmonics</td><td>Sonify the eigenvalue spectrum; is 1.82974 close to a recognizable consonant ratio?</td></tr>
+        <tr><td class="tech">linguistics</td><td>Zipf/statistical-language-model entropy rate on prime gaps and zero spacings &mdash; more or less compressible than a matched-density random comb?</td></tr>
+        <tr><td class="tech">cryptography</td><td>Primes as ideal-PRG output; positivity recast as computational indistinguishability, discrepancy-theory tools imported.</td></tr>
+        <tr><td class="tech">formal-verification (abstract interpretation)</td><td>Bound an entire region of test-function space at once, not one g at a time.</td></tr>
+        <tr><td class="tech">operations-research (max-flow/min-cut)</td><td>A second, combinatorial duality distinct from round I's LP/SDP &mdash; recast the balance as a flow-network cut.</td></tr>
+        <tr class="marquee"><td class="tech">history-of-ideas</td><td>The Wiles template in full: FLT reduced to Taniyama&ndash;Shimura, proved via new Galois deformation machinery. Search for RH's own shadow conjecture.</td></tr>
+        <tr><td class="tech">metaphysics-and-epistemology</td><td>Reverse-math classification of Robin's inequality; proof-theoretic ordinal analysis of the strength a proof would need.</td></tr>
+        <tr><td class="tech">meteorology (ensemble forecasting)</td><td>Perturbed-ensemble xi_hat predictions across N &mdash; does spread shrink (predictable) or plateau (a real predictability horizon)?</td></tr>
+        <tr><td class="tech">acoustics-and-wave-physics</td><td>Literal interfering-wave-train intuition for the archimedean-kernel-vs-prime-comb mismatch.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (b) &middot; The seven Codex lenses</span>
+  <h2>Describe &middot; Formalize &middot; Build &middot; Operate &middot; Govern &middot; Express &middot; Interpret</h2>
+  <p class="dek">Tony's Unified Tag Scheme keys every operation to one of seven lenses before it's even keyed to a thread. Round II used threads; this round runs the lenses themselves.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Lens</th><th>Applied to RH</th></tr></thead>
+      <tbody>
+        <tr><td class="tech">Describe</td><td>Strip to the single observable: β = sup(Re ρ) must equal exactly ½. Attack the exactness as a rigidity/uniqueness statement.</td></tr>
+        <tr><td class="tech">Formalize</td><td>Get an actual reverse-math classification of Robin's inequality instead of treating formal strength as unaskable.</td></tr>
+        <tr><td class="tech">Build</td><td>A live "RH violation watch" ingesting every new external zero computation, auto-checked against our current unconditional bound.</td></tr>
+        <tr><td class="tech">Operate</td><td>Turn the sweep scripts into a standing daemon probing new (lsq, N) combinations forever on idle Olympus GPU-hours.</td></tr>
+        <tr><td class="tech">Govern</td><td>A written "constitution" alongside OBSTRUCTION_MAP/LEDGER &mdash; explicit invariants every future claim must satisfy, standing not one-off.</td></tr>
+        <tr><td class="tech">Express</td><td>Sonification and an actual walkable 3D visualization &mdash; make positivity perceptible, not just computed.</td></tr>
+        <tr><td class="tech">Interpret</td><td>Systematically check whether any RH-equivalent downstream consequence has already been tested (and survived) in a neighboring, less-studied problem.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Diverge (c) &middot; Banded spectrum</span>
+  <h2>Pushed further</h2>
+  <div class="spectrum-key">
+    <span><i style="background:#5aa6a1"></i>Grounded</span>
+    <span><i style="background:#7fae6a"></i>Clever</span>
+    <span><i style="background:#d6a44e"></i>Exotic</span>
+    <span><i style="background:#cc8347"></i>Moonshot</span>
+    <span><i style="background:#c1613f"></i>Absurd</span>
+  </div>
+
+  <div class="band" style="--band-color:#5aa6a1;">
+    <div class="band-head"><span class="band-name">Grounded</span><span class="band-desc">existing tools/data, buildable this week</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">May's-criterion structural diagnostic</span> on τ_N's existing off-diagonal decay &mdash; <span class="tag">produces</span> a food-web-structure verdict.</div>
+      <div class="idea"><span class="name">ABC posterior credence</span> for RH from current numerical evidence &mdash; <span class="tag">produces</span> a real calibrated number.</div>
+      <div class="idea"><span class="name">Reverse-math classification lookup</span> for Robin's inequality &mdash; <span class="tag">produces</span> a bounded literature answer.</div>
+      <div class="idea"><span class="name">Sonification pass</span> on existing spectra &mdash; <span class="tag">produces</span> a new sense-channel check, cheap.</div>
+      <div class="idea"><span class="name">SOC avalanche-statistics check</span> on existing perturbation data &mdash; <span class="tag">produces</span> a criticality-or-not verdict on the 23-dim kernel.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#7fae6a;">
+    <div class="band-head"><span class="band-name">Clever</span><span class="band-desc">new but standard build</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">NK-landscape genetic-algorithm search</span> for magic-function-like test functions.</div>
+      <div class="idea"><span class="name">Case-based-reasoning precedent bank</span> over OBSTRUCTION_MAP.</div>
+      <div class="idea"><span class="name">Ensemble-forecasting spread analysis</span> of xi_hat predictions across N.</div>
+      <div class="idea"><span class="name">Discrepancy-theory/PRG reframing</span> of prime-comb positivity.</div>
+      <div class="idea"><span class="name">Max-flow/min-cut duality recast</span> of the archimedean/prime balance.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#d6a44e;">
+    <div class="band-head"><span class="band-name">Exotic</span><span class="band-desc">real literature, non-trivial build</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Immunology-style affinity-maturation search</span>, with a retained memory pool of near-misses.</div>
+      <div class="idea"><span class="name">Abstract-interpretation soundness argument</span> over a continuum of test functions at once.</div>
+      <div class="idea"><span class="name">Standing "RH violation watch" daemon</span> ingesting external zero computations.</div>
+      <div class="idea"><span class="name">Fluctuation-theorem exact-identity search</span>, rather than settling for an inequality.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#cc8347;">
+    <div class="band-head"><span class="band-name">Moonshot</span><span class="band-desc">multi-month, high payoff if not a dead end</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">The Wiles-template shadow-conjecture search</span>.</div>
+      <div class="idea"><span class="name">Proof-theoretic ordinal analysis</span> of the strength required to prove RH.</div>
+      <div class="idea"><span class="name">Full governance layer</span> making OBSTRUCTION_MAP/LEDGER invariants machine-checked, not just human-audited.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#c1613f;">
+    <div class="band-head"><span class="band-name">Absurd</span><span class="band-desc">every one with a sane cousin</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Put the zeros on a record and DJ them until the proof drops</span> &rarr; <span class="tag">sane cousin</span> the sonification pass, grounded band.</div>
+      <div class="idea"><span class="name">Sue the primes for violating due process</span> &rarr; <span class="tag">sane cousin</span> the case-based-reasoning precedent bank, clever band.</div>
+      <div class="idea"><span class="name">Raise the operator as a show dog and see if it wins Best in Show</span> &rarr; <span class="tag">sane cousin</span> the immunology-style affinity-maturation search, exotic band.</div>
+      <div class="idea"><span class="name">Ask the weather service for a 30-day forecast on the next zero</span> &rarr; <span class="tag">sane cousin</span> ensemble-forecasting spread analysis, clever band.</div>
+      <div class="idea"><span class="name">Feed the whole problem to a swarm of bees and see where they land</span> &rarr; <span class="tag">sane cousin</span> already covered &mdash; it's the GA/NK-landscape search wearing a costume. Third round in a row the joke restates a real idea; worth trusting the pattern.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="section-eyebrow">Converge</span>
+  <h2>Ranked &mdash; checked against rounds I, II, and LEDGER</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>#</th><th>Thread</th><th>Produces</th></tr></thead>
+      <tbody>
+        <tr><td class="idx rank">1</td><td class="tech">May's-criterion structural diagnostic</td><td>Buildable now, most novel-per-effort of the whole series.</td></tr>
+        <tr><td class="idx rank">2</td><td class="tech">ABC posterior credence</td><td>Buildable now, a real number instead of a qualitative claim.</td></tr>
+        <tr><td class="idx rank">3</td><td class="tech">Reverse-math classification</td><td>Cheap, reframes what "proof" even requires here.</td></tr>
+        <tr><td class="idx rank">4</td><td class="tech">Sonification pass</td><td>Cheap, a channel nothing else uses.</td></tr>
+        <tr><td class="idx rank">5</td><td class="tech">SOC avalanche-statistics check</td><td>Cheap, direct test of the 23-dim kernel's meaning.</td></tr>
+        <tr><td class="idx rank">6</td><td class="tech">NK-landscape GA search</td><td>Moderate build, new search dynamic.</td></tr>
+        <tr><td class="idx rank">7</td><td class="tech">Ensemble-forecasting predictability test</td><td>Moderate build, tests Frame #1 directly.</td></tr>
+        <tr><td class="idx rank">8</td><td class="tech">Immunology-style affinity maturation</td><td>Moderate build, memory changes the search dynamics.</td></tr>
+        <tr><td class="idx rank">9</td><td class="tech">Wiles-template shadow-conjecture search</td><td>Moonshot, highest possible payoff.</td></tr>
+        <tr><td class="idx rank">10</td><td class="tech">Standing "RH violation watch" daemon</td><td>Infrastructure, low risk, permanent value.</td></tr>
+        <tr><td class="idx rank">11</td><td class="tech">Case-based-reasoning precedent bank</td><td>Process improvement, systematizes next-step choice.</td></tr>
+        <tr><td class="idx rank">12</td><td class="tech">Max-flow/min-cut duality recast</td><td>Moderate build, a second duality lens.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="deadends"><strong>Not re-litigated:</strong> rounds I and II's full converge lists, plus LEDGER's DEAD ENDS table.</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Sources: May (1972) Nature, "Will a Large Complex System Be Stable?" &mdash; from <code>~/codex-cache/full/primers/ecology/</code>. Wiles (1995) / Taylor&ndash;Wiles (1995). Jarzynski (1997) / Crooks (1999). Plain-text companion: <code>PRISM_III_2026-07-15.md</code>, same directory.</div>
+</footer>
+</body>
+</html>

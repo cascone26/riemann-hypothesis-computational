@@ -1,0 +1,531 @@
+<title>Refracting the Wall — a PRISM on RH</title>
+<style>
+@import url("data:text/css,");
+
+:root{
+  --ink-950:#0a0d12;
+  --ink-900:#12161d;
+  --ink-850:#181d26;
+  --paper-050:#eef1ee;
+  --paper-100:#e2e7e1;
+  --paper-150:#d7ddd4;
+  --text:#dde3e1;
+  --text-dim:#93a09b;
+  --text-strong:#f4f7f5;
+  --brass:#d6a44e;
+  --cyan:#5aa6a1;
+  --rust:#c1613f;
+  --rule:rgba(221,227,225,0.14);
+  --card-bg:rgba(255,255,255,0.02);
+  --card-border:rgba(221,227,225,0.10);
+  --shadow:0 1px 2px rgba(0,0,0,0.4);
+}
+
+:root[data-theme="light"],
+@media (prefers-color-scheme: light){:root{ }}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --text:#20261f;
+    --text-dim:#5c655b;
+    --text-strong:#0e120e;
+    --rule:rgba(20,26,20,0.14);
+    --card-bg:rgba(20,26,20,0.025);
+    --card-border:rgba(20,26,20,0.12);
+    --shadow:0 1px 2px rgba(20,26,20,0.08);
+  }
+  body{ background:var(--paper-050); }
+}
+:root[data-theme="dark"]{
+  --text:#dde3e1; --text-dim:#93a09b; --text-strong:#f4f7f5;
+  --rule:rgba(221,227,225,0.14); --card-bg:rgba(255,255,255,0.02); --card-border:rgba(221,227,225,0.10);
+  --shadow:0 1px 2px rgba(0,0,0,0.4);
+}
+:root[data-theme="dark"] body{ background:var(--ink-950); }
+:root[data-theme="light"]{
+  --text:#20261f; --text-dim:#5c655b; --text-strong:#0e120e;
+  --rule:rgba(20,26,20,0.14); --card-bg:rgba(20,26,20,0.025); --card-border:rgba(20,26,20,0.12);
+  --shadow:0 1px 2px rgba(20,26,20,0.08);
+}
+:root[data-theme="light"] body{ background:var(--paper-050); }
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--ink-950);
+  color:var(--text);
+  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--brass); color:#181206; }
+
+.display{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; }
+.mono{ font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
+
+a{ color:var(--brass); text-decoration:none; border-bottom:1px solid rgba(214,164,78,0.35); }
+a:hover{ border-bottom-color:var(--brass); }
+a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+
+.wrap{ max-width:920px; margin:0 auto; padding:0 24px; }
+.prose{ max-width:720px; }
+
+/* ---------- masthead ---------- */
+header.masthead{
+  position:relative;
+  padding:76px 0 44px;
+  border-bottom:1px solid var(--rule);
+  overflow:hidden;
+}
+.critical-line{
+  position:absolute; top:0; bottom:0; left:calc(50% - 1px);
+  width:1px;
+  background:linear-gradient(to bottom, transparent, var(--brass) 18%, var(--brass) 82%, transparent);
+  opacity:0.35;
+}
+.critical-line::after{
+  content:"Re(s) = ½";
+  position:absolute; top:14px; left:10px;
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:0.06em; color:var(--brass); opacity:0.9; white-space:nowrap;
+}
+.eyebrow{
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--text-dim);
+  display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+}
+.eyebrow .dot{ width:5px; height:5px; border-radius:50%; background:var(--cyan); display:inline-block; }
+h1.title{
+  font-size:clamp(2.1rem, 4.4vw, 3.1rem);
+  line-height:1.06;
+  margin:18px 0 8px;
+  text-wrap:balance;
+  color:var(--text-strong);
+  font-weight:500;
+  max-width:11ch;
+}
+.subtitle{
+  font-size:1.08rem; color:var(--text-dim); max-width:56ch; margin:0 0 28px;
+}
+.status-strip{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px; background:var(--rule);
+  border:1px solid var(--rule); border-radius:2px; overflow:hidden;
+  margin-top:8px;
+}
+.status-cell{ background:var(--ink-900); padding:14px 16px; }
+:root[data-theme="light"] .status-cell{ background:var(--paper-100); }
+@media (prefers-color-scheme: light){ .status-cell{ background:var(--paper-100); } }
+.status-cell .k{ font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-dim); margin-bottom:4px; }
+.status-cell .v{ font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:14px; color:var(--text-strong); font-variant-numeric:tabular-nums; }
+
+nav.toc{
+  display:flex; gap:18px; flex-wrap:wrap;
+  padding:16px 0; margin-top:10px; border-top:1px solid var(--rule);
+  font-size:13px;
+}
+nav.toc a{ border-bottom:none; color:var(--text-dim); }
+nav.toc a:hover{ color:var(--brass); }
+nav.toc .n{ color:var(--text-dim); margin-right:5px; font-family:ui-monospace,monospace; opacity:0.6; }
+
+/* ---------- sections ---------- */
+section{ padding:56px 0; border-bottom:1px solid var(--rule); }
+section:last-of-type{ border-bottom:none; }
+.section-head{ margin-bottom:28px; }
+.section-eyebrow{
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass);
+  margin-bottom:8px; display:block;
+}
+h2.section-title{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:1.9rem; font-weight:500; color:var(--text-strong); margin:0 0 10px; text-wrap:balance;
+}
+.section-dek{ color:var(--text-dim); max-width:64ch; font-size:1rem; }
+
+p{ max-width:70ch; }
+.law{
+  border-left:2px solid var(--brass); padding:4px 0 4px 18px; margin:20px 0; max-width:64ch;
+  color:var(--text-strong); font-size:1.02rem;
+}
+
+/* ---------- frame list ---------- */
+.frame-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:22px; max-width:720px; }
+.frame-item{ display:grid; grid-template-columns:34px 1fr; gap:16px; }
+.frame-num{
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color:var(--brass); font-size:0.95rem; padding-top:2px;
+}
+.frame-item h3{ margin:0 0 4px; font-size:1.02rem; color:var(--text-strong); font-weight:600; }
+.frame-item p{ margin:0; color:var(--text); font-size:0.97rem; }
+
+/* ---------- figure panel ---------- */
+.panel-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:14px;
+}
+.persona{
+  background:var(--card-bg); border:1px solid var(--card-border); border-radius:3px;
+  padding:18px 18px 20px; box-shadow:var(--shadow);
+}
+.persona .role{ font-size:0.68rem; text-transform:uppercase; letter-spacing:0.09em; color:var(--cyan); margin-bottom:6px; }
+.persona h3{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-size:1.12rem; margin:0 0 8px; color:var(--text-strong); font-weight:500; }
+.persona p{ font-size:0.9rem; color:var(--text); margin:0; }
+.persona .lit{ margin-top:10px; font-size:0.78rem; color:var(--text-dim); font-style:italic; }
+
+/* ---------- technique deck table ---------- */
+.table-scroll{ overflow-x:auto; border:1px solid var(--card-border); border-radius:3px; }
+table{ border-collapse:collapse; width:100%; min-width:640px; font-size:0.92rem; }
+thead th{
+  text-align:left; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-dim);
+  padding:12px 16px; border-bottom:1px solid var(--card-border); background:var(--card-bg); white-space:nowrap;
+}
+tbody td{ padding:12px 16px; border-bottom:1px solid var(--rule); vertical-align:top; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody td.tech{ font-weight:600; color:var(--text-strong); white-space:nowrap; }
+tbody td.idx{ font-family:ui-monospace,monospace; color:var(--text-dim); }
+
+/* ---------- banded spectrum ---------- */
+.band{
+  border-left:3px solid var(--band-color);
+  background:linear-gradient(to right, color-mix(in srgb, var(--band-color) 7%, transparent), transparent 60%);
+  padding:22px 24px 24px; margin-bottom:16px; border-radius:0 3px 3px 0;
+}
+.band-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
+.band-name{ font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--band-color); font-weight:700; }
+.band-desc{ font-size:0.85rem; color:var(--text-dim); }
+.idea-list{ display:flex; flex-direction:column; gap:14px; }
+.idea{ font-size:0.94rem; }
+.idea .name{ color:var(--text-strong); font-weight:600; }
+.idea .arrow{ color:var(--band-color); }
+.idea .tag{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); }
+
+.spectrum-key{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:26px; font-size:0.78rem; color:var(--text-dim); }
+.spectrum-key span{ display:inline-flex; align-items:center; gap:6px; }
+.spectrum-key i{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+/* ---------- converge table ---------- */
+.rank{ font-family:ui-monospace,monospace; color:var(--brass); font-weight:700; }
+.pill{
+  display:inline-block; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em;
+  padding:2px 8px; border-radius:20px; border:1px solid currentColor; white-space:nowrap;
+}
+.pill.now{ color:var(--cyan); }
+.pill.soon{ color:var(--brass); }
+.pill.moonshot{ color:var(--rust); }
+
+.deadends{
+  margin-top:22px; padding:16px 18px; border:1px dashed var(--card-border); border-radius:3px;
+  font-size:0.86rem; color:var(--text-dim);
+}
+.deadends strong{ color:var(--text); }
+
+footer{
+  padding:40px 0 70px; font-size:0.84rem; color:var(--text-dim);
+}
+footer code{ font-family:ui-monospace,monospace; color:var(--text); background:var(--card-bg); padding:1px 5px; border-radius:2px; }
+
+@media (max-width:640px){
+  header.masthead{ padding:52px 0 30px; }
+  .critical-line{ display:none; }
+  section{ padding:40px 0; }
+}
+</style>
+
+<header class="masthead">
+  <div class="critical-line" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> PRISM session &middot; Riemann Hypothesis &middot; 2026-07-15</div>
+    <h1 class="title display">Refracting the Wall</h1>
+    <p class="subtitle">A wide-net PRISM brainstorm on RH — run against the project's own OBSTRUCTION_MAP and LEDGER so nothing here re-treads a route already mapped and closed. Not a list of tests to run. A search for the genuinely new idea the obstruction map says is required.</p>
+
+    <div class="status-strip">
+      <div class="status-cell"><div class="k">τ_N positivity</div><div class="v">PSD, machine precision, all N</div></div>
+      <div class="status-cell"><div class="k">Near-kernel</div><div class="v">23-dim, stable N=64&ndash;1000</div></div>
+      <div class="status-cell"><div class="k">Spectral gap</div><div class="v">&rarr; 1.87&times;10&#8315;&#8308;</div></div>
+      <div class="status-cell"><div class="k">Classical routes</div><div class="v">7 mapped &middot; 5 hit-wall &middot; 1 dead &middot; 1 partial</div></div>
+      <div class="status-cell"><div class="k">Unconditional bound</div><div class="v">n &lesssim; 1.9&times;10&#185;&#179; (n)</div></div>
+      <div class="status-cell"><div class="k">Obstruction map verdict</div><div class="v">"a genuinely new idea is required"</div></div>
+    </div>
+
+    <nav class="toc">
+      <a href="#frame"><span class="n">01</span>Frame</a>
+      <a href="#panel"><span class="n">02</span>Figure panel</a>
+      <a href="#deck"><span class="n">03</span>Technique deck</a>
+      <a href="#spectrum"><span class="n">04</span>Banded spectrum</a>
+      <a href="#converge"><span class="n">05</span>Converge &amp; rank</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="frame">
+  <div class="section-head">
+    <span class="section-eyebrow">01 &middot; Frame</span>
+    <h2 class="section-title">Invert the problem before generating a single idea</h2>
+    <p class="section-dek">The one law: diverge fully before converging at all. Six ways of turning the problem over, each aimed at where the obstruction map already says the wall actually is.</p>
+  </div>
+  <ol class="frame-list">
+    <li class="frame-item">
+      <div class="frame-num">01</div>
+      <div><h3>Where does the obstruction actually live?</h3>
+      <p>Not local or pointwise — routes 2&ndash;4 already proved that. It's a <em>global</em> Diophantine constraint: the autocorrelation of a test function cannot spike at every {log p} simultaneously. Reframe RH as an extremal problem over which functions <em>can't</em> do that — the exact shape solved by LP/SDP duality elsewhere in math.</p></div>
+    </li>
+    <li class="frame-item">
+      <div class="frame-num">02</div>
+      <div><h3>What would force a violation to reveal itself?</h3>
+      <p>An off-line zero would make τ_N go negative for <em>some</em> finite N and <em>some</em> g. Stop waiting for N&rarr;&infin; and confirming positivity — actively hunt the g that makes τ_N most negative, and watch whether that minimum is converging to 0⁻ or drifting away as N grows.</p></div>
+    </li>
+    <li class="frame-item">
+      <div class="frame-num">03</div>
+      <div><h3>How would a hostile prime distribution lean?</h3>
+      <p>Diamond&ndash;Montgomery&ndash;Vorhauer and others built real Beurling generalized-number systems, same density as the primes, where the RH-analogue is provably false. Feed <code class="mono">connes_decisive_v3.py</code> one of those instead of true primes and watch it break — the diff <em>is</em> the hidden assumption.</p></div>
+    </li>
+    <li class="frame-item">
+      <div class="frame-num">04</div>
+      <div><h3>Who already solved this, in a different language?</h3>
+      <p>Weil and Deligne <em>proved</em> the RH-analogue for curves over finite fields, via étale cohomology and Frobenius eigenvalues. That's the same positivity statement, solved, in a parallel universe. The dictionary breaks down somewhere for Spec(Z) — find exactly where.</p></div>
+    </li>
+    <li class="frame-item">
+      <div class="frame-num">05</div>
+      <div><h3>Pre-mortem: it's 2036 and it's still open. Why?</h3>
+      <p>Likely answer: every attempt stayed inside the same explicit-formula basis. LEDGER already flags Li/NB/Jensen/de Branges as "same wall, different basis," closed 2026-05-19. The failure mode is re-coordinatizing, not changing the category of object — function &rarr; operator &rarr; cohomology &rarr; dynamical system &rarr; physical experiment.</p></div>
+    </li>
+    <li class="frame-item">
+      <div class="frame-num">06</div>
+      <div><h3>Strip it to the pure problem.</h3>
+      <p>An explicit infinite quadratic form must be positive semidefinite against a discrete adversarial set of directions (the primes). Other fields solve exactly this shape: LP/SDP duality (sphere packing, coding theory), free-probability universality proofs, Positivstellensatz/SOS certificates. None of routes 2&ndash;6 borrowed that machinery directly — only classical analytic number theory tools were tried.</p></div>
+    </li>
+  </ol>
+</section>
+
+<section id="panel">
+  <div class="section-head">
+    <span class="section-eyebrow">02 &middot; Diverge — figure panel</span>
+    <h2 class="section-title">Twelve maximally unlike minds, each naming a mechanism</h2>
+    <p class="section-dek">Blind to each other. Each names one mechanism for attacking RH from their own field's toolkit — independent convergence on the same idea is signal, not coincidence.</p>
+  </div>
+  <div class="panel-grid">
+
+    <div class="persona">
+      <div class="role">Sphere packer</div>
+      <h3>The magic-function hunter</h3>
+      <p>Treat Weil's criterion exactly like the sphere-packing LP bound. Hunt a bandlimited g built from modular/quasimodular forms that makes A+B&minus;P touch zero exactly at the critical configuration — the way Viazovska's function made the LP bound tight in dimensions 8 and 24.</p>
+      <div class="lit">Lineage: Cohn&ndash;Elkies, Viazovska</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Function-field traveler</div>
+      <h3>The dictionary builder</h3>
+      <p>RH is a <em>theorem</em> for curves over finite fields. Build the precise dictionary — zeta↔ζ(s), Frobenius eigenvalues↔zeros, étale H¹↔the missing Hilbert&ndash;Pólya space — and find exactly where it breaks for Spec(Z). The break point is the obstruction, in vocabulary that already has a solved analogue.</p>
+      <div class="lit">Weil, Deligne (proved for function fields)</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Non-Hermitian physicist</div>
+      <h3>The PT-symmetry advocate</h3>
+      <p>Drop the requirement that H be self-adjoint. PT-symmetric (parity-time) non-Hermitian operators can carry entirely real spectra. A specific PT-symmetric deformation of Berry&ndash;Keating's H=xp has been proposed with spectrum conjectured to be exactly the zeros.</p>
+      <div class="lit">Bender, Brody, Müller (2017)</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">The Beurling adversary</div>
+      <h3>The counterexample smuggler</h3>
+      <p>Real generalized-prime systems exist, same density as the primes, where the RH-analogue is false. Run the existing operator code on one and diff it against the real-prime run, line by line, to isolate the exact numeric signature that "these are the real primes" supplies.</p>
+      <div class="lit">Diamond&ndash;Montgomery&ndash;Vorhauer counterexamples</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Free probabilist</div>
+      <h3>The local-law importer</h3>
+      <p>GUE universality for random matrices isn't proved via any explicit-formula positivity — it's proved via a <em>local law</em>: eigenvalue rigidity down to the optimal scale, via a self-consistent equation plus high-moment estimates. Recast the prime-comb-vs-archimedean question as a local-law statement and import that machinery wholesale.</p>
+      <div class="lit">Erdős&ndash;Yau rigidity program</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Cohomologist / topos builder</div>
+      <h3>The Spec(Z) geometer</h3>
+      <p>The live research program for a Weil-conjectures-style cohomological proof of RH over Spec(Z) — the arithmetic site / scaling site, or Deninger's conjectural foliated dynamical system whose periodic orbits are the primes. Deep-read for one concrete, checkable prediction to test against our own operator numerics.</p>
+      <div class="lit">Connes&ndash;Consani, Deninger</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Statistical mechanic</div>
+      <h3>The Lee&ndash;Yang analogist</h3>
+      <p>Lee&ndash;Yang <em>proves</em> zeros of a physical partition function lie on a specific curve for a broad class of ferromagnetic models — a real, proven "zeros on a line" theorem via correlation inequalities. Is ζ, or τ_N, a limit of some statistical-mechanical partition function amenable to that style of argument?</p>
+      <div class="lit">Lee&ndash;Yang theorem, 1952</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Automated prover</div>
+      <h3>The bounded-target hunter</h3>
+      <p>Don't aim automated theorem search at RH. Aim it at the narrow, checkable lemma: "τ_N ⪰ 0 for finite N is provable by an explicit SOS certificate of degree ≤ D." That's a formally verifiable, finite target — exactly what RL-guided proof search is built for.</p>
+      <div class="lit">AlphaProof-style bounded search, Lean/Mathlib</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">ML pattern-finder</div>
+      <h3>The attribution miner</h3>
+      <p>The actual DeepMind method that produced a new knot-theory formula: generate invariants, train a model to predict one from another, then read the trained model's attributions. We already have Keiper&ndash;Li λ_n to n&asymp;2M and GORZ a[n] to n=80 — apply verbatim.</p>
+      <div class="lit">Davies et al., "Advantage of ML for mathematical discovery" (2021)</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Quantum simulator</div>
+      <h3>The scale-breaker</h3>
+      <p>Build τ_N (or a Hilbert&ndash;Pólya candidate) as a tensor-network ansatz (MPS/DMRG) instead of a dense matrix. Olympus's dense-linear-algebra timing law is ~N^2.2; a tensor-network approach could plausibly reach N in the 10⁵&ndash;10⁶ range where the "misses near the ceiling" boundary effect fully resolves.</p>
+      <div class="lit">Quantum-inspired classical emulation</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">Skip-tracer</div>
+      <h3>The forensic auditor</h3>
+      <p>Assume our <em>own</em> construction is secretly circular somewhere — LEDGER already caught exactly this once (the sensitivity/perturbation route, retracted 2026-07-12). Make the audit a standing role, not a one-time check: where, precisely, does <code class="mono">connes_decisive_v3.py</code> implicitly assume something equivalent to RH?</p>
+      <div class="lit">Internal — apply forensic instinct inward</div>
+    </div>
+
+    <div class="persona">
+      <div class="role">The 5-year-old</h3></div>
+      <h3>"Why not just check enough of them?"</h3>
+      <p>Taken seriously, this restates the one non-circular partial handle that already works — verification height, n ≲ 2π·T. Its sane cousin isn't a joke: push T as far as rigorous (not floating-point) arithmetic allows, because every unit of T directly buys more unconditional n.</p>
+      <div class="lit">Already the project's strongest unconditional result</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="deck">
+  <div class="section-head">
+    <span class="section-eyebrow">03 &middot; Diverge — technique deck</span>
+    <h2 class="section-title">Nine generic moves, run against the specific operator</h2>
+    <p class="section-dek">SCAMPER-style techniques, each landed on the actual project state — not abstractly.</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Move</th><th>Applied to RH</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="tech">Substitute</td><td>Swap ζ(s) for a Dirichlet L-function or function-field zeta with a <em>known proof</em>; transplant the exact positivity argument back and find the one step that doesn't transplant. That non-transplanting step <em>is</em> the obstruction, made concrete instead of abstract.</td></tr>
+        <tr><td class="tech">Combine</td><td>Feed <code class="mono">connes_decisive_v3.py</code>'s finite-N output into an off-the-shelf SDP/SOS solver (cvxpy+SCS, SumOfSquares.jl) and extract an explicit sum-of-squares certificate of τ_N ⪰ 0. Patterned SOS coefficients across increasing N sometimes reveal the general formula by inspection.</td></tr>
+        <tr><td class="tech">Adapt</td><td>Adapt sphere-packing LP-duality's "magic function" methodology directly, and Delsarte-style LP bounds from coding theory — another positivity-against-a-discrete-set problem with mature duality theory neither borrowed from before.</td></tr>
+        <tr><td class="tech">Reverse</td><td>Instead of confirming positivity, build an adversarial optimizer that actively searches for the most negative achievable τ_N (over test functions, and over Beurling combs). Track whether the achieved minimum shrinks toward 0⁻ or grows with N.</td></tr>
+        <tr><td class="tech">Analogical transfer</td><td>Selberg's trace formula already makes primes↔closed geodesics on a hyperbolic surface rigorous. Build a concrete hyperbolic surface or quantum graph whose length spectrum is engineered to match {log p}; its Laplacian eigenvalues are proven real — study whether its positivity technique transfers.</td></tr>
+        <tr><td class="tech">10&times;/10&divide;</td><td>Find the smallest nontrivial case where an analogous finite-N positivity is <em>proven</em>, not merely verified (small-conductor Dirichlet L-function, restricted-degree elliptic curve L-function) — reverse-engineer which technique made that case rigorous, then ask why it doesn't scale.</td></tr>
+        <tr><td class="tech">Constraint-break</td><td>Drop "the operator is a fixed N-independent object." What if the correct Hilbert&ndash;Pólya operator is only well-defined as an inductive limit, and positivity is a colimit-level statement? Reframes "gap converges but doesn't vanish" as possibly the correct terminal statement, not an artifact.</td></tr>
+        <tr><td class="tech">Combine two dead ends</td><td>Route 1 (Hankel/moment, dead — λ_n is log-concave) + route 5 (operator/tau, hits wall). Log-concavity is itself a structured signature — of a determinantal point process, not a classical moment sequence. Is (λ_n) provably a DPP? That has its own, viable, positivity machinery.</td></tr>
+        <tr><td class="tech">Follow the residue</td><td>The 23-dim near-kernel and the frozen eigenvalue at 1.82974 are oddly specific numbers, stable across independent sweeps. Treat them as signal: search whether either is recognizable elsewhere (a special zeta value, an OEIS entry, a dimension count in a related moduli problem).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="spectrum">
+  <div class="section-head">
+    <span class="section-eyebrow">04 &middot; Diverge — banded spectrum</span>
+    <h2 class="section-title">Grounded &rarr; absurd, every absurd idea carries a sane cousin</h2>
+    <p class="section-dek">Format per idea: idea &rarr; mechanism &rarr; what it produces. Absurd-band ideas add a takeable sane-cousin version.</p>
+  </div>
+
+  <div class="spectrum-key">
+    <span><i style="background:#5aa6a1"></i>Grounded</span>
+    <span><i style="background:#7fae6a"></i>Clever</span>
+    <span><i style="background:#d6a44e"></i>Exotic</span>
+    <span><i style="background:#cc8347"></i>Moonshot</span>
+    <span><i style="background:#c1613f"></i>Absurd</span>
+  </div>
+
+  <div class="band" style="--band-color:#5aa6a1;">
+    <div class="band-head"><span class="band-name">Grounded</span><span class="band-desc">buildable this week, existing code and Olympus compute</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Beurling-adversary diff test</span> <span class="arrow">&rarr;</span> swap the prime input in <code class="mono">connes_decisive_v3.py</code> for a known bad Beurling comb <span class="arrow">&rarr;</span> <span class="tag">produces</span> the exact numeric signature the code silently relies on to stay positive.</div>
+      <div class="idea"><span class="name">Finite-N SOS certificate extraction</span> <span class="arrow">&rarr;</span> off-the-shelf SDP solver on the existing τ_N matrices <span class="arrow">&rarr;</span> <span class="tag">produces</span> a machine-checkable proof for finite N, and a coefficient pattern to inspect.</div>
+      <div class="idea"><span class="name">Rigorous verification-height extension</span> <span class="arrow">&rarr;</span> port the verification-height computation to interval/ball arithmetic (Arb, not floats) on Olympus GPUs <span class="arrow">&rarr;</span> <span class="tag">produces</span> a larger, still-unconditional, citable n-bound.</div>
+      <div class="idea"><span class="name">OEIS / literature check on 23 and 1.82974</span> <span class="arrow">&rarr;</span> a cheap targeted search <span class="arrow">&rarr;</span> <span class="tag">produces</span> either a connection to known math, or a clean "genuinely novel constant" result either way.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#7fae6a;">
+    <div class="band-head"><span class="band-name">Clever</span><span class="band-desc">a focused build, days not months</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Closest-near-miss tracker</span> <span class="arrow">&rarr;</span> optimize directly for the most-negative achievable τ_N and log the trend as N grows <span class="arrow">&rarr;</span> <span class="tag">produces</span> a falsification-seeking signal, categorically different from "still PSD."</div>
+      <div class="idea"><span class="name">Function-field dictionary audit</span> <span class="arrow">&rarr;</span> build the explicit Weil/Deligne ↔ Spec(Z) correspondence table and locate the exact breakdown <span class="arrow">&rarr;</span> <span class="tag">produces</span> OBSTRUCTION_MAP's "common root" finding restated in a vocabulary that already has a proof.</div>
+      <div class="idea"><span class="name">ML attribution pass on Keiper&ndash;Li / GORZ data</span> <span class="arrow">&rarr;</span> train a small model on data already computed to n&asymp;2M, read its attributions <span class="arrow">&rarr;</span> <span class="tag">produces</span> candidate new conjectures about the fine structure.</div>
+      <div class="idea"><span class="name">DPP reframing of log-concave λ_n</span> <span class="arrow">&rarr;</span> test (λ_n) against known determinantal point process kernels <span class="arrow">&rarr;</span> <span class="tag">produces</span> either a DPP identification or a ruled-out clean negative.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#d6a44e;">
+    <div class="band-head"><span class="band-name">Exotic</span><span class="band-desc">real literature, non-trivial implementation</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">PT-symmetric Hamiltonian re-test</span> <span class="arrow">&rarr;</span> implement Bender&ndash;Brody&ndash;Müller's construction with current precision/scale and benchmark against connes_decisive_v3 <span class="arrow">&rarr;</span> <span class="tag">produces</span> a second, independent Hilbert&ndash;Pólya candidate to cross-check.</div>
+      <div class="idea"><span class="name">Sphere-packing magic-function hunt</span> <span class="arrow">&rarr;</span> search modular-form-built bandlimited g for exact equality in Weil's criterion <span class="arrow">&rarr;</span> <span class="tag">produces</span>, if found, a rigidity result on par with Viazovska's.</div>
+      <div class="idea"><span class="name">Selberg trace-formula transplant</span> <span class="arrow">&rarr;</span> engineer a hyperbolic surface or quantum graph with length spectrum matching {log p} <span class="arrow">&rarr;</span> <span class="tag">produces</span> a test of whether its (proven-real) Laplacian spectrum's positivity technique transfers.</div>
+      <div class="idea"><span class="name">Arithmetic Site / Deninger deep-read</span> <span class="arrow">&rarr;</span> literature synthesis targeted at one checkable numerical prediction <span class="arrow">&rarr;</span> <span class="tag">produces</span> a link between our operator numerics and the field's most mainstream hope.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#cc8347;">
+    <div class="band-head"><span class="band-name">Moonshot</span><span class="band-desc">multi-month research program, not a script</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Local-law / RMT-universality transplant</span> <span class="arrow">&rarr;</span> recast prime-comb-vs-archimedean as a local law and attempt the actual Erdős&ndash;Yau proof machinery, not analogy <span class="arrow">&rarr;</span> <span class="tag">produces</span>, if it lands, a genuinely non-circular global positivity argument.</div>
+      <div class="idea"><span class="name">Lee&ndash;Yang recasting</span> <span class="arrow">&rarr;</span> search for a partition-function representation of τ or ζ amenable to a correlation-inequality proof <span class="arrow">&rarr;</span> <span class="tag">produces</span> a completely different proof family if one exists.</div>
+      <div class="idea"><span class="name">Colimit reframing of the operator</span> <span class="arrow">&rarr;</span> formalize positivity-of-the-limit as the actual target, sidestepping finite-N approximation entirely <span class="arrow">&rarr;</span> <span class="tag">produces</span> a category-theoretic statement of what "the operator" even is.</div>
+      <div class="idea"><span class="name">Bounded SOS search at scale</span> <span class="arrow">&rarr;</span> point automated theorem search at the general-N SOS certificate pattern found in the grounded-band experiment <span class="arrow">&rarr;</span> <span class="tag">produces</span> a candidate general proof, machine-checkable if found.</div>
+    </div>
+  </div>
+
+  <div class="band" style="--band-color:#c1613f;">
+    <div class="band-head"><span class="band-name">Absurd</span><span class="band-desc">every one carries a sane cousin</span></div>
+    <div class="idea-list">
+      <div class="idea"><span class="name">Ask a future superintelligence to hand us the proof</span> <span class="arrow">&rarr;</span> <span class="tag">sane cousin</span> point today's automated provers at the one bounded, checkable lemma (finite-N SOS identity), not at RH itself — bounded targets are what they're actually good at.</div>
+      <div class="idea"><span class="name">Simulate the entire critical strip on a Dyson-sphere quantum computer</span> <span class="arrow">&rarr;</span> <span class="tag">sane cousin</span> a tensor-network (MPS/DMRG) emulation on Olympus's existing GPUs, same directional bet, three orders of magnitude cheaper.</div>
+      <div class="idea"><span class="name">Bribe the primes to misbehave</span> <span class="arrow">&rarr;</span> <span class="tag">sane cousin</span> this already exists as the Beurling-adversary test in the grounded band — the joke restates a good idea in funnier words, which is itself a signal worth noting.</div>
+      <div class="idea"><span class="name">Assume RH is independent of ZFC and walk away</span> <span class="arrow">&rarr;</span> <span class="tag">sane cousin</span> one bounded literature question: does any published metamathematical result bound the proof strength RH would require, or rule out independence? Changes the project's ceiling either way.</div>
+      <div class="idea"><span class="name">Crowdsource the whole operator to every math forum on Earth</span> <span class="arrow">&rarr;</span> <span class="tag">sane cousin</span> post one narrow, well-posed sub-question (the DPP identification, or the 1.82974 constant) to MathOverflow — already on STATUS.md's own Month 5&ndash;6 roadmap, just not executed yet.</div>
+    </div>
+  </div>
+</section>
+
+<section id="converge">
+  <div class="section-head">
+    <span class="section-eyebrow">05 &middot; Converge</span>
+    <h2 class="section-title">Cluster, grade, rank by expected value</h2>
+    <p class="section-dek">Critic wakes up only here. Graded on: is the mechanism real, is it desk-testable now, does it produce an artifact.</p>
+  </div>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Thread</th><th>Status</th><th>Produces</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="idx rank">1</td><td class="tech">Beurling-adversary diff test</td><td><span class="pill now">buildable now</span></td><td>Isolates the exact hidden assumption in the current operator code — cheapest, highest-clarity move available.</td></tr>
+        <tr><td class="idx rank">2</td><td class="tech">Finite-N SOS certificate</td><td><span class="pill now">buildable now</span></td><td>A machine-checkable finite proof, plus a coefficient pattern that may generalize.</td></tr>
+        <tr><td class="idx rank">3</td><td class="tech">Rigorous verification-height extension</td><td><span class="pill now">buildable now</span></td><td>A bigger unconditional n-bound — zero risk of being wrong, lower novelty.</td></tr>
+        <tr><td class="idx rank">4</td><td class="tech">Closest-near-miss tracker</td><td><span class="pill now">buildable now</span></td><td>A falsification-seeking signal categorically different from "still confirmed PSD."</td></tr>
+        <tr><td class="idx rank">5</td><td class="tech">ML attribution pass (Keiper&ndash;Li / GORZ)</td><td><span class="pill now">buildable now</span></td><td>Candidate new conjectures from data already on disk — cheap to try, uncertain payoff.</td></tr>
+        <tr><td class="idx rank">6</td><td class="tech">PT-symmetric Hamiltonian re-test</td><td><span class="pill soon">days of build</span></td><td>A second, independently-motivated Hilbert&ndash;Pólya candidate to cross-check against connes_decisive_v3.</td></tr>
+        <tr><td class="idx rank">7</td><td class="tech">Function-field / Arithmetic-Site deep-read</td><td><span class="pill soon">literature project</span></td><td>The field's most mainstream hope, translated into a checkable prediction against our numerics.</td></tr>
+        <tr><td class="idx rank">8</td><td class="tech">DPP reframing of λ_n</td><td><span class="pill soon">days of build</span></td><td>Either a real identification or a clean negative — both are useful.</td></tr>
+        <tr><td class="idx rank">9</td><td class="tech">Sphere-packing magic-function hunt</td><td><span class="pill moonshot">moonshot</span></td><td>If it lands: a rigidity result on the order of Viazovska's sphere-packing proof.</td></tr>
+        <tr><td class="idx rank">10</td><td class="tech">Local-law / RMT-universality transplant</td><td><span class="pill moonshot">moonshot</span></td><td>The most structurally promising non-circular path, and the most expensive to attempt seriously.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="deadends">
+    <strong>Not re-litigated here</strong> — already closed in LEDGER.md, no genuine new structural reason to revisit: Hankel/moment sequence (dead, N=2), Track 2 PSWF finite matrix (diverges with N), WKB operator search, Platt-Trudgian cert extension past its ceiling, re-coordinatizing Li/NB/Jensen/de Branges (same wall, different basis), Lean formalization (off-mission), naive sensitivity/perturbation divergence (circular).
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Deposited alongside <code>OBSTRUCTION_MAP.md</code> and <code>LEDGER.md</code> at <code>~/projects/riemann/research/PRISM_2026-07-15.md</code>. PRISM method: <code>~/projects/vinnie-treasure/research/PRISM-METHOD.md</code>.
+  </div>
+</footer>

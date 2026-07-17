@@ -1,0 +1,99 @@
+{
+  "always_4_neg_evs": false,
+  "neg_ev_counts": [
+    {
+      "N": 5,
+      "lsq": 100,
+      "n_neg": 8
+    },
+    {
+      "N": 5,
+      "lsq": 1000,
+      "n_neg": 10
+    },
+    {
+      "N": 5,
+      "lsq": 10000,
+      "n_neg": 10
+    },
+    {
+      "N": 10,
+      "lsq": 100,
+      "n_neg": 8
+    },
+    {
+      "N": 10,
+      "lsq": 1000,
+      "n_neg": 13
+    },
+    {
+      "N": 10,
+      "lsq": 10000,
+      "n_neg": 17
+    },
+    {
+      "N": 10,
+      "lsq": 100000,
+      "n_neg": 20
+    },
+    {
+      "N": 20,
+      "lsq": 1000,
+      "n_neg": 13
+    },
+    {
+      "N": 20,
+      "lsq": 10000,
+      "n_neg": 18
+    },
+    {
+      "N": 20,
+      "lsq": 100000,
+      "n_neg": 22
+    },
+    {
+      "N": 50,
+      "lsq": 1000,
+      "n_neg": 13
+    },
+    {
+      "N": 50,
+      "lsq": 10000,
+      "n_neg": 18
+    },
+    {
+      "N": 50,
+      "lsq": 100000,
+      "n_neg": 22
+    },
+    {
+      "N": 100,
+      "lsq": 10000,
+      "n_neg": 18
+    },
+    {
+      "N": 100,
+      "lsq": 100000,
+      "n_neg": 22
+    }
+  ],
+  "mode_analysis": [
+    {
+      "N": 20,
+      "lsq": 10000,
+      "block_4x4_evs": [
+        -59.42044848621556,
+        -1.9415462958233587,
+        -1.6852907640391765,
+        21.008132347478647
+      ],
+      "all_negative": false
+    }
+  ],
+  "conclusion": {
+    "neg_modes": "n=\u00b11,\u00b12",
+    "reason_B": "B[n,n] = 32L sinh\u00b2(L/4)(L\u00b2-16\u03c0\u00b2n\u00b2)/(L\u00b2+16\u03c0\u00b2n\u00b2)\u00b2 < 0 for n=1,2 at practical lsq",
+    "reason_arch": "arch[n,n] too small to compensate for n=1,2",
+    "P_cancels_at_resonance": "Prime sum creates constructive interference at resonant lsq"
+  }
+}
