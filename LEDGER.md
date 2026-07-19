@@ -1362,3 +1362,43 @@ block W_p erodes the archimedean margin as basis resolution grows. Understanding
 structurally (not just measuring it) is a genuine, well-posed sub-problem — and the engine's generator is
 now directed at exactly this (prime-side, c-limit) crux. Proof pointers: the three results/*.json above,
 all reproducible via the three operators/margin_*.py scripts (flint_venv, 6000-bit).
+
+---
+
+## §11 — Near-null direction + the corrected structure of τ's positivity (2026-07-19, same session)
+
+Followed §10 by asking WHAT nearly breaks positivity and WHY. Tools: operators/near_null_direction.py,
+race_decomposition.py, arch_floor_vs_full.py (all additive on the Groskin Arb assembly; results/*.json).
+
+**Solid finding 1 — the near-null direction is structured (`results/near_null_direction.json`).** The mode
+τ most nearly annihilates (x = L^{-T} e_{i*}, smallest-pivot direction of the certified LDL^T) is a
+LOCALIZED wave packet: top-5 basis modes hold 82–97% of its mass. It lives ENTIRELY at negative
+frequencies (all dominant n<0) — a real n→−n asymmetry, since τ is real-symmetric; it points at the ODD
+part of the archimedean kernel (the Im ψ / S(n) term, the only n→−n-odd piece in the assembly). As the
+prime cutoff c grows the packet drifts to HIGHER frequency (|ω| ~9→17, n* +3→+8) — it strains where the
+newly-added prime oscillations live. Frequencies sit in the low-zero band (|ω|~7–19; γ1=14.13, γ2=21.02)
+but do not lock onto a single zero — it is the truncation's own strain mode, not a bare zero.
+
+**Solid finding 2 — CORRECTION of a hypothesis (this is the important one).** Hypothesis going in
+(from the race_decomposition read): τ = (A+B) − P is a POSITIVE archimedean FLOOR eroded by the prime sum;
+positivity = floor > erosion. **This is FALSE.** Certifying A+B = W02−WR on its own
+(`results/arch_floor_vs_full.json`) shows A+B is INDEFINITE: n_neg = 3,4,6,7,8,10 negative eigenvalues at
+c = 8,14,25,50,100,200 (rigorous Arb inertia, all pivots strictly signed). So there is NO positive
+archimedean floor. τ's positivity is a genuine DIFFERENCE-OF-INDEFINITE-FORMS phenomenon: subtracting the
+prime term Wp turns an indefinite A+B into a certified-PD τ, and as c grows A+B gets MORE indefinite
+(n_neg↑) while Wp compensates, the net PD margin shrinking as the §10 power law. The naive floor/erosion
+race decomposition (race_decomposition.py) was therefore circular/misleading (the near-null mode has
+margin≈0 by construction, so "Farch=Fprime" is near-tautological, and float64 subtraction hid the real
+scale). Recorded as a discarded approach per the process-provenance rule.
+
+**Why this matters / corrected proof-relevant framing.** Positivity is NOT "archimedean dominates prime."
+It is that the combined form's negative subspace (dim = n_neg, growing slowly with c) is exactly
+neutralized. The right object is the small negative-inertia subspace of A+B and how Wp interacts with it —
+this is consistent with, and sharpens, the earlier "positivity is product-emergent/nonlocal" elimination.
+Concrete next step for an interactive session: characterize the n_neg negative directions of A+B and show
+Wp restores positivity there uniformly in c (the honest, non-circular version of the problem). This is a
+harder but TRUE target; the earlier "bound P below a floor" target was based on a false premise.
+
+Proof pointers: results/near_null_direction.json, results/arch_floor_vs_full.json (n_neg column),
+results/race_decomposition.json (the misleading one, kept as provenance). All reproducible via the three
+operators/*.py at flint_venv 4000-bit.
