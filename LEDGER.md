@@ -1402,3 +1402,37 @@ harder but TRUE target; the earlier "bound P below a floor" target was based on 
 Proof pointers: results/near_null_direction.json, results/arch_floor_vs_full.json (n_neg column),
 results/race_decomposition.json (the misleading one, kept as provenance). All reproducible via the three
 operators/*.py at flint_venv 4000-bit.
+
+---
+
+## §12 — Negative subspace of A+B is the EASY part; the wall is a positive near-equality (2026-07-19)
+
+Extracted the negative eigenvectors of the indefinite A+B (operators/neg_subspace_AB.py,
+results/neg_subspace_AB.json, double-precision eigh on the Arb-assembled matrix; A+B's neg eigenvalues are
+O(1) so double is sufficient). Three clean, verified structural facts:
+
+1. **A+B's negative subspace = the lowest basis harmonics, in ± pairs.** Dominant frequencies are EXACT
+   multiples of the basis fundamental 2π/L (L=log c): c=14 → |ω|=2.381,4.762 = {1,2}·2π/L; c=50 →
+   1.606·{1,2,3,4}; c=200 → 1.186·{1,2,3,4,5}. Each mode is localized (top-5 basis modes hold 80–100%).
+2. **Negative-inertia dimension grows LOGARITHMICALLY:** n_neg = 4,7,10 at c=14,50,200 ≈ 1.8·log c.
+   These modes do NOT lock onto zeta zeros (0/21; they sit at |ω|~1–6, far below γ1=14.13).
+3. **The prime term robustly over-covers the whole negative subspace (21/21).** On every A+B-negative mode
+   v, v^T Wp v is MORE negative than λ(A+B) by a small, strikingly UNIFORM gap → v^T τ v ≈ +0.006…+0.04,
+   nearly constant even as λ(A+B) ranges over −10.7…−0.02.
+
+**Triangulation (the payoff).** The negative subspace is therefore the EASY part — robustly covered with an
+O(0.01) residual. The tiny §10 margin (1e-22 and collapsing) is NOT here: these modes give τ-residual ~1e-2,
+not 1e-22. Cross-referencing §11's near-null direction (mid frequency |ω|~9–17) and the race decomposition
+(Farch=Fprime≈0.317 at c=14): the binding constraint is a NEAR-EQUALITY OF TWO POSITIVE O(1) FORMS — the
+archimedean self-energy and the prime self-energy — on the MID-frequency modes, where A+B is positive and
+Wp nearly equals it (agreeing to the margin's ~22+ digits). NOT a negative-subspace phenomenon.
+
+**Sharpened proof target (supersedes §11's "negative subspace" target).** RH-in-truncation ⟺ archimedean
+self-energy ≥ prime self-energy on ALL modes. The low-frequency negative subspace is covered with room to
+spare; the knife-edge is the mid-frequency band where both self-energies are positive and asymptotically
+equal. A proof needs a two-sided estimate: lower-bound archimedean minus prime on the mid-frequency modes,
+uniformly in c, with the §10 law margin ~ c^(−p(N)) as the exact rate to beat/explain. This is now a
+sharply localized analytic question (a specific frequency band, two explicit closed-form kernels), which is
+real progress in problem-shape even though it is NOT a proof.
+
+Proof pointers: results/neg_subspace_AB.json (frequencies, n_neg, coverage), cross-ref §10/§11 results.
