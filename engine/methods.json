@@ -1,0 +1,139 @@
+{
+  "methods": [
+    {
+      "name": "A6_cross_L",
+      "code": "operators/cross_L_A6.py",
+      "venv": "cvs",
+      "family": "universality",
+      "status": "done",
+      "yield": 0.3,
+      "born": "2026-07-18T21:48:34"
+    },
+    {
+      "name": "A12_susy",
+      "code": "operators/susy_factorization_probe.py",
+      "venv": "cvs",
+      "family": "susy",
+      "status": "explored",
+      "yield": 1.0,
+      "born": "2026-07-18T21:48:34"
+    },
+    {
+      "name": "A13_susy_basis",
+      "code": "operators/susy_basis_A13.py",
+      "venv": "cvs",
+      "family": "susy",
+      "status": "explored",
+      "yield": 1.0,
+      "born": "2026-07-18T21:48:34"
+    },
+    {
+      "name": "A14_toeplitz_tp",
+      "code": "operators/toeplitz_tp_test.py",
+      "venv": "cvs",
+      "family": "total_positivity",
+      "status": "done",
+      "yield": 0.3,
+      "born": "2026-07-18T21:48:34"
+    },
+    {
+      "name": "auto_li_hodge",
+      "code": "operators/auto_li_hodge.py",
+      "venv": "cvs",
+      "family": "cohomology",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:02:20",
+      "rationale": "In Weil's function-field proof, RH is the Hodge-index signature of the intersection form on C\u00d7C: the self-intersection numbers of the graph of Froben^n form a positive-definite polarization (Castelnuo",
+      "novelty": "Avoids the eliminated 'linear-algebra reshuffles of tau' (A1/A2/A9/A10/A11) \u2014 it never manipulates tau's matrix; it builds a DIFFERENT form, the polarization/self-intersection form from the geometric "
+    },
+    {
+      "name": "auto_mayer_transfer",
+      "code": "operators/auto_mayer_transfer.py",
+      "venv": "cvs",
+      "family": "dynamical",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:02:20",
+      "rationale": "Selberg zeta RH is SOLVED because its zeros are eigenvalues of a genuine self-adjoint Laplacian on a hyperbolic surface. Mayer's theorem gives that Laplacian a fully computable avatar: the Selberg zet",
+      "novelty": "Avoids ALL eliminated classes: it is not a local/SUSY/TP factorization of tau, not a reshuffle of tau's matrix, not zero-statistics, not a majorant/large-sieve/de Branges construction. Different in ki"
+    },
+    {
+      "name": "auto_berry_keating_xp",
+      "code": "operators/auto_berry_keating_xp.py",
+      "venv": "cvs",
+      "family": "quantum_chaos",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:02:20",
+      "rationale": "Quantum chaos solves the 'why real' problem structurally: eigenvalues of a self-adjoint Hamiltonian are automatically real, and the Gutzwiller trace formula makes its periodic-orbit sum look identical",
+      "novelty": "Avoids the eliminated 'local/factorization positivity operator' (A12/A13/A14) \u2014 this is a GLOBAL self-adjoint Hamiltonian (Hilbert-Polya), not a per-prime/SUSY factorization of tau, and it never touch"
+    },
+    {
+      "name": "auto_debruijn_newman_flow",
+      "code": "operators/auto_debruijn_newman_flow.py",
+      "venv": "cvs",
+      "family": "lee_yang",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:02:20",
+      "rationale": "Lee-Yang solves a whole class of RH-cousins: zeros stay pinned to a line/circle because a heat/convolution semigroup preserves the Laguerre-Polya (real-rooted) class. The de Bruijn-Newman flow H_t is ",
+      "novelty": "Avoids the eliminated 'pointwise majorant / Beurling-Selberg / large sieve / de Branges naive' and all tau-linear-algebra and zero-statistics classes: it studies a genuine HEAT SEMIGROUP on the entire"
+    },
+    {
+      "name": "auto_hodge_index_signature",
+      "code": "operators/auto_hodge_index_signature.py",
+      "venv": "cvs",
+      "family": "intersection_theory",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:53:16",
+      "rationale": "In the function-field proof, Weil positivity is FORCED by the Hodge index theorem: the intersection form on the surface C\u00d7C has signature (1, n-1), so after quotienting the one ample (positive) direct",
+      "novelty": "Avoids the eliminated 'linear-algebra reshuffle of tau' class: it does NOT permute/pivot/Schur-complement a fixed tau. It computes an intrinsic intersection-form SIGNATURE (a topological invariant of "
+    },
+    {
+      "name": "auto_lorentzian_jensen",
+      "code": "operators/auto_lorentzian_jensen.py",
+      "venv": "cvs",
+      "family": "hodge_theory",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:53:16",
+      "rationale": "Brandet-Huh Lorentzian polynomials give a purely Hodge-theoretic engine for real-rootedness: a form is Lorentzian iff its Hessian has signature (1,n-1) on the positive orthant (Hodge index again), and",
+      "novelty": "Avoids the eliminated total-positivity/moment class: known result is only that the Xi Taylor coefficients are TP \u2014 a pointwise positivity. This instead tests the STRUCTURAL Hodge-Riemann signature (a "
+    },
+    {
+      "name": "auto_frobenius_toeplitz",
+      "code": "operators/auto_frobenius_toeplitz.py",
+      "venv": "cvs",
+      "family": "moment",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:53:16",
+      "rationale": "Function-field RH is literally 'Frobenius is unitary after scaling by q^{-1/2}', i.e. its eigenvalues lie on the unit circle. By Herglotz/Bochner, a sequence is the moment sequence of a POSITIVE measu",
+      "novelty": "Avoids the eliminated zero-statistics class: this is NOT a statistic of zeros (GUE/pair-correlation/gaps). It is an exact positive-definiteness (Bochner) test of a MEASURE \u2014 whether the arithmetic 'Fr"
+    },
+    {
+      "name": "auto_hodge_index_inequality",
+      "code": "operators/auto_hodge_index_inequality.py",
+      "venv": "cvs",
+      "family": "arakelov",
+      "status": "pending",
+      "yield": 0.8,
+      "born": "2026-07-18T22:53:16",
+      "rationale": "Weil's ORIGINAL proof of RH for curves used the Castelnuovo-Severi / Hodge index INEQUALITY: for an ample class H (H.H>0) and any class D, (D.H)^2 >= (D.D)(H.H) \u2014 a reversed Cauchy-Schwarz forced by s",
+      "novelty": "Avoids the eliminated Beurling-Selberg / pointwise-majorant class: it is not a pointwise upper bound on the prime side. It is a REVERSED inequality (Cauchy-Schwarz backwards), a phenomenon that exists"
+    }
+  ],
+  "eliminated_classes": [
+    "local/factorization positivity (moment/operator/SUSY/TP all show positivity is product-emergent, A14)",
+    "linear-algebra reshuffles of tau (pivots/eigenvector/Schur/H-matrix/kernel-count, A1/A2/A9/A10/A11)",
+    "zero-statistics (GUE/moments/gaps/FHK: all confirm, none crack \u2014 forcing is analytic not statistical)",
+    "pointwise majorant of prime side (Beurling-Selberg), large sieve, de Branges naive (OBSTRUCTION_MAP)"
+  ],
+  "families": {
+    "susy": 2
+  },
+  "consecutive_nulls": 2,
+  "cycles": 2
+}

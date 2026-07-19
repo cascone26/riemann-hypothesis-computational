@@ -1,0 +1,78 @@
+[
+    {
+        "name": "auto_cohomology_weil",
+        "family": "cohomology",
+        "rationale": "The Weil conjectures are solved by using the Hodge in
+index theorem, which relates the signatures of intersection forms to the po
+positivity of L-functions. In the number field case, we hypothesize that a 
+similar cohomological structure exists but has not been fully exploited.",
+        "novelty": "Avoids local/factorization positivity and linear-algebr
+linear-algebra reshuffles by focusing on the global geometric structure imp
+implied by Hodge theory.",
+        "python_code": "import numpy as np\nfrom mpmath import zeta, findro
+findroot\ndef compute_l_function(s):\n    return zeta(s)\ndef cohomology_te
+cohomology_test():\n    # Construct a hypothetical intersection form matrix
+matrix\n    n = 10\n    A = np.random.rand(n, n)\n    B = A.T @ A  # Ensure
+Ensure it is positive semi-definite\n    eigenvalues = np.linalg.eigvals(B)
+np.linalg.eigvals(B)\n    min_eigenvalue = np.min(eigenvalues)\n    print(m
+print(min_eigenvalue)\nif __name__ == '__main__':\n    cohomology_test()"
+    },
+    {
+        "name": "auto_selberg_zeta",
+        "family": "spectral",
+        "rationale": "Selberg zeta functions are tied to the spectrum of a 
+self-adjoint Laplacian on hyperbolic surfaces. The spectrum's positivity su
+suggests a similar structure might exist in number fields, providing a new 
+avenue for attack.",
+        "novelty": "Avoids local/factorization positivity and zero-statisti
+zero-statistics by leveraging spectral theory from hyperbolic geometry.",
+        "python_code": "import numpy as np\nfrom mpmath import zeta, findro
+findroot\ndef selberg_zeta(s):\n    # Placeholder for Selberg zeta function
+function implementation\n    return zeta(s)\ndef spectral_test():\n    # Ge
+Generate a sample spectrum of a self-adjoint operator\n    n = 100\n    eig
+eigenvalues = np.random.rand(n) ** 2  # Squaring to ensure positivity\n    
+min_eigenvalue = np.min(eigenvalues)\n    print(min_eigenvalue)\nif __name_
+__name__ == '__main__':\n    spectral_test()"
+    },
+    {
+        "name": "auto_lee_yang",
+        "family": "statistical",
+        "rationale": "Lee-Yang theory provides a framework for understandin
+understanding the positivity of partition functions in statistical mechanic
+mechanics. While primarily used in physics, it might offer insights into th
+the positivity of L-functions in number theory.",
+        "novelty": "Avoids local/factorization positivity and zero-statisti
+zero-statistics by examining phase transitions and critical phenomena simil
+similar to Lee-Yang zeros.",
+        "python_code": "import numpy as np\nfrom mpmath import zeta, findro
+findroot\ndef lee_yang_test():\n    # Generate a sample of complex numbers 
+to simulate partition function zeros\n    n = 100\n    theta = np.random.un
+np.random.uniform(0, 2 * np.pi, n)\n    r = np.random.rand(n) ** 0.5  # Squ
+Square root for uniform distribution in radius\n    zeros = r * np.exp(1j *
+* theta)\n    # Calculate the average imaginary part to simulate a phase tr
+transition\n    avg_imaginary_part = np.mean(zeros.imag)\n    print(avg_ima
+print(avg_imaginary_part)\nif __name__ == '__main__':\n    lee_yang_test()"
+lee_yang_test()"
+    },
+    {
+        "name": "auto_jensen_polynomials",
+        "family": "signature",
+        "rationale": "Jensen polynomials, which arise from the Taylor coeff
+coefficients of L-functions, are known to have real roots. Extending this c
+concept to higher dimensions or using different signatures might uncover hi
+hidden positivity structures.",
+        "novelty": "Avoids local/factorization positivity and pointwise maj
+majorants by exploring higher-dimensional generalizations of Jensen's appro
+approach.",
+        "python_code": "import numpy as np\nfrom mpmath import zeta, findro
+findroot\ndef jensen_polynomial(coeffs):\n    # Construct a polynomial from
+from the given coefficients\n    p = np.poly1d(coeffs)\n    return p\ndef s
+signature_test():\n    # Generate random coefficients to simulate Taylor se
+series of an L-function\n    n = 8  # Degree of the polynomial\n    coeffs 
+= np.random.rand(n + 1)\n    poly = jensen_polynomial(coeffs)\n    roots = 
+poly.roots\n    real_roots = roots[np.isreal(roots)].real\n    min_real_roo
+min_real_root = np.min(real_roots) if len(real_roots) > 0 else None\n    pr
+print(min_real_root)\nif __name__ == '__main__':\n    signature_test()"
+    }
+]
+

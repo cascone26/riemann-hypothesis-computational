@@ -7445,3 +7445,95 @@ Increment 3 **complete and validated**. Ready to integrate with Formalizability 
 - ✓ Catch structure issues: sub-goal analysis + structure detection
 - ✓ End-to-end verification: real proof pointer + JSON results
 
+
+---
+
+## 2026-07-18 — Council/triage → certified-PD → physics deep-dive → anomaly-hunt pivot (Sam, Opus)
+
+**Framing:** Jacob opened with "go over what we have, find what the best options are and what are wastes."
+Session became a full triage + correction pass, then a physics-connection research dive, then a deliberate
+pivot from confirmation-tests to anomaly-capable tests. Decision chain, in order:
+
+1. **Triage found two wastes, killed both.** (a) An undocumented Olympus daemon (`/home/cobo/riemann/`, a
+   separate dir from the Mac project) had been running a per-zero prime-resonance search overnight,
+   OOM-thrashing and losing results; its OWN log showed the "rescues" self-falsifying at N=2048 (Type-3B
+   delayed burst). Killed it (freed 3GB→25GB). (b) The `bot/` Lean automation (40-45h spec) contradicts
+   riemann-goal.md ("no Lean for its own sake") and LEDGER's own dead-end table; its first real test was
+   0/4 as expected (the sorries ARE RH). Halted further increments.
+
+2. **Chased a live paper instead of the daemon's negative.** arXiv:2607.02828 (Groskin, Jul 2026) analyzes
+   the exact Connes-vS/CCM truncated-Weil matrix the project uses, and proves the archimedean-tail-truncation
+   error budget B_T ~ (2N+1)ρ log(T)/(π²T) — meaning grid-integrated τ (connes_decisive_v3 + the daemon) is
+   unreliable near machine-zero. Pulled the real Zenodo code (`external/groskin_2607.02828/`), which builds τ
+   with closed-form Arb interval entries + interval LDL^T inertia. Ran it: **c∈{2..100} × N∈{8..500} all
+   CERTIFIED positive-definite** (rigorous, not observed). This upgraded the project's central τ⪰0 evidence
+   from numerical to proof-grade (finite scale). Proof: `results/groskin_ldlt_c14_N*.json`, LEDGER §4/§4b.
+
+3. **Resolved a contradiction in the ledger.** Old claim "operator reproduces γ₁..γ₁₈ to 1e-11" vs 07-17
+   Membrane pull "operator doesn't converge, err~19.8". Diffed the two zero-extraction paths: zeros are NOT
+   τ-eigenvalues; they're roots of a test function reconstructed from the near-KERNEL eigenvector.
+   `kwant_spectral_check.py` used the wrong eigenvector (most-negative), skipped even-symmetrization + the
+   sin envelope. Reran `connes_decisive_v3.py` — still reproduces γ₁..γ₁₂ to 1e-10. RETRACTED the Membrane
+   negative as a reimpl bug. Proof: `results/connes_decisive_v3.json`.
+
+4. **Closed an open Track-3 item (fast-framing win).** The disc(J⁴)-vs-c_k bridge, open since 04-11 and
+   killed-by-precision on 07-17's SOS attempt, was reframed symbolically in 5 abstract vars b0..b4 (n-indep,
+   exact over Q, no precision wall). Result: **27Δ = 4I³−Jinv²** exact; hyperbolicity = joint Δ>0∧P<0∧R<0;
+   Δ∉ideal(P,R). Explains the old empirical puzzle. Not RH progress (d=4 ∈ GORZ; no generalization past
+   quartic). Proof: `operators/disc_j_vs_ck.py`, `results/disc_j_vs_ck.json`.
+
+5. **Physics-connection deep-dive (Jacob: "find things in the universe RH connects to, what's been tried,
+   what's missed").** 104-agent adversarial research pass (`research/RH_PHYSICS_DEEPDIVE_2026-07-18.md`).
+   Only 5/25 claims survived verification. Core finding: **Lee-Yang is the positivity wall in physics
+   clothing** — its proof needs reflection symmetry + coefficient positivity; ξ has the reflection (funct.
+   eq.) but lacks the positivity, which IS the Weil A+B≥P wall. Corrected my own earlier overstatement that
+   the Dyson structure-factor test was never run (Zhang-Martelli-Torquato 2018 did it to 20M).
+
+6. **Ran executable tests (structure factor, HKO derivative moments) — all consistent with RH, none cracked
+   the wall.** Structure factor: prime diffraction decisive (1200-46000×), unfolded quasicrystal smeared.
+   Derivative moments: built a fast Riemann-Siegel |ζ′|=|Z′(γ)| evaluator (validated 1.5e-5 vs mpmath, 2M
+   zeros in 16s), exponents → k(k+2) monotonically as T grew. Proof: `results/structure_factor_dyson.json`,
+   `results/deriv_moments_{hko,rs}.json`, `operators/deriv_moments_rs.py`.
+
+7. **Jacob's key discipline correction:** "we need real results, not just verifications." Pivoted to
+   anomaly-capable tests. Two designed (each has a sharp prediction the data could VIOLATE, and a deviation
+   would be informative, unlike certified-PD which can only confirm): **(A) Lehmer/small-gap excess** vs the
+   GUE s² repulsion law (probes RH fragility / de Bruijn-Newman Λ≥0 near-misses); **(B) Fyodorov-Hiary-Keating
+   maximum / freezing** — the −3/4 loglog coefficient of max|ζ| in short windows (log-correlated-field
+   structure, distinct from GUE). Test A launched at end of session. [running]
+
+**Meta-lesson deposited:** essentially all statistics/physics tests are CONSISTENCY signatures (necessary if
+RH holds, not forcing). The one physics forcing-mechanism (Lee-Yang) needs the exact positivity the
+arithmetic case lacks. Rigorously surveyed, physics points back to the Weil-positivity wall from five
+independent directions — a real (if humbling) result: it maps WHERE the wall is with unusual confidence,
+and says the crack, if it exists, is in the positivity structure, not in any physical analogy.
+
+---
+
+## 2026-07-19 — Engine repair + certified positivity-margin map (process log)
+
+**Problem framing:** resumed to confirm the autonomous RH engine daemon on Olympus. Discovered it had run
+956 cycles producing ZERO results — alive but inert.
+
+**Diagnosis chain:** heartbeat fresh + procs running (looked healthy) → but methods=4, outcomes.jsonl empty,
+cycles=956. Traced to: (1) `call_free` drove Ollama via the interactive TUI (`ollama run`), whose
+wrap-redraw duplicates fragments → `json.loads` failed every time (last_gen_raw.txt showed the garbling);
+(2) the 4 seed methods' code was Mac-only, absent on Olympus → nothing runnable each cycle.
+
+**Fixes chosen (and why):** switched generation to the Ollama HTTP API (clean JSON, no TUI) rather than
+trying to strip the TUI noise (fragile). Synced seed operators + `critical_eigvec_id.py`. Added a
+smoke-test + one-free-repair gate on generation (free qwen writes buggy numpy; gate keeps the queue clean).
+Directed the generator prompt at the REAL operator `build_tau_np` and rejected toy matrices — because the
+first real batch (auto_hodge etc.) confirmed generation works but produces shallow probes on random
+matrices.
+
+**Pivot to real math:** rather than keep tuning the generator, used the now-fixed pipeline to ask the
+actual crux question. Tried a float64 λ_min scan (`tau_mineig_scaling.py`) FIRST — it FAILED (margin below
+double-precision resolution, reads as 1e-15 roundoff). That failure was informative: it forced the
+high-precision Arb route. Built additive margin-tracking on top of the Groskin certifier (captures the min
+LDL^T pivot the certifier discards).
+
+**What the measurements showed (see LEDGER §10):** margin plateaus in N (tame), collapses as a clean power
+law c^(−p(N)) in the prime cutoff with p(N)~N^0.62 (R²≈1.0), PD everywhere on the grid. Decision: log it as
+a quantified map of the wall + a precision-budget law, explicitly NOT a proof (the p(N)→∞ order-of-limits
+subtlety forbids overclaiming). New well-posed sub-problem handed forward: explain p(N)~N^0.62 structurally.
