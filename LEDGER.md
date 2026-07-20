@@ -1736,3 +1736,34 @@ T=7.5e4,1.1e6,1.0e7,3.0e12). For Platt–Trudgian T=3.0001×10¹²: **n* ≈ 2.9
 Proof pointers: operators/route6_density_budget.py (P_ver over real zeros; NegBound integral; crossover).
 Next: prove the positive-floor exponential-sum bound (would upgrade the candidate to a theorem), OR insert
 Guth–Maynard density to sharpen the negative side.
+
+---
+
+## §23 — Positive-floor exponential sum: crux precisely isolated, not elementary (2026-07-19)
+
+Took a run at proving the §22 positive floor P_ver(n) ≥ (1−ε)2N(T), i.e. S(n) := Σ_{γ≤T} cos(nφ_γ) ≪ N(T).
+Proof pointer: extends operators/route6_density_budget.py.
+
+**Empirical: floor is ROBUST.** Dense scan over n∈[2πT, 3×10⁵·2πT] (real 100k zeros): max |S|/N ≈ 0.10 near
+n=2πT (matches smooth prediction), dropping to ≈0.01 beyond. So P_ver ≥ 0.9·2N with large margin — the
+~3T² extension holds numerically, not fragile.
+
+**Analytic split S = smooth + fluctuation.**
+- SMOOTH (∫cos(nφ(x))·density dx): RIGOROUSLY small — non-stationary phase (φ'(x)=−1/(x²+¼) never 0) gives
+  |I_smooth| ≲ T²lnT/(2πn), i.e. ≤ 1/(2π)·N at n=2πT and →0 as n→T². Provable, done in principle.
+- FLUCTUATION (Σ over zeros of the deviation from smooth density): empirically tiny (|fluct|/N ~ 0.005–0.02)
+  but the ELEMENTARY bound FAILS: ∫f'(t)S(t)dt ≤ max|S(t)|·TV(f) ~ (lnT)·(n/γ₁) ~ n·lnT ≫ N for n>T —
+  useless by a factor ~n/T. The smallness is genuine CANCELLATION between S(t) (argument fluctuation) and the
+  smooth oscillation sin(nφ(t)) that crude bounds cannot capture.
+
+**Verdict (honest).** The ~3T² (≈2.9×10²⁵) extension is a numerically-robust CANDIDATE with the difficulty
+now PRECISELY isolated: the fluctuation exponential sum over zeta zeros. It is NOT elementary — a rigorous
+bound needs pair-correlation / GUE information about the zeros (Montgomery), and in the uniform range required
+(n up to ~T²) that input is deep and likely as hard as neighbouring RH-adjacent problems. So this is a real
+but HARD sub-problem, not a quick win. It does not escape the "understand the zeros" wall — it relocates the
+global difficulty into an exponential sum over zeros. The rigorous deliverable remains §21: λ_n>0 for
+n≤2πT≈1.88×10¹³. §22's extension stays a candidate pending the fluctuation bound.
+
+Note (near-circularity): S(n)=Re Σ_γ(1−1/ρ)ⁿ is exactly the deviation of λ_n's ≤T part from 2N(T); bounding
+it is close to understanding λ_n itself. The route-6 escape from the global wall was only ever partial (finite
+T); pushing past 2πT re-encounters the zeros' global structure. Consistent with the session's core finding.
