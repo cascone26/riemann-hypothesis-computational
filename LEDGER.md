@@ -1848,3 +1848,28 @@ explicit + the uniform statement is the remaining write-up, not a new idea.
 of magnitude past the §21 pointwise theorem (n ≤ 2πT ≈ 1.9×10¹³), unconditional. Pointwise-every-n to 3T²
 still needs the full fluctuation sum (§23, harder). Lean: elementary §21 kernel formalization in progress
 (RiemannLean/TailLemma.lean).
+
+---
+
+## §27 — §21 tail-lemma kernel FORMALLY VERIFIED in Lean 4 / mathlib (2026-07-19)
+
+`RiemannLean/RiemannLean/TailLemma.lean` — compiles CLEAN (exit 0, ZERO `sorry`; only a `push_neg`
+deprecation warning). Machine-checked theorems:
+- `tail_kernel`: for `x=nθ ∈ (0,2π)`, `w=nu ≥ 0`, `w ≤ x` (θ≥u), `x+w ≤ 2π` (n(θ+u)≤2π):  `cos x · cosh w ≤ 1`.
+- `tail_F_nonneg`: hence `0 ≤ 4 − 4·cos x·cosh w`  (= F_n ≥ 0).
+
+The NOVEL content — the three-region case split (cos x≤0 trivial; x∈(0,π/2] via w≤x; x∈[3π/2,2π) via the
+reflection τ=2π−x and x+w≤2π) that yields the sharp 2πγ threshold — is now Lean-verified. The two analytic
+inputs (B1) cos t ≤ e^{−t²/2} on [0,π/2] and (B2) cosh z ≤ e^{z²/2} are TEXTBOOK calculus, taken as explicit
+hypotheses (both provable in mathlib via log-derivative / series; not the mathematical content). Wired into
+the lib root. Lean 4 v4.29.0 + mathlib.
+
+This makes the §21 tail lemma's core inequality referee-free / machine-checked — the elementary heart of the
+proven route-6 theorem (λ_n>0 for n≤2πT). The full corollary (λ_n itself) is NOT formalizable in current
+mathlib (no Li-coefficient / explicit-formula machinery), so the Lean artifact is scoped to the elementary
+kernel, which is exactly the part with novel logical structure.
+
+Route-6 state after this session: §21 pointwise theorem (n≤2πT≈1.9×10¹³, proven, kernel Lean-verified);
+§22–26 almost-all extension to ~3T²≈2.9×10²⁵ (unconditional method complete, one literature-grade small-gaps
+input); pointwise-to-3T² empirically bulletproof (max S/N≤0.10 even adversarial) but gated on the hard
+fluctuation exponential sum.
