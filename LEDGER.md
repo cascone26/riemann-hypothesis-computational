@@ -2047,3 +2047,25 @@ difficulty isolated to a log(c)-dimensional low-freq core with a coercive tail. 
 structural insight of the session, and it came straight from the physics (DBN/Rodgers–Tao/criticality)
 angle. DECISIVE next test: is the t>0 exponent BOUNDED in N (tame) vs t=0's growing p(N) (wild)? If bounded,
 qualitative separation confirmed.
+
+## §34c — CORRECTION (verify-before-ship): the DBN "proof route" is circular; what survives
+Caught on review: τ(t)=τ+t·diag(r²) with t>0 adds a PSD diagonal to a PD τ ⇒ λ_min(τ(t)) ≥ λ_min(τ) > 0
+TRIVIALLY (Weyl). So "t>0 positivity is easier" is CIRCULAR (it assumes τ⪰0), and the "crossing at t=0" just
+restates that τ's margin is tiny — NOT a genuine de Bruijn–Newman flow (the real DBN flow moves the zeros and
+couples the prime side; it is not adding a diagonal). RETRACTED: the §34 claim of a proof route via t→0 limit.
+
+WHAT SURVIVES (real):
+1. **[τ,R]=0 — the functional-equation reflection sectors.** Exact, genuine, previously unused. τ decouples
+   into R-even ⊕ R-odd; both PD, both collapse. This is a real, usable structural fact (halves the operator).
+2. **Ω is sign-indefinite (Ω<0 for |r|<6.29) and THAT low-frequency region is the precise seat of the
+   difficulty** — the negative subspace (§12) and near-null modes (§C1b) live exactly there. Adding coercivity
+   removes it, confirming OBSTRUCTION_MAP's diagnosis that the sign-indefinite Ω is THE obstruction. (Known,
+   now sharply localized.)
+3. The genuine criticality connection requires the ACTUAL DBN flow — which is Polymath15's domain: the best
+   UNCONDITIONAL bound is Λ ∈ [0, ~0.22] (Rodgers–Tao lower, Polymath15 upper). RH = Λ=0. The operator
+   structure (FE sectors + sign-indefinite core) is a potential new handle to push the 0.22 upper bound down,
+   but ONLY via the real flow, not the toy τ(t).
+
+Honest net: the physics push gave a real REFRAME (RH=criticality) and one genuinely new exact tool (FE
+sectors), plus a sharper localization of the obstruction — but the specific DBN-operator proof route was a
+circular artifact, retracted. No proof. Corrected the record and the memory.
