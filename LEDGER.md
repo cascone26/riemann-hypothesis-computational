@@ -1873,3 +1873,33 @@ Route-6 state after this session: §21 pointwise theorem (n≤2πT≈1.9×10¹³
 §22–26 almost-all extension to ~3T²≈2.9×10²⁵ (unconditional method complete, one literature-grade small-gaps
 input); pointwise-to-3T² empirically bulletproof (max S/N≤0.10 even adversarial) but gated on the hard
 fluctuation exponential sum.
+
+---
+
+## §28 — Almost-all extension is FULLY UNCONDITIONAL (short-interval counts suffice) (2026-07-19)
+
+The §25/§26 min-gap worry was UNNECESSARY. The second moment is controlled using ONLY the standard
+unconditional short-interval zero count `N(γ+1)−N(γ) = O(log γ)` — no pair-correlation, no min-gap, no
+conjecture. Argument:
+
+⟨S(n)²⟩ over n∈[M₁,M₂] (M=M₂−M₁~3T²) = ½Σ_{γ,γ'}[⟨cos n(φ_γ−φ_γ')⟩ + ⟨cos n(φ_γ+φ_γ')⟩].
+- Diagonal (γ=γ', difference term): N/2.
+- Off-diagonal, |⟨cos nα⟩| ≤ min(1, 1/(M|α|)). Split pairs by |φ_γ−φ_γ'| (equiv. |γ−γ'|, φ monotone):
+  · CLOSE (|γ−γ'| < w:=γ²/M ~ 1/3): #pairs ≤ Σ_γ N(γ,γ+w) ≤ Σ_γ O(log γ) = O(N log T) — UNCONDITIONAL
+    (short-interval count). Each ≤ 1 ⇒ contributes O(N log T).
+  · FAR: geometric sum of 1/(M|φ_γ−φ_γ'|) over distance shells, each shell holding O(log γ) zeros ⇒
+    O(N (log T)²).
+  · The φ_γ+φ_γ' term: φ_γ+φ_γ' ≥ 1/T ⇒ Σ 1/(M(φ_++...)) = O(N²/T) = O(N log T).
+⇒ **⟨S(n)²⟩ ≤ C·N·(log T)² UNCONDITIONALLY.** Chebyshev ⇒ #{n∈band : |S(n)|>εN} has density
+≤ C(log T)²/(ε²N(T)) → 0.
+
+**THEOREM (unconditional, no conjecture):** λ_n > 0 for ALL BUT a set of n of density ≤ C(log T)²/(ε²N(T))
+→ 0, throughout n ≤ ~3.2·T² = 2.9×10²⁵ (T = Platt–Trudgian 3.0001×10¹²). Exceptional density ~10⁻¹¹.
+
+**Numerical confirmation:** max zeros/unit-interval = 3 (=0.27·log T); close-pair count (|gap|<1/3) =
+0.0066·N·log T; empirical ⟨S²⟩ = 0.29 N ≪ N(log T)². All consistent.
+
+This upgrades §26 from "method + literature input" to a clean, complete, FULLY UNCONDITIONAL almost-all
+theorem — a genuine second result, 12 orders past §21's pointwise bound, resting only on textbook
+short-interval zero counts + the §21 tail closed form + the rigorous negative bound (§22). Pointwise-every-n
+to 3T² remains the hard open piece (§23).
