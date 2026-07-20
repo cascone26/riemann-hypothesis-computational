@@ -2069,3 +2069,15 @@ WHAT SURVIVES (real):
 Honest net: the physics push gave a real REFRAME (RH=criticality) and one genuinely new exact tool (FE
 sectors), plus a sharper localization of the obstruction — but the specific DBN-operator proof route was a
 circular artifact, retracted. No proof. Corrected the record and the memory.
+
+## §34d — FE sectors don't concentrate the obstruction (even split); no structural crack
+A+B's negative subspace (the obstruction) splits ~EVENLY across the R-even/R-odd sectors: nneg = 2/2, 3/4,
+5/5 (even/odd) for c=14,50,200. So the FE reflection [τ,R]=0 halves the dimension but the indefiniteness (and
+the collapse) is equally distributed — NOT isolated to one sector. Honest: the FE-sector tool is exact and
+real but does not reduce the difficulty. Net of the physics push: a correct REFRAME (RH=criticality,
+Polymath15 Λ∈[0,0.22]), a sharp obstruction localization (sign-indef Ω core |ω|<6.3, both sectors), one
+genuine exact tool (FE sectors) — but no proof and no problem-reducing structural cut. The session's concrete
+mathematical outputs remain the two theorems: §21 (n≤2πT, Lean-verified) and §28 (almost-all n≤~3T²,
+unconditional). Durable live leads for a focused future session: (a) the REAL DBN flow / Polymath15 Λ-bound
+machinery (heavy, existing-knowledge route to criticality); (b) the Connes non-circular build
+[[connes-decisive-diagnostic]] + the exact tools (FE sectors, the closed form F_n=4−4cos cosh).
