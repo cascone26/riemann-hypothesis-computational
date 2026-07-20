@@ -1473,3 +1473,38 @@ and persists; Vector B is LIVE — pursue its c→∞ limit form (rung: B2).
 **Rung status:** rung 1 substantially done. Linchpin (rung 3) SUPPORTED ahead of schedule by C1/C1b. Next:
 A2 (derive the c^(−p) rate analytically from the explicit Q_A,Q_P), B2 (limit form of local √τ), C2 (port
 core+tail reduction into the fixed-band frame — test Connes prolate/Sonine weighting on the low band).
+
+---
+
+## §14 — C2 FAILED (honest): the collapse is self-similar across zeros, NOT finitely localizable (2026-07-19)
+
+Tested the core+tail reduction (PLAN §1 main line): split τ at a fixed frequency cutoff ω_c=20 (above the
+worst-case bad band from C1/C1b), ask if the high-frequency TAIL block is positive with a NON-collapsing
+margin (which would confine the c^(−p) collapse to a finite, certifiable core). Result (proof pointer:
+results/tail_positivity_C2.json):
+
+**NEGATIVE.** The tail is PD at every c, but its min-pivot ALSO collapses: 8.5e−6, 6.5e−30, 2.8e−48,
+4.4e−62, 1.3e−75 for c=14…3200 (varies 6.6e69×). The collapse is NOT confined to the low core. Reason:
+the prime-side near-cancellation recurs at EVERY zeta-zero frequency (γ = 14, 21, 25, 30, 33, … up forever;
+A1 already showed Q_P spiking at each). A fixed finite frequency cutoff excludes only finitely many zeros;
+the tail keeps its own near-cancellations at the higher zeros. So **the difficulty is self-similar across
+the infinite tower of zeros and is NOT reducible to a finite computation.** This is, honestly, exactly why
+RH resists computer-assisted (finite-check) proof.
+
+**Consequence for the plan.** The "finite rigorous core + controlled tail" MAIN LINE (PLAN §1, Vector E's
+finite-core premise) is REFUTED as stated. The tail margin is milder than the full margin (tail/full ~
+1e16…1e58, growing) — the low core carries the WORST of it — but "milder" is not "bounded," so no finite
+core closes it. Recorded as a refuted strategy per the process-provenance rule.
+
+**But it reveals a NEW lever — self-similarity / renormalization.** The near-cancellation recurring with
+(apparently) the same shape at each zero γ_k suggests a SCALING structure: if the local near-cancellation
+around γ_k is a rescaled copy of the one around γ_1, then proving positivity of ONE local template + a
+uniform scaling/interlacing law across zeros would cover ALL zeros at once — an RG-style bootstrap instead
+of a finite reduction. This is the honest replacement for the refuted main line. NEXT TEST (C3): is the
+local structure of τ near γ_1 vs γ_2 vs γ_3 self-similar under rescaling? If yes, the whole program pivots
+to proving the template + scaling law. If no, that lever dies too and we lean on Vectors A/B/D.
+
+**Net status:** linchpin's "fixed negative band" (§13/C1) still holds, but it does NOT give a finite core
+because the MARGIN collapse (unlike the negative-inertia band) is spread over all zeros. Main line refuted;
+self-similarity is the new primary hypothesis; Vectors A (explicit estimate), B (local √τ limit), D
+(function-field) unaffected and now relatively more important.
