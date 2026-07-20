@@ -1798,3 +1798,26 @@ the almost-all result airtight. Pointwise (every n) still needs the fluctuation 
 Net: the extension is no longer just a numerical candidate — its ALMOST-ALL version is rigorously within
 reach via classical unconditional machinery. Two live fronts: (a) finish the large-sieve small-gap detail →
 airtight almost-all theorem to ~3T²; (b) pointwise via zero correlations (harder).
+
+---
+
+## §25 — Almost-all extension reduced to a classical reciprocal-gap sum (Montgomery–Vaughan) (2026-07-19)
+
+Refined §24's large-sieve step. The NAIVE large sieve fails: min ψ-gap = 4.5×10⁻¹³ ⇒ δ⁻¹ = 2.2×10¹² >
+M~T²~5.6×10⁹ (real small-gap problem). FIX — Montgomery–Vaughan mean value:
+  Σ_{n=1}^{M} |Σ_r e(n ψ_r)|² ≤ Σ_r (M + δ_r⁻¹),  δ_r = nearest-neighbor gap of ψ_r (NOT the global min).
+So ⟨S(n)²⟩ ≤ N + (1/M)·Σ_r δ_r⁻¹. The crux is now the single quantity **Σ_r 1/δ_r = Σ_r 1/(nearest ψ-gap)
+≈ 2π Σ_r γ_r²/(γ_{r+1}−γ_r)** (reciprocal zero-gap sum). Computed on real zeros: Σ 1/δ_r = 2.3×10¹⁵ ≈
+1.35·M·N ⇒ **⟨S²⟩ ≤ 2.35 N (bounded)** ⇒ S(n)=O(√N) ⇒ exceptional-set density → 0. Almost-all extension
+holds numerically with the min-gap problem PROPERLY handled.
+
+**Rigorous requirement (now precise & classical):** the almost-all λ_n>0 to ~3T² is unconditional PROVIDED
+Σ_{γ≤U} 1/(γ_{n+1}−γ_n) = O(U · N(U)·polylog) — a reciprocal-consecutive-zero-gap bound. This is a known
+hard-but-classical object (small gaps between zeta zeros): Cauchy–Schwarz gives the lower bound Σ1/gap ≥
+N²/T; the needed upper bound is where unconditional small-gap results (Montgomery, Conrey–Ghosh–Gonek,
+Feng–Wu, etc.) apply, possibly with a sparse exceptional set of close pairs absorbed into the density-0 set.
+No new idea needed in principle — it's a literature-grade estimate. This is the exact, named lemma that
+upgrades the almost-all extension from numerically-solid to a theorem.
+
+Fronts open: (1) the reciprocal-gap bound (this §) → airtight almost-all theorem to ~3T²; (2) pointwise every-n
+(§23, needs the full fluctuation sum, harder); (3) Lean-formalize the solid §21 tail lemma (parallel).
