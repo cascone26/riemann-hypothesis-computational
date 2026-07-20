@@ -1969,3 +1969,21 @@ achievable rigorous extension; pointwise is this harder sum.
 Route-6 line status: FULLY MAPPED. Two theorems (§21 pointwise 2πT + Lean §27; §28 almost-all ~3T²
 unconditional), range ceiling ~T² polylog (§29), Loewner=route-4 (§30), pointwise=prime √-sum (§31). The
 tractable extensions are extracted; remaining pieces are research-hard exponential sums or the global wall.
+
+---
+
+## §32 — §21 tail lemma: FULLY self-contained Lean proof (zero sorry, zero hypotheses) (2026-07-19)
+
+Completed the formalization. `RiemannLean/TailAnalytic.lean` + `TailLemma.lean` — `lake build` succeeds
+(8252 jobs, clean). Both textbook analytic inputs are now PROVEN from scratch in mathlib (not hypotheses):
+- `cos_le_exp_neg_half_sq`: cos t ≤ exp(−t²/2) on [0,π/2], via `x ↦ log(cos x)+x²/2` strictly antitone
+  (deriv x−tan x < 0, `Real.lt_tan`) + `StrictAntiOn`.
+- `cosh_le_exp_half_sq`: cosh z ≤ exp(z²/2) ∀z, via `x ↦ log(cosh x)−x²/2` (even; deriv tanh x − x < 0,
+  with tanh x < x proven from x·cosh x − sinh x strictly monotone).
+- `tail_kernel` / `tail_F_nonneg`: the 3-region case-split ⇒ cos x·cosh w ≤ 1 ⇒ F ≥ 0, now depending only
+  on the two proven lemmas.
+
+So the elementary heart of the proven route-6 theorem (§21, λ_n>0 for n≤2πT) is a COMPLETE machine-checked
+formal proof with no assumptions — referee-free. (The full λ_n corollary still can't be formalized: mathlib
+lacks Li-coefficient / explicit-formula machinery; the kernel is the part with novel logical content.)
+Lean 4 v4.29.0 + mathlib.
