@@ -2097,3 +2097,19 @@ available in-repo if a future session wants to work directly in that representat
 reframe (RH=Λ=0) is correct and beautiful, but it does not connect operationally to our prime-side toolkit
 beyond confirming t=0 is the critical point. Two clean theorems (RH_RESULTS.md) remain the session's output;
 the analytic uniform-coercivity target (NEXT_SESSION_RH.md) is the real proof path, not DBN-via-our-τ.
+
+## §36 — Archimedean symbol Lorentzian decomposition (handle-(i) first brick); at the true frontier now
+Verified: Ω(r) = −γ_E − log π + Σ_{k≥0}[1/(k+1) − a_k/(a_k²+(r/2)²)], a_k = k+¼ (direct vs series agree; the
+mismatch is O(1/K) series truncation). Explicit structure: bounded NEGATIVE core (Ω(0)=−5.372), log-growing
+POSITIVE tail (Ω(r)~log r). The coercivity budget for A(g)+B(g) ≥ P(g) is this positive tail + the rank-2
+pole block B vs the prime demand P. This is a known-classical starting point for handle (i).
+
+**Honest frontier note:** this IS the crux of RH now. Every rapid computational/structural probe this session
+(margin scaling, near-null, √τ, Loewner, FE sectors, DBN toy AND real DBN flow) has confirmed the difficulty
+is GLOBAL and lands here — the coercivity of A+B over P — which OBSTRUCTION_MAP already shows no
+local/pointwise comparison resolves (route 2–5). Making genuine NEW progress on this coercivity is the open
+Riemann Hypothesis; it will not fall to another overnight probe. The fast-progress phase of this session is
+complete. What remains is deep analysis (explicit SOS from Ω's Hadamard structure + an unconditional prime
+bound — handle (i); or Hermite–Biehler — handle (ii)) or the heavy zero-representation Polymath15 program —
+each a dedicated hard-analysis effort, not an in-session deliverable. Secured output: RH_RESULTS.md (2
+theorems). Path forward: NEXT_SESSION_RH.md.
