@@ -1903,3 +1903,17 @@ This upgrades §26 from "method + literature input" to a clean, complete, FULLY 
 theorem — a genuine second result, 12 orders past §21's pointwise bound, resting only on textbook
 short-interval zero counts + the §21 tail closed form + the rigorous negative bound (§22). Pointwise-every-n
 to 3T² remains the hard open piece (§23).
+
+---
+
+## §29 — Range ceiling of the density budget is ~T² (polylog); n² growth is the bottleneck (2026-07-19)
+
+Tested whether folding real zero-density (off-line zeros are rare) pushes the almost-all range past 3T².
+Analytic estimate: per-zero worst negativity ~ 4(cosh(n u₀(δ))−1) ~ (nδ/γ²)² (δ=offset from ½), weighted by
+off-line fraction ~ γ^{−Aδ} (Ingham A=3, or Guth–Maynard smaller A). Product maximized at δ* ~ 2/(A log γ),
+value ~ (n/(γ² log T))² — only a 1/(log T)² reduction vs the crude σ→0 bound. So the crossover moves
+3T² → ~3T²·(log T) — a POLYLOG gain, not a power. **Range ceiling of this method ≈ T² up to polylog**
+(for T=3×10¹², ~O(10²⁶–10²⁷)). Bottleneck: worst-case negativity grows like n² (from cosh(nu₀)−1), inherent;
+even rare off-line zeros at the optimal offset contribute enough. Density refinement not worth the complexity.
+Recorded to prevent re-treading. Beyond ~T² needs phase cancellation in the TAIL (blocked: tail σ adversarial),
+i.e. the same hard direction as pointwise. The two clean theorems stand: §21 pointwise 2πT, §28 almost-all ~3T².
