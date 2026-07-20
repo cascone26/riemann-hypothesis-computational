@@ -148,3 +148,31 @@ Each rung either advances or *kills a vector* — no rung is "in progress" forev
 frequency across the mid band, AND the Arb Cholesky factor M(N,c), and check both for c→∞ structure.
 Then **Vector C1**: test whether Connes' prolate/Sonine weighting makes n_neg constant in c — the §12
 low-harmonic negative subspace is a strong hint this is the natural frame, and rung 3 is the make-or-break.
+
+---
+
+## STATUS UPDATE 2026-07-19 (after executing rungs 1-2, LEDGER §13-§15)
+
+**What executed and what it changed:**
+- **Rung 1 done.** A1: self-energies explicit (Q_A−Q_P ≈ +0.011 flat; Q_P resonates at zeros). C1/C1b:
+  the "bad" region is a FIXED frequency band (negative-band edge converges ~6; margin mode bounded <17,
+  asymptotically low). B1b: **symmetric √τ is LOCAL & c-stable (96–99% within 3 bands)** — Vector B LIVE.
+- **MAIN LINE REFUTED (C2).** Fixed-cutoff core+tail does NOT finitize: the tail margin also collapses
+  because the near-cancellation recurs at EVERY zero (infinitely many). No finite core closes RH. This is
+  why finite computer-assisted proof fails. Honest, recorded.
+- **New C-lever (C3):** resonances are self-similar/translation-invariant across zeros — but tiered REPORT
+  only (diagonal ≠ operator positivity; circularity untested).
+
+**REVISED PRIORITY (this supersedes §6's "immediate next action"):**
+1. **Vector B is now the most promising line** — it is the natural diagonal→operator bridge. √τ is local and
+   c-stable; if √τ(c) converges to a well-defined LOCAL limit operator M∞, then τ∞ = M∞·M∞ ⪰ 0 is a MANIFEST
+   positivity proof (and locality handles the infinite tower C2 exposed, since a bounded local operator acts
+   uniformly across all frequencies/zeros). **NEXT: B2** — does √τ(c) converge entrywise in its band to a
+   limit M∞? Characterize its structure (is it a fixed difference/Toeplitz-like local operator?).
+2. **Vector C (self-similarity) gated on C4** — test non-circularity: would an off-line zero break the
+   translation-invariant template? Only then is it a real constraint.
+3. **Vector A** (explicit Q_A ≥ Q_P estimate) and **D** (function-field) continue as written.
+
+**Honest meta:** strong gains in STRUCTURE and problem-shape; the finite-reduction hope died; NOT near a
+proof. The live proof-shaped hope is the local-√τ limit (B2). Everything tiered REPORT until an operator-
+level (not diagonal) uniform statement is proven/Lean-checked.
