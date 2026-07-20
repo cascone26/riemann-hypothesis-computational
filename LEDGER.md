@@ -1436,3 +1436,40 @@ sharply localized analytic question (a specific frequency band, two explicit clo
 real progress in problem-shape even though it is NOT a proof.
 
 Proof pointers: results/neg_subspace_AB.json (frequencies, n_neg, coverage), cross-ref §10/§11 results.
+
+---
+
+## §13 — RUNG 1 executed: linchpin supported, self-energies explicit, √τ factorization live (2026-07-19)
+
+Ran the RH_SOLVE_PLAN rung-1 batch (A1, B1/B1b, C1/C1b). Results (proof pointers: results/band_edge_C1.json,
+nearnull_band_C1b.json, sqrt_tau_B1b.json, cholesky_structure_B1.json):
+
+**C1 — LINCHPIN SUPPORTED (make-or-break test PASSED).** The negative-eigenvalue band edge of A+B converges:
+ω*(c) = 4.76, 6.42, 5.93, 5.64, 6.23, 5.98 for c = 14…12800 (a 900× range) — oscillates around ~6, does NOT
+grow. n_neg/L is flat at ~1.85, so n_neg (=4…18) grows ONLY from mode density (∝L=log c) inside a FIXED
+band. => the negative part is a fixed compact frequency band; the "finite core + controlled tail" reduction
+(PLAN §1) is viable.
+
+**C1b — near-null (margin) band is BOUNDED.** The margin-carrying near-null mode's centroid frequency:
+9.08, 16.14, 8.23, 2.07, 1.87 for c=14…3200. Not convergent to a point, but bounded (<17) and asymptotically
+MIGRATES DOWN to the low band (dominant mode at ω=0, centroid ~2 at large c) — INSIDE ω*~6. So the whole bad
+region (negative band + margin mode) is a fixed finite frequency band as c→∞. Linchpin holds in the sense
+the reduction needs (fixed core up to ω≲20 covers all c; asymptotically ω≲6).
+
+**A1 — self-energies now EXPLICIT (results/band_edge_C1.json diag_self_energy_c12800).** Diagonal
+Q_A(ω)=arch[i,i], Q_P(ω)=Wp[i,i] at c=12800: Q_A − Q_P ≈ +0.0116 NEARLY CONSTANT across ω=0…11 (archimedean
+and prime diagonal self-energies agree to ~1% across the band — the near-equality made explicit and flat).
+Q_P spikes sharply NEGATIVE at the low zeta-zero frequencies (Q_P=−6.67 at ω=13.95≈γ1=14.13; −4.95 at
+ω=21.26≈γ2; −4.83 at ω=25.25≈γ3), so τ_diag spikes positive at zeros and sits at the ~0.011 floor between.
+This is the explicit formula surfacing: the prime sum resonates at the zero frequencies. The true 1e-22
+margin = off-diagonal coupling eating the ~0.011 diagonal floor.
+
+**B1 — Cholesky factor PARKED; B1b — symmetric √τ LIVE (Vector B).** The triangular Cholesky factor of τ is
+NOT local (band energy within 5 diagonals 72%→21% as c grows). BUT that was the wrong object: the SUSY lead
+A12/A13 concerns the SYMMETRIC root. Re-tested √τ = V√ΛV^T: it IS local and c-stable — band energy within 3
+diagonals = 99%, 97%, 96%, 97% at c=14,50,200,800. So a LOCAL symmetric factorization root τ=√τ·√τ exists
+and persists; Vector B is LIVE — pursue its c→∞ limit form (rung: B2).
+
+**Rung status:** rung 1 substantially done. Linchpin (rung 3) SUPPORTED ahead of schedule by C1/C1b. Next:
+A2 (derive the c^(−p) rate analytically from the explicit Q_A,Q_P), B2 (limit form of local √τ), C2 (port
+core+tail reduction into the fixed-band frame — test Connes prolate/Sonine weighting on the low band).
