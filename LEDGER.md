@@ -1508,3 +1508,36 @@ to proving the template + scaling law. If no, that lever dies too and we lean on
 because the MARGIN collapse (unlike the negative-inertia band) is spread over all zeros. Main line refuted;
 self-similarity is the new primary hypothesis; Vectors A (explicit estimate), B (local √τ limit), D
 (function-field) unaffected and now relatively more important.
+
+---
+
+## §15 — C3: the resonances are self-similar (translation-invariant) across zeros (2026-07-19)
+
+New lever after C2's refutation. Built a CONTINUOUS closed-form evaluator of the self-energies Q_A(ω),
+Q_P(ω) (mpmath, validated against the matrix diagonal), scanned the resonance at γ_1..γ_6 (c=3200). Proof
+pointer: results/self_similar_C3.json.
+
+**Result — strong self-similarity (in fact near translation-invariance).** Q_P has a sharp negative
+resonance sitting EXACTLY at each zero γ_k, with:
+  depth = 7.81, 7.89, 7.86, 7.89, 7.85, 7.88   (≈ constant 7.86)
+  halfwidth = 0.34, 0.33, 0.33, 0.33, 0.34, 0.33   (≈ constant 0.33)
+  τ(ω) at resonance = +8.05, +8.09, +8.08, +8.12, +8.11, +8.12   (≈ constant +8.09, POSITIVE)
+Between resonances τ sits at the ~0.011 floor (A1). So each zero has an IDENTICAL positive "footprint" in
+the self-energy — the structure repeats unchanged at every zero. This makes a renormalization/template
+approach plausible: characterize ONE resonance + the (here trivial, translation) map across zeros.
+
+**HONESTY / circularity caveats (mandatory before treating this as a lever):**
+1. **Diagonal ≠ operator.** τ(ω) here is the DIAGONAL self-energy; τ(ω)>0 everywhere is NOT operator
+   positivity (the true 1e-22 margin is off-diagonal). Self-similar positive DIAGONAL resonances do not by
+   themselves prove τ ⪰ 0. This is REPORT, not HANDLE.
+2. **Possible circularity.** The resonances sit at the true (on-line) zeros because we summed the true
+   primes (primes encode the true zeros via the explicit formula). That each on-line zero leaves a similar
+   footprint may partly RE-EXPRESS the explicit formula rather than constrain zeros to the line. Whether the
+   self-similarity is a NON-circular constraint (i.e., would an off-line zero break the clean real-ω
+   translation-invariant footprint?) is UNTESTED — that test (C4) is the make-or-break for this lever:
+   model an off-line zero's footprint and check if the template forbids it.
+
+**Status.** Self-similarity is a real, clean structural fact (SUPPORTS the renormalization lever) but is NOT
+yet a proof ingredient until C4 clears circularity and the diagonal→operator gap is bridged. Recorded at its
+true tier (REPORT). Revised plan: the renormalization/self-similarity line replaces the refuted finite
+reduction as the primary C-vector, gated on C4.
