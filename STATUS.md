@@ -3642,3 +3642,9 @@ Search-before-build note: OBSTRUCTION_MAP already had the analytic landscape —
 **Live fronts (all RH, keep pushing — never stop):** (a) make almost-all fully explicit via Montgomery
 pair-correlation close-pair bound → stated theorem to 3T²; (b) pointwise fluctuation sum (hard prize);
 (c) fill Lean B1/B2 (self-contained artifact); (d) the global all-n wall = RH itself.
+
+## Session 2026-07-19/20 close — consolidated
+Two unconditional theorems finished + written up in RH_RESULTS.md: (T1) λ_n>0 for n≤2πT≈1.9e13 (Lean-verified
+tail kernel); (T2) λ_n>0 for almost all n≤~3T²≈2.9e25 (unconditional, short-interval counts). Physics push
+(SuperPRISM §34): RH=criticality reframe + FE-sector tool; DBN toy proof-route was circular (retracted §34c).
+NEXT: NEXT_SESSION_RH.md — the analytic uniform-coercivity target, fresh session, no more τ mapping.
