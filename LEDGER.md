@@ -1917,3 +1917,30 @@ value ~ (n/(γ² log T))² — only a 1/(log T)² reduction vs the crude σ→0 
 even rare off-line zeros at the optimal offset contribute enough. Density refinement not worth the complexity.
 Recorded to prevent re-treading. Beyond ~T² needs phase cancellation in the TAIL (blocked: tail σ adversarial),
 i.e. the same hard direction as pointwise. The two clean theorems stand: §21 pointwise 2πT, §28 almost-all ~3T².
+
+---
+
+## §30 — τ's off-diagonal is an exact Loewner/Pick matrix, but the phase is NOT operator-monotone (route 4 in disguise) (2026-07-19)
+
+Pursued the flagged-but-unexploited Loewner/Pick lever. STRUCTURAL FACT (verified exactly, err 0.0):
+τ's off-diagonal (the WR archimedean + Wp prime parts) is EXACTLY a divided-difference / Pick matrix:
+  WR_off − Wp_off = (F(m)−F(n))/(π(n−m)) with F = S − P;  and the τ combination WR_off+Wp_off is the Pick
+  matrix of the TOTAL phase G = S + P (archimedean digamma phase + prime sine phase).
+  ⇒ τ = D(diag) + W02(rank-2 pole) ± (1/π)·PICK[G], PICK[G]_{nm}=(G(n)−G(m))/(n−m).
+
+Loewner's theorem: PICK[G] ⪰ 0 (all nodes) ⟺ G operator-monotone ⟺ G Herglotz. TEST (numerical, N=20):
+- PICK[G] (total phase): inertia n_neg=21, n_pos=20 — STRONGLY INDEFINITE.
+- PICK[S] (archimedean phase alone): n_neg=20, n_pos=21 — STRONGLY INDEFINITE.
+So neither phase is operator-monotone; the Pick matrices are ~half-negative, not near-PSD. (Diagonal G′
+estimated crudely, but n_neg~20 ≫ 0 is robust to that.)
+
+**Verdict:** the Loewner/Pick structure is a real, clean, exact reformulation, but it does NOT give a
+positivity handle — the generating phase is far from Herglotz. This is precisely OBSTRUCTION_MAP route 4
+(de Branges: "A+B has negative eigenvalues → not a valid dB inner product") re-derived via the explicit
+Pick form. It RE-EXPRESSES the de Branges wall, does not escape it. Honest negative; consistent with the map.
+
+Value retained: the EXPLICIT divided-difference form of τ (Pick matrix of an explicit phase G=digamma+prime)
+is a cleaner handle than the abstract dB statement, and makes the operator-monotone-function toolkit
+(Nevanlinna integral representations) applicable IF one later finds the right modification (e.g. the rank-2
+W02 correction or a change of nodes that restores operator-monotonicity). Parked with that note. The Loewner
+lever, as-is, is route 4 and hits its wall.
