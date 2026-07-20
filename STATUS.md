@@ -3625,3 +3625,20 @@ finite, not RH; lemma is a clean remaining analytic target. Route 7 already mapp
 **Overall:** tractable attack space mapped and exhausted this session; a genuinely new idea (or the F₁ object,
 or proving the route-6 tail lemma + pushing verification height) is what remains. All REPORT-tier; no proof.
 Search-before-build note: OBSTRUCTION_MAP already had the analytic landscape — read it FIRST next session.
+
+## Session 2026-07-19 (cont.) — Route-6 extension + Lean verification
+
+**Route-6 result package (LEDGER §19–§27):**
+- §21 THEOREM (proven, elementary): λ_n>0 unconditionally for n ≤ 2πT−π ≈ 1.885×10¹³ (T=Platt–Trudgian
+  3.0001×10¹²). Tail lemma cracked to exact closed form F_n=4−4cos(nθ)cosh(nu); 4 lemmas + 2 calculus bounds.
+- §27 Lean: the tail-lemma KERNEL formally verified (RiemannLean/TailLemma.lean, zero sorry) — the novel
+  case-split giving the 2πγ threshold is machine-checked; 2 textbook analytic inputs as hypotheses.
+- §22–26 EXTENSION to ~3T² ≈ 2.9×10²⁵ (12 orders past §21): almost-all form has a COMPLETE unconditional
+  method (Montgomery–Vaughan on well-spaced zeros + remove provably-few close pairs; one literature-grade
+  small-gaps input). Pointwise-to-3T² empirically bulletproof (max exp-sum S(n)/N ≤ 0.10 even adversarial)
+  but gated on a hard fluctuation exponential sum (confirmed hard from both zeros-side pair-correlation and
+  primes-side √-phase exponential sum).
+
+**Live fronts (all RH, keep pushing — never stop):** (a) make almost-all fully explicit via Montgomery
+pair-correlation close-pair bound → stated theorem to 3T²; (b) pointwise fluctuation sum (hard prize);
+(c) fill Lean B1/B2 (self-contained artifact); (d) the global all-n wall = RH itself.
