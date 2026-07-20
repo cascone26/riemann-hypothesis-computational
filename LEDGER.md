@@ -1658,3 +1658,28 @@ for ALL σ∈(0,1) when n < 2π·γ. Confirmed the constant is exactly 2π: the 
 it uses a finite verified height, and (b) the tail-safety lemma is numerically verified, not yet analytically
 proven (it is a clean single-region positivity F_n(σ,γ)≥0 for n<2πγ — a very tractable analytic target, the
 natural next rigor step). This is route 6's real, quantified partial result; it does not close RH.
+
+---
+
+## §20 — Route-6 tail lemma: exact closed form found, proof 2/3 done (2026-07-19)
+
+Attacked the tail-safety lemma (F_n(σ,γ)≥0 for n<2πγ) that the §19 bound rests on. Cracked its structure to
+an EXACT closed form and reduced it to an elementary scalar inequality (full writeup: PROOF_route6_tail_lemma.md).
+
+**Exact closed form (PROVEN, verified to 1e-12):** two exact identities — arg α(σ)=arg α(1−σ)=:θ and
+|α(σ)||α(1−σ)|=1 — collapse the quartet contribution to
+    F_n(σ,γ) = 4 − 4 cos(nθ) cosh(nu),   θ=π−arctan(γ/σ)−arctan(γ/(1−σ)),  u=½ln[((1−σ)²+γ²)/(σ²+γ²)].
+So F_n≥0 ⟺ cos(nθ)cosh(nu)≤1. Worst case is σ→0 (verified), where |α(0)|=sec φ, φ=arctan(1/γ), reducing to
+the scalar inequality cos(nφ)cosh(n ln sec φ)≤1.
+
+**Scalar inequality, t=nφ, κ=−ln cos φ/φ<1 (κ≈0.035 for γ≥14, proven):**
+- Region A (cos t≤0): P=cos t·cosh κt ≤0<1. PROVEN.
+- Region B (t∈(0,π/2)): κ≤1 ⇒ P≤cos t cosh t≤1 (classical cos t≤sech t). PROVEN.
+- Region C (t∈(3π/2,2π)): tight; 2nd-order gives P≤1 for n≤2π/φ−π=2πγ−π+O(1/γ) — matches numerics (first-bad
+  n/γ→2π⁻, gap≈π). Needs rigorous Taylor remainder for an explicit sub-threshold. REMAINING.
+
+**Status:** proven — closed form, Regions A/B, κ<1. Remaining (2 bounded elementary gaps): analytic
+worst-case-σ monotonicity, and Region-C remainder bound. Closing them upgrades §19 (λ_n>0 for n≤~1.88×10¹³)
+from numerically-verified to a rigorous THEOREM. Still finite, still not RH — but a complete unconditional result.
+This is real, concrete progress: an opaque numerical lemma is now an exact identity + a 2/3-proven elementary
+inequality.
