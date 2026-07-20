@@ -1944,3 +1944,28 @@ is a cleaner handle than the abstract dB statement, and makes the operator-monot
 (Nevanlinna integral representations) applicable IF one later finds the right modification (e.g. the rank-2
 W02 correction or a change of nodes that restores operator-monotonicity). Parked with that note. The Loewner
 lever, as-is, is route 4 and hits its wall.
+
+---
+
+## §31 — Pointwise-3T² reduces to a prime √-phase exponential sum (research-hard) (2026-07-19)
+
+Set up the pointwise attack: need S(n)=Σ_{γ≤T}cos(nφ_γ) < (1−ε)N for all n∈[2πT,3T²]. Smooth part is
+provably ≤0.16N (non-stationary phase). Fluctuation = S − I_smooth, and the Guinand–Weil explicit formula
+converts it (stationary phase, r*=√(n/log m), phase 2√(n log m)) to a PRIME √-PHASE SUM:
+  fluct(n) ~ n^{1/4} Σ_{p: log p∈(n/T², n/γ₁²)} (log p)^{1/4} p^{−1/2} cos(2√(n log p)) .
+
+NUMERICAL VALIDATION INCONCLUSIVE in-session: extracting fluct = S − I_smooth needs I_smooth, an oscillatory
+integral ∫cos(nφ(x))·density dx that naive scipy quadrature CANNOT evaluate at large n (divergence warnings);
+so the fluct/prime-sum ratio scattered (−34,−3.6,−97,5.4,−1.9) — an artifact of unreliable I_smooth, not a
+refutation. Proper validation needs a stationary-phase evaluation of I_smooth (deferred).
+
+VERDICT: pointwise-to-3T² == a pointwise bound on a prime exponential sum with √-phase 2√(n log p) — the same
+family as Riemann–Siegel / approximate-functional-equation sums. Unconditional bounds exist via van der
+Corput exponent pairs + Vinogradov/Vaughan (for the prime restriction), but getting < (1−ε)N pointwise
+uniformly over n∈[2πT,3T²] is genuine research-grade analytic number theory, not an in-session result. This
+is the precise, named open problem for pointwise-3T². The ALMOST-ALL theorem (§28, second-moment) remains the
+achievable rigorous extension; pointwise is this harder sum.
+
+Route-6 line status: FULLY MAPPED. Two theorems (§21 pointwise 2πT + Lean §27; §28 almost-all ~3T²
+unconditional), range ceiling ~T² polylog (§29), Loewner=route-4 (§30), pointwise=prime √-sum (§31). The
+tractable extensions are extracted; remaining pieces are research-hard exponential sums or the global wall.
