@@ -2081,3 +2081,19 @@ mathematical outputs remain the two theorems: §21 (n≤2πT, Lean-verified) and
 unconditional). Durable live leads for a focused future session: (a) the REAL DBN flow / Polymath15 Λ-bound
 machinery (heavy, existing-knowledge route to criticality); (b) the Connes non-circular build
 [[connes-decisive-diagnostic]] + the exact tools (FE sectors, the closed form F_n=4−4cos cosh).
+
+## §35 — Real de Bruijn–Newman flow implemented; disconnected from prime-based τ except at t=0
+Implemented the GENUINE DBN function H_t(x)=∫₀^∞ e^{tu²}Φ(u)cos(xu)du (Φ = the theta-kernel), NOT the retracted
+toy. Verified: H_0's zeros are at x=2γ (roots at 28.269,42.044,50.022,60.850 = 2·γ_{1..4}, err ~1e-7). Flow
+works: z_1(t) moves along the real axis (28.50 at t=−0.4 → 28.27 at t=0 → 28.15 at t=0.2), staying real near
+t=0 (RH region); Λ = inf t with all zeros real = when tightest (Lehmer) pairs collide going backward.
+
+**Honest result (as predicted): NO new handle from our operator.** H_t has no Euler product ⇒ no primes for
+t≠0 ⇒ the flow lives entirely in the ZERO representation, while our Weil operator τ=A+B−P is PRIME-based.
+They coincide ONLY at t=0 (the explicit formula). So the FE-sector / sign-indefinite-core structure of τ does
+NOT feed the Λ-bound machinery — pushing Polymath15's Λ≤0.22 toward 0 is a barrier argument in the
+zero/H_t representation, a heavy SEPARATE program our operator doesn't accelerate. The real DBN object is now
+available in-repo if a future session wants to work directly in that representation. Net: the criticality
+reframe (RH=Λ=0) is correct and beautiful, but it does not connect operationally to our prime-side toolkit
+beyond confirming t=0 is the critical point. Two clean theorems (RH_RESULTS.md) remain the session's output;
+the analytic uniform-coercivity target (NEXT_SESSION_RH.md) is the real proof path, not DBN-via-our-τ.
