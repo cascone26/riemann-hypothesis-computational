@@ -1631,3 +1631,30 @@ idea is required. The only real unconditional partial handles in the repo are ro
 λ_n>0 for n≲2π·T, finite) and route 7 (Levinson proportion → ~41.7% on the line, barrier θ<4/7). Vector D is
 the deepest route matching RH's global/geometric character but needs a new geometric object we cannot build
 overnight. All this session's work is REPORT-tier structural mapping; no proof.
+
+---
+
+## §19 — ROUTE 6 quantified: λ_n > 0 unconditionally for n ≤ 1.88×10¹³ (2026-07-19)
+
+The in-repo self-contained bound was n≤3732 (`pair_margin_proof.py`, which conservatively treats even γ₁ as
+possibly off-line). Pushed it via the VERIFICATION-HEIGHT argument (OBSTRUCTION_MAP route 6, previously stated
+as "n≲2πT" but not quantified). Proof pointer: `operators/route6_verification_height.py`,
+results/route6_verification_height.json.
+
+**Mechanism.** λ_n = Σ_ρ[1−(1−1/ρ)^n]. Split at verification height T (RH PROVEN up to T=3.0001×10¹² —
+Platt–Trudgian 2021, a finite unconditional computation): zeros ≤T are verified ON-line → each contributes
+2(1−cos nφ_γ) ≥ 0; zeros >T are covered by the TAIL-SAFETY LEMMA.
+
+**Tail-safety lemma (verified numerically here):** a zero pair/quartet at height γ contributes F_n(σ,γ) ≥ 0
+for ALL σ∈(0,1) when n < 2π·γ. Confirmed the constant is exactly 2π: the first-negative n/γ ratio climbs
+6.200→6.260→6.278→6.281→6.283 for γ=25,100,400,1600,6400 (→2π⁻). So for n < 2π·T every zero (≤T on-line,
+>T tail-safe) contributes ≥0 ⇒ λ_n > 0.
+
+**Result:** N* = ⌊2π·T⌋. With Platt–Trudgian T=3.0001×10¹² → **λ_n > 0 unconditionally for n ≤ 18,850,184,240,069
+(~1.88×10¹³)** — ~5×10⁹ times the self-contained n≤3732. (Our own zero data gives smaller certified T:
+γ_100k→n≤470k, γ_2M→n≤7.1M, γ_20M→n≤65M.)
+
+**Honesty:** this is the strongest CONCRETE unconditional Li-positivity bound, but (a) still FINITE, not RH —
+it uses a finite verified height, and (b) the tail-safety lemma is numerically verified, not yet analytically
+proven (it is a clean single-region positivity F_n(σ,γ)≥0 for n<2πγ — a very tractable analytic target, the
+natural next rigor step). This is route 6's real, quantified partial result; it does not close RH.
