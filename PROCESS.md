@@ -7603,3 +7603,18 @@ but not a proof (core collapse persists mildly). (5) Chose Fork 1 (prove critica
 Rodgers-Tao + FE self-duality) over Fork 2 (work the tamed core) — the actual proof route, per Jacob's
 "combine existing knowledge" ethos. Method lesson banked: when stuck, the physical manifestation is telling
 you what the OBJECT is; use the symmetries you can literally see in the assembly before inventing machinery.
+
+---
+
+## 2026-07-20 — session close: real DBN flow + analytic frontier reached
+
+After the DBN toy was retracted as circular, implemented the GENUINE DBN flow H_t (zeros verified at x=2γ,
+flow tracked) — honest outcome: it lives in the ZERO representation, disconnected from our prime-based τ
+except at t=0, so it gives no new handle on the Λ-bound (that's Polymath15's separate zero-based barrier
+program). Then took the first brick of the analytic coercivity target (handle i): verified the Lorentzian
+decomposition of Ω(r) = −γ_E − log π + Σ_k[1/(k+1) − a_k/(a_k²+(r/2)²)] (bounded negative core Ω(0)=−5.37 +
+log-growing positive tail). CONCLUSION reached honestly: every rapid probe lands on the same crux — global
+coercivity of A+B over P — which IS RH and won't fall to overnight probing. Fast phase complete; secured 2
+theorems (RH_RESULTS.md). Method lesson banked: know when you've reached the true frontier and say so instead
+of manufacturing probes; the proof needs a dedicated hard-analysis campaign (NEXT_SESSION_RH.md), not more
+τ-mapping. Decision chain fully in LEDGER §10–§36.
