@@ -1702,3 +1702,37 @@ Result: F_n(σ,γ)≥0 for all σ∈(0,1), γ≥14, integer n≤2πγ−π — P
 (≈1.885×10¹³), T=3.0001×10¹² (Platt–Trudgian). This upgrades §19 from numerically-verified to a complete
 elementary proof. Finite, not RH — but a real, self-contained, unconditional theorem. All steps numerically
 cross-checked (closed form 1e-12; derivative formulas, exact numerator identity, f>0, N_C bound).
+
+---
+
+## §22 — Route-6 × zero-density budget: candidate extension to n ≤ ~3T² ≈ 3×10²⁵ (2026-07-19)
+
+The §21 theorem caps at 2πT because the tail lemma treats each zero in isolation (a single off-line zero at
+γ>T can give F_n<0 once n>2πγ). But the GLOBAL budget is wildly favorable. Computed (proof pointers below):
+
+**Positive mass (verified on-line zeros ≤ T):** P_ver(n) = 2Σ_{γ≤T}(1−cos nφ_γ). Empirically (real 100k
+zeros, φ_γ=2arctan(1/2γ)) P_ver(n) ≈ 2N(T) for all n ≳ 2πT — ratio hovers at 1.0 even at n=10⁹. The zero
+phases equidistribute; they do not conspire.
+
+**Negative mass (worst case, all tail zeros off-line at σ→0):** per upper-half zero, g ≥ 2(1−cosh(nu₀)),
+u₀(γ)=½ln(1+1/γ²)≈1/(2γ²). NegBound(n) = ∫_T^{n/2π} 4(cosh(n u₀(γ))−1)·(lnγ/2π) dγ (rigorous upper bound on
+|negative|, using Riemann–von Mangoldt density). Because tail γ>T=3×10¹² is HUGE, u₀~1/(2γ²) is minuscule,
+so cosh(n u₀)≈1 and the damage is tiny until n grows enormously.
+
+**Crossover NegBound(n*)=2N(T):** n* ≈ 3.2·T², stable across T (n*/T² = 3.09, 3.13, 3.16, 3.22 for
+T=7.5e4,1.1e6,1.0e7,3.0e12). For Platt–Trudgian T=3.0001×10¹²: **n* ≈ 2.9×10²⁵**, i.e. potentially
+λ_n>0 for n ≤ ~3T² — a ~10¹² × extension of the proven 2πT bound.
+
+**RIGOR STATUS (honest).**
+- RIGOROUS: the negative bound (per-zero min via §21 closed form F_n=4−4cos(nθ)cosh(nu), cosh(nu)≤cosh(nu₀);
+  rigorous zero count). Conservative (all zeros forced to the extreme σ→0; using density N(σ,T) would only
+  shrink it further — Guth–Maynard 2024 available).
+- GATED: the positive floor P_ver(n) ≥ (1−ε)·2N(T) for n∈[2πT, 3T²] is NOT proven — it is a lower bound on
+  an EXPONENTIAL SUM OVER ZETA ZEROS Σcos(nφ_γ). Stationary phase on ∫e^{inφ(γ)}dN(γ) suggests Σcos ~
+  T²lnT/n (small in-range), so the floor should hold — but exponential sums over zeros are genuinely
+  nontrivial; this is the real remaining work and may be hard. Until proven, the ~3T² extension is a
+  numerically-supported CANDIDATE, not a theorem. The §21 bound (n≤2πT) remains the rigorous one.
+
+Proof pointers: operators/route6_density_budget.py (P_ver over real zeros; NegBound integral; crossover).
+Next: prove the positive-floor exponential-sum bound (would upgrade the candidate to a theorem), OR insert
+Guth–Maynard density to sharpen the negative side.
