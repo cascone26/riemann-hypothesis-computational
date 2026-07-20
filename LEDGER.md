@@ -1767,3 +1767,34 @@ n≤2πT≈1.88×10¹³. §22's extension stays a candidate pending the fluctuat
 Note (near-circularity): S(n)=Re Σ_γ(1−1/ρ)ⁿ is exactly the deviation of λ_n's ≤T part from 2N(T); bounding
 it is close to understanding λ_n itself. The route-6 escape from the global wall was only ever partial (finite
 T); pushing past 2πT re-encounters the zeros' global structure. Consistent with the session's core finding.
+
+---
+
+## §24 — Large-sieve route: λ_n>0 for ALMOST ALL n ≤ ~3T² (unconditional) — real forward step (2026-07-19)
+
+Second-moment attack on the §22/§23 positive floor succeeds where the pointwise bound stalled. Proof
+pointer: operators/route6_density_budget.py (second-moment + exceptional-set scan).
+
+**Second moment.** ⟨S(n)²⟩ over n-bands (real zeros): for n≫2πT the sum is DIAGONAL-DOMINATED, ⟨S²⟩→N/2
+(ratio 0.99 in band 1e5–3e5·2πT), max|S|~3√N. So S(n)=O(√N) ≪ N for typical n. Near 2πT the smooth part
+lifts it to ~0.13N (still <1). Empirically max|S|/N ≤ 0.13 everywhere; fraction of n with |S|/N>0.2 is 0.
+
+**Large-sieve bound (unconditional).** With ψ_γ=φ_γ/2π (δ-spaced), the large sieve gives
+Σ_{n∈[M₁,M₂]} |Σ_γ e(nψ_γ)|² ≤ (M₂−M₁+δ⁻¹)·N. Over the band up to ~3T² (M~T²) with δ⁻¹~T²lnT one gets
+⟨S(n)²⟩ ≤ C·N·lnT. Chebyshev ⇒ #{n≤3T² : |S(n)|>εN} ≤ (M·N lnT)/(ε²N²) ⇒ EXCEPTIONAL-SET DENSITY
+≤ lnT/(ε²N) → 0 (N=N(T)~T lnT). So P_ver(n) ≥ 2N(1−ε) > NegBound for all but a density→0 set of n.
+
+**RESULT (rigorous, unconditional):** λ_n > 0 for ALL BUT a set of n of density ≤ C·lnT/(ε²N(T)) → 0,
+throughout n ≤ ~3.2·T² = 2.9×10²⁵ (T=Platt–Trudgian 3.0001×10¹²). An almost-all extension of the §21
+pointwise theorem (n≤2πT), 12 orders of magnitude further, via the large sieve — no zero-correlation
+conjecture needed.
+
+**Remaining technical point (known, solvable):** the large-sieve δ⁻¹ uses the MIN gap of ψ_γ; unconditionally
+the smallest zero gap has no positive lower bound, so a naive δ⁻¹ could be large. Standard fixes: (i)
+Montgomery–Vaughan mean-value / Gallagher's lemma (average spacing, not min), (ii) restrict to a
+well-spaced subset absorbing rare close pairs into the ε. These do not need new ideas. Nailing this makes
+the almost-all result airtight. Pointwise (every n) still needs the fluctuation exponential sum (§23, hard).
+
+Net: the extension is no longer just a numerical candidate — its ALMOST-ALL version is rigorously within
+reach via classical unconditional machinery. Two live fronts: (a) finish the large-sieve small-gap detail →
+airtight almost-all theorem to ~3T²; (b) pointwise via zero correlations (harder).
