@@ -1569,3 +1569,40 @@ structural and match that structure:
   - Vector D: function-field transport (deepest, longest).
 Next real step: C4 (circularity test of the self-similarity lever) — it decides whether the one
 structurally-matched direction is a genuine constraint or a re-expression of the explicit formula.
+
+---
+
+## §17 — A and C4: both leads hit the same core hardness; compute-phase conclusion (2026-07-19)
+
+Ran Vector A (uniform inequality) and C4 (self-similarity circularity) in parallel. Proof pointers:
+results/A_uniform_floor.json, results/C4_offline_zero.json.
+
+**A — the continuous-inequality framing is ILL-POSED.** min_ω τ(ω) over CONTINUOUS ω is negative and grows
+more negative with c (−6.7, −5.0, −7.8, −16.9, −35.3 at c=50…12800), but at OFF-GRID ω. The near-cancellation
+τ≈+0.011 holds only at the discrete basis nodes ω_n=2πn/L that the matrix samples; between nodes Q_A and Q_P
+do not cancel. Operator positivity depends on the matrix at grid nodes + off-diagonal coupling, NOT on the
+continuous self-energy. So "prove continuous Q_A(ω) ≥ Q_P(ω)" is not the right target. Solid byproduct:
+Q_A(ω) ~ 1.025·ln(ω) − 1.95 (archimedean diagonal grows logarithmically at large ω).
+
+**C4 — model too crude AND a conceptual limit found.** The chosen-zero Weil-form test (built from a zero set,
+no primes) stayed PSD under an off-line move because one narrow Gaussian per well-separated zero makes W
+nearly diagonal — λ_min insensitive to a single zero. Beyond the model: **Weil positivity is a GLOBAL
+condition over all zeros simultaneously, not separable per-zero.** A single off-line zero's negative
+contribution lives in its overlap with the whole ensemble. So the C3 self-similarity (identical per-zero
+footprint) does NOT enable a per-zero induction/renormalization — you cannot decide positivity one zero at a
+time. This limits the C-renorm lever on principle, not just in this model.
+
+**COMPUTE-PHASE CONCLUSION.** Four reduction strategies tested, all blocked by the SAME core fact:
+  - C2 (finite core+tail): tail inherits collapse from the infinite zero tower.
+  - B2 (fixed local √τ limit): local factor degenerates in the critical band, no fixed limit.
+  - A (continuous uniform inequality): ill-posed; positivity is discrete+off-diagonal, not pointwise.
+  - C4 (per-zero renormalization): Weil positivity is global, not per-zero-separable.
+RH's positivity is a GLOBAL, NON-LOCALIZABLE, NON-SEPARABLE condition that does not reduce to finite, local,
+pointwise, or per-zero pieces. This is a concrete demonstration (from 4 independent angles) of WHY RH resists
+the standard reduction attacks — valuable orientation, not a proof. The compute phase has done its job:
+mapped the operator and ruled out the tractable-looking shortcuts.
+
+**What remains (all research-grade, not scriptable tonight):** Vector D (function-field/Hodge-index
+transport — the only route whose positivity is also global/geometric, matching RH's character), and genuinely
+new global analysis (a single global inequality, not a reduction). The autonomous engine continues as a free
+breadth sensor. Recorded honestly at REPORT tier; no proof, real structural map.
