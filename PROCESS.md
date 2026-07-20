@@ -7537,3 +7537,45 @@ LDL^T pivot the certifier discards).
 law c^(−p(N)) in the prime cutoff with p(N)~N^0.62 (R²≈1.0), PD everywhere on the grid. Decision: log it as
 a quantified map of the wall + a precision-budget law, explicitly NOT a proof (the p(N)→∞ order-of-limits
 subtlety forbids overclaiming). New well-posed sub-problem handed forward: explain p(N)~N^0.62 structurally.
+
+---
+
+## 2026-07-19 (cont.) — from structural map to a proven theorem: the decision chain
+
+Continuing the same session. The arc and the reasoning at each fork:
+
+**Fork 1 — after the τ structural map, which reduction to chase?** Built RH_SOLVE_PLAN with a portfolio.
+Chose the "finite core + tail" main line because it played to our certified-computation strength. REFUTED
+(C2): the tail margin also collapses because the near-cancellation recurs at every zero (infinitely many).
+Lesson banked: RH positivity is global/non-localizable — a finite computation can't capture it. This killed
+B2 (local √τ limit degenerates) and the continuous-inequality framing (A, ill-posed: positivity is
+discrete-node + off-diagonal, not pointwise) by the same mechanism. Decision: stop trying to REDUCE the
+problem; the reductions provably fail.
+
+**Fork 2 — self-similarity as a lever?** C3 found the zero resonances are self-similar (identical
+footprint per zero). Tempting renormalization/induction idea. Tested non-circularity (C4) — model too crude
+AND found the conceptual block: Weil positivity is GLOBAL over all zeros, not per-zero-separable, so no
+per-zero induction. Parked the lever honestly.
+
+**Fork 3 — Vector D (function-field/Hodge)?** Search-before-build (which I should have run at session start)
+revealed OBSTRUCTION_MAP already maps the 7 analytic routes; my compute had re-derived routes 4–5. Scoped
+Vector D to the exact gap (missing F₁ object). Probe #1 (hard-Lefschetz/sl₂ backbone in τ): NEGATIVE. So the
+geometric engine isn't hiding in τ — Vector D needs the frontier object nobody has. Parked.
+
+**Fork 4 — where is a COMPLETE result actually reachable?** Concluded the tractable attacks were exhausted
+for the *full* problem, and pivoted to the one place a finite theorem was in reach: route 6 (verification
+height). Quantified it (§19): λ_n>0 for n≤2πT via a tail-safety lemma, but the lemma was only
+numerically verified.
+
+**Fork 5 — finish the theorem.** Chose to prove the tail lemma over chasing route 7 (θ<4/7, frontier) or the
+F₁ object. Payoff: the lemma cracked open — two exact identities (arg α(σ)=arg α(1−σ); |α(σ)||α(1−σ)|=1)
+collapse the quartet to F_n=4−4cos(nθ)cosh(nu). Then four elementary lemmas (θ↑,u↓; θ≥u via
+f=arctan−½ln(1+·)>0; θ+u decreasing via an exact polynomial numerator; 2π/(θ+u)≥2πγ−π) + two proven
+calculus bounds (cos t≤e^{−t²/2}, cosh x≤e^{x²/2}) closed it. THEOREM: λ_n>0 unconditionally for
+n≤2πT−π≈1.885×10¹³. Every step numerically cross-checked; threshold sharp. Proof: PROOF_route6_tail_lemma.md.
+
+**Method lesson (banked):** the session's most productive move was NOT the grand reductions (all refuted) but
+picking the one finite, finishable target and proving it end-to-end. And: run search-before-build FIRST —
+OBSTRUCTION_MAP had the landscape; much compute re-derived it. Next fork: route-6 × zero-density hybrid
+(does verified positive mass outweigh density-bounded off-line negative mass past 2πT?) — the first place the
+proven result could GROW rather than a new one starting from zero.
