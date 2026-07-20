@@ -2036,3 +2036,14 @@ a genuinely different and cleaner frontier than the raw infinite-operator collap
 Rodgers–Tao/criticality) supplied the missing coercivity, exactly as the SuperPRISM predicted. This is the
 first structural crack in C2's wall. NEXT: the core Schur-complement positivity uniform in (t→0, c→∞) — the
 tradeoff between core size ~1/√t and the collapse rate.
+
+## §34b — t>0 margin decays MILDLY (c^{-0.3}), not plateau: wild collapse → tame collapse
+c-trend of λ_min(τ(t)), fixed t>0: t=1e-2 → 9.5e-3,4.8e-3,2.9e-3,1.8e-3,1.3e-3 (c=14→3200), log-log slope
+−0.37; t=1e-1 slope −0.26. So the t>0 margin still → 0 as c→∞ (the low-freq CORE collapse persists — DBN
+coercivity fixed only the tail), BUT it is now a MILD BOUNDED-exponent power law (~c^{-0.3}) vs t=0's WILD
+c^{-p(N)}, p(N)~N^0.62 UNBOUNDED (→1e-64). Qualitative change: wild/super-exponential collapse → tame
+polynomial. Not a proof (margin still →0 = RH is the boundary), but the collapse is domesticated and the
+difficulty isolated to a log(c)-dimensional low-freq core with a coercive tail. This is the strongest
+structural insight of the session, and it came straight from the physics (DBN/Rodgers–Tao/criticality)
+angle. DECISIVE next test: is the t>0 exponent BOUNDED in N (tame) vs t=0's growing p(N) (wild)? If bounded,
+qualitative separation confirmed.
