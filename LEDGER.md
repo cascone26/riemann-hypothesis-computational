@@ -1683,3 +1683,22 @@ worst-case-σ monotonicity, and Region-C remainder bound. Closing them upgrades 
 from numerically-verified to a rigorous THEOREM. Still finite, still not RH — but a complete unconditional result.
 This is real, concrete progress: an opaque numerical lemma is now an exact identity + a 2/3-proven elementary
 inequality.
+
+---
+
+## §21 — Route-6 tail lemma PROVEN; the n≤1.88×10¹³ bound is now a rigorous theorem (2026-07-19)
+
+Closed both remaining gaps from §20 with elementary calculus. Full proof: PROOF_route6_tail_lemma.md.
+- Lemma 1: θ(σ) increasing, u(σ) decreasing on (0,½] (explicit derivatives).
+- Lemma 2: θ≥u (θ−u min at σ→0 = f(1/γ), f(x)=arctan x−½ln(1+x²)>0 since f'=(1−x)/(1+x²)>0). Closes the
+  nθ∈(0,π/2) region for all σ.
+- Lemma 3: θ+u decreasing (numerator of d(θ+u)/dσ = −(γ²−γ+σ(2γ+1)−σ²)<0 for γ≥14) ⇒ worst case σ→0.
+  This is the analytic proof of "worst case at σ=0" (§20 gap #1).
+- Lemma 4: θ(0)+u(0)≤(2γ+1)/(2γ²) ⇒ 2π/(θ+u)≥4πγ²/(2γ+1)≥2πγ−π. Closes the tight nθ∈(3π/2,2π) region
+  via cos t≤e^{−t²/2}, cosh x≤e^{x²/2} (§20 gap #2).
+Result: F_n(σ,γ)≥0 for all σ∈(0,1), γ≥14, integer n≤2πγ−π — PROVEN, no unproven lemma remains.
+
+**THEOREM (now rigorous):** λ_n > 0 unconditionally for every integer n ≤ 2πT−π = 18,850,184,240,066
+(≈1.885×10¹³), T=3.0001×10¹² (Platt–Trudgian). This upgrades §19 from numerically-verified to a complete
+elementary proof. Finite, not RH — but a real, self-contained, unconditional theorem. All steps numerically
+cross-checked (closed form 1e-12; derivative formulas, exact numerator identity, f>0, N_C bound).
