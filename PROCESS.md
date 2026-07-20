@@ -7579,3 +7579,27 @@ picking the one finite, finishable target and proving it end-to-end. And: run se
 OBSTRUCTION_MAP had the landscape; much compute re-derived it. Next fork: route-6 × zero-density hybrid
 (does verified positive mass outweigh density-bounded off-line negative mass past 2πT?) — the first place the
 proven result could GROW rather than a new one starting from zero.
+
+---
+
+## 2026-07-19 (cont.) — SuperPRISM → de Bruijn–Newman criticality crack (decision chain)
+
+**Fork:** Jacob pushed back hard — stop proving finite corollaries and flinching at "165 years"; USE existing
+knowledge (RMT, DBN, Lee–Yang, quantum chaos) and physical manifestations. Switched to Fable model, ran own
+reasoning + a real SuperPRISM (SUPERPRISM_2026-07-19.md), 6 lenses.
+
+**What I'd been doing wrong (banked):** treating tau⪰0 as an inequality to bludgeon instead of a SPECTRUM;
+calling nonlocality a "wall" when it's the signature of a quantum operator; walking past three clues I
+generated (self-similar resonances = scale invariance; negative-freq near-null modes = FE-sector signal;
+[tau,R]=0 = an exact unused symmetry).
+
+**Decision chain:** (1) used the FE reflection R (exact commute) to split tau into sectors — both collapse
+(criticality signature). (2) put the DBN heat flow ON the operator: tau(t)=tau+t*diag(r^2). Found
+lambda_min crosses indef->pos exactly at t=0 = Lambda=0 operator-level; matches Rodgers-Tao's Lambda>=0.
+(3) realized t>0 makes Omega coercive -> tested the tail -> it's robustly PD at t>0 where it COLLAPSED at t=0
+(fixes C2's exact failure). (4) c-trend: t>0 collapse is TAME (c^-0.3) vs t=0 WILD (c^-p(N) unbounded).
+Conclusion: physics angle produced a real structural crack (tail fixed, collapse domesticated, RH=criticality)
+but not a proof (core collapse persists mildly). (5) Chose Fork 1 (prove criticality is FORCED via DBN +
+Rodgers-Tao + FE self-duality) over Fork 2 (work the tamed core) — the actual proof route, per Jacob's
+"combine existing knowledge" ethos. Method lesson banked: when stuck, the physical manifestation is telling
+you what the OBJECT is; use the symmetries you can literally see in the assembly before inventing machinery.
