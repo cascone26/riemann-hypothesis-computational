@@ -3599,3 +3599,29 @@ Phase 1 infrastructure is 75% complete (3/4 increments). Increment 4 (Wright/Lea
 
 After Phase 1 complete, Phase 2 (parallel formal verification + lemma cache + cross-validation) can begin.
 
+
+---
+
+## Session 2026-07-19 — engine fix, full τ structural map, plan executed, route-6 quantified
+
+**Engine:** fixed the autonomous daemon (was inert 956 cycles — Ollama TUI garbled generation JSON + seed
+code absent on Olympus). Now: HTTP-API generation, smoke+repair gate, real-τ-directed, crux-directed. Free,
+running on Olympus. See ENGINE_STATUS.md.
+
+**τ structural map (LEDGER §10–§17):** margin law c^(−p(N)), p(N)~N^0.62; A+B indefinite with a FIXED
+low-frequency negative band (n_neg~1.8 log c); √τ local; self-similar zero resonances; Q_A~ln ω. Four
+reduction strategies (finite core+tail C2, fixed local √τ limit B2, continuous inequality A, per-zero
+renormalization C4) ALL fail on one fact: RH positivity is GLOBAL, non-localizable, non-separable.
+
+**RH_SOLVE_PLAN.md** written and executed through rungs 1–2. Main-line finite reduction REFUTED (recorded).
+
+**Vector D scoped** (VECTOR_D_FUNCTION_FIELD.md): our τ = the intersection-form slot; gap = missing F₁ base
+object Spec ℤ ×_{F₁} Spec ℤ (Connes–Consani/Deninger, open). Probe #1: hard-Lefschetz/sl₂ backbone NOT in τ.
+
+**Route 6 QUANTIFIED (§19):** λ_n > 0 unconditionally for **n ≤ 1.88×10¹³** (Platt–Trudgian verified height
+T=3.0001×10¹², tail-safety lemma F_n≥0 for n<2πγ verified). Strongest concrete unconditional Li bound;
+finite, not RH; lemma is a clean remaining analytic target. Route 7 already mapped (41.7%, barrier θ<4/7).
+
+**Overall:** tractable attack space mapped and exhausted this session; a genuinely new idea (or the F₁ object,
+or proving the route-6 tail lemma + pushing verification height) is what remains. All REPORT-tier; no proof.
+Search-before-build note: OBSTRUCTION_MAP already had the analytic landscape — read it FIRST next session.
