@@ -1606,3 +1606,28 @@ mapped the operator and ruled out the tractable-looking shortcuts.
 transport — the only route whose positivity is also global/geometric, matching RH's character), and genuinely
 new global analysis (a single global inequality, not a reduction). The autonomous engine continues as a free
 breadth sensor. Recorded honestly at REPORT tier; no proof, real structural map.
+
+---
+
+## §18 — Vector D scoped; search-before-build found the landscape already mapped (2026-07-19)
+
+Started Vector D (function-field/Hodge transport). FIRST ran search-before-build (should have at session
+start): the repo's `OBSTRUCTION_MAP.md` already maps the full analytic toolkit — 7 routes, all reduce to ★
+(A+B ≥ P), all a GLOBAL Diophantine constraint. This session's §10–§17 compute independently re-derived
+routes 4 (A+B indefinite, low-n negative modes) and 5 (every operator certificate reduces to Weil) — solid
+confirmation, not new ground. Prior Track-2 work (`connes_decisive_v3.py`, [[connes-decisive-diagnostic]])
+already established the non-circular Connes build and that only two non-circular levers remain: (i)
+unconditional coercivity, (ii) Hermite–Biehler/Pick.
+
+Vector D is the ONE route not in that map (geometric, not analytic). Scoped in `VECTOR_D_FUNCTION_FIELD.md`:
+precise function-field→number-field dictionary; our τ sits in the "intersection form" slot; the exact gap is
+the missing base object **Spec ℤ ×_{F₁} Spec ℤ** and its Hodge/intersection theory (Connes–Consani F₁ /
+Deninger cohomology — both open). Ran probe #1 (hard-Lefschetz/sl₂ backbone): NEGATIVE — A+B's negative modes
+are mixed-parity (no Hodge–Riemann sign pattern) and the frequency shift is not τ-self-adjoint (resid 1.38).
+So the geometric engine is not hiding in τ; the F₁ object is genuinely required.
+
+**Overall position after this session:** the tractable attack space is mapped and exhausted; a genuinely new
+idea is required. The only real unconditional partial handles in the repo are route 6 (verification-height →
+λ_n>0 for n≲2π·T, finite) and route 7 (Levinson proportion → ~41.7% on the line, barrier θ<4/7). Vector D is
+the deepest route matching RH's global/geometric character but needs a new geometric object we cannot build
+overnight. All this session's work is REPORT-tier structural mapping; no proof.
