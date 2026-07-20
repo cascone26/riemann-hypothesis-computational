@@ -1541,3 +1541,31 @@ approach plausible: characterize ONE resonance + the (here trivial, translation)
 yet a proof ingredient until C4 clears circularity and the diagonal→operator gap is bridged. Recorded at its
 true tier (REPORT). Revised plan: the renormalization/self-similarity line replaces the refuted finite
 reduction as the primary C-vector, gated on C4.
+
+---
+
+## §16 — B2: local √τ degenerates in the band; same wall as C2 (2026-07-19)
+
+Tested whether √τ converges to a fixed local limit operator M∞ (which would give manifest τ∞=M∞² ⪰ 0).
+Proof pointer: results/sqrt_tau_limit_B2.json. (Resolved a scare: B1b's 0.69 was mean|diag| over ALL modes,
+dominated by high-freq edge; B2's ~0.011 is the low-band value — no bug, different regions.)
+
+Result: in the critical low band [−8,8], √τ's band entries do NOT converge — they shrink ~c^(−0.19) toward
+0 (r=0 center: 0.0143→0.0106→0.0078→0.0065 for c=50→3200). So the local factor DEGENERATES in the band as
+c→∞; there is no single fixed M∞ making positivity manifest in the critical region. High-frequency √τ is
+O(1) and may stabilize, but that region isn't where positivity is delicate.
+
+**Convergence of obstructions:** B2 and C2 hit the SAME wall — the critical structure (the near-cancellation
+in the band) does not stabilize or localize as c→∞, because the difficulty is spread over the infinite tower
+of zeros (self-similar, §15). Neither a finite core (C2) nor a fixed local factor (B2) closes it.
+
+**Implication for the plan.** The two compute-heavy leads (Vector B fixed-limit, Vector E finite-core) are
+both blocked by the same infinite-tower structure. The remaining live directions are hard-analytic /
+structural and match that structure:
+  - Vector A: an explicit UNIFORM inequality Q_A ≥ Q_P (the actual Weil/Bombieri functional problem).
+  - Vector C-renorm: self-similarity (§15) is the ONLY lead structurally matched to "difficulty spread over
+    infinitely many zeros" — renormalization is the natural tool for a self-similar infinite structure.
+    Gated on C4 (circularity: does an off-line zero break the template?).
+  - Vector D: function-field transport (deepest, longest).
+Next real step: C4 (circularity test of the self-similarity lever) — it decides whether the one
+structurally-matched direction is a genuine constraint or a re-expression of the explicit formula.
