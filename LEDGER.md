@@ -6910,3 +6910,26 @@ science is DONE (§184-198: wall → finite 4×4 PD, numerically certified posit
 NEXT (§199.3): rewrite arb_entry with a fast, interval-correct g_arb and a rigorous-quadrature-with-error-bound (or split
 smooth/kink: closed-form the |t| & prime pieces vs cos-overlap, acb-integrate only the smooth boundary+Lerch parts).
 Tools: arb_screw.py (validated), arb_entry.py (WIP), matrix4x4.py. Cross-links §198, §184-197, feedback_verify_before_ship.
+
+## §199.3a — 1D-integral reduction VALIDATED; term-by-term closed-form architecture for the rigorous build (2026-07-23)
+
+Validated (reduction_check.py, mpmath quad, no sympy): each even-block entry Q[k,l] = ∫_0^{2a} g(t)[C_kl(t)+C_lk(t)]dt
+(C=cos-overlap) reproduces mpmath weil_matrices to 2e-7..1.5e-4 (the two quadratures agreeing) across all 10 entries of
+the 4×4 (k,l∈{1,3,5,7}) at a=0.549. The reduction the rigorous Arb build rests on is CORRECT. Handle. (sympy symbolic
+integration was ABANDONED — it hung >18min on the exp×trig products; wrong tool.)
+
+KEY ARCHITECTURE INSIGHT for the rigorous engine (avoids BOTH the sympy hang AND the Lerch-in-quadrature timeout):
+make Q[k,l] a SUM OF ELEMENTARY INTEGRALS, each closed-form + Arb-evaluable, NO numerical quadrature:
+ • D_kl(t) = C_kl+C_lk = a finite sum of cos(ω t+φ) terms (product-to-sum; ω=(k±l)π/2a) — code directly.
+ • boundary/arch-core/prime parts: ∫ [t, e^{±t/2}, (t−log2)] · cos(ωt+φ) dt = standard elementary antiderivatives.
+ • THE LERCH TAIL, term-by-term: ¼∫ e^{-t/2}Φ(e^{-2t})D dt = ¼ Σ_{n≥0} 1/(n+¼)² ∫ e^{-(2n+½)t} D(t) dt — each term an
+   ELEMENTARY ∫e^{-αt}cos(ωt+φ)dt (α=2n+½), summed with a rigorous geometric-type tail bound. This SIDESTEPS the slow
+   Lerch-near-t=0 evaluation (the §199.2 timeout cause) — no Φ(z) with z≈1 ever evaluated inside an integrand.
+⟹ every entry = a finite sum of closed-form elementary integrals + one rigorously-bounded series ⟹ Arb intervals with
+NO quadrature, NO special-function-in-loop cost. This is the clean, fast, fully-rigorous path.
+
+STATE: reduction validated; rigorous architecture designed (term-by-term closed form). NEXT (§199.3b): implement the
+elementary-antiderivative Arb evaluators (∫t·cos, ∫e^{-αt}cos, ∫(t−log2)·cos over [0,2a] / [log2,2a]) + the Lerch series
+with tail bound → rigorous Arb 4×4 → LDL^T pivots certified >0 at a=0.549. Then the continuum (a-interval or derivative
+bound) + the d>4 tail (§197). Well-scoped careful coding; Mac-local. Tools: reduction_check.py, arb_screw.py.
+Cross-links §198, §199.1, §199.2, feedback_verify_before_ship.
