@@ -1,0 +1,11 @@
+§190 total-negativity relay | dps=40 K=24 M=600
+     a  #neg  Σ|neg λ|(arch)    budget B   Σ|neg|/B    full λmin
+  0.45     2       0.1970331    0.490129      0.402     4.071e-5
+ 0.549     2       0.4815891    0.490129    0.98258     2.648e-5
+   0.6     2         0.63993     1.12441    0.56912     2.317e-5
+ 0.693     2       0.9320636     1.12441    0.82893      2.02e-5
+  0.75     2        1.108898     1.47099    0.75385     1.718e-5
+ 0.805     2        1.277403     2.19075    0.58309     1.686e-5
+  0.85     2        1.414098     2.19075    0.64549     1.599e-5
+
+READ: Σ|neg λ|/B ~1 & →1 at each prime entry ⟹ EXACT relay (Σ prime norms = Σ arch negativity). Wanders ⟹ alignment-limited.

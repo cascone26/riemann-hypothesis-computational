@@ -6629,3 +6629,35 @@ proof."
 rides ~1 (budget just covers TOTAL negativity) with the next prime entering as it → 1, the relay is the exact anatomy.
 Also connect to Chebyshev: B(a)=Σ_{n≤e^2a}Λ(n)/√n ~ 2e^a (PNT) — if arch total-negativity ~ 2e^a too, the relay bound
 is arch-kernel ≤ a classical prime sum (tractable). Tools: relay_test.py. Cross-links §184-188, §122, route 6.
+
+## §190 — sharp relay: TIGHT at the first prime (0.983), loosens after; positivity is alignment-limited not budget-limited (2026-07-23)
+
+Sharp relay test: TOTAL arch negativity Σ|neg λ|(a) vs cumulative budget B(a)=ΣΛ(n)/√n across p=2..5 thresholds
+(relay_total.py, mpmath dps=40). Proof pointer: results/relay_total.log. Handle.
+
+   a      #neg   Σ|neg λ|(arch)   budget B    Σ|neg|/B    full λmin
+   0.45   2      0.19703          0.49013     0.402       4.07e-5
+   0.549  2      0.48159          0.49013     0.98258     2.65e-5   ← p=2 budget 98.3% consumed as p=3 enters
+   0.60   2      0.63993          1.12441     0.569       2.32e-5   (budget jumped: p=3 in)
+   0.693  2      0.93206          1.12441     0.829       2.02e-5   ← peak before p=4
+   0.75   2      1.10890          1.47099     0.754       1.72e-5
+   0.805  2      1.27740          2.19075     0.583       1.69e-5   (budget jumped: p=5 in)
+   0.85   2      1.41410          2.19075     0.645       1.60e-5
+
+FINDINGS (Handle, rule-10 accurate):
+ • THE FIRST-PRIME RELAY IS ~EXACT: at a=0.549 (p=3 entry), Σ|neg λ|/B = 0.983 — the p=2 norm-budget is ~exactly
+   consumed by the total arch negativity right as the next prime switches on. Confirms the whole §184-189 story: the
+   first prime sets the criticality, and its budget is spent precisely at the hand-off.
+ • BUT THE RELAY LOOSENS at later primes: peak ratio declines 0.983 (p=3) → 0.829 (p=4) → ~0.6 (p=5). Reason: the arch
+   keeps only #neg=2 negative modes in this a-window while the budget grows with each new/bigger prime (Λ(5)/√5=0.72),
+   so the budget runs AHEAD after the first prime. ⟹ NOT a globally-exact "Σ budget = Σ negativity" law.
+ • POSITIVITY MAINTAINED throughout (full λmin >0, monotone shrinking 4.1e-5→1.6e-5 toward the eventual e^{−4πc}). The
+   persistent tight margin is the §188 ALIGNMENT near-cancellation, NOT budget-exhaustion — confirmed: budget ≥
+   negativity comfortably at higher primes, yet the effective margin still shrinks (alignment tightens).
+
+⟹ HONEST CLOSE of the relay line: the relay is a real FIRST-PRIME mechanism (tight, 0.983), consistent with everything
+§184-189, but the global positivity is ALIGNMENT-limited, not budget-limited. The durable §184-190 result: the crux is
+compressed to a FINITE, ZERO-FREE, ALIGNMENT-CRITICAL object in the p=2 zone (arch's 2 neg modes + the w·involution,
+margin 2.5e-5) — NOT RH-equivalent, provable-in-principle. The concrete open target stands: prove p=2-only positivity
+(extend Yoshida past log 2). The relay gave the mechanism-insight (first prime tight) but not a proof shortcut; the
+proof is the alignment inequality (§188) as an explicit hard-analysis estimate. Cross-links §184-189, §122, route 6.
