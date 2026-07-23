@@ -1,0 +1,28 @@
+§179 CvS LDL^T pivots  c=13 N=80 dps=90 T=400  D=81  L=2.5649  [1427s]
+  #pivots<=0 : 0   (must be 0 for PD / a positivity certificate)
+  min log10|pivot| = -10.485   Fuchs-predicted log10 λmin = -59.565   (match ⇒ smallest pivot IS the near-null)
+  Σ log10|pivot| (=log10 det) = -289.592
+  smallest 12 log10|pivot|: ['-10.49', '-10.43', '-10.08', '-9.74', '-9.74', '-9.70', '-9.42', '-9.42', '-9.37', '-9.23', '-9.13', '-9.10']
+  #|pivot|<1e-12 of full: 0   (near-kernel size — cascade is ONE mode, a big near-kernel would mean NO single-pivot cascade)
+
+  DIAGONAL-ORDER pivot descent (does it telescope like the §176 cascade?):
+     i  log10|d_i|  sign
+     0      -1.375     1
+     1      -5.026     1
+     2      -6.916     1
+     3      -8.357     1
+     4      -9.421     1
+     5      -9.424     1
+     6      -8.893     1
+     7     -10.428     1
+   ...
+    75       0.278     1
+    76       0.579     1
+    77       0.426     1
+    78       0.309     1
+    79       0.406     1
+    80       0.559     1
+
+READ: (1) all pivots>0 = independent positivity certificate at this c. (2) if min pivot ≈ Fuchs λmin AND
+a SINGLE pivot carries it (small near-kernel), the near-null is one pivot ⇒ next: does that pivot's Schur
+formation telescope per-prime like §176. (3) large near-kernel ⇒ cascade≠pivots, pivot to zero-density (§123).

@@ -6252,3 +6252,36 @@ mpmath-precision prolate k_λ to rule out float64-prolate degradation at large b
 (3) explain or reproduce the c=10 high outlier (is it prime-content-dependent? pp≤10 adds 9=3²). Only then attempt a law.
 Minor: bridge_law.py dps_override crashes if len(dps-list)<len(N-list) (got the N=90 datum first — cosmetic). Model: Opus.
 Tools: bridge_law.py, bridge_diag.py, klambda_check.py, fit_178d.py. Cross-links §178, §178b, §178c, §178d, §6.6.
+
+## §179 — cascade is NOT the LDL^T pivot structure: near-null is DELOCALIZED, no single pivot carries it (2026-07-23)
+
+Tested the ATTACK_QUEUE-A1 / step-back hypothesis: is the §176 prime cascade the pivot structure of the CvS Weil
+matrix's LDL^T (⇒ a constructive LOWER-bound positivity certificate, not just an upper-bound eigenvector story)?
+Built LDL^T on the SAME CvS even-sector matrix as cvs_gate/bridge (cvs_ldlt.py), at cascade-adequate dps (the prior
+A1 tool ldlt_structure_mine.py ran the Groskin-tau parametrization at dps=60 for c=14 = noise-starved below the true
+near-null — not comparable). Proof pointers: results/ldlt_cvs_c8.log, results/ldlt_cvs_c13.log.
+
+RESULT (Handle):
+   c    smallest log10|pivot|   Fuchs log10 λmin   pivots≤0   #|pivot|<1e-12   log10 det (=Σ log pivots)
+   8         −7.72                  −33.23             0             0              −79.73
+  13        −10.49                  −59.57             0             0             −289.59
+ • ALL pivots > 0 at both c (a genuine positivity certificate at this N) — but it's the standard "det>0 via pivots."
+ • The near-null eigenvalue (10^−33 / 10^−60) does NOT appear as a pivot: smallest pivot is 25–49 orders TOO LARGE,
+   and NOTHING is below 1e-12. det = Π(pivots) DOES capture the near-null (det tiny), but it's DELOCALIZED — no single
+   Schur complement isolates it. Min pivot scales ~10^(−0.56c) (e^{−1.3c}), unrelated to λmin's e^{−4πc}.
+ • ⟹ the §176 cascade (a per-prime Hellmann-Feynman decomposition of the near-null EIGENVECTOR's Rayleigh quotient)
+   has NO analog in the natural-ordering LDL^T pivots. The hoped-for "cascade = pivot telescoping ⇒ lower bound" FAILS.
+
+STRUCTURAL TAKEAWAY: this confirms from a new angle that the cascade is intrinsically a VARIATIONAL / UPPER-bound
+object (eigenvector expectation bounds λmin from above), NOT a factorization / LOWER-bound object. That is precisely
+WHY the cascade — however clean — stays DESCRIPTIVE, not proof-shaped. Sharpens §122's verdict: the operator-positivity
+basin's beauty is all on the upper-bound side; the wall (λmin>0 for all λ, a lower bound) has no handle here.
+(Caveat: only the NATURAL index ordering tested; an exotic near-null-revealing ordering isn't ruled out, but chasing
+that is the open-ended polishing the step-back plan flagged to avoid. Kill criterion met.)
+
+STRATEGIC PIVOT (executing the §123 fork's designated fallback): the LDL^T-as-cascade-bridge line is closed. Per the
+step-back plan's own kill criterion ("pivots don't mirror the cascade → execute the §123 pivot"), the next path is the
+ZERO-DENSITY basin — Guth-Maynard 2405.20552 (Dirichlet-poly large-value → improved N(σ,T)) + Levinson-Conrey mollifier
+(how ≥41% on-line is proven; where the Cauchy-Schwarz loss sits). Genuinely DIFFERENT obstruction (analytic, not
+positivity-at-limit), queued since §123, never actually entered. Sources already pulled: membrane_pulls/gm/, /lc/.
+Tools: cvs_ldlt.py. Cross-links §122, §123, §176, §176c, ATTACK_QUEUE A1.
