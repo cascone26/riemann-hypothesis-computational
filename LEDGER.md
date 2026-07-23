@@ -6358,3 +6358,36 @@ new idea" the verified wall demands. (c) Consolidate durable deliverables: the �
 of the near-null, §175-flagged unpublished) + the comprehensive obstruction map + tools. Per riemann-goal (prove RH,
 not partial results): (a) and (b) are the only goal-relevant moves; (c) is banking, not solving.
 Cross-links §35, §47e, §122, §124, §125, §126, §180, OBSTRUCTION_MAP, riemann-goal, feedback_riemann_check_first.
+
+## §182 — WALL ANATOMY (Fable deep-analysis): saturation reframing, cascade = Euler-product-through-E, the Wall Invariant, and ONE genuinely fresh vein (crystalline-measure rigidity) (2026-07-23)
+
+Deep-analysis pass (no compute). Full document: **RH_WALL_ANATOMY.md** (new, root). Contents in brief:
+ 1. ★ SATURATION REFRAMING: "primes can't conspire" is backwards — §176 shows they conspire PERFECTLY (58 orders);
+    RH = the conspiracy saturates positivity exactly and never overshoots. The question is what stops it at zero.
+ 2. ★ CASCADE DEMYSTIFIED: range(E) ⊂ radical of the global Weil form UNCONDITIONALLY (E inserts a ζ factor on the
+    Mellin side; radical = ζ-multiples). k_λ = the radical's finite-window shadow; its failure-to-be-radical = the
+    prolate angle (Amrein-Berthier), size = Fuchs e^{−4πc}. ⟹ the §176 cascade = the PARTIAL EULER PRODUCT evaluated
+    on the near-radical vector; §168 all-or-nothing = the Euler product's. The 58-order "miracle" = Poisson + Euler +
+    uncertainty, each rigorous; the RH content is NOT in the cascade. CHECKABLE PREDICTION logged (partial Euler
+    products vs cascade residuals — future Handle).
+ 3. ★ THE WALL INVARIANT (compression of §1-181): every classical route ends at a required INEQUALITY between a
+    prime-local and a zero-global object; the only prime↔zero identity is the explicit formula, which is sign-BLIND.
+    A real proof needs a SECOND, SIGN-CARRYING prime↔zero bridge. (Fresh schemes tried this pass — prime-induction,
+    form-domination, subspace-overlap — all terminate at the invariant within steps, incl. via the near-radical's
+    Mellin support sitting AT the zeros ⇒ overlap = EF correlation, circular one level up.)
+ 4. PROOF-SHAPE SPEC (all constraints verified): global; no ζ-specific structure (χ₄ boundary-saturation); not
+    statistical; LOWER-bound mechanism (§179); exponentially sharp in λ (margin e^{−4πλ²} kills fixed-slack proofs);
+    and constraint (vi): the sign-carrying bridge. Candidate sign-carrying structures triaged: SOS=target itself;
+    H-P no candidate; total positivity=used for the WRONG direction (Rodgers-Tao Λ≥0); Lee-Yang=ξ lacks coeff
+    positivity; Jensen d≤8; crystalline-measure rigidity = UNMINED.
+ 5. TWO UNMINED VEINS: (a) ★ **crystalline-measure / Fourier-quasicrystal RIGIDITY** (Meyer; Kurasov–Sarnak 2020-21
+    — whose FQ constructions pass THROUGH Lee-Yang polynomials, connecting two bridge candidates; Olevskii–
+    Ulanovskii). Prime comb ↔ zero comb are an EF Fourier pair; the rigidity question "must the zero comb's support
+    be real, given the prime comb's form" is a SUPPORT/SIGN statement, not counting — the right CLASS for constraint
+    (vi). Verified fresh: zero LEDGER mentions (quasicrystal appears only as the 07-18 numerical structure-factor
+    probe — different question). (b) Yoshida/small-λ unconditional positivity: mine WHERE the proof breaks as λ grows
+    — localize the wall to one explicit failing estimate. Bounded reading task.
+ HONEST: no proof, no near-proof; the sharpest map the project has + the first genuinely NEW direction (5a) since
+ §125 closed the basin survey. NEXT: (i) Report-tier read of Kurasov–Sarnak/Meyer/Olevskii–Ulanovskii against the
+ rigidity question; (ii) Yoshida break-mining; (iii) the §2 checkable prediction when compute resumes.
+ Cross-links §122, §125, §168, §176, §178, §179, §180, §181, OBSTRUCTION_MAP, RH_WALL_ANATOMY.md.
