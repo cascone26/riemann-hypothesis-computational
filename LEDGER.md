@@ -6861,3 +6861,28 @@ remaining step is a genuine but FINITE hard-analysis proof of a 4×4 matrix ineq
 NEXT (§198, hard analysis): write the 4×4 even-mode Weil matrix entries in closed form (arch = digamma-kernel double
 integrals of the low modes; prime = Λ(2)/√2 × the modes' cos-transform at log2), then attack the 4 Sylvester minors +
 the tail. Tools: lowdim_coercivity.py, fundamental_weil.py. Cross-links §191-196, §176, §122, route 6.
+
+## §198 — the 4×4 even Weil block is PD: all 4 Sylvester minors >0 across the window (numerically) (2026-07-23)
+
+Extracted the 4×4 even-mode (k=1,3,5,7) Weil block, Mass-whitened, and its 4 leading principal minors (matrix4x4.py,
+mpmath dps=40 M=800). Proof pointer: results/matrix4x4.log. Handle.
+   a       minor1     minor2     minor3     minor4(det)
+   0.44    0.008286   9.554e-5   1.076e-5   1.025e-5    ALL>0 (PD✓)
+   0.48    0.005165   2.163e-5   1.529e-6   1.647e-6    ALL>0
+   0.52    0.001592   1.961e-6   2.232e-7   2.535e-7    ALL>0
+   0.549   4.458e-4   1.102e-7   1.026e-7   3.454e-8    ALL>0
+
+FINDING: all four Sylvester minors are STRICTLY POSITIVE at every a across (0.44, ½log3) ⟹ the 4×4 even Weil block is
+POSITIVE-DEFINITE ⟹ p=2-only positivity holds (mod the small d>4 tail, §197). The minors shrink toward the tight end
+(det=3.45e-8 at a=0.549, the near-null-sensitive minor) but stay bounded away from 0 at each finite a. The Sylvester-
+criterion proof structure WORKS numerically — a finite, zero-free, 4-condition inequality.
+
+STATE: NUMERICAL confirmation of the finite reduction (§184-198). This is NOT yet a rigorous proof — needs (i) Arb
+INTERVAL certification of the 4 minors across the CONTINUUM a∈(0.42,½log3) (grid + Lipschitz/derivative bound between
+grid points, Groskin-style), and (ii) a rigorous tail bound for the d>4 modes. Both are Mac-local, finite, computer-
+assisted-provable. No Olympus, no zeros, no operator limit — the wall reduced to a certifiable finite matrix inequality.
+
+NEXT (§199): port the even 4×4 (or 6×6 for tail margin) to Arb intervals; interval-certify all minors >0 on a fine
+a-grid + bound the a-derivative to fill gaps ⟹ a rigorous computer-assisted proof of p=2-only positivity (= the first
+unconditional extension of Yoshida past the first prime). Then generalize the machine to p=3,5,… (the §189 relay).
+Tools: matrix4x4.py, arb_ldlt_certify.py (Groskin Arb). Cross-links §184-197, §122, route 6, feedback_verify_before_ship.
