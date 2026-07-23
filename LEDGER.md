@@ -6391,3 +6391,42 @@ Deep-analysis pass (no compute). Full document: **RH_WALL_ANATOMY.md** (new, roo
  §125 closed the basin survey. NEXT: (i) Report-tier read of Kurasov–Sarnak/Meyer/Olevskii–Ulanovskii against the
  rigidity question; (ii) Yoshida break-mining; (iii) the §2 checkable prediction when compute resumes.
  Cross-links §122, §125, §168, §176, §178, §179, §180, §181, OBSTRUCTION_MAP, RH_WALL_ANATOMY.md.
+
+## §183 — crystalline-measure rigidity (the §182 fresh vein) = WALL FACE, reduces to RH two ways; unifies with Jensen; kills the Shaughnessy "proof" (2026-07-23)
+
+Read the actual 2020-2026 crystalline/Fourier-quasicrystal (FQ) literature (3 parallel reader-agents + direct WebFetch),
+against the §182 rigidity question: does crystalline rigidity force the zero comb's support real (RH), given the prime
+comb? Report-tier. Sources (arXiv): Kurasov-Sarnak 2004.05678; Alon-Cohen-Vinzant 2303.03201; Alon-Kummer-Kurasov-
+Vinzant 2407.11184 (Invent. 2025); Arias de Reyna 2402.10604; Favorov 2311.02728/2401.01121; Shaughnessy 2410.03673.
+
+VERDICT: NOT a crack — a precisely-located WALL FACE. Reduces to RH by TWO independent routes, both already in our map:
+ 1. CIRCULAR INPUT. "The zero comb is a Fourier quasicrystal" is EQUIVALENT to RH (Arias de Reyna 2402.10604: RH ⟺
+    μ=−ΣΛ(n)n^{-½}(δ_{log n}+δ_{-log n})+2cosh(x/2)dx is tempered). So FQ-ness cannot be a HYPOTHESIS — it is the thesis.
+ 2. CLASSIFICATION → LEE-YANG/JENSEN (the structural reduction). The PROVEN FQ rigidity is: every ℕ-valued Fourier
+    quasicrystal ⟺ a Lee-Yang (stable) polynomial, with support REAL + DELONE (uniformly discrete) [Kurasov-Sarnak +
+    Alon-Cohen-Vinzant classification]. The ζ zeros have VARIABLE density (~log T/2π) ⇒ NOT Delone ⇒ NOT in the
+    classified FQ family (confirmed: no construction yields the zeros as an FQ). To bring them in = ξ must be a limit
+    of Lee-Yang/stable polynomials = the PÓLYA-JENSEN program = our Track 3, STUCK at d≤8. ⟹ the crystalline face and
+    the Jensen face are the SAME WALL (new unification: FQ-classification IS Lee-Yang-real-rootedness).
+ 3. THE EXTANT "PROOF" (Shaughnessy 2410.03673, v9 Jan 2026, claims Thm A.9 = unconditional RH). GAP LOCATED (direct
+    read): coefficients c_m(L)~p_L^{β_m}/|ρ_m| grow at different rates if β varies; Thm A.3 ASSERTS (never derives)
+    that exact reconstruction "at all scales" requires UNIFORM amplitude scaling (O(1) coeffs). But the explicit-
+    formula reconstruction is exact for ANY β (sign-BLIND) — so O(1)/uniformity is NOT forced by self-duality; it is a
+    SEPARATE condition = RH itself (identical to our §47d/e: g_λ boundedness ⟺ all zeros real ⟺ RH). Boundedness
+    smuggled in. Unrefereed, AI-assisted, 9 versions. Not a proof.
+
+WHY (Wall Invariant §182 confirmed AGAIN): crystalline self-duality = the explicit formula = sign-blind. Asking it to
+force real support is asking the sign-question the EF structurally cannot answer. The "bridge" is the EF once more.
+
+WHAT'S GAINED (real, not nothing): (a) the currently-fashionable crystalline-RH direction is CLOSED for us, precisely,
+so no re-chase; (b) NEW UNIFICATION — crystalline rigidity and Jensen-Pólya are one wall (FQ ⟺ Lee-Yang), collapsing
+two OBSTRUCTION_MAP faces into one; (c) the genuinely-open regime is now named: ζ zeros are a NON-UNIFORM (variable-
+density) crystalline object OUTSIDE the classified Delone FQ theory — IF a proof lives here it needs NEW rigidity math
+for variable-density measures with atomic transform, which does not exist. That is the honest "where new math must go."
+
+STANDING STATE after §183: §182's first-fresh-vein-since-§125 closed as a wall face. Every identifiable route — operator
+(§122), zero-density (§180), DBN (§47e), LeClair (§125), crystalline (§183, =Jensen) — reduces to RH via the sign-blind
+EF. The §125/§181 conclusion is now maximally earned: a solution requires a GENUINELY NEW sign-carrying prime↔zero
+bridge beyond the explicit formula; none exists in the current literature. Remaining bounded probes: §182(5b) Yoshida
+small-λ break-mining (localize the wall to one explicit failing estimate); the §2 cascade↔partial-Euler-product
+checkable prediction. Cross-links §47e, §122, §125, §180, §181, §182, OBSTRUCTION_MAP, RH_WALL_ANATOMY.md §4-5.

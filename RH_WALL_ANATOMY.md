@@ -87,7 +87,16 @@ Verified instances of the invariant (all in LEDGER):
 
 ## 5. The two genuinely unmined veins found by this analysis
 
-**(a) ★ Crystalline-measure rigidity (fresh, 2020s, never in our LEDGER).** The prime comb and the
+**(a) [RESOLVED §183 — WALL FACE, unified with Jensen. See LEDGER §183.]** Read the 2020-26 literature:
+"zero comb is an FQ" ⟺ RH (Arias de Reyna 2402.10604) = circular input; the PROVEN FQ classification
+(every FQ ⟺ a Lee-Yang polynomial, real+Delone support — Kurasov-Sarnak + Alon-Cohen-Vinzant 2303.03201)
+does NOT contain the variable-density ζ zeros, and to include them = ξ is a limit of Lee-Yang polys =
+Pólya-Jensen = Track 3 (d≤8). Olevskii-Ulanovskii assume Λ⊂ℝ (real support), no non-real→real forcing;
+Borcea-Brändén real-rootedness-preserving operators = Lee-Yang wall in operator form. Shaughnessy 2410.03673's
+RH "proof" smuggles boundedness (= RH, cf §47e). ⟹ crystalline rigidity IS the Jensen wall; the sign-blind EF
+is the only bridge again. NOT a crack. Original analysis retained below for provenance:
+
+**(a-orig) ★ Crystalline-measure rigidity (fresh, 2020s, never in our LEDGER).** The prime comb and the
 zero comb are (via EF) a Fourier-transform pair of tempered measures — a "Fourier quasicrystal"
 structure. There is a recent, ACTIVE rigidity literature (Meyer; Kurasov–Sarnak explicit FQ
 constructions from Lee-Yang polynomials; Olevskii–Ulanovskii uniqueness/classification) asking which
