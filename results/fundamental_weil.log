@@ -1,0 +1,10 @@
+§196 fundamental-mode Weil form  cos(πx/2a)=basis k=1   K=24 M=800
+      a     arch(cos)    prime(cos)     Weil(cos)   true margin Weil(cos)/margin
+  0.440     0.0378067    -0.0295211    0.00828557    4.54959e-5           182.12
+  0.480     0.0692918    -0.0641271    0.00516465    1.66501e-5           310.19
+  0.520      0.108599     -0.107007    0.00159223    1.52572e-5           104.36
+  0.549      0.141429     -0.140984   0.000445762    1.61366e-5           27.624
+
+READ: Weil(cos)=arch(cos)−|prime(cos)|. If Weil(cos) small-positive ≈ margin, the fundamental mode IS the near-
+minimizer & the crux is arch(cos)(a) > prime(cos)(a) — two explicit 1-var functions. If Weil(cos)≫margin, the
+drift correction (§195) matters and the true minimizer dips below the cosine — record which.

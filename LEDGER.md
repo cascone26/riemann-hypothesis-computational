@@ -6803,3 +6803,33 @@ NEXT (§196): (a) write arch(cos(πx/2a)) and prime(cos(πx/2a)) as explicit clo
 digamma/screw integral; prime = Λ(2)/√2 · |cos-transform at log2|²) and confirm the difference ≈ 2.6e-5; (b) attempt the
 coercivity lower bound over the even sector using the fundamental-mode structure. Tools: fixed_shape.py, flatlock_probe.py.
 Cross-links §193, §194, §176, §178, route 6.
+
+## §196 — the cosine shortcut FAILS: Weil(cos)≫margin; criticality is in the precise mode-mixture, not the dominant mode (2026-07-23)
+
+Computed the Weil form of the EXACT fundamental mode cos(πx/2a) (= even-block (1,1) entry; fundamental_weil.py, M=800).
+Proof pointer: results/fundamental_weil.log. Handle.
+   a      arch(cos)   prime(cos)   Weil(cos)   true margin   Weil(cos)/margin
+   0.44   0.03781     −0.02952     0.008286    4.55e-5       182
+   0.48   0.06929     −0.06413     0.005165    1.67e-5       310
+   0.52   0.10860     −0.10701     0.001592    1.53e-5       104
+   0.549  0.14143     −0.14098     0.000446    1.61e-5       28
+
+FINDING (rule-10, tempers §195): Weil(cos) is 28–310× LARGER than the true margin ⟹ the pure fundamental cosine is
+NOT the near-minimizer. The near-null is 96% cos by OVERLAP (§195) but its Rayleigh VALUE is set by the 4% correction:
+cos alone gives 0.008, the true minimizer threads to 1.6e-5. The criticality lives in the PRECISE mode-mixture (the §195
+"drift" is load-bearing, not a small correction) — there is NO single-explicit-function (cosine) proof shortcut.
+ • Positive note: arch(cos) and |prime(cos)| near-cancel to 3 digits even on the cosine (0.14143 vs 0.14098) — the
+   arch↔prime cancellation (§176/§194) is manifest on the explicit fundamental mode; both parts closed-form. But the
+   DEEP cancellation (to 1.6e-5) needs the tuned correction.
+
+⟹ CRUX FULLY PINNED (no shortcut): p=2-only positivity = a FINITE, ZERO-FREE, EVEN-SECTOR COERCIVITY LOWER BOUND —
+Weil(v) ≥ c₀>0 for all even v, worst case a finely-tuned near-cosine. This is the honest endpoint of the compute-driven
+characterization (§184-196): the century-old wall, in the first-prime window, is one explicit finite-dimensional
+coercivity inequality — every ingredient (arch digamma-kernel, the Λ(2)/√2 p=2 term) explicit, no zeros. Proving it is a
+genuine coercivity estimate (the tuned minimizer means it needs the full even-sector bound, not a test-vector plug-in).
+
+STATE: the compute characterization of the p=2 crux is COMPLETE. It is a finite even-sector coercivity inequality with
+a fully-mapped structure (2 parity sectors, 1 critical, near-cosine minimizer, arch↔prime cancellation, margin ~2e-5).
+The proof is now pure hard analysis — the even-sector coercivity constant. NEXT: attack that constant (the minimizer's
+explicit near-cosine form + the arch/prime closed forms give a concrete finite variational problem to bound below).
+Tools: fundamental_weil.py, flatlock_probe.py, parity_verify.py. Cross-links §176, §193-195, §122, route 6.
