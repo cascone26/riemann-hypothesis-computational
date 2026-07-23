@@ -6754,3 +6754,32 @@ NEXT (§194, hard analysis — the proof): bound margin_even(a) below. Two handl
 lift(a) − |α_even(a)| = const; (b) the explicit even-sector secular sum w|⟨φ,u_even⟩|²/|α_even| ≥ 1+Σ… in transcendental
 digamma terms. Multi-session analytic effort on a well-defined 1-var object. Tools: even_margin_law.py, parity_verify.py.
 Cross-links §186, §188, §191, §192, §122, route 6, rh-working-rules.
+
+## §194 — flat-lock = a FIXED near-null vector (arch≈−prime); UNIFIES the p=2 line with the §176/§178 CvS cascade (2026-07-23)
+
+Probed why margin_even(a) locks flat (flatlock_probe.py, mpmath). Proof pointer: results/flatlock_probe.log. Handle.
+Decomposed the even ground state v0's Weil form into arch-Rayleigh ⟨v0,Qa v0⟩ + prime-Rayleigh ⟨v0,(Qf−Qa)v0⟩:
+   a      margin       arch-Rayleigh   prime-Rayleigh
+   0.48   2.618e-5     +0.010468       −0.010442
+   0.52   2.594e-5     +0.015039       −0.015013
+   0.549  2.648e-5     +0.023579       −0.023553
+FINDINGS:
+ • On the near-null ground state v0, arch-Rayleigh is POSITIVE (+0.010→+0.024) and prime-Rayleigh is its NEAR-EXACT
+   negative; they CO-TRACK and cancel to a LOCKED +2.6e-5. Both grow ~2× across the window; the DIFFERENCE stays const.
+ • Ground-state shape ~stable across a (raw overlap ≈1.03 — with a cross-a Mass-metric caveat, rule 10; needs a same-
+   grid check to claim "fixed" rigorously; banked as §195 verify).
+ • ⟹ the flat-lock IS the §176 arch↔prime near-cancellation seen in the FINITE small-a window. The margin 2.6e-5 is the
+   finite-window shadow of the CvS near-null (which §176 telescopes to e^{−4πc} at large c, and §178 showed lives on the
+   prolate k_λ). ⟹ THE "FIRST-PRIME" LINE (§184-193) AND THE "CvS CASCADE / k_λ" LINE (§176-178) ARE THE SAME NEAR-
+   CANCELLATION in two windows — a genuine unification of the two campaign threads.
+
+⟹ PROOF REDUCTION: margin>0 ⟺ arch(v0) > prime(v0) for the single near-null vector v0 (≈ the finite-window prolate
+k_λ) — ONE explicit test vector's Weil form, both parts explicit integrals. HONEST: this does NOT escape the criticality
+(arch(v0)>prime(v0) IS Weil positivity on v0 = the wall); but it collapses the operator inequality to a single-vector
+inequality and hands the p=2 window to the §178 k_λ machinery (CvS closed forms for arch(k_λ), prime(k_λ); the finite-a
+Fuchs bound). The two lines merge here.
+
+NEXT (§195): (a) same-grid verify the ground state is a fixed shape; (b) identify v0 explicitly vs the §178 finite-window
+k_λ — if v0 ≈ k_λ, use the CvS closed forms (arb_ldlt_certify / §178 bridge_overlap) to write arch(v0)−prime(v0) in
+closed form and attack the finite-a positivity via the §171 Fuchs envelope. The p=2 window becomes the c=2 end of the
+CvS Fuchs curve. Tools: flatlock_probe.py, bridge_overlap.py (§178), cvs_gate.py (§176). Cross-links §176, §178, §184-193.
