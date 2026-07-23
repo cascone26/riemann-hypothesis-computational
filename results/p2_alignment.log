@@ -1,0 +1,17 @@
+§188 p=2 alignment | dps=40 K=24 M=600  w=Λ(2)/√2=0.49012907
+
+=== a=0.45  full λ_min=4.07069e-5  D=w−|α₁|=0.29863 ===
+  arch mode 0: α=-0.191499  +w-overlap p=0.770869  diag-lift α+w(2p−1)=0.0740222
+  arch mode 1: α=-0.00553411  +w-overlap p=0.717275  diag-lift α+w(2p−1)=0.207452
+
+=== a=0.5  full λ_min=2.5326e-5  D=w−|α₁|=0.182052 ===
+  arch mode 0: α=-0.308077  +w-overlap p=0.893916  diag-lift α+w(2p−1)=0.078062
+  arch mode 1: α=-0.0278208  +w-overlap p=0.751158  diag-lift α+w(2p−1)=0.218379
+
+=== a=0.549  full λ_min=2.64807e-5  D=w−|α₁|=0.0751826 ===
+  arch mode 0: α=-0.414946  +w-overlap p=0.960061  diag-lift α+w(2p−1)=0.0360321
+  arch mode 1: α=-0.0666426  +w-overlap p=0.800647  diag-lift α+w(2p−1)=0.228069
+
+READ: if the diag-lift ≈ full λ_min, positivity ≈ (α_i + w(2p_i−1) ≥ 0) — an explicit scalar per mode.
+If diag-lift ≫ full λ_min, the 2 negative modes MIX through J (off-diagonal) — the near-cancellation is 2D.
+Either way it is a FINITE inequality in {α_i(a), p_i(a), w} — no zeros; the a-dependence is the proof target.

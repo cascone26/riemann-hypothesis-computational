@@ -6566,3 +6566,33 @@ structure is the real, sharper object. Whether the 2-mode alignment is provable 
 NEXT: compute ⟨u_{−1,2} | (I+J)/2 | u_{−1,2}⟩ (overlap of arch negative modes with the +w eigenspace) across the zone;
 if it's uniformly ≥ |λ_min|/w, positivity is pinned to that explicit inequality. Tools: p2_rank1_structure.py.
 Cross-links §184, §185, §186, §122, OBSTRUCTION_MAP route 6.
+
+## §188 — the NORM-BUDGET relay: arch negativity deepens toward w=Λ(2)/√2, the next prime enters as the budget is spent (2026-07-23)
+
+Computed the alignment of arch's 2 negative modes with the p=2 involution's +w eigenspace (p2_alignment.py, mpmath
+dps=40). Proof pointer: results/p2_alignment.log. Handle. The diagonal per-mode lift prediction α_i+w(2p_i−1)
+OVERSHOOTS the true full λ_min by ~1400× (a=0.549: predicts +0.036, true +2.6e-5) ⟹ the 2 negative modes MIX through
+J; the near-cancellation is genuinely 2D (a small explicit block, not per-mode scalars).
+
+CLEAN a-DEPENDENCE (the structural find):
+   a      |α₁|(arch neg depth)   p₁(+w overlap)   budget D=w−|α₁|   full λ_min
+   0.45   0.1915                 0.7709           0.2986            4.07e-5
+   0.50   0.3081                 0.8939           0.1821            2.53e-5
+   0.549  0.4149                 0.9601           0.0752            2.65e-5    ← p=3 enters here
+ • As a grows: the archimedean negativity |α₁| DEEPENS toward w; the deepest arch negative mode ALIGNS ever more with
+   the +w eigenspace (p₁→0.96); the BUDGET D=w−|α₁| SHRINKS toward 0.
+ • w = Λ(2)/√2 = 0.490129 is the p=2 place's EXACT operator norm (§187). p=3 enters at a=½log3=0.549 — precisely as the
+   p=2 budget D is nearly spent (|α₁|=0.415 → w=0.490, D=0.075 left). Extrapolating |α₁(a)|, it reaches w just past
+   0.549 — the NEXT prime switches on right when the current one's norm-budget is exhausted.
+
+⟹ NEW MECHANISM (structural, worth generalizing): Weil positivity is a NORM-BUDGET RELAY. Each prime power n contributes
+an exact-norm-Λ(n)/√n involution term; the archimedean form's negativity deepens with support a; each prime's norm
+covers that negativity until spent, and the next prime enters exactly when needed. Positivity is not "arch dominates
+primes" nor "primes fight arch" — it is a RELAY where Σ (prime norm budgets) tracks the arch-negativity growth. This is
+a candidate ANATOMY of the whole A+B≥P wall: the near-critical margin is what's LEFT after each prime spends its budget.
+
+HONEST: still a tight, finite, zero-free condition (2D mixing block, margin 2.5e-5) — provable-in-principle, not
+RH-equivalent (no zeros). NEXT (§189): test the relay HYPOTHESIS at the NEXT prime — does the arch negativity depth
+|α₁(a)| cross w exactly at a=½log3, and does p=3's norm Λ(3)/√3=0.6345 pick up the next budget? If the relay
+Σ_{p≤e^{2a}} (Λ(p)/√p vs arch-negativity-growth) is EXACT, that Σ-tracking IS the mechanism — check it. Tools:
+p2_alignment.py. Cross-links §184-187, §122, OBSTRUCTION_MAP route 6.
