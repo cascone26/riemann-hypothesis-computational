@@ -6323,3 +6323,38 @@ whether the backward-flow collision-margin has a non-circular handle — ties AT
 2406.01828 (S-matrix unitarity as Re(s)→½ ⟹ real zeros; novel, unproven, high-risk). If BOTH wall the same way, the
 honest state is: a genuinely NON-CLASSICAL idea is required (the project's standing conclusion, now fully earned).
 Cross-links §122, §123, §179, OBSTRUCTION_MAP routes 3+7, ATTACK_QUEUE A4, riemann-goal.
+
+## §181 — CONSOLIDATION: my §180 "unmapped basins" were already closed (§35-47e, §125); cross-basin wall VERIFIED, not new (2026-07-23)
+
+Search-before-build on the §180 next-step candidates (DBN Λ≤0, LeClair spectral-flow) revealed BOTH are already worked
+and closed in the LEDGER — the OBSTRUCTION_MAP "dormant"/NEXT_SESSION "ranked candidate" labels are STALE relative to
+the LEDGER (docs = intent, LEDGER = truth). Correcting the §180 recommendation, honestly:
+ • **DBN Λ≤0 — CLOSED §35-47e** (NOT "unmapped"). §35: real DBN flow H_t implemented, zeros at 2γ verified, BUT H_λ
+   has NO Euler product for λ≠0 ⇒ disconnects from the prime operator (coincide only at t=0). §47d: scalar g_λ is an
+   exquisite off-line-zero/Λ DETECTOR (δ=0.05 on γ₁ blows g +0.14 ≫ −0.02 margin) but detection reach = zero height,
+   EQUIVALENT to direct zero-counting. §47e: g_λ (λ≠0) has NO prime-form — it IS Polymath15's theta/zero object ⇒ NO
+   prime-handle for BOUNDING Λ. A4 backward-flow margin already subsumed (Lehmer min-gap ~5e-3, consistent Λ=0).
+   ⟹ DBN is a detector, not a proof shortcut. My §180 "check backward-flow for a non-circular handle" = answered NO.
+ • **LeClair spectral-flow — CLOSED §125.** His Prop 1/2 (−Re ζ'/ζ(σ+it) ≲ ½log(t/2π) ⟺ RH) is a KNOWN RH-equivalent
+   (Lagarias, LeClair says so himself); the "unitary S-matrix ⟹ real zeros" is heuristic (Euler product needs
+   continuation past σ=1; unitarity staying at σ=½ IS RH). Physics-dressed rediscovery, not a fresh equivalent.
+
+WHAT §180 DID ADD (keep): a SOURCE-READ of Guth-Maynard 2405.20552 confirming its RESULT is pure zero-DENSITY
+(N(σ,T)≤T^{30(1-σ)/13}, Type-I/II detecting, no mollifier) — which sharpens §126 Lens B: GM's RESULT does NOT touch the
+Levinson-Conrey proportion; only the open question of transferring GM's METHOD (large-value energy / singular values
+of the prime matrix M_W) to the mollifier θ<4/7 barrier remains (§126 Lens B, still unclaimed/unresolved).
+
+VERIFIED META-STATE (now fully earned, cross-checked against the actual LEDGER not the stale docs): EVERY basin the
+campaign can identify — operator-positivity (§1-122, six faces), zero-density estimates (§180, route 3, not-a-path),
+mollifier proportion (route 7, θ→1 RH-hard), DBN Λ≤0 (§35-47e, detector-only), LeClair (§125, =Lagarias), Jensen/moment/
+de Branges/Beurling-Nyman (OBSTRUCTION_MAP 1-5) — is mapped and walled at a genuine obstruction. This is the project's
+standing §125 conclusion, re-verified. No fresh basin remains to "enter."
+
+THE HONEST FORWARD SET (no more basin-hopping — it's exhausted): (a) the ONE concrete live technical sub-problem is
+§126 Lens B — can GM's 2024 large-value/energy method be transferred to push the mollifier θ past 4/7 (proportion past
+42%)? Hard analysis, not a probe; possibly-unclaimed; would be real progress (though proportion, not full RH unless
+θ→1). (b) Fresh NON-classical cross-basin ideation (§125 rule-1; superPRISM on Fable) — the only route to the "genuinely
+new idea" the verified wall demands. (c) Consolidate durable deliverables: the §176 CASCADE (novel analytical anatomy
+of the near-null, §175-flagged unpublished) + the comprehensive obstruction map + tools. Per riemann-goal (prove RH,
+not partial results): (a) and (b) are the only goal-relevant moves; (c) is banking, not solving.
+Cross-links §35, §47e, §122, §124, §125, §126, §180, OBSTRUCTION_MAP, riemann-goal, feedback_riemann_check_first.
