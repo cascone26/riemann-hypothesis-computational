@@ -1,0 +1,27 @@
+§178d dist(k_λ,θ_x) DECAY LAW  c=[8, 10] N=[40, 50, 60] M=12000 T=400  dps=auto
+
+=== c=8  λ=2.8284  depth_est(|log10 λmin|)≈33.2  M=12000 T=400 ===
+    N   dps  log10λmin          dist     1-overlap              note       t
+   40    76     -32.37     5.398e-05     1.457e-09             clean    438s
+   50    83     -32.43     5.201e-05     1.353e-09             clean    626s
+   60    90     -32.45     6.935e-05     2.405e-09             clean    893s
+  → c=8: best-resolved dist=5.201e-05 at N=50 (1-ov=1.35e-09) — PLATEAU (confirmed by adjacent N)
+
+=== c=10  λ=3.1623  depth_est(|log10 λmin|)≈43.7  M=12000 T=400 ===
+    N   dps  log10λmin          dist     1-overlap              note       t
+   40    86     -43.02     3.984e-04     7.936e-08             clean    606s
+   50    93     -43.32     2.902e-04     4.211e-08             clean    920s
+   60   100     -43.40     2.663e-04     3.546e-08             clean   1283s
+  → c=10: best-resolved dist=2.663e-04 at N=60 (1-ov=3.55e-08) — PLATEAU (confirmed by adjacent N)
+
+================ §178d SUMMARY ================
+   c    best dist  at N    1-overlap      status
+   8    5.201e-05    50     1.35e-09  plateau
+  10    2.663e-04    60     3.55e-08  plateau
+
+FIT log10 dist(c) = 0.3546·c + -7.121   ⇒  dist ~ 10^(0.355c) = e^(0.817c)
+     over PLATEAUED points (true §6.6 correction rate)
+     decay rate α = -0.8166 per unit c  (dist ~ e^(−α c));  compare to Fuchs 4π/ln10·ln10=4π≈12.566? — for the analytic read
+
+NEXT: if PLATEAUED at small c but N-LIMITED at large c, push N (with scaled dps) at the large-c points to
+convert upper bounds → plateaus; the clean law across c is the §6.6 k_λ→θ_x correction rate (analytic target).

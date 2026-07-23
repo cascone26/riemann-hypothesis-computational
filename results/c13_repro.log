@@ -1,0 +1,15 @@
+§178d dist(k_λ,θ_x) DECAY LAW  c=[13] N=[80] M=12000 T=400  dps=[90]
+
+=== c=13  λ=3.6056  depth_est(|log10 λmin|)≈59.6  M=12000 T=400 ===
+    N   dps  log10λmin          dist     1-overlap              note       t
+   80    90     -58.60     2.132e-07     2.287e-14             clean   1317s
+  → c=13: best-resolved dist=2.132e-07 at N=80 (1-ov=2.29e-14) — UNCONFIRMED (single clean point / no agreeing neighbor)
+
+================ §178d SUMMARY ================
+   c    best dist  at N    1-overlap      status
+  13    2.132e-07    80     2.29e-14  N-limit
+
+Need ≥2 comparable points to fit; extend the c-list.
+
+NEXT: if PLATEAUED at small c but N-LIMITED at large c, push N (with scaled dps) at the large-c points to
+convert upper bounds → plateaus; the clean law across c is the §6.6 k_λ→θ_x correction rate (analytic target).

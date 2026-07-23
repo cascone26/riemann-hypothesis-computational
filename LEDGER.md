@@ -6211,3 +6211,44 @@ N-window per c to the clean band, not a fixed 40..100 grid; c=6+ needs N≈40-50
 constant across c=6,8,10, the correction IS the angle-sine scale e^{-2πc}×poly — then characterize the poly prefactor
 (that's the analytic form Connes' §6.6 correction must take). Model: analytic estimate attempt = Opus.
 Tools: bridge_law.py, fit_178d.py, SECT66_PREP.md. Cross-links §171, §176, §177, §178, §178b, §178c, §6.6.
+
+## §178e — CORRECTION to §178d: no clean decay law; the "low" points are a (c,N) MAGIC-N numerical artifact (2026-07-23)
+
+Pushed dist(k_λ,ψ_c) deeper (c=6,8,10,13) with proper N-convergence + dps-limit tests. Result OVERTURNS the §178d
+"plateau/law" reading. Proof pointers: results/{bridge_law_178e,c8_highN,c13_repro,c8_N100,c10_floor,c6_recheck,c13_magicN}.log,
+operators/dbn_dynamics/{bridge_diag,klambda_check}.py.
+
+VERIFIED (all Handle — real computation):
+ • Code sound: c=13 N=80 reproduces §178c EXACTLY (dist 2.132e-7, 1-ov 2.29e-14).
+ • k_λ construction sound at every c (klambda_check.py: right modes h_0/h_4, vanishing integral ∫=0, b0 smooth;
+   the c=6 b0 sign flip is a harmless eigh convention). NOT a builder bug.
+ • NO mode-crossing: bridge_diag.py at c=6 AND c=8 → k_λ IS the global-min eigenvector (overlap 1.000000, rank 0).
+ • dps NOT the limiter at the tested points: c=8 N=50 dps 83≡160 (5.201e-5); c=10 N=60 dps 100≡170 (2.663e-4).
+
+THE ARTIFACT (methodological finding): dist(k_λ,ψ_c) is NON-MONOTONE IN N and hits (c,N)-specific "magic" points where
+the computed ψ accidentally near-aligns with k_λ, giving a spuriously TINY dist with a freakishly clean overlap —
+which RISES when N is pushed further. Proven twice:
+   c=6:  N=40 → 8.0e-6 (1-ov 3.2e-11)   BUT  N=80 dps=140 → 5.914e-5 (dps-confirmed). The 8e-6 was the artifact.
+   c=13: N=80 → 2.132e-7 (1-ov 2.3e-14) BUT  N=90 dps=150 → 2.457e-6 (≈ §178c's own N=100 value 2.2e-6). Same illusion.
+⟹ RETRACT §178d's "PLATEAU (true correction visible)" labels AND §178e's earlier "minimum at c=6 / non-monotone in c"
+AND the premature "dist ~ e^{-0.81c} law" — all contaminated by magic-N lows. The per-c "best dist = min over N" estimator
+is WRONG when dist is non-monotone in N (it locks onto the magic-N artifact). Must instead take the STABLE higher-N value.
+
+ARTIFACT-CORRECTED best values (stable, higher-N, excluding magic-N lows):
+   c=3: 6.9e-4   c=5: 1.2e-4   c=6: 5.9e-5   c=8: 3.2e-5 (N=100, still easing)   c=10: 2.9e-4 (N=80,100 stable)   c=13: 2.5e-6
+ • c=3,5,6,8,13 → roughly MONOTONE gentle decrease (log10: -3.16,-3.92,-4.23,-4.49,-5.60; slope ~ -0.2..-0.4 /c).
+ • ROBUST across all this: dist decays FAR slower than the near-null eigenvalue e^{-4πc} (λmin runs 1e-7…1e-43 over the
+   same c) — HYP (a) dist~λmin and HYP (b) dist~√λmin BOTH FALSIFIED (both far too fast). This survives the artifact.
+ • OPEN ANOMALY: c=10 = 2.9e-4 is a STABLE HIGH outlier (not a magic-N low; N=80,100 agree) breaking the monotone trend
+   between c=8 (3.2e-5) and c=13 (2.5e-6). Unexplained — real resonance vs another numerical mode. Flagged, not resolved.
+
+HONEST BOUNDS: no clean §6.6 correction-rate is extractable by this finite-c eigenvector-distance method until the (c,N)
+numerical sensitivity is controlled. The k_λ↔ψ_c BRIDGE (§178b) still stands (overlap→1 everywhere); only the fine
+dist(c) LAW is not yet trustworthy. Still NOT identical to Connes' open k_λ→θ_x λ→∞ limit estimate (finite-c here).
+
+NEXT (§178f): resolution-robust measurement — (1) a principled per-c convergence criterion that REJECTS magic-N lows
+(track dist stability across ≥3 consecutive N with scaled dps; take the stable value, not the min); (2) independent
+mpmath-precision prolate k_λ to rule out float64-prolate degradation at large bandwidth (cband=2πλ² reaches ~80 at c=13);
+(3) explain or reproduce the c=10 high outlier (is it prime-content-dependent? pp≤10 adds 9=3²). Only then attempt a law.
+Minor: bridge_law.py dps_override crashes if len(dps-list)<len(N-list) (got the N=90 datum first — cosmetic). Model: Opus.
+Tools: bridge_law.py, bridge_diag.py, klambda_check.py, fit_178d.py. Cross-links §178, §178b, §178c, §178d, §6.6.

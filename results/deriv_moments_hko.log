@@ -1,0 +1,44 @@
+[hko] loading first 20000 zeros (31 dp) ...
+[hko] 20000 zeros, gamma range 14.135..18046.5
+  [hko] 1000/20000  20s  eta=376s
+  [hko] 2000/20000  39s  eta=350s
+  [hko] 3000/20000  65s  eta=366s
+  [hko] 4000/20000  92s  eta=369s
+  [hko] 5000/20000  121s  eta=364s
+  [hko] 6000/20000  164s  eta=382s
+  [hko] 7000/20000  208s  eta=386s
+  [hko] 8000/20000  251s  eta=377s
+  [hko] 9000/20000  302s  eta=369s
+  [hko] 10000/20000  344s  eta=344s
+  [hko] 11000/20000  397s  eta=325s
+  [hko] 12000/20000  480s  eta=320s
+  [hko] 13000/20000  558s  eta=300s
+  [hko] 14000/20000  635s  eta=272s
+  [hko] 15000/20000  711s  eta=237s
+  [hko] 16000/20000  787s  eta=197s
+  [hko] 17000/20000  862s  eta=152s
+  [hko] 18000/20000  939s  eta=104s
+  [hko] 19000/20000  1014s  eta=53s
+  [hko] 20000/20000  1089s  eta=0s
+[hko] zeta' done (1089s)
+
+======================================================================
+HKO DERIVATIVE-MOMENT TEST  (power k(k+2): k=1->3, k=2->8, k=3->15)
+======================================================================
+
+ k=1: predicted exponent 3
+   full-range fit slope = 2.622   top-half slope = 2.690
+   M_1(T) at largest T = 5.4183e+01  (L=7.963)
+
+ k=2: predicted exponent 8
+   full-range fit slope = 6.091   top-half slope = 6.297
+   M_2(T) at largest T = 8.4668e+03  (L=7.963)
+
+ k=3: predicted exponent 15
+   full-range fit slope = 9.922   top-half slope = 10.225
+   M_3(T) at largest T = 2.3157e+06  (L=7.963)
+
+saved -> /Users/scones/projects/riemann/results/deriv_moments_hko.json
+
+NOTE: log-lever is short below T~10^4 (L~0.8..7.4). Slope should TREND toward
+k(k+2) from below; clean resolution of exponent 8,15 needs T~10^6+ (millions of zeros).

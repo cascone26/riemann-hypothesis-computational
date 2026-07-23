@@ -1,0 +1,13 @@
+§178e diag  c=6 N=60 dps=90 T=400  L=log c=1.7918  λ=2.4495  (~24 small eigs expected)  [844s]
+rank  log10 eig  overlap(k_λ)   dist(k_λ)    ← k_λ mode?
+   0     -22.28      1.000000   9.124e-06  ***
+   1     -16.01      0.000009   1.414e+00
+   2     -10.72      0.000000   1.414e+00
+   3      -6.29      0.000000   1.414e+00
+   4      -2.47      0.000000   1.414e+00
+   5      -0.30      0.000000   1.414e+00
+   6      -0.11      0.000000   1.414e+00
+   7      -0.05      0.000000   1.414e+00
+
+BEST k_λ-match: rank 0 in the ascending spectrum, overlap 1.000000, log10 eig -22.28, dist 9.124e-06
+→ k_λ IS the global minimum here: NOT mode-crossing at this (c,N). argmin selector is correct.

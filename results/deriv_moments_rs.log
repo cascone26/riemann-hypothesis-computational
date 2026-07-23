@@ -1,0 +1,22 @@
+[val] loading first 300 zeros (31 dp) + mpmath zeta' ...
+[val] |Z'| vs mpmath |zeta'|: median rel err=1.50e-05  max=4.41e-03  mean=6.95e-05
+[val] PASS — Riemann-Siegel evaluator trusted.
+
+[rs] loading 2000000 zeros (9 dp Odlyzko 2M) ...
+[rs] 2000000 zeros, range 14.135..1131944.5
+[rs] |Z'| for 2000000 zeros in 16s
+
+======================================================================
+HKO DERIVATIVE MOMENTS at LARGE T (power k(k+2): 3, 8, 15)
+======================================================================
+
+ k=1: predicted exponent 3
+   full-range slope = 2.734   top-half slope = 2.802   (Lmax=12.10)
+
+ k=2: predicted exponent 8
+   full-range slope = 6.474   top-half slope = 6.737   (Lmax=12.10)
+
+ k=3: predicted exponent 15
+   full-range slope = 10.627   top-half slope = 11.154   (Lmax=12.10)
+
+saved -> /Users/scones/projects/riemann/results/deriv_moments_rs.json

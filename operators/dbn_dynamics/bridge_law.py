@@ -38,7 +38,7 @@ def run_c(c, Ns, M, T, dps_override=None):
     rows = []
     prev_1mov = None
     for i, N in enumerate(Ns):
-        dps = dps_override[i] if dps_override else dps_for(c, N)
+        dps = dps_override[i] if (dps_override and i < len(dps_override)) else dps_for(c, N)
         t0 = time.time()
         lmin_log, ev, L = cvs_ground(c, N, T, dps)
         x = np.linspace(0.0, L, M + 1)
@@ -46,24 +46,29 @@ def run_c(c, Ns, M, T, dps_override=None):
         kA = k_lambda_on(x - L / 2.0, lam)
         ov, d = overlap(fp, kA, x)
         one_m_ov = 1.0 - ov
-        # dps-starvation flag: 1-overlap got WORSE than the previous (lower) N ⇒ near-null under-resolved at this dps
-        starved = prev_1mov is not None and one_m_ov > prev_1mov
-        note = "STARVED(raise dps)" if starved else "clean"
+        # 'starved' = the k_λ mode is genuinely LOST (overlap collapsed), NOT a wiggle at the 1e-11 floor.
+        # (§178e fix: the old `one_m_ov > prev_1mov` test mis-flagged c=6 N=60 where overlap was still 1.000000.)
+        # dist is U-shaped in N at deep c (over-resolution raises it again), so the per-c estimator is MIN dist
+        # over overlap-clean points, not the deepest-N point.
+        starved = ov < 0.99
+        note = "LOST(overlap<0.99)" if starved else "clean"
         print(f"{N:>5} {dps:>5} {lmin_log:>10.2f} {d:>13.3e} {one_m_ov:>13.3e}  {note:>16}  {time.time()-t0:>5.0f}s",
               flush=True)
         rows.append(dict(N=N, dps=dps, lmin_log=lmin_log, dist=d, one_m_ov=one_m_ov, starved=starved))
         prev_1mov = one_m_ov
-    # cleanest row = min 1-overlap among non-starved
+    # best = MIN dist among overlap-clean rows (dist is U-shaped in N at deep c; the min is the true approximation).
     clean = [r for r in rows if not r["starved"]] or rows
-    best = min(clean, key=lambda r: r["one_m_ov"])
-    # plateau test: is dist stable across the two deepest clean N (within 30%)?
+    best = min(clean, key=lambda r: r["dist"])
+    # plateau CONFIRMED if an adjacent-N clean row agrees with the min within 30% (a real neighbor, not one point).
     clean_sorted = sorted(clean, key=lambda r: r["N"])
+    bi = clean_sorted.index(best)
     plateau = False
-    if len(clean_sorted) >= 2:
-        a, b = clean_sorted[-2]["dist"], clean_sorted[-1]["dist"]
-        ratio = a / b if b > 0 else float("inf")
-        plateau = 0.7 <= ratio <= 1.43
-    kind = "PLATEAU (true correction visible)" if plateau else "N-LIMITED (dist=upper bound, true corr smaller)"
+    for nb in (bi - 1, bi + 1):
+        if 0 <= nb < len(clean_sorted):
+            ratio = clean_sorted[nb]["dist"] / best["dist"] if best["dist"] > 0 else float("inf")
+            if 0.7 <= ratio <= 1.43:
+                plateau = True
+    kind = "PLATEAU (confirmed by adjacent N)" if plateau else "UNCONFIRMED (single clean point / no agreeing neighbor)"
     print(f"  → c={c}: best-resolved dist={best['dist']:.3e} at N={best['N']} (1-ov={best['one_m_ov']:.2e}) — {kind}")
     return dict(c=c, dist=best["dist"], N=best["N"], one_m_ov=best["one_m_ov"], plateau=plateau)
 

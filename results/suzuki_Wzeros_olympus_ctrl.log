@@ -1,0 +1,12 @@
+DECISIVE CONTROL: full (primes) vs arch-only W-zeros, match to zeta zeros.
+If arch-only matches as well => artifact. If full >> arch-only => primes carry zeta (REAL).
+
+a=1.0: FULL best-match=0.0741 (theta=2.97)   ARCH-ONLY best-match=0.4254 (theta=5.24)
+  full matched:  14.16 21.00 24.81 30.43 33.05
+  arch  matched: 14.68 20.97 24.12 30.41 33.56
+  gamma:         14.13 21.02 25.01 30.42 32.94
+
+a=1.2: FULL best-match=0.0787 (theta=1.83)   ARCH-ONLY best-match=0.3601 (theta=1.75)
+  full matched:  14.13 21.23 24.95 30.36 32.88
+  arch  matched: 14.56 19.81 25.05 30.31 32.93
+  gamma:         14.13 21.02 25.01 30.42 32.94
