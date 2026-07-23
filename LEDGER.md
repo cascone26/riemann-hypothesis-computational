@@ -6174,3 +6174,40 @@ to see θ_x−k_λ at all.
 NEXT (§178d, to get the §6.6 correction DECAY LAW): converge N per c (dps scaled with N, N=80→dps90 clean, N=120→dps~150),
 extract the bottomed dist(k_λ,θ_x) at each c=5,8,13,18, fit dist vs c — that decay rate IS the Connes §6.6 correction rate
 (the analytic target for k_λ→θ_x). Tools: bridge_floor.py. Cross-links §176, §177, §178, §178b, §169c, §170, §6.6.
+
+## §178d — dist(k_λ,ψ_c) DECAY LAW: correction decays FAR slower than the eigenvalue; hyp(a) falsified, √λmin favored (2026-07-23)
+
+Ran bridge_law.py (extends §178b/c bridge_overlap/floor; verify-gate: reproduced §178b anchor c=3 dist 0.0007 / c=5
+0.0002 exactly before trusting numbers). Swept c=3,4,5,6 × N=40..100, dps auto-scaled, M=12000 T=400.
+Proof pointers: results/bridge_law_178d.log, operators/dbn_dynamics/fit_178d.py output.
+
+CONVERGED plateaus (dist = L2 dist between analytical k_λ and the true CvS near-null eigenvector ψ_c; 1-overlap = dist²/2):
+   c   dist(k_λ,ψ_c)   log10 λmin   status
+   3     6.894e-4       -7.29       PLATEAU (N=40,60 agree <1%)
+   4     4.628e-4      -12.19       PLATEAU (N=60,80 agree <2%)
+   5     1.245e-4      -17.11       PLATEAU (monotone N=40→100: 3.86→2.10→1.36→1.245e-4)
+   6     8.000e-6      -22.32       clean 1-ov 3.2e-11 at N=40 but N-CONVERGENCE UNCONFIRMED (N=60,80 starve: c-window
+                                    narrowed to N=40 at this depth) — strong point, not a confirmed plateau.
+c-dependent N-window (Handle): shallow c wants low N (c=3 plateaus by N=60; N≥80 STARVES = basis over-resolution at L=log c);
+deep c wants high N but then starves on dps. Sweet spot migrates up with c. N=100 starved at c=3,4; only N=40 clean at c=6.
+
+RESULT (Handle — real mpmath computation):
+ • dist → 0 as c grows ⇒ k_λ → the true eigenvector ψ_c. Confirms Connes' §6.6 DIRECTION (k_λ improves with λ). 
+ • HYP (a) dist ~ λmin = e^{-4πc} FALSIFIED: dist log-slope ≈ -0.37/c vs λmin slope -4.9/c (fit_178d.py, core c=3,4,5).
+   The prolate-approximation error is NOT as small as the eigenvalue — a real correction that shrinks ~13× slower in log.
+ • Decay ACCELERATES: d(log10 dist)/dc steepens -0.17→-0.57→-1.19; local power vs λmin grows 0.035→0.12→0.23.
+   ⇒ not a single exponential, not a fixed power.
+ • HYP (b) dist ~ √λmin = e^{-2πc} = sin(angle α_λ) ~ √(1-χ_2) WEAKLY FAVORED: dist/√λmin grows but DECELERATES
+   (×189→×78→×26), consistent with dist ~ √λmin × (saturating polynomial prefactor). Not conclusive on 4 points.
+
+HONEST BOUNDS (Report / open): (1) does NOT prove RH; (2) NOT identical to Connes' open k_λ→θ_x LIMIT estimate — §178d
+measures the FINITE-c eigenvector approximation dist(k_λ,ψ_c) (Connes: "approximation of the eigenvector of ε(λ)"),
+whereas §miss's "k_λ sufficiently good approx of θ_x" is the λ→∞ limit statement (Report, still open). Source read:
+connes_2602/rhready.tex §poisson/§sectconv/§miss (SECT66_PREP.md); k̂_λ→Ξ already has a poly rate c·λ^{-1/2-α}, the
+θ_x approximation does not. (3) √λmin favored but not confirmed — the deep-c starvation caps resolution at 4 usable c.
+
+NEXT (§178e): confirm/kill the √λmin law — push deeper c with the starvation fixed (raise the dps FLOOR and RESTRICT the
+N-window per c to the clean band, not a fixed 40..100 grid; c=6+ needs N≈40-50 only). If dist/√λmin saturates to a
+constant across c=6,8,10, the correction IS the angle-sine scale e^{-2πc}×poly — then characterize the poly prefactor
+(that's the analytic form Connes' §6.6 correction must take). Model: analytic estimate attempt = Opus.
+Tools: bridge_law.py, fit_178d.py, SECT66_PREP.md. Cross-links §171, §176, §177, §178, §178b, §178c, §6.6.
