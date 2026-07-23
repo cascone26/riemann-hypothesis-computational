@@ -6285,3 +6285,41 @@ ZERO-DENSITY basin — Guth-Maynard 2405.20552 (Dirichlet-poly large-value → i
 (how ≥41% on-line is proven; where the Cauchy-Schwarz loss sits). Genuinely DIFFERENT obstruction (analytic, not
 positivity-at-limit), queued since §123, never actually entered. Sources already pulled: membrane_pulls/gm/, /lc/.
 Tools: cvs_ldlt.py. Cross-links §122, §123, §176, §176c, ATTACK_QUEUE A1.
+
+## §180 — ENTERED the zero-density basin: Guth-Maynard is the DENSITY axis (not proof-relevant); proof-relevant mollifier axis is RH-hard at θ→1 (2026-07-23)
+
+Executed the §123/§179 pivot: read Guth-Maynard 2405.20552 (membrane_pulls/gm/LargevaluesDirichlet17.tex, intro
++ Applications §12) against our own OBSTRUCTION_MAP routes 3 (large-sieve/density) and 7 (Speiser-Levinson/mollifier).
+Report-tier (reading + analysis; no new Handle).
+
+WHAT GUTH-MAYNARD ACTUALLY IS (source-read): a new large-VALUE estimate for Dirichlet polynomials — for |b_n|≤1,
+R 1-separated points with |Σ_{N}^{2N} b_n n^{it_r}|≥V:  R ≤ T^{o(1)}(N²V⁻² + N^{18/5}V⁻⁴ + T N^{12/5}V⁻⁴). First
+substantive improvement over MVT+Montgomery-Halász-Huxley in the critical regime V≈N^{3/4} (N^{7/10}<V<N^{8/10},
+N≤T^{5/6}). CONSEQUENCE: zero-density N(σ,T) ≤ T^{30(1-σ)/13+o(1)}, improving Huxley's 12/5 exponent; and primes in
+short intervals x^{17/30}. The Applications section uses the classical Type-I/Type-II zero-DETECTING method — NO
+mollifier, NO proportion-on-line, NO Levinson/Conrey anywhere.
+
+STRATEGIC READ (the point of §180):
+ • GM lives on OBSTRUCTION_MAP ROUTE 3 (zero-density) — which our own map already flags: density estimates BOUND
+   off-line zeros, they NEVER force them ON. Even 30/13 gives N(σ,T)=o(T), never 0. ⟹ GM, a real 2024 advance, is
+   NOT a proof path to RH. It is the SHINY-DISTRACTION axis for our goal (prove RH). Do not invest here.
+ • The PROOF-RELEVANT axis is ROUTE 7 (Levinson-Conrey mollifier proportion → 100% on-line = RH). It is a DIFFERENT
+   machine (twisted 2nd moment ∫|ζB|², off-diagonal shifted-convolution sums), which GM does NOT touch. Its barrier
+   (our map, verified): mollifier length y=T^θ controllable only for θ<4/7 (Kloosterman/Weil); reaching 100% needs
+   θ→1 = full ζ moments ≈ RH-hard. Current best proportion ≈41.7%.
+ • META (extends §122/§179): the zero-density basin's proof-relevant sub-axis hits an RH-HARD LIMIT (θ→1) of the SAME
+   CHARACTER as the operator basin (a→∞/all-primes/ω→0 limit, §122). The §123 hope of a "genuinely different basin"
+   is HALF-true: the obstruction is genuinely different (analytic shifted-convolution, not positivity-at-limit) but
+   the WALL is the same shape — a limit that is itself RH-equivalent. Every classical basin mapped so far walls this way.
+
+HONEST CONCLUSION: no classical basin (operator-positivity §1-122, zero-density §180) offers a NON-RH-hard path to a
+COMPLETE proof. GM is correctly triaged OUT (density, can't reach RH). The mollifier axis could yield incremental
+proportion gains (41.7%→…) but NOT a proof without θ→1 (RH-hard) — and incremental proportion is off-goal (riemann-goal:
+prove RH, not partial results). The classical analytic toolkit is now comprehensively mapped and walled.
+
+NEXT (§181 — the only genuinely-UNmapped basins left, ranked): ① de Bruijn-Newman Λ≤0 (RH⟺Λ=0; Λ≥0 PROVEN Rodgers-Tao
+2018; the gap is Λ≤0 — a DYNAMICAL/heat-flow structure, NOT reduced to an RH-equivalent limit yet in our map; check
+whether the backward-flow collision-margin has a non-circular handle — ties ATTACK_QUEUE A4). ② LeClair spectral-flow
+2406.01828 (S-matrix unitarity as Re(s)→½ ⟹ real zeros; novel, unproven, high-risk). If BOTH wall the same way, the
+honest state is: a genuinely NON-CLASSICAL idea is required (the project's standing conclusion, now fully earned).
+Cross-links §122, §123, §179, OBSTRUCTION_MAP routes 3+7, ATTACK_QUEUE A4, riemann-goal.
