@@ -6783,3 +6783,23 @@ NEXT (§195): (a) same-grid verify the ground state is a fixed shape; (b) identi
 k_λ — if v0 ≈ k_λ, use the CvS closed forms (arb_ldlt_certify / §178 bridge_overlap) to write arch(v0)−prime(v0) in
 closed form and attack the finite-a positivity via the §171 Fuchs envelope. The p=2 window becomes the c=2 end of the
 CvS Fuchs curve. Tools: flatlock_probe.py, bridge_overlap.py (§178), cvs_gate.py (§176). Cross-links §176, §178, §184-193.
+
+## §195 — the near-null ≈ the FUNDAMENTAL even mode cos(πx/2a) (nearly fixed, slow drift) (2026-07-23)
+
+Fixed-shape test (fixed_shape.py, even near-null coeff vector in ξ=x/a where the sine basis is a-independent). Proof
+pointer: results/fixed_shape.log. Handle.
+ • cross-a |dot| of the normalized near-null coeff vectors: all ≥ 0.9938 (adjacent 0.998-0.9999) — NEARLY FIXED shape,
+   with a slow drift (NOT strictly constant; rule 10).
+ • dominant coeff c₁ (first odd-k sine = cos(πx/2a), the lowest even Dirichlet mode) ≈ 0.96–0.98 across the window;
+   second mode c₃ grows −0.18→−0.28. So v0 ≈ cos(πx/2a) + small growing correction.
+
+⟹ CONCRETE PROOF TEST-FUNCTION: margin(a) ≈ Weil form of cos(πx/2a): arch(cos) − prime(cos), both EXPLICIT integrals,
+≈ 2.6e-5 > 0. The first-prime crux is now "the Weil form of ~a cosine is positive." Since v0 is the MINIMIZER (margin =
+min even-sector Rayleigh), margin ≤ Weil(cos); with overlap 0.994+ they nearly coincide. The genuine proof needs a
+COERCIVITY LOWER bound: Weil(v) ≥ c₀ > 0 for ALL even v, worst case near v=cos — hard analysis, but now set on an
+explicit near-minimizer.
+
+NEXT (§196): (a) write arch(cos(πx/2a)) and prime(cos(πx/2a)) as explicit closed-form functions of a (arch = a
+digamma/screw integral; prime = Λ(2)/√2 · |cos-transform at log2|²) and confirm the difference ≈ 2.6e-5; (b) attempt the
+coercivity lower bound over the even sector using the fundamental-mode structure. Tools: fixed_shape.py, flatlock_probe.py.
+Cross-links §193, §194, §176, §178, route 6.
