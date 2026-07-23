@@ -6694,3 +6694,34 @@ analysis): either (a) bound the even-sector secular sum analytically (needs an e
 spectrum + the log2-overlap — digamma estimates), or (b) verify the parity decoupling explicitly (project to the even
 sector, confirm ONE negative mode + secular value = 2.5e-5) before investing in the bound. Tools:
 arch_negmode_structure.py, p2_alignment.py. Cross-links §186, §187, §188, §122, route 6, rh-working-rules.
+
+## §192 — parity decoupling VERIFIED airtight; §191 sector assignment CORRECTED: critical = EVEN sector's SHALLOW mode (2026-07-23)
+
+Verified §191 by splitting the Weil operators into parity blocks (parity_verify.py; EVEN-v = odd-k sines, ODD-v =
+even-k sines). Proof pointer: results/parity_verify.log. Handle.
+
+   a=0.5    off-block |Qa| coupling = 3.7e-39 (MACHINE ZERO ⟹ form is EXACTLY parity-block-diagonal ✓)
+     EVEN-v (k odd):  arch #neg=1  arch λ1=−0.02782   full λmin=2.533e-5   ← CRITICAL
+     ODD-v  (k even): arch #neg=1  arch λ1=−0.30808   full λmin=3.120e-4   (comfortable)
+   a=0.549  off-block = 4.8e-39
+     EVEN-v: arch #neg=1  λ1=−0.06664   full λmin=2.648e-5   ← CRITICAL
+     ODD-v:  arch #neg=1  λ1=−0.41495   full λmin=9.644e-5
+
+VERIFIED (core §191 claim CONFIRMED): the form decouples by parity to machine zero; EACH sector has EXACTLY ONE arch
+negative mode ⟹ the per-sector SCALAR secular reduction is EXACT and airtight.
+
+CORRECTION (rule 10 — §191 had the sector backwards; the §191 extraction script's vprime helper reconstructed v not v',
+mislabeling parity): the CRITICAL sector is EVEN-v, and its arch negative mode is the SHALLOW one (α_even=−0.028 at
+a=0.5, deepening to −0.067 at a=0.549) — it lifts to only +2.5e-5. The DEEP arch mode (−0.31→−0.41) is in the ODD
+sector, which is COMFORTABLE (full λmin 3e-4→1e-4). COUNTERINTUITIVE + important: criticality is set by ALIGNMENT with
+the p=2 involution, NOT by arch-negativity depth — a SHALLOW, poorly-aligned mode is the bottleneck; a deep well-aligned
+one is safe.
+
+⟹ SHARP PROOF TARGET (verified): p=2-only Weil positivity ⟺ the EVEN-sector single-negative-mode secular condition —
+the shallow even arch mode (α_even(a)) lifted by the even part of the w·involution to ≥0, margin 2.5e-5. Odd sector is
+not the constraint. This is one scalar inequality; all ingredients verified explicit and zero-free.
+
+NEXT (§193, hard analysis — the attack): write the EVEN-sector secular condition w|⟨φ,u_even⟩|²/|α_even| ≥ 1 +
+Σ_k|⟨φ,u_k^{even}⟩|²/a_k^{even} with the verified even-sector spectrum, and seek a uniform-in-a bound. The shallow α_even
+and its POOR +w-overlap are the crux (small numerator, small |denominator| — the ratio is delicate). Tools:
+parity_verify.py, p2_alignment.py. Cross-links §186, §187, §188, §191, §122, route 6.
