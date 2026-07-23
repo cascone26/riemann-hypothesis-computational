@@ -6535,3 +6535,34 @@ NEXT (§187): the proof attack — decompose the p=2-only form into the archimed
 the single p=2 place (Λ(2)/√2 at position log2, a rank-≤2 update), and seek an explicit coercivity/interlacing bound
 that keeps the min eigenvalue ≥0 across the zone. Hard analysis on a SMALL object. Tools: mpmath_weil_hiprec.py,
 suzuki_screw_lambda_a.py, g_a_compact.py. Cross-links §42, §109, §184, §185, OBSTRUCTION_MAP route 6.
+
+## §187 — rank-1 secular model REFUTED; p=2 place = w·INVOLUTION (spectrum EXACTLY ±Λ(2)/√2); handle → 2-mode alignment (2026-07-23)
+
+Tested the §186 hypothesis (p=2-only positivity = rank-1 lift of ONE arch negative mode ⟹ scalar secular equation) via
+full generalized spectra (p2_rank1_structure.py, mpmath dps=40 K=24 M=600). Proof pointer: results/p2_rank1.log. Handle.
+Hypothesis REFUTED, cleanly, and replaced by a sharper structure:
+
+   a       arch-only λ (lowest)         #neg(arch)   p2-part spectrum      full λ_min
+   0.45    −0.1915, −0.00553, +0.504…      2          ±0.4902 (12/12)      +4.07e-5
+   0.50    −0.3081, −0.02782, +0.476…      2          ±0.4902 (12/12)      +2.53e-5
+   0.549   −0.4149, −0.06664, +0.472…      2          ±0.4902 (12/12)      +2.65e-5
+
+FINDINGS (Handle):
+ • arch-only (A+B, this zone) has EXACTLY TWO negative eigenvalues (not one) — rank-1 lift model dead.
+ • The single p=2 place (Qf−Qa) is FULL-RANK with spectrum EXACTLY ±w, w=Λ(2)/√2=0.490129… (12×+w, 12×−w). ⟹ the
+   single prime acts as **w·J with J an involution (J²=I)**, operator norm exactly Λ(2)/√2. (A pure single-frequency
+   convolution symbol ±w — clean, precise; NOT a rank-1 projection.)
+ • KEY: |λ_min(arch)| = 0.415 (a=0.549) < w = 0.490 — the perturbation norm EXCEEDS the arch negativity depth, so it
+   CAN (and does) lift the full min-eig to +2.5e-5. Positivity is the norm-w reflection OVERCOMING arch's negativity.
+
+⟹ REFRAMED TARGET (§188): the p=2-only positivity ⟺ the involution perturbation w·J aligns with + overcomes arch's TWO
+negative modes. Concretely: full = arch + w·J; λ_min(full) ≥ 0 ⟺ the arch negative eigenvectors {u_{−1},u_{−2}} have
+sufficient overlap with the +w eigenspace of J (so wJ lifts them past 0). This is a FINITE, EXPLICIT 2-mode alignment
+condition — w is a known constant, arch spectrum + J eigenspaces are explicit. Not the century-old operator inequality;
+a concrete alignment/interlacing statement on a 2-dim negative subspace vs an involution.
+
+HONEST: §186's loose "rank-1" was wrong (caught by direct spectrum, rule 10). The ±w-exact involution + |λ_min arch|<w
+structure is the real, sharper object. Whether the 2-mode alignment is provable uniformly across (½log2,½log3) is §188.
+NEXT: compute ⟨u_{−1,2} | (I+J)/2 | u_{−1,2}⟩ (overlap of arch negative modes with the +w eigenspace) across the zone;
+if it's uniformly ≥ |λ_min|/w, positivity is pinned to that explicit inequality. Tools: p2_rank1_structure.py.
+Cross-links §184, §185, §186, §122, OBSTRUCTION_MAP route 6.

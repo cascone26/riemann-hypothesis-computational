@@ -1,0 +1,28 @@
+§187 p=2 rank-1 structure | dps=40 K=24 M=600
+
+=== a=0.45 ===
+  arch-only spectrum (lowest 4): ['-0.1915', '-0.0055341', '0.50382', '0.675']
+    #negative(arch) = 2   λ_1=-0.191499  λ_2=-0.00553411
+  prime-part(Qf−Qa) spectrum (extremes): ['-0.49018', '-0.49015'] ... ['0.49016', '0.49018']
+    rank(prime)≈24  (#pos=12, #neg=12)  ⟹ rank-1/2 ⟺ single place
+  full λ_min = 4.07069e-5   (interlace: arch λ_1=-0.1915 ≤ full λ_min ≤ arch λ_2=-0.0055341 ?)
+    RANK-1-LIFT interlacing FAILS: -0.1915 ≤ 4.071e-5 ≤ -0.005534
+
+=== a=0.5 ===
+  arch-only spectrum (lowest 4): ['-0.30808', '-0.027821', '0.4764', '0.56854']
+    #negative(arch) = 2   λ_1=-0.308077  λ_2=-0.0278208
+  prime-part(Qf−Qa) spectrum (extremes): ['-0.4902', '-0.49019'] ... ['0.49018', '0.49021']
+    rank(prime)≈24  (#pos=12, #neg=12)  ⟹ rank-1/2 ⟺ single place
+  full λ_min = 2.5326e-5   (interlace: arch λ_1=-0.30808 ≤ full λ_min ≤ arch λ_2=-0.027821 ?)
+    RANK-1-LIFT interlacing FAILS: -0.3081 ≤ 2.533e-5 ≤ -0.02782
+
+=== a=0.549 ===
+  arch-only spectrum (lowest 4): ['-0.41495', '-0.066643', '0.47233', '0.47377']
+    #negative(arch) = 2   λ_1=-0.414946  λ_2=-0.0666426
+  prime-part(Qf−Qa) spectrum (extremes): ['-0.49013', '-0.49013'] ... ['0.49013', '0.49013']
+    rank(prime)≈24  (#pos=12, #neg=12)  ⟹ rank-1/2 ⟺ single place
+  full λ_min = 2.64807e-5   (interlace: arch λ_1=-0.41495 ≤ full λ_min ≤ arch λ_2=-0.066643 ?)
+    RANK-1-LIFT interlacing FAILS: -0.4149 ≤ 2.648e-5 ≤ -0.06664
+
+READ: if #negative(arch)=1 AND rank(prime)≤2 AND interlacing holds ⟹ p=2 positivity = a SCALAR secular
+condition (rank-1 update lifting the single arch negative mode to ≥0). That is the analytically-attackable form.
