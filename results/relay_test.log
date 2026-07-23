@@ -1,0 +1,13 @@
+§189 norm-budget relay test | dps=40 K=24 M=600
+     a     primepow≤e2a    arch λ_min    full λ_min   budget B(a)  |archλmin|/B
+  0.45              [2]     -0.191499     4.0707e-5      0.490129       0.39071
+ 0.549              [2]     -0.414946     2.6481e-5      0.490129       0.84661
+   0.6           [2, 3]     -0.520486     2.3166e-5       1.12441        0.4629
+ 0.693           [2, 3]     -0.703337     2.0196e-5       1.12441       0.62551
+  0.75        [2, 3, 4]     -0.812099     1.7183e-5       1.47099       0.55208
+ 0.805     [2, 3, 4, 5]     -0.916374     1.6863e-5       2.19075       0.41829
+  0.85     [2, 3, 4, 5]      -1.00202     1.5991e-5       2.19075       0.45739
+
+READ: if |arch λ_min|/B(a) → 1 (budget just covers negativity) with full λ_min ~+2.5e-5 flat across every
+prime threshold ⟹ the RELAY is exact: Σ prime norms tracks arch-negativity growth = anatomy of A+B≥P.
+If the ratio wanders / full λ_min drifts, the relay is only heuristic — record which.

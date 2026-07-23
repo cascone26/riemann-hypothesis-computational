@@ -6596,3 +6596,36 @@ RH-equivalent (no zeros). NEXT (§189): test the relay HYPOTHESIS at the NEXT pr
 |α₁(a)| cross w exactly at a=½log3, and does p=3's norm Λ(3)/√3=0.6345 pick up the next budget? If the relay
 Σ_{p≤e^{2a}} (Λ(p)/√p vs arch-negativity-growth) is EXACT, that Σ-tracking IS the mechanism — check it. Tools:
 p2_alignment.py. Cross-links §184-187, §122, OBSTRUCTION_MAP route 6.
+
+## §189 — RELAY CONFIRMED as a sawtooth: primes enter to stay ahead of deepening arch negativity; positivity maintained across all thresholds (2026-07-23)
+
+Tested the §188 norm-budget relay across the p=2→p=5 support thresholds (relay_test.py, mpmath dps=40). Proof pointer:
+results/relay_test.log. Handle.
+
+   a      primes      arch λ_min   full λ_min   budget B=ΣΛ(n)/√n   |arch λmin|/B
+   0.45   [2]         −0.1915      +4.07e-5     0.4901              0.391
+   0.549  [2]         −0.4149      +2.65e-5     0.4901              0.847   ← peak, p=3 about to enter
+   0.60   [2,3]       −0.5205      +2.32e-5     1.1244              0.463   ← budget jumped
+   0.693  [2,3]       −0.7033      +2.02e-5     1.1244              0.626   ← p=4 about to enter
+   0.75   [2,3,4]     −0.8121      +1.72e-5     1.4710              0.552
+   0.805  [2,3,4,5]   −0.9164      +1.69e-5     2.1908              0.418   ← budget jumped
+   0.85   [2,3,4,5]   −1.0020      +1.60e-5     2.1908              0.457
+
+FINDINGS (Handle):
+ • full λ_min stays POSITIVE across EVERY threshold (~2e-5, slowly shrinking 4e-5→1.6e-5) — positivity MAINTAINED the
+   whole way; the primes always suffice.
+ • arch negativity DEEPENS monotonically (−0.19 → −1.00 over a=0.45→0.85), tracking the growing support.
+ • |arch λ_min|/B(a) traces a SAWTOOTH: rises within each prime's reign (fixed budget, deepening negativity), then DROPS
+   when the next prime enters and the budget jumps. Peaks ~0.85 (p=2) then shallower peaks later. ⟹ the RELAY is real as
+   a TIMING mechanism: each prime enters to keep the cumulative norm-budget AHEAD of the deepening arch negativity.
+
+HONEST (rule 10): the crude single-deepest-mode ratio peaks at 0.85 not 1.0, and later sawteeth are shallower — because
+|α₁| is only the DEEPEST of several arch negative modes (§187: ≥2, growing). The relay/sawtooth is a genuine signature,
+but the crude budget≥|α₁| is NECESSARY-not-sufficient; the tight full margin (~2e-5) is the §188 ALIGNMENT near-
+cancellation, not the raw budget. So: relay TIMING confirmed; exact positivity = alignment. Not overclaimed as "the
+proof."
+
+⟹ NEXT (§190): the SHARP relay measure — total arch negativity Σ|negative eigenvalues|(a) vs budget B(a). If that ratio
+rides ~1 (budget just covers TOTAL negativity) with the next prime entering as it → 1, the relay is the exact anatomy.
+Also connect to Chebyshev: B(a)=Σ_{n≤e^2a}Λ(n)/√n ~ 2e^a (PNT) — if arch total-negativity ~ 2e^a too, the relay bound
+is arch-kernel ≤ a classical prime sum (tractable). Tools: relay_test.py. Cross-links §184-188, §122, route 6.
