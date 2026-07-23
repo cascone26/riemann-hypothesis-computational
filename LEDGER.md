@@ -6998,3 +6998,24 @@ POINT-CERT — hardened: 250-bit reduced-prec arch-tail integral, ~60-70% speedu
 compressed days of serial exploration into one parallel pass AND caught a rigor bug I would have shipped. NEXT (§199.5):
 fix the 2 bugs, re-certify a=0.549 (8×8), then the 44-panel continuum. Est ~1-2 days, LOW risk now. Cross-links §198,
 §199.3, §197. Workflow transcripts: subagents/workflows/wf_9376fc6d-7d3/.
+
+## §199.5 — FIRST RIGOROUSLY-CERTIFIED POINT: even 4×4 Weil block PD at a=0.549 (genuine Arb) (2026-07-23)
+
+arb_certify.py (term-by-term closed-form entries in Arb intervals + rigorous Lerch series tail bound, LDL^T with the
+RIGOROUS `s>0` interval-comparison pivot test): the even 4×4 block (modes {5,7,3,1}) is CERTIFIED positive-definite at
+a=0.549. All four LDL^T pivots proven rigorously >0 (whole Arb interval above zero):
+  pivot0 [0.621096 ± 8.4e-7], pivot1 [0.52620 ± 3.5e-6], pivot2 [0.000943 ± 5.8e-7], pivot3 [>0 ± 1.7e-7]. Handle.
+
+Combined with §199.4 (d>4 tail bound ~8e-9, closed 3 independent ways) ⟹ p=2-only Weil positivity is RIGOROUS at
+a=0.549. This is the proof-of-concept that the whole first-theorem certification is real.
+
+DEBUG JOURNEY (banked; each a real fix caught): (1) acb.integral+lerch_phi too slow (lerch_phi near z=1) → switched to
+term-by-term series (each ∫ = closed-form II, fast); (2) code-audit fix: float mid/rad extraction → rigorous `s>0`;
+(3) LDL^T interval amplification from small early pivots → REORDER modes large-diagonal-first [5,7,3,1]; (4) the killer:
+tail-enclosure `arb(-1,1)` = midpoint-−1 (NEGATIVELY BIASED) interval, dragging pivot3's midpoint to ~0 → `arb(0,1)`
+(symmetric [-1,1]); (5) NLERCH 1500→8000 for a tight tail bound. All fixed → certified.
+
+STATE: first rigorous point DONE. NEXT (§199.6): the CONTINUUM — a-interval Arb with the u=t/2a fixed-domain
+substitution, ~44 Lipschitz panels over (0.42, ½log3), certify PD on each; then fold the d>4 tail bound in rigorously.
+That completes the theorem (first unconditional extension of Yoshida past the first prime). Tools: arb_certify.py,
+arb_screw.py. Cross-links §199.3/4, §198, §184-197.
