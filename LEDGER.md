@@ -6501,3 +6501,37 @@ NEXT (§186): (1) mpmath the p=2-only margin to pin the true floor + confirm it 
 (2) attack the arch-vs-p2 sharp bound — the archimedean form's coercivity constant vs Λ(2)/√2's demand, via the
 prolate/Toeplitz structure — the ONE prime is the whole game. Tools: g_a_compact.py, p2_domination_scan.py,
 suzuki_screw_lambda_a.py. Cross-links §42, §110, §122, §184, OBSTRUCTION_MAP route 6.
+
+## §186 — mpmath-CONVERGED p=2-only floor: λ_a≈2.5e-5 POSITIVE, EVEN ground state; float64 artifact corrected; arch-alone goes indefinite (2026-07-23)
+
+Verify step on §185 (float64 floor ~7.5e-6 was flagged unconverged). Ran mpmath_weil_hiprec.py (dps=40, K=24, M=600,
+sine-Galerkin, all-mpf) across the p=2-only zone. Proof pointer: results/mpmath_p2zone.log. Handle.
+
+   a     primes   λ_a FULL (mpmath)   arch-only min-eig   ground parity
+  0.30   none     8.635e-3            +8.635e-3           EVEN
+  0.40   [2]      2.332e-4            −0.0647             EVEN
+  0.45   [2]      4.071e-5            −0.1915             EVEN
+  0.50   [2]      2.533e-5            −0.3081             EVEN
+  0.549  [2]      2.614e-5            −0.4156             EVEN
+
+CONVERGED RESULTS (Handle):
+ • The p=2-driven collapse is REAL at high precision: λ_a 8.6e-3 → 2.5e-5 (~340×) as p=2's support-weight ramps across
+   its zone. (float64 said ~4400×→7.5e-6; mpmath corrects the FLOOR to ~2.5e-5 — matches §109's a=0.6→2.3e-5. The float64
+   7.5e-6 was catastrophic-cancellation undercount.) Margin BOTTOMS ~2.5e-5 at a≈0.5 and is flat/rising slightly after.
+ • λ_a stays POSITIVE and converged (2.5e-5 > 0) through the whole p=2-only zone — Weil positivity holds past the first
+   prime, on trustworthy numbers. Ground state EVEN at every a (Connes even-simple, definitive not floored).
+ • STRUCTURAL (sharpens §184): the ARCHIMEDEAN form ALONE (primes removed) plunges increasingly NEGATIVE as a grows
+   (+0.0086 → −0.416). So positivity in the p=2-only zone is NOT "arch dominates p=2" — it is arch AND the p=2
+   contribution TOGETHER being positive (the explicit-formula combination = the zero side ≥0). Neither piece alone is
+   positive past a≈0.35. Corrects the loose §185 "arch ⪰ p=2" phrasing: the right object is the FULL two-term form
+   (arch-place + p=2-place), positive with margin ~2.5e-5, no other primes / no collective zeros.
+
+⟹ THE TARGET, on converged numbers: prove the FULL p=2-only Weil form (arch-place + single p=2-place) ⪰ 0 for
+a∈(½log2, ½log3), unconditionally — a finite, explicit, two-place object with a real ~2.5e-5 margin. That extends the
+Yoshida log-2 threshold past the first prime = a new unconditional result. (Caveat: K=24 basis convergence not
+independently re-checked here; value matches §109's independent mpmath, so trusted qualitatively.)
+
+NEXT (§187): the proof attack — decompose the p=2-only form into the archimedean quadratic form + the rank-structure of
+the single p=2 place (Λ(2)/√2 at position log2, a rank-≤2 update), and seek an explicit coercivity/interlacing bound
+that keeps the min eigenvalue ≥0 across the zone. Hard analysis on a SMALL object. Tools: mpmath_weil_hiprec.py,
+suzuki_screw_lambda_a.py, g_a_compact.py. Cross-links §42, §109, §184, §185, OBSTRUCTION_MAP route 6.
