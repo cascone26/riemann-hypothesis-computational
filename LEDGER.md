@@ -6886,3 +6886,27 @@ NEXT (§199): port the even 4×4 (or 6×6 for tail margin) to Arb intervals; int
 a-grid + bound the a-derivative to fill gaps ⟹ a rigorous computer-assisted proof of p=2-only positivity (= the first
 unconditional extension of Yoshida past the first prime). Then generalize the machine to p=3,5,… (the §189 relay).
 Tools: matrix4x4.py, arb_ldlt_certify.py (Groskin Arb). Cross-links §184-197, §122, route 6, feedback_verify_before_ship.
+
+## §199 — rigorous-certification ENGINE started: Arb kernel + integration validated; full assembly is a defined rigorous-numerics build (2026-07-23)
+
+Began the computer-assisted RIGOROUS proof of the §198 4×4 even-block positivity (to make it a theorem, not a numerical
+observation). Components built + VALIDATED (Handle):
+ • §199.1 arb_screw.py: the g_a screw kernel g(t) in rigorous Arb intervals (Hurwitz ζ(2,¼) via acb.zeta; Lerch Φ with
+   rigorous tail enclosure; digamma). Validated: Arb intervals CONTAIN the mpmath g(t) at t=0.1,0.5,0.7,0.9 (widths
+   1e-23..1e-88). Kernel port CORRECT.
+ • Rigorous integration entrypoint confirmed: acb.integral(f,a,b) (validated ∫₀¹sin=0.4597). sympy 1.14 installed into
+   flint_venv; C_kl(t) overlap kernel derives symbolically (elementary cos-overlap).
+ • Reduction of each entry to a 1D rigorous integral: Q[k,l]=∫₀^{2a} g(t)[C_kl(t)+C_lk(t)]dt (g even), split at the
+   prime kink t=log2 (the only kink on [0,2a]; arch parts smooth there).
+
+STATE (honest, rule-10): the rigorous ENGINE's components are validated, but the full assembly (arb_entry.py, WIP) needs
+careful engineering NOT to be rushed (a rigorous proof tolerates zero sloppiness): (i) the integrand must handle acb
+INTERVAL inputs rigorously (not midpoint floats), (ii) g_arb must be made fast (the Lerch/Hurwitz per-call cost times
+adaptive-integration node count timed out at 2min), (iii) proper kink handling in the interval integrand. Then: assemble
+4×4 in Arb, rigorous Sylvester minors, certify >0 at a-grid, + a-derivative bound for the continuum, + d>4 tail bound.
+
+⟹ This is a well-scoped rigorous-numerics build (Groskin-style), several careful increments, Mac-local, no Olympus. The
+science is DONE (§184-198: wall → finite 4×4 PD, numerically certified positive); §199 converts it to a rigorous theorem.
+NEXT (§199.3): rewrite arb_entry with a fast, interval-correct g_arb and a rigorous-quadrature-with-error-bound (or split
+smooth/kink: closed-form the |t| & prime pieces vs cos-overlap, acb-integrate only the smooth boundary+Lerch parts).
+Tools: arb_screw.py (validated), arb_entry.py (WIP), matrix4x4.py. Cross-links §198, §184-197, feedback_verify_before_ship.
