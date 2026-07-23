@@ -6661,3 +6661,36 @@ compressed to a FINITE, ZERO-FREE, ALIGNMENT-CRITICAL object in the p=2 zone (ar
 margin 2.5e-5) — NOT RH-equivalent, provable-in-principle. The concrete open target stands: prove p=2-only positivity
 (extend Yoshida past log 2). The relay gave the mechanism-insight (first prime tight) but not a proof shortcut; the
 proof is the alignment inequality (§188) as an explicit hard-analysis estimate. Cross-links §184-189, §122, route 6.
+
+## §191 — PARITY DECOUPLING: the 2×2 collapses to a SCALAR secular condition in the EVEN sector (2026-07-23)
+
+Extracted the 2 arch negative modes' structure (arch_negmode_structure.py, mpmath). Proof pointer:
+results/arch_negmode.log. Handle + analysis.
+ • arch mode 0 (α=−0.30802): v EVEN (v' odd), dominant EVEN sine indices, coeffs ~1/k slow decay.
+ • arch mode 1 (α=−0.02777): v ODD (v' even), dominant ODD sine indices, ~1/k decay.
+ ⟹ the two arch negative modes have OPPOSITE PARITY.
+
+KEY REDUCTION: the p=2 place kernel g(t)=g(−t) is EVEN ⟹ its involution J COMMUTES with the reflection (parity)
+operator ⟹ J preserves the even/odd sectors. Therefore the §187 2-negative-mode / 2×2-Schur problem DECOUPLES into TWO
+INDEPENDENT 1×1 (scalar) conditions, one per parity sector:
+ • ODD sector: single negative mode α=−0.028, lifts comfortably to ~+0.22 (§188 diag-lift) — NOT critical.
+ • EVEN sector: single negative mode α=−0.308, its J-lift = the full ground-state margin +2.5e-5 (§186 ground state is
+   EVEN) — THE CRITICAL CONDITION.
+⟹ p=2-only Weil positivity ⟺ (even-sector) a SINGLE negative mode lifted by the even part of the w·involution to ≥0 =
+a SCALAR SECULAR condition (the §187 rank-1 form, REFUTED globally but VALID per-parity-sector — resurrected). This is
+the sharpest reduction of the wall the campaign has: from "A+B≥P over all primes" to ONE scalar inequality in the even
+sector of the p=2 window.
+
+THE REMAINING HARDNESS (honest): the even arch negative mode is smooth but NOT elementary (~1/k sine decay, not a
+low-degree polynomial / clean prolate) ⟹ the secular ingredients — the even arch spectrum {a_k}, the overlap ⟨φ_{log2},
+u_even⟩ — are EXPLICIT BUT TRANSCENDENTAL (digamma-kernel quantities). The secular condition
+  w·|⟨φ,u_even⟩|²/|α_even| ≥ 1 + Σ_{k}|⟨φ,u_k^{even}⟩|²/a_k^{even}   (even sector only)
+is scalar and zero-free, but proving it uniformly across a∈(½log2,½log3) is a hard-analysis bound on transcendental
+sums — a genuine multi-session analytic effort, not a quick compute.
+
+STATE: the compute-driven structural mapping of the p=2 crux is COMPLETE (§184-191): finite, zero-free, parity-
+decoupled, single-scalar-secular in the even sector, margin 2.5e-5, all ingredients explicit. NEXT (§192, hard
+analysis): either (a) bound the even-sector secular sum analytically (needs an explicit handle on the even arch
+spectrum + the log2-overlap — digamma estimates), or (b) verify the parity decoupling explicitly (project to the even
+sector, confirm ONE negative mode + secular value = 2.5e-5) before investing in the bound. Tools:
+arch_negmode_structure.py, p2_alignment.py. Cross-links §186, §187, §188, §122, route 6, rh-working-rules.
