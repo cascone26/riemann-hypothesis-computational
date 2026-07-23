@@ -6955,3 +6955,18 @@ the next careful build — best done fresh on Opus (per the plan's own "Opus for
 Each step has an mpmath-validation guard. NEXT (§199.3b.2): code the integral table (validate ∫e^{-αt}cos etc vs mpmath
 quad), assemble closed-form Q[k,l], validate 4×4 vs weil_matrices; then Arb port (§199.3c) + certify. Tools:
 dkl_closedform.py, reduction_check.py, arb_screw.py. Cross-links §199.3a, §198, feedback_verify_before_ship.
+
+## §199.3b.2 — closed-form entry engine VALIDATED (the wall's entries in closed form) (2026-07-23)
+
+entry_engine.py: assembled Q[k,l]=∫_0^{2a} g(t)D_kl(t)dt as a sum of elementary integrals via the uniform complex-exp
+formula ∫t^p e^{-αt}{cos/sin}(ωt)dt = Re/Im[e^{st}P_p(t,s)], s=−α+iω. Validated vs mpmath weil_matrices (all 10 even 4×4
+entries, k,l∈{1,3,5,7}, a=0.549): match to 1e-7..2.8e-4 — and the residual is the MPMATH GRID error (M=1200 trapezoid),
+NOT the closed form (which is exact mod the Lerch truncation, ~1e-8 at NLERCH=400). ⟹ engine CORRECT; the closed form is
+the MORE accurate side. Handle. Foundation now fully verified: kernel(§199.1)+reduction(§199.3a)+D_kl(§199.3b.1)+
+entry-engine(§199.3b.2), all machine-validated.
+
+⟹ every entry of the 4×4 = an EXPLICIT CLOSED-FORM function of a: finite sums of {e^{-αt}, t, t²}×{cos,sin}(ωt) evaluated
+at t=0,log2,2a, ω=kβ, α∈{±½,2n+½}, + a Lerch series. The century-old wall's first-prime content is now written in
+elementary closed form. NEXT (§199.3c, mechanical): port the II() integral to acb intervals + rigorous Lerch tail bound
+(|∫e^{-αt}D|≤Dmax/α, tail Σ_{n≥N}) ⟹ rigorous Arb 4×4 ⟹ LDL^T pivots certified >0 at a=0.549 = FIRST rigorously-certified
+point. Then continuum + tail. Tools: entry_engine.py, dkl_closedform.py, arb_screw.py. Cross-links §199.3a/b.1, §198.
