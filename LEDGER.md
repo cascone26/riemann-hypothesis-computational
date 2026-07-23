@@ -6430,3 +6430,36 @@ EF. The §125/§181 conclusion is now maximally earned: a solution requires a GE
 bridge beyond the explicit formula; none exists in the current literature. Remaining bounded probes: §182(5b) Yoshida
 small-λ break-mining (localize the wall to one explicit failing estimate); the §2 cascade↔partial-Euler-product
 checkable prediction. Cross-links §47e, §122, §125, §180, §181, §182, OBSTRUCTION_MAP, RH_WALL_ANATOMY.md §4-5.
+
+## §184 — Yoshida break-mining: the unconditional wall is SHARP at the first prime (log 2); beyond = near-cancellation. Lever: push the threshold prime-by-prime (2026-07-23)
+
+Mined WHERE unconditional Weil positivity breaks (§182 vein 5b), both ends. Report+Handle. Cross-validated our own
+§42 screw-function work against the literature (parallel reader-agent): Yoshida 1992 (ASPM 21, 281-325) + Bombieri
+2000 (Rend. Lincei 11:183-233).
+
+END 1 — THE SHARP UNCONDITIONAL FRONTIER (proven, cross-validated): Q_W(g) ≥ 0 UNCONDITIONALLY for test-function
+support ≤ log 2 (≈0.693; our §42 "a<½log2≈0.347" is the same threshold, half-length convention). The break is
+EXACTLY the entry of the FIRST prime p=2 (Λ(2)=log 2): below it the prime sum P is EMPTY and the archimedean form A
+alone carries positivity; at log 2 the archimedean SLACK is first spent. This is the precise coordinate where "proven"
+becomes "RH-equivalent." (Literature: no tighter unconditional support-threshold published; the log2→log5≈1.6 zone is
+UNKNOWN unconditionally.)
+
+END 2 — LARGE-c STRUCTURE (Handle, arch_floor_ext.py, rigorous Arb, N=64): certified the archimedean-only form (A+B)
+floor μ_arch = smallest positive pivot, vs the full-τ margin, c=8..700:
+   c:    8      50     100    200    300    400    500    700
+   μ_arch:.25   .19    .057   .149   .021   .0032  .015   .052     (POSITIVE, but WANDERS 0.003–0.25; no clean uniform
+   n_neg(A+B):  4→…    …            11     11     12     12        lower bound; A+B indefiniteness GROWS with c)
+   margin_full: e^{−4πc} throughout (5.7e-73 @c=300 … 1.7e-89 @c=700).
+⟹ NEAR-CANCELLATION confirmed: P grows to meet a positive (but non-uniform) archimedean floor to within e^{−4πc}, and
+P also absorbs A+B's growing negative-pivot modes (definitizes indefinite A+B into critically-PD τ). HONEST: the clean
+"floor ≥ μ_0>0 uniform ⇒ two-sided bound" reframe is NOT cleanly supported — μ_arch dips to 3e-3 and n_neg grows; the
+boundary term B (the negative modes) must be carried explicitly, not bounded away.
+
+LEVER (the forward move this opens): the sharp, bounded, genuinely-OPEN target is END 1 — push the unconditional
+support threshold PAST the first prime, one prime at a time (log 2 → log 3 → log 5 …). Each prime absorbed into the
+archimedean margin = a NEW unconditional result; the METHOD of absorbing exactly one prime (sharper than Yoshida's
+single-slack argument) is the crux, and it is Bombieri's finite-truncation eigenvalue territory. Ties to our own route-6
+pair-positivity (n<2π·γ₁ unconditional) — same "extend the unconditional range" axis, support-parametrized. Concrete
+next: build the support-threshold form at support s∈(log2, log5), test whether the p=2 contribution can be dominated by
+the archimedean margin with a sharpened (prolate/Toeplitz) bound — the first prime is the whole game.
+Tools: arch_floor_vs_full.py, arch_floor_ext.py. Cross-links §42, §122, OBSTRUCTION_MAP route 6, §182(5b), rh-working-rules.

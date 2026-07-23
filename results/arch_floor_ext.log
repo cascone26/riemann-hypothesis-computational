@@ -1,0 +1,9 @@
+§184 arch floor asymptotics  N=64
+    c    prec   mu_arch(A+B floor)  n_neg(A+B)   margin_full  floor/margin
+  300    7954           2.1426e-02          11    5.7250e-73     3.743e+70
+  400    9772           3.1629e-03          11    2.5675e-79     1.232e+76
+  500   11590           1.4956e-02          12    6.9831e-84     2.142e+81
+  700   15227           5.2270e-02          12    1.6635e-89     3.142e+87
+
+READ: mu_arch over c=[300, 400, 500, 700]: min=3.1629e-03 max=5.2270e-02. Bounded below (≥~0.05) ⇒ robust floor,
+candidate unconditional sub-lemma; the RH content concentrates in P definitizing+critically-cancelling A+B.
