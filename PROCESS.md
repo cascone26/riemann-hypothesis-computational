@@ -7618,3 +7618,860 @@ coercivity of A+B over P — which IS RH and won't fall to overnight probing. Fa
 theorems (RH_RESULTS.md). Method lesson banked: know when you've reached the true frontier and say so instead
 of manufacturing probes; the proof needs a dedicated hard-analysis campaign (NEXT_SESSION_RH.md), not more
 τ-mapping. Decision chain fully in LEDGER §10–§36.
+
+---
+## 2026-07-20 (riemann4 session) — SuperPRISM 2 (Fable) + prism-1-vs-2 comparison
+- Prism 1 (`SUPERPRISM_2026-07-20.md`, Sonnet, same day): winner = Gaussian/Voigt test family
+  (`operators/gaussian_family_positivity.py`, scan running in background at time of writing).
+- Prism 2 (`SUPERPRISM_2026-07-20b.md`, Fable): search-before-build grep confirmed FOUR ledger-untouched
+  toolkits (Borcea–Brändén preservers, Kurasov–Sarnak + Alon–Cohen–Vinzant FQ classification, ASW/Edrei
+  total-positivity ladder w/ CNV-Turán + Dimitrov–Lucas unconditional rungs, χ-family-averaged positivity).
+  Derived two meta-rules from our own ledger: (M1) A6-universality filter — mechanism must be family-
+  generic (χ₄ knife-edge, no pole); (M2) winner must change quantifier structure or certificate type.
+  Prism-1 self-correction logged: its B-compensates-core idea and ζ-specific magic-function moonshot both
+  fail M1 (A6 was in ATTACK_QUEUE all along — prism 1 didn't re-read it; meta-lesson: prism pre-reads must
+  include ATTACK_QUEUE outcomes, not just LEDGER/OBSTRUCTION_MAP).
+- Independent convergence across both prisms: the Hermite–Biehler/stability axis (handle (ii)) + LP-duality
+  view of the universal knife-edge. Decision: finish Gaussian scan → TP-minor ladder (prism-2 #1) →
+  Theorem-3 (χ-family) lit-check/scoping. Also noted: `auto_jensen_signature.py` and
+  `auto_selberg_spectrum.py` are corrupted placeholder stubs (random-matrix bodies, mangled imports) —
+  they contain NO real results; do not cite them as prior work.
+
+---
+## 2026-07-20 (riemann4, Opus) — executed prism queue: Gaussian probe + self-correction + meta-theorem
+Decision chain:
+1. Built prism-1 winner (Gaussian test family, `operators/gaussian_family_positivity.py`). Hit a real
+   computational wall: small-w (core-dominated) regime needs ~e^{12/w} primes (>5e7). Fixed with a hard
+   feasibility cap + honest truncation logging (no silent caps). Scan: tau(w)>0 everywhere; apparent
+   "min tau=-1.1e-16" is double-precision UNDERFLOW.
+2. Diagnosed WHY: A+B-P IS the Weil explicit formula = Σ_γ exp(-γ²/w²); first zero γ1=14.13 underflows for
+   w<2.33. So the probe is an IDENTITY, cannot detect a violation for positive h (only off-line zeros enter as
+   complex-arg terms). Confirms prism-2 meta-rule M2 (a probe ≠ a proof path).
+3. Turned it into a genuine deposit: `operators/gaussian_explicit_formula_check.py` (mpmath dps=40) shows the
+   prime/digamma side A+B-P (NO zeros) = the zero side Σ_γ h(γ) (20k LMFDB zeros) to REL ERR ~1e-32 across
+   w=3..12. Validates the whole connes_decisive A/B/P pipeline to 30+ digits (prior best ~1e-11). = LEDGER §37.
+4. SELF-CORRECTION (verify-before-ship): prism-2 #1 (TP-minor ladder) was ALREADY DONE = ATTACK_QUEUE A14
+   (`toeplitz_tp_test.py`, TP to n=15, Euler-closure payoff fails because ζ(½)<0). I proposed it without
+   checking A14's outcome — the SAME miss I flagged prism 1 for on A6. Meta-lesson (now standing): prism
+   pre-reads MUST grep ATTACK_QUEUE A-item OUTCOMES, not just LEDGER/OBSTRUCTION_MAP. Recorded in
+   SUPERPRISM_2026-07-20b.md CONVERGE header.
+5. Meta-theorem crystallized (4 independent confirmations: A6 + A14 + §37 + OBSTRUCTION_MAP common root):
+   Weil positivity is IRREDUCIBLY GLOBAL/product-emergent — no local/per-prime/factorization/single-positive-
+   test-function certificate can work. Rules out a whole class (incl. prism-1's B-compensates-core and
+   ζ-magic-function ideas). THE ONE surviving prism-2 lead: the χ-FAMILY AVERAGE (#2), because averaging is a
+   global orthogonality operation. Worked out the mechanism (prime side thins ×φ(q), arch side grows ~log q,
+   variance = large-sieve on the χ-axis || Theorem 2's n-axis second moment) → candidate Theorem 3, scoped in
+   NEXT_SESSION_RH.md with the mandatory lit-check list (IK Ch5/7, Murty-Perelli, Sarnak-Shin-Templier).
+Net: no proof (as expected); one solid 30-digit validation deposit (§37); one honest self-correction; a
+well-supported meta-theorem that prunes the search; one concrete non-circular theorem-shaped next target.
+Proof pointers: results/gaussian_family_positivity.json, tasks output (cross-check rel-err ~1e-32), LEDGER §37.
+
+---
+## 2026-07-20 (riemann4, Opus) — RESEARCH_QUEUE saved + #1 executed (ℤ = margin maximizer)
+- Saved 8 ranked directions to RESEARCH_QUEUE.md (prime-deformation, graph-zeta, χ-average, logic/Π₁,
+  p-adic/Iwasawa, Berry-Keating deficiency-index, variational metaphysics, condensed-math far shore).
+- Built & ran #1 (`operators/prime_deformation_cartography.py`): the CONTINUOUS margin functional over
+  prime-position space (vs beurling_adversary's discrete swaps). Decision chain:
+  1. First run: baseline λ_min≈0, all 6 random dirs decrease it, but finite-diff "gradient"=1.73 → apparent
+     contradiction (max should have zero gradient).
+  2. VERIFY-BEFORE-SHIP resolved it: one-sided slopes are OPPOSITE-signed (right −7.5, left +4.5) and log-log
+     scaling exponent = 1.05 → λ_min is CONICAL (kink) at the ~20-dim near-kernel degeneracy; the central-diff
+     gradient is a meaningless average of two one-sided slopes. It IS a local max, just non-smooth.
+  3. NON-TRIVIALITY check (the crucial one): are off-prime combs also local maxima? NO — three off-prime/even-
+     spaced combs are SADDLES (up≈8/16), λ_min≈−1.3. So the local-max is SPECIFIC to ℤ, not a generic property.
+  4. Robust N=6..18. Folded all 3 verifications into the script → one run reproduces everything (proof pointer:
+     results/prime_deformation_cartography.json).
+- RESULT = LEDGER §38: ℤ is the UNIQUE conical local MAX of the Weil positivity margin; peak=0=knife-edge;
+  cashes out the LP-duality/variational-metaphysics frame concretely. HONEST: finite N, A+B frozen, not a proof.
+  Decisive follow-up flagged: density-consistent A (co-move archimedean with deformed density) — distinguishes
+  real variational characterization from a freeze-A artifact.
+- Next in queue: #2 graph-zeta sibling (comparative anatomy vs solved RH), then #3 χ-average lit-check.
+
+---
+## 2026-07-20 (riemann4, Opus) — #2 executed (graph-zeta comparative anatomy)
+- Built `operators/graph_zeta_tau.py`: Ihara-zeta/Ramanujan-graph sibling where graph-RH is PROVEN.
+- Verified structural mirror: Ramanujan ⟺ all θ real (Petersen); non-Ramanujan (bottleneck, λ_2=2.842>2√2)
+  has a complex angle + anomalous >1 term = §37's on/off-line split exactly.
+- VERIFY-BEFORE-SHIP: caught + corrected two overclaims — (a) header said the toy form "goes negative" (it
+  doesn't for simple Gaussian h; needs Terras' geodesic explicit formula — scoped down honestly); (b) initial
+  bottom-edge non-Ramanujan example suppressed the h>1 signature, so switched to a top-edge (λ_2) violator and
+  fixed the detector to the correct complex-angle test (Im θ≠0).
+- Mechanism diff (payoff = LEDGER §39): positivity is a THEOREM in the graph world because the zeros ARE
+  eigenvalues of a bounded self-adjoint operator (adjacency matrix); ζ lacks exactly that (Hilbert–Pólya).
+  Graph spectral gap = ζ's zero-free region analog, not RH. ⟹ self-adjointness is the missing ingredient →
+  loops to #6 (Berry–Keating deficiency indices).
+- SESSION SYNTHESIS: §37 (global/product-emergent) + §38 (ℤ = unique margin maximizer) + §39 (solved analogs
+  get positivity from a self-adjoint operator) all point at the missing Hilbert–Pólya operator. Highest-value
+  next computations: §38 density-consistent-A follow-up; #6 Berry–Keating deficiency-index probe.
+
+---
+## 2026-07-20 (riemann4, Opus) — #6 executed (Berry–Keating deficiency indices) + arc complete
+- Built `operators/berry_keating_deficiency.py`: actually COMPUTES deficiency indices of symmetrized xp
+  (existing script forced Hermiticity; doc only cited them). VERIFY-BEFORE-SHIP: first pass used numerical
+  quad w/ 1e-9 cutoff → gave (0,∞) as (1,0), contradicting known e.s.a. (0,0); root cause = finite cutoff
+  can't detect endpoint integrability (definitional error); fixed with analytic power-law criterion → matches
+  textbook.
+- Result (§40): (0,∞) e.s.a.(0,0) but continuous spectrum; truncated [a,b]=(1,1)=momentum-on-circle, rigid
+  spectrum, can't match irregular ζ zeros with a local BC ⟹ Hilbert–Pólya operator must be NONLOCAL
+  (periodic-orbit). Honest: deficiency indices known (Endres–Steiner); NEW = from-scratch computation +
+  synthesis localizing the missing ingredient via §39.
+- 07-20 ARC (§37→§40) complete: 4 angles → 1 sharply-localized target. Next: #3 χ-family average — the only
+  remaining path to a NEW unconditional theorem; starting with a literature check (may be folklore).
+
+---
+## 2026-07-20 (riemann4, Opus) — #3 lit-check → found the frontier (Suzuki screw function); pivoted queue
+- Lit-checked #3 (χ-average) via WebSearch: (a) Lagarias math/0404394 already links Li coeffs↔Weil functional
+  for L-families with positivity+unconditional/on-RH asymptotics; (b) χ-variance = mature hard moment theory.
+  ⟹ Theorem 3 is folklore-or-frontier, NOT a clean new theorem. Downgraded #3 (honest, same as A6/A14 catches).
+- The search surfaced the LIVE FRONTIER: Suzuki arXiv:2606.09096 "Weil's quadratic form via the screw function"
+  (June 2026) + his 2023 [14]. Read via WebFetch (REPORT-tier, needs PDF verification). = LEDGER §41.
+- KEY: it IS our target and VALIDATES today's arc. Screw fn g(t)=our A+B−P as one continuous fn; RH⟺g pos-def
+  screw kernel (Kreĭn). Gives rigorous localized coercivity λ_a (handle i) AND Thm1.5/Cor1.6 = Weil form ≅
+  momentum op 𝒟_a on a prime-WEIGHTED space, extensions by phase θ, W(a,θ;z) all-real-zeros (Hermite–Biehler,
+  handle ii), RH⟺tune θ(a). This is RIGOROUSLY our §40 (independent physical convergence — our crude arc landed
+  on Suzuki's exact object). Added as RESEARCH_QUEUE #0 (top priority).
+- SESSION TOTAL: §37 (30-digit A/B/P validation), §38 (ℤ=unique margin maximizer, verified), §39 (graph-zeta →
+  missing ingredient=self-adjointness), §40 (deficiency indices → nonlocal-BC momentum op), §41 (Suzuki frontier
+  validates the whole arc + hands us Kreĭn/de-Branges toolkits + a rigorous coercivity result). Arc converges on
+  ONE object with a current rigorous program to plug into. Next session: verify Suzuki PDFs, reproduce λ_a, work
+  Cor 1.6.
+
+---
+## 2026-07-20 (riemann4, Opus) — went deep on Suzuki (#0): verified PDF, reproduced λ_a, extracted μ₁
+- Pulled the real PDF (pdftotext → membrane_pulls/suzuki_2606.09096.txt). §41's fetch-summary claims now
+  HANDLE-tier: Suzuki's W(f)=our A+B−P term-for-term; screw fn arch term ψ(¼)−logπ=−5.372=our Ω(0) exactly.
+- Built λ_a numerically (`operators/suzuki_screw_lambda_a.py`). TWO bugs caught by verify-before-ship (Suzuki's
+  λ_a>0-for-small-a theorem was the check both times): (1) missing mean-zero projection P_a → λ_a exploded to
+  −300; (2) naive finite-diff → spurious near-null modes. Fixed with P_a projection + smooth sine-Galerkin basis.
+- VALIDATED normalization: leading log(1/a) coeff c=0.9945≈1 (3-param fit) — my form matches Thm 1.4. Resolution-
+  sensitive: had to use converged (M,K) + small-a-only to avoid a fit contaminated to c=0.89.
+- EXTRACTED μ₁≈0.25±0.02 (Suzuki leaves it uncomputed) — 3-param 0.260, 2-param 0.239, quadratic 0.237. No clean
+  closed form. = LEDGER §42.
+- Honest caveat logged: larger-a λ_a spurious-negative = discretization leak (g~−4e^|t|/2), not anti-RH.
+- NET this session (§37-§42): 30-digit A/B/P validation → ℤ=margin maximizer → self-adjointness is missing
+  ingredient → nonlocal-BC momentum op → SAME object as Suzuki's live 2026 screw-function program → verified it
+  IS our object + extracted its open constant μ₁≈0.25. The convergence arc landed on a real current rigorous
+  target (Suzuki Cor 1.6 θ(a)-tuning). Next: [14]+Connes 2602.04022, better λ_a for larger a, work Cor 1.6.
+
+## 2026-07-20 (riemann4, Opus) cont'd — μ₁ purely archimedean + closed-form path
+- Read Suzuki eq 2.2 (near-origin expansion): g=|t|log|t|+A|t|+½·primes+O(t²), A=½(log2π−ψ(2))=0.7075; primes
+  EMPTY for |t|<½log2≈0.347.
+- VERIFIED numerically: λ_a(full) == λ_a(no-primes) for a≤0.35 (diff 0) ⟹ μ₁≈0.25 is PURELY ARCHIMEDEAN;
+  primes switch on at a=0.347 and destroy positivity at larger a. = LEDGER §42b.
+- Derived the closed-form path: for a<0.347 the form reduces to a confined H^{1/2} functional L_a (no primes),
+  μ₁ from its ground state — a clean prime-free variational problem (flagged for careful analytic work; my quick
+  scaling had a factor ambiguity, so NOT claiming the closed form yet — verify-before-ship).
+- Refs for next: CCM [4] arXiv:2511.22755 (Nov 2025), Suzuki [14] Canad.J.Math, Connes 2602.04022.
+
+## 2026-07-20 (riemann4, Opus) — μ₁ = M reduction (closed-form path), Olympus for convergence
+- Chased μ₁ closed form. Built `operators/suzuki_mu1_closed_form.py` (the prime-free L_a functional).
+- VERIFY-BEFORE-SHIP caught a factor-2 error in my reduction: I wrote Q_{B_a}=2L_a−..., but direct λ_a
+  numerics have log(1/a) coeff 1, and the independent inf[L_a] computation scales as 1·log(1/a)+M (fit c=1.0000)
+  with λ_a−inf[L_a] → −(1+2A)=−2.415 as a→0. Correct reduction: λ_a=inf[L_a/‖v‖²]−(1+2A)+O(a) ⟹ **μ₁=M exactly**.
+- M = ground state of an explicit prime-free confined H^{1/2} functional on (−1,1). = LEDGER §42c.
+- OLYMPUS (16-core): grid converged to 6 digits (M=0.236762, grid 4000→24000); K (basis) is the slow direction
+  (−log(1−x²) confinement) — launched K→400 extrapolation on Olympus (background, Monitor armed).
+- Current: μ₁ = M ≈ 0.236 (tighter than the direct 0.25±0.02). Closed form of M itself still open (no clean
+  elementary hit; needs the precise K→∞ value). Used tools properly: Olympus offload + Monitor.
+
+## 2026-07-20 (riemann4, Opus) — built + verified Suzuki's Hilbert–Pólya construction (Thm 1.5)
+- Went for the RH target (Cor 1.6). Built `operators/suzuki_W_zeros.py`: v_±=(A_a−λ)^{-1}e^{±x} (from Lemma 6.2),
+  W(a,θ;z)=(z−i)v̂_++e^{iθ}(z+i)v̂_−, zeros = eigenvalues of D_{a,θ}.
+- VERIFIED Thm 1.5 (zeros real): |W| dips to 1e-4..1e-6×median on-axis, 190-360× larger 0.5i off-axis. Weyl
+  density correct. = LEDGER §43.
+- HONEST (did NOT overclaim): accessible a≤0.8 = momentum-ish regime becoming irregular as primes switch on
+  (a=0.8 has zeros near γ₂,γ₃ + a near-collision — suggestive), but aggregate metric doesn't establish a bending
+  trend and a>1 discretization fails. Zeta reproduction needs large-a + Cor 1.6 φ/θ tuning = open frontier.
+- Session §37→§43: validated pipeline → ℤ=margin maximizer → self-adjointness missing → nonlocal-BC momentum op
+  → = Suzuki's live 2026 program → verified it IS our object → extracted μ₁=M≈0.233 (Olympus) → BUILT+verified
+  the HP operator itself. Coherent arc from our independent work to the frontier's exact machine. Frontier: a
+  large-a discretization to drive W's zeros to {γ_n}.
+
+## 2026-07-20 (riemann4, Opus) — CAUGHT & FIXED a von Mangoldt bug (verify-before-ship)
+- Went for Cor 1.6 (RH target): built the W(a,θ;z) construction, verified real zeros. Then testing large-a found
+  λ_a CONVERGED-negative for a≥1 — contradicts RH (λ_a≥0 ∀a). My earlier "discretization leak" label (§42) was
+  wrong: higher res / screw-kernel / mpmath all gave the same negative; even smooth v gave Q<0.
+- Traced it: `vonmangoldt_upto` treated composite non-prime-powers (6,10,12…) as primes (Λ(6)=log6≠0). Bites at
+  n=6 ⇒ |t|≥1.79 ⇒ a≥0.9. FIXED (proper sieve). Post-fix λ_a=0 (knife-edge, ≥0) for all a≤3. = LEDGER §44.
+- Scope: μ₁=M (a<0.347, prime-free) and W-zeros a≤0.8 (primes n≤4) UNAFFECTED. Large-a λ_a WAS wrong, now fixed.
+  This UNBLOCKS the large-a W-zeros → can now test Cor 1.6 (do zeros → zeta zeros?). Running on Olympus.
+- Lesson: a converged-in-resolution wrong answer is a BUG, not a resolution artifact — should trigger a hunt, not
+  a hand-wave. The RH-consistency oracle (λ_a≥0) caught it.
+
+## 2026-07-20 (riemann4, Opus) — POST-FIX: Suzuki HP construction reproduces low zeta zeros (prime-driven)
+- After the von Mangoldt fix (§44) unblocked large-a, pushed W(a,θ;z) to a=1.0-3.0 (Olympus).
+- θ-scan: a SINGLE tuned θ*(a) locks the first 5 W-zeros onto γ₁..γ₅ (a=1.0 θ*=2.97: 14.16,21.00,24.81,30.43,
+  33.05 vs 14.13,21.02,25.01,30.42,32.94; mean 0.074). θ*(a) shifts with a (2.97→1.83) = Cor 1.6 θ(a)-tuning.
+- DECISIVE CONTROL (full vs arch-only, primes the only difference): FULL 0.074 vs ARCH-ONLY 0.425 at a=1.0
+  (5.7×), 0.079 vs 0.360 at a=1.2 (4.6×). Primes bend the spectrum onto zeta — clean causal attribution.
+  Rigid-null also 0.43 → full 6× better than both nulls. = LEDGER §45.
+- HONEST: numerical, moderate a, first 5 zeros, ~0.07 (not exact); θ(a) fit; not a proof. But a single θ locking
+  5 zeros + prime-driven 6× control = genuine demonstration the HP construction works as Cor 1.6 claims.
+- SESSION §37→§45: pipeline validated → ℤ=margin max → self-adjointness missing → nonlocal-BC momentum op →
+  = Suzuki 2026 program → verified → μ₁=M≈0.233 (Olympus) → built HP operator → CAUGHT von Mangoldt bug →
+  fixed → operator REPRODUCES low zeta zeros, prime-driven. Machine built, debugged, shown to work.
+
+## 2026-07-20 (riemann4, Opus) — §45 ROBUSTNESS confirmed (strengthened)
+- Stress-tested the zeta-match across a=1.0-2.0, full vs arch-only, first 5 & 8 zeros (Olympus). = LEDGER §45b.
+- Match TIGHTENS with a (full5 0.073→0.025, full8 0.086→0.034) = Cor 1.6 a→∞ convergence. Prime advantage GROWS
+  (5.8×→13.4×). Single θ matches 8 zeros (irregular spacing reproduced, not density). Arch-only plateaus ~0.3
+  (never converges). All 4 discriminators pass ⟹ §45 strengthened: prime-driven zeta reproduction that converges.
+- Honest: numerical, a≤2, ~0.025 (→0 trend), θ fit but 1 θ for 8 zeros highly constrained, not a proof.
+- Frontier: a→3-5 (larger Olympus discretization) to drive 0.025→0; analytic θ(a)→ξ limit = proof target.
+
+## 2026-07-20 (riemann4, Opus) — a→3.5 push: match converges to 0.005-0.009 (Suzuki line complete for now)
+- Pushed a=2.0→3.5 (Olympus). full5 0.073(a=1)→0.005(a=3.5), full8→0.009. One θ matches 8 zeta zeros to 0.009
+  at a=3.5 (~45× better than density floor; arch-only ~0.3). Converging = Cor 1.6 a→∞. = LEDGER §45c.
+- Honest caveat: θ*(a) argmin noisy (near-degenerate optima at larger a); match-quality converges but single-
+  smooth-θ(a) not confirmed by argmin. Not a proof.
+- Suzuki line (§41-45c) complete for this session: found the frontier paper = our object, verified it, extracted
+  μ₁=M≈0.233, built the HP operator, fixed a von Mangoldt bug, showed it reproduces 8 zeta zeros converging
+  toward 0, prime-driven. A working converging numerical Hilbert-Pólya machine.
+- Frontier for next: a→5-8 (better large-a discretization), Suzuki [14] + CCM arXiv:2511.22755 for analytic limit.
+
+## 2026-07-20 (riemann4, Opus) — CLEAN headline: v̂_a vanishes at zeta zeros (Suzuki eq 1.2), no tuning
+- Read Suzuki [14] (arXiv:2301.00421): eq (1.2) v̂_a→ξ (v_a=lowest eigenfunction of A_a) — a θ-FREE probe.
+- Built `operators/suzuki_vhat_zeros.py`. RESULT: v̂_a vanishes at first 12 zeta zeros (γ₁..γ₁₂) to ~1e-4, NO
+  tuning. Verified genuine sharp zeros (10⁴ dip at γ_n), prime-driven (arch-only O(1)), non-circular (A_a=Ω+
+  primes+pole). a=2.0 nails all 12 to 1e-4 (a→∞ reach ↑). = LEDGER §46. Supersedes the W(a,θ;z) θ-tuned route.
+- Honest: numerical, finite a, ~1e-4, demonstration of (1.2)/the construction, NOT a proof (= unconditional
+  v̂_a→ξ, the open analytic problem; Suzuki Thm 1.1 de Branges iso is UNDER RH).
+- SESSION §37→§46: built+debugged+demonstrated a working non-circular numerical Hilbert–Pólya realization (12
+  zeta zeros, no tuning, prime-driven) + μ₁=M≈0.233 + ℤ-margin-maximizer + von Mangoldt bug caught. Proof
+  frontier: unconditional a→∞ limit (Suzuki [14] §5-6, CCM 2511.22755).
+
+## 2026-07-20 (riemann4, Fable) — STEP-BACK: §46 corrected; pivot from demonstrations to the GAP MAP
+- Jacob asked "is this the place to be?" Honest self-audit first: §46's v̂_a-vanishing is EXPLICIT-FORMULA-FORCED
+  (Q(v)=Σ_γ|v̂(γ)|² identically ⟹ ground state with λ_a≈0 must kill v̂ at reachable zeros). Logged §46b. The
+  numerical-HP line hit its ceiling (May doc's "numerical re-confirmation ≠ progress" warning applies).
+- Verdict: right neighborhood (Suzuki frame = live frontier, unifies both non-circular handles), wrong altitude
+  (demonstrations). Pivot: read both Suzuki papers' proof structure → SUZUKI_GAP_MAP.md (companion to
+  OBSTRUCTION_MAP): what's unconditional, where RH enters, the precise gap.
+- KEY FIND ([14] Thm 1.4/Cor 1.5/Cor 4.3): Suzuki converts Weil's INEQUALITY criterion into IDENTITIES.
+  Sharpest: **RH ⟺ D(t):=(1/2π)‖S_t‖²+g(t) ≡ 0 on a half-line** — ONE explicit zero-free function of ONE
+  variable. Dimension collapse of the quantifier (meta-rule M2 satisfied); off-line zeros contribute distinct
+  almost-periodic signatures ⟹ the rigidity question lives in a DIFFERENT toolkit (uniqueness/Turán) than the
+  exhausted positivity one. Next executables: transcribe S_t from arXiv LaTeX (OCR mangled) → build D(t)
+  machine; derive per-zero D_ρ(t) closed form + the almost-periodicity rigidity question; scope partial-
+  vanishing finite theorems. = SUZUKI_GAP_MAP.md §C.
+
+## 2026-07-20 (riemann4, Opus) — THE SCALAR REDUCTION (§47): RH ⟺ g(t)≤0, verified end-to-end
+- After the §46b step-back (demonstrations closed), read Suzuki [14] proof structure → SUZUKI_GAP_MAP.md, then
+  the sharpest form: RH ⟺ g(t)≤0 on a half-line, g = explicit zero-free screw function (our A+B−P as ONE
+  function of ONE variable). = LEDGER §47.
+- VERIFIED: zero-form g(t)=−2Σ_{γ>0}(1−cos tγ)/γ² matches direct prime-sum g to 4e-5 (100k zeros); g<0 for
+  t=1..10 (fixed von Mangoldt); mean=−2Σ1/γ²=−0.0462; g almost-periodic, max 0 at t=0, each zero-term ≤0.
+- OBSTRUCTION exact: off-line zero ⟹ +cos(tγ)e^{|δ|t}/γ² term (exponential growth) ⟹ g>0. So RH ⟺ prime-built g
+  has NO exponential growth ⟹ almost-periodicity/uniqueness toolkit (different from positivity, which
+  OBSTRUCTION_MAP exhausted). Dimension collapse ∞-dim form → scalar (meta-rule M2).
+- HONEST: proving g≤0 unconditionally IS RH (same difficulty); not a proof, but the sharpest analysis-ready
+  target the project has. Frontier: bound prime-sum fluctuation / Turán uniqueness that boundedness forces δ=0.
+- Altitude corrected: from finite-a demonstrations (ceiling hit, §46b) to the scalar proof target. Right place now.
+
+## 2026-07-20 (riemann4, Opus) — envelope hunt + two insights; honest frontier state
+- Hunted g(t) for near-violations (§47b): sup g=−0.0199 over [0.02,300], but it's the knife-edge (almost-periodic,
+  approaches 0 only at astronomical Bohr-recurrence t; no exploitable margin). Consistent with §38.
+- Two genuine insights (§47c): (1) MERTENS CAVEAT — numerical g≤0 is WEAK RH evidence (sign of explicit prime sum,
+  can flip at astronomical t like Mertens 10^14); content is entirely in the unconditional proof. (2) DBN-g
+  RECONNECTION — the scalar g_λ(t) reconnects §47 to the real de Bruijn–Newman flow that §35 found disconnected
+  from our operator: g_λ≤0 ∀t ⟺ λ≥Λ, so the sign of explicit g_λ is a computable handle on Λ∈[0,0.22]
+  (Rodgers–Tao/Polymath15). Live proof-shaped lead.
+- FRONTIER: scalar reduction §47 is the sharpest FORM; proof is RH-hard, no shortcut. Past where computation helps.
+  Two live PROOF leads, both hard analysis: (a) DBN-g (g_λ sign vs Λ); (b) almost-periodicity uniqueness (does
+  boundedness of explicit g force δ=0). Secured deliverables banked (§37-47c, SUZUKI_GAP_MAP.md).
+
+## 2026-07-20 (riemann4, Opus) — DBN-g reconnection VALIDATED (§47d)
+- Tested whether scalar g detects off-line zeros: displaced γ₁ by δ, watched g. δ=0.05 → max g +0.14 (from
+  -0.021), δ=0.2 → +1617. g is exquisitely sensitive; validates §47 obstruction + DBN-g premise (g_λ≤0 ∀t ⟺
+  λ≥Λ, g is a Λ-detector). Quantified Mertens caveat: low zeros caught fast, high only at astronomical t.
+- DBN-g lead: tool VALIDATED. Proof payoff = bound Λ (Polymath15 0.22→0) by proving g_λ≤0 unconditionally for
+  λ≥λ₀ — the one axis with unconditional community traction. Whether scalar g_λ is an easier handle than
+  Polymath15's H_t analysis = the genuine open question, flagged as top next-session analytic target.
+- Session §37-47d COMPLETE & consolidated. Headline: scalar reduction RH⟺g(t)≤0 (§47) + μ₁=M≈0.233 + von
+  Mangoldt bug + structural results + SUZUKI_GAP_MAP + DBN-g reconnection validated. Frontier is hard analysis
+  (bound Λ via g_λ, or almost-periodicity uniqueness). All verified, honestly scoped, banked.
+
+## 2026-07-20 (riemann4, Opus) — §47e: both proof-leads resolved to RH-hard; neighborhood exhausted to frontier
+- Resolved §47d top-question NO: g_λ (λ≠0) has no prime-form (H_λ no Euler product, §35) → DBN-g is a Λ-DETECTOR
+  but no prime-side proof accelerator (= Polymath15's representation).
+- Lead (b): explicit g(t)≤0 at λ=0 also RH-hard — needs √x-strength PNT error (=RH); unconditional
+  Vinogradov-Korobov error too weak to bound the e^{t/2}. Scalar form = cleanest STATEMENT, not easier PROOF.
+- FRONTIER fully mapped: no computational/easy-analytic shortcut left in the Weil/screw/operator/DBN neighborhood;
+  verified at each wall. Next real progress needs RH-strength prime control (=RH) or an ORTHOGONAL surface
+  (function-field/Hodge transport = Vector D, or condensed-math Spec ℤ = the "different KIND" per the meta-theorem).
+- Session §37-§47e: comprehensive, honest campaign. Secured: μ₁=M≈0.233, von Mangoldt fix, scalar reduction §47,
+  ℤ-margin-max + global-positivity meta-theorem, graph-zeta diagnosis, verified HP construction, SUZUKI_GAP_MAP,
+  DBN-g Λ-detector. Every claim verified or walked back honestly (§46b, §47e). Frontier = orthogonal surface or
+  hard analysis; flagged for next session.
+
+## 2026-07-20 (riemann4, Opus) — §48: opened geometric surface → read CCM Nov 2025 → our τ IS the frontier object
+- Vector D probe #1 already dead (hard-Lefschetz absent, §VECTOR_D). Read the CURRENT frontier: CCM
+  arXiv:2511.22755 (Nov 2025, source saved). Their QW_λ = OUR τ. Their "missing steps" = (1) τ min eigenvalue
+  simple + eigenvector even, (2) k_λ≈ξ_λ. Suzuki [14] needs the SAME (1). Two independent 2025-26 programs, one
+  shared crux, on our object.
+- Tested (1) on τ: inconclusive (precision-limited; near-kernel below machine eps; parity-block min flips w/ N).
+  Confirms why it's open. Built the prolate operator PW_λ (CCM bridge tool): ground state SIMPLE+EVEN cleanly
+  (the property τ can't resolve). = LEDGER §48.
+- Net: whole session's τ-work IS analysis of the live frontier object; shared crux ID'd; prolate tool brought in.
+  Proof gap (k_λ≈ξ_λ) = Fields-team open problem. Next concrete: build full k_λ + quantify vs ξ_λ.
+- SESSION §37-§48 COMPLETE: comprehensive RH campaign across every surface (analytic/screw/operator/DBN/geometric),
+  each mapped to its frontier + verified at the wall. Landed on: our τ = the object two leading 2025-26 programs
+  are stuck on, at one shared crux. Secured: μ₁=M≈0.233, scalar reduction, von Mangoldt fix, meta-theorem,
+  SUZUKI_GAP_MAP, prolate tool. All verified/honestly scoped.
+
+## 2026-07-20 (riemann4, Opus) — §49-50b: assembled + verified the full CCM/Suzuki frontier mechanism in-repo
+- Read CCM arXiv:2511.22755 (Nov 2025): their QW_λ = OUR τ. Missing steps: (1) τ min eigenvalue simple+even;
+  (2) k_λ≈ξ_λ. Suzuki [14] needs the SAME (1).
+- VERIFIED even-simple (§49/49b): hi-prec (dps=30) robust N=6,8,10, global min in EVEN block + simple. Reason:
+  γ=functional-equation reflection, Ξ even ⟹ kernel even; Hadamard uniqueness ⟹ simple.
+- Verified Riemann theta construction (§50): k=E(h), M(k)(s)=¼ξ(s+½) (ratio 0.25 const) ⟹ k̂=¼Ξ, zeros=zeta zeros.
+- Built k_λ in-repo (§50b): even (parity +1), QW_λ(k_λ)/‖k‖²=−2.8e-13≈ε_λ (near-null vector) = missing-step #2
+  core. Overlap ill-posed at double prec (23-dim degenerate kernel); sharp convergence is λ→∞/hi-prec.
+- NET: our whole session's τ-work IS analysis of the object two leading 2025-26 programs are working; both missing
+  steps concrete + partly done in our tooling. Crack path: hi-prec k_λ↔ξ_λ (step 2) + even<odd inequality (step 1).
+- No defeatism (per Jacob): these are the two concrete cracks, both attackable; the mechanism is fully assembled.
+
+---
+
+## Session riemann4, 2026-07-20 — §51-59b arc + step-back audit
+
+**Decision chain:** step-back → two parallel targets: (#1) cascade hypothesis, (#2) one-prime positivity.
+#1 CONFIRMED (whole near-null tower = Ξ-sections, §51). #2 found the prime STABILIZES positivity (arch+pole
+alone fails for λ²>2; p=2 rescues — §52), parity split → pinned even zero mode (§53). Tried and KILLED in
+sequence, each by direct computation: relay hypothesis (§53), bounded-gap lever (§54), smooth weight-criticality
+(§56b — level-crossing not stationarity), eigenvalue-side trace formula (§56c), direct de Branges kernel (§57 —
+re-clothes Weil; phase positivity is just ϑ′>0). Positive finds: arithmetic weights = strict local max of even
+ground state pinned at 0 (§56); Báez-Duarte instantiated, BDLS rate reproduced, knife-edge FRAMEWORK-INDEPENDENT
+(§58); function-field diagnosis — knife-edge = infinite-dim obstruction, finite-dim polarized Frobenius already
+exists as Suzuki's D_a (§59/59b). Two self-corrections shipped as ledger entries (§55b, §56b) — verify-before-ship
+caught both before overclaim.
+
+**Step-back audit (end of session):** (1) §59b's "reduction" = Cor 1.6 = the §45 frontier revisited — tour
+validated it, but it's a return not an advance; guard the reformulation-as-progress trap. (2) BIGGEST MISS:
+SUZUKI_GAP_MAP §C executables (D(t) identity machine, per-zero D_ρ rigidity/Turán route) never built despite
+"effort goes at the gap"; §58's "prove exact rate" independently re-derived the same identity-not-inequality
+insight. (3) NEW cross-link: mean g = −2Σ1/γ² = −0.04617 vs BDLS const 2+γ_E−log4π = +0.04619 — same zero-sum
+Σ1/|ρ|² (up to ¼-shift); screw-mean and approximation-rate measure the SAME defect ⟹ D(t) route and Báez-Duarte
+route are quantitatively one frontier. (4) χ-family average (Theorem 3) still unexplored. (5) Housekeeping fixed:
+18 session tools archived /tmp → operators/session51_59/ (proof pointers now durable).
+
+**Next:** build the D(t) machine (Cor 4.3) — the flagged-but-never-built executable, now doubly motivated (equality
+criteria + §58 exact-rate + same-defect cross-link). Then D_ρ rigidity (Turán/almost-periodicity). Then χ-average.
+
+### §61-63 (2026-07-20, same session, post-audit executables)
+Acted on the audit's flagged-unbuilt items. §61: built the D(t) machine from the REAL Suzuki source (transcribed
+EQ_105/106/302/403, Cor 4.1); derived a NEW clean form |S_t|²=Ξ²|P_t|²/(Ξ²+|ξ'|²); validated g_ξ prime-form vs
+spectral zero-form (agree to t-independent truncation constant); derived off-line defect D_ρ(t)~e^{2δt} (verified);
+VERDICT = clean single-variable reformulation, loophole-free but relocates (Turán adds nothing beyond positivity).
+§62: examined the χ-average "surviving lead" — escapes local obstruction but hits the AVERAGING wall (a strong-
+enough large sieve would prove GRH ⟹ it isn't; gives almost-all not the individual). Unified: average→individual
+gap = analytic→geometric gap (§59). §63: resolved density-consistent §38 — ℤ-margin-max is REAL (density-preserving
+deformations still 60/60 conical-max), NOT a freeze-A artifact ⟹ true primes variationally selected as Weil-margin
+maximizer. New lead surfaced: LP-duality/energy-minimization (Cohn-Elkies/Viazovska) framing of "ℤ is optimal" —
+individual-isolating, geometric-flavored, NOT ruled out by the magic-function ban (different optimization).
+Session verdict §51-63: every analytic route relocates to one core; the individual-isolating structure is geometric
+(function-field polarization / ℤ-optimality), and the LP/energy route is the freshest attack on it.
+
+### §64-67 (2026-07-20, session culmination)
+LP/energy lead worked to ground. §64: sign-asymmetry (RH is the no-free-certificate side ⟹ needs interpolation);
+universal optimality of ℤ confirmed across bandwidths (λ²≤30 trustworthy; λ²=60 = scheme breakdown, honest catch);
+reduced to "sign-definite modular parent of |Ξ|²". §65: that parent EXISTS = Pólya's Φ (verified Φ>0, even, FT=Ξ;
+factor-2 scaling caught) ⟹ target = de Bruijn–Newman Λ≤0, with Λ≥0 PROVEN (Rodgers-Tao) = uniquely best-positioned.
+§66: honest tracing — Λ≤0 IS literally RH, proven Λ≥0 gives no leverage, mechanism routes back through S(t)/primes.
+MAP DECLARED COMPLETE: all analytic routes interconnected to one core (√x prime/S(t) cancellation), none isolates
+the individual, missing ingredient = geometric individual-isolation. §67: LP-class route (Turán inequalities HOLD,
+ratios→1⁺ knife-edge; verified) UNIFIES D_a (finite-a HB) + dBN (LP Gaussian = Λ) via LP-closure-under-limits.
+CULMINATION: RH's analytic landscape fully mapped/connected/reduced; concrete open sub-problems = higher Laguerre-
+Pólya inequalities + LP-preservation control of W(a,·)→Ξ (Cor 1.6); deep frontier = geometric construction.
+
+### §68-73 (2026-07-20, LP hierarchy + literature cross-check + convergence-rate dig)
+§68: higher-LP lever = Griffin-Ono-Rolen-Zagier 2019 Jensen polynomials (recognized via rule 13, not fresh;
+verified hyperbolicity d=2..6). §69/69b: literature cross-check (subagent + WebFetch-verified) — map VALIDATED by
+2026 frontier (Connes/Groskin work our exact object; the finite→infinite convergence is THE open problem = our
+core); §63 primes-as-extremizer apparently original but a characterization not a lever. Added rule 13 (prior-art
+check before new attempts) to rh-working-rules. §70: convergence-rate structural candidate = doubly-exp from Polya
+Phi super-decay (§65). §71: prime-truncation measurement consistent-but-discretization-limited. §72: REFUTED the
+"eigenfunction=Phi" mechanism (nodeless ground state != Phi) — candidate doesn't transfer via that route. §73: MAJOR
+overlap — Connes 2602.04022's approach IS our even-simple(§49)+prolate(§48) campaign; his theorem even-simple=>self-
+adjoint=>on-line is the rigorous version of our §49 (don't redo); his convergence uses PROLATE spheroidal asymptotics
++ Poisson (= our PW_lambda §48), giving a NEW correct rate-mechanism candidate (Slepian/Landau-Widom super-exp
+prolate eigenvalue decay) to replace the refuted Phi one. NEXT: measure our operator convergence vs prolate asymptotics.
+Method note: 3 self-corrections in the rate-law dig (§70 scope, §71 inconclusive, §72 refuted) — verify-before-ship held.
+
+### §74-75 (2026-07-20, rate-law dig terminus)
+§74: prolate-rate test also floored (|v̂_a(γ₁)| plateaus ~6e-5 by a≈1.2, float64 limit — 12+ OOM above Groskin's
+1e-168 regime). §75: pulled Groskin's ACTUAL rate — power-law |log λ_min|≈13.24 c^0.634, FALSIFIED at c=100/N=200 by
+49 OOM; prolate NOT used by Groskin ⟹ my §73 prolate rate-mechanism UNCONFIRMED (downgraded to speculative; the
+even-simple OVERLAP with Connes stands). Both my rate candidates (Φ §70 refuted, prolate §73 unconfirmed) unsupported.
+Rate law = genuinely OPEN + empirically UNSTABLE (joint c,N dependence; no stable fit even for Groskin). Rate-law
+thread honestly at terminus. Durable wins of the literature dig: §73 (our campaign = Connes 2026 program; even-simple
+⟹on-line PROVEN by him) + rule 13 (prior-art checks caught GORZ overlap and my own prolate speculation).
+SESSION §51-75 = RH analytic landscape fully mapped, connected, literature-validated; frontier = the convergence rate
+(Connes/Groskin's open problem, empirically unstable), reached honestly with candidates proposed+refuted.
+
+### §76 (2026-07-20, planning block on Fable)
+Chose direction after §75 terminus: attack from OUR angle — prime-by-prime induction (decompose RH into proven
+base case + per-prime-entry inductive steps; from §52/§53 mechanism work). Wrote full execution plan to
+PLAN_PRIME_INDUCTION.md (phases 0-4, gates, fallbacks, triviality-trap flagged, CC-2006.13771 positioning
+required). Model routing honored: planned on Fable; Phases 1/3 (real math) to run on Opus per Jacob.
+
+### §77-78 (2026-07-20, prime-induction Phases 0-2a)
+Phase 0 GATE PASSED: induction-on-primes for Weil positivity NOT in literature (novel); CC 2006.13771 proved only
+ARCHIMEDEAN place (base case ✓✓), finite places OPEN, their obstruction = infinite limit (which induction targets).
+Phase 1: wrote STEP_LEMMA.md (continuous λ_a formulation; g''= atomic positives at {0,±log n} minus exp pole;
+step = prime point-mass vs domain-growth race; triviality trap flagged). Phase 2a: λ_a pinned at knife-edge 0
+through all thresholds (no relay); difficulty concentrates in FIRST prime step (contains +→0 RH-onset at a≈0.5 =
+k_λ becoming representable). Honest: novel framing, base doubly-proven, but step reduces to global positivity
+(leaning door-closure); one untested lever = the local per-prime point-mass inequality (Step-Lemma hard kernel).
+
+### §79-80 (2026-07-20, prime-induction Phase 3 — the one-prime step)
+§79: decomposed λ_a on the minimizer — λ_a = [pole + arch-tail (positive screw)] − [arch-core |t|=Ω(0)=−5.372 +
+prime ramps (also |t|-like, negative)]. The arch+pole base margin ≈ prime-2 magnitude → knife-edge. Reduced the
+one-prime step to an explicit LOCALIZED per-prime inequality (novel; CC's framing lacks it). §80: mapped strict→
+tight — genuine STRICT sub-regime near a_2 (ratio margin/|prime| = 9.5, provable: |prime2|~(a−a_2)^1.7→0 vs bounded-
+below margin) transitioning to TIGHT (ratio≡1.00 exact) by a≈0.45 (the knife-edge onset = first Ξ-section = RH,
+isolated hard kernel). VERDICT: prime-induction delivered a novel framing + novel localized reduction + a provable-
+in-principle first-step result (positivity survives prime 2's entry); difficulty REDUCED IN FORM not substance; hard
+core cleanly isolated to the a≈0.5 onset. Modest genuine progress + a real handle. NOT RH.
+
+### §81 (2026-07-20, prime-induction — clean multiplier formula)
+Closing the one-prime step: derived+VERIFIED that the prime Weil form is a cosine multiplier in frequency,
+Q_prime(v)=(1/pi)∫Re[zeta'/zeta(1/2+i xi)]|vhat|^2 dxi (each prime = one cosine −(L(n)/√n)(1/pi)cos(xi log n)).
+Whole Weil form = a frequency MULTIPLIER; finite-interval support lifts λ_a>0 despite the symbol dipping at zeros;
+on-line zeros contribute Re=0 (i(xi−gamma) imaginary), off-line zeros dip it negative — RH ⟺ symbol positivity =
+explicit formula in multiplier form. Clean handle + verification banked. Full one-prime theorem still needs the
+arch+pole symbol bound at a≈0.37 (non-asymptotic Suzuki — remaining sub-problem). Prime side done cleanly.
+
+### §82-83 (2026-07-20, step-back → Kreĭn-Länger certificate route)
+Step-back (Fable brainstorm, re-run analysis on Opus): re-PRISMed frameworks — all inside the §66 map verdict. But
+the §81 multiplier formula opened a NEW ours-not-Suzuki route: the KREĬN–LÄNGER nonneg-cosine CERTIFICATE. Under RH
+g=Σ_γ(2/γ²)cos(γt) ⟹ Q(v)=Σ_γ(2/γ²)|v̂'(γ)|²≥0. NNLS fit of prime-built g on [0,2a] CONFIRMED: atoms converge
+EXACTLY to the zeros (a=1.0: γ₁..γ₆ exact), weights 2/γ²; residual floors at the zero-tail truncation. Gorgeous
+constructive realization of the spectral measure — but it's the RH-TRUE structure (atoms at real zeros), so an
+equivalent/certificate not an independent proof. NOT a crack. Step-back conclusion: map complete; Kreĭn certificate
+= freshest constructive handle (ours, no Suzuki/CC machinery), doesn't escape RH-equivalence. Concrete future targets:
+rigorous first-step = certificate(verified-real first-N zeros)+high-zero-tail bound; induction = does nonneg cert
+EXTEND through each a_n. Both bounded by the same core (tail/global σ≥0).
+
+### §84 (2026-07-20, rigorous first-step — honest barrier)
+Pushed rigorous first-step via 3 routes: Krein certificate (circular — atoms=real zeros), symbol/uncertainty
+(first-step symbol bounded & validated but dip is DEEP-BROAD: min -11.3 at xi=5.56, neg on [0,28], c=a*Xi0~11 large
+=> concentration bounds all fail), prime-perturbation (uniform bound 0.98 >> margin 1e-4). ALL fail — the knife-edge
+(margin ~1e-4) requires exact eigenstructure, not estimates. This is WHY Suzuki/CC are stuck: not a machinery gap,
+the knife-edge itself. Thorough attempt revealed the obstruction precisely rather than a quick theorem.
+Arc §76-84 durable: novel prime-induction framing, §81 multiplier formula (Q_prime=Re[zeta'/zeta] mult), §82-83
+Krein certificate (atoms=zeros, constructive), §84 precise barrier. All constructive handles bounded by the same
+knife-edge core. Session §51-84: RH analytic landscape fully mapped/validated/frontier-engaged; barrier understood.
+
+### §85-87 (2026-07-20, DYNAMICAL route — the log-gas bridge)
+After the positivity toolkit was exhausted (§51-84), pivoted to the de Bruijn-Newman DYNAMICAL toolkit (the one that
+proved Λ≥0, Rodgers-Tao). Agent (rule 13): screw↔dBN bridge is OPEN (no paper); RT use spacing-contradiction, NO
+monotone functional. BUILT + VERIFIED the bridge: dBN zero-flow dx_j/ds=2Σ1/(x_j-x_k) = GRADIENT ASCENT of log-gas
+energy E=Σlog|x_j-x_k|; screw function g_s = the Weil-form observable (Q_s cos-test = Σ1/x_j²+g_s/2). Hess E=-L
+(neg graph Laplacian, verified 2e-9) => E CONCAVE; dE/ds=|∇E|²>=0 decreasing, d²E/ds²<=0. RH reframed as LOG-GAS
+CRITICALITY (Λ=0), with E the Lyapunov functional RT lacked. Novel + verified. Leverage now: the prime-side/pair-
+correlation expression of the criticality (flow velocity dx_j/ds=Ξ''(γ_j)/Ξ'(γ_j) is prime-determined). Fresh
+framing unifying our screw machinery (§81-86) with RT dynamics + random-matrix log-gas. dbn_dynamics/ new dir.
+
+### §88-89 (2026-07-20, dynamical route — bridge closed + relaxation spectrum)
+§88: closed the bridge both-sided — log-gas velocity dx_j/ds = Ξ″(γ_j)/Ξ′(γ_j) (Hadamard, verified ~5% truncation);
+dBN dynamics is PRIME-determined. §89: log-gas Laplacian L spectrum (relaxation modes) — zeta = rigid-long (slow
+modes = equal-spacing, above GUE) + GUE-short (fast modes, close pairs); Λ localized to fast/close-pair modes = GUE
+pair correlation. Dynamical route §85-89 = substantial verified novel structure: complete bridge (screw↔Weil↔dBN↔
+log-gas↔prime-Ξ), gradient/concave energy (E, Hess=−L, the Lyapunov functional Rodgers-Tao lacked), prime velocity,
+relaxation spectrum. RH ⟺ log-gas critical (Λ=0); Λ≤0 frontier = close-pair pair-correlation, now equipped w/ concave E.
+Key open: regularized log-energy of the infinite system as Lyapunov for Λ≤0 (E(0)→−∞ from accumulating close pairs =
+the criticality); the Weil-positivity constraint on close-pair dynamics (unused by Rodgers-Tao).
+
+### §90-91 (2026-07-20, dynamical route — levers tested, frontier reached)
+§90: flow structure completed — exact conservation laws verified (Σx_j conserved to 3e-14; Σx_j² grows EXACTLY at
+4N(2N−1), matched to the digit); d/ds Q_s(v) (Weil form under flow, fixed test) is SIGN-INDEFINITE across tests →
+no single-test Lyapunov lever at first-derivative level. §91: analytic Λ-attack — flow energy dE/ds=Σv_j² is a
+DELICATE NEAR-CANCELLATION of two-point (+1681) vs three-point (−1179) correlation terms (residual 501): not pair-
+correlation-dominated; knife-edge delicacy reappears in correlation structure. High-zero ⟨v²⟩ scaling is truncation-
+limited (not reliable). Campaign assessment recorded in LEDGER §91. Honest next: read the ACTUAL Rodgers–Tao paper
+(1801.05914) — our "E = the Lyapunov functional RT lacked" claim must be checked against their Section 8 energy
+machinery (verify-before-ship); then BRIDGE.md grounded in that comparison.
+
+## 2026-07-20 (§92) — RT source read: overclaim caught & retracted; delta isolated; BRIDGE.md written
+Decision chain: NEXT_SESSION_RH pointed at reading the actual Rodgers–Tao paper to verify the §91 headline
+"concave log-energy E = the Lyapunov functional RT lacked." Pulled real source (membrane_pulls/rt_1801/).
+FINDING (verify-before-ship worked): the claim is FALSE — our E is exactly RT's Hamiltonian H (=−E, RT eq 726),
+its concavity is their "H convex" (727), our conservation law is their virial identity (iv), and our §91 two/three-
+point cancellation is their line-771 "definite local + indefinite cross; monotone if cross terms controlled" (the
+crux of their §6–9). §86/87/90/91-structure = rediscovery of RT Section 1/4. Retracted in §92 (append-only).
+WHAT SURVIVED (RT-absent, now clean): (1) DIRECTIONALITY — RT prove Λ≥0 (lower bound, contradiction-with-pair-
+correlation); RH=Λ≤0 is orthogonal & unreachable by their method; (2) the Weil/screw POSITIVITY functional (RT have
+no positivity object at all); (3) prime-explicit velocity Ξ″/Ξ′ (Report-tier). SHARPENED TARGET: does screw
+positivity give an UPPER (Λ≤0) handle RT's lower-bound method structurally can't? Wrote operators/dbn_dynamics/
+BRIDGE.md (full RT credit + 3-item delta + open frontier + 2 concrete next probes). Proof pointers: LEDGER §92,
+BRIDGE.md, RT source in repo. Lesson reinforced: a well-written internal "novel" claim stayed Report-tier until
+checked against the real artifact — rule 10 / rule 13 paid off exactly as designed.
+
+## 2026-07-20 (§93) — dynamical probes executed: positivity-via-flow-energy is RH-blind (eliminated), spearhead relocated
+Decision chain: after §92 isolated the delta (screw positivity = the RT-absent candidate Λ≤0 handle), ran the two
+BRIDGE.md §4 probes. Probe #1 (positivity-margin transition) not observable at computable height (§84/§89: Λ is a
+high-zero phenomenon). Probe #2: on real zeros |CROSS_K|<|LOCAL_K| always (RT's cross-term subdominant); but #2b
+decisive test — pinch a pair off-line — showed the ratio does NOT cross 1 (plunges, local blows up 1/δ⁴), so the
+inequality is RH-BLIND. ⟹ RT's energy monotonicity carries no reality info; screw positivity does NOT couple to the
+flow via energy. The dynamical bridge = DIAGNOSTIC (located RT exactly, proved energy RH-blind), not the crack.
+Proof pointers: LEDGER §93, offline_crossterm.py output (ratio 0.12→0.0002→0.66, never >1; Re(CROSS+LOCAL)<0 ∀δ).
+RELOCATION: RH content = individual isolation (Λ≤0, §59/§62/§92/§93), which neither averaging, nor flow-energy, nor
+direct positivity-certificate supplies. Standing spearhead → Connes' finite→global Euler-product convergence (§73),
+the one individual-isolating framework. Dynamical route banked & closed for Λ≤0. Lesson: two bounded probes cleanly
+killed a plausible hypothesis in one session — exactly the "real results not just verifications" discipline (rule 5).
+
+## 2026-07-20 (§96-97) — Connes crux reconstructed & Step 2 numerically confirmed (clean regime)
+Decision chain: §94 reduced Connes' whole remaining program to Step 2 (k_λ≈θ_x). Built it in validated stages:
+§96 reconstructed k_λ from our own prolate PSWF, unit-tested E(h)=k (exact), reproduced Connes' PROVEN convergence
+k̂_λ→Ξ (zeros=γ exactly, doubly-exp saturated by λ=2 — confirms §94 rate correction). §97 compared to Suzuki screw
+minimal eigenvector: convention fixed (v itself, EVEN, = θ_x; v′ orthogonal); overlap 1.0000 at λ=1.8 (Step 2
+confirmed clean-regime); larger-a degradation shown RESOLUTION-limited (overlap→1 monotone with M,K; λ_a→0) =
+near-null-tower ill-conditioning = Connes' prolate near-radical. Proof pointers: LEDGER §96-97, dbn_dynamics/
+{prolate_operator,k_lambda_construct,stage3_theta_vs_k}.py outputs. NET: two independent constructions (prime screw
+kernel, prolate combo) land on ONE vector — the RH proof reduces to bounding ‖θ_x−k_λ‖ within the prolate gap
+uniformly, against the near-radical degeneracy. Next: Davis–Kahan (spectral-gap ⟹ eigenvector closeness) via the
+computable residual ‖A_λ k_λ − ε k_λ‖/gap — Connes' Fig fpro1 already shows the spectra ε(λ)~1−χ_2 track.
+
+## 2026-07-20 (§100-101) — Numerical reconstruction complete; frontier reduced to one analytic lemma (knife-edge cancellation)
+§100: Weil Rayleigh of k_λ tracks Connes' 1−χ_2 in the resolvable regime (k_λ achieves the near-null value = Step-2
+core), floors at 3e-7 beyond (3rd independent confirmation of the float64 floor). Numerical reconstruction of Connes'
+whole program = COMPLETE (even-simple, k̂_λ→Ξ, θ_x≈k_λ, 1−χ_2 rate, near-null value — all confirmed reachable;
+doubly-exp regime is a hard float64 floor). §101: probed L1 — individual prolate modes E(h_n) are BULK (O(0.1)), so
+k_λ's near-nullness is a KNIFE-EDGE CANCELLATION selected by f(0)=f̂(0)=0 (matches Connes line 1161), the SAME
+knife-edge as §47b/§54/§84/§98. Frontier now = one analytic lemma: the QW_λ-minimizing direction on {supp f,f̂⊂[−λ,λ],
+f(0)=f̂(0)=0} is k_λ + O(1−χ_4) — an eigenvector-stability statement for the cancellation, provable via Connes' angle
+operator α_λ. Proof pointers: LEDGER §100-101, klambda_rayleigh.py / near_radical_dim.py outputs. This session (§92-
+101) reduced RH — in our reconstruction — from "positivity toolkit exhausted" to "one cleanly-stated analytic lemma
+with every other ingredient proven/reproduced in-repo." Mode transition: numerical → analytic.
+
+## 2026-07-20 (§102-103) — Step 2 dissected: near-null MECHANISM verified (Poisson→Dirichlet), SELECTION isolated as the open core
+§102: a failed constrained-min probe, chased down, revealed the real mechanism — the f(0)=f̂(0)=0 conditions are
+Connes' Poisson conditions making E(f) vanish at BOTH endpoints of [λ^-1,λ] (verified: k_λ both-end-zero ~6e-6;
+lone modes left-nonzero 0.3-1.2) ⟹ valid Dirichlet ⟹ QW_λ=radical(0)+clean O(1−χ) truncation. §103: consolidation —
+near-nullness is now a VERIFIED mechanism (any band-limited S_0 fn is near-null at 1−χ_2); the open core is SELECTING
+k_λ within the degenerate near-null cluster, a 2nd-order fine-structure (1−χ_4 vs 1−χ_2) statement = classical prolate
+spheroidal perturbation. RH (our reconstruction) reduced to: the QW_λ-minimizer over band-limited S_0 is k_λ+O(1−χ_4/
+1−χ_2). Proof pointers: LEDGER §102-103, endpoint check + weil_gram_constrained/klambda_rayleigh outputs. Session
+§92-103: from "positivity exhausted" to one prolate-fine-structure lemma, every other ingredient in-repo. Verify-before-
+ship turned two failed probes (§101 naive L1, §102 constrained min) into the actual mechanism both times.
+
+## 2026-07-21 (§107-109) — Redirect grounded: Weyl/Parseval targets + arbitrary-precision run clears the §42 doubt
+§107: read Suzuki §7-8 — sharpest RH-equivalent is the unconditional Parseval identity ∫S_x(z)S_y(z)dz = g̃(x,y)
+(§7.7); structural clue that W→z²ξ/ξ′ is a Weyl m-function / Herglotz-convergence (toolkit: Kreĭn/de Branges/Remling
+canonical-system convergence, off the k_λ wall). §108-109: built + ran the arbitrary-precision (mpmath dps=30) Weil
+operator on Olympus (the untried §104 unblock). RESULT: λ_a > 0 for all a∈[0.6,2.0] high-precision ⟹ §42's large-a
+negativity was a FLOAT64 ARTIFACT (doubt removed); ground state EVEN at every a (even-simple robust); arch-only grows
+O(e^a) negative, primes cancel to +1e-5. KEY NUANCE: K-convergence (K=16..48) plateaus λ_a~1.08e-5, but true value
+~1e-40 (Connes) — so TWO floors, precision (fixed) vs finite-K basis-resolution (the real structural wall; needs the
+prolate minimizer, reachable only analytically via Fuchs/Weyl, not brute Galerkin). Proof pointers: LEDGER §107-109,
+Olympus ~/weil_hp_*.log + weil_Kconv_*.log. Verify-before-ship worked twice: Lens-2 build corrected its own premise
+(§104), and the K-convergence check caught the "1e-5 = true λ_a" overclaim (it's a basis floor, true value 1e-40).
+
+## 2026-07-21 (§110) — Compact G_a reformulation breaks the large-a wall; S_t explicit banked
+Following Suzuki §8: recast λ_a as the smallest generalized eigenvalue of G u = λ N u (u=v′ mean-zero; G kernel
+g(x−y), N = explicit inverse Neumann Laplacian) — continuous-kernel integral operators, far better conditioned than
+the singular unbounded A_a. RESULT (g_a_compact.py, float64): λ_a clean + POSITIVE across a=0.6..3.0, reaching a=3.0
+where the sine-Galerkin A_a failed at a≳1 (§42) and needed mpmath (§109). ⟹ §42 negativity was bad-operator-choice +
+float64; the compact operator fixes conditioning directly. Also banked the explicit zero-free S_t(z)/P_t(z) (Suzuki
+[14] eq 1.5-1.6), making the §7.7 Parseval RH-equivalent ∫S_x S_y=g̃ computable (held off verifying — §37 lesson).
+Unlocks: the W(a,θ;z)→z²ξ/ξ′ redirect target can now be run in the large-a/zeta regime via G_a. Proof pointers: LEDGER
+§110, g_a_compact.py output. Session §104-110: brainstorm → rule-13 redirect off the worldwide wall → high-precision
+result (§42 artifact cleared) → compact tool that reaches the zeta regime. Steady, honest, verified progress.
+
+## 2026-07-21 (§111-112) — W on compact G_a: false-positive caught, then prime-bend signal recovered cleanly
+§111: rebuilt W(a,θ;z) on the compact G_a (reaches a=3) but my nearest-neighbor γ-match metric was a FALSE POSITIVE
+(dense momentum comb → trivial matches). Verify-before-ship caught it. §112: recovered with a density-independent
+metric (gap coefficient-of-variation): CV(FULL W) > CV(ARCH-only) at every a (1.4-2.1×), and CV(FULL)=0.393 at a=2.0
+≈ zeta's 0.389 — a REAL signal that primes inject zeta-like irregularity (Cor 1.6's mechanism, cleanly). Honest: noisy,
+qualitative, not a proof. Session §104-112 net: redirect off the k_λ wall to Suzuki Cor 1.6 (reality+simplicity free);
+compact G_a broke the large-a wall; prime-bend confirmed; residual gap = the analytic momentum→zeta / Weyl-convergence
+limit = the genuine RH content. Lesson banked: dense combs make nearest-neighbor metrics lie — use spacing/CV.
+
+## 2026-07-21 (§113-114) — The Weyl m-function proof-shape: Herglotz (reality automatic), convergence = the open gap
+§113: computed the Weyl m-function m_a=v̂_+/v̂_-. CONFIRMED m_a is HERGLOTZ (Im>0 in C+, frac→1.00 high in C+;
+unconditional from self-adjointness) with POLES at the zeta zeros γ (clean at a=1.5,2.5; = §46 reconstruction, non-
+circular). ⟹ clean proof-shape: m_a Herglotz + [m_a→m_∞ loc.unif.] ⟹ (Herglotz-class closure) m_∞ Herglotz ⟹ zeros
+real ⟹ RH. Reality transfers FOR FREE (the redirect's promise realized). Equivalent to Suzuki §7.5 strong-resolvent-
+convergence but concrete + tool-connected (Remling/moment problems/canonical inverse spectral). §114: tested the
+convergence ingredient — m_a(z₀) WANDERS at a≤3 (|Δ|~0.15 non-shrinking), so convergence is NOT numerically visible;
+leans LIMIT-CIRCLE (θ(a) matters, arithmetic-driven), not limit-point. Decisive analytic question pinned: limit-point
+vs limit-circle at ∞ (Weyl's test on the screw canonical system) — decides whether Herglotz-convergence gives RH alone
+or needs the full arithmetic. Proof pointers: LEDGER §113-114, weyl_mfunction.py. Honest: cleanest FRAMING reached
+(reality solved), the convergence content = the RH-hard gap, precisely located.
+
+## 2026-07-21 (§115-116) — LP/LC resolved = LIMIT-CIRCLE; the Herglotz mechanism splits RH into reality(free)+arithmetic(crux)
+§115: LP/LC numerical tests both CONFOUNDED (near-null amplification at λ=0; source-growth ~e^{2a} at λ=-1 carries no
+LP/LC info) — documented honestly. §116: resolved from Suzuki's own de Branges structure (§7.2): M has deficiency
+(1,1) = LIMIT-CIRCLE (confirms the θ(a)-tuning hint + §114 wandering). Consequence: the §113 Herglotz mechanism SPLITS
+RH cleanly — REALITY (all zeros real) is SOLVED for free (Herglotz-class closure under limits), and what REMAINS is the
+ARITHMETIC SELECTION (limit-circle b.c. → the specific zeta extension M_{π/2}, i.e. θ(a) carrying prime info = Cor 1.6
+= CCM §7 = worldwide crux). Genuinely sharper localization than "prove k_λ≈θ_x": the hard part is NOT reality, it's the
+arithmetic pinning of which self-adjoint extension the a→∞ limit picks. Proof pointers: LEDGER §115-116, Suzuki §7.2
+deficiency-(1,1) quote. Session §104-116 net: a verified strategic redirect off the worldwide wall + a structural
+result splitting RH's two halves (reality won, arithmetic isolated). Two self-caught confounds (verify-before-ship).
+
+## 2026-07-21 (§117) — SELF-CORRECTION: the §113-116 "reality for free" claim RETRACTED (m_a is inner, not Herglotz)
+A grounding test (predicting v̂_-~Ξ / v̂_+~Ξ′) refuted the prediction and exposed an error: |v̂_+|=|v̂_-| exactly on R,
+so m_a=v̂_+/v̂_- is UNIMODULAR/INNER (|m_a|≡1), NOT Herglotz — forced by Thm 1.5's real spectrum (W has real zeros ∀θ
+⟺ |v̂_+|=|v̂_-|). §113's "Herglotz (Im>0)" was a mismeasurement (Im>0 at a few C+ points ≠ Herglotz for a unimodular
+function). ⟹ RETRACTED: reality does NOT transfer for free — inner functions CAN have C+ zeros (Blaschke), so the
+inner-limit doesn't forbid off-line zeros. The correct RH-equivalent here is the classical HERMITE-BIEHLER condition
+(E_ξ=Ξ+iΞ′ HB ⟺ RH), a known conditional statement, not a new crack. §116's "RH split into free-reality+arithmetic" is
+WITHDRAWN. What STANDS (real, not my error): the redirect off the k_λ wall; Suzuki Thm 1.5 (finite-a reality+simplicity
+UNCONDITIONAL — his theorem); the compact G_a tool (§110); the prime-bend signal (§112). Lesson: a one-line |m_a|
+magnitude check at §113 would have caught it — check moduli before interpreting a ratio as Herglotz. Verify-before-ship
+did its job (caught a multi-section overclaim), just late. Proof pointers: LEDGER §117.
+
+## 2026-07-21 (§118-120) — Read CM 2310.18423 + Suzuki 1204.1827; computed CM's deferred semilocal Jacobi matrix
+§118: both reads = positivity-of-explicit-structure stuck at the same limit. CM: cyclic-pair/orthogonal-polynomial
+framework, prolate W_λ=−𝒮²+λ²N, primes as measure weight |∏L_p|²; semilocal Jacobi matrix explicitly DEFERRED. Suzuki:
+canonical system for Θ_ω=ξ(½−ω−iz)/ξ(½+ω−iz), RH ⟺ Hamiltonian H(t)≥0, unconditional for ω>1, gap = ω→0. §119:
+COMPUTED CM's deferred semilocal Jacobi matrix (novel, validated vs arch √((k+½)(k+1)) exactly); primes suppress the
+low-index recurrence coefficients (√β_1 0.71→0.23, √β_2 1.73→0.54 as primes 2,3,5 added). §120: tested all-primes limit
+as a shortcut — DEGENERATES (measure concentrates at s=0 because every |L_p|² peaks there), which explains WHY CM
+regularizes via the radical/Sonin/E-map (that regularization IS the content, not a naive product). Honest: no crack;
+genuine novel deposits (the deferred computation done + the naive-shortcut ruled out with a concrete reason); the wall
+now mapped in the orthogonal-polynomial face too. Untouched face = the Parseval identity ∫S_x S̄_y=g̃. Proof pointers:
+LEDGER §118-120, semilocal_jacobi.py. No overclaims this round (§117 lesson applied — validated arch before trusting).
+
+## 2026-07-21 (§121) — Parseval face = Gram factorization of positivity; OPERATOR FRAMEWORK FULLY MAPPED
+The "untouched" Parseval identity ∫S_x S̄_y=g̃ traced to = U*U=G (zero-side Gram = prime-side screw), an explicit Gram
+factorization of Weil positivity; S_x=i(1+Θ_ξ^♯)/2·P_x carries the zeros via Θ_ξ=(Ξ−iΞ′)/(Ξ+iΞ′), so proving it
+unconditionally = RH. Not a shortcut. STRUCTURAL CLOSURE: all six operator-framework faces (k_λ / extension-selection /
+Hermite-Biehler-inner / Jacobi-positivity / canonical-Hamiltonian / Parseval-Gram) = the SAME positivity-at-a-limit
+wall, unconditional in a regime, stuck at the same limit. The campaign (§1-121) has fully mapped the operator-positivity
+approach + built tools + caught its own overclaims. No face is a shortcut. Forward: (A) a specific limit-mechanism no
+face supplies (prime-irregularity §112 + measure-concentration §120 → a positivity law?), or (B) step out of the
+operator-positivity basin. Recommend: consolidate the six-face map as durable deliverable, then choose. Proof pointers:
+LEDGER §121. Honest: a real structural result (the map is complete), not a crack.
+
+## 2026-07-21 (§124-125) — Zero-density pivot assessed & honestly bounded; no surveyed basin has a fresh crack
+Entered the zero-density basin per the §123 pivot. §124: read Guth-Maynard 2405.20552 — it's a zero-density ESTIMATE
+(N(σ,T)≤T^{30(1-σ)/13}), NOT an RH-path (density estimates are always >0); the survey conflated it with the RH-relevant
+positive-PROPORTION method (Levinson-Conrey ~42%, stuck at the mollifier/Cauchy-Schwarz barrier). §125: read LeClair
+2406.01828 critically — his "spectral-flow criterion" = a KNOWN RH-equivalent (Lagarias, −Re(ζ'/ζ)≲½log(t/2π)), physics-
+dressed; unitarity at σ=½ IS RH (Euler product diverges there); proof assumes RH. VERDICT: no surveyed "different basin"
+offers a fresh crack — each is not-an-RH-path (density estimates), or stuck (positive proportion), or a known equivalent
+(LeClair), or dormant/mismatched (dBN, H-P). Combined with our exhausted operator-positivity basin (§121), the honest
+thoroughly-verified meta-state: every currently-known RH approach is stuck at a genuine obstruction. Non-defeatist
+forward: a real fresh-idea superPRISM (rule 4) cross-pollinating what THIS campaign uniquely holds (six-face map, prime-
+effects §112/119/122, Re(ζ'/ζ) multiplier §81, arch↔prime cancellation) vs the different-basin obstructions — seeking a
+NEW angle at an intersection. Best on Fable. Proof pointers: LEDGER §124-125. Verify-before-build caught the survey's
+density-vs-proportion conflation (§124) and LeClair's circularity (§125).
+
+## 2026-07-21 (§126-129) — Cross-basin superprism → 3 intersection-lenses, rule-13-gated, Lens G executed
+Superprism (Fable) → 3 concrete intersection-targets (G: density⟹effective Weil bound; B: GM→proportion; C: Λ recompute).
+Rule-13 gate (3 parallel scans): all OPEN. G = UNEXPLORED/novel/ours ⟹ executed. B = open but premise weakened (Conrey
+2508.11108 Aug 2025: proportion bottleneck moved from mollifier-length to linear-combination optimization, so GM may
+not help). C = open but modest compute re-run (Λ 0.22→~0.20 via Platt-Trudgian 3×10¹², far from RH). Lens G EXECUTED
+(§129, zero-side screw, cancellation-free after §127's float64 failure): explicit off-line-damage law — δ² strength,
+a-growing, γ₀-FLAT (not 1/γ₀²). Dual conclusion: δ(a) unconditional bound USELESS (height-flat damage ⟹ density can't
+rescue positivity) + detector sensitive but REDUNDANT with zero-verification. Novel intersection filled, NOT a crack —
+answers the superprism's "do the two obstructions cancel?" NEGATIVELY (they compound: height-flat damage). All 3 lenses:
+no meaningful RH advance, consistent w/ §125 (no fresh crack in reach). Proof pointers: LEDGER §126-129, lens_g_execute.py.
+Rule-13 gate worked (avoided investing in B's weakened premise / C's low value); verify-before-build caught §127 float64.
+
+## 2026-07-21 (§130-133) — Tier-3 launched (both paths parallel); all 3 historical proof-templates verified blocked; frontier = Sub-goal H
+Banked RH_MAP.md (§130). Tier-3 strategy from proof-history: 3 templates (magic-fn / geometric-positivity / dynamical-
+functional). §37 already killed the magic-fn route. Ran A (function-field map) + B (Λ≤0 functional) in parallel, rule-13
+gated. §131-132: B = the Λ≤0 monotone functional is UNTRIED but STRUCTURALLY BLOCKED (circularity + reality-preserving
+forward flow; confirmed by reasoning AND literature); live direction = Goldston-Lee horizontal pair-correlation (external
+contradiction, not a functional). §133: A = the geometric template (Weil-Deligne) BLOCKED — no Hodge-index-analog for
+Spec(ℤ); Connes-Consani reformulate positivity BACK ONTO our operator wall (τ≥0 via scaling/prolate spectrum = §121's
+six faces). FULL VERDICT: RH is TEMPLATE-INVARIANTLY hard — all 3 historical crack-types blocked at identifiable points,
+all routing to the arithmetic↔analytic Weil-positivity-at-the-limit core. THE ONE CONCRETE TRACTABLE FRONTIER: Sub-goal
+H (uniform finiteness of τ's negative eigenspace via de Branges/Sonine/prolate reweighting, keeping n_neg bounded +
+margin-gap preserved) — actively pursued by CCM 2024-25, exactly our tooling (compact G_a, prolate, hi-prec). Genuine
+active frontier where we're positioned. Proof pointers: LEDGER §130-133. Both parallel subagents synthesized; rule-13
+gate applied throughout.
+
+## 2026-07-21 (§134-135) — Sub-goal H reweighting test run full-steam: compact reformulation does NOT bound the core (decisive)
+Ran the reweighting/reformulation test for Sub-goal H (does a reformulation bound the near-null core n_neg?). §134:
+compact G_a core #(<1e-3) appeared to saturate ~22 / grow ~1.25 per log c (< naive 1.8) — a weak-positive. §135:
+M-convergence check (verify-before-ship) RETRACTED it — at a=3, #(<1e-3)=15,19,23,30 for M=900..2400, GROWS with grid
+resolution (artifact), not a true bound. DECISIVE: the compact reformulation does NOT bound the core (grows w/ resolution
++ cutoff ~log c). Sub-goal H not achieved by our numerical reweighting; bounding the core is an ANALYTIC problem numerics
+can't touch (true core doubly-exp, sub-precision). Clean new fact: the compact-reformulation route is CLOSED. Verify-
+before-ship caught the §134 over-read same turn (M-check). Proof pointers: LEDGER §134-135, subgoalH_ncount.py.
+
+## Session §136-146 (2026-07-21): Sub-goal H deep dive → the compact form's bottom is a concrete Schrödinger operator; + prism execution
+DECISION CHAIN (process provenance):
+1. Jacob asked "are there tools u can build?" for the analytic Sub-goal H. KEY MOVE: recognized §135's "grid artifact"
+   retraction was made on eigenvalue-COUNTING, which cannot distinguish "real finite core + grid noise" from "infinite
+   core." Built the eigenVECTOR-stability test instead (subgoalH_core_dim.py → v2). FORK: v1's fixed-integer-k principal
+   angles were non-monotone (degenerate-mode swaps); FIXED by reordering-proof best-overlap (v2). RESULT overturned §135:
+   modes are REAL (overlap→1.000, ~50 modes, all a). Lesson: pick the reordering-invariant statistic.
+2. Found the low spectrum is a DISCRETE POSITIVE Weyl ladder λ_k≈9e-7·k², floor ~a-independent through a=3 (§137). Tracked
+   λ_min(a) out to a=5 (§138): flat through a=3, then apparent decay — but the sweep's own conv% flagged a≥3.5 as
+   under-resolved. FORK: is the decay real or an N-whitening ghost? Built the discriminator (§140): keep-threshold sweep
+   INVARIANT + direct scipy eigh(G,N) agrees to every digit + cond(N)<1.1e7 ⟹ REAL, not a ghost. Verify-before-ship:
+   did NOT claim decay until the ghost was ruled out.
+3. Reframed: λ_min(a) real, positive, decaying→0+ doubly-exp = the RH-TRUE signature (localized→full form, zeros at
+   positivity boundary). CLINCHER (§141): rebuilt full λ_min with a deliberately OFF-LINE zero → goes NEGATIVE at every
+   a & δ (amplifying e^{2δa}) while on-line stays ≥0. ⟹ compact positivity ⟺ RH DEMONSTRATED (Handle); the N-normalization
+   is FAITHFUL, not a trivializer (§138 caveat closed). Six tools, all cross-checked.
+4. Jacob (Fable) called for a creative PRISM: 7 lenses (§142) — ladder-ID, two-phase spectrum, ZFR-generator, Gaussian-
+   process, inverse-spectral, family-average, total-positivity. Jacob (Opus) said save + execute.
+5. EXECUTION (§143-145): rule-13 gated (2 lit-scan subagents for Lens 3,4). Lens 1 DONE numerically: the k² ladder is
+   ARITHMETIC (arch-only is linear O(0.05); primes drag floor 5e4× & flip exponent 1→2, §143). §144: FULL operator is
+   BANDED in sine basis (96% within |k-l|≤2, parity-respecting) ⟹ a LOCAL effective Schrödinger operator −d²/dξ²+V, V an
+   attractive prime well at the boundaries. Honest flag: separate ARCH/PRIME split inherits the §42 sine-Galerkin artifact
+   (Report-tier). Lens 3 scan: ZFR-generator reframe is novel (Groskin 2605.20224) BUT the naive exchange-rate is too-good
+   -to-be-true; global constraint (all zeros reproduce fixed prime side) masks single-zero damage = same wall named. Lens
+   4 scan: variogram/Gaussian-existence novel; e^{-tg} PD ∀t (Nakamura-Suzuki infinitely-divisible 2306.08317) + Gröchenig
+   TP↔Laguerre-Pólya (2007.12889) = fresh toolkit.
+6. STRATEGY (§145): deepen Lens 1/5 (clean effective V + inverse-spectral) as main; Lens 4/7 as fresh-toolkit hedge;
+   deprioritize Lens 3 rigor (same-wall). §146: reconstruct V via Sturm node-count + WKB (running).
+NET: turned the "analytic, numerics-can't-touch" Sub-goal H frontier into a CONCRETE named object — a local 1D Schrödinger
+operator whose ground state >0 ⟺ RH, with an arithmetic (prime) attractive potential. Proof pointers: LEDGER §136-146,
+subgoalH_{core_dim,core_dim_v2,lammin_track,Mconverge_largea,ghost_discriminator,offline_crossing,ladder_id,
+operator_structure,potential_recon}.py; memory rh-suzuki-screw-function-frontier §136-141.
+
+## Session §147-156 (2026-07-21): the prism execution → the irreducible-collectivity diagnosis
+DECISION CHAIN (process provenance):
+1. Post-§146 (compact bottom = Jacobi operator), Jacob asked for a creative prism (§142, 7 lenses). Executed them with
+   rule-13 gating (parallel lit-scan subagents), which repeatedly EARNED ITS KEEP:
+   - Lens 4/7 (Gröchenig total-positivity): built Λ=FT(1/ξ), confirmed the Λ≥0 foothold + log-concavity (TP_2) — then
+     rule-13 (§151) showed TP_k ⟺ degree-k Jensen hyperbolicity = the GHRZ frontier (Ono/Zagier turf, d≤8 proven,
+     d≥9 open). Not a fresh crack — saved us grinding a relabeled active frontier. Verified the Michałowski 2026 PF_5
+     "barrier" is real but about a different (Φ) kernel, RH-agnostic (§152).
+   - Lens 6 (family-average): rule-13 (§153) = provably stuck for individual RH (sparsity + averaging-kills-positivity
+     + support wall). Known no-go.
+   - Lens 3 (ZFR-generator): novel framing but naive exchange-rate too-good-to-be-true; global-local wall (§144-145).
+2. STRATEGIC TURN (§153): every EXTERNALLY-defined lever is now mapped as stuck at a diagnosed obstruction (all = the
+   arithmetic↔analytic interface). Pivoted to the one thing distinctively OURS: the compact arithmetic Jacobi operator.
+3. THE PRIME HOMOTOPY (Lens 2, §154-156) — the centerpiece. g_t = g_arch + t·g_prime, dial t=0→1→1.5:
+   - §154: λ_min(t) is CONCAVE (min-eig of a linear pencil), rises from arch-only −4.97 to the knife-edge (~0) at t=1,
+     then NEGATIVE again past t=1. The true ζ sits at a TANGENCY. Corrected §143's fit-artifact ("arch positive"→arch
+     is strongly NEGATIVE; primes LIFT positivity, they are its source not its enemy). Clean §122 cancellation as a
+     monotone homotopy.
+   - §155 (verify-before-ship): argmax t*=1.000 robust across a, BUT dλ/dt|_1 = −4.6 (≠0) ⟹ it's a CUSP (eigenvalue
+     crossing), not a smooth critical point. RETRACTED §154's "prime-neutral ground state / dλ/dt=0" hypothesis. The
+     derivative check killed it — the discipline held.
+   - §156 (make-or-break — prime attribution): add primes one at a time. DECISIVELY COLLECTIVE — lift per prime ~constant
+     (0.3-0.45), largest primes are TOP lifters (2,3,5 only 12%), cancellation completes only at the cutoff prime. NO
+     few-body lever. The homotopy is a visualization, not a proof crack.
+4. THE DIAGNOSIS (the session's real deliverable): RH's positivity is IRREDUCIBLY COLLECTIVE — shown concretely on our
+   operator. A prime's raw contribution decays ~(log p)/√p but its LIFT to λ_min is constant/growing ⟹ cutoff primes do
+   as much work as p=2 ⟹ WHY the core is doubly-exp hard (§140) AND why every finite/perturbative/few-body approach
+   (ours + historical) fails. The finite/concrete-object thread (§136-156) is mapped & exhausted; collectivity is the
+   diagnosed wall. Points to collective-native methods (dBN flow Λ≤0 / trace-formula / spectral-determinant).
+NET: turned an open frontier into a precisely-diagnosed one. Proof pointers: LEDGER §142-156, subgoalH_{grochenig_TP,
+jensen_turan,prime_homotopy,homotopy_refine,prime_attribution}.py.
+
+## Session §157-164 (2026-07-21): dBN flow → RG framing (refuted) → relocation to the CvS/CCM frontier → tool-rebuild pivot
+DECISION CHAIN (process provenance):
+1. §157-158 dBN-flow pass (collective-native, matching §156's irreducible-collectivity diagnosis): compact λ_min(a;s)
+   under the dBN zero-flow looked like a monotone arithmetic functional (§157) — RETRACTED by the truncation test (§158:
+   slope drifts −3.4→−7.0e-6 with zero-count; un-renormalized velocity artifact). Verify-before-ship held.
+2. §159 RG framing (Fable synthesis of criticality §154 + collectivity §156 + scale-flat §156 = "critical fixed point"):
+   Step-1 hypothesis (ground state scale-invariant, ψ_1'~e^{|x|/2}) tested DIRECTLY and REFUTED (growth 0.377≠0.5, autocorr
+   decays, first-order lifts decay ≠ constant). §156 constant-lift is cumulative/nonlinear, not a sum rule.
+3. §160-161 rule-13 (RG scan) RELOCATED us: our compact operator = the CONNES–VAN SUIJLEKOM TRUNCATED WEIL FORM (frontier
+   2025-26: Connes, CCM, Groskin 2605.20224). PROVEN foothold (Carathéodory-Fejér): ground-state Fourier-Mellin zeros
+   on-line at finite c — and its hypothesis (PSD form + one near-null direction) IS our §141 result. OPEN crux: convergence
+   of those zeros → true γ (= our §103/§116/§121 wall, now frontier-named). Every angle this session spiraled to this
+   ONE crux = triangulation, not circling.
+4. §162 equation-level read: exact Mellin transform η̂(z)=∫ξ(u)u^{-iz}du/u; Groskin Table 13 shows λ_min ⟺ zero-error
+   (identical rate); the OPEN rate-mismatch (Connes 4πc heuristic vs Groskin c^0.634 data + finite-basis saturation)
+   flagged as our potential opening.
+5. §163-164 TOOL-REBUILD, with a key SELF-CORRECTION: aimed to build a prolate-grade operator to "beat our 1e-5 saturation
+   & reach Groskin's 1e-59." §163 naive prolate-swap FAILED (boundary: PSWF don't vanish at ±a, v' not mean-zero). §164
+   K-convergence test then DISSOLVED the whole premise: our sine λ_a is K-CONVERGED at ~8.6e-6 (dps=40, K=24/40/60), NOT
+   saturating — the "54-order deficit" was a NORMALIZATION CONFUSION (eigenvalue magnitude is basis-dependent; only sign
+   invariant). Also corrected §108's "true 1e-40" and §134's "1e-295 core" as wrong inferences. Real residue: our λ_a
+   (true continuum margin, slow decay) ≠ Groskin's λ_min (approximation/zero-error, plummets) — different quantities.
+6. FORWARD: the RIGHT rebuild = the EXACT CvS τ operator (from density D=D_∞+D_pole+D_prime), with the unambiguous
+   correctness check = reproduce Groskin's λ_min^even(c=13)=2.865e-59. Extracting exact D formulas (subagent running).
+NET: tested & set aside two appealing framings (dBN-monotone, RG-fixed-point) via direct verification; relocated onto the
+exact worldwide frontier with our positivity as its proven foothold; caught a 2-section normalization error via K-test;
+pivoted to the faithful CvS-operator build with a hard verification target. Proof pointers: LEDGER §157-164, subgoalH_
+{dbn_flow,dbn_trunc,groundstate_scaleinv,groundstate_zeros}.py, prolate_weil_v1.py, mpmath_weil_hiprec.py.
+
+---
+
+## Decision chain §165–168 (2026-07-21): frontier-tool rebuild + transferring our findings onto the exact CvS operator
+
+PROBLEM FRAMING: §157-164 relocated us onto the Connes–van Suijlekom / Consani-Moscovici frontier and dissolved a
+2-section normalization error (§164 K-test). Left with a plan: build the EXACT CvS truncated Weil operator (comparable
+normalization, sparse on-line zeros) with a HARD verification target (Groskin's published λ_min(c=13,N=100)=2.865e-59).
+
+FORK 1 — build vs find the operator. First hand-rolled the τ-matrix from CCM Prop 4.3 ρ(x)=e^{x/2}/(e^x−e^{-x})
+(cvs_tau_operator.py). It gave O(1) NEGATIVES, not the near-null — ρ was the wrong density (the archimedean part is the
+digamma Mellin-multiplier h₊(τ)=−logπ+Re Ψ(¼+iτ/2), not sinh; my prime sign was off too). CORRECTION via reading the
+Groskin PDF locally (pdftotext, after WebFetch truncated the math): the paper ships its implementation as an ancillary
+PyPI package, connes-cvs. DECISION: install and use the exact verified operator rather than reverse-engineer D pieces.
+Proof: connes-cvs 0.2.2 in .venv_cvs; cvs_verify.py reproduces λ_min N=30→2.87e-48, N=60→6.0e-59 (→Groskin 2.865e-59
+at N=100) AND ground-state zeros = the Riemann zeros to 1e-17. Frontier-grade tooling VALIDATED (§165, §165b).
+
+FORK 2 — what to do with it. Banked next-phase: transfer our three exploratory findings (§154 tangency, §156
+collectivity, convergence/§140) onto the CORRECT operator, where an answer is a real contribution. Key efficiency
+realization: only psi_prime depends on the prime-coupling knob t / on prime-subset choice; arch (expensive digamma
+quadrature) + pole are t-independent → precompute components ONCE, sweeps become cheap reassembly+eigsy.
+
+§166 (tangency, SUCCESS): scaled prime piece by t, swept. λ_min(t) ≤ 0 ∀t, tangent to 0 at EXACTLY t=1 (peak pinned
+to 7 digits, robust N=14/24), a sharp CUSP (asymmetric slopes). Interpretation: the arithmetic is the unique critical
+prime-coupling; Weil positivity on a knife-edge located exactly at t=1. Proof: cvs_tangency.py, LEDGER §166.
+
+§167 (cusp mechanism, HONEST NEGATIVE): chased "reframe λ_min(1)≥0 as crossing-height≥0". Tracked branches
+(cvs_branches.py) — looked like a 2-branch crossing, but Hellmann–Feynman 2×2 (cvs_effective.py) gave slopes
+{−0.66,+0.15} ≠ measured cusp slopes {+0.70,−2.35}. That mismatch (verify-before-ship) exposed the real structure
+(/tmp/cvs_multi.py): at t=1 a WHOLE TOWER of low eigenvalues compresses to ~0 and fans out linearly; the cusp is the
+bottom edge, not a 2-branch crossing. So the reframe gives no low-dim proof lever. Recorded the over/under asymmetry
+(t>1 drives whole low spectrum negative; t<1 only the bottom) as a real feature tying to §156. LEDGER §167.
+
+§168 (collectivity, SUCCESS + sharpening): prime-by-prime attribution, exact for small c. Cumulative climb is gradual;
+near-null appears ONLY at the complete prime set; leave-one-out shows dropping ANY single active prime-power sends
+λ_min from ~0 to O(−0.04..−0.84). ⟹ ALL-OR-NOTHING collective threshold (sharper than §156). Caught a boundary-null
+artifact (c AT a prime nulls n=c since 1−log c/log c=0); cross-checked clean at c=12. Proof: cvs_collectivity.py, §168.
+
+NET: our exploratory findings HOLD on the exact frontier operator, sharpened — tangency (unique critical coupling) and
+collectivity (all-or-nothing threshold) are now facts about the real object, not our discretization. The cusp-as-lever
+hope was honestly closed. Proof pointers: LEDGER §165-168; cvs_verify/tangency/branches/effective/collectivity.py; .venv_cvs.
+
+---
+
+## §177–§178b — The k_λ bridge: turning the cascade from description into proof-ingredient (2026-07-22)
+
+**Problem framing.** §176 found the Weil near-null is a prime cancellation cascade telescoping to the Fuchs e^{−4πc}
+envelope. But it was computed ON the numerically-solved eigenvector ψ — a *description* of a computed object, not yet a
+*proof-ingredient*. To make it load-bearing it had to attach to Connes' ANALYTICAL near-null vector k_λ=E(h_λ) (prolate
+combo, §6.6), the object with a rigorous handle (Fuchs).
+
+**Fork 1 — which operator?** search-before-build found the k_λ machinery already existed (k_lambda_construct.py,
+klambda_rayleigh.py, stage3_theta_vs_k.py) — but in the OLD float64 Suzuki-screw operator. Ran them (§177): k_λ = the true
+near-null eigenvector (overlap 1.0000 at λ=1.8) BUT the float64 operator saturates at 1e-7 — the exact wall that forced the
+CvS/mpmath move — so it CANNOT test k_λ at the deep near-null. DECISION: the bridge must be done in the CvS mpmath operator.
+
+**Fork 2 — what to compute?** The whole bridge reduces to ONE number: overlap(k_λ, ψ_CvS). If →1, k_λ≡ψ and the cascade
+transfers trivially (same vector). And an overlap-→1 test only needs k_λ to ~1e-15 (float64 prolates fine) — no mpmath
+prolate solver needed for increment 1. Cheapest coherent slice first.
+
+**The crux/pivot — convention.** First two attempts gave overlap stuck at 0.19, IDENTICAL at N=20 and N=60 ⇒ diagnosed as
+convention error, NOT under-resolution (the key tell). Pulled the CvS paper (2511.23257 Eq 5 + Prop 4.1) rather than keep
+guessing: H=L²([0,L]) basis U_n=L^{-1/2}exp(2πinx/L) — PERIOD L (I'd used 2L) on x∈[0,L] (I'd used symmetric [−L,L]);
+k_λ maps by a pure SHIFT s=x−L/2. Prop 4.1's ψ(x) matched operator.py exactly ⇒ operator side was always right, only my
+eigenvector→function reconstruction was wrong. Fixed both.
+
+**Result (§178/§178b).** Anchor c=3: overlap=1.000000, α*=1.000 (convention exact, reproduces the float64 anchor). Full
+run c=3,5,8,13: overlap=1.000000 at ALL c, L2 dist ≤7e-4 DECREASING with c (7e-4→1e-4), down to the deep near-null
+λmin=10^−58 (c=13). ⟹ k_λ ≡ ψ_CvS ⇒ the §176 cascade is a property of the analytical k_λ (proof-ingredient step earned).
+BONUS: dist shrinking with λ is the correct direction for §6.6 (k_λ→θ_x), measured first-time past the float64 wall; the
+old float64 "overlap decays with λ" was a saturation artifact. PROOF POINTERS: LEDGER §178/§178b, bridge_overlap.py,
+Olympus bridge2.log. NOT proven: RH; Connes §6.6 (needs the analytic error estimate, not just numerics at c≤13).
+**Method note:** the "identical overlap at N=20 and N=60" tell — resolution-independence = definitional/convention bug,
+not numerical — is the reusable diagnostic that saved a wasted Olympus resolution-chase and sent me to the paper instead.
+
+## §178c — pinning the dist floor: it was ψ under-resolution, not a real correction (2026-07-22)
+
+**Fork.** §178b's L2 dist(k_λ,ψ)≤1e-4 (decreasing with c) — I'd flagged a caveat that pinning the true residual might need
+mpmath-precision prolates. **Checked the assumption before building** (float64 prolates are ~1e-15 accurate, 11 orders
+below 1e-4 ⇒ the floor can't be prolate precision). Ran a N×M convergence sweep (bridge_floor.py) instead of a heavy build.
+**Result.** Row-flat in M ⇒ quadrature not the floor. Column drops 3e-3→9e-5→2e-7 with N ⇒ the floor was ψ UNDER-RESOLUTION
+at N=60. Clean point N=80: dist 2.1e-7, 1−overlap 2.3e-14 — k_λ matches θ_x to 14 digits at the deep near-null. N=100
+non-monotone (dist up, 1−overlap worse) despite deeper λmin = dps-starvation (needs dps>90). **Decision:** mpmath-prolate
+build NOT needed (dist tracks N, never floored on prolate precision) — the pre-build check paid off, saved a heavy solver.
+The true θ_x−k_λ is smaller than 2e-7 at c=13 (still N-limited). Proof pointers: LEDGER §178c, floor13.log.
+**Method note:** "check whether the floor even CAN be what you'd build to fix" before building the fix — the 11-order gap
+between 1e-4 and float64's 1e-15 was the tell that a mpmath-prolate build would've been wasted effort.
