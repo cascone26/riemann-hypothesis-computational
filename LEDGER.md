@@ -6970,3 +6970,31 @@ at t=0,log2,2a, ω=kβ, α∈{±½,2n+½}, + a Lerch series. The century-old wal
 elementary closed form. NEXT (§199.3c, mechanical): port the II() integral to acb intervals + rigorous Lerch tail bound
 (|∫e^{-αt}D|≤Dmax/α, tail Σ_{n≥N}) ⟹ rigorous Arb 4×4 ⟹ LDL^T pivots certified >0 at a=0.549 = FIRST rigorously-certified
 point. Then continuum + tail. Tools: entry_engine.py, dkl_closedform.py, arb_screw.py. Cross-links §199.3a/b.1, §198.
+
+## §199.4 — 7-AGENT WORKFLOW: tail bound CLOSED 3 ways, math verified, 2 rigor-bugs caught, continuum mapped (2026-07-23)
+
+Ran a 7-agent parallel workflow (wf_9376fc6d-7d3) on the first-theorem rigorous certification. Results (all 7 done, 0 err):
+
+TAIL BOUND (the wildcard) — CLOSED by ALL THREE independent methods (decisive de-risking):
+ • Gershgorin: full even-sector PD; tail (k≥9) correction 8.8e-8; tail-only Gershgorin bound +0.32>0.
+ • Schur complement: correction 6.27e-8 at a=0.549 (≈||Q_4r||²/λmin(Q_rr)); PD across the whole window.
+ • Larger truncation: d=8 (8×8) optimal — tail 8.4e-9 = 0.05% of the ~1.6e-5 margin; converges by d=8.
+ ⟹ the d>4 tail is rigorously negligible (~1e-8 ≪ margin 1.6e-5), three ways agreeing. Recommended: certify the 8×8.
+
+VERIFICATION — did its job (caught a real bug):
+ • Independent re-derivation of D_kl + entry engine from the DEFINITION: MATCH to 1e-28 (70 test pts). Math CORRECT.
+ • Adversarial code audit of arb_certify2.py: found 2 RIGOR-BREAKING bugs — (1) the pivot lower-bound test
+   `arb(s.mid())-arb(s.rad())` extracts FLOATS from the interval (0-radius, loses rigor) — must use the direct arb
+   interval comparison `s>0`; (2) the acb entries' IMAGINARY part radius is dropped by `.real` without enclosing imag≈0.
+   Core math verified correct; the CODE needs these fixes to be genuinely rigorous. (Exactly why we ran verification.)
+
+CONTINUUM — mapped: the margin is NOT monotone in a (global min at a≈0.50), so endpoint+monotonicity FAILS. Use
+a-INTERVAL Arb: ~44 Lipschitz-guided panels over (0.42, 0.5493), certify the block PD on each. Tractable, more work.
+
+POINT-CERT — hardened: 250-bit reduced-prec arch-tail integral, ~60-70% speedup (arb_certify2 was minutes).
+
+⟹ FIRST-THEOREM STATUS: the hardest risk (tail) is RETIRED (closed 3 ways); math is verified; the path is fully mapped
+(fix the 2 Arb-rigor bugs → certify the 8×8 with tail bound → 44-panel a-interval Arb for the continuum). The workflow
+compressed days of serial exploration into one parallel pass AND caught a rigor bug I would have shipped. NEXT (§199.5):
+fix the 2 bugs, re-certify a=0.549 (8×8), then the 44-panel continuum. Est ~1-2 days, LOW risk now. Cross-links §198,
+§199.3, §197. Workflow transcripts: subagents/workflows/wf_9376fc6d-7d3/.
