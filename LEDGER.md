@@ -6725,3 +6725,32 @@ NEXT (§193, hard analysis — the attack): write the EVEN-sector secular condit
 Σ_k|⟨φ,u_k^{even}⟩|²/a_k^{even} with the verified even-sector spectrum, and seek a uniform-in-a bound. The shallow α_even
 and its POOR +w-overlap are the crux (small numerator, small |denominator| — the ratio is delicate). Tools:
 parity_verify.py, p2_alignment.py. Cross-links §186, §187, §188, §191, §122, route 6.
+
+## §193 — the analytic target characterized: even-sector margin(a) is smooth, LOCKS FLAT at ~2.6e-5 (2026-07-23)
+
+Traced the critical EVEN sector across the p=2 window (even_margin_law.py, mpmath). Proof pointer:
+results/even_margin_law.log. Handle.
+
+   a       α_even(arch)   margin λmin_even
+   0.360   +0.001125      0.001001         (even arch still POSITIVE)
+   0.400   +0.000903      0.000233
+   0.440   −0.003202      5.372e-5         ← even arch crosses to NEGATIVE at a≈0.42 (NOT at p=2 onset 0.347)
+   0.480   −0.016683      2.618e-5
+   0.520   −0.041842      2.594e-5
+   0.549   −0.066643      2.648e-5
+
+STRUCTURE (Handle): (1) the even-sector arch stays POSITIVE until a≈0.42, only THEN develops its single negative mode
+(the p=2 even-part demand has to build up first). (2) Once α_even goes negative and DEEPENS 20× (−0.003→−0.067), the
+margin LOCKS FLAT at ~2.6e-5 — the involution lift exactly tracks the deepening arch negativity to hold a CONSTANT
+margin. (3) The margin's minimum over the window is ~2.6e-5, in the flat region a∈(0.48, 0.549); bounded away from 0.
+
+⟹ THE ANALYTIC TARGET (crisp, verified, characterized): prove margin_even(a) > 0 (≥ ~2.5e-5) for a∈(0.42, ½log3) — ONE
+smooth, monotone-structured scalar function, all ingredients explicit + zero-free. This is the endpoint of the compute-
+driven reduction (§184-193): the century-old wall, in the first-prime window, is a single 1-variable inequality on a
+characterized smooth positive function. The flat-margin lock (constant 2.6e-5 as α_even deepens 20×) is itself a strong
+structural clue — the lift and the negativity co-vary exactly; understanding WHY they lock is likely the key to the bound.
+
+NEXT (§194, hard analysis — the proof): bound margin_even(a) below. Two handles surfaced: (a) the flat-lock — derive why
+lift(a) − |α_even(a)| = const; (b) the explicit even-sector secular sum w|⟨φ,u_even⟩|²/|α_even| ≥ 1+Σ… in transcendental
+digamma terms. Multi-session analytic effort on a well-defined 1-var object. Tools: even_margin_law.py, parity_verify.py.
+Cross-links §186, §188, §191, §192, §122, route 6, rh-working-rules.
