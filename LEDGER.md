@@ -6933,3 +6933,25 @@ elementary-antiderivative Arb evaluators (∫t·cos, ∫e^{-αt}cos, ∫(t−log
 with tail bound → rigorous Arb 4×4 → LDL^T pivots certified >0 at a=0.549. Then the continuum (a-interval or derivative
 bound) + the d>4 tail (§197). Well-scoped careful coding; Mac-local. Tools: reduction_check.py, arb_screw.py.
 Cross-links §198, §199.1, §199.2, feedback_verify_before_ship.
+
+## §199.3b.1 — D_kl closed form VERIFIED (foundation for the rigorous entry engine) (2026-07-23)
+
+Hand-derived + validated (dkl_closedform.py, max err 5e-29 = machine zero, dps=30) the cos-overlap kernel D_kl(t)=
+C_kl+C_lk on t∈[0,2a], β=π/2a, k,l odd:
+  k≠l:  D_kl = klβ·{ [sin(lβt)−sin(kβt)]/(k−l) − [sin(lβt)+sin(kβt)]/(k+l) }
+  k=l:  D_kk = k²β²(2a−t)·cos(kβt) − kβ·sin(kβt)
+(used 2(k±l)βa=(k±l)π with k±l even). VERIFIED — safe to build the entry integrals on it. Handle.
+
+⟹ every entry Q[k,l]=∫_0^{2a} g(t)D_kl(t)dt is now a SUM OF ELEMENTARY INTEGRALS. The integral table needed (all
+standard, closed-form; over [0,2a], prime part over [log2,2a]):
+  ∫e^{-αt}{cos,sin}(ωt)dt  (α∈{±½ boundary, 2n+½ Lerch}); ∫t·{cos,sin}(ωt)dt (arch-core, prime);
+  ∫{cos,sin}(ωt)dt (const −¼Φ0); DIAGONAL adds ∫t²cos, ∫t·e^{-αt}cos, ∫(2a−t)cos from the D_kk t·cos term.
+  ω∈{kβ,lβ}. Lerch = ¼Σ_{n≥0}(n+¼)^{-2}·∫e^{-(2n+½)t}D dt + rigorous geometric tail.
+
+PACING NOTE (rule: don't cut corners — a rigorous proof tolerates ZERO sign errors): the entry-engine build is careful
+elementary-calculus coding across ~9 integral-table cases, high error-risk if rushed. Foundation (kernel §199.1,
+reduction §199.3a, D_kl §199.3b.1) is VERIFIED. The entry engine + Arb port + minor certification + continuum + tail is
+the next careful build — best done fresh on Opus (per the plan's own "Opus for analytic work"), NOT rushed at session end.
+Each step has an mpmath-validation guard. NEXT (§199.3b.2): code the integral table (validate ∫e^{-αt}cos etc vs mpmath
+quad), assemble closed-form Q[k,l], validate 4×4 vs weil_matrices; then Arb port (§199.3c) + certify. Tools:
+dkl_closedform.py, reduction_check.py, arb_screw.py. Cross-links §199.3a, §198, feedback_verify_before_ship.
