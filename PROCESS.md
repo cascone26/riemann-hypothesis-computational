@@ -8515,3 +8515,38 @@ overclaim (§187) and the float64 floor artifact (§186→§185); the productive
 (Yoshida), not hunting new basins. The first-prime relay is the first proof-shaped, zero-free, finite object the
 campaign has produced. Whether the relay is exact (§190+) or alignment-limited, the crux is now a concrete finite
 inequality, not the century-old operator wall.
+
+════════════════════════════════════════════════════════════════════════════
+## SESSION ARC 2026-07-23 CONT (§191–§199.5): reduction → 7-agent workflow → FIRST RIGOROUS POINT
+════════════════════════════════════════════════════════════════════════════
+
+Continues the same-day §180-190 arc (first-prime norm-budget relay). Decision chain:
+
+**Reduction to a finite matrix (§191-198).** Followed the first-prime lead to its floor. Parity decoupling (§191-192,
+VERIFIED off-block coupling 1e-39): the crux is a SCALAR condition in the EVEN sector (corrected §191's mislabel via
+§192 verify — criticality is ALIGNMENT not depth). Characterized the target: even-sector margin(a), smooth, locks flat
+~2.6e-5 (§193); the near-null ≈ fundamental cosine + critical correction (§194-195, but §196 REFUTED the pure-cosine
+shortcut — criticality is in the precise mode-mixture); effectively 4-dimensional (§197). ⟹ §198: the century-old wall,
+in the first-prime window, is a 4×4 EXPLICIT MATRIX POSITIVITY (numerically PD, all Sylvester minors >0). Method
+lesson: kept reducing until the object was finite+explicit+zero-free, verifying each step vs mpmath.
+
+**Rigorous engine (§199.1-199.3).** To make it a THEOREM (not a numerical observation): Arb screw kernel (§199.1,
+validated), 1D-integral reduction (§199.3a, validated), D_kl closed form (§199.3b.1, verified 5e-29), entry engine via
+uniform complex-exp integral (§199.3b.2, validated vs mpmath). Fork resolved: sympy symbolic integration HUNG (wrong
+tool) → directly-coded elementary antiderivatives + term-by-term Lerch series.
+
+**Parallelization decision (§199.4).** Jacob asked "how do we go faster / multiple agents?" Ran a 7-agent WORKFLOW
+(the right call — compute is tiny, but the WORK parallelizes): 3 racing the tail bound (the wildcard), 2 adversarial
+verification, 1 point-cert hardening, 1 continuum. Outcome: tail bound CLOSED 3 independent ways (correction ~1e-8 <<
+margin), math re-verified (1e-28), AND the code audit CAUGHT 2 rigor bugs I'd have shipped (float extraction breaking
+interval rigor). Lesson: adversarial verification on a proof is non-optional; parallel diverse attack de-risks the
+uncertain piece.
+
+**First rigorous point (§199.5).** Certified the even 4×4 PD at a=0.549 via genuine Arb (all pivots s>0 rigorous).
+Debugging = the real texture of computer-assisted proof: 5 bugs cleared (slow lerch integral → term-by-term; float
+extraction → rigorous s>0; LDL^T amplification → reorder large-diagonal-first; NEGATIVELY-BIASED tail enclosure
+arb(-1,1) [midpoint -1!] → arb(0,1); NLERCH 1500→8000). Each caught by validation/audit, none shipped.
+
+STATE: p=2-only Weil positivity RIGOROUS at a=0.549 (first extension of Yoshida past the first prime, at a point).
+Remaining: the continuum (44-panel a-interval Arb, u=t/2a fixed-domain trick) + fold the tail bound in = the full
+theorem. Honest scope: this is a NEW unconditional result, NOT RH (RH = the uniform a->inf limit, untouched).
