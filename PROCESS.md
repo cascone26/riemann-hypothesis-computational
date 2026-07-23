@@ -8475,3 +8475,43 @@ build NOT needed (dist tracks N, never floored on prolate precision) — the pre
 The true θ_x−k_λ is smaller than 2e-7 at c=13 (still N-limited). Proof pointers: LEDGER §178c, floor13.log.
 **Method note:** "check whether the floor even CAN be what you'd build to fix" before building the fix — the 11-order gap
 between 1e-4 and float64's 1e-15 was the tell that a mpmath-prolate build would've been wasted effort.
+
+════════════════════════════════════════════════════════════════════════════
+## SESSION ARC 2026-07-23 (§180–§190): from "all basins walled" to a concrete first-prime relay
+════════════════════════════════════════════════════════════════════════════
+
+PROCESS PROVENANCE — the decision chain this session, not just the results:
+
+**Fork 1 — basin exhaustion re-confirmed (§180–181).** Entered the §123-designated zero-density basin. Read Guth-
+Maynard 2405.20552 directly: it's a zero-DENSITY estimate (N(σ,T)≤T^{30(1-σ)/13}), route-3 in OBSTRUCTION_MAP =
+"bounds off-line zeros, never forces on." The proof-relevant axis (Levinson mollifier proportion→100%) is RH-hard at
+θ→1. Then SEARCH-BEFORE-BUILD caught a near-retread: my proposed "fresh" candidates (DBN, LeClair) were ALREADY
+closed (§35-47e: DBN g_λ is a detector not a prime-handle; §125: LeClair=Lagarias). Corrected the stale docs so the
+next session doesn't repeat it. DECISION: stop basin-hopping — it's verified-exhausted.
+
+**Fork 2 — wall anatomy + one fresh vein, closed (§182–183).** Deep-analysis pass produced the WALL INVARIANT (every
+route needs a sign-carrying prime↔zero bridge beyond the sign-blind explicit formula) and surfaced ONE genuinely
+unmined direction: crystalline-measure rigidity. Chased it hard (3 reader-agents + direct reads): reduces to RH two
+ways — "zero comb is an FQ" ⟺ RH (Arias de Reyna), and the proven FQ classification (Alon-Cohen-Vinzant) is Lee-Yang-
+based = our Jensen wall. The one public "proof" (Shaughnessy) smuggles boundedness (=RH). Closed as a wall face, but
+UNIFIED crystalline with Jensen.
+
+**Fork 3 — THE PIVOT that's paying off (§184–190).** Instead of hunting new basins, MINE where the KNOWN unconditional
+result breaks. Yoshida/Bombieri prove Weil positivity for support ≤ log 2; it breaks at the FIRST PRIME (p=2). This
+turned out to be the productive move:
+ - §185: p=2 ALONE collapses the Weil margin ~340× (mpmath) — the first prime SETS the criticality; higher primes ride
+   on top. Crux shrinks from "all primes" to a finite, zero-free, NOT-RH-equivalent object.
+ - §186: mpmath-converged floor ~2.5e-5, EVEN ground state; arch-alone goes indefinite (positivity is arch+prime
+   cooperation).
+ - §187: tested rank-1-secular model → REFUTED; revealed the p=2 place is w·INVOLUTION, spectrum EXACTLY ±Λ(2)/√2.
+ - §188: alignment → the NORM-BUDGET RELAY idea: each prime's norm Λ(n)/√n is a budget covering the deepening arch
+   negativity; next prime enters as budget spent.
+ - §189: relay confirmed as a SAWTOOTH across p=2..5 (primes enter to stay ahead of arch negativity; positivity
+   maintained throughout). Crude single-mode ratio peaks 0.85 (necessary-not-sufficient; tight margin = alignment).
+ - §190 (running): total-negativity vs budget — the sharp relay test.
+
+METHOD LESSONS BANKED: search-before-build caught the DBN/LeClair retread (Fork 1); rule-10 verify caught the rank-1
+overclaim (§187) and the float64 floor artifact (§186→§185); the productive move was MINING A KNOWN RESULT'S BREAK
+(Yoshida), not hunting new basins. The first-prime relay is the first proof-shaped, zero-free, finite object the
+campaign has produced. Whether the relay is exact (§190+) or alignment-limited, the crux is now a concrete finite
+inequality, not the century-old operator wall.
