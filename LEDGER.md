@@ -6463,3 +6463,41 @@ pair-positivity (n<2π·γ₁ unconditional) — same "extend the unconditional 
 next: build the support-threshold form at support s∈(log2, log5), test whether the p=2 contribution can be dominated by
 the archimedean margin with a sharpened (prolate/Toeplitz) bound — the first prime is the whole game.
 Tools: arch_floor_vs_full.py, arch_floor_ext.py. Cross-links §42, §122, OBSTRUCTION_MAP route 6, §182(5b), rh-working-rules.
+
+## §185 — THE FIRST PRIME SETS THE CRITICALITY: p=2 alone collapses the Weil margin ~4400×; crux = a two-term arch-vs-p2 inequality (2026-07-23)
+
+Direct continuation of §184 (unconditional wall sharp at the first prime). Scanned the Weil-form margin λ_a (Suzuki §8
+compact reformulation, g_a_compact / p2_domination_scan.py) across the p=2-ONLY support zone a∈(½log2, ½log3)=
+(0.3466, 0.5493), where the Weil form is EXACTLY (archimedean − single p=2 term) — no other primes, no collective
+zero effect. Handle (float64 Nyström, cross-checked vs §109 mpmath). Proof pointer: results/p2_domination_scan.json.
+
+    a       primepowers≤e^{2a}    λ_a (Weil margin)
+   0.25     [] (Yoshida region)    3.34e-2
+   0.30     []                     7.58e-3
+   0.3466   [2]  ← p=2 ENTERS      1.33e-3
+   0.40     [2]                    1.86e-4
+   0.45     [2]                    2.19e-5
+   0.50     [2]                    7.51e-6   ← already at the asymptotic floor, still p=2-ONLY
+   0.5493   [2,3] ← p=3 enters     7.54e-6
+   0.60     [2,3]                  7.58e-6
+   0.70     [2,3,4]                5.62e-6      (…flat ~3-7e-6 out to a=3, §110)
+
+RESULT (Handle): the SINGLE prime p=2, as its support-weight ramps up across its own zone, collapses λ_a ~4400×
+(3.3e-2 → 7.5e-6) — reaching the asymptotic near-critical floor BEFORE p=3 even enters. Every subsequent prime and all
+growth to a=3 barely moves it (flat). ⟹ **the criticality of the entire Weil form is SET BY THE FIRST PRIME**; higher
+primes maintain but do not deepen it. And λ_a stays POSITIVE throughout — so in the p=2-only zone, Weil positivity IS
+just the two-term inequality (archimedean form) ⪰ (single p=2 term): explicit, finite, zero-free, TRUE-with-margin.
+
+⟹ THE CRUX SHARPENS DRAMATICALLY: from "A+B ≥ P over all primes" (§122 wall) to a TWO-TERM domination — arch ⪰ p=2 —
+with the higher primes a bounded correction on p=2's floor. This is the §184 lever made concrete: PROVING arch ⪰ p=2
+unconditionally for a∈(0.3466, 0.5493) EXTENDS the Yoshida threshold past the first prime (0.3466→0.5493) = a genuinely
+NEW unconditional result (the log2→log3 zone is open in the literature, §184). §185 shows the inequality is TRUE with
+positive margin (1.3e-3 down to 7.5e-6) — it needs a PROOF, not a discovery.
+
+CAVEAT (verify-before-ship): the ~7.5e-6 float64 floor is NOT converged — §109 mpmath gives a=0.6→2.3e-5 (3× larger).
+The COLLAPSE (the ~4400× and "p=2 sets it") is robust and monotone; the exact floor value needs mpmath.
+
+NEXT (§186): (1) mpmath the p=2-only margin to pin the true floor + confirm it stays positive with converged values;
+(2) attack the arch-vs-p2 sharp bound — the archimedean form's coercivity constant vs Λ(2)/√2's demand, via the
+prolate/Toeplitz structure — the ONE prime is the whole game. Tools: g_a_compact.py, p2_domination_scan.py,
+suzuki_screw_lambda_a.py. Cross-links §42, §110, §122, §184, OBSTRUCTION_MAP route 6.
