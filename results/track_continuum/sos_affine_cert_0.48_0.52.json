@@ -1,6 +1,6 @@
 {
   "tool": "sos_affine_compose.py",
-  "timestamp": "2026-07-24T01:57:23.661532Z",
+  "timestamp": "2026-07-24T02:01:43.965599Z",
   "theorem": "THEOREM_ASSEMBLY piece 6: continuum-in-a, Q(a)\u2ab00 certification",
   "interval": {
     "a0": 0.48,
