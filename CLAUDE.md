@@ -75,3 +75,11 @@ following is mandatory, not optional:
    item before stopping — same anti-stall discipline as always
    (`rh-working-rules`: never end on "what next?", keep the next method
    already loaded, no stopping-off-ramp language, ETAs when asked).
+7. **Flag stalling, don't grind silently.** If you've tried the same
+   sub-approach ~5 times without a genuinely new result (not "5 runs
+   confirming the same thing" — 5 real *attempts* at cracking it), update
+   your `SESSIONS.md` roster status to `stalled: <N> attempts on <what>, no
+   new result` instead of quietly continuing or switching approaches
+   unannounced. This is not a request to stop — keep working — it's a
+   signal for a Fable path-check (Jacob's PRISM brainstorm review), which is
+   triggered by this kind of friction, not run continuously.
