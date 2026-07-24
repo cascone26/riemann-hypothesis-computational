@@ -1,0 +1,101 @@
+{
+  "twisted_regular_d3_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5957583288893905,
+      "stderr": 0.006528081715449576,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -1.063355425558034,
+      "sigma_from_poisson": 32.08660321665023
+    }
+  },
+  "twisted_regular_d4_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5900712552862296,
+      "stderr": 0.0067369641280768,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -1.8745453402578125,
+      "sigma_from_poisson": 30.24758486052845
+    }
+  },
+  "twisted_regular_d6_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5978422673166056,
+      "stderr": 0.006665761685956755,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -0.7287588294115793,
+      "sigma_from_poisson": 31.73649406674685
+    }
+  },
+  "twisted_regular_d10_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5983778125290876,
+      "stderr": 0.006579779806574632,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -0.6568893789718604,
+      "sigma_from_poisson": 32.23260620321664
+    }
+  },
+  "twisted_erdos_renyi_p0.01_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.6039354737266529,
+      "stderr": 0.0067765812180185315,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": 0.18231519506736515,
+      "sigma_from_poisson": 32.116653752790185
+    }
+  },
+  "twisted_erdos_renyi_p0.05_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.6020253720607165,
+      "stderr": 0.006761793275795002,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -0.09977056555373696,
+      "sigma_from_poisson": 31.904407919874163
+    }
+  },
+  "twisted_erdos_renyi_p0.2_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5983606713532073,
+      "stderr": 0.006709107019660812,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -0.6467818495183495,
+      "sigma_from_poisson": 31.60872372610297
+    }
+  },
+  "twisted_watts_strogatz_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5920506792381273,
+      "stderr": 0.007045254049073785,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -1.5115595105151358,
+      "sigma_from_poisson": 29.20495367307397
+    }
+  },
+  "twisted_barabasi_albert_N1200": {
+    "n_raw": 1200,
+    "mean_ratio": {
+      "mean": 0.5905367525304768,
+      "stderr": 0.006565834827099002,
+      "n": 1198,
+      "closest": "GUE",
+      "sigma_from_gue": -1.8525058564254742,
+      "sigma_from_poisson": 31.10684273805089
+    }
+  }
+}

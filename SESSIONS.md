@@ -9,9 +9,9 @@ point only.
 
 | track | claimed item | worktree | branch | status | last sync |
 |---|---|---|---|---|---|
-| tail | Tail lemma finalize (§201 -> K0 cert) | ~/projects/riemann-tracks/tail | track/tail | starting | - |
-| continuum | a-interval feasibility (§199.6/199.7) | ~/projects/riemann-tracks/continuum | track/continuum | starting | - |
-| oddsector | Odd sector cert + screw/CvS equivalence check (§200 gap2/gap3) | ~/projects/riemann-tracks/oddsector | track/oddsector | starting | - |
+| tail | Tail lemma finalize (§201 -> K0 cert) | ~/projects/riemann-tracks/tail | track/tail | done-item | 2026-07-24T01:57:21Z |
+| continuum | a-interval feasibility (§199.6/199.7) | ~/projects/riemann-tracks/continuum | track/continuum | done-item | 2026-07-24T01:58:17Z |
+| oddsector | Odd sector cert + screw/CvS equivalence check (§200 gap2/gap3) | ~/projects/riemann-tracks/oddsector | track/oddsector | done-item | 2026-07-24T01:58:15Z |
 
 Update the `status`/`last sync` cells (or append a new roster row block below if the table gets unwieldy)
 each time `sync-track.sh` runs. Status values: `starting`, `running`, `blocked`, `done-item` (popped next
@@ -54,3 +54,7 @@ merge track/tail -> main failed. Log: /tmp/sync-track-merge-tail.log
 - 2026-07-24T01:27:06Z track:tail FAILED commit:cf3193b merge-conflict-see-tmp-log
 - 2026-07-24T01:28:12Z track:tail ok commit:60a247a push-failed(non-fatal)
 - 2026-07-24T01:29:52Z track:tail ok commit:6f741b6 push-failed(non-fatal)
+- 2026-07-24T01:57:21Z track:tail ok commit:a25c05a push-failed(non-fatal)
+- 2026-07-24T01:58:15Z track:oddsector ok commit:a6dbec4 push-failed(non-fatal)
+- 2026-07-24T01:58:17Z track:continuum ok commit:aa25f36 push-failed(non-fatal)
+- 2026-07-24T02:00:08Z track:tail ok commit:b6b30ab push-failed(non-fatal)

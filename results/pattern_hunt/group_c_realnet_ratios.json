@@ -1,0 +1,35 @@
+{
+  "realnet_email_adjacency": {
+    "n": 986,
+    "mean_ratio": {
+      "mean": 0.5157783899712629,
+      "stderr": 0.008160098790398643,
+      "n": 984,
+      "closest": "GOE",
+      "sigma_from_gue": -10.652029131192755,
+      "sigma_from_poisson": 15.867948682646608
+    }
+  },
+  "realnet_email_laplacian": {
+    "n": 986,
+    "mean_ratio": {
+      "mean": 0.5027402042222751,
+      "stderr": 0.008479504748434006,
+      "n": 984,
+      "closest": "GOE",
+      "sigma_from_gue": -11.788400236014434,
+      "sigma_from_poisson": 13.73262313744086
+    }
+  },
+  "realnet_email_twisted": {
+    "n": 986,
+    "mean_ratio": {
+      "mean": 0.5809082366235293,
+      "stderr": 0.007488800114710284,
+      "n": 984,
+      "closest": "GUE",
+      "sigma_from_gue": -2.9099138770795934,
+      "sigma_from_poisson": 25.987324073633346
+    }
+  }
+}

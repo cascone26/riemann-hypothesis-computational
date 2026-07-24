@@ -1,0 +1,13 @@
+{
+  "petersen": {
+    "ramanujan": true,
+    "weil_S": 2.655463333526609,
+    "any_complex_angle": false
+  },
+  "non_ramanujan": {
+    "seed": 4,
+    "ramanujan": false,
+    "weil_S": 4.161917104089697,
+    "any_complex_angle": true
+  }
+}
