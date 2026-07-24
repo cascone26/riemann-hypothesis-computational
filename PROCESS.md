@@ -8550,3 +8550,57 @@ arb(-1,1) [midpoint -1!] → arb(0,1); NLERCH 1500→8000). Each caught by valid
 STATE: p=2-only Weil positivity RIGOROUS at a=0.549 (first extension of Yoshida past the first prime, at a point).
 Remaining: the continuum (44-panel a-interval Arb, u=t/2a fixed-domain trick) + fold the tail bound in = the full
 theorem. Honest scope: this is a NEW unconditional result, NOT RH (RH = the uniform a->inf limit, untouched).
+
+---
+
+## Arc §201–§202 — Tail-lemma constants + the rigor/continuum tool build (2026-07-23)
+
+### The fork: after §200 named the tail lemma as THE lever, what to actually do
+§200's audit reframed the whole program: the tail lemma (finite Galerkin cert ⟹ true infinite-dim positivity) is
+not just our bottleneck, it upgrades the entire already-certified Groskin grid. So the decision was to STOP
+accumulating structural understanding and START pinning the tail lemma's explicit constants, then build the
+tooling that makes the eventual theorem assemblable and honest.
+
+### Decision chain, §201 (tail-lemma constants)
+1. Measured the tail structure empirically (tail_structure.py) → found diagonal Q[k,k] GROWS but as **log**, not
+   the k² the §200 audit had guessed. Self-corrected the audit: dominance still holds because off-diagonal row
+   sums stay bounded. LESSON: an audit's asymptotic guess is Report-tier until measured — we caught our own.
+2. Pinned the two exponents: diagonal ≈0.31·log(kβ); coupling |Q[k,l]|≈C_k/l. The 1/l (not 1/l²) rate was the
+   surprise — traced it analytically to D_kl → −2kβ·sin(lβt) (verified, ratios→1.00 at l=321) whose integral's
+   leading term is the SUPPORT-ENDPOINT boundary term. First endpoint-only guess for C_k over-predicted 3× →
+   found the miss: D_kl's second term (amplitude ~2k²β/l) also contributes at 1/l. Corrected C_k=2k[kβI_k−g(2a)],
+   with the elegant fact g(0)=0 exactly (boundary+arch+Lerch cancel at t=0). LESSON: the closed form rewards
+   pushing the asymptotics one more order — the "obvious" boundary term wasn't the whole 1/l coefficient.
+
+### Decision chain, §202 (tooling) — the search-before-build payoff and the verify-catches
+3. Jacob supplied an 8-item infra list, then a 9-item continuum list, asking first for evaluation. search-before-
+   build (HARD) found idea #6 (arxiv-watch) and #2 (adversarial-verify + verify_gate) ALREADY LIVE — did not
+   rebuild. Recommended 7, advised AGAINST 2 (eigenvector-enclosure lost the fork to affine on a reasoned
+   argument: Rump enclosures need a spectral gap, weakest at our near-null; and the formal "race" was resolvable
+   by reasoning). Jacob then said build them all.
+4. Parallelized: 4 independent builds via concurrent agents (lean-briefed — NO PROCESS/STATUS, just the formulas),
+   cheap/reasoning items self-built, SOS built on top after affine. TWO agent builds failed verification and were
+   corrected BY HAND — this is the single most important process event of the session:
+   - affine_arith.py came back a FACADE: its entry returned ~1e-51 and its "naive baseline" was a synthetic proxy
+     (a/(1+a²)log a), so its 489× claim was meaningless. Rebuilt clean on a REAL Weil sub-integral vs GENUINE
+     flint-Arb; honest ratio 2.4–4.3× growing with refinement.
+   - screw_cvs_equiv.py returned "NOT equivalent, mathematically absolute" — but had compared AT the criticality
+     endpoint where both forms are ~0; the "inertia mismatch" was one near-zero eigenvalue's sign. Downgraded to
+     UNRESOLVED. LESSON (re-confirmed): an agent's confident headline is Report-tier until the parent verifies the
+     setup; a wrong "disproven" would have wrongly closed the §200 reframe's key transfer step.
+5. The SOS attempt on the real block FAILED to certify — and that failure was informative, not a bug: the high-
+   precision window scan (run to adjudicate an apparent SOS negativity) showed the true margin is ~1e-6 while the
+   deg-2 polyfit residual was ~6e-4. CONCLUSION: SOS is sound (machinery validated on a conditioned family) but
+   needs sub-margin entry enclosure — i.e. it must CONSUME affine_arith's output, not a polyfit. This nailed the
+   affine↔SOS composition that the evaluation had only argued on paper.
+6. The window scan itself became a real finding: interior of the p=2 window is solidly PD (~1e-6..3e-6), the
+   endpoint a=½log3 is a marginal-zero (the §189 relay point where p=3 enters), and 6×6<4×4 confirms the true inf
+   is razor-thin near the endpoint. No anomaly — this is exactly the criticality the whole program predicts, now
+   measured. It recalibrated our stated margin from a loose "2.6e-5" to the true ~1e-6/1e-7 near the endpoint.
+
+### Where this leaves the assembly (see THEOREM_ASSEMBLY.md)
+Tail lemma: constants explicit, stress-tested (no crack), K0≈13 sized. Odd sector: still open (mechanical).
+Screw≡CvS: unresolved (re-test interior). Continuum: affine primitive proven, SOS machinery proven, composition
+identified. Proof pointers + provenance stamps now attached to certified claims. The methodology lesson of the
+session: the verify-before-commit gate caught 2 of 4 agent builds — parallel speed is real, but the parent MUST
+independently verify each result before it enters the ledger, and here that discipline changed two conclusions.

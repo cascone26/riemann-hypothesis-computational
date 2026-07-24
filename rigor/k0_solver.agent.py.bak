@@ -1,0 +1,324 @@
+#!/usr/bin/env python3
+"""
+k0_solver.py: Rigorous Galerkin cutoff finder for the tail lemma.
+
+For a finite Galerkin matrix Q (even-sector, odd modes k=1,3,5,...), certify
+positive-definiteness by partitioning modes into low block L={odd k≤K0} and
+tail T={odd k>K0}. Requirements:
+  1. Tail block must be diagonally dominant (Gershgorin margin > 0)
+  2. Schur residual of L→T coupling must be < 2.6e-5
+
+Find the MINIMAL K0 satisfying both, and report modes list for arb_certify.
+"""
+import sys
+import mpmath as mp
+import numpy as np
+from scipy.linalg import eigh
+
+# Configure mpmath for high precision
+mp.mp.dps = 30
+
+# Constants (copied from tail_structure.py to avoid expensive module import)
+a = mp.mpf('0.549')
+b = mp.pi / (2 * a)
+log2 = mp.log(2)
+twoa = 2 * a
+Om0 = mp.digamma(mp.mpf(1) / 4) - mp.log(mp.pi)
+Phi0 = mp.zeta(2, mp.mpf(1) / 4)
+wp = mp.log(2) / mp.sqrt(2)
+NL = 1500  # Lerch terms
+
+# Basis: odd modes only
+def odds_list(max_k):
+    return list(range(1, max_k + 1, 2))
+
+# Q(k,l) entry engine (exact closed form)
+def Pp(p, t, s):
+    """Polynomial P_p(t,s) used in Q entry formula."""
+    if p == 0:
+        return 1 / s
+    if p == 1:
+        return t / s - 1 / s ** 2
+    return t * t / s - 2 * t / s ** 2 + 2 / s ** 3
+
+def II(p, al, om, sc, t0, t1):
+    """Integral I_{p,al,om,sc}(t0, t1)."""
+    s = mp.mpc(-al, om)
+    F = lambda tt: mp.exp(s * tt) * Pp(p, tt, s)
+    v = F(t1) - F(t0)
+    return v.real if sc == 'cos' else v.imag
+
+def dterms(k, l):
+    """Contribution terms for Q(k,l) entry."""
+    if k == l:
+        return [
+            (2 * a * k * k * b * b, 0, k * b, 'cos'),
+            (-k * k * b * b, 1, k * b, 'cos'),
+            (-k * b, 0, k * b, 'sin')
+        ]
+    al = k * l * b * (mp.mpf(1) / (k - l) - mp.mpf(1) / (k + l))
+    ak = -k * l * b * (mp.mpf(1) / (k - l) + mp.mpf(1) / (k + l))
+    return [(al, 0, l * b, 'sin'), (ak, 0, k * b, 'sin')]
+
+def Q(k, l):
+    """Exact Galerkin matrix entry Q[k,l] via closed-form computation."""
+    tot = mp.mpf(0)
+
+    # Main Lerch-sum terms
+    gt = [
+        (-4, 0, mp.mpf(-1) / 2),
+        (-4, 0, mp.mpf(1) / 2),
+        (8, 0, mp.mpf(0)),
+        (-Om0 / 2, 1, mp.mpf(0)),
+        (-Phi0 / 4, 0, mp.mpf(0))
+    ]
+    for n in range(NL):
+        gt.append((mp.mpf(1) / 4 / (n + mp.mpf(1) / 4) ** 2, 0, 2 * n + mp.mpf(1) / 2))
+
+    # Integrate against dterms
+    for (ag, pg, alp) in gt:
+        for (ad, pd, om, sc) in dterms(k, l):
+            tot += ag * ad * II(pg + pd, alp, om, sc, mp.mpf(0), twoa)
+
+    # Boundary correction at log(2)
+    for (ad, pd, om, sc) in dterms(k, l):
+        tot += wp * ad * II(pd + 1, mp.mpf(0), om, sc, log2, twoa)
+        tot += (-wp * log2) * ad * II(pd, mp.mpf(0), om, sc, log2, twoa)
+
+    return tot
+
+def compute_tail_gershgorin_margin(K0, Kmax):
+    """
+    Compute the tail Gershgorin margin:
+    min_{odd k in (K0, Kmax]} [Q[k,k] - Σ_{odd l≠k, l≤Kmax} |Q[k,l]|]
+    """
+    odd_modes = odds_list(Kmax)
+    tail_modes = [k for k in odd_modes if k > K0]
+
+    if not tail_modes:
+        return None
+
+    margins = []
+    for k in tail_modes:
+        diag = Q(k, k)
+        row_sum = mp.fsum(abs(Q(k, l)) for l in odd_modes if l != k and l <= Kmax)
+        margin = diag - row_sum
+        margins.append(margin)
+
+    return min(margins) if margins else None
+
+def compute_schur_residual_worstcase(K0, Kmax):
+    """
+    Worst-case Schur residual bound: ||Q_LT||² / λ_min(Q_TT)
+    where Q_LT is coupling (low to tail), Q_TT is tail block.
+    λ_min(Q_TT) ≥ tail Gershgorin margin.
+    """
+    odd_modes = odds_list(Kmax)
+    low_modes = [k for k in odd_modes if k <= K0]
+    tail_modes = [k for k in odd_modes if k > K0 and k <= Kmax]
+
+    if not tail_modes:
+        return None, None
+
+    # Compute tail Gershgorin margin (lower bound on λ_min(Q_TT))
+    tail_margin = compute_tail_gershgorin_margin(K0, Kmax)
+    if tail_margin is None or tail_margin <= 0:
+        return None, tail_margin
+
+    # Compute ||Q_LT||² (coupling block, squared Frobenius norm)
+    coupling_norm_sq = mp.mpf(0)
+    for k in low_modes:
+        for l in tail_modes:
+            q_kl = Q(k, l)
+            coupling_norm_sq += q_kl * q_kl
+
+    # Schur residual bound: ||Q_LT||² / tail_margin
+    schur_bound = coupling_norm_sq / tail_margin
+
+    return schur_bound, tail_margin
+
+def compute_low_block_eigenvector(K0):
+    """
+    Compute the smallest eigenvector of the low block Q_LL.
+    Return (eigvec, eigval) where eigvec is a dict mapping mode -> amplitude.
+    """
+    odd_modes = odds_list(K0)
+    low_modes = [k for k in odd_modes if k <= K0]
+    n = len(low_modes)
+
+    # Build Q_LL matrix in numpy (use float64 for scipy)
+    Q_LL = np.zeros((n, n), dtype=np.float64)
+    for i, k in enumerate(low_modes):
+        for j, l in enumerate(low_modes):
+            Q_LL[i, j] = float(Q(k, l))
+
+    # Compute mass matrix a*I (must also be float64)
+    a_f64 = float(a)
+    M_LL = a_f64 * np.eye(n, dtype=np.float64)
+
+    # Generalized eigenproblem: Q_LL u = λ M_LL u
+    eigvals, eigvecs = eigh(Q_LL, M_LL)
+
+    # Smallest eigenvalue and eigenvector
+    min_idx = np.argmin(eigvals)
+    min_eigval = eigvals[min_idx]
+    min_eigvec = eigvecs[:, min_idx]
+
+    # Map eigenvector to modes
+    eigvec_dict = {low_modes[i]: min_eigvec[i] for i in range(n)}
+
+    return eigvec_dict, min_eigval
+
+def compute_schur_residual_actual(K0, Kmax):
+    """
+    Actual Schur residual using the true low-block eigenvector.
+    Residual = ||Q_TL u||² / λ_min(Q_TT)
+    where u is the smallest eigenvector of Q_LL and λ_min(Q_TT) ≥ tail margin.
+    """
+    odd_modes = odds_list(Kmax)
+    tail_modes = [k for k in odd_modes if k > K0 and k <= Kmax]
+
+    if not tail_modes:
+        return None, None
+
+    # Get low-block eigenvector
+    eigvec, min_eigval = compute_low_block_eigenvector(K0)
+
+    # Compute tail Gershgorin margin
+    tail_margin = compute_tail_gershgorin_margin(K0, Kmax)
+    if tail_margin is None or tail_margin <= 0:
+        return None, tail_margin
+
+    # Compute ||Q_TL u||² = Σ_k (Σ_l Q_TL[k,l] u_l)²
+    residual = mp.mpf(0)
+    for k in tail_modes:
+        sum_kl = mp.mpf(0)
+        for l in eigvec:
+            sum_kl += Q(k, l) * mp.mpf(eigvec[l])
+        residual += sum_kl ** 2
+
+    # Schur residual: ||Q_TL u||² / tail_margin
+    actual_schur = residual / tail_margin
+
+    return actual_schur, tail_margin
+
+def solve_k0(k0_range=(7, 63, 2), margin_threshold=2.6e-5, Kmax_offset=40):
+    """
+    Find the minimal K0 such that:
+      1. Tail Gershgorin margin > 0
+      2. Schur residual < margin_threshold
+
+    Returns: (K0_min, results_table)
+    """
+    results = []
+    K0_found = None
+
+    for K0 in range(k0_range[0], k0_range[1], k0_range[2]):
+        Kmax = K0 + Kmax_offset
+
+        # Compute tail Gershgorin margin
+        ger_margin = compute_tail_gershgorin_margin(K0, Kmax)
+        if ger_margin is None:
+            continue
+
+        # Compute worst-case and actual Schur residuals
+        schur_wc, _ = compute_schur_residual_worstcase(K0, Kmax)
+        schur_act, _ = compute_schur_residual_actual(K0, Kmax)
+
+        if schur_wc is None or schur_act is None:
+            continue
+
+        # Convert to float for readability
+        ger_margin_f = float(ger_margin)
+        schur_wc_f = float(schur_wc)
+        schur_act_f = float(schur_act)
+
+        results.append({
+            'K0': K0,
+            'ger_margin': ger_margin_f,
+            'schur_wc': schur_wc_f,
+            'schur_act': schur_act_f,
+            'kmax': Kmax
+        })
+
+        # Check if this K0 satisfies both conditions
+        if ger_margin_f > 0 and schur_act_f < margin_threshold:
+            if K0_found is None:
+                K0_found = K0
+
+    return K0_found, results
+
+def get_modes_list_ordered(K0):
+    """
+    Get the list of odd modes ≤ K0, ordered by large diagonal first.
+    This ordering (large-diagonal-first) avoids LDL^T interval amplification.
+    """
+    odd_modes = [k for k in range(1, K0 + 1, 2)]
+
+    # Sort by Q[k,k] descending
+    modes_with_diag = [(k, float(Q(k, k))) for k in odd_modes]
+    modes_with_diag.sort(key=lambda x: x[1], reverse=True)
+
+    return [k for k, _ in modes_with_diag]
+
+def main():
+    print("=" * 80)
+    print("k0_solver.py: Minimal K0 Finder for Galerkin Certification")
+    print("=" * 80)
+    print(f"Parameters: a={a}, b={b}, NL={NL}, margin_threshold=2.6e-5")
+    print()
+
+    # Solve
+    K0_min, results = solve_k0(k0_range=(7, 63, 2), margin_threshold=2.6e-5, Kmax_offset=40)
+
+    # Print table
+    print("K0 | Ger.Margin  | Schur(worst) | Schur(actual) | Status")
+    print("-" * 70)
+    for res in results:
+        K0 = res['K0']
+        ger = res['ger_margin']
+        schur_wc = res['schur_wc']
+        schur_act = res['schur_act']
+
+        ger_ok = "✓" if ger > 0 else "✗"
+        schur_ok = "✓" if schur_act < 2.6e-5 else "✗"
+        status = f"{ger_ok}{schur_ok}"
+
+        print(f"{K0:3d} | {ger:11.3e} | {schur_wc:12.3e} | {schur_act:13.3e} | {status}")
+
+    print()
+    if K0_min is None:
+        print("ERROR: No valid K0 found in range.")
+        return
+
+    print(f"CHOSEN K0: {K0_min}")
+    print()
+
+    # Get modes list for arb_certify
+    modes_list = get_modes_list_ordered(K0_min)
+    print(f"Modes list (large-diagonal-first, for arb_certify):")
+    print(modes_list)
+    print()
+
+    # Report detailed metrics at chosen K0
+    Kmax = K0_min + 40
+    ger_margin = compute_tail_gershgorin_margin(K0_min, Kmax)
+    schur_wc, _ = compute_schur_residual_worstcase(K0_min, Kmax)
+    schur_act, _ = compute_schur_residual_actual(K0_min, Kmax)
+
+    print("=" * 80)
+    print(f"DETAILED RESULTS at K0={K0_min} (Kmax={Kmax}):")
+    print("=" * 80)
+    print(f"Tail Gershgorin margin:     {float(ger_margin):.6e}")
+    print(f"Worst-case Schur residual:  {float(schur_wc):.6e}")
+    print(f"Actual Schur residual:      {float(schur_act):.6e}")
+    print(f"Margin threshold:           2.6e-05")
+    print(f"Gap (threshold - actual):   {2.6e-5 - float(schur_act):.6e}")
+    print()
+    print("NOTE: Tail window truncation at Kmax={Kmax}; actual tail extends to ∞.")
+    print("      Near-null cancellation: modes 1,3 couple weakly to high modes.")
+    print()
+    print(f"arb_certify modes = {modes_list}")
+
+if __name__ == '__main__':
+    main()
