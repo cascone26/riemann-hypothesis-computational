@@ -9,12 +9,14 @@ results/*.npy
 /tmp/v9_output.txt
 
 # multi-session track worktrees symlink these back to the canonical checkout —
-# never let git track the symlink itself (collides with the real dir on main)
-/flint_venv/
-/cvs_venv/
-/pari_venv/
-/.venv_cvs/
-/external/
-/membrane_pulls/
-/membrane-pull/
+# never let git track the symlink itself (collides with the real dir on main).
+# NOTE: no trailing slash — these are symlinks in track worktrees, and a
+# trailing-slash gitignore pattern does NOT match a symlink-to-directory.
+/flint_venv
+/cvs_venv
+/pari_venv
+/.venv_cvs
+/external
+/membrane_pulls
+/membrane-pull
 data/zeros_computed_21510k_to_21511k_genuine_extension
