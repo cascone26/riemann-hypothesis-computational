@@ -205,7 +205,7 @@ enclosure (Rump/residual methods) at each grid point, or (B) first-order Taylor-
 in a. Files: arb_panel.py (shows the failure mode), margin_deriv.py, arb_certify.py (point cert reference,
 read-only unless coordinating with Q1/Q3 per SESSIONS.md).
 
-### Q3. Odd sector certification + screw/CvS equivalence check  [P:med N:med R:now]  <-- CLAIMED by:oddsector since:2026-07-23T20:00:00Z
+### Q3. Odd sector certification + screw/CvS equivalence check  [P:med N:med R:now]  <-- COMPLETED by:oddsector on:2026-07-24T02:20:00Z
 LEDGER §200 Gap 2 (flagged easiest — odd sector's single negative arch mode has 4-40x more margin than
 even) + Gap 3 (honesty check: is the Suzuki-screw form's a=0.549 point-cert independent of the
 Groskin/CvS grid's c=3 point, or the same object in a different basis?). Two sub-tasks: (a) extend
@@ -249,3 +249,12 @@ LEDGER §199.5 certified piece 1 (even 4×4) at the p=2-only endpoint a=0.549 = 
 
 **Rationale:** Q4+Q5 unlock the FULL 25-prime grid (pieces 2+4+5+3 applied to piece 1 = unconditional Weil positivity, a≤2.30 at true form, 99 points). Q6 is validation/robustness, lower priority. All three are unclaimed and ready.
 
+
+### CORRECTION (2026-07-24, control-panel session, see LEDGER §207)
+"Q1 done" above is WRONG — independently re-verified and found false (tail's arb_certify_k0.py, run as
+committed, prints NOT CERTIFIED; mode-1 pivot fails). Q3 ("oddsector claimed... piece 3") is ALSO wrong —
+no --parity flag exists in arb_certify.py, the cert log was hand-written not captured from a real run, and
+its own PROOF_CERT.json admits verify_gate.py was never run. **Q1 (tail lemma) and Q3-piece-3 (odd sector
+cert) are REOPENED, unclaimed.** Q2 (continuum) stands — independently re-verified via engine/verify_gate.py,
+genuine PASS. Q3-piece-4 (screw/CvS interior re-check) stands as its own honest REPORT-tier finding, not
+disputed. Q4/Q5/Q6 below remain valid (they don't depend on the false Q1/Q3-piece-3 claims).
