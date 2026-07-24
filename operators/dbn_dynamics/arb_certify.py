@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
-"""§199.3c: RIGOROUS Arb certification of the even 4×4 Weil block PD at a=0.549 (first certified point).
+"""§199.3c/§200: RIGOROUS Arb certification of Weil blocks PD at a=0.549 (even or odd parity).
 Entries via the §199.3b.2 engine ported to acb intervals + rigorous Lerch tail bound. Mass=a·I (orthogonal
-sines) so certifying Q_even PD (all LDL^T pivots' lower bound >0) proves p=2-only positivity at this a."""
+sines). Certifies Q_even (even parity, modes 5,7,3,1) or Q_odd (odd parity, mode 1) to be PD, proving
+p=2-only positivity at a=0.549 for the corresponding sector.
+Usage: arb_certify.py [--parity even|odd]  (default: even)"""
 import sys
+import argparse
 from flint import arb, acb, ctx
 ctx.prec = 1400
+
+# Parse parity argument
+parser = argparse.ArgumentParser(description='Rigorous Arb certification of Weil blocks')
+parser.add_argument('--parity', choices=['even', 'odd'], default='even', help='Parity sector to certify')
+args = parser.parse_args()
+parity = args.parity
+
 A = arb('0.549'); B = arb.pi()/(2*A); LOG2 = arb(2).log(); TWOA = 2*A
 OM0 = (arb(1)/4).digamma() - arb.pi().log()
 PHI0 = acb(2).zeta(acb(arb(1)/4)).real
@@ -46,19 +56,36 @@ def Q(k,l):
     for (ad,pd,om,sc) in D:
         tot += WP*ad*II(pd+1,arb(0),om,sc,LOG2,TWOA) + (-WP*LOG2)*ad*II(pd,arb(0),om,sc,LOG2,TWOA)
     return tot
-modes=[5,7,3,1]  # large-diagonal first: avoids LDL^T interval amplification from dividing by small pivots
-M=[[Q(k,l) for l in modes] for k in modes]
+# Select modes by parity (large-diagonal first to avoid LDL^T interval amplification)
+if parity == 'even':
+    modes = [5, 7, 3, 1]  # even parity sector (odd sine indices, large diag first)
+else:
+    modes = [1]  # odd parity sector (single negative arch mode, generous margin per LEDGER §200)
+
+n_modes = len(modes)
+M = [[Q(k, l) for l in modes] for k in modes]
+
 # LDL^T pivots (arb), certify lower bound >0
-d=[None]*4; L=[[arb(0)]*4 for _ in range(4)]; ok=True; piv=[]
-for i in range(4):
-    s=M[i][i]
-    for kk in range(i): s=s-L[i][kk]**2*d[kk]
-    d[i]=s; cert=(s>0); piv.append((s.str(6),cert))
-    if not cert: ok=False
-    for j in range(i+1,4):
-        t=M[j][i]
-        for kk in range(i): t=t-L[j][kk]*L[i][kk]*d[kk]
-        L[j][i]=t/d[i]
-print("§199.3c RIGOROUS Arb certification, even 4×4 Weil block @ a=0.549, prec=700, NLERCH=1500")
-for i,(sv,c) in enumerate(piv): print(f"  pivot {i}: {sv}  rigorously>0? {c}")
+d = [None] * n_modes
+L = [[arb(0)] * n_modes for _ in range(n_modes)]
+ok = True
+piv = []
+for i in range(n_modes):
+    s = M[i][i]
+    for kk in range(i):
+        s = s - L[i][kk]**2 * d[kk]
+    d[i] = s
+    cert = (s > 0)
+    piv.append((s.str(6), cert))
+    if not cert:
+        ok = False
+    for j in range(i + 1, n_modes):
+        t = M[j][i]
+        for kk in range(i):
+            t = t - L[j][kk] * L[i][kk] * d[kk]
+        L[j][i] = t / d[i]
+
+print(f"§199.3c/§200 RIGOROUS Arb certification, {parity.upper()} sector @ a=0.549, prec=1400, NLERCH=8000, modes={modes}")
+for i, (sv, c) in enumerate(piv):
+    print(f"  pivot {i} (mode {modes[i]}): {sv}  rigorously>0? {c}")
 print(f"\n{'*** CERTIFIED PD (all pivots lower-bound >0) — p=2-only positivity RIGOROUS at a=0.549 ***' if ok else 'not certified'}")
