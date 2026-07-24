@@ -1,0 +1,70 @@
+{
+  "method": "Hybrid mpmath+Arb",
+  "type": "minimal test",
+  "dps": 150,
+  "max_d_tested": 10,
+  "max_n_tested": 20,
+  "max_d_all_hyperbolic": 10,
+  "table": {
+    "1": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 1.1854672870015293e-06
+    },
+    "2": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 5.010464536781001e-05
+    },
+    "3": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.00030105172027106164
+    },
+    "4": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.0018895402718044352
+    },
+    "5": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.008221613112255
+    },
+    "6": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.030661270953714848
+    },
+    "7": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.13680970878340304
+    },
+    "8": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 0.5381252029910684
+    },
+    "9": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 2.300112873315811
+    },
+    "10": {
+      "all_hyperbolic": true,
+      "first_fail": null,
+      "max_ratio": 0.0,
+      "max_radius": 7.664823547005653
+    }
+  }
+}

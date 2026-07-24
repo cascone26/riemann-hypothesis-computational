@@ -1,0 +1,26 @@
+[
+  {
+    "success": false,
+    "theorem_name": "robin_inequality_of_RH",
+    "message": "No successful proof candidate",
+    "candidates_attempted": 2
+  },
+  {
+    "success": false,
+    "theorem_name": "RH_of_robin_inequality",
+    "message": "No successful proof candidate",
+    "candidates_attempted": 2
+  },
+  {
+    "success": false,
+    "theorem_name": "lagarias_inequality_of_RH",
+    "message": "No successful proof candidate",
+    "candidates_attempted": 2
+  },
+  {
+    "success": false,
+    "theorem_name": "RH_of_lagarias_inequality",
+    "message": "No successful proof candidate",
+    "candidates_attempted": 2
+  }
+]

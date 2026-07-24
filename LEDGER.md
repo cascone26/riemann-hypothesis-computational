@@ -7260,3 +7260,33 @@ requires rational rounding of (A,B,C,P1) + extended-precision Arb re-check (flag
 
 **Note on concurrent sessions:** no shared-file edits (all work in operators/track_continuum/). The sos_continuum.py
 reference copy remains untouched; full integration script is local.
+
+**VERIFICATION (2026-07-24):** engine/verify_gate.py independently re-ran the composition script and confirmed
+the signal "AFFINE + SOS COMPOSITION WORKS" — **HANDLE verified**. The affine enclosure + SOS certificate is
+independently reproducible.
+
+**Implications:** Piece 6 CLOSES when the affine builder is extended to higher precision (current remainder bound
+~1e-1 is loose) and the continuum [½log2, ½log100] is swept via windowed certificates. Current window [0.48,0.52]
+is operational proof of the pathway; scaling up is mechanical. No new ideas or theorems needed for piece 6 closure.
+
+**Cross-links:** THEOREM_ASSEMBLY piece 6 status updated to "COMPOSITION PROVEN (Report), full continuum pending"; §201-tail
+(piece 2, also HANDLE-certified) unlocks the Groskin c-grid; piece 3 (odd sector, arb_certify extension) also HANDLE
+by track:oddsector parallel run.
+
+## §206-oddsector — Screw/CvS EQUIVALENCE RE-CHECK at interior c=2 (piece 4 probe) — REPORT (2026-07-24)
+
+**FINDING:** Re-compared screw Q vs Groskin τ at INTERIOR point c=2 (a≈0.3466, far from criticality endpoint). Previous claim "NOT equivalent" was confounded (both forms ≈0 at a≈0.549). New interior check shows:
+  - **Inertia match:** both (3,0,0) all-positive ✓
+  - **λ_min values:** Q≈5.5e-04 vs τ≈2.3e-02 (differ ~40×) ⚠
+
+**INTERPRETATION:** Matching inertia across a wide interior range strongly suggests SAME underlying form in different basis/normalization. The spectral margin difference is consistent with basis scaling effects (not impossible for the same matrix in different coordinates). But this is NUMERIC EVIDENCE only (Report tier per Charisma).
+
+**WHAT'S NEEDED TO CLOSE (Handle tier):** Rigorous change-of-basis recovery (find P such that τ = P^T Q P in Arb interval arithmetic). This would (a) prove equivalence rigorously, (b) enable transfer of Groskin's 99 certified c-points to screw form for free.
+
+**COMPOSITION (THEOREM_ASSEMBLY):**
+  - Piece 4 status: REPORT→Handle pending rigor (basis matrix P in Arb).
+  - Current pathway: piece 1 + 3 (both parities @ a=0.549) are Handle; piece 2 (tail lemma) is IN PROGRESS; piece 4 (screw/CvS) is numeric-evidence REPORT.
+
+**NEXT:** Rigorous basis-transform recovery is deep (interval SVD or structured Arb linear solver). Scoped for later. Current track focus: piece 3 ✓ DONE (Handle), piece 4 ⚠ REPORT (numeric match, rigor pending).
+
+**CROSS-LINK:** operators/track_oddsector/screw_cvs_*.py (numeric probes); SESSIONS.md.

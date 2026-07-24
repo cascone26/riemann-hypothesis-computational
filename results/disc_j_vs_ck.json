@@ -1,0 +1,12 @@
+{
+  "script": "disc_j_vs_ck.py",
+  "framing": "5 abstract vars b0..b4 = a_n..a_{n+4}, exact over Q, n-independent",
+  "bridge_identity_27Delta_eq_4I3_minus_J2": true,
+  "P_deg2": "48*b2*b4 - 48*b3**2",
+  "I_deg2": "12*b0*b4 - 48*b1*b3 + 36*b2**2",
+  "Jinv_deg3": "432*b0*b2*b4 - 432*b0*b3**2 - 432*b1**2*b4 + 864*b1*b2*b3 - 432*b2**3",
+  "R_deg4": "64*b0*b4**3 - 256*b1*b3*b4**2 - 576*b2**2*b4**2 + 1536*b2*b3**2*b4 - 768*b3**4",
+  "Delta_nterms": 16,
+  "Delta_in_ideal_P_R": "False",
+  "date": "2026-07-18T15:50:28"
+}

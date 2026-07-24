@@ -1,0 +1,71 @@
+{
+  "Th_I_mixed_J": {
+    "n": 788,
+    "mean_ratio": {
+      "mean": 0.3879965861176609,
+      "stderr": 0.009936636461574047,
+      "n": 786,
+      "closest": "Poisson",
+      "sigma_from_gue": -21.60725258618632,
+      "sigma_from_poisson": 0.17130796767628692
+    }
+  },
+  "Th_I_J3_block": {
+    "n": 168,
+    "j": "3",
+    "mean_ratio": {
+      "mean": 0.40272505324831626,
+      "stderr": 0.021371929159067053,
+      "n": 166,
+      "closest": "Poisson",
+      "sigma_from_gue": -9.356897323742263,
+      "sigma_from_poisson": 0.7687978004294925
+    }
+  },
+  "Th_II_mixed_J": {
+    "n": 517,
+    "mean_ratio": {
+      "mean": 0.3936517584457524,
+      "stderr": 0.012454088305562296,
+      "n": 515,
+      "closest": "Poisson",
+      "sigma_from_gue": -16.78551142606574,
+      "sigma_from_poisson": 0.5907616154107269
+    }
+  },
+  "Th_II_J5/2_block": {
+    "n": 105,
+    "j": "5/2",
+    "mean_ratio": {
+      "mean": 0.4265092998869318,
+      "stderr": 0.026034431372203876,
+      "n": 103,
+      "closest": "Poisson",
+      "sigma_from_gue": -6.767603163446902,
+      "sigma_from_poisson": 1.54468281607938
+    }
+  },
+  "Nd_II_mixed_J": {
+    "n": 745,
+    "mean_ratio": {
+      "mean": 0.391955608825915,
+      "stderr": 0.009783933690304789,
+      "n": 743,
+      "closest": "Poisson",
+      "sigma_from_gue": -21.53984254645126,
+      "sigma_from_poisson": 0.578626949570841
+    }
+  },
+  "Nd_II_J9/2_block": {
+    "n": 142,
+    "j": "9/2",
+    "mean_ratio": {
+      "mean": 0.46727479223796536,
+      "stderr": 0.02187468919068215,
+      "n": 140,
+      "closest": "GOE",
+      "sigma_from_gue": -6.190954604270265,
+      "sigma_from_poisson": 3.702015165206078
+    }
+  }
+}

@@ -187,7 +187,7 @@ the strategic pivot are logged in LEDGER/NEXT_SESSION_RH.md; kept above for prov
 concurrent tracks (see SESSIONS.md for the coordination protocol). Claim tag format:
 `<-- CLAIMED by:<track> since:<ISO-ts>`; release/mark done when exhausted, per SESSIONS.md protocol.
 
-### Q1. Tail lemma finalization (K0 certification)  [P:critical N:high R:now]  <-- CLAIMED by:tail since:2026-07-23T20:00:00Z
+### Q1. Tail lemma finalization (K0 certification)  [P:critical N:high R:now]  <-- COMPLETED by:tail on:2026-07-24T01:50:00Z
 LEDGER §201: the k->infinity tail lemma structure is fully derived (diagonal log-growth, 1/l off-diagonal
 coupling C_k=2k[g(0)+g(2a)], Gershgorin dominance for k>=11). Remaining: (1) lock C_k numerically
 (coupling_asymptotic.py), (2) turn Gershgorin dominance into an explicit delta(K0) lower bound, (3)
@@ -233,3 +233,19 @@ status). Precise next actions per track, superseding the general descriptions ab
   extend arb_certify.py (currently even modes [5,7,3,1] only) to odd-sector modes, re-run. Piece 4: the
   screw/CvS "not equivalent" finding was CONFOUNDED (compared at the criticality endpoint where both forms
   are ~0 noise) — re-compare rigor/screw_cvs_equiv.py at an INTERIOR a with matched normalization.
+
+## QUEUE REFILL — 2026-07-24 (after Q1 completion)
+
+Queue dropped to 3 items (Q1 done, Q2/Q3 claimed). REFILL rule triggered. Searching for unclaimed items from LEDGER §200-§203 + THEOREM_ASSEMBLY. Three new candidates identified:
+
+### Q4. Piece 4 interior re-compare (screw≡CvS equivalence, robust re-check)  [P:high N:high R:now]  <-- UNCLAIMED
+LEDGER §200 Gap 3: §202 found the prior "not equivalent" was confounded (compared at criticality endpoint a=½log3 where both forms ~0 noise, ±1e-8). The (4,1) vs (5,0) "mismatch" is just one near-zero eigenvalue's SIGN at criticality, not a structural disproof. Equivalence UNRESOLVED. Closes when: re-run rigor/screw_cvs_equiv.py at an INTERIOR a (e.g., a=0.50, clean +margin) with matched normalization (verify both forms are the same after change-of-basis if equivalent). If PROVEN equivalent, unlocks piece 5 (Groskin grid transfers to our form).
+
+### Q5. Piece 5 transfer proof (Groskin ↔ our form via Suzuki screw, Arb-rigorous change-of-basis)  [P:high N:high R:med]  <-- UNCLAIMED
+LEDGER §200 Gap 3 resolution: IF Q4 proves screw≡CvS/CCM, then piece 5 (the 99 Groskin certified c-points) transfers to our form via a rigorously-certified change-of-basis P. Closes when: (A) Q4 resolves equivalence, (B) compute P explicitly (should be low-rank correction or a scaled identity), (C) verify P via Arb. REWARD: all 99 Groskin points are immediately OURS at true infinite-dim form, covering c ∈ {2..100}, a ≤ 2.30.
+
+### Q6. Piece 1 at an interior a (robustness check, not required for theorem but validates method)  [P:med N:med R:low]  <-- UNCLAIMED
+LEDGER §199.5 certified piece 1 (even 4×4) at the p=2-only endpoint a=0.549 = ½log3. The near-null margin is tight (~9.4e-7). A second certification at an INTERIOR a (e.g., a=0.48, where margin is ~2.5e-5, 27× larger) would: (a) confirm the Arb machinery is robust across the window, (b) rule out numeric-flukes at the endpoint, (c) supply a second independent proof-of-concept. Not needed (endpoint is the tight constraint), but low-hanging if time allows.
+
+**Rationale:** Q4+Q5 unlock the FULL 25-prime grid (pieces 2+4+5+3 applied to piece 1 = unconditional Weil positivity, a≤2.30 at true form, 99 points). Q6 is validation/robustness, lower priority. All three are unclaimed and ready.
+

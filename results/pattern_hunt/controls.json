@@ -1,0 +1,91 @@
+{
+  "zeta": {
+    "mean_ratio": {
+      "mean": 0.6109167772757004,
+      "stderr": 0.0007163686072160021,
+      "n": 99998,
+      "closest": "GUE",
+      "sigma_from_gue": 11.470040971830032,
+      "sigma_from_poisson": 313.557034595293
+    },
+    "unfolded_var": 0.16074544852887454,
+    "ks": {
+      "GUE": {
+        "D": 0.019270148245978252,
+        "p": 1.0942587855776012e-32
+      },
+      "GOE": {
+        "D": 0.08659921480851668,
+        "p": 0.0
+      },
+      "Poisson": {
+        "D": 0.29818518869417365,
+        "p": 0.0
+      }
+    },
+    "pair_corr_mad": 0.019621673414160178,
+    "number_variance": [
+      {
+        "L": 0.5,
+        "empirical_variance": 0.27199775,
+        "gue_variance": 0.30158149002415907,
+        "poisson_variance": 0.5
+      },
+      {
+        "L": 1.0,
+        "empirical_variance": 0.316984,
+        "gue_variance": 0.44204247556952475,
+        "poisson_variance": 1.0
+      },
+      {
+        "L": 2.0,
+        "empirical_variance": 0.37049774999999996,
+        "gue_variance": 0.5825034611148905,
+        "poisson_variance": 2.0
+      },
+      {
+        "L": 5.0,
+        "empirical_variance": 0.3962397499999999,
+        "gue_variance": 0.7681827841428772,
+        "poisson_variance": 5.0
+      },
+      {
+        "L": 10.0,
+        "empirical_variance": 0.34746975,
+        "gue_variance": 0.9086437696882431,
+        "poisson_variance": 10.0
+      },
+      {
+        "L": 20.0,
+        "empirical_variance": 0.4234937500000001,
+        "gue_variance": 1.0491047552336088,
+        "poisson_variance": 20.0
+      }
+    ]
+  },
+  "random": {
+    "mean_ratio": {
+      "mean": 0.38194437169774587,
+      "stderr": 0.001969454291375578,
+      "n": 19998,
+      "closest": "Poisson",
+      "sigma_from_gue": -112.08974448859433,
+      "sigma_from_poisson": -2.208728296560987
+    },
+    "ks": {
+      "GUE": {
+        "D": 0.2802150143004206,
+        "p": 0.0
+      },
+      "GOE": {
+        "D": 0.214248135653477,
+        "p": 0.0
+      },
+      "Poisson": {
+        "D": 0.006258012206620631,
+        "p": 0.41210550040117133
+      }
+    }
+  },
+  "pipeline_validated": true
+}

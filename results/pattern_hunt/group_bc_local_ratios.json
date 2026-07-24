@@ -1,0 +1,35 @@
+{
+  "circular_billiard_bessel2_m200k200": {
+    "n_raw": 40000,
+    "mean_ratio": {
+      "mean": 0.38631762894179067,
+      "stderr": 0.0013912623870302658,
+      "n": 39998,
+      "closest": "Poisson",
+      "sigma_from_gue": -155.52951986295747,
+      "sigma_from_poisson": 0.016724251382777337
+    }
+  },
+  "airy_zeros_n5000": {
+    "n_raw": 5000,
+    "mean_ratio": {
+      "mean": 0.9994542475363445,
+      "stderr": 5.566760259931714e-05,
+      "n": 4998,
+      "closest": "GSE",
+      "sigma_from_gue": 7127.201981233001,
+      "sigma_from_poisson": 11014.663067670448
+    }
+  },
+  "fibonacci_chain_positions": {
+    "n_raw": 196419,
+    "mean_ratio": {
+      "mean": 0.7082043915643618,
+      "stderr": 0.0003660015708804972,
+      "n": 196417,
+      "closest": "GSE",
+      "sigma_from_gue": 288.26212770220565,
+      "sigma_from_poisson": 879.5318273362759
+    }
+  }
+}

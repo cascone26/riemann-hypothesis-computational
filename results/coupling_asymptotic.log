@@ -1,0 +1,44 @@
+§199.3b.1 D_kl closed-form vs numeric  @ a=0.549
+  D[1,1](0.2): num=4.630889332 cf=4.630889332 err=7.89e-31
+  D[1,1](0.5): num=-2.149027539 cf=-2.149027539 err=0.0
+  D[1,1](0.9): num=-2.903281239 cf=-2.903281239 err=0.0
+  D[1,3](0.2): num=-5.207235842 cf=-5.207235842 err=0.0
+  D[1,3](0.5): num=8.001460195 cf=8.001460195 err=0.0
+  D[1,3](0.9): num=-5.232708458 cf=-5.232708458 err=0.0
+  D[3,3](0.2): num=-18.11267864 cf=-18.11267864 err=0.0
+  D[3,3](0.5): num=-10.1541604 cf=-10.1541604 err=0.0
+  D[3,3](0.9): num=-6.639431903 cf=-6.639431903 err=7.89e-31
+  D[1,5](0.2): num=-1.00400637 cf=-1.00400637 err=5.92e-31
+  D[1,5](0.5): num=-3.374807004 cf=-3.374807004 err=3.94e-31
+  D[1,5](0.9): num=-1.17294467 cf=-1.17294467 err=1.58e-30
+  D[3,7](0.2): num=24.91011097 cf=24.91011097 err=6.31e-30
+  D[3,7](0.5): num=3.462510624 cf=3.462510624 err=1.18e-30
+  D[3,7](0.9): num=24.37161707 cf=24.37161707 err=2.21e-29
+  D[5,7](0.2): num=55.97243569 cf=55.97243569 err=1.26e-29
+  D[5,7](0.5): num=64.35852374 cf=64.35852374 err=0.0
+  D[5,7](0.9): num=55.56012721 cf=55.56012721 err=4.42e-29
+  D[7,7](0.2): num=-218.6732529 cf=-218.6732529 err=2.52e-29
+  D[7,7](0.5): num=-188.2713477 cf=-188.2713477 err=0.0
+  D[7,7](0.9): num=68.64970115 cf=68.64970115 err=5.05e-29
+
+max err = 5.05e-29  (≈0 ⟹ D_kl closed form CORRECT — safe to build entry integrals on it)
+§201 tail structure @ a=0.549 (odd modes)   Mass=a*I so whiten: Q[k,k]/a etc.
+   k        Q[k,k]   Q[k,k]/k^2  offdiag rowsum  Gershgorin lo diag/rowsum
+   1   0.000239482   0.00023948       0.0387917       -0.03855    0.006174
+   3    0.00282141   0.00031349         0.13078         -0.128     0.02157
+   5      0.621095     0.024844        0.230161         0.3909       2.699
+   7      0.540502     0.011031        0.919631        -0.3791      0.5877
+  11       1.05913    0.0087532        0.468456         0.5907       2.261
+  15       1.07075    0.0047589        0.559349         0.5114       1.914
+  21       1.37149    0.0031099         0.49683         0.8747        2.76
+  31       1.40762    0.0014647        0.669329         0.7383       2.103
+  41       1.41701   0.00084296        0.459251         0.9578       3.085
+  51       1.55733   0.00059874        0.453536          1.104       3.434
+
+READ: if Q[k,k]-rowsum >0 (Gershgorin lo >0) for k>=K0, the tail block modes>K0 are PD by Gershgorin ⟹ tail
+lemma. Q[k,k]/k^2 -> const? or ~log k? = the growth law. diag/rowsum>1 = strict diagonal dominance.
+Traceback (most recent call last):
+  File "/Users/scones/projects/riemann/operators/dbn_dynamics/coupling_asymptotic.py", line 12, in <module>
+    from tail_structure import Q, gval   # gval(t) = screw kernel value if present
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'gval' from 'tail_structure' (/Users/scones/projects/riemann/operators/dbn_dynamics/tail_structure.py)
