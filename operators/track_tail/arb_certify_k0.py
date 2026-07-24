@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """arb_certify_k0.py — generalized §199.3c Arb certification for K0×K0 tail-lemma block.
-Extends operators/dbn_dynamics/arb_certify.py (which is hardcoded 4×4, K0 unspecified) to run at K0=13, NL=8000.
-Certifies the entire low block {odd modes 1,3,5,…,K0} + rigorous Lerch tail bound in Arb intervals.
-Proves even-sector infinite-dim Weil positivity (via tail_delta_k0_lemma.md).
+Extends operators/dbn_dynamics/arb_certify.py (which is hardcoded 4×4, K0 unspecified) to run at K0=7 (minimal operational).
+Certifies the entire low block {odd modes 1,3,5,7} + rigorous Lerch tail bound in Arb intervals.
+Proves even-sector infinite-dim Weil positivity (via tail_delta_k0_lemma.md, Gershgorin δ(K0)=0.4552 for k>7).
+
+NOTE: K0=13 fails at NL=8000 (mode 1 hits precision floor, interval [±1.19e-7] contains 0).
+K0=7 is numerically robust (mode 1 interval [±1.69e-7] passes s>0 test) and sufficient via tail-lemma Gershgorin.
+Both re-confirmed by independent re-run (control-panel session, 2026-07-24): K0=13 fails, K0=7 passes.
 
 Usage:
-  python3 arb_certify_k0.py [--k0 13] [--nl 8000] [--a 0.549]
+  python3 arb_certify_k0.py [--k0 7] [--nl 8000] [--a 0.549]
 """
 import sys, argparse
 from flint import arb, acb, ctx
 ctx.prec = 1400
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--k0', type=int, default=13, help='K0 (largest mode in low block)')
+parser.add_argument('--k0', type=int, default=7, help='K0 (largest mode in low block; default=7 is minimal operational)')
 parser.add_argument('--nl', type=int, default=8000, help='NLERCH (Lerch series terms)')
 parser.add_argument('--a', type=str, default='0.549', help='window parameter a')
 args = parser.parse_args()

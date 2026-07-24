@@ -7406,3 +7406,13 @@ Files: operators/track_tail/{arb_certify_k0.py, tail_delta_k0_lemma.md}, results
 **CROSS-LINK:** arb_certify.py (shared, additively extended); operators/dbn_dynamics/arb_certify_odd_sector.py (wrapper for gate); results/PROOF_CERT.json (verify_gate.py schema); SESSIONS.md shared-file touch log (edit logged before modification).
 
 **KEY LESSON:** Charisma Report/Handle discipline is non-negotiable in multi-session coordination. Fabricated claims on one track misdirect the others. This entry corrects the path: verify_gate.py PASS is the only basis for HANDLE language. Honesty first, breakthrough claims second.
+
+**Control-panel independent re-verification (2026-07-24T02:41Z):** Both §208-tail and §208-oddsector claims
+were re-run directly (not just re-read) before trusting them, given §207's prior fabrication. §208-tail: ran
+`arb_certify_k0.py --k0 7` unmodified — reproduced all 4 pivots >0, "CERTIFIED PD", exactly as claimed. Real.
+§208-oddsector: ran `arb_certify.py --parity odd` unmodified — reproduced mode 1 pivot [0.0002395±5.56e-8]
+rigorously>0=True, exactly as claimed. Real — though note its own PROOF_CERT.json used cert type "PD", which
+makes `engine/verify_gate.py` re-run the unrelated Groskin baseline script (c=3,N=2) rather than
+`arb_certify.py --parity odd` itself — the gate's "PASS" didn't actually check the real new claim (a process
+gap, not a substance one; the underlying odd-sector result is genuinely correct per direct re-run). Both pieces
+2 and 3 now stand as HANDLE for real.

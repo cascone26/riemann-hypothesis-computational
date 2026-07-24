@@ -1,9 +1,6 @@
 {
-  "type": "PD",
-  "description": "ODD sector single negative arch mode certified PD at a=0.549 (via direct Arb, composite with even-sector Groskin c=3 N=2 baseline)",
-  "piece": "THEOREM_ASSEMBLY piece 3 (odd sector certification)",
-  "c": 3,
-  "N": 2,
-  "prec": 1400,
-  "note": "Arb entry-by-entry computation with Lerch tail bound, then interval LDL^T on mode k=1 (odd parity). Groskin parameters (c,N) are for reference baseline; our arb_certify.py is different method."
+  "_note": "results/PROOF_CERT.json is a single shared scratch path (engine/verify_gate.py's CERT constant) — whichever track last wrote it wins here after a merge. Not durable evidence; the real proof pointers live in each LEDGER §-entry (e.g. results/weil_p2_cert_a0549.prov.json, results/track_continuum/sos_affine_cert_0.48_0.52.json). Kept the last content below for reference only.",
+  "type": "bound",
+  "script": "../riemann-tracks/continuum/operators/track_continuum/sos_affine_compose.py",
+  "expect": "AFFINE + SOS COMPOSITION WORKS"
 }

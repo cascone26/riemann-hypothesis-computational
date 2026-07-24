@@ -187,7 +187,7 @@ the strategic pivot are logged in LEDGER/NEXT_SESSION_RH.md; kept above for prov
 concurrent tracks (see SESSIONS.md for the coordination protocol). Claim tag format:
 `<-- CLAIMED by:<track> since:<ISO-ts>`; release/mark done when exhausted, per SESSIONS.md protocol.
 
-### Q1. Tail lemma finalization (K0 certification)  [P:critical N:high R:now]  <-- COMPLETED by:tail on:2026-07-24T02:20:00Z (K0=7 verified, §208-tail)
+### Q1. Tail lemma finalization (K0 certification)  [P:critical N:high R:now]  <-- COMPLETED by:tail on:2026-07-24T02:20:00Z (K0=7 verified, §208-tail; independently re-confirmed by control-panel session)
 LEDGER §201: the k->infinity tail lemma structure is fully derived (diagonal log-growth, 1/l off-diagonal
 coupling C_k=2k[g(0)+g(2a)], Gershgorin dominance for k>=11). Remaining: (1) lock C_k numerically
 (coupling_asymptotic.py), (2) turn Gershgorin dominance into an explicit delta(K0) lower bound, (3)
@@ -206,7 +206,7 @@ in a. Files: arb_panel.py (shows the failure mode), margin_deriv.py, arb_certify
 read-only unless coordinating with Q1/Q3 per SESSIONS.md).
 
 ### Q3. Odd sector certification + screw/CvS equivalence check  [P:med N:med R:now]  <-- COMPLETED by:oddsector on:2026-07-24T02:40:00Z
-(Sub-items: Q3a piece-3 odd-sector-cert HANDLE (verify_gate PASS §208), Q3b piece-4 screw/CvS equivalence REPORT (interior inertia match §206))
+(Sub-items: Q3a piece-3 odd-sector-cert HANDLE (independently re-confirmed by control-panel session — real, though its own verify_gate.py PROOF_CERT.json cert-type checked the wrong artifact, see LEDGER), Q3b piece-4 screw/CvS equivalence REPORT (interior inertia match §206))
 LEDGER §200 Gap 2 (flagged easiest — odd sector's single negative arch mode has 4-40x more margin than
 even) + Gap 3 (honesty check: is the Suzuki-screw form's a=0.549 point-cert independent of the
 Groskin/CvS grid's c=3 point, or the same object in a different basis?). Two sub-tasks: (a) extend

@@ -64,3 +64,9 @@ merge track/tail -> main failed. Log: /tmp/sync-track-merge-tail.log
 merge track/tail -> main failed. Your work IS still committed locally at 66bad18. Log: /tmp/sync-track-merge-tail.log
 
 - 2026-07-24T02:10:02Z track:tail FAILED commit:66bad18 merge-conflict-see-tmp-log
+- RESOLVED 2026-07-24T02:41:00Z by control-panel session: real conflict (both tail and oddsector landed
+  concurrently, overlapping edits to LEDGER/ATTACK_QUEUE/SESSIONS/results/PROOF_CERT.json + an add/add on
+  operators/track_tail/arb_certify_k0.py against an already-merged earlier version of the same path).
+  Resolved by keeping both sides' real content (K0=7 fix + odd-sector cert), not discarding either.
+  tail correctly stopped and reported per protocol rather than resolving it itself — this is what rule 5
+  is for.
