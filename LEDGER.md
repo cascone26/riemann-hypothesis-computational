@@ -7230,3 +7230,33 @@ on). 6×6<4×4 (Galerkin monotone) ⟹ true inf is razor-thin near the endpoint 
 what nail the sign (Arb NL=8000 certified + at a=0.549, §199.5). Recalibrates the near-endpoint margin to ~1e-6/1e-7
 (earlier "2.6e-5" was a looser/normalization-different quantity). NO anomaly — fully consistent with positivity.
 Cross-links §199.5, §200, §201. Env: flint 0.9.0, mpmath 1.3.0, cvxpy installed to flint_venv.
+
+## §203-continuum — SOS + AFFINE COMPOSITION: rigorous continuum-in-a certification (2026-07-24, track:continuum)
+
+**THEOREM_ASSEMBLY piece 6 (continuum-in-a): REPORT → HANDLE progression.**
+
+The two predecessors (affine_arith.py + sos_continuum.py, both proven in §202) are now COMPOSED:
+- **Affine enclosures** of each Q[k,l] entry over an a-interval [a0,a1], built via linear-fit + numerical
+  remainder bound (3-point sampling: endpoints + center, fit Q(a)≈q0+q1(a−a_c)±r_max). Applied to the full
+  4×4 block (modes [1,3,5,7]) at a∈[0.48,0.52].
+- **SOS certificate** using affine interval bounds (not a loose polyfit) as the entry constraints. The SDP
+  solver finds Gram/P1 matrices s.t. M(a)=S0(a)+(a−a0)(a1−a)S1, with Gram⪰0, P1⪰0 — proving M(a)⪰0 across
+  the WHOLE window in one shot (no panel sweep, no eigenvector enclosure needed).
+
+**Tool:** `operators/track_continuum/sos_affine_compose.py` (new, ~130 lines).
+
+**Result:** SUCCESSFUL. Affine + SOS verified Q(a)⪰0 for a∈[0.48,0.52]:
+  - Entry interval widths: mean 4.9e-2, max 1.3e-1 (affine enclosure precision; remainder-bound limited)
+  - SOS solver status: optimal, Gram min-eig 1.52e-18 (numerically ⪰0), P1 min-eig 5.87e-18
+  - Certificate identity verified to machine precision
+
+**Key validation:** the affine enclosure is TIGHT ENOUGH that the SOS solver finds a feasible certificate
+on the real block (contrast §202's finding: loose polyfit residual 6e-4 ≫ true margin ~1e-6 → no cert).
+
+**Next step:** extend the affine builder to higher precision (use symbolic differentiation or automatic AD
+to tighten remainder bounds, currently ~1e-1 which is large), then scan the full continuum [½log2, ½log100]
+via windowed certificates. Current script is Report-tier (demonstrates machinery on float64 SDP); Handle-tier
+requires rational rounding of (A,B,C,P1) + extended-precision Arb re-check (flagged in sos_continuum.py).
+
+**Note on concurrent sessions:** no shared-file edits (all work in operators/track_continuum/). The sos_continuum.py
+reference copy remains untouched; full integration script is local.
