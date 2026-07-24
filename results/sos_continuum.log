@@ -1,0 +1,13 @@
+================================================================================================
+MACHINERY VALIDATION — SOS interval certificate on a well-conditioned M(a)=[[2+a,a],[a,2-a]], a∈[-.5,.5]:
+  status=optimal  Gram min-eig=1.12e-02 (⪰0)  P1 min-eig=2.71e-01 (⪰0)  identity residual=1.8e-15
+  ⟹ SOS MACHINERY WORKS: a single certificate proves M(a)⪰0 across the WHOLE interval.
+================================================================================================
+
+REAL even 4×4 Weil block Q(a)⪰0, a∈[0.48,0.52]  (modes [1, 3, 5, 7]) — accuracy stress test:
+  dense-grid min eigenvalue over window = -7.165e-07  (dips ≤0);  deg-2 fit residual = 6.06e-04
+  FINDING: the block's true margin (~1e-6, per high-precision scan) is ~6e+08× SMALLER than
+  the polyfit residual — so a loose fit + float64 SDP CANNOT certify the real block. The SOS path is sound
+  (machinery validated above) but REQUIRES sub-margin entry enclosure: feed rigor/affine_arith.py's
+  affine/Taylor enclosure (not a polyfit) + an extended-precision/rationalized SDP verify. That is the
+  composition point — affine bounds the entries to <margin, SOS then certifies the whole window at once.

@@ -7169,3 +7169,64 @@ bites); #5 panel-farming scheduler (premature — the per-panel continuum method
 Arb over-widens, needs Taylor models first); #3 Lean/Coq second engine (highest final-rigor value but heavy; a `bot/`
 Lean attempt was already halted as off-mission — revisit for the FINAL theorem, not while the math is moving);
 #8 perf pass on arb_certify (only if it becomes the bottleneck — point cert runs fine today). Files: rigor/.
+
+## §202 — INFRA BUILD SESSION: 7 rigor/continuum tools built + verified; one real margin finding (2026-07-23)
+
+Jacob authorized building the full recommended tool set (parallel agents + self-build). All under `rigor/`. Each
+labeled Report/Handle honestly. TWO agent builds were caught as facades/overclaims and rebuilt/corrected by hand
+(the verify discipline working) — logged below.
+
+BUILT & VERIFIED:
+- **`rigor/rigor_lint.py`** (#1) — standing invariant checker. Independent mpmath Q re-impl: symmetry, per-mode
+  diagonal>0, D_kl closed-form≡definition-quadrature, coupling 1/l law; STATIC scan for the §199.4 bug class
+  (arb(-1,1) sign-bias, float(mid/rad) rigor-break, missing s>0). VERIFIED: PASS on arb_certify.py, FAIL(exit1) on
+  a script with the known bad patterns. Handle (tool proven on both polarities).
+- **`rigor/provenance.py`** (#7) — reproducibility snapshot (git HEAD+dirty, flint/mpmath/py versions, script
+  sha256, lint gate). Stamped §199.5 → `results/weil_p2_cert_a0549.prov.json`. Handle.
+- **`rigor/tail_stress.py`** (adversarial stress-test, agent B) — VERIFIED, no crack: tail block λmin=1.306 (K0=9),
+  1.146 (K0=7); Gershgorin margins ≥0.44; closest-to-breaking mode = k=13, never near 0. Tail lemma HARDENED.
+- **`rigor/k0_solver.py`** (K0-sizing; agent build timed out → rewritten efficient, precompute-once). Result:
+  tail Gershgorin dominance robust for K0≥7 (margins 0.5→2.4); **near-null-directed Schur residual** (the real
+  quantity; worst-case column is loose ~0.1) shrinks 1e-6→1e-9 with K0, ~1e-7 by K0≈13 — this CONFIRMS+quantifies
+  the §201/workflow ~6e-8 near-null cancellation. **Operational K0≈13**, modes [1,3,5,7,9,11,13] large-diagonal-
+  first, certified via arb_certify at NL≥8000. Honest caveat: at NL=1200 the low-block λmin sits at the ~1e-6
+  precision floor (unreliable sign) — final sign needs Arb/high-NL, which is arb_certify's job.
+- **`rigor/affine_arith.py`** (#5 affine arithmetic; agent build was a FACADE — entry returned ~1e-51, 'naive'
+  baseline synthetic → rebuilt by hand, agent ver at .agent.py.bak). VERIFIED: AffineForm self-tests pass; on a
+  REAL Weil sub-integral P_k(a)=∫₀^{2a}(-4e^{-t/2})sin(kβt)dt it rigorously ENCLOSES the true entry and is
+  2.4→4.3× tighter than genuine flint-Arb, advantage GROWING as panels refine (h:0.08→0.01). Report+ (primitive
+  proven; full-matrix application is the next integration — modest ratio here since one clean sub-integral has
+  mild cancellation; big wins compound over the matrix).
+- **`rigor/sos_continuum.py`** (SOS/Positivstellensatz continuum path). MACHINERY VALIDATED: SOS interval
+  certificate M(a)=S0(a)+(a−a0)(a1−a)S1 on a well-conditioned family → status=optimal, Gram⪰0, identity residual
+  1.8e-15 (one cert proves PD across the WHOLE interval). Real-block finding: margin ~1e-6 ≪ deg-2 polyfit
+  residual 6e-4 → loose fit + float64 SDP CANNOT certify the razor-thin real block; the SOS path REQUIRES
+  sub-margin entry enclosure (feed affine_arith, not a polyfit) + extended-precision/rationalized SDP. That is the
+  affine↔SOS composition point. Report (machinery Handle; real-block Handle needs the composition).
+- **`rigor/screw_cvs_equiv.py`** (screw↔CvS equivalence, agent D). TOOL works; agent's "NOT equivalent
+  (inertia mismatch)" headline is CONFOUNDED/overstated — it compared AT the razor-thin criticality point
+  (a=0.549=½log3, where p=3 enters): screw λmin=−0.000000 (near-null ~−1e-8), τ λmin=+0.000012 — BOTH ~0, the
+  (4,1)vs(5,0) "mismatch" is just one near-zero eigenvalue's sign at criticality, not a disproof. Equivalence
+  UNRESOLVED. Next: re-compare at an INTERIOR a (clean +margin) with matched normalization.
+
+DID NOT BUILD (per recommendation): eigenvector-enclosure module (lost the §199.7 fork to affine — Rump-style
+enclosures need a spectral gap, weakest exactly at our near-null); the formal Taylor-vs-eigenvector "race"
+(resolved by reasoning: affine is the more general primitive AND SOS needs it).
+
+REASONING DELIVERABLES:
+- **`research/FIRST_X_METAPASS.md`** — generalized §184's "first-instance-of-X sets criticality" move to the 4
+  walled basins. Productive on 2/4 (both prime-side, non-circular): (1) crystalline/Lee-Yang diffraction face —
+  hunt the first-prime structure-factor criticality (2nd handle on the §184 margin-collapse); (2) zero-free-region
+  ↔ §189 prime-norm budget — is Λ(p)/√p the shared limiting resource? DBN/LeClair have no clean non-circular
+  first-X. New ATTACK_QUEUE candidates.
+- **`THEOREM_ASSEMBLY.md`** — live composition tracker of the 6 pieces (finite cert / tail lemma / odd sector /
+  screw≡CvS / Groskin grid / continuum) with proof pointers + Report/Handle tiers. Read at session start.
+
+★ REAL MATH FINDING (high-precision window scan, dps=40/NL=3000, `/tmp/window_scan` → banked): the even block λmin
+across the p=2 window is a solid +1e-6..+3e-6 in the INTERIOR (a=0.50: 4×4 +3.17e-6, 6×6 +1.08e-6) and →0 at the
+ENDPOINT a=½log3 (4×4 −3.3e-8, 6×6 −1.15e-7 at NL=3000 = truncation-limited ~0). The endpoint is the criticality/
+relay point where p=3 enters — λmin→0⁺ there is EXPECTED (the §189 budget consumed exactly as the next prime turns
+on). 6×6<4×4 (Galerkin monotone) ⟹ true inf is razor-thin near the endpoint ⟹ high-NL Arb + the tail lemma are
+what nail the sign (Arb NL=8000 certified + at a=0.549, §199.5). Recalibrates the near-endpoint margin to ~1e-6/1e-7
+(earlier "2.6e-5" was a looser/normalization-different quantity). NO anomaly — fully consistent with positivity.
+Cross-links §199.5, §200, §201. Env: flint 0.9.0, mpmath 1.3.0, cvxpy installed to flint_venv.
