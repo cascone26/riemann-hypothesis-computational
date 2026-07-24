@@ -7019,3 +7019,28 @@ STATE: first rigorous point DONE. NEXT (§199.6): the CONTINUUM — a-interval A
 substitution, ~44 Lipschitz panels over (0.42, ½log3), certify PD on each; then fold the d>4 tail bound in rigorously.
 That completes the theorem (first unconditional extension of Yoshida past the first prime). Tools: arb_certify.py,
 arb_screw.py. Cross-links §199.3/4, §198, §184-197.
+
+## §199.6 — continuum: a-interval Arb FAILS (entry-level over-widening); margin slope small (0.0027) → point-grid feasible but needs a TIGHT derivative bound (2026-07-23)
+
+Attacked the continuum (certify the 4×4 PD for ALL a∈(0.42,½log3), not just a=0.549). Two findings:
+ • a-INTERVAL Arb (workflow Option A) FAILS: test panel [0.45,0.46] (width 0.01) → pivot0 blew up to ±312. Cause:
+   interval arithmetic operates at the ENTRY level, where entries vary ~1-9% (~0.01) over a panel — 400× the 2.6e-5
+   margin — plus oscillatory cos(kBt) over an a-interval widens to [-1,1]. Interval arithmetic CANNOT resolve the tiny
+   margin from wide entries. Naive panels need width ~5e-6 (~26000 panels) — infeasible. arb_panel.py.
+ • MARGIN slope is SMALL (margin_deriv.py): max |dλmin/da| ≈ 0.0027 (near a=0.44 where margin drops 1e-4→3e-5); tiny
+   (1e-5) in the flat middle (a=0.48-0.549, margin~2.5-2.6e-5, min 2.53e-5 at a=0.50). So the MARGIN is smooth even
+   though the ENTRIES are a-sensitive.
+   ⟹ point-grid + derivative bound needs only ~window·L/δ = 0.13·0.0027/2.5e-5 ≈ 14-40 points IN PRINCIPLE. FEASIBLE.
+
+THE CRUX (honest): the point-grid needs a RIGOROUS bound on dλmin/da. The EASY rigorous bound (Weyl: |Δλmin|≤||ΔM||₂)
+uses the ENTRY-level slope (~5, high-mode-dominated) → forces ~26000 panels (infeasible). The TIGHT bound (0.0027) is
+the eigenvalue-projected derivative vᵀM′v (near-null v damps the high-mode variation) — but making THAT rigorous needs
+a rigorous EIGENVECTOR ENCLOSURE (Rump/residual methods) or TAYLOR-MODEL (affine) arithmetic in a (tracks the linear
+a-correlation, tames the oscillation blowup, gives the derivative automatically). Both are known but real rigorous-
+numerics machinery — the genuine hard part of the first theorem.
+
+STATE: first POINT rigorously certified (§199.5) STANDS. The continuum is the real remaining work and needs advanced
+rigorous numerics (eigenvector enclosure OR Taylor-model arithmetic) — a known-technique frontier, multi-session.
+NEXT (§199.7): implement one of — (A) rigorous eigenvector enclosure at each grid point → tight dλmin/da bound →
+~20-40-point grid; or (B) first-order Taylor-model interval arithmetic in a → feasible panels. Tools: arb_panel.py
+(shows the failure mode), margin_deriv.py, arb_certify.py (point cert works). Cross-links §199.5, §198.

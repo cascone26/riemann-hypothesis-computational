@@ -1,0 +1,10 @@
+margin(a) and slope across window (0.42, 0.5493):
+  a=0.4200  margin=0.000107716  slope=-
+  a=0.4400  margin=5.37182e-5  slope=-0.0027
+  a=0.4600  margin=3.29868e-5  slope=-0.001037
+  a=0.4800  margin=2.61779e-5  slope=-0.0003404
+  a=0.5000  margin=2.5326e-5  slope=-4.259e-5
+  a=0.5200  margin=2.59443e-5  slope=3.091e-5
+  a=0.5493  margin=2.61438e-5  slope=6.812e-6
+
+max |slope| ~ 0.0027. Grid points needed ~ window*L/delta = 0.13*0.0027/2e-5
