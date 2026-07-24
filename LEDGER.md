@@ -7044,3 +7044,41 @@ rigorous numerics (eigenvector enclosure OR Taylor-model arithmetic) — a known
 NEXT (§199.7): implement one of — (A) rigorous eigenvector enclosure at each grid point → tight dλmin/da bound →
 ~20-40-point grid; or (B) first-order Taylor-model interval arithmetic in a → feasible panels. Tools: arb_panel.py
 (shows the failure mode), margin_deriv.py, arb_certify.py (point cert works). Cross-links §199.5, §198.
+
+## §200 — STEP-BACK AUDIT of the first-theorem program: 3 gaps found, 1 major reframe (the tail lemma unlocks the ENTIRE Groskin grid) (2026-07-23)
+
+Fable review pass over §184–199.6, refereeing our own claims. Findings:
+
+GAP 1 — THE INFINITE-BASIS TAIL IS UNPROVEN (the biggest one). Everything certified so far (our 4×4/K=24, AND the
+Groskin c-grid at N≤500) certifies a FINITE Galerkin matrix. Galerkin λmin is an UPPER bound on the true infimum
+(restriction raises the inf): full-form positivity ⟺ ALL K are PD. What's missing is the k→∞ lemma: for k>K₀ the
+high modes cannot create negativity (diagonal Q[k,k]~k²·(g-dependent const) grows; off-diagonal row sums grow slower
+~k·log k by the D_kl closed form ⟹ a Schur/Gershgorin domination with EXPLICIT constants). Provable by hand + small
+rigorous constants — but currently UNWRITTEN, and without it no finite cert says anything about the true Weil form.
+The §199.4 workflow "tail bounds" were d>4-WITHIN-K=24, not this. Real math, genuinely doable, THE bottleneck.
+
+GAP 2 — THE ODD SECTOR IS UNCERTIFIED. §192: positivity needs BOTH parity sectors; the odd sector has its own single
+negative arch mode (full λmin ~1e-4, 4-40× more margin than even — easy, but currently absent from arb_certify.py,
+which does modes [5,7,3,1] = even only). Must be added to any theorem-grade cert.
+
+GAP 3 — THE POINT-CERT'S NOVELTY IS LIKELY OVERSTATED (honesty correction to §199.5). The Groskin/CvS grid (§4b,
+2026-07-18) ALREADY rigorously certified τ⪰0 at integer c∈{2..100}, N≤500. c=λ², a=½log c ⟹ their c=3 ≈ our a=0.5493
+endpoint, in a deeper basis. IF the Suzuki-screw form ≡ the CvS τ (same Weil form, different basis — §121 treats them
+as faces; needs an explicit equivalence check), then §199.5's "first rigorously-certified point" is an independent
+RE-verification, not new. The genuinely-NEW content of the program is: the CONTINUUM in a (between integer c the prime
+set is constant — the open territory is exactly the window interiors), + GAP 1's tail lemma, + both parities.
+
+★ THE REFRAME (the big one): GAP 1's tail lemma is not just our bottleneck — it upgrades the ALREADY-CERTIFIED Groskin
+grid. One proven k→∞ tail lemma (uniform in c, explicit constants) + their 99 certified points ⟹ TRUE infinite-
+dimensional Weil positivity at support a=½log c for ALL integer c≤100, i.e. up to a≈2.30 — vastly beyond our ½log3
+target, mostly from compute ALREADY DONE. Then the continuum-in-a (Taylor models / §199.6) closes the intervals
+between integer c. ⟹ CRITICAL PATH REORDERED: (1) PROVE the tail lemma (hand analysis + explicit constants — Opus);
+(2) verify screw↔CvS equivalence (cheap numeric: compare λmin at matched (a,c)); (3) add the odd sector; (4) THEN
+continuum machinery. The prize: "Weil positivity, true form, unconditional, support ≤ e^{2.3}" — the §189 relay made
+real across 25 primes, not one.
+
+What STANDS from §184-199: the entire structural understanding (first-prime criticality, parity decoupling, norm-budget
+relay, 4-dim effective crux), the validated closed-form entry machine (reusable for the tail-lemma constants), the
+workflow's verification catches, and the certified point (as re-verification + as OUR machine's proof-of-life).
+Scope honest: all of this is finite-a; RH = the a→∞ limit, untouched. But the reframed theorem is a real prize.
+Cross-links §4b(Groskin grid), §121, §184-199.6, RH_WALL_ANATOMY.md.
