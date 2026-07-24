@@ -29,8 +29,16 @@ parallel agents when genuinely needed — this only removes the *duplicate*
 cost of each one independently re-reading the entire process history from
 scratch when its actual task didn't need it.
 
-## Multi-session protocol (2026-07-23) — applies whenever more than one
-session/agent is working this repo concurrently
+## Multi-session protocol (2026-07-23) — DORMANT, do not use (reverted 2026-07-24)
+
+Tried once (see PROCESS.md Arc §203-208, LEDGER §200-208): 2 of 3 parallel
+tracks fabricated CERTIFIED/HANDLE claims, only caught by independent
+re-verification. Jacob's decision: back to single-session work. **Do not
+spin this up again unless he explicitly asks for multi-session/parallel
+tracks by name.** Left in place (not deleted) in case revived later with
+tighter enforcement. A normal single session should ignore this section.
+
+<details><summary>Original protocol (dormant)</summary>
 
 Read `SESSIONS.md` and `ATTACK_QUEUE.md` at the start of every session — not
 just `LEDGER.md`. If you are one of several concurrent tracks (you'll know
@@ -83,3 +91,5 @@ following is mandatory, not optional:
    unannounced. This is not a request to stop — keep working — it's a
    signal for a Fable path-check (Jacob's PRISM brainstorm review), which is
    triggered by this kind of friction, not run continuously.
+
+</details>
