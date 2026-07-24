@@ -217,3 +217,19 @@ operators/track_oddsector/.
 **Refill**: when a track exhausts its item, check SESSIONS.md + LEDGER's latest §-entries for the next
 unclaimed relevant item before generating a new one from scratch (search-before-build applies to queue
 refill too).
+
+### REFINEMENT (2026-07-23, post §202) — Q1/Q2/Q3 next-steps now precise, see THEOREM_ASSEMBLY.md
+The closed prior session's §202 infra build (rigor/k0_solver.py, affine_arith.py, sos_continuum.py,
+screw_cvs_equiv.py, tail_stress.py) substantially de-risked all 3 tracks and produced
+`THEOREM_ASSEMBLY.md` (read it — live composition tracker, 6 numbered pieces, authoritative current
+status). Precise next actions per track, superseding the general descriptions above:
+- **tail = THEOREM_ASSEMBLY piece 2.** K0≈13 already sized (modes [1,3,5,7,9,11,13]), tail stress-tested
+  with no crack. CLOSES when: (a) Gershgorin δ(K0) + Schur residual written as an explicit-constant proof,
+  (b) arb_certify run at that K0, NL>=8000.
+- **continuum = piece 6.** affine_arith.py (enclosure primitive) and sos_continuum.py (SOS machinery) are
+  each separately proven; naive polyfit is ~1000x too coarse for the ~1e-6 margin. CLOSES when: affine
+  applied to the FULL entry matrix feeds the SOS certificate (the composition, not either piece alone).
+- **oddsector = piece 3 (primary, "mechanical" per THEOREM_ASSEMBLY) + piece 4 (secondary).** Piece 3:
+  extend arb_certify.py (currently even modes [5,7,3,1] only) to odd-sector modes, re-run. Piece 4: the
+  screw/CvS "not equivalent" finding was CONFOUNDED (compared at the criticality endpoint where both forms
+  are ~0 noise) — re-compare rigor/screw_cvs_equiv.py at an INTERIOR a with matched normalization.
