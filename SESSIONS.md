@@ -47,3 +47,10 @@ others have done without polling. Don't edit past lines.
    first and citing its PASS/FAIL output in the LEDGER entry.
 5. When your claimed item is exhausted, check this file + `ATTACK_QUEUE.md` for the next unclaimed
    relevant item before stopping. Self-drive — never end on "what next?".
+
+### CONFLICT 2026-07-24T01:27:06Z — track:tail
+merge track/tail -> main failed. Log: /tmp/sync-track-merge-tail.log
+
+- 2026-07-24T01:27:06Z track:tail FAILED commit:cf3193b merge-conflict-see-tmp-log
+- 2026-07-24T01:28:12Z track:tail ok commit:60a247a push-failed(non-fatal)
+- 2026-07-24T01:29:52Z track:tail ok commit:6f741b6 push-failed(non-fatal)
