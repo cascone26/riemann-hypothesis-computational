@@ -28,3 +28,50 @@ not the default — ask for it by name rather than getting it automatically.
 parallel agents when genuinely needed — this only removes the *duplicate*
 cost of each one independently re-reading the entire process history from
 scratch when its actual task didn't need it.
+
+## Multi-session protocol (2026-07-23) — applies whenever more than one
+session/agent is working this repo concurrently
+
+Read `SESSIONS.md` and `ATTACK_QUEUE.md` at the start of every session — not
+just `LEDGER.md`. If you are one of several concurrent tracks (you'll know
+because you were briefed with a track name and a worktree path), the
+following is mandatory, not optional:
+
+1. **Claim before you start.** Your item should already be marked
+   `<-- CLAIMED by:<track> since:<ts>` in `ATTACK_QUEUE.md`. If you're
+   popping a new item (yours is exhausted), claim it there first, and note
+   it in `SESSIONS.md`'s roster.
+2. **Stay in your lane.** Only create/edit files inside your own
+   `operators/track_<name>/` and `results/track_<name>/`. The shared
+   append-only docs (`LEDGER.md`, `PROCESS.md`, `STATUS.md`,
+   `ATTACK_QUEUE.md`, `SESSIONS.md`) — always append at the very end, never
+   edit or reformat an existing entry, even a stale one. Editing an existing
+   *shared code file* (e.g. `arb_certify.py`, `rigor/rigor_lint.py`,
+   `engine/verify_gate.py`) is allowed but must be logged in `SESSIONS.md`'s
+   shared-file table BEFORE you edit, and must be strictly additive (new
+   function/flag/mode — never rewrite existing behavior). If your edit would
+   change existing lines another track might also need, stop and treat it as
+   a conflict (see 5), don't just proceed.
+3. **Sync often, not at the end.** Run `./sync-track.sh <name> "<msg>"` from
+   your worktree after every real finding (every LEDGER append) — not batched
+   at session end. This is the actual mechanism by which you see what the
+   OTHER tracks have found (the sync script rebases `main` back into your
+   branch), so syncing often is how you avoid duplicating work, not just
+   hygiene.
+4. **No unverified breakthrough claims — the Charisma Report/Handle gate is
+   mandatory here.** A numeric result is REPORT. It only becomes HANDLE
+   (CERTIFIED / PROVEN language, an ntfy breakthrough ping, marking an
+   `ATTACK_QUEUE.md` item done-by-proof) after `engine/verify_gate.py`
+   independently re-verifies it — run it and cite its PASS/FAIL output in the
+   LEDGER entry. This already exists in this repo; the only new rule is that
+   it's non-optional in the multi-session setting, where an unverified claim
+   from one track can misdirect the other two.
+5. **Real conflicts go to Jacob, not to a guess.** If `sync-track.sh` reports
+   a conflict, it already aborted the merge/rebase and logged it to
+   `SESSIONS.md`'s NEEDS JACOB section — don't try to resolve it yourself;
+   stop that line of work and flag it plainly when you next report.
+6. **Self-drive across your lane.** When your claimed item is exhausted,
+   check `SESSIONS.md` + `ATTACK_QUEUE.md` for the next unclaimed relevant
+   item before stopping — same anti-stall discipline as always
+   (`rh-working-rules`: never end on "what next?", keep the next method
+   already loaded, no stopping-off-ramp language, ETAs when asked).

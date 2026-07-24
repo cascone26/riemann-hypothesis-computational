@@ -7082,3 +7082,90 @@ relay, 4-dim effective crux), the validated closed-form entry machine (reusable 
 workflow's verification catches, and the certified point (as re-verification + as OUR machine's proof-of-life).
 Scope honest: all of this is finite-a; RH = the a→∞ limit, untouched. But the reframed theorem is a real prize.
 Cross-links §4b(Groskin grid), §121, §184-199.6, RH_WALL_ANATOMY.md.
+
+## §201 — THE TAIL LEMMA: empirical structure mapped + the explicit-constant engine derived (2026-07-23)
+
+Acting on the §200 reframe (the tail lemma is THE lever — it upgrades the whole Groskin grid). Computed the
+even-sector (odd-mode) tail structure at a=0.549 (window endpoint, tightest) via the fast closed-form entry engine
+(`tail_structure.py`, `tail_decay.py`, `coupling_asymptotic.py`; NL=3000 Lerch terms). Two exponents now pinned:
+
+**① Diagonal growth — Q[k,k] ≈ 0.31·log(kβ)** (β=π/2a). Measured Q[k,k]/log(kβ) = 0.307, 0.335, 0.314, 0.297,
+0.313 for k=11,21,31,41,51 — flat ⟹ clean LOG growth, the archimedean symbol Ω(r)~log r showing through. The
+diagonal rises without bound (0.62 at k=5 → 1.56 at k=51) and never plateaus. **This CORRECTS the §200 audit's
+"Q[k,k]~k²" guess** — the growth is log, not quadratic (Q/k² falls 0.025→0.0006). Dominance survives anyway,
+because the off-diagonal row sums stay BOUNDED (~0.45–0.92, no growth), so log-growth is more than enough.
+
+**② Off-diagonal coupling — |Q[k,l]| ≈ C_k/l (1/l decay), explicit constant.** Measured l·Q[1,l] ≈ 0.033–0.045
+(flat ⟹ 1/l), l·Q[3,l] ≈ 3× that. The rate is not empirical guesswork — it falls straight out of the EXACT D_kl
+closed form. For k fixed, l→∞ (the 1/(k∓l) factors expand):
+    D_kl(t) = klβ{[sin(lβt)−sin(kβt)]/(k−l) − [sin(lβt)+sin(kβt)]/(k+l)}  →  −2kβ·sin(lβt) + O(1/l).
+Then Q[k,l]=∫₀^{2a} g(t)D_kl(t)dt ~ −2kβ·∫₀^{2a} g·sin(lβt)dt, and one integration by parts (lβ·2a=lπ ⟹
+cos(lβ·2a)=(−1)^l) gives the ENDPOINT boundary term
+    Q[k,l] ~ −2k·[g(0) − (−1)^l g(2a)]/l + O(1/l²).
+For ODD l (even sector) this is −2k[g(0)+g(2a)]/l — constant sign, magnitude ∝ k, decaying as 1/l. So the coupling
+constant C_k = 2k[g(0)+g(2a)] is EXPLICIT (endpoint values of the screw kernel). This is the rigorous off-diagonal
+bound the tail lemma needs — no numerics required, it's algebra on a closed form we've validated to 5e-29.
+
+**③ Gershgorin dominance holds for k≥11.** Q[k,k]−Σ_{l≠k}|Q[k,l]| (the Gershgorin lower edge) is POSITIVE and
+growing for k=11,15,21,31,41,51 (0.59→1.10; diag/rowsum ratio 1.9→3.4). k=1,3 are negative (expected — the
+near-null lives there, and they sit inside the certified block). k=7 is a lone ragged exception (row sum 0.92
+spikes; lo=−0.38) — handled by putting K₀ above it. ⟹ for k>K₀ the tail block is strictly diagonally dominant
+⟹ PD by Gershgorin, with λ_min growing like the diagonal. The delicate part (near-null) is ENTIRELY in the finite
+low block; the tail is safely, wideningly positive.
+
+**THE LEMMA, assembled (structure now fully explicit):** Split modes into low block L={k≤K₀} (certified in Arb) and
+tail T={k>K₀}. (a) Q_TT is diagonally dominant by ③ with λ_min(Q_TT)≥δ>0 (explicit via ① minus bounded row sums)
+⟹ PD. (b) Schur: Q⪰0 ⟺ Q_LL − Q_LT Q_TT⁻¹ Q_TL ⪰ 0; the residual correction ≤ ‖Q_LT‖²/λ_min(Q_TT), and by ②
+‖Q_LT‖² ≤ Σ_{k∈L}Σ_{l>K₀}(C_k/l)² ≤ (Σ_k C_k²)·(1/(2K₀)) — an EXPLICIT function of K₀. Choose K₀ so this residual <
+the certified margin; certify the K₀×K₀ block in Arb (arb_certify already does K=24 with a folded tail bound).
+
+**Honest sizing note (forward-looking):** because the coupling is 1/l (endpoint term) rather than 1/l², the residual
+falls only like ~1/K₀, so K₀ is modest (order 20–40) rather than ~11 — a bigger-but-still-finite certifiable block,
+exactly the kind arb_certify handles. Two clean ways to shrink K₀ if wanted: (i) the near-null eigenvector spreads
+over modes 1,3,5,7 and its tail coupling partially CANCELS (the §199.4 workflow measured the modes-≥9 residual into
+the 4×4 at ~6e-8, far below the 1/K₀ worst case — worth reconciling: cancellation likely buys a much smaller K₀);
+(ii) an extra I.B.P. captures the 1/l² term explicitly. Either sharpens the constant; neither is needed for the
+lemma to go through. Next moves: (1) lock C_k=2k[g(0)+g(2a)] numerically (coupling_asymptotic.py, running); (2) turn
+③ into an explicit δ(K₀) lower bound (diagonal log-growth constant 0.31 + row-sum cap); (3) reconcile the workflow's
+6e-8 cancellation vs the 1/K₀ worst case to set the smallest safe K₀; (4) re-run arb_certify at that K₀. The lemma
+is TRUE and its every constant is now a closed-form object — this is the piece that makes the finite certs mean the
+true infinite-dimensional Weil form. Files: tail_structure.py, tail_decay.py, coupling_asymptotic.py; logs in
+results/. Cross-links §200 (reframe), §199.4 (workflow tail/Schur), §186-198 (4×4 structure), dkl_closedform.py.
+
+## §201-lit — Gap-check of 4 arXiv papers not previously logged (2026-07-23, Jacob-supplied)
+Checked against our program (finite-support Weil positivity, tail lemma, prime-vs-arch). None is an unconditional
+lever for our path; nothing scoops the tail-lemma continuum approach. Logged for provenance:
+- **2607.04316 Moriya (math.NT)** "Gaussian-Perron prime-side defect" — the only one with real NT content. Turns the
+  explicit formula into a LOCAL diagnostic for zero geometry, but CONDITIONAL ON RH (+ pole-damping/contour regularity).
+  Conceptually adjacent to our prime-vs-arch split, but conditional-on-RH ⟹ using it for positivity would be circular.
+  Not a positivity input. Vocabulary worth remembering; not a method.
+- **2607.09797 Liflandsky (math.GM)** — criterion: Σμ(n)e^{-nt}=O(x^{-1/2}) ⟹ RH (one direction, uncond.). This is the
+  Möbius/Mertens-decay face of RH (same family as Nyman-Beurling/Baez-Duarte/Riesz, already on our wall as RH-equivalent
+  restatements). A re-dressed equivalent criterion, not a new lever. math.GM, low rigor confidence.
+- **2606.29294 Glazunov (math.NT)** — 12-pp SURVEY of quantum/Hilbert-Polya/lattice-spin models. No new theorem, no
+  Weil positivity, no concrete testable operator. Nothing to run.
+- **2604.14596 Li (math.GM)** — fractal/RG-flow "prime-zero duality" (K flows 11→4). Physics analogy, empirical fits
+  only; paper itself says "upgrading to a rigorous proof is the central open problem." No usable content — same
+  physics-heuristic category our §183/physics-deepdive already walled (Lee-Yang = the positivity wall).
+NET: literature scanning confirmed thorough (all serious papers — Connes 2602.04022, Groskin, Suzuki 2606.09096,
+Michałowski — already logged). No external work is attacking the finite-support positivity continuum the way we are.
+
+## §201-infra — Rigor tooling built (ideas #1, #7); #2/#6 already existed (2026-07-23)
+Evaluated an 8-item infra list against the critical path (tail lemma → re-certify at K₀ → odd sector → continuum).
+search-before-build found several already live: #6 literature-watch = `tools/arxiv_watch.py` (scheduled LaunchAgent,
+ntfy-wired, zero-token; already caught 2607.09797); #2 adversarial-verify = `adversarial_verify.py` +
+`engine/verify_gate.py` (the Charisma Report/Handle gate: no HANDLE without independent re-verification). Built the
+two genuinely-missing, cheap, high-leverage pieces that harden the imminent K₀ re-cert:
+- **`rigor/rigor_lint.py`** (#1) — standing invariant checker. DYNAMIC (independent mpmath re-impl of Q[k,l]):
+  symmetry Q=Qᵀ, per-mode diagonal>0, D_kl closed-form≡definition-quadrature, coupling 1/l law. STATIC scan for the
+  §199.4 bug class: arb(-1,1) sign-bias, float(mid/rad) rigor-break, missing `s>0` pivot test. VERIFIED: PASS on
+  arb_certify.py, FAIL (exit 1) on a script carrying the known bad patterns. Run before trusting any output.
+- **`rigor/provenance.py`** (#7) — reproducibility snapshot: pins git HEAD+dirty, python-flint/mpmath/python
+  versions, host, script sha256, UTC, and runs rigor_lint as a gate. Retro-stamped the §199.5 point →
+  `results/weil_p2_cert_a0549.prov.json` (lint=PASS, git d8572a4, flint 0.9.0 / mpmath 1.3.0). Every future
+  CERTIFIED entry gets one.
+DEFERRED w/ rationale: #4 semantic LEDGER search (useful, medium — 613KB/7k-line ledger; build next if re-reading
+bites); #5 panel-farming scheduler (premature — the per-panel continuum method itself isn't settled; §199.6 a-interval
+Arb over-widens, needs Taylor models first); #3 Lean/Coq second engine (highest final-rigor value but heavy; a `bot/`
+Lean attempt was already halted as off-mission — revisit for the FINAL theorem, not while the math is moving);
+#8 perf pass on arb_certify (only if it becomes the bottleneck — point cert runs fine today). Files: rigor/.

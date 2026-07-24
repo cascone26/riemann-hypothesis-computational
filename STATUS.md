@@ -3648,3 +3648,28 @@ Two unconditional theorems finished + written up in RH_RESULTS.md: (T1) λ_n>0 f
 tail kernel); (T2) λ_n>0 for almost all n≤~3T²≈2.9e25 (unconditional, short-interval counts). Physics push
 (SuperPRISM §34): RH=criticality reframe + FE-sector tool; DBN toy proof-route was circular (retracted §34c).
 NEXT: NEXT_SESSION_RH.md — the analytic uniform-coercivity target, fresh session, no more τ mapping.
+
+## Session riemann4 (2026-07-20) — summary
+Massive session, LEDGER §51-91. Positivity toolkit fully mapped & shown exhausted (framework-independent knife-edge,
+§51-84; lit-validated §69/§73 — our campaign = Connes 2026 program). Novel deliverables: prime-stabilization mechanism
+(§52), Q_prime = Re[ζ'/ζ] multiplier formula (§81, verified), Kreĭn certificate w/ atoms=zeros (§82-83), prime-induction
+framing (§76-80, novel per lit-check). MAIN NEW RESULT: the DYNAMICAL BRIDGE (§85-91) — Suzuki-screw ↔ Weil ↔ de
+Bruijn–Newman flow ↔ GUE log-gas ↔ prime-Ξ: flow = gradient ascent of concave log-energy E (Hess E=−L verified),
+velocity = Ξ″/Ξ′, exact conservation laws, relaxation spectrum (rigid-long + GUE-short), Λ localized to close-pair
+correlations. Agent-verified unexplored in literature. Open frontier: pair/triple-correlation of infinite system.
+Tools: operators/{session51_59,prime_induction,dbn_dynamics}/. NEXT: read Rodgers-Tao 1801.05914 source (verify our
+Lyapunov-novelty claim vs their Sec 8), then write dbn_dynamics/BRIDGE.md.
+
+## Session riemann4 (2026-07-21) — summary [+ correction to the 07-20 block above]
+CORRECTION to 07-20 block: the dynamical bridge's "agent-verified unexplored / E = Lyapunov functional RT lacked"
+claim was RETRACTED in §92 — the RT source-read showed E is exactly Rodgers–Tao's Hamiltonian (our §86-91 = their
+Section 1/4 rediscovered). The bridge is banked as DIAGNOSTIC (RT energy is RH-blind, §93), not novel.
+This session (LEDGER §92-117): (1) Connes program reconstructed end-to-end + validated in-repo (§94-103); our k_λ crux
+identified = CCM 2511.22755 §7, the worldwide wall (§105). (2) REDIRECT to Suzuki Thm 1.5/Cor 1.6 (finite-a reality+
+simplicity UNCONDITIONAL; gap = the a→∞ arithmetic limit) (§106-107). (3) High-precision run: §42 negativity = float64
+artifact, even-simple robust; two floors separated (§108-109). (4) Compact G_a tool breaks the large-a wall to a=3
+(§110). (5) Prime-bend: primes inject zeta-like gap-irregularity, CV 0.393≈zeta 0.389 (§112). (6) Herglotz "reality
+for free" claim made (§113-116) then RETRACTED (§117: m_a is inner/unimodular, not Herglotz — |v̂_+|=|v̂_-| exact).
+Honest net: verified strategic redirect + better tools + several self-caught overclaims; the crux = one wall with four
+equivalent faces (k_λ / θ(a)-selection / Hermite-Biehler / momentum→zeta). NEXT: NEXT_SESSION_RH.md (reads: 2310.18423,
+1204.1827; then the untouched Parseval/completeness face). Tools: operators/dbn_dynamics/ (15+ scripts).
