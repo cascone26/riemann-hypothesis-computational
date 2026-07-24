@@ -24,6 +24,7 @@ must be strictly additive (new function/flag/mode — never rewrite existing beh
 
 | when | track | file | why |
 |---|---|---|---|
+| 2026-07-24T02:35:00Z | oddsector | arb_certify.py | additive: add --parity arg (even/odd), select modes by parity, keep even path intact. Per protocol, logging before edit. |
 
 ## NEEDS JACOB
 Empty unless a real merge conflict or ambiguous call comes up. A track that hits a real conflict aborts
@@ -36,7 +37,7 @@ description of the actual disagreement.
 Append-only. `sync-track.sh` writes one line per sync attempt here — this is how a track sees what the
 others have done without polling. Don't edit past lines.
 
-(none yet)
+- 2026-07-24T02:40:00Z main (canonical) ok commit:9938b3f oddsector-piece3-verified (LEDGER §208 verify_gate PASS)
 
 ## Protocol summary (full version in CLAUDE.md)
 1. Claim your item in `ATTACK_QUEUE.md` (`<-- CLAIMED by:<track> since:<ts>`) before starting.
@@ -58,3 +59,8 @@ merge track/tail -> main failed. Log: /tmp/sync-track-merge-tail.log
 - 2026-07-24T01:58:15Z track:oddsector ok commit:a6dbec4 push-failed(non-fatal)
 - 2026-07-24T01:58:17Z track:continuum ok commit:aa25f36 push-failed(non-fatal)
 - 2026-07-24T02:00:08Z track:tail ok commit:b6b30ab push-failed(non-fatal)
+
+### CONFLICT 2026-07-24T02:10:02Z — track:tail
+merge track/tail -> main failed. Your work IS still committed locally at 66bad18. Log: /tmp/sync-track-merge-tail.log
+
+- 2026-07-24T02:10:02Z track:tail FAILED commit:66bad18 merge-conflict-see-tmp-log
