@@ -17,6 +17,7 @@ results/*.npy
 /pari_venv
 /.venv_cvs
 /external
-/membrane_pulls
+/membrane_pulls/*
+!/membrane_pulls/search.py
 /membrane-pull
 data/zeros_computed_21510k_to_21511k_genuine_extension
