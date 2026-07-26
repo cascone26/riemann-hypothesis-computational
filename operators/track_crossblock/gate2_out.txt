@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/scones/projects/riemann/operators/track_crossblock/arb_certify_multiprime.py", line 100, in <module>
+    print(f"MULTIPRIME screw cert, {args.parity.upper()} sector, a={args.a} (2a={float(TWOA.str(20)):.5f}), prec=1400, NLERCH={NLERCH}")
+                                                                                 ~~~~~^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[1.0980000000000000000 +/- 3e-24]'

@@ -1,0 +1,7 @@
+§289c does full-form total positivity reach DENSER than diagonal dominance (edge ~spacing6, §286)?
+ spacing  #pr diagdom(§286)   min 2x2 minor  TP-2x2?     minEig
+     6.0    6          True         8.4e-14     True     0.8857
+     5.0    7         False       4.611e-15     True     0.2409
+     4.0    8         False       5.882e-14     True   8.644e-5
+     3.0   11         False       6.757e-18     True  1.532e-18
+DONE. if TP-2x2 holds at spacing<6 where diagdom FAILS => TP is a STRONGER certificate reaching toward the dense core.

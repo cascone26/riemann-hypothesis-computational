@@ -1,0 +1,21 @@
+§202-tail RIGOROUS Arb certification, K0=23 (even sector, odd modes), NLERCH=50000
+  a=[0.549000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 3.07e-422], prec=1400, modes (large-diagonal-first): [21, 23, 17, 15, 11, 19, 13, 9, 5, 7, 3, 1]
+
+LDL^T pivots (large-diagonal-first order):
+  mode 21: [1.37151 +/- 2.70e-6]  rigorously>0? True
+  mode 23: [1.27046 +/- 3.91e-6]  rigorously>0? True
+  mode 17: [1.23070 +/- 1.76e-6]  rigorously>0? True
+  mode 15: [1.05480 +/- 4.47e-6]  rigorously>0? True
+  mode 11: [1.05520 +/- 1.29e-6]  rigorously>0? True
+  mode 19: [0.961877 +/- 3.37e-7]  rigorously>0? True
+  mode 13: [0.770774 +/- 2.78e-7]  rigorously>0? True
+  mode  9: [0.654869 +/- 1.04e-7]  rigorously>0? True
+  mode  5: [0.620204 +/- 2.02e-7]  rigorously>0? True
+  mode  7: [0.469703 +/- 1.16e-7]  rigorously>0? True
+  mode  3: [0.0008652 +/- 1.08e-8]  rigorously>0? True
+  mode  1: [4e-8 +/- 4.35e-9]  rigorously>0? True
+
+*** CERTIFIED PD (all 12 pivots lower-bound >0) ***
+*** K0=23 LOW BLOCK rigorously PD (Arb, NLERCH=50000). ***
+*** NOT a positivity proof by itself: infinite-dim composition still requires ***
+*** the v2 tail lemma (near-band identity + row-sum bound, OPEN) + interval Schur. ***

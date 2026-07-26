@@ -1,0 +1,5 @@
+§275 Weil-level resolution: band [14,42], w=2.0, vary probe spacing. local zero-spacing ~2.1 near g~20.
+ spacing  #probes  min-eig(margin)   max-eig        cond
+     6.0        5           1.4002    2.7229      1.9447
+     4.0        8       5.87199e-8    3.4543   5.8827e+7
+     3.0       10      1.75878e-10    4.2942  2.4416e+10

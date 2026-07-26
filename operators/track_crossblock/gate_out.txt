@@ -1,0 +1,15 @@
+=== MULTIPRIME a=0.549 even (GATE) ===
+Traceback (most recent call last):
+  File "/Users/scones/projects/riemann/operators/track_crossblock/arb_certify_multiprime.py", line 47, in <module>
+    PP = prime_powers_upto_log(float(TWOA.str(30)))
+                               ~~~~~^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[1.09800000000000000000000000000 +/- 3e-34]'
+
+=== CANONICAL arb_certify.py even ===
+§199.3c/§200 RIGOROUS Arb certification, EVEN sector @ a=0.549, prec=1400, NLERCH=8000, modes=[5, 7, 3, 1]
+  pivot 0 (mode 5): [0.621096 +/- 8.43e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.52620 +/- 3.51e-6]  rigorously>0? True
+  pivot 2 (mode 3): [0.000943 +/- 5.77e-7]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 1.69e-7]  rigorously>0? True
+
+*** CERTIFIED PD (all pivots lower-bound >0) — p=2-only positivity RIGOROUS at a=0.549 ***

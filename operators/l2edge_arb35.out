@@ -1,0 +1,20 @@
+s=3.5: 9 probes — building rigorous B_full (45 arch integrals)...
+Traceback (most recent call last):
+  File "/Users/scones/projects/riemann/operators/arb_dense_cert.py", line 127, in <module>
+    certify(s_str)
+    ~~~~~~~^^^^^^^
+  File "/Users/scones/projects/riemann/operators/arb_dense_cert.py", line 99, in certify
+    v = pole_entry(cs[j], cs[k]) + arch_entry(cs[j], cs[k]) - prime_entry(cs[j], cs[k])
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/scones/projects/riemann/operators/arb_dense_cert.py", line 43, in arch_entry
+    I = acb.integral(integ, acb(0), acb(RCUT))
+  File "flint/types/acb.pyx", line 2726, in flint.types.acb.acb.integral
+  File "flint/types/acb.pyx", line 113, in flint.types.acb.acb_calc_func_callback
+  File "/Users/scones/projects/riemann/operators/arb_dense_cert.py", line 41, in integ
+    return F_acb(acb(cj), r) * F_acb(acb(ck), r) * acb(omega_acb(r))
+                                                       ~~~~~~~~~^^^
+  File "/Users/scones/projects/riemann/operators/arb_dense_cert.py", line 37, in omega_acb
+    return (acb(arb(1) / 4, r / 2).digamma()).real - logpi()
+            ~~~^^^^^^^^^^^^^^^^^^^
+  File "flint/types/acb.pyx", line 158, in flint.types.acb.acb.__init__
+TypeError: cannot create arb from type <class 'flint.types.acb.acb'>

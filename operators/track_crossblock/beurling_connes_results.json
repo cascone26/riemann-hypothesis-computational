@@ -1,0 +1,48 @@
+{
+  "test_timestamp": "0.0",
+  "num_tests": 7,
+  "results": {
+    "regular_primes": {
+      "orders_dropped": -0.4793255237661359,
+      "halts_at_step": 1,
+      "final_value": 1.010957359838614,
+      "max_steps": 15
+    },
+    "sine_weak": {
+      "orders_dropped": -0.4771353206296314,
+      "halts_at_step": 1,
+      "final_value": 1.0110342217073276,
+      "max_steps": 15
+    },
+    "sine_moderate": {
+      "orders_dropped": -0.47497082239551514,
+      "halts_at_step": 1,
+      "final_value": 1.0111115922472973,
+      "max_steps": 15
+    },
+    "sine_strong": {
+      "orders_dropped": -0.47071695328909735,
+      "halts_at_step": 1,
+      "final_value": 1.0112678111979492,
+      "max_steps": 15
+    },
+    "scale_105": {
+      "orders_dropped": -0.466496238131347,
+      "halts_at_step": 1,
+      "final_value": 1.0164269515196886,
+      "max_steps": 15
+    },
+    "scale_110": {
+      "orders_dropped": -0.4548904650328367,
+      "halts_at_step": 1,
+      "final_value": 1.0215786702964846,
+      "max_steps": 15
+    },
+    "cosine_weak": {
+      "orders_dropped": -0.47264956155227933,
+      "halts_at_step": 1,
+      "final_value": 1.010283002741004,
+      "max_steps": 15
+    }
+  }
+}

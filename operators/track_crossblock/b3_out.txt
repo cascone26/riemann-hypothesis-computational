@@ -1,0 +1,38 @@
+B3-honest: Groskin tau c=13 N=18 DIM=37, L=log13=2.5649, dps=200
+smallest eigenvalue lam0 = 1.4847e-37   (isolated: next = 1.9071e-34)
+
+Q1 — near-null eigenvector v0, dominant modes (n, coeff):
+   n= +0   v0=-0.55281
+   n= -1   v0=+0.47893
+   n= +1   v0=+0.47893
+   n= +2   v0=-0.30866
+   n= -2   v0=-0.30866
+   n= +3   v0=+0.14335
+   n= -3   v0=+0.14335
+   n= +4   v0=-0.04426
+   even-symmetry residual mean|v[n]-v[-n]| = 0.00e+00   odd mean|v[n]+v[-n]| = 1.09e-01
+   => v0 is EVEN (cosine) dominant
+
+Q2 — psi0 on [0,L]: max|Im|=9.35e-17 (should be ~0, real), range Re=[-2.5150,0.0000]
+   psi0 has 2 sign-change zeros on [0,L] at x≈ [np.float64(0.004), np.float64(0.006)]
+
+Q2 — RAW analytic W(x)=-psi0'/psi0 (NO smoothing):
+   on pole-free region: W range=[-119.031,1401.182], RMS 2nd-diff=8.3309e+01 (small ⟹ genuinely smooth, NOT an artifact)
+   W samples (x, W):
+     x=0.10  W=-86.4567
+     x=0.30  W=-40.6689
+     x=0.50  W=-24.2251
+     x=0.70  W=-14.6061
+     x=0.90  W=-8.1402
+     x=1.10  W=-3.4716
+     x=1.30  W=+0.3214
+     x=1.50  W=+4.2009
+     x=1.70  W=+9.1153
+     x=2.00  W=+20.6205
+     x=2.30  W=+45.0392
+
+Q3 — candidate comparison (structural, honest — NOT a forced fit):
+   psi0 zeros ⟹ W has genuine POLES; a smooth ζ'/ζ-critical-line object has poles at zeta zeros.
+   #poles of W on [0,L] = 2  — compare to #primes<=c and #relevant modes.
+   (If W is piecewise-smooth with a few poles and matches a digamma envelope between them ⟹ real
+    structural object; if W is jagged even between poles ⟹ the 'clean W' was a regularization artifact.)

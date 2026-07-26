@@ -1,0 +1,8 @@
+§287 sharper a-priori certificate: comparison matrix M(B) pos-def (H-matrix => B PSD) vs plain diag-dominance
+ spacing  #pr  diagdom?  H-matrix? (Cmin>0)  true minEig(B)
+     6.0    6      True        True (0.798)          0.8857
+     5.0    7     False      False (-0.209)          0.2409
+     4.0    8     False       False (-1.25)        8.644e-5
+     3.0   11     False       False (-3.57)       1.532e-18
+     2.5   13     False       False (-5.35)      -7.672e-18
+DONE. H-matrix (Cmin>0) reaching denser than diagdom = sharper cert extends provable regime toward the RH-core.

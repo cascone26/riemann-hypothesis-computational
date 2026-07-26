@@ -1,0 +1,12 @@
+§272 self-contained Weil form, M=5 even-Hermite basis, primes to 60, dps=18
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+SIGNATURES:
+   arch+pole (guard): eigs=['-0.487', '-0.242', '-0.161', '-0.105', '13.3']  ->  1+ / 4-
+          prime only: eigs=['-6.94', '-2.34', '-0.667', '1.72', '5.38']  ->  2+ / 3-
+     FULL Weil (=RH): eigs=['-2.99', '-1.63', '-0.136', '2.05', '12.1']  ->  2+ / 3-
+DONE. arch+pole pos-def = guard OK. FULL pos-def => Weil positivity holds on this basis (RH consistent).
+Any NEG in FULL => debug construction OR a genuine near-failure direction (inspect).

@@ -1,0 +1,12 @@
+§285 diagonal dominance of the Weil form (well-separated Gaussians, spacing 6, w=3):
+ i(center)      B_ii  sum_j!=i |B_ij|  dominant?
+        14     2.004            0.454       True
+        20     1.947            1.405       True
+        26     2.158            1.891       True
+        32     3.404            1.834       True
+        38     2.943            2.302       True
+        44     3.005            1.398       True
+
+fully diagonally dominant: True  -> PSD proven from diagonal (full-form certificate for this basis!)
+(min eigenvalue = 0.8857, confirms PSD either way)
+DONE

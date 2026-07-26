@@ -1,0 +1,70 @@
+=== a=0.55 ===
+MULTIPRIME screw cert, ODD sector, a=0.55 (2a=1.10000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 8): [0.876465 +/- 1.21e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.370461 +/- 1.65e-7]  rigorously>0? True
+  pivot 2 (mode 4): [0.111583 +/- 5.08e-7]  rigorously>0? True
+  pivot 3 (mode 2): [3.08e-5 +/- 4.09e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+exit=0 for a=0.55
+=== a=0.58 ===
+MULTIPRIME screw cert, ODD sector, a=0.58 (2a=1.16000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 8): [0.862963 +/- 2.91e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.465595 +/- 2.74e-7]  rigorously>0? True
+  pivot 2 (mode 4): [0.0267572 +/- 4.24e-8]  rigorously>0? True
+  pivot 3 (mode 2): [6.8e-6 +/- 1.59e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+exit=0 for a=0.58
+=== a=0.62 ===
+MULTIPRIME screw cert, ODD sector, a=0.62 (2a=1.24000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 8): [0.734128 +/- 1.02e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.656499 +/- 1.09e-7]  rigorously>0? True
+  pivot 2 (mode 4): [0.0031614 +/- 4.59e-8]  rigorously>0? True
+  pivot 3 (mode 2): [5e-7 +/- 5.11e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+exit=0 for a=0.62
+=== a=0.64 ===
+MULTIPRIME screw cert, ODD sector, a=0.64 (2a=1.28000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 8): [0.614213 +/- 3.46e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.761320 +/- 3.84e-7]  rigorously>0? True
+  pivot 2 (mode 4): [0.0018336 +/- 5.40e-8]  rigorously>0? True
+  pivot 3 (mode 2): [4e-7 +/- 4.05e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+exit=0 for a=0.64
+=== a=0.70 ===
+MULTIPRIME screw cert, ODD sector, a=0.70 (2a=1.40000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 4, 3   [3 terms]
+  pivot 0 (mode 8): [0.199259 +/- 3.38e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.832156 +/- 4.10e-7]  rigorously>0? True
+  pivot 2 (mode 4): [0.0005180 +/- 3.96e-8]  rigorously>0? True
+  pivot 3 (mode 2): [2e-7 +/- 2.07e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+exit=0 for a=0.70
+=== a=0.75 ===
+MULTIPRIME screw cert, ODD sector, a=0.75 (2a=1.50000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 4, 3   [3 terms]
+  pivot 0 (mode 8): [0.299378 +/- 3.22e-7]  rigorously>0? True
+  pivot 1 (mode 6): [0.031444 +/- 6.06e-7]  rigorously>0? True
+  pivot 2 (mode 4): [9e-6 +/- 4.03e-7]  rigorously>0? True
+  pivot 3 (mode 2): [+/- 1.62e-7]  rigorously>0? False
+
+NOT certified
+exit=0 for a=0.75
+=== a=0.80 ===
+MULTIPRIME screw cert, ODD sector, a=0.80 (2a=1.60000), prec=1400, NLERCH=50000
+prime powers included (log q < 2a): 2, 4, 3   [3 terms]
+  pivot 0 (mode 8): [0.872907 +/- 3.89e-8]  rigorously>0? True
+  pivot 1 (mode 6): [0.0707970 +/- 7.26e-8]  rigorously>0? True
+  pivot 2 (mode 4): [6.08e-5 +/- 2.71e-8]  rigorously>0? True
+  pivot 3 (mode 2): [+/- 6.82e-8]  rigorously>0? False
+
+NOT certified
+exit=0 for a=0.80

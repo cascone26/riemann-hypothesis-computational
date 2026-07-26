@@ -1,0 +1,12 @@
+§274 Weil-positivity margin vs basis richness (validated instrument, w=3.0, primes<=60, dps=25)
+ #centers       band  min-eig(margin)    max-eig       cond
+        2    [14,20]          1.55689     2.3949      1.538
+        3    [14,26]          1.01182     3.0951      3.059
+        4    [14,32]         0.907551     3.9659       4.37
+        5    [14,38]         0.894876     4.3947      4.911
+        6    [14,44]          0.88568     4.8023      5.422
+        7    [14,50]         0.881279     5.2631      5.972
+        8    [14,56]         0.880186     5.6089      6.372
+        9    [14,62]         0.879268     5.9147      6.727
+       10    [14,68]         0.878755      6.225      7.084
+DONE. margin bounded away from 0 => robust Weil positivity; margin -> 0 => near-critical direction (Weil near-null).

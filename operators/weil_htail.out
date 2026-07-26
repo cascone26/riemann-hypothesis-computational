@@ -1,0 +1,9 @@
+§282 height-tail decay: does lambda_max ~ C/log(r0) -> 0 (arch-growth control of tail #2)?
+    r0  lambda_max   lmax*log(r0)
+    20     0.28601         0.8568
+   120      0.1442         0.6903
+   300     0.11122         0.6344
+   700    0.095513         0.6257
+  1500     0.02474         0.1809
+  3000    0.042562         0.3408
+DONE. lmax*log(r0) ~ const => tail #2 decays as C/log(r0) -> 0, controlled by archimedean growth. proof-skeleton step.

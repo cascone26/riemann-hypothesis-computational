@@ -1,0 +1,41 @@
+{
+  "test_timestamp": "0.0",
+  "num_tests": 5,
+  "per_test_results": {
+    "sine_mild": {
+      "description": "Sine perturb: p'_k = p_k + 0.05\u00b7sin(k\u00b7\u03c0/25)",
+      "num_orders_dropped": -0.4806045605553222,
+      "halts_after": 1,
+      "total_steps": 20,
+      "final_residual_log10": 1.1409682219291293
+    },
+    "sine_moderate": {
+      "description": "Sine perturb: p'_k = p_k + 0.1\u00b7sin(k\u00b7\u03c0/25)",
+      "num_orders_dropped": -0.481078265411919,
+      "halts_after": 1,
+      "total_steps": 20,
+      "final_residual_log10": 1.141441926785726
+    },
+    "sine_strong": {
+      "description": "Sine perturb: p'_k = p_k + 0.2\u00b7sin(k\u00b7\u03c0/25)",
+      "num_orders_dropped": -0.4820201816303993,
+      "halts_after": 1,
+      "total_steps": 20,
+      "final_residual_log10": 1.1423838430042064
+    },
+    "scale_105": {
+      "description": "Scale perturb: p'_k = 1.050\u00b7p_k (density +5.0%)",
+      "num_orders_dropped": -0.48434518749247646,
+      "halts_after": 1,
+      "total_steps": 20,
+      "final_residual_log10": 1.1493161567907793
+    },
+    "scale_110": {
+      "description": "Scale perturb: p'_k = 1.100\u00b7p_k (density +10.0%)",
+      "num_orders_dropped": -0.48824652171339944,
+      "halts_after": 1,
+      "total_steps": 20,
+      "final_residual_log10": 1.1575653699273634
+    }
+  }
+}

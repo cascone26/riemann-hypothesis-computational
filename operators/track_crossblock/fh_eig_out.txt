@@ -1,0 +1,25 @@
+B2 eigenvalue-scaling: Groskin tau c=13, N=18, DIM=37, arb prec=1400, mp dps=220
+min eig = 1.48469e-37   max eig = 3.42324   all>0? True
+
+smallest eigenvalues (k = 1..):
+  k= 1  lambda=    1.4847e-37  log(lambda)=-84.8004
+  k= 2  lambda=    1.9071e-34  log(lambda)=-77.6423
+  k= 3  lambda=    1.4106e-31  log(lambda)=-71.0361
+  k= 4  lambda=    7.6852e-29  log(lambda)=-64.7357
+  k= 5  lambda=    3.2088e-26  log(lambda)=-58.7013
+  k= 6  lambda=    9.4131e-24  log(lambda)=-53.0199
+  k= 7  lambda=    1.8445e-21  log(lambda)=-47.7421
+  k= 8  lambda=    1.9711e-19  log(lambda)=-43.0705
+  k= 9  lambda=    1.6525e-17  log(lambda)=-38.6416
+  k=10  lambda=    1.5191e-15  log(lambda)=-34.1206
+  k=11  lambda=    1.1294e-13  log(lambda)=-29.8119
+  k=12  lambda=    4.3827e-12  log(lambda)=-26.1534
+  k=13  lambda=     1.597e-10  log(lambda)=-22.5577
+  k=14  lambda=     5.8248e-9  log(lambda)=-18.9611
+  k=15  lambda=     1.6433e-7  log(lambda)=-15.6214
+  k=16  lambda=     4.0056e-6  log(lambda)=-12.4278
+
+=== SMALL-EIGENVALUE TAIL (smallest half) ===
+  POWER law  log l ~ 29.4345*log k + -99.2545   RMS=5.7020   (=> l_k ~ k^29.435)
+  EXP   tail log l ~ 4.5140*k     + -82.6220   RMS=3.1855   (=> l_k ~ e^(4.514 k))
+  BETTER FIT: EXPONENTIAL (hard-gap-like, NOT FH)   (power RMS 5.7020 vs exp RMS 3.1855)

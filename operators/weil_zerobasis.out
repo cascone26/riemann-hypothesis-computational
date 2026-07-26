@@ -1,0 +1,11 @@
+§273 Weil form on zero-overlapping basis (centers=[14, 20, 26, 32, 38], w=3.0, primes<= 50), dps=30
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+SIGNATURES + oracle:
+         FULL Weil: eigs=['0.8949', '1.869', '2.285', '3.013', '4.395'] -> 5+/0-
+    direct Sum_rho: eigs=['0.8949', '1.869', '2.285', '3.013', '4.395'] -> 5+/0-
+  |Bfull - Bdirect|_max = 7.0419e-16 (small => machine VALIDATED on zero-overlapping basis)
+DONE. FULL should be PSD (=Gram on RH). Match to direct => construction correct on meaningful functions.

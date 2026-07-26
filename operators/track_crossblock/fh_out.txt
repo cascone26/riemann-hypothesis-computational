@@ -1,0 +1,25 @@
+FH scaling probe: Groskin tau c=13, prec=3200
+  N= 8 DIM= 17  log|det|=  -293.89311  well_bottom= -26.44548  undet=0
+  N=10 DIM= 21  log|det|=  -376.61567  well_bottom= -28.59595  undet=0
+  N=12 DIM= 25  log|det|=  -465.62398  well_bottom= -30.60974  undet=0
+  N=14 DIM= 29  log|det|=  -548.42518  well_bottom= -32.31137  undet=0
+  N=16 DIM= 33  log|det|=  -629.99932  well_bottom= -34.06321  undet=0
+  N=18 DIM= 37  log|det|=  -706.42107  well_bottom= -35.48764  undet=0
+  N=20 DIM= 41  log|det|=  -780.43200  well_bottom= -37.13221  undet=0
+  N=22 DIM= 45  log|det|=  -849.34361  well_bottom= -38.14034  undet=0
+
+All pivots rigorously signed? True  (if False, raise prec)
+
+=== FIT A (strong-Szego): log det = a*N + c ===
+  a=-39.94762  c=17.87010   RMS residual = 6.99469
+=== FIT B (Fisher-Hartwig): log det = a*N + b*log N + c ===
+  a=-30.26786  b=-136.69148  c=235.85819   RMS residual = 2.79465
+
+  --> FH log-N coefficient b = -136.69148
+      Szego RMS 6.9947 vs FH RMS 2.7946  (FH much better ⟺ real log-N term ⟺ symbol zero)
+      candidate FH exponents: if b≈-alpha^2, alpha≈11.6915 (if b<0)
+
+=== WELL-BOTTOM (DC near-null pivot) scaling ===
+  linear:  well ≈ -0.8389*N + -20.2651   RMS=0.3454
+  log:     well ≈ -11.7483*log N + -1.6335   RMS=0.2419
+  (linear-in-N deepening ⟹ pivot ~ e^(-const*N), exponential approach to singular = strong FH zero)

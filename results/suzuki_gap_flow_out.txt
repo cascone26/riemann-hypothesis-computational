@@ -1,0 +1,258 @@
+
+##### theta = 0.000 #####
+  a= 0.300 lam_a=+8.11e-03 n= 5 mingap= 9.73 z1..4=[np.float64(13.71), np.float64(23.44), np.float64(33.57), np.float64(43.87)]
+  a= 0.320 lam_a=+3.78e-03 n= 5 mingap= 9.05 z1..4=[np.float64(13.14), np.float64(22.19), np.float64(31.64), np.float64(41.26)]
+  a= 0.337 lam_a=+1.95e-03 n= 6 mingap= 8.54 z1..4=[np.float64(12.77), np.float64(21.3), np.float64(30.24), np.float64(39.35)]
+  a= 0.340 lam_a=+1.73e-03 n= 6 mingap= 8.44 z1..4=[np.float64(12.7), np.float64(21.14), np.float64(29.97), np.float64(38.99)]
+  a= 0.342 lam_a=+1.63e-03 n= 6 mingap= 8.40 z1..4=[np.float64(12.67), np.float64(21.06), np.float64(29.85), np.float64(38.82)] <-- THRESHOLD q=2
+  a= 0.347 lam_a=+1.40e-03 n= 6 mingap= 8.26 z1..4=[np.float64(12.57), np.float64(20.83), np.float64(29.48), np.float64(38.31)] <-- THRESHOLD q=2
+  a= 0.352 lam_a=+1.22e-03 n= 6 mingap= 8.11 z1..4=[np.float64(12.48), np.float64(20.59), np.float64(29.08), np.float64(37.76)] <-- THRESHOLD q=2
+  a= 0.357 lam_a=+1.03e-03 n= 6 mingap= 7.91 z1..4=[np.float64(12.35), np.float64(20.26), np.float64(28.54), np.float64(37.01)]
+  a= 0.360 lam_a=+9.14e-04 n= 6 mingap= 7.75 z1..4=[np.float64(12.25), np.float64(20.0), np.float64(28.12), np.float64(36.45)]
+  a= 0.380 lam_a=+4.45e-04 n= 6 mingap= 6.72 z1..4=[np.float64(11.56), np.float64(18.27), np.float64(25.78), np.float64(33.84)]
+  a= 0.400 lam_a=+2.02e-04 n= 7 mingap= 6.03 z1..4=[np.float64(10.63), np.float64(16.66), np.float64(24.28), np.float64(32.44)]
+  a= 0.420 lam_a=+8.49e-05 n= 7 mingap= 6.00 z1..4=[np.float64(9.6), np.float64(15.6), np.float64(23.42), np.float64(31.48)]
+  a= 0.440 lam_a=+3.33e-05 n= 7 mingap= 6.31 z1..4=[np.float64(8.65), np.float64(14.96), np.float64(22.83), np.float64(30.53)]
+  a= 0.460 lam_a=+1.28e-05 n= 8 mingap= 5.88 z1..4=[np.float64(7.87), np.float64(14.55), np.float64(22.32), np.float64(29.35)]
+  a= 0.480 lam_a=+5.71e-06 n= 8 mingap= 5.68 z1..4=[np.float64(7.28), np.float64(14.28), np.float64(21.81), np.float64(27.91)]
+  a= 0.500 lam_a=+3.57e-06 n= 8 mingap= 5.24 z1..4=[np.float64(6.86), np.float64(14.08), np.float64(21.27), np.float64(26.51)]
+  a= 0.520 lam_a=+3.12e-06 n= 9 mingap= 4.69 z1..4=[np.float64(6.57), np.float64(13.93), np.float64(20.69), np.float64(25.38)]
+  a= 0.539 lam_a=+2.93e-06 n= 9 mingap= 4.46 z1..4=[np.float64(6.39), np.float64(13.83), np.float64(20.13), np.float64(24.59)]
+  a= 0.540 lam_a=+2.91e-06 n= 9 mingap= 4.45 z1..4=[np.float64(6.38), np.float64(13.82), np.float64(20.11), np.float64(24.56)]
+  a= 0.544 lam_a=+2.89e-06 n= 9 mingap= 4.43 z1..4=[np.float64(6.35), np.float64(13.8), np.float64(19.99), np.float64(24.42)] <-- THRESHOLD q=3
+  a= 0.549 lam_a=+2.95e-06 n= 9 mingap= 4.41 z1..4=[np.float64(6.32), np.float64(13.78), np.float64(19.87), np.float64(24.28)] <-- THRESHOLD q=3
+  a= 0.554 lam_a=+2.91e-06 n= 9 mingap= 4.40 z1..4=[np.float64(6.3), np.float64(13.76), np.float64(19.74), np.float64(24.14)] <-- THRESHOLD q=3
+  a= 0.559 lam_a=+2.95e-06 n=10 mingap= 4.39 z1..4=[np.float64(6.27), np.float64(13.74), np.float64(19.56), np.float64(23.96)]
+  a= 0.560 lam_a=+2.97e-06 n=10 mingap= 4.39 z1..4=[np.float64(6.26), np.float64(13.74), np.float64(19.53), np.float64(23.93)]
+  a= 0.580 lam_a=+3.12e-06 n=10 mingap= 4.52 z1..4=[np.float64(6.08), np.float64(13.54), np.float64(18.06), np.float64(22.76)]
+  a= 0.600 lam_a=+3.11e-06 n=10 mingap= 2.91 z1..4=[np.float64(5.86), np.float64(13.06), np.float64(15.97), np.float64(21.79)]
+  a= 0.620 lam_a=+3.07e-06 n=11 mingap= 2.78 z1..4=[np.float64(5.59), np.float64(12.03), np.float64(14.81), np.float64(21.32)]
+  a= 0.640 lam_a=+2.61e-06 n=11 mingap= 3.46 z1..4=[np.float64(5.31), np.float64(10.98), np.float64(14.44), np.float64(21.05)]
+  a= 0.660 lam_a=+2.19e-06 n=11 mingap= 3.76 z1..4=[np.float64(5.06), np.float64(10.25), np.float64(14.29), np.float64(20.86)]
+  a= 0.680 lam_a=+2.09e-06 n=12 mingap= 3.07 z1..4=[np.float64(4.89), np.float64(9.83), np.float64(14.22), np.float64(20.72)]
+  a= 0.683 lam_a=+2.10e-06 n=12 mingap= 3.07 z1..4=[np.float64(4.87), np.float64(9.78), np.float64(14.22), np.float64(20.7)]
+  a= 0.688 lam_a=+2.09e-06 n=12 mingap= 3.11 z1..4=[np.float64(4.84), np.float64(9.72), np.float64(14.2), np.float64(20.67)] <-- THRESHOLD q=4
+  a= 0.693 lam_a=+2.24e-06 n=12 mingap= 3.20 z1..4=[np.float64(4.81), np.float64(9.67), np.float64(14.2), np.float64(20.64)] <-- THRESHOLD q=4
+  a= 0.698 lam_a=+2.21e-06 n=12 mingap= 3.34 z1..4=[np.float64(4.79), np.float64(9.62), np.float64(14.19), np.float64(20.61)] <-- THRESHOLD q=4
+  a= 0.700 lam_a=+2.15e-06 n=12 mingap= 3.40 z1..4=[np.float64(4.78), np.float64(9.6), np.float64(14.18), np.float64(20.6)]
+  a= 0.703 lam_a=+2.18e-06 n=12 mingap= 3.54 z1..4=[np.float64(4.76), np.float64(9.57), np.float64(14.18), np.float64(20.57)]
+  a= 0.720 lam_a=+2.21e-06 n=13 mingap= 3.20 z1..4=[np.float64(4.66), np.float64(9.35), np.float64(14.14), np.float64(20.32)]
+  a= 0.740 lam_a=+2.17e-06 n=13 mingap= 2.53 z1..4=[np.float64(4.52), np.float64(9.08), np.float64(14.08), np.float64(19.25)]
+  a= 0.760 lam_a=+2.09e-06 n=13 mingap= 3.04 z1..4=[np.float64(4.38), np.float64(8.79), np.float64(13.97), np.float64(17.23)]
+  a= 0.780 lam_a=+1.88e-06 n=14 mingap= 2.04 z1..4=[np.float64(4.24), np.float64(8.54), np.float64(13.79), np.float64(15.84)]
+  a= 0.795 lam_a=+1.90e-06 n=14 mingap= 1.68 z1..4=[np.float64(4.17), np.float64(8.4), np.float64(13.63), np.float64(15.31)]
+  a= 0.800 lam_a=+1.94e-06 n=14 mingap= 1.63 z1..4=[np.float64(4.15), np.float64(8.36), np.float64(13.57), np.float64(15.2)] <-- THRESHOLD q=5
+  a= 0.800 lam_a=+1.91e-06 n=14 mingap= 1.62 z1..4=[np.float64(4.15), np.float64(8.36), np.float64(13.57), np.float64(15.19)] <-- THRESHOLD q=5
+  a= 0.805 lam_a=+1.92e-06 n=14 mingap= 1.59 z1..4=[np.float64(4.14), np.float64(8.33), np.float64(13.52), np.float64(15.11)] <-- THRESHOLD q=5
+  a= 0.810 lam_a=+2.02e-06 n=14 mingap= 1.57 z1..4=[np.float64(4.12), np.float64(8.31), np.float64(13.48), np.float64(15.05)] <-- THRESHOLD q=5
+  a= 0.815 lam_a=+1.91e-06 n=14 mingap= 1.55 z1..4=[np.float64(4.11), np.float64(8.28), np.float64(13.43), np.float64(14.98)]
+  a= 0.820 lam_a=+1.95e-06 n=14 mingap= 1.54 z1..4=[np.float64(4.09), np.float64(8.25), np.float64(13.36), np.float64(14.9)]
+  a= 0.840 lam_a=+2.00e-06 n=14 mingap= 1.74 z1..4=[np.float64(3.98), np.float64(8.03), np.float64(12.81), np.float64(14.55)]
+  a= 0.860 lam_a=+1.83e-06 n=14 mingap= 1.64 z1..4=[np.float64(3.85), np.float64(7.75), np.float64(11.99), np.float64(14.33)]
+  a= 0.880 lam_a=+1.70e-06 n=14 mingap= 2.34 z1..4=[np.float64(3.71), np.float64(7.45), np.float64(11.28), np.float64(14.22)]
+  a= 0.900 lam_a=+1.76e-06 n=14 mingap= 2.30 z1..4=[np.float64(3.62), np.float64(7.25), np.float64(10.91), np.float64(14.18)]
+  a= 0.920 lam_a=+1.85e-06 n=14 mingap= 2.45 z1..4=[np.float64(3.54), np.float64(7.09), np.float64(10.65), np.float64(14.14)]
+  a= 0.940 lam_a=+1.76e-06 n=14 mingap= 2.39 z1..4=[np.float64(3.46), np.float64(6.92), np.float64(10.39), np.float64(14.11)]
+  a= 0.960 lam_a=+1.74e-06 n=14 mingap= 1.24 z1..4=[np.float64(3.38), np.float64(6.77), np.float64(10.18), np.float64(14.07)]
+  a= 0.963 lam_a=+1.74e-06 n=14 mingap= 1.27 z1..4=[np.float64(3.37), np.float64(6.75), np.float64(10.16), np.float64(14.06)]
+  a= 0.968 lam_a=+1.84e-06 n=14 mingap= 1.43 z1..4=[np.float64(3.36), np.float64(6.73), np.float64(10.13), np.float64(14.05)] <-- THRESHOLD q=7
+  a= 0.973 lam_a=+1.85e-06 n=14 mingap= 1.63 z1..4=[np.float64(3.35), np.float64(6.71), np.float64(10.1), np.float64(14.05)] <-- THRESHOLD q=7
+  a= 0.978 lam_a=+1.67e-06 n=14 mingap= 1.82 z1..4=[np.float64(3.34), np.float64(6.69), np.float64(10.08), np.float64(14.04)] <-- THRESHOLD q=7
+  a= 0.980 lam_a=+1.82e-06 n=14 mingap= 1.90 z1..4=[np.float64(3.34), np.float64(6.68), np.float64(10.07), np.float64(14.04)]
+  a= 0.983 lam_a=+1.70e-06 n=14 mingap= 2.03 z1..4=[np.float64(3.33), np.float64(6.67), np.float64(10.05), np.float64(14.04)]
+  a= 1.000 lam_a=+1.62e-06 n=14 mingap= 1.35 z1..4=[np.float64(3.29), np.float64(6.58), np.float64(9.93), np.float64(13.99)]
+
+##### theta = 1.571 #####
+  a= 0.300 lam_a=+8.11e-03 n= 6 mingap= 9.89 z1..4=[np.float64(0.97), np.float64(14.23), np.float64(24.12), np.float64(34.31)]
+  a= 0.320 lam_a=+3.78e-03 n= 6 mingap= 9.26 z1..4=[np.float64(0.96), np.float64(13.73), np.float64(22.99), np.float64(32.53)]
+  a= 0.337 lam_a=+1.95e-03 n= 6 mingap= 8.82 z1..4=[np.float64(0.95), np.float64(13.39), np.float64(22.21), np.float64(31.28)]
+  a= 0.340 lam_a=+1.73e-03 n= 6 mingap= 8.74 z1..4=[np.float64(0.95), np.float64(13.33), np.float64(22.07), np.float64(31.05)]
+  a= 0.342 lam_a=+1.63e-03 n= 6 mingap= 8.70 z1..4=[np.float64(0.95), np.float64(13.31), np.float64(22.0), np.float64(30.94)] <-- THRESHOLD q=2
+  a= 0.347 lam_a=+1.40e-03 n= 7 mingap= 8.59 z1..4=[np.float64(0.95), np.float64(13.22), np.float64(21.81), np.float64(30.62)] <-- THRESHOLD q=2
+  a= 0.352 lam_a=+1.22e-03 n= 7 mingap= 8.47 z1..4=[np.float64(0.94), np.float64(13.14), np.float64(21.61), np.float64(30.3)] <-- THRESHOLD q=2
+  a= 0.357 lam_a=+1.03e-03 n= 7 mingap= 8.33 z1..4=[np.float64(0.94), np.float64(13.05), np.float64(21.38), np.float64(29.89)]
+  a= 0.360 lam_a=+9.14e-04 n= 7 mingap= 8.22 z1..4=[np.float64(0.94), np.float64(12.98), np.float64(21.2), np.float64(29.57)]
+  a= 0.380 lam_a=+4.45e-04 n= 7 mingap= 7.34 z1..4=[np.float64(0.93), np.float64(12.51), np.float64(19.85), np.float64(27.24)]
+  a= 0.400 lam_a=+2.02e-04 n= 8 mingap= 6.20 z1..4=[np.float64(0.92), np.float64(11.86), np.float64(18.06), np.float64(25.1)]
+  a= 0.420 lam_a=+8.49e-05 n= 8 mingap= 5.51 z1..4=[np.float64(0.92), np.float64(10.99), np.float64(16.5), np.float64(23.89)]
+  a= 0.440 lam_a=+3.33e-05 n= 8 mingap= 5.49 z1..4=[np.float64(0.91), np.float64(10.02), np.float64(15.51), np.float64(23.15)]
+  a= 0.460 lam_a=+1.28e-05 n= 9 mingap= 5.79 z1..4=[np.float64(0.91), np.float64(9.12), np.float64(14.91), np.float64(22.62)]
+  a= 0.480 lam_a=+5.71e-06 n= 9 mingap= 5.55 z1..4=[np.float64(0.91), np.float64(8.4), np.float64(14.55), np.float64(22.14)]
+  a= 0.500 lam_a=+3.57e-06 n= 9 mingap= 5.62 z1..4=[np.float64(0.9), np.float64(7.87), np.float64(14.31), np.float64(21.69)]
+  a= 0.520 lam_a=+3.12e-06 n=10 mingap= 5.01 z1..4=[np.float64(0.89), np.float64(7.49), np.float64(14.15), np.float64(21.25)]
+  a= 0.539 lam_a=+2.93e-06 n=10 mingap= 4.62 z1..4=[np.float64(0.88), np.float64(7.24), np.float64(14.04), np.float64(20.85)]
+  a= 0.540 lam_a=+2.91e-06 n=10 mingap= 4.60 z1..4=[np.float64(0.88), np.float64(7.23), np.float64(14.04), np.float64(20.84)]
+  a= 0.544 lam_a=+2.89e-06 n=10 mingap= 4.55 z1..4=[np.float64(0.87), np.float64(7.18), np.float64(14.02), np.float64(20.76)] <-- THRESHOLD q=3
+  a= 0.549 lam_a=+2.95e-06 n=10 mingap= 4.49 z1..4=[np.float64(0.87), np.float64(7.13), np.float64(14.0), np.float64(20.66)] <-- THRESHOLD q=3
+  a= 0.554 lam_a=+2.91e-06 n=10 mingap= 4.44 z1..4=[np.float64(0.86), np.float64(7.08), np.float64(13.98), np.float64(20.57)] <-- THRESHOLD q=3
+  a= 0.559 lam_a=+2.95e-06 n=10 mingap= 4.39 z1..4=[np.float64(0.85), np.float64(7.04), np.float64(13.96), np.float64(20.47)]
+  a= 0.560 lam_a=+2.97e-06 n=10 mingap= 4.39 z1..4=[np.float64(0.85), np.float64(7.03), np.float64(13.95), np.float64(20.46)]
+  a= 0.580 lam_a=+3.12e-06 n=11 mingap= 4.18 z1..4=[np.float64(0.84), np.float64(6.85), np.float64(13.86), np.float64(19.89)]
+  a= 0.600 lam_a=+3.11e-06 n=11 mingap= 4.20 z1..4=[np.float64(0.83), np.float64(6.65), np.float64(13.71), np.float64(18.56)]
+  a= 0.620 lam_a=+3.07e-06 n=12 mingap= 2.99 z1..4=[np.float64(0.83), np.float64(6.43), np.float64(13.37), np.float64(16.36)]
+  a= 0.640 lam_a=+2.61e-06 n=12 mingap= 2.39 z1..4=[np.float64(0.83), np.float64(6.19), np.float64(12.58), np.float64(14.97)]
+  a= 0.660 lam_a=+2.19e-06 n=12 mingap= 2.90 z1..4=[np.float64(0.82), np.float64(5.95), np.float64(11.61), np.float64(14.51)]
+  a= 0.680 lam_a=+2.09e-06 n=13 mingap= 3.42 z1..4=[np.float64(0.81), np.float64(5.75), np.float64(10.94), np.float64(14.36)]
+  a= 0.683 lam_a=+2.10e-06 n=13 mingap= 3.32 z1..4=[np.float64(0.81), np.float64(5.72), np.float64(10.86), np.float64(14.34)]
+  a= 0.688 lam_a=+2.09e-06 n=13 mingap= 3.17 z1..4=[np.float64(0.81), np.float64(5.68), np.float64(10.74), np.float64(14.32)] <-- THRESHOLD q=4
+  a= 0.693 lam_a=+2.24e-06 n=13 mingap= 3.07 z1..4=[np.float64(0.81), np.float64(5.64), np.float64(10.64), np.float64(14.3)] <-- THRESHOLD q=4
+  a= 0.698 lam_a=+2.21e-06 n=13 mingap= 3.00 z1..4=[np.float64(0.8), np.float64(5.6), np.float64(10.54), np.float64(14.29)] <-- THRESHOLD q=4
+  a= 0.700 lam_a=+2.15e-06 n=13 mingap= 2.99 z1..4=[np.float64(0.8), np.float64(5.59), np.float64(10.51), np.float64(14.28)]
+  a= 0.703 lam_a=+2.18e-06 n=13 mingap= 2.98 z1..4=[np.float64(0.8), np.float64(5.57), np.float64(10.45), np.float64(14.28)]
+  a= 0.720 lam_a=+2.21e-06 n=13 mingap= 3.28 z1..4=[np.float64(0.79), np.float64(5.44), np.float64(10.17), np.float64(14.23)]
+  a= 0.740 lam_a=+2.17e-06 n=14 mingap= 3.02 z1..4=[np.float64(0.78), np.float64(5.3), np.float64(9.87), np.float64(14.19)]
+  a= 0.760 lam_a=+2.09e-06 n=14 mingap= 2.27 z1..4=[np.float64(0.77), np.float64(5.15), np.float64(9.57), np.float64(14.13)]
+  a= 0.780 lam_a=+1.88e-06 n=14 mingap= 2.93 z1..4=[np.float64(0.77), np.float64(5.02), np.float64(9.3), np.float64(14.06)]
+  a= 0.795 lam_a=+1.90e-06 n=14 mingap= 2.78 z1..4=[np.float64(0.76), np.float64(4.93), np.float64(9.12), np.float64(14.0)]
+  a= 0.800 lam_a=+1.94e-06 n=14 mingap= 2.74 z1..4=[np.float64(0.75), np.float64(4.9), np.float64(9.07), np.float64(13.97)] <-- THRESHOLD q=5
+  a= 0.800 lam_a=+1.91e-06 n=14 mingap= 2.74 z1..4=[np.float64(0.75), np.float64(4.89), np.float64(9.07), np.float64(13.97)] <-- THRESHOLD q=5
+  a= 0.805 lam_a=+1.92e-06 n=14 mingap= 2.58 z1..4=[np.float64(0.75), np.float64(4.87), np.float64(9.02), np.float64(13.95)] <-- THRESHOLD q=5
+  a= 0.810 lam_a=+2.02e-06 n=14 mingap= 2.40 z1..4=[np.float64(0.74), np.float64(4.84), np.float64(8.97), np.float64(13.92)] <-- THRESHOLD q=5
+  a= 0.815 lam_a=+1.91e-06 n=14 mingap= 2.24 z1..4=[np.float64(0.74), np.float64(4.81), np.float64(8.92), np.float64(13.9)]
+  a= 0.820 lam_a=+1.95e-06 n=14 mingap= 2.11 z1..4=[np.float64(0.73), np.float64(4.78), np.float64(8.88), np.float64(13.87)]
+  a= 0.840 lam_a=+2.00e-06 n=14 mingap= 1.67 z1..4=[np.float64(0.72), np.float64(4.68), np.float64(8.71), np.float64(13.71)]
+  a= 0.860 lam_a=+1.83e-06 n=14 mingap= 1.45 z1..4=[np.float64(0.72), np.float64(4.58), np.float64(8.5), np.float64(13.35)]
+  a= 0.880 lam_a=+1.70e-06 n=14 mingap= 1.54 z1..4=[np.float64(0.72), np.float64(4.46), np.float64(8.26), np.float64(12.64)]
+  a= 0.900 lam_a=+1.76e-06 n=14 mingap= 2.00 z1..4=[np.float64(0.71), np.float64(4.36), np.float64(8.04), np.float64(12.02)]
+  a= 0.920 lam_a=+1.85e-06 n=14 mingap= 2.51 z1..4=[np.float64(0.7), np.float64(4.26), np.float64(7.85), np.float64(11.56)]
+  a= 0.940 lam_a=+1.76e-06 n=14 mingap= 2.38 z1..4=[np.float64(0.7), np.float64(4.17), np.float64(7.65), np.float64(11.18)]
+  a= 0.960 lam_a=+1.74e-06 n=14 mingap= 2.16 z1..4=[np.float64(0.69), np.float64(4.08), np.float64(7.47), np.float64(10.87)]
+  a= 0.963 lam_a=+1.74e-06 n=14 mingap= 2.43 z1..4=[np.float64(0.69), np.float64(4.07), np.float64(7.45), np.float64(10.83)]
+  a= 0.968 lam_a=+1.84e-06 n=14 mingap= 2.52 z1..4=[np.float64(0.68), np.float64(4.05), np.float64(7.41), np.float64(10.77)] <-- THRESHOLD q=7
+  a= 0.973 lam_a=+1.85e-06 n=14 mingap= 2.18 z1..4=[np.float64(0.68), np.float64(4.02), np.float64(7.37), np.float64(10.71)] <-- THRESHOLD q=7
+  a= 0.978 lam_a=+1.67e-06 n=14 mingap= 1.75 z1..4=[np.float64(0.67), np.float64(4.0), np.float64(7.33), np.float64(10.65)] <-- THRESHOLD q=7
+  a= 0.980 lam_a=+1.82e-06 n=14 mingap= 1.61 z1..4=[np.float64(0.67), np.float64(3.99), np.float64(7.31), np.float64(10.63)]
+  a= 0.983 lam_a=+1.70e-06 n=14 mingap= 1.44 z1..4=[np.float64(0.67), np.float64(3.98), np.float64(7.29), np.float64(10.6)]
+  a= 1.000 lam_a=+1.62e-06 n=14 mingap= 1.25 z1..4=[np.float64(0.66), np.float64(3.92), np.float64(7.18), np.float64(10.47)]
+
+##### theta = 3.142 #####
+  a= 0.300 lam_a=+8.11e-03 n= 5 mingap= 9.98 z1..4=[np.float64(7.61), np.float64(17.59), np.float64(27.87), np.float64(38.26)]
+  a= 0.320 lam_a=+3.78e-03 n= 6 mingap= 9.68 z1..4=[np.float64(6.69), np.float64(16.42), np.float64(26.09), np.float64(35.85)]
+  a= 0.337 lam_a=+1.95e-03 n= 6 mingap= 9.22 z1..4=[np.float64(5.95), np.float64(15.56), np.float64(24.79), np.float64(34.07)]
+  a= 0.340 lam_a=+1.73e-03 n= 6 mingap= 9.14 z1..4=[np.float64(5.8), np.float64(15.4), np.float64(24.54), np.float64(33.73)]
+  a= 0.342 lam_a=+1.63e-03 n= 6 mingap= 9.09 z1..4=[np.float64(5.74), np.float64(15.33), np.float64(24.42), np.float64(33.57)] <-- THRESHOLD q=2
+  a= 0.347 lam_a=+1.40e-03 n= 6 mingap= 8.97 z1..4=[np.float64(5.52), np.float64(15.1), np.float64(24.07), np.float64(33.08)] <-- THRESHOLD q=2
+  a= 0.352 lam_a=+1.22e-03 n= 6 mingap= 8.86 z1..4=[np.float64(5.32), np.float64(14.9), np.float64(23.76), np.float64(32.66)] <-- THRESHOLD q=2
+  a= 0.357 lam_a=+1.03e-03 n= 6 mingap= 8.78 z1..4=[np.float64(5.18), np.float64(14.76), np.float64(23.54), np.float64(32.36)]
+  a= 0.360 lam_a=+9.14e-04 n= 6 mingap= 8.73 z1..4=[np.float64(5.1), np.float64(14.68), np.float64(23.41), np.float64(32.17)]
+  a= 0.380 lam_a=+4.45e-04 n= 7 mingap= 8.03 z1..4=[np.float64(4.7), np.float64(14.28), np.float64(22.74), np.float64(31.16)]
+  a= 0.400 lam_a=+2.02e-04 n= 7 mingap= 7.16 z1..4=[np.float64(4.42), np.float64(13.99), np.float64(22.15), np.float64(30.0)]
+  a= 0.420 lam_a=+8.49e-05 n= 8 mingap= 6.51 z1..4=[np.float64(4.21), np.float64(13.75), np.float64(21.47), np.float64(28.35)]
+  a= 0.440 lam_a=+3.33e-05 n= 8 mingap= 5.83 z1..4=[np.float64(4.05), np.float64(13.51), np.float64(20.57), np.float64(26.41)]
+  a= 0.460 lam_a=+1.28e-05 n= 8 mingap= 5.47 z1..4=[np.float64(3.91), np.float64(13.24), np.float64(19.36), np.float64(24.83)]
+  a= 0.480 lam_a=+5.71e-06 n= 9 mingap= 5.04 z1..4=[np.float64(3.78), np.float64(12.89), np.float64(17.93), np.float64(23.77)]
+  a= 0.500 lam_a=+3.57e-06 n= 9 mingap= 4.18 z1..4=[np.float64(3.64), np.float64(12.36), np.float64(16.54), np.float64(23.03)]
+  a= 0.520 lam_a=+3.12e-06 n= 9 mingap= 3.91 z1..4=[np.float64(3.49), np.float64(11.52), np.float64(15.44), np.float64(22.42)]
+  a= 0.539 lam_a=+2.93e-06 n=10 mingap= 4.34 z1..4=[np.float64(3.29), np.float64(10.41), np.float64(14.74), np.float64(21.85)]
+  a= 0.540 lam_a=+2.91e-06 n=10 mingap= 4.36 z1..4=[np.float64(3.28), np.float64(10.36), np.float64(14.72), np.float64(21.83)]
+  a= 0.544 lam_a=+2.89e-06 n=10 mingap= 4.53 z1..4=[np.float64(3.23), np.float64(10.08), np.float64(14.61), np.float64(21.69)] <-- THRESHOLD q=3
+  a= 0.549 lam_a=+2.95e-06 n=10 mingap= 4.75 z1..4=[np.float64(3.16), np.float64(9.75), np.float64(14.49), np.float64(21.53)] <-- THRESHOLD q=3
+  a= 0.554 lam_a=+2.91e-06 n=10 mingap= 4.79 z1..4=[np.float64(3.09), np.float64(9.44), np.float64(14.4), np.float64(21.38)] <-- THRESHOLD q=3
+  a= 0.559 lam_a=+2.95e-06 n=10 mingap= 4.68 z1..4=[np.float64(3.04), np.float64(9.22), np.float64(14.34), np.float64(21.27)]
+  a= 0.560 lam_a=+2.97e-06 n=10 mingap= 4.67 z1..4=[np.float64(3.03), np.float64(9.19), np.float64(14.33), np.float64(21.26)]
+  a= 0.580 lam_a=+3.12e-06 n=10 mingap= 4.45 z1..4=[np.float64(2.89), np.float64(8.68), np.float64(14.2), np.float64(20.97)]
+  a= 0.600 lam_a=+3.11e-06 n=11 mingap= 4.29 z1..4=[np.float64(2.78), np.float64(8.37), np.float64(14.12), np.float64(20.74)]
+  a= 0.620 lam_a=+3.07e-06 n=11 mingap= 3.67 z1..4=[np.float64(2.71), np.float64(8.16), np.float64(14.06), np.float64(20.48)]
+  a= 0.640 lam_a=+2.61e-06 n=12 mingap= 3.69 z1..4=[np.float64(2.64), np.float64(7.98), np.float64(14.01), np.float64(20.08)]
+  a= 0.660 lam_a=+2.19e-06 n=12 mingap= 3.33 z1..4=[np.float64(2.58), np.float64(7.8), np.float64(13.93), np.float64(19.14)]
+  a= 0.680 lam_a=+2.09e-06 n=12 mingap= 3.36 z1..4=[np.float64(2.51), np.float64(7.59), np.float64(13.78), np.float64(17.13)]
+  a= 0.683 lam_a=+2.10e-06 n=12 mingap= 3.04 z1..4=[np.float64(2.49), np.float64(7.55), np.float64(13.73), np.float64(16.77)]
+  a= 0.688 lam_a=+2.09e-06 n=12 mingap= 2.56 z1..4=[np.float64(2.47), np.float64(7.47), np.float64(13.63), np.float64(16.19)] <-- THRESHOLD q=4
+  a= 0.693 lam_a=+2.24e-06 n=12 mingap= 2.17 z1..4=[np.float64(2.44), np.float64(7.39), np.float64(13.49), np.float64(15.65)] <-- THRESHOLD q=4
+  a= 0.698 lam_a=+2.21e-06 n=13 mingap= 1.95 z1..4=[np.float64(2.41), np.float64(7.3), np.float64(13.28), np.float64(15.23)] <-- THRESHOLD q=4
+  a= 0.700 lam_a=+2.15e-06 n=13 mingap= 1.91 z1..4=[np.float64(2.4), np.float64(7.27), np.float64(13.19), np.float64(15.1)]
+  a= 0.703 lam_a=+2.18e-06 n=13 mingap= 1.90 z1..4=[np.float64(2.39), np.float64(7.22), np.float64(13.05), np.float64(14.95)]
+  a= 0.720 lam_a=+2.21e-06 n=13 mingap= 2.18 z1..4=[np.float64(2.32), np.float64(7.01), np.float64(12.4), np.float64(14.58)]
+  a= 0.740 lam_a=+2.17e-06 n=13 mingap= 2.62 z1..4=[np.float64(2.26), np.float64(6.81), np.float64(11.8), np.float64(14.42)]
+  a= 0.760 lam_a=+2.09e-06 n=14 mingap= 2.97 z1..4=[np.float64(2.2), np.float64(6.64), np.float64(11.37), np.float64(14.34)]
+  a= 0.780 lam_a=+1.88e-06 n=14 mingap= 2.74 z1..4=[np.float64(2.15), np.float64(6.47), np.float64(10.97), np.float64(14.28)]
+  a= 0.795 lam_a=+1.90e-06 n=14 mingap= 2.39 z1..4=[np.float64(2.1), np.float64(6.32), np.float64(10.65), np.float64(14.23)]
+  a= 0.800 lam_a=+1.94e-06 n=14 mingap= 2.04 z1..4=[np.float64(2.08), np.float64(6.26), np.float64(10.51), np.float64(14.21)] <-- THRESHOLD q=5
+  a= 0.800 lam_a=+1.91e-06 n=14 mingap= 2.03 z1..4=[np.float64(2.08), np.float64(6.26), np.float64(10.5), np.float64(14.21)] <-- THRESHOLD q=5
+  a= 0.805 lam_a=+1.92e-06 n=14 mingap= 1.99 z1..4=[np.float64(2.06), np.float64(6.18), np.float64(10.36), np.float64(14.19)] <-- THRESHOLD q=5
+  a= 0.810 lam_a=+2.02e-06 n=14 mingap= 2.30 z1..4=[np.float64(2.03), np.float64(6.1), np.float64(10.2), np.float64(14.16)] <-- THRESHOLD q=5
+  a= 0.815 lam_a=+1.91e-06 n=14 mingap= 2.68 z1..4=[np.float64(2.01), np.float64(6.02), np.float64(10.06), np.float64(14.14)]
+  a= 0.820 lam_a=+1.95e-06 n=14 mingap= 2.72 z1..4=[np.float64(1.99), np.float64(5.96), np.float64(9.96), np.float64(14.12)]
+  a= 0.840 lam_a=+2.00e-06 n=14 mingap= 2.66 z1..4=[np.float64(1.94), np.float64(5.82), np.float64(9.72), np.float64(14.07)]
+  a= 0.860 lam_a=+1.83e-06 n=14 mingap= 2.40 z1..4=[np.float64(1.9), np.float64(5.72), np.float64(9.57), np.float64(14.02)]
+  a= 0.880 lam_a=+1.70e-06 n=14 mingap= 2.39 z1..4=[np.float64(1.87), np.float64(5.63), np.float64(9.43), np.float64(13.98)]
+  a= 0.900 lam_a=+1.76e-06 n=14 mingap= 1.55 z1..4=[np.float64(1.83), np.float64(5.51), np.float64(9.25), np.float64(13.87)]
+  a= 0.920 lam_a=+1.85e-06 n=14 mingap= 1.31 z1..4=[np.float64(1.79), np.float64(5.38), np.float64(9.04), np.float64(13.59)]
+  a= 0.940 lam_a=+1.76e-06 n=14 mingap= 1.37 z1..4=[np.float64(1.75), np.float64(5.27), np.float64(8.85), np.float64(13.15)]
+  a= 0.960 lam_a=+1.74e-06 n=14 mingap= 1.76 z1..4=[np.float64(1.72), np.float64(5.16), np.float64(8.65), np.float64(12.59)]
+  a= 0.963 lam_a=+1.74e-06 n=14 mingap= 1.84 z1..4=[np.float64(1.71), np.float64(5.14), np.float64(8.61), np.float64(12.48)]
+  a= 0.968 lam_a=+1.84e-06 n=14 mingap= 1.99 z1..4=[np.float64(1.7), np.float64(5.1), np.float64(8.54), np.float64(12.29)] <-- THRESHOLD q=7
+  a= 0.973 lam_a=+1.85e-06 n=14 mingap= 1.93 z1..4=[np.float64(1.68), np.float64(5.05), np.float64(8.46), np.float64(12.08)] <-- THRESHOLD q=7
+  a= 0.978 lam_a=+1.67e-06 n=14 mingap= 1.73 z1..4=[np.float64(1.66), np.float64(5.0), np.float64(8.36), np.float64(11.86)] <-- THRESHOLD q=7
+  a= 0.980 lam_a=+1.82e-06 n=14 mingap= 1.83 z1..4=[np.float64(1.66), np.float64(4.98), np.float64(8.32), np.float64(11.78)]
+  a= 0.983 lam_a=+1.70e-06 n=14 mingap= 2.09 z1..4=[np.float64(1.65), np.float64(4.95), np.float64(8.26), np.float64(11.67)]
+  a= 1.000 lam_a=+1.62e-06 n=14 mingap= 2.28 z1..4=[np.float64(1.61), np.float64(4.84), np.float64(8.07), np.float64(11.33)]
+
+##### theta = 4.712 #####
+  a= 0.300 lam_a=+8.11e-03 n= 5 mingap= 9.56 z1..4=[np.float64(13.14), np.float64(22.7), np.float64(32.78), np.float64(43.06)]
+  a= 0.320 lam_a=+3.78e-03 n= 5 mingap= 8.80 z1..4=[np.float64(12.46), np.float64(21.26), np.float64(30.63), np.float64(40.22)]
+  a= 0.337 lam_a=+1.95e-03 n= 6 mingap= 8.19 z1..4=[np.float64(11.95), np.float64(20.13), np.float64(28.97), np.float64(38.05)]
+  a= 0.340 lam_a=+1.73e-03 n= 6 mingap= 8.06 z1..4=[np.float64(11.84), np.float64(19.91), np.float64(28.64), np.float64(37.62)]
+  a= 0.342 lam_a=+1.63e-03 n= 6 mingap= 8.01 z1..4=[np.float64(11.8), np.float64(19.8), np.float64(28.48), np.float64(37.41)] <-- THRESHOLD q=2
+  a= 0.347 lam_a=+1.40e-03 n= 6 mingap= 7.82 z1..4=[np.float64(11.65), np.float64(19.47), np.float64(27.99), np.float64(36.78)] <-- THRESHOLD q=2
+  a= 0.352 lam_a=+1.22e-03 n= 6 mingap= 7.63 z1..4=[np.float64(11.49), np.float64(19.12), np.float64(27.48), np.float64(36.13)] <-- THRESHOLD q=2
+  a= 0.357 lam_a=+1.03e-03 n= 6 mingap= 7.39 z1..4=[np.float64(11.29), np.float64(18.69), np.float64(26.88), np.float64(35.4)]
+  a= 0.360 lam_a=+9.14e-04 n= 6 mingap= 7.24 z1..4=[np.float64(11.14), np.float64(18.38), np.float64(26.48), np.float64(34.93)]
+  a= 0.380 lam_a=+4.45e-04 n= 6 mingap= 6.60 z1..4=[np.float64(10.18), np.float64(16.78), np.float64(24.73), np.float64(33.06)]
+  a= 0.400 lam_a=+2.02e-04 n= 7 mingap= 6.55 z1..4=[np.float64(9.15), np.float64(15.7), np.float64(23.73), np.float64(31.99)]
+  a= 0.420 lam_a=+8.49e-05 n= 7 mingap= 6.82 z1..4=[np.float64(8.21), np.float64(15.03), np.float64(23.07), np.float64(31.09)]
+  a= 0.440 lam_a=+3.33e-05 n= 7 mingap= 6.48 z1..4=[np.float64(7.44), np.float64(14.6), np.float64(22.53), np.float64(30.06)]
+  a= 0.460 lam_a=+1.28e-05 n= 8 mingap= 5.82 z1..4=[np.float64(6.83), np.float64(14.29), np.float64(22.01), np.float64(28.7)]
+  a= 0.480 lam_a=+5.71e-06 n= 8 mingap= 5.67 z1..4=[np.float64(6.36), np.float64(14.06), np.float64(21.43), np.float64(27.1)]
+  a= 0.500 lam_a=+3.57e-06 n= 9 mingap= 4.92 z1..4=[np.float64(6.02), np.float64(13.87), np.float64(20.71), np.float64(25.62)]
+  a= 0.520 lam_a=+3.12e-06 n= 9 mingap= 4.64 z1..4=[np.float64(5.77), np.float64(13.69), np.float64(19.8), np.float64(24.44)]
+  a= 0.539 lam_a=+2.93e-06 n= 9 mingap= 4.83 z1..4=[np.float64(5.58), np.float64(13.5), np.float64(18.69), np.float64(23.52)]
+  a= 0.540 lam_a=+2.91e-06 n= 9 mingap= 4.84 z1..4=[np.float64(5.57), np.float64(13.5), np.float64(18.64), np.float64(23.48)]
+  a= 0.544 lam_a=+2.89e-06 n=10 mingap= 4.72 z1..4=[np.float64(5.54), np.float64(13.45), np.float64(18.34), np.float64(23.29)] <-- THRESHOLD q=3
+  a= 0.549 lam_a=+2.95e-06 n=10 mingap= 4.58 z1..4=[np.float64(5.5), np.float64(13.38), np.float64(17.97), np.float64(23.06)] <-- THRESHOLD q=3
+  a= 0.554 lam_a=+2.91e-06 n=10 mingap= 4.25 z1..4=[np.float64(5.46), np.float64(13.3), np.float64(17.55), np.float64(22.83)] <-- THRESHOLD q=3
+  a= 0.559 lam_a=+2.95e-06 n=10 mingap= 3.90 z1..4=[np.float64(5.41), np.float64(13.2), np.float64(17.1), np.float64(22.59)]
+  a= 0.560 lam_a=+2.97e-06 n=10 mingap= 3.85 z1..4=[np.float64(5.41), np.float64(13.19), np.float64(17.04), np.float64(22.56)]
+  a= 0.580 lam_a=+3.12e-06 n=10 mingap= 2.95 z1..4=[np.float64(5.2), np.float64(12.46), np.float64(15.42), np.float64(21.79)]
+  a= 0.600 lam_a=+3.11e-06 n=10 mingap= 3.28 z1..4=[np.float64(4.95), np.float64(11.4), np.float64(14.68), np.float64(21.36)]
+  a= 0.620 lam_a=+3.07e-06 n=11 mingap= 3.94 z1..4=[np.float64(4.7), np.float64(10.46), np.float64(14.4), np.float64(21.09)]
+  a= 0.640 lam_a=+2.61e-06 n=11 mingap= 4.07 z1..4=[np.float64(4.46), np.float64(9.79), np.float64(14.26), np.float64(20.88)]
+  a= 0.660 lam_a=+2.19e-06 n=11 mingap= 3.25 z1..4=[np.float64(4.25), np.float64(9.35), np.float64(14.19), np.float64(20.7)]
+  a= 0.680 lam_a=+2.09e-06 n=12 mingap= 3.56 z1..4=[np.float64(4.1), np.float64(9.05), np.float64(14.13), np.float64(20.48)]
+  a= 0.683 lam_a=+2.10e-06 n=12 mingap= 3.59 z1..4=[np.float64(4.08), np.float64(9.01), np.float64(14.12), np.float64(20.44)]
+  a= 0.688 lam_a=+2.09e-06 n=12 mingap= 3.56 z1..4=[np.float64(4.05), np.float64(8.95), np.float64(14.11), np.float64(20.36)] <-- THRESHOLD q=4
+  a= 0.693 lam_a=+2.24e-06 n=12 mingap= 3.37 z1..4=[np.float64(4.03), np.float64(8.9), np.float64(14.1), np.float64(20.25)] <-- THRESHOLD q=4
+  a= 0.698 lam_a=+2.21e-06 n=12 mingap= 3.15 z1..4=[np.float64(4.0), np.float64(8.84), np.float64(14.09), np.float64(20.12)] <-- THRESHOLD q=4
+  a= 0.700 lam_a=+2.15e-06 n=12 mingap= 3.06 z1..4=[np.float64(3.99), np.float64(8.82), np.float64(14.08), np.float64(20.05)]
+  a= 0.703 lam_a=+2.18e-06 n=12 mingap= 2.92 z1..4=[np.float64(3.97), np.float64(8.79), np.float64(14.07), np.float64(19.92)]
+  a= 0.720 lam_a=+2.21e-06 n=13 mingap= 3.09 z1..4=[np.float64(3.87), np.float64(8.57), np.float64(14.0), np.float64(18.47)]
+  a= 0.740 lam_a=+2.17e-06 n=13 mingap= 2.66 z1..4=[np.float64(3.74), np.float64(8.32), np.float64(13.85), np.float64(16.51)]
+  a= 0.760 lam_a=+2.09e-06 n=13 mingap= 1.73 z1..4=[np.float64(3.61), np.float64(8.06), np.float64(13.53), np.float64(15.26)]
+  a= 0.780 lam_a=+1.88e-06 n=14 mingap= 1.70 z1..4=[np.float64(3.5), np.float64(7.82), np.float64(13.03), np.float64(14.73)]
+  a= 0.795 lam_a=+1.90e-06 n=14 mingap= 1.90 z1..4=[np.float64(3.43), np.float64(7.68), np.float64(12.66), np.float64(14.55)]
+  a= 0.800 lam_a=+1.94e-06 n=14 mingap= 1.98 z1..4=[np.float64(3.41), np.float64(7.63), np.float64(12.53), np.float64(14.51)] <-- THRESHOLD q=5
+  a= 0.800 lam_a=+1.91e-06 n=14 mingap= 1.99 z1..4=[np.float64(3.41), np.float64(7.63), np.float64(12.53), np.float64(14.51)] <-- THRESHOLD q=5
+  a= 0.805 lam_a=+1.92e-06 n=14 mingap= 2.07 z1..4=[np.float64(3.39), np.float64(7.59), np.float64(12.4), np.float64(14.48)] <-- THRESHOLD q=5
+  a= 0.810 lam_a=+2.02e-06 n=14 mingap= 2.17 z1..4=[np.float64(3.37), np.float64(7.54), np.float64(12.27), np.float64(14.44)] <-- THRESHOLD q=5
+  a= 0.815 lam_a=+1.91e-06 n=14 mingap= 2.28 z1..4=[np.float64(3.35), np.float64(7.49), np.float64(12.12), np.float64(14.41)]
+  a= 0.820 lam_a=+1.95e-06 n=14 mingap= 2.24 z1..4=[np.float64(3.33), np.float64(7.44), np.float64(11.97), np.float64(14.38)]
+  a= 0.840 lam_a=+2.00e-06 n=14 mingap= 1.75 z1..4=[np.float64(3.23), np.float64(7.2), np.float64(11.34), np.float64(14.27)]
+  a= 0.860 lam_a=+1.83e-06 n=14 mingap= 2.46 z1..4=[np.float64(3.11), np.float64(6.94), np.float64(10.81), np.float64(14.19)]
+  a= 0.880 lam_a=+1.70e-06 n=14 mingap= 2.39 z1..4=[np.float64(3.0), np.float64(6.72), np.float64(10.43), np.float64(14.14)]
+  a= 0.900 lam_a=+1.76e-06 n=14 mingap= 2.49 z1..4=[np.float64(2.92), np.float64(6.56), np.float64(10.2), np.float64(14.1)]
+  a= 0.920 lam_a=+1.85e-06 n=14 mingap= 2.52 z1..4=[np.float64(2.85), np.float64(6.41), np.float64(10.0), np.float64(14.06)]
+  a= 0.940 lam_a=+1.76e-06 n=14 mingap= 1.46 z1..4=[np.float64(2.78), np.float64(6.27), np.float64(9.8), np.float64(14.01)]
+  a= 0.960 lam_a=+1.74e-06 n=14 mingap= 1.54 z1..4=[np.float64(2.71), np.float64(6.14), np.float64(9.62), np.float64(13.92)]
+  a= 0.963 lam_a=+1.74e-06 n=14 mingap= 1.42 z1..4=[np.float64(2.71), np.float64(6.12), np.float64(9.59), np.float64(13.9)]
+  a= 0.968 lam_a=+1.84e-06 n=14 mingap= 1.31 z1..4=[np.float64(2.69), np.float64(6.09), np.float64(9.55), np.float64(13.87)] <-- THRESHOLD q=7
+  a= 0.973 lam_a=+1.85e-06 n=14 mingap= 1.30 z1..4=[np.float64(2.68), np.float64(6.06), np.float64(9.51), np.float64(13.83)] <-- THRESHOLD q=7
+  a= 0.978 lam_a=+1.67e-06 n=14 mingap= 1.29 z1..4=[np.float64(2.67), np.float64(6.03), np.float64(9.46), np.float64(13.77)] <-- THRESHOLD q=7
+  a= 0.980 lam_a=+1.82e-06 n=14 mingap= 1.25 z1..4=[np.float64(2.66), np.float64(6.02), np.float64(9.44), np.float64(13.74)]
+  a= 0.983 lam_a=+1.70e-06 n=14 mingap= 1.20 z1..4=[np.float64(2.65), np.float64(6.0), np.float64(9.41), np.float64(13.69)]
+  a= 1.000 lam_a=+1.62e-06 n=14 mingap= 1.23 z1..4=[np.float64(2.61), np.float64(5.89), np.float64(9.23), np.float64(13.24)]
+
+-> results/suzuki_gap_flow.json
+
+SUMMARY theta=0: last-a gaps vs zeta gaps
+  final a=1.0: gaps [np.float64(3.3), np.float64(3.35), np.float64(4.06), np.float64(2.0), np.float64(4.63), np.float64(1.35), np.float64(3.15), np.float64(5.08), np.float64(2.54)]
+  zeta gaps:                [np.float64(6.89), np.float64(3.99), np.float64(5.41), np.float64(2.51), np.float64(4.65), np.float64(3.33), np.float64(2.41), np.float64(4.68), np.float64(1.77)]

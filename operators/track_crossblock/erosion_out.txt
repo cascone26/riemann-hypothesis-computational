@@ -1,0 +1,40 @@
+----- a=0.550 even K0=4 -----
+MULTIPRIME screw cert, EVEN sector, a=0.550 (2a=1.10000), prec=1400, NLERCH=14000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 5): [0.622973 +/- 5.84e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.521977 +/- 7.09e-7]  rigorously>0? True
+  pivot 2 (mode 3): [0.000896 +/- 3.01e-7]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 1.15e-7]  rigorously>0? True
+
+*** CERTIFIED PD ***
+
+----- a=0.553 even K0=4 -----
+MULTIPRIME screw cert, EVEN sector, a=0.553 (2a=1.10600), prec=1400, NLERCH=14000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 5): [0.628258 +/- 5.35e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.509396 +/- 6.60e-7]  rigorously>0? True
+  pivot 2 (mode 3): [0.0007914 +/- 6.97e-8]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 9.24e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+
+----- a=0.560 even K0=4 -----
+MULTIPRIME screw cert, EVEN sector, a=0.560 (2a=1.12000), prec=1400, NLERCH=14000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 5): [0.638280 +/- 6.18e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.480432 +/- 6.96e-7]  rigorously>0? True
+  pivot 2 (mode 3): [0.000677 +/- 4.19e-7]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 6.12e-8]  rigorously>0? True
+
+*** CERTIFIED PD ***
+
+----- a=0.575 even K0=4 -----
+MULTIPRIME screw cert, EVEN sector, a=0.575 (2a=1.15000), prec=1400, NLERCH=14000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 5): [0.646108 +/- 5.06e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.418201 +/- 4.85e-7]  rigorously>0? True
+  pivot 2 (mode 3): [0.0006053 +/- 8.58e-8]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 6.13e-8]  rigorously>0? False
+
+NOT certified
+

@@ -1,0 +1,11 @@
+§276 positivity BUDGET per eigendirection of the validated Weil form (Q=pole+arch+primeTerm):
+ lambda(full)   pole part   arch part  primeT part
+     0.894876    7.86e-11      0.9494     -0.05452
+      1.86949   9.082e-10       1.249       0.6207
+      2.28539   3.634e-10         2.0       0.2855
+      3.01281   1.026e-10       3.042     -0.02941
+      4.39472   1.703e-12       4.238       0.1567
+
+READ: how each POSITIVE eigenvalue (Weil positivity) is composed of pole+arch+primeTerm. If arch dominates and
+primeT stays small/positive, positivity is robust; if primeT is large-negative fighting arch, it's marginal.
+DONE

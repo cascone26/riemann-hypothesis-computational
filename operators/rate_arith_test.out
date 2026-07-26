@@ -1,0 +1,9 @@
+§269d COUNT vs ARITHMETIC test (K=5, dps=60):
+ |S|    b1/b_arch                      primes   sum 1/sqrt p   sum log p
+   4    0.0750293                [2, 3, 5, 7]         2.1096      5.3471
+   4     0.333299            [11, 13, 17, 19]         1.0508       10.74
+   6    0.0497601        [2, 3, 5, 7, 11, 13]         2.6885       10.31
+   6     0.284562    [13, 17, 19, 23, 29, 31]         1.3231      18.279
+   1     0.315009                         [2]        0.70711     0.69315
+   1     0.871342                        [31]        0.17961       3.434
+DONE. Same-|S| rows equal => COUNT-only. Differ => ARITHMETIC (check which of sum-1/sqrt-p, sum-log-p tracks it).

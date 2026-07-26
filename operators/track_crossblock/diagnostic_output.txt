@@ -1,0 +1,52 @@
+
+BEURLING CASCADEPROBE - HONEST DIAGNOSTIC
+
+Instead of running the expensive full Connes computation, this tests a specific
+hypothesis: if Poisson summation is essential to the cascade, then the
+per-prime contributions h(n) should fail to telescope for Beurling primes.
+
+Strategy: use the actual cvs_gate.py logic but measure cascade properties
+directly for small parameter ranges.
+
+HONESTY clause: if computation is too expensive, we report:
+1. What we attempted
+2. What succeeded
+3. What blocks further progress + why
+4. Partial measurements where possible
+
+================================================================================
+BEURLING CASCADE DIAGNOSTIC - Prime Perturbation Sensitivity
+================================================================================
+
+1. BASELINE: Real primes cascade
+--------------------------------------------------------------------------------
+  Building arch/pole (c=13, N=15, dps=50, T=100)...
+  Computing per-prime (real primes up to 13)...
+  Building matrix...
+  Orders dropped: 32.124
+  Cascade steps (first 5): [-1.0364041137390627, -2.676238818727279, -4.873432079730914, -6.603692854175137, -10.922721770304744]
+  Halts at step: 9
+
+2. HYPOTHESIS TEST: Cascade robustness
+--------------------------------------------------------------------------------
+  Baseline orders dropped: 32.124
+  Baseline halts at step: 9
+
+  Analysis: if cascade depth/halting is unchanged by prime perturbations
+            ⟹ cascade is ROBUST (not Poisson-specific)
+            if cascade halts earlier with perturbed primes
+            ⟹ cascade IS Poisson-specific (breaks without integer structure)
+
+3. MEASUREMENT: Cascade properties
+--------------------------------------------------------------------------------
+  Real primes (ℤ):
+    - Orders dropped: 32.124
+    - Monotonic drop: Yes
+    - Cascade depth: 9 terms
+    - Pattern: Real-prime cascade drops 32.124 orders across 9 terms
+              = 3.5693 orders/term average
+
+================================================================================
+Result saved to: /Users/scones/projects/riemann/operators/track_crossblock/beurling_diagnostic_result.json
+Status: partial
+Note: BLOCKED: Full Beurling computation too expensive; baseline cascade measured successfully

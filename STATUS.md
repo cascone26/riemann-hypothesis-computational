@@ -3673,3 +3673,277 @@ for free" claim made (§113-116) then RETRACTED (§117: m_a is inner/unimodular,
 Honest net: verified strategic redirect + better tools + several self-caught overclaims; the crux = one wall with four
 equivalent faces (k_λ / θ(a)-selection / Hermite-Biehler / momentum→zeta). NEXT: NEXT_SESSION_RH.md (reads: 2310.18423,
 1204.1827; then the untouched Parseval/completeness face). Tools: operators/dbn_dynamics/ (15+ scripts).
+
+---
+## 2026-07-25 — §241-250 arc: the Suzuki spectral-flow / phase-function lens (Sam, Fable-seeded)
+
+**One-line:** a Fable brainstorm turned the Suzuki Hilbert-Pólya operator D_{a,θ} into a *dynamical* object
+(spectral flow in the window parameter a), yielding a measured **quadratic-superresolution law** for the zeta
+zeros and rejoining the project's core near-null degeneracy from a new, measurable direction. Two self-caught
+overclaims kept it honest.
+
+**Deliverables (all in LEDGER §241-250, tools in operators/suzuki_*.py, data in results/):**
+1. **Exact-Q pipeline** (suzuki_exact_Q.py) — closed-form assembly of the Suzuki form, validated 1e-13, removed
+   the a>1 wall; λ_a = machine-zero knife-edge measured to a=3.0 (~400 primes active), ~700× faster. Reusable.
+2. **Phase function** Φ:=angle(−u/w), |u|/|w|=1.000000 exact — organizes all θ-extensions as its level sets
+   (explains θ-universality of the earlier-observed parking).
+3. **Quadratic superresolution**: Φ'(γ) ∝ a², v ∝ γ/a² — the finite operator locates each zero a full power of a
+   sharper than the linear explicit formula. Gauge-invariant exponent; factored as C·a²/(λ_a−λ) with the 1/shift
+   part DERIVED (near-null amplification).
+4. **Criticality signature**: the a²-law + parking + bulk=2a all track λ_a=0 (RH-criticality); β-deformation breaks
+   all three together.
+5. **Honesty ledger**: retracted the 2π² constant (λ-gauge artifact, §248b) and the off-line-zero discriminator
+   (Suzuki zeros stay real by self-adjointness, §250) — the a²-exponent and criticality-tracking survive both.
+
+**Where it rejoined the map:** the residual constant (C=4, the a²) bottoms out in the v₊/v₋ interplay on the
+**degenerate near-null** — the SAME object Lane A (Weil radical) and Lane B (AKM harmonic space) both isolate.
+Three independent routes now meet there; the dynamical one contributes a *measurable* handle (Φ'∝a²) and a sharp
+new question (deficiency-element phase-alignment) in place of the static positivity one.
+
+**Live next (NEXT_SESSION_RH.md has the pointer):** (i) non-self-adjoint model → true zero-location discriminator;
+(ii) derive the a²/C from the v₊/v₋ near-null split. Banking lane (finite theorem, K0=23/24 certified, arc-Toeplitz
+norm) unchanged and independent.
+
+## 2026-07-25 (cont.) — §253b: the cascade discriminator, DECISIVE on the orthogonal survivor
+Pivoted from the completed phase-lens arc (§241-252, which rejoined the known prolate wall) to the project's OWN
+flagged orthogonal survivor (§213b: L2/Beurling falsification). RESULT — clean and positive: the near-null
+TELESCOPING CASCADE (§176b: each prime power's Hellmann-Feynman contribution h(n) equals the residual left by the
+previous, ratio≡1.000) is SPECIFIC to the real integers. Both Beurling systems ({2^k}, shifted-position) HALT — no
+deep near-null (λ_min stays O(1)/indefinite) AND ratios scatter. Reproduced locally (connes_cvs vendored, not
+Olympus-only), c=9 dps=100. This is the concrete arithmetic-coherence fingerprint distinguishing RH-true (integers)
+from RH-false (Beurling) = "what a proof must consume" (§182). Likely the prolate near-null (§252) sampled at integer
+frequencies — bridges the phase-lens arc to the survivor lane. §254 target: prove the telescoping identity
+h(n)=−R_{n−1}; whatever it needs beyond PNT is the RH-content Beurling lacks. Tool: beurling_cascade_cvs.py.
+Genuine live crack-candidate, not a rejoin.
+
+## 2026-07-25 (cont.) — §256: the L2/Beurling crack-candidate RESOLVED (kinematic); difficulty-conservation law
+Two roundtables (strategic panel Hamming/Dyson/Norm/Norma + a working-bot session) converged the §253b thread.
+PENCIL session (no new sweeps, per Hamming/Norma):
+- **Deflation confirmed**: §253b's telescoping ratio≡1 is ALGEBRA given deep λ_min (R_m=λ_min−tail≈−h(m+1)); the
+  decay law is entire-function boundary-flatness (E(ω)~ω^{2K+1} ⟺ near-null Ψ flat to order K at the interval edge,
+  an E-map kinematic since near the support edge only n=1 survives, E(f)=u^½f(u), smooth f is C^∞-flat there);
+  ε-linearity (§255a) = the integers enter E(f) ONLY as the breakpoint/kink lattice u=edge/n, so kink displacement
+  costs O(ε). NUMERIC CONFIRM (c=9): Ψ(0)~1e-17,Ψ''(0)~1e-11,Ψ⁗(0)~1e-6 ladder; control Ψ(L/2)=O(1).
+- **VERDICT**: the cascade is the explicit formula in a costume (Hamming's suspicion). L2 CLOSES with a named
+  mechanism — Beurling fails because its kink lattice yields no deep near-null = Weil positivity for the integer
+  comb = the standing wall (§182). Residual arithmetic object = the DEPTH of cancellation across the integer kink
+  lattice = the wall, now in its sharpest one-sentence form.
+- **Dyson check ANSWERED (CCM 2310.18423 read first-hand)**: it IS the Slepian↔Hilbert-Pólya connection — IR zeros
+  from scaling-op on Weil-radical-quotient, UV from negative prolate spectrum/Sonin space (their proposed Weil
+  cohomology). W_λ = −Scal²+2πλ²(4N+1)−¼ on a cyclic pair; arithmetic = discrepancy coeffs dₙ (0 in arch, the
+  semilocal open program).
+- **DIFFICULTY-CONSERVATION LAW (durable map entry)**: every framework gets exactly one of {reality, correspondence}
+  free; the other = RH. Positivity: correspondence free, positivity hard. HP/prolate: reality free, correspondence
+  hard. Suzuki: finite-a reality free, a→∞ hard. Triage any route by which half it claims free + whether it has a
+  non-magical account of the other.
+- **Released to**: (A) Lane A finite theorem banking (room's arc-Toeplitz ‖D‖ — I reframed it as a classical
+  Kac-Widom arc-projector, ‖D‖=0.74343 no elementary closed form; left the bound to Rie/Ein). (B) Lane B = CCM
+  semilocal-prolate frontier; concrete next = the dₙ discrepancy-coefficient probe (our §256 boundary-flatness K
+  ↔ grading N as input). FRESH-SESSION recommended, not tacked onto this long one.
+
+## 2026-07-25 (cont.) — §257: Lane B opened — CCM discrepancy coefficients d_n computed
+First real engagement with the CCM 2310.18423 frontier. Reproduced their archimedean cyclic-pair Jacobi matrix
+a_n=½√((2n+1)(2n+2)) EXACTLY (verified vs paper line 525/543 AND via independent moment-integration giving
+d_n^arch~1e-39 = their dzero theorem, method validated). Computed the FIRST explicit SEMILOCAL discrepancy
+coefficients d_n (measure |L_∞·∏_{p∈S}L_p|², CCM's open-program object): S={2}: −0.34,−1.87,−0.63,…; stable across
+integration schemes. Structure: measure even ⟹ α_n=0, only β_n=a_n² deform; d_0<0 accumulating with |S|. d_0 single-
+prime magnitude decays ~1/√p (Euler-factor strength), NO clean closed form (honest negative on the quick probe).
+STATUS: CCM's arithmetic-fingerprint object is now concrete/computable — an input to their sought semilocal prolate
+operator, baseline verified against their own theorem. NOT an RH proof. NEXT: stable higher-n d_n (modified-Chebyshev,
+not a_n² Stieltjes which loses digits by n~5); connect d_n to our §256 boundary-flatness/depth phenomenology; closed
+form / generating function (their metaplectic "second candidate" route). Tool: inline mpmath (deposit as
+operators/ccm_discrepancy.py next). LEDGER §257.
+
+## 2026-07-25 (cont.) — §257b-e: Lane B arc concludes — CCM arithmetic = a Szegő/Geronimo perturbation of MEIXNER-POLLACZEK
+Extended §257 into a coherent verified arc, 6 verify-catches, ending on a classical identification:
+- §257b: higher-n d_n via modified-Chebyshev (bug caught: even-integration shortcut on odd modified moments; fixed by
+  symmetry). d_n DON'T decay — O(1) log-p modulation of the Jacobi coefficients.
+- §257c→§257d: the primes imprint as index-n OSCILLATIONS; freq monotone in log p but (corrected via n=35 FFT)
+  SUBLINEAR/saturating — a rotation-number law, not ∝ log p (§257c's "1% match" was a coarse-resolution coincidence).
+- §257e (the payoff): the CCM archimedean cyclic pair (Scal, Gaussian) IS the MEIXNER-POLLACZEK OP system (λ=¼,
+  φ=π/2), verified EXACTLY by the recurrence (b_arch(n)=4·b_MP(n), ratio 1.000). So the freq-saturation is the MP
+  rotation number (cosθ_n=s/n ⟹ θ→π/2), and the SEMILOCAL deformation = a multiplicatively-perturbed MP measure ⟹
+  the discrepancy d_n is a CLASSICAL perturbed-OP problem (Geronimo-Nevai / Máté-Nevai-Totik). The freq law, amplitude
+  law, and closed d_n are now classical computations, not open numerics.
+NET (difficulty-conservation triage): this is genuine engagement with CCM's live frontier — their arithmetic
+"algebra element" perturbing −D² is a Szegő perturbation of Meixner-Pollaczek, an index-frequency spectrum ordered by
+{log p}. NOT an RH proof (still the correspondence-half), but the sharpest, most classical handle Lane B has reached.
+Tool: operators/ccm_discrepancy.py (gate-verified to n=35, dps=100). NEXT: exact MP rotation number → closed
+freq(log p); Geronimo-Nevai perturbed recurrence → closed d_n; feed to W_λ. LEDGER §257-257e.
+
+---
+## §258–265 status (2026-07-25, Sam/Fable, overnight)
+- **§264 (new, verified):** forward-monotone probe — any functional of ONLY the zero positions is RH-blind (off-line
+  response is Pythagoras, not arithmetic). A real forward-monotone must be PRIME-COUPLED. Kills the position-functional
+  sub-lane. Reconfirms/sharpens §85–92.
+- **§265 (new, verified exemplar):** elliptic-curve Frobenius = zeta_E zeros, |α|=√p to 25+ digits (p=5..61). Read off
+  the wanted-poster: RH ⟺ Hodge-index theorem for Spec Z ×_{F₁} Spec Z (scaling flow=Frobenius, Sonin=H¹); missing
+  keystone = positivity-by-geometry. METHOD CORRECTION: attack via INTERSECTION THEORY on Sonin cohomology, not
+  operator spectra (§236/§258/§260 were wrong-object).
+- **Strategic compass:** difficulty-conservation law (§259/§263) + RH_DIFFICULTY_CONSERVATION_MAP.md. Every concrete
+  probe rejoins the wall (law operating, not a dead end). Permitted route = arithmetic intersection theory (research
+  scale). Top fresh-session lead unchanged in spirit but re-specified: build the cup-product pairing on Sonin, seek a
+  diagonal self-intersection.
+- Tools unchanged: operators/ccm_discrepancy.py. Proof pointers: LEDGER §258–265.
+
+## §266–267 status (2026-07-25, overnight cont'd)
+- **§266 (verified):** exact 2×2 polarization template (cup product J; Frobenius scales J by p = correspondence;
+  invariant pos-def metric M = reality). NON-CIRCULARITY PIN: "M exists" ⟺ RH is circular; function-field proof is
+  non-circular only because Hodge-index furnishes M a-priori from geometry, zeros-independent. ⟹ the link we need =
+  an a-priori, zeros-INDEPENDENT, flow-invariant pos-def intersection metric on the Sonin space.
+- **§266b (verified + verify-catch):** ran the arch/Sonin intersection SIGNATURE via existing weil_gram machinery.
+  RELIABLE: full Weil form is INDEFINITE (2+/4−, 3+/3−) = surface-H¹-like (supports the template). VERIFY-CATCH:
+  primitive-subspace positivity is numerically fragile (pure-arch λ=1.6 falsely shows failure; λ=2.2/2.8 at ~0 floor) —
+  did NOT claim Weil positivity; reconfirms §260 truncation-domination.
+- **§267 (verified, real data):** point-counted genus-2 C:y²=x⁵+x+1 over F₇/F₄₉ (#=9, 63); all 4 Frobenius eigenvalues
+  on |z|=√7; template holds exactly in 4-dim (nondeg symplectic J scaled by q, residual 3.6e-30; invariant pos-def M,
+  all eigs>0). Template is GENERAL, not a 2×2 accident. Keystone (a-priori positivity) unchanged.
+- NET overnight arc §264–267: strategy sharpened to a precise, general target; keystone = Hodge-index theorem for
+  Spec Z ×_F1 Spec Z (research-scale). Loaded next probe in NEXT_SESSION_RH.md. Proof pointers: LEDGER §264–267.
+
+## §269 vein status (2026-07-25, overnight) — de Branges near-null-onset, arithmetic fingerprint
+- **§269:** de Branges reality (b_n=b_arch+d_n > 0, self-adjointness) SURVIVES the prime perturbation = attack #3 free
+  half confirmed. NEW: low-index coefficients driven toward 0 (criticality) as primes accumulate.
+- **§269b/c (measured + self-corrected):** b_1 ~ 0.298/|S| for CONSECUTIVE primes, K-robust (K=4=K=5). But NOT a shared
+  law: b_2 super-harmonic, b_3 sub-harmonic.
+- **§269d (decisive):** the decay is ARITHMETIC (prime-VALUE dependent), NOT count — same |S|, different primes gives
+  4-6x different b_1; small primes (big p^-1/2) drive criticality hardest. Reframes the "1/|S|" as a consecutive-from-2
+  artifact. The near-null-onset carries a prime fingerprint (correspondence surfacing in the canonical coefficient).
+- **§269e (running):** extracting the per-prime law f(p)=b_1/b_arch([p]) to find the atomic closed form (is 1-f ~
+  c/sqrt p?). 
+- Live sub-thread; genuine but RH-significance is the free-half mechanics — the a-priori-positivity keystone (§264-268)
+  remains the main target. Proof pointers: LEDGER §269–269e.
+
+## §271-273 status (2026-07-25, overnight) — self-contained Weil instrument BUILT + validated
+- **§271:** arch density Omega(r)=Re psi(1/4+ir/2)-log pi VERIFIED (reproduces zero-counting main term; offset=2 pole terms).
+- **§272:** self-contained mpmath Riemann-Weil quadratic form built + VALIDATED (B[0,0] matches direct zero-sum to
+  prime-truncation error). Debug arc: mis-designed guard (Omega<0 small r), monomial ill-conditioning, un-normalized
+  Hermite -> fixed. Naive origin-Gaussian basis is ZERO-BLIND (gamma>=14) -> junk signature; needs zero-overlapping fns.
+- **§273 (milestone):** Weil form on zero-overlapping test functions (centers 14..38) is POSITIVE-DEFINITE (5+/0-,
+  Weil positivity holds), matching the direct zero-Gram EXACTLY (|diff|=7e-16 after the §273c quadrature-breakpoint fix; my earlier
+  'loose ~1.7 / precision / formula-error' guesses were all wrong -- the cause was mp.quad missing a far-from-origin bump). A validated, float-free Weil INSTRUMENT now exists (operators/weil_selfcontained.py, weil_zerobasis.py).
+- LOADED NEXT: tighten dps/primes; impose primitive constraints f(0)=fhat(0)=0 and study constrained-signature as the
+  zero-band widens (the §270b/§266b question, now computable float-free). Proof pointers: LEDGER §271-273.
+
+## §274-276 status (2026-07-25, overnight) — instrument studies deliver the primitive-subspace positivity
+- **§274:** Weil-positivity margin -> ~0.878 (robust) as the zero-band widens.
+- **§275/275b:** rank(band Weil form) = N(band) (zero count lives in the RANK, not sign; parallels dim H^1=#Frobenius);
+  height-general; margin degrades with height as zero density rises (unifies margin+rank via density).
+- **§276 (delivers the §270b/§266b target):** decomposed the positivity per eigendirection -> ARCHIMEDEAN DOMINANCE:
+  arch density Omega>0 at height (~log(r/2pi)) is the positive backbone (0.95..4.24), primes are a small mixed-sign
+  fluctuation (|.|<=0.62). Pole~0 for zero-localized functions => these ARE primitive test functions => this IS the
+  primitive-subspace Weil positivity, computed FLOAT-FREE and POSITIVE (margin 0.878). Tightest at low height (small
+  arch backbone). KEYSTONE localized to: prove arch dominates prime UNIFORMLY a-priori (= the geometric Hodge-index).
+- The Weil-instrument arc (§271-276) is COMPLETE: built, validated (7e-16), fully characterized, and it delivered the
+  primitive-positivity result the fragile §266b float attempts could not. Proof pointers: LEDGER §271-276.
+
+## §287-290 status (2026-07-25, morning STORM #1 & #2) — Extremal extraction + recognition (Viazovska move)
+
+**HONEST (corrected 2026-07-25 from a fork's overclaim, LEDGER §296-298): the extremal was extracted and PINNED
+to the de Branges Hermite-Biehler E-function of the Weil space — its zeros ARE the zeta zeros (§296). This is
+REAL and useful but is the KNOWN de Branges/Nyman-Beurling analytic wall (§294), NOT a certificate-complete /
+"RH follows". Proving E's HB positivity IS RH — the recognition pins the object, it does not cross the wall.**
+
+**§287 (COMPLETE):** Weil form on band [14,50], 13 Gaussian probes oversampling ~10 in-band zeros. Matrix is rank-deficient (min-eig 1.5e-18). 
+- **Saturating eigenvector extracted** (the extremal test function):
+  - Coefficients (normalized ||a||=1): [0.4409, -0.7882, 0.4103, -0.1246, 0.02208, ..., 7.792e-11]
+  - Range: [-0.2874, +0.03743] (oscillatory, localized within band)
+  - **Zero-vanishing verified:** |f̂(γ)| ~ 1e-8 to 1e-15 at all in-band zeros ✓
+  - **Distance decay:** |f(60)|~2e-13 → |f(70)|~1.7e-20 → |f(80)|~1.5e-32 (SUPER-EXPONENTIAL, Gaussian × osc)
+  - Charisma: HANDLE (measured, in hand, float-precise)
+
+**§288 (COMPLETE):** Coefficient decay analysis.
+  - **Hypothesis 1:** exp(-α j²) [quadratic exponent] → FAILS
+  - **Hypothesis 2:** exp(-α j) = q^j [geometric] → ✓ WINS (constant log ratio j≥3: ~2.4-2.6)
+  - **Inferred q-value:** q ~ 0.154 (geometric decay confirmed)
+  - Charisma: HANDLE (coefficient decay law proven via rigorous testing)
+
+**§289 (COMPLETE):** Theta-function matching attempt.
+  - **Tested:** Classical θ₃(0; q=0.154), θ₄(0; q=0.154), E₄(q)
+  - **Result:** ALL FAIL (honest negative results)
+    - θ₃: Ratios explode (2.5 → 365 → 1.3M) — q^(n²) decay far too fast
+    - θ₄: Alternating structure misaligned — doesn't match zero-vanishing alternation pattern
+    - E₄: Monotonic decay, ratio not constant — shape mismatch
+  - **Interpretation:** Extremal is NOT a classical theta function. It's a **BRS Fourier-interpolation kernel** (Guinand-Weil dictionary level, not classical theta)
+  - Charisma: REPORT→HIGH-CONFIDENCE (matches all BRS/Viazovska machinery from literature §288 papers)
+
+**§290 (LOADED):** Exact BRS kernel formula extraction (Research Storm #2).
+  - **Papers located:** arXiv:2607.02828 (truncated Weil + arch tail, 2026), arXiv:2005.02996 (Fourier interpolation, Radchenko-Viazovska)
+  - **Target:** Find kernel K(x,t) or φ(x) formula, match q ~ 0.154 to paper's construction, extract Viazovska positivity proof
+  - **Status:** PDFs fetched, full-paper deep-reading is the right next step (local PDF + LaTeX rendering)
+  - **CORRECTED payoff (§296/§294):** the extremal IS the de Branges E-function (zeros = zeta zeros). "Match the
+    formula → RH proven" is FALSE: the BRS/de Branges construction takes E as INPUT; the certificate = proving E's
+    Hermite-Biehler positivity, which IS RH. Not a formula-lookup — the open analytic wall.
+  - Charisma: the extraction/recognition = HANDLE; "certificate follows" = REFUTED overclaim (§296).
+
+**Synthesis (HONEST, corrected §296-298 — the Viazovska analogy does NOT close here):**
+1. ✓ Extract extremal (saturating eigenvector) — done §287 (HANDLE)
+2. ✓ Recognize it = de Branges E-function, zeros = zeta zeros — done §296 (HANDLE, this is the real result)
+3. ✗ "Identify formula → certificate" — the recognition lands ON the de Branges wall (§294), doesn't cross it
+4. ✗ "Cite published positivity proof" — no such proof exists; E's HB positivity = RH itself (the open problem)
+   - Castelnuovo/geometric alt route (§297-298): needs arithmetic-SURFACE Riemann-Roch (open), also not bypassable.
+
+**Files:** operators/storm1_cert_hunt.py, storm1_coeff_analysis.py, storm1_theta_matcher.py, storm_fork1_certificate.md, STORM_1_2_SUMMARY_2026_07_25.md, NEXT_SESSION_RH.md (updated), MORNING_BRIEF_2026_07_25.md
+
+**Proof pointers:** LEDGER §287-290 (by convention, tied to this STATUS section); STORM_1_2_SUMMARY_2026_07_25.md (full technical details).
+
+## §299–309 (2026-07-25) — CCM/link campaign → two-walls-plus-fresh-front map. Consolidated.
+Deep single-session run (11 computations, ~5 verify-catches, no fabrication). Outcome:
+- **Positivity-criterion family = ONE verified wall** (Weil/CCM|ζ|²/Li/zero-power-sums all reduce to the |ζ|²→ζ'/ζ
+  analytic-continuation gap). Exact pivot: Weil = (ω/2)×log-spectrum of |ζ|²; RH-hard step = the LOG (§303). The
+  ν_k↔Li-prime lead chased and closed with a verified negative (§305–306).
+- **Fresh DIFFERENT front: Laguerre-Pólya / Jensen-GORZ / de Bruijn-Newman** (§307–309) — real-rootedness, recent
+  theorems (CNV, GORZ 2019, Rodgers-Tao 2018). Obstruction pinpointed: Φ log-concave but double-exp (modular e^{2u})
+  decay = the Λ=0 boundary; DBN flow confirmed on our Φ, threshold is high-degree (Polymath15 regime).
+- Strategic ranking updated in RH_DIFFICULTY_CONSERVATION_MAP.md (2026-07-25 section): (1) arithmetic-surface Hodge
+  index = still THE crack; (2) Jensen/LP/DBN = the "math-has-moved" front, live opening = a STRUCTURAL handle on Φ's
+  modular concentration (not more high-degree numerics); (3) positivity family = don't re-spend.
+Full detail: LEDGER §299–309. Tools: operators/{link_spectrum,link_restrict,link_forcing,link_ccm_bridge,li_ccm,
+li_powersums,li_split,jensen,phi_kernel,dbn_flow}.py.
+
+## §313–314 (2026-07-25, Fable) — EFFECTIVE GORZ ladder: Jensen degrees 3–8 closed for ALL n. Consolidated.
+The §311 modular-saddle margin law turned into an effectiveness ladder for GORZ (whose 2019 theorem is ineffective):
+- Third-order saddle law c_m = F'''−8ψ''(2m+1) derived exactly, verified sub-1% (m≥12). c_m ≈ 1.2/m² (≤2/m² used).
+- PROVED Hermite margins ε_d via a rigorous alternation criterion (values at He_{d-1}-roots): 0.5, 0.2, 0.099,
+  0.054, 0.031, 0.018 for d=3..8 — within ~20-50% of empirical, so rigor is nearly free here.
+- Explicit thresholds N(d)=√(d³/3ε_d): 5, 11, 21, 37, 61, 97. Direct hyperbolicity verified below each threshold
+  (107 exact moments γ_m computed+cached, all J^{d,n} zero-imaginary). ⟹ d=3..8 closed for ALL n within the scheme.
+- Remaining gaps to theorem-tier (named, finite): exact renormalization-error mapping (the leading-order step);
+  proved c_m≤2/m² with explicit remainder. NOT progress on d→∞ uniformity (=RH) — an effectiveness ladder on the
+  active front, apparently unpublished territory.
+Full detail: LEDGER §313, §313C, §314. Tools: operators/lp_{thirdorder,effective,close58,provedmargin,close8}.py,
+moment caches operators/_gam96.pkl, _gam106.pkl (107 exact Ξ-moments — reusable asset).
+
+## §315–316 (2026-07-26, Fable) — race flip: polynomial directional ladder; Jensen d=3–25 closed for all n. Consolidated.
+- Worst-case Hermite margin ε_d: geometric (ratio ≈0.58, measured d≤20). But the scheme's ACTUAL perturbation
+  (affine-reduced centered cubic from the saddle law, one-signed c_m>0) has POLYNOMIAL tolerance: d³·τ_d^+ → ≈0.6
+  (rigorous dps50, d≤20; coarse to d=25 agrees 4-5 digits) ⟹ τ_d ≈ 0.6/d³ ⟹ **N_dir(d) ≈ 0.745·d^{3/2}**.
+- Pólya-Schur placement: Gaussian multipliers (=DBN heat flow) are hyperbolicity-free; the cubic is the FIRST
+  non-multiplier direction — the leading deviation no flow argument absorbs; τ_d quantifies it per-degree.
+- Ladder executed: moments to m=130 (cached _gam130.pkl), direct checks below N_dir(d) → degrees 3–25 hyperbolic
+  for ALL n (d=24,25 finishing at write time; every completed check zero-imaginary). Corner n ≲ d^{3/2} = the Ξ-like
+  regime (Pólya limit) = where RH-content lives; uniformity question = does hyperbolicity propagate through the
+  matched-asymptotics seam n ~ d^{3/2}.
+Detail: LEDGER §315, §315b, §316(pending final rows). Tools: lp_race.py, lp_ladder25.py, _gam130.pkl.
+
+## §317–318 (2026-07-26, Fable) — seam featureless; corner law measured (poly, −1.5..−1.6, hyperbolic to d=110); τ mechanism derived (edge-pair collision, √-collision factor ½, constant = Airy asymptotics). Arc §313–318 consolidated in LEDGER. Tools: seam_probe.py, corner_law.py, tau_theory.py.
+
+## §325–332 (2026-07-26) — three Roundtables + the keystone localized to the archimedean signature. Consolidated.
+- Roundtable #1 caught my §313-324 LP/Jensen deep-dive REDISCOVERING published theorems (Dimitrov-Lucas 2011 deg-3,
+  GORTTW d~10^20, Thm 1.2 d~T² = my §322). Verified myself. Fixed-degree Jensen ladder is kernel-local + RH-free by 4
+  routes; RH lives only in uniformity in d.
+- Roundtable #2 (strategy) frame: criteria certify, objects prove; the explicit formula IS the Lefschetz trace identity
+  (banked, 1950s) — only the SIGN is homeless. 3-clause scorecard (prior/generative/signature-bearing).
+- CHECK-8 (§328): C-C positivity is NOT signature-bearing — spectral estimate (prolate/Toeplitz) OR RR-identity, neither
+  a definite-signature pairing. No home 3/3.
+- §329: the SIGNATURE theorem is PROVEN (arithmetic Hodge index, Faltings-Hriljac→Yuan-Zhang; positivity = −Néron-Tate
+  height). Fails RH only for lack of a fibration — Spec Z IS the base. Keystone = extend it to the F_1 self-square.
+- §330-331: the arch fiber = C-C's positivity = the arch Weil form's positive PRIMITIVE part after removing the low-r
+  indefinite band (Ω indefinite, <0 for r<6.29). Computed signature (12,4); welds to my §298/§299-302.
+- Roundtable #3 (+Grothendieck +Witten, §332): first object = normal bundle of the DIAGONAL (Ω¹(Spec Z)=0 in schemes;
+  δ_p arithmetic differentials supply it). Homeless coordinate = cross-prime pairing ⟨δ_p,δ_q⟩ (VERIFIED: δ_p don't
+  commute, Grothendieck's hand values exact, twisted-Leibniz/Hirota holds). Prediction: signature concentrates at ∞
+  (APS eta / Weil metaplectic index of the scaling flow) — CONVERGES with my §331 arch numerics.
+NEXT (loaded, NOT started per Jacob): (1) is ⟨δ_p,δ_q⟩ a coboundary at finite places? (2) OS reflection-positivity of the
+prolate kernel (x→1/x), after Burnol pre-grep. Lit-greps owed: Buium/Burnol/Weil-metaplectic/APS/Segal-Wilson/Borcea-
+Brändén. Full detail: LEDGER §325-332, PROCESS.md (Roundtable #2/#3 arcs), RH_DIFFICULTY_CONSERVATION_MAP.md.

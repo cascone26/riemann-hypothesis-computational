@@ -1,0 +1,6 @@
+§277 a-priori arch-dominance as a Lowner ratio: worst-case prime/(arch+pole) over test functions
+  centers 14..50, M=7. generalized eigenvalues of P vs (arch+pole):
+  ['-0.737', '-0.4151', '-0.1905', '-0.004739', '0.006793', '0.1904', '0.2064']
+  MAX ratio = 0.206373  (< 1 => arch+pole STRICTLY dominates prime => Weil positivity, with margin 1-max)
+  => positivity 'budget' = 1 - max = 0.79363 (how far the prime fluctuation is from overwhelming the arch backbone)
+DONE

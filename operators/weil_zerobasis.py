@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+"""§273: the VALIDATED self-contained Weil form (§272) on ZERO-OVERLAPPING test functions (fix for §272's zero-blindness).
+Even test functions centered on the low-zero band: F_j(r) = exp(-(r-c_j)^2/2w^2) + exp(-(r+c_j)^2/2w^2), c_j in [14..40].
+On RH, B[j,k] = pole+arch-prime = Sum_rho F_j(gamma)F_k(gamma) = Gram matrix => MUST be PSD. Check it: validates the
+machine on meaningful functions and sets up the primitive-subspace (f(0)=fhat(0)=0) signature study."""
+import mpmath as mp
+mp.mp.dps = 30
+def Omega(r): return mp.re(mp.digamma(mp.mpf(1)/4 + 1j*r/2)) - mp.log(mp.pi)
+w = mp.mpf(3)
+centers = [mp.mpf(c) for c in [14,20,26,32,38]]
+M = len(centers)
+def F(j, r):
+    c=centers[j]; return mp.e**(-(r-c)**2/(2*w**2)) + mp.e**(-(r+c)**2/(2*w**2))
+def Fc(j, z):   # analytic continuation F_j(z) for complex z (pole term at z=i/2)
+    c=centers[j]; return mp.e**(-(z-c)**2/(2*w**2)) + mp.e**(-(z+c)**2/(2*w**2))
+def bpts(j,k):  # §273c: mp.quad breakpoints at BOTH bumps (else it misses far-from-origin bumps -> wrong integral)
+    cs=sorted({mp.mpf(0), centers[j], centers[k]})
+    pts=[mp.mpf(0)]
+    for c in (centers[j],centers[k]):
+        for x in (c-4*w, c, c+4*w):
+            if x>0: pts.append(x)
+    return sorted(set(pts))+[mp.inf]
+def g_jk(j,k,u): return (1/(2*mp.pi))*2*mp.quad(lambda r: F(j,r)*F(k,r)*mp.cos(u*r),bpts(j,k))
+Nmax=50
+Lam={}
+for p in range(2,Nmax+1):
+    if all(p%d for d in range(2,int(p**0.5)+1)):
+        pk=p
+        while pk<=Nmax: Lam[pk]=mp.log(p); pk*=p
+
+print(f"§273 Weil form on zero-overlapping basis (centers={[int(c) for c in centers]}, w={w}, primes<= {Nmax}), dps={mp.mp.dps}",flush=True)
+Bpole=mp.zeros(M);Barch=mp.zeros(M);Bprime=mp.zeros(M)
+for j in range(M):
+    for k in range(M):
+        Bpole[j,k]=mp.re(Fc(j,1j/2)*Fc(k,1j/2))*2
+        Barch[j,k]=(1/(2*mp.pi))*2*mp.quad(lambda r:F(j,r)*F(k,r)*Omega(r),bpts(j,k))
+        Bprime[j,k]=-2*sum(Lam[n]/mp.sqrt(n)*g_jk(j,k,mp.log(n)) for n in sorted(Lam))
+    print(f"  row {j} done",flush=True)
+Bfull=Bpole+Barch+Bprime
+# DIRECT oracle: Sum_rho F_j F_k over real zeros (2x for +/-gamma), first ~40 zeros
+zeros=[mp.im(mp.zetazero(k)) for k in range(1,41)]
+Bdir=mp.zeros(M)
+for j in range(M):
+    for k in range(M):
+        Bdir[j,k]=2*sum(F(j,g)*F(k,g) for g in zeros)
+def report(Bm,label):
+    ev=mp.eigsy(Bm,eigvals_only=True)
+    npos=sum(1 for e in ev if e>1e-12); nneg=sum(1 for e in ev if e<-1e-12)
+    print(f"  {label:>16}: eigs={[mp.nstr(e,4) for e in ev]} -> {npos}+/{nneg}-",flush=True)
+print("SIGNATURES + oracle:",flush=True)
+report(Bfull,"FULL Weil")
+report(Bdir,"direct Sum_rho")
+err=max(abs((Bfull-Bdir)[i,j]) for i in range(M) for j in range(M))
+print(f"  |Bfull - Bdirect|_max = {mp.nstr(err,5)} (small => machine VALIDATED on zero-overlapping basis)",flush=True)
+print("DONE. FULL should be PSD (=Gram on RH). Match to direct => construction correct on meaningful functions.",flush=True)

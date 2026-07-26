@@ -1,0 +1,9 @@
+§289d full Weil form TOTAL POSITIVITY at spacing 5 (dense-ish, diagdom FAILED), dps=30, minEig=0.2409:
+  order 2: 441 minors, 0 negative, min=4.611e-15
+  order 3: 1225 minors, 0 negative, min=2.12e-14
+  order 4: 1225 minors, 0 negative, min=2.248e-10
+  order 5: 441 minors, 0 negative, min=1.005e-5
+
+VERDICT: all orders >=0 => full Weil form is TOTALLY POSITIVE at spacing 5 (dense-ish) => TP genuinely reaches
+past the diagdom edge; a candidate STRONGER certificate for the dense core. any negative => TP breaks, not a route.
+DONE

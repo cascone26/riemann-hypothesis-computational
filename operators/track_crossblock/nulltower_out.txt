@@ -1,0 +1,13 @@
+AUDIT check: near-null tower anatomy, c=13 N=18, L=2.5649. n(t)=t*L/2pi:
+   gamma= 14.1347 -> n =   5.77
+   gamma= 21.0220 -> n =   8.58
+   gamma= 25.0109 -> n =  10.21
+   gamma= 30.4249 -> n =  12.42
+   gamma= 32.9351 -> n =  13.44
+
+ eig k=0: lam=   1.485e-37  dominant: n=+0(-0.553), n=-1(+0.479), n=+1(+0.479), n=+2(-0.309)   |n|-centroid=0.98
+ eig k=1: lam=   1.907e-34  dominant: n=+2(+0.480), n=-2(-0.480), n=+1(-0.372), n=-1(+0.372)   |n|-centroid=2.03
+ eig k=2: lam=   1.411e-31  dominant: n=-3(+0.464), n=+3(+0.464), n=+0(+0.402), n=-2(-0.317)   |n|-centroid=2.42
+ eig k=3: lam=   7.685e-29  dominant: n=+4(-0.421), n=-4(+0.421), n=+3(+0.381), n=-3(-0.381)   |n|-centroid=2.86
+ eig k=4: lam=   3.209e-26  dominant: n=+4(-0.467), n=-4(-0.467), n=-2(+0.369), n=+2(+0.369)   |n|-centroid=3.11
+ eig k=5: lam=   9.413e-24  dominant: n=+5(+0.358), n=-5(-0.358), n=-4(+0.335), n=+4(-0.335)   |n|-centroid=3.64

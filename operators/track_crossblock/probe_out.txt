@@ -1,0 +1,26 @@
+Building full sine-basis Weil form, modes=[1, 2, 3, 4, 5, 6, 7, 8], a=0.549 (p=2 only), NLERCH=3000, prec=400
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+
+=== BLOCK STRUCTURE ===
+ odd-block  (4x4) Frobenius norm = 8.352652e-01
+ even-block (4x4) Frobenius norm = 1.032983e+00
+ CROSS-block(odd,even) Frobenius norm = 1.795603e+00
+ cross / sqrt(odd*even) diag-scale ratio = 1.933088e+00
+ max |cross entry| = 1.176986e+00   max|diag-block entry| = 8.750545e-01
+
+=== EIGENVALUES (float midpoint; REPORT tier) ===
+ FULL   : [-1.09673653 -0.317303   -0.08054096  0.0274211   0.18604112  0.34823972
+  1.39885121  2.1885347 ]
+ ODD    : [-1.55122227e-08  1.03222881e-03  4.80188974e-01  6.83436478e-01]
+ EVEN   : [2.94391184e-05 8.84955106e-02 5.03981843e-01 8.97342901e-01]
+
+ FULL min-eig = -1.096737e+00   PD? False
+ ODD  min-eig = -1.551222e-08   PD? False
+ EVEN min-eig = 2.943912e-05   PD? True

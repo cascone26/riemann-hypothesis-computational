@@ -1,0 +1,15 @@
+§280 cumulative lambda_max(prime rel arch+pole) as primes are ADDED (w=4, band 20-44):
+ primes<=P  lambda_max  delta from prev
+         2     0.34621           0.3462
+         3     0.29803         -0.04818
+         5       0.298        -2.714e-5
+         7       0.298         1.495e-7
+        11       0.298       -1.699e-11
+        13       0.298        2.204e-12
+        17       0.298        2.037e-14
+        19       0.298        9.813e-17
+        23       0.298        4.946e-17
+        29       0.298        5.785e-20
+        31       0.298        9.218e-21
+        37       0.298       -7.941e-23
+DONE. converges => operator norm = sum of per-prime contributions; each prime's delta shows its weight (~1/p?).

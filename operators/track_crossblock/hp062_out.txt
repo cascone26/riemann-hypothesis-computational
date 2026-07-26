@@ -1,0 +1,8 @@
+MULTIPRIME screw cert, EVEN sector, a=0.62 (2a=1.24000), prec=1400, NLERCH=16000
+prime powers included (log q < 2a): 2, 3   [2 terms]
+  pivot 0 (mode 5): [0.539451 +/- 1.93e-7]  rigorously>0? True
+  pivot 1 (mode 7): [0.210428 +/- 3.46e-7]  rigorously>0? True
+  pivot 2 (mode 3): [0.000212 +/- 5.11e-7]  rigorously>0? True
+  pivot 3 (mode 1): [+/- 6.35e-8]  rigorously>0? False
+
+NOT certified

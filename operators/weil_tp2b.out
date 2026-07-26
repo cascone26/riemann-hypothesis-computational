@@ -1,0 +1,11 @@
+§289g(b) local TP2 (log-convexity) of Weil kernel, h=2, dps=30:
+  ...x=14.0 done, running worst=1.845e-11
+  ...x=17.0 done, running worst=1.845e-11
+  ...x=20.0 done, running worst=1.845e-11
+  ...x=23.0 done, running worst=1.845e-11
+  ...x=26.0 done, running worst=1.845e-11
+  ...x=29.0 done, running worst=1.845e-11
+  ...x=32.0 done, running worst=1.845e-11
+  ...x=35.0 done, running worst=1.845e-11
+RESULT h=2: 64 minors, 0 negative, worst=1.8454e-11 -> TP2 HOLDS (kernel log-convex)
+DONE

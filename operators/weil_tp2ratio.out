@@ -1,0 +1,9 @@
+§289i sup of the TP2 minor-ratio [net prime-effect / arch-margin] over (x,y,h) -- does it stay < 1?
+  h=1.0: max ratio = 0.79416
+  h=2.0: max ratio = 0.62425
+  h=3.0: max ratio = 0.46825
+  h=4.0: max ratio = 0.42053
+
+GLOBAL sup ratio = 0.79416 at (x,y,h)=['14.0', '14.0', '1.0']  -> TP2 holds everywhere (sup<1)
+=> if sup<1 with margin, the TP2 target is empirically validated over this range; the a-priori proof needs sup<1 uniformly.
+DONE

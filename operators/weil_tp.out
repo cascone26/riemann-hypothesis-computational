@@ -1,0 +1,7 @@
+§289b total-positivity of ARCH vs FULL Weil form (all minors of each order >=0 => totally positive):
+        ARCH: 2x2:0/225neg  3x2:0/400neg  
+   FULL Weil: 2x2:0/225neg  3x2:0/400neg  
+
+READ: FULL form all-minors>=0 => the prime perturbation PRESERVES total positivity => a NEW structural route to
+dense-regime positivity (TP => PSD, and TP is a rigid property). FULL has neg minors => TP confined to arch (Groskin).
+DONE

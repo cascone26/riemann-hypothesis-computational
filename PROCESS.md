@@ -9277,3 +9277,19 @@ family-universal frame to hunt the missing definite-signature pairing; t01/t02/t
 t06 makes our own future certs un-fakeable without an independent catch. Next lever: point t04's family
 comparator + t03's scorer at the keystone (does any candidate home carry a signature pairing that
 survives the family). Nothing here proves RH — these are instruments and gates.
+
+## 2026-07-26 Riemann7 (§334-335): roundtable-#4 deposit → gated its prescriptions (t01: all three REDUCE-TO-WALL;
+caught the Eisenstein-vs-cuspidal conflation in the sym-power lead) → pointed its one good lens (L²/integrability
+threshold, complementary-series blindness) at our own instrument. Built l2_edge_sweep.py (validated vs §286-287;
+sieve bug caught via residual frequency-projection = cos(c·log6) → fixed). Measured: dense-regime collapse =
+critical-density/Weyl-count sampling phenomenon (w-independent Nyquist edge, prolate plunge, exact PSD nullity),
+NOT sign; bent primes only detectable past the edge. §283b target re-specified as a density/sampling certificate.
+Decision chain: don't chase the roundtable's functoriality/density fronts (off-target per t01 + conflation);
+convert its diagnosis into a measurement on our own validated tooling instead.
+
+## 2026-07-26 Riemann7 day close (§336-342): lit-gate confirmed foundations published/synthesis not → built
+directional (§337) then resonant-exact (§338) certificate chains — decision fork: treat resonant terms exactly
+vs bound (exact won; fixed-R provably insufficient, adaptive core essential §339) → Arb hardening (§340; caught
+arb x**2 ball-NaN) → I2 arch floor failed flat (edge-probe mass), resolved via piecewise-Riemann minorant
+(§341) → w-sweep: universality + e^{c/w} core law = the wall measured (§342). Grounding doc for next
+roundtable written: ROUNDTABLE_GROUNDING_2026-07-26.md. All chain code in operators/, outputs l2edge_*.out.

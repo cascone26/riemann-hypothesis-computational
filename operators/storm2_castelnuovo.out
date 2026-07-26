@@ -1,0 +1,36 @@
+STORM#2 Castelnuovo-Severi: M=13, band [14,50]
+  row 0
+  row 1
+  row 2
+  row 3
+  row 4
+  row 5
+  row 6
+  row 7
+  row 8
+  row 9
+  row 10
+  row 11
+  row 12
+
+--- Intersection numbers (classes: D=diagonal, G=Frobenius/scaling, f=fiber) ---
+  D·D = 1.6747987756356846e-17
+  G·G = 9.570562531024843
+  f·f = 8.617789645855684
+  D·G = -1.9118094134197561e-19
+  D·f = -1.9715164540289664e-19
+  G·f = 8.735351026761132
+
+  Intersection matrix eigenvalues: ['1.675e-17', '0.3458', '17.84']
+  Signature: 2 positive, 0 negative => NOT hyperbolic
+
+--- Castelnuovo-Severi inequality ---
+  Primitive class D_prim = Γ - 1.0136417092707737 f
+  D_prim · D_prim = 0.7160463851784785  => >0 (Castelnuovo FAILS)
+
+--- Rank vs #zeros ---
+  Weil-form rank (M=13) = 11 (eigenvalues: min=1.675e-17, max=0.0)
+  In-band zero count = 10 (from storm#3)
+  rank ≈ M - #zeros = 13 - 10 = 3  => actual rank 11 INCONSISTENT
+
+DONE

@@ -1,0 +1,20 @@
+{
+  "run_id": "test_remote",
+  "remote": true,
+  "n_jobs": 1,
+  "results": [
+    {
+      "label": "_moment_ladder_0",
+      "script": "_moment_ladder.py",
+      "args": [
+        "7",
+        "10",
+        "30"
+      ],
+      "ok": true,
+      "wall_s": 9.0,
+      "log": "/Users/scones/projects/riemann/results/dispatch/test_remote/_moment_ladder_0.log",
+      "remote": true
+    }
+  ]
+}

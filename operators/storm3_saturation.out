@@ -1,0 +1,7 @@
+storm#3/#4: near-saturating test function -- does its f(gamma) vanish at in-band zeros? (band [14,50])
+  eigenvalues (sorted): min=1.626e-18, ..., max=0.0
+  in-band zeros: 10; probes: 13
+  |f(gamma)| at in-band zeros (should be ~0 if saturation = zero-vanishing):
+   1.45e-18, 3.12e-18, 3.29e-18, 1.26e-17, 2.84e-17, 1.46e-16, 9.58e-16, 2.71e-15, 3.9e-14, 1.11e-13
+  max |f(gamma)|/||a|| over in-band zeros = 1.1109e-13  (near 0 => §290 confirmed)
+DONE

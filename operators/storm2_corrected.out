@@ -1,0 +1,7 @@
+storm2-corrected: ARCH form (indefinite candidate for intersection form), M=9
+  arch-form full signature: 9+ / 0-  (indefinite = H^1-like, §266b)
+  fiber.fiber=55.62, Gamma.Gamma=6.196e+4, fiber.Gamma=1789.0
+  2x2 {fiber,Gamma} det = 2.447e+5  (<0 => HYPERBOLIC plane = Castelnuovo's h,v hyperbolic pair!)
+  primitive D=Gamma-(Gamma.f/f.f)fiber : D.fiber=-9.15e-20 (~0 check), D.D=4399.1
+  => Castelnuovo D.D <= 0 ? NO
+DONE

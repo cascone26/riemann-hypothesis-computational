@@ -1,0 +1,10 @@
+§278 lambda_max vs test-function WIDTH (band [20,44], most-adversarial=widest smooth functions):
+    w  lambda_max  arch pos-def?
+  3.0     0.20398           True
+  4.0       0.298           True
+  5.0     0.25169           True
+  6.0     0.15023           True
+  8.0    0.024013           True
+ 10.0   0.0013269          False
+DONE. converges to a constant <1 => that's the measured Weil operator norm; -> 1 => marginal for smooth fns.
+(once arch stops being pos-def, wide fns dip below r~6 where Omega<0 -> framing breaks, ignore those rows.)

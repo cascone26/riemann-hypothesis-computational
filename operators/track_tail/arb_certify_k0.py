@@ -1,15 +1,25 @@
 #!/usr/bin/env python3
 """arb_certify_k0.py — generalized §199.3c Arb certification for K0×K0 tail-lemma block.
-Extends operators/dbn_dynamics/arb_certify.py (which is hardcoded 4×4, K0 unspecified) to run at K0=7 (minimal operational).
-Certifies the entire low block {odd modes 1,3,5,7} + rigorous Lerch tail bound in Arb intervals.
-Proves even-sector infinite-dim Weil positivity (via tail_delta_k0_lemma.md, Gershgorin δ(K0)=0.4552 for k>7).
+Extends operators/dbn_dynamics/arb_certify.py (which is hardcoded 4×4, K0 unspecified).
+Certifies the low block {odd modes 1,3,...,K0} rigorously PD in Arb intervals (LDL^T pivots).
 
-NOTE: K0=13 fails at NL=8000 (mode 1 hits precision floor, interval [±1.19e-7] contains 0).
-K0=7 is numerically robust (mode 1 interval [±1.69e-7] passes s>0 test) and sufficient via tail-lemma Gershgorin.
-Both re-confirmed by independent re-run (control-panel session, 2026-07-24): K0=13 fails, K0=7 passes.
+STATUS/PROVENANCE (corrected 2026-07-24, roundtable session — supersedes the two stale claims below):
+  - STALE CLAIM 1 (removed): "K0=7 ... proves even-sector infinite-dim Weil positivity via
+    tail_delta_k0_lemma.md δ(K0)=0.4552". REFUTED at §226: at K0=7 the near-null Schur residual
+    (1.783e-7) EXCEEDS the low-block margin (1.652e-7) — composition FAILS at K0=7. True minimal
+    K0 is 9 (§227); current banking target is K0=23 (Schur headroom ~9,500x, tail-margin floor
+    ~1.22 — see results/k0_hp_nl24000_out.txt).
+  - STALE CLAIM 2 (reworded): "K0=13 fails at NL=8000" was true but PRECISION-FLOOR-SPECIFIC
+    (mode-1 pivot radius ±1.19e-7 exceeds the ~7e-8 margin at NL=8000). At NL=50000 modes {1..17}
+    certified at radius ±2.7e-9 (§227, arb_certify_multiprime). Do NOT read that note as a
+    refutation of the block's PD.
+  - tail_delta_k0_lemma.md (v1) is DEPRECATED -> see operators/track_tail/tail_lemma_v2_nearband_identity.md.
+    This tool certifies the LOW BLOCK ONLY. Infinite-dim composition additionally requires the v2
+    tail lemma (obligations 1-4, OPEN) + an Arb-interval Schur composition. The success banner
+    below states exactly this and no more.
 
 Usage:
-  python3 arb_certify_k0.py [--k0 7] [--nl 8000] [--a 0.549]
+  python3 arb_certify_k0.py [--k0 23] [--nl 50000] [--a 0.549]
 """
 import sys, argparse
 from flint import arb, acb, ctx
@@ -137,8 +147,9 @@ for k, sv, c in piv:
 print()
 if ok:
     print(f"*** CERTIFIED PD (all {n} pivots lower-bound >0) ***")
-    print(f"*** EVEN-SECTOR INFINITE-DIM WEIL POSITIVITY PROVEN ***")
-    print(f"*** (K0={K0} block + tail-lemma δ(K0)={float(arb('1.09')):.3f}) ***")
+    print(f"*** K0={K0} LOW BLOCK rigorously PD (Arb, NLERCH={NLERCH}). ***")
+    print(f"*** NOT a positivity proof by itself: infinite-dim composition still requires ***")
+    print(f"*** the v2 tail lemma (near-band identity + row-sum bound, OPEN) + interval Schur. ***")
     sys.exit(0)
 else:
     print("NOT CERTIFIED — some pivot(s) lower-bound ≤ 0")

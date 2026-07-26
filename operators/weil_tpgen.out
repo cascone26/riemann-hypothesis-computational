@@ -1,0 +1,5 @@
+§289e generality of full-Weil-form TOTAL POSITIVITY (worst minor over all orders), dps=30:
+  band [14,39] sp5 (low): minEig=0.266, worst minor over ALL orders = 1.084e-9 -> TP (>=0)
+  band [50,75] sp5 (HIGHER): minEig=0.834, worst minor over ALL orders = 3.098e-9 -> TP (>=0)
+  band [14,34] sp4 (denser): minEig=0.000726, worst minor over ALL orders = 1.854e-6 -> TP (>=0)
+DONE. TP at higher band + denser => not a low-band artifact; genuinely general => strong lead.

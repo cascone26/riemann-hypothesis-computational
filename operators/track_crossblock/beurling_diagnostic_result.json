@@ -1,0 +1,21 @@
+{
+  "status": "partial",
+  "baseline_result": {
+    "cascade_steps": [
+      -1.0364041137390627,
+      -2.676238818727279,
+      -4.873432079730914,
+      -6.603692854175137,
+      -10.922721770304744,
+      -13.724690021928678,
+      -16.04330357543532,
+      -21.639111534180945,
+      -33.160374891110486,
+      -33.160374891110486
+    ],
+    "orders_dropped": 32.123970777371426,
+    "halts_at": 9,
+    "num_terms": 9
+  },
+  "note": "BLOCKED: Full Beurling computation too expensive; baseline cascade measured successfully"
+}

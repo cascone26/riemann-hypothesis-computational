@@ -62,6 +62,23 @@ explicit positive f(N) whose form is N-independent-enough to extend to ∞? Inte
 rigorous bounds the old float64 work couldn't. If a uniform structural floor exists on the RIGHT
 subspace, that's the proof. (Pairs with A1.)
 
+### L1. Read Connes & Consani "On the Absolute Geometry of Spec Z" (arXiv:2606.06604)  [P:high N:high R:now]
+Found via §312 literature fanout (2026-07-25) — their own newest F1-geometry paper, unread. Directly on the
+geometric/Hodge-index route (§265): develops positivity conditions for absolute geometry on Spec Z. Read for:
+does it supply (or move toward) the missing Hodge-index-analog keystone for Spec Z ×_F1 Spec Z? Pairs with L3
+(Eriksson-Freixas, same Arakelov/F1 machinery family).
+
+### L2. Read Das-Ismoilov-Ramos "Fourier optimization and pair correlation problems" (arXiv:2502.05106)  [P:high N:high R:now]
+Found via §312. SDP/Fourier-LP framework for Montgomery pair correlation — a sibling extremal problem to our
+§283b certificate route (Cohn-Elkies-Viazovska-style magic function for Weil positivity). Read for: does their
+certificate-construction method transplant to our Barch/Bprime/Bpole instrument (operators/weil_*.py)?
+
+### L3. Read Eriksson & Freixas "The Deligne-Riemann-Roch isomorphism" (arXiv:2509.05077)  [P:med N:high R:now]
+Found via §312. Arakelov arithmetic-intersection machinery (determinants of cohomology, canonical line bundle).
+Same geometric route as L1 — read together. Also worth a look: arXiv:2604.24568 (F1 hyper-operations/scalar
+extension) and arXiv:2507.23759 (Bost-Connes + periodic Witt vectors) as lighter-weight background for the
+same F1-geometry front, not separately queued.
+
 ---
 
 ## RUN THIS SESSION (2026-07-18) — outcomes

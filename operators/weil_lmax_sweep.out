@@ -1,0 +1,8 @@
+§277b lambda_max(prime rel arch+pole) across regimes -- does it approach 1 (critical) anywhere?
+                            config  lambda_max margin 1-lmax
+              low band [14,26] w=3       0.201         0.799
+              mid band [14,50] w=3     0.20637       0.79363
+             high band [50,86] w=3     0.27897       0.72103
+             low band narrow w=1.5         1.0    -2.0467e-5
+                 low band wide w=5     0.37653       0.62347
+DONE. lmax well<1 everywhere = robust; approaching 1 in a regime = the critical/tightest regime for the a-priori proof.

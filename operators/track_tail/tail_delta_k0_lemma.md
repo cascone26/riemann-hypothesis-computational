@@ -1,5 +1,16 @@
 # The Tail Lemma: Explicit δ(K₀) Proof
 
+> **DEPRECATED (2026-07-24, roundtable session — see LEDGER §235+).** This draft's quantitative
+> content is wrong and must not be cited: (1) the off-diagonal model C_k ≈ 2.2k is wrong in FORM
+> (measured row sums are bounded ≤1.1 with no k-growth; the draft's own arithmetic doesn't close —
+> "2.2·13·log(13) ≈ 0.04" is actually ≈73); (2) the diagonal model 0.31·log(kβ) is wrong (measured
+> ~2× larger, non-monotone); (3) all Part 2–3 constants (K₀=13 framing, margin 1.6e-5, residual
+> 2.4e-8, NL≥8000) predate §226/§227 and contradict `results/k0_hp_nl24000_out.txt`; (4) the K₀=7
+> composition claim this doc feeds (`arb_certify_k0.py` header, δ=0.4552) was refuted at §226.
+> The theorem statement + Schur skeleton (top section) remain valid.
+> **Successor: `tail_lemma_v2_nearband_identity.md`** — exact cancellation identity, derived and
+> numerically verified, with the remaining proof obligations and the measured answer key.
+
 ## Theorem (Tail Lemma, Finite Truncation Suffices)
 
 **Hypothesis:** The even sector of the Weil form Q (a form on odd modes k∈ℕ, k≡1 mod 2) splits into a low block L={odd k≤K₀} and a tail T={odd k>K₀}. Assume:

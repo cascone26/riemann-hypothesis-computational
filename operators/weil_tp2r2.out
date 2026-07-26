@@ -1,0 +1,5 @@
+§289i(lean) sup TP2 minor-ratio (prime-effect/arch-margin), dps=22:
+  h=1.0 done, running sup=0.79416
+  h=2.0 done, running sup=0.79416
+SUP ratio = 0.79416 at ['14.0', '14.0', '1.0'] -> TP2 holds (sup<1)
+DONE

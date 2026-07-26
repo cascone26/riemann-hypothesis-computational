@@ -1,0 +1,9 @@
+§286 provable-regime EDGE: where does diagonal dominance break as probes densify? (w=3.0, band ~[14,44])
+ spacing  #probes diag-dominant?  min diag margin (B_ii - offsum)
+     6.0        6           True                           0.2669
+     5.0        7          False                          -0.7458
+     4.0        8          False                           -2.017
+     3.0       11          False                           -4.881
+     2.5       13          False                           -6.562
+     2.0       16          False                           -9.555
+DONE. spacing where min-margin crosses 0 = the EDGE: wider=provable (cert+Gershgorin), denser=RH-core (dense regime).

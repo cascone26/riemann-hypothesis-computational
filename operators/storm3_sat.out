@@ -1,0 +1,20 @@
+storm3: build 13x13 Weil form, band [14,50], 13 probes vs 10 in-band zeros
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  row 11 done
+  row 12 done
+  eigenvalues: min=1.675e-17 max=0.0  (min~0 => saturating direction exists)
+  |f(gamma)|/||a|| at in-band zeros:
+   1.81e-8, 2.1e-8, 5.64e-9, 7.11e-11, 4.43e-11, 7.01e-13, 1.1e-15, 1.01e-15, 1.54e-13, 4.38e-13
+  MAX = 2.1012e-8  => CONFIRMED §290 (saturating f vanishes at zeros)
+  |f| at out-of-band zeros (52.97,59.35): 1.29e-12, 7.57e-13 (expect NOT ~0: f localizes to its band)
+DONE

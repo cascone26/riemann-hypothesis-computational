@@ -1,0 +1,8 @@
+§281 lambda_max vs HEIGHT (rank-controlled: 4 probes spaced 8, w=4). does op-norm grow toward 1 or stay bounded?
+ height r0  lambda_max  arch posdef
+        20     0.28601         True
+        60  -0.0031067         True
+       120      0.1442         True
+       200     0.11521         True
+       300     0.11122         True
+DONE. bounded/decreasing => op-norm height-uniform (RH margin holds at all heights). growing->1 => tightening.
