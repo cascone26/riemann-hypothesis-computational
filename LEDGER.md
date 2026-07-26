@@ -12158,3 +12158,50 @@ on the T-axis (measured, no climb), but on the w-axis the count exponent ACCELER
 buyback breaks; the open front sharpens to (i) the w→0 count law beyond w=1.5 (is the acceleration a crossover
 or a divergence?), (ii) core SELECTION vs greedy ordering, (iii) merged-slot blocks for the correlated
 u-adjacent pairs — all three zero-free, all runnable.
+
+## §345 (2026-07-26 night, Riemann7) — THE THREE FRONTS PROBED (rt5_followup.py, rt5_kprobe.py): greedy-by-BOUND selection is catastrophically myopic (not the knob); du-clustering degenerates into a COLLECTIVE TAIL (the physically right object — resolved-unit count is w-INDEPENDENT at 11); k=3 directional saturation BREAKS at w=1.3 (first measured growth of the directional block); and the §344 count law at "the edge" is CONFOUNDED by grid-vs-plunge depth. HANDLE (measured).
+
+**(a) Selection (front ii):** greedy-by-bound = greedy-by-norm at w≥2 (R identical 11/15); WORSE at w=1.5
+(R=45 vs 37, 19 vs 10 negative steps) and FAILS outright at w=1.2 with cand=60 where norm-greedy certifies at
+R=31 — myopic selection actively defers the top-norm terms (2,3,7 picked LAST at w=1.5). §345 kills "smarter
+greedy" as the fix; the non-monotone buyback is structural: terms must enter in correlated GROUPS.
+**(b) Merged slots (front iii):** ALL du-threshold chain-clusterings degenerate at the tail (prime u-gaps → 0:
+at du=0.12 everything n≥37 merges into ONE block of 397/1083/2020 members for w=1.5/1.3/1.2). BUT the
+degeneracy is the finding: the certificate with units {2},{3},{4},{5},{7},{8,9},{11},{13},{16,17,19},
+{23..32},{n≥37 collective} = exactly 11 UNITS AT EVERY w — the resolved-unit count is w-INDEPENDENT; only the
+unresolved collective grows. Physical reading: beyond the Bragg resolution the primes act as one collective
+(smooth-density) object = Tao's minor arc materialized in the chain units. → §346 collective-tail experiment.
+**(c) k-sweep (§339 claim falsified below w=1.5):** at w=1.3 the per-prime chain needs R=66 at k=3 but R=42 at
+k=5 (flat beyond) — the directional block GROWS as the class completes (k: 3→5 across w 1.5→1.3). At w=1.5,
+k barely matters (37→34). At w=1.2, k=6 gives R=20 vs 31 at k=3. The wall's shape is 2-DIMENSIONAL: (R, k)
+both grow. Also resolves §344's w=1.3 "failure": it was the R≤60 cap + myopic selection, not a hard fail.
+**(d) Count-law confound (correction to §344's exponent claim):** R at "the edge" mixes w with WHERE the 0.1
+s-grid lands in the plunge (edge true margins ranged 6e-13..2e-10 across w — R is hypersensitive to depth
+there; w=1.2 edge R=31 < w=1.3 edge R=66 — non-monotone in w purely from depth aliasing). The §344 "local
+exponent ~3" is NOT a clean measurement. Deconfounded version (R at fixed margin depth 1e-8) = §346 section 2.
+
+## §346 (2026-07-26 night, Riemann7) — TWO RESULTS (rt5_collective.py): (1) the DECONFOUNDED count law is a clean QUADRATIC — R·w² ≈ 36-44 ≈ const across w=3..1.2 (R ≈ 40/w² at margin depth 1e-8); (2) the COLLECTIVE-TAIL CHAIN WORKS — resolved core (as few as 18 prime powers) + PNT-smooth integral + measured fluctuation charge ‖ΔT‖ certifies to s=4.4-4.6 at deep w, and the ψ-fluctuation under the Gaussian window SELF-AVERAGES hard (‖ΔT‖ drops ~3 orders per cut step 37→100→500). HANDLE (measured).
+
+**(1) Count law, deconfounded (fixed margin depth 1e-8, k=5, norm-greedy):** R = 4, 7, 11, 16, 22, 26 for
+w = 3, 2.5, 2, 1.5, 1.3, 1.2. R·w = 12→31 (climbing: not linear); R·w² = 36, 44, 44, 36, 37, 37 — CONSTANT
+within noise. **The w-axis cost law is R ≈ 40/w², a stable quadratic** — supersedes both the table's "linear"
+(R≈40/w was a fixed-depth artifact of shallow edges at large w) and §344's "accelerating exponent ~3" (grid-
+depth aliasing, §345d). Polynomial wall on the w-axis CONFIRMED with named exponent 2. (Constant ~40 is
+band-[14,44]; T-dependence of the constant = open, expect ~RvM density via §344 grid.)
+**(2) Collective-tail chain (P = P_res(n<n0) exact + T(n≥n0) → PNT smooth main term 2∫e^{u/2}g_pair du,
+charge ‖ΔT‖=‖T_exact−T_smooth‖₂):** cert = λmin(A−P_res−T_smooth) − ‖ΔT‖ − tailbnd. Reach: w=2: s=4.2/4.0/3.8
+for n0=37/100/500 (n0=500 reaches ONE grid step above the rank limit 3.6); w=1.5: 4.4/4.4/4.2 (limit 3.8);
+w=1.2: 4.6/4.6/4.4 (limit 4.0). With n0=37 the resolved core is 18 prime powers — W-INDEPENDENT — and the
+chain still reaches mid-plunge at every w. ‖ΔT‖ measured: n0=37: 3e-6/7e-4/9e-3 (w=2/1.5/1.2); n0=100:
+2e-9/7e-6/5e-4; n0=500: 3e-16/2e-9/5e-7 — the windowed ψ-fluctuation self-averages ~3 orders per cut step;
+grows as w shrinks (envelope admits more fluctuation), exactly the PNT-short-interval object Riemann's
+division named. THE ONLY ARITHMETIC beyond 18-114 small primes is ‖ΔT‖ — a-priori pricing of ‖ΔT‖ by
+unconditional ψ-bounds (partial summation against d/dx[x^{-1/2}g_pair], RS/VK envelopes) is now THE named
+open ingredient of this front.
+**Structural honesty (consistent with §335):** near the rank limit λmin(M) goes negative BEFORE the true
+margin does (w=1.5 s=4.2: lmin(M)=−1.2e-4 vs true +5e-7) — the smooth replacement loses the resonant
+structure exactly at critical density, where the DISCRETENESS is the margin. The collective picture owns the
+sparse/mid regime; the last stretch to the edge needs directional treatment of the fluctuation itself (norm
+charge on ΔT certifies nothing there — §336's law recurring one level up). The two-regime division is now
+explicit in the certificate architecture: PNT-smooth collective (bulk) + resonant/directional fluctuation
+(edge) — Tao's minor/major arc split realized as chain algebra.
