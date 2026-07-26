@@ -9293,3 +9293,17 @@ vs bound (exact won; fixed-R provably insufficient, adaptive core essential §33
 arb x**2 ball-NaN) → I2 arch floor failed flat (edge-probe mass), resolved via piecewise-Riemann minorant
 (§341) → w-sweep: universality + e^{c/w} core law = the wall measured (§342). Grounding doc for next
 roundtable written: ROUNDTABLE_GROUNDING_2026-07-26.md. All chain code in operators/, outputs l2edge_*.out.
+
+---
+### 2026-07-26 late evening — Roundtable #5 + registered prints (Riemann7 terminal)
+Decision chain: table ran with Q1 spine / Q5 guard on the grounding doc → Q5 gated immediately (wall
+re-lettered) → Q1→Q4 reduction (Tao minor-arc/large-sieve) → n* fork (Dirac γ/2π-fixed-point vs measured
+Bragg) settled by code inspection: §337 "RS crossover" line was an ANNOTATION never computed — Dirac retracted
+→ cost stakes (flat/conditioning/coupling) fused by Riemann into coupling²/gap_residual → Synth ran in-table
+measurements; Chair wrongly accused fabrication (believed chat seats lack Bash), verified provenance, retracted
+→ Gate ratified 5 falsifier-form specs for the terminal. Terminal executed all five (rt5_specs.py): Synth
+confirmed exactly at w=4..2; NEW w=1.5 point breaks linear count law (R=37, local exponent ~3, buyback
+non-monotone → selection matters); phase-corr witness 0.96 on u-adjacent pairs → merged-slot basis indicated;
+Σ|c_k|² bounded; T-grid clean. LEDGER §343 (deposit+corrections) + §344 (prints). Lesson deposited twice this
+session: annotations follow measurements — the §337 mislabel and the Chair's chat-mode assumption were the
+same error class in opposite directions.

@@ -45,8 +45,9 @@ close; residual 1e-10 = its own correctness certificate; reproduces every banked
    band tested ([14,44],[50,80],[100,130]) and every width tested (w=1.5..4), tracking true margins at
    95-99.9%. The directional block NEVER grows (k=3 always suffices); only the exact core grows.
 5. **Bragg/RS structure (§337-338):** at each probe density ONE prime power is near-resonant on the minimizer
-   (log n* ≈ 2π/s; others suppressed 10-1000x by equidistribution); at critical density the resonant scale is
-   n* = γ/2π — the Riemann–Siegel crossover. The prime form's diagonal cost on the minimizer is tiny
+   (log n* ≈ 2π/s; others suppressed 10-1000x by equidistribution). [CORRECTED §343: the earlier "n* = γ/2π =
+   RS crossover" line was an ANNOTATION, never measured — the code computes only the Bragg law log n* ≈ 2π/s;
+   any s↔γ calibration is open work.] The prime form's diagonal cost on the minimizer is tiny
    throughout (|p11|≤0.09, negative/helping in the sparse regime); the obstruction is off-block coupling.
 6. **Arb-rigorous (§340):** B_full PD at the plunge floor s=3.5 AND s=3.4 (band [14,44], w=3) by interval
    LDL^T — theorem-grade for these configs, margins 1.9e-10 / 9.4e-12.
@@ -86,3 +87,16 @@ certify, objects prove. 3-clause gate + constructible-without-zeros + manifest p
 route-prefilter + this doc before claiming novelty. Tools live in ~/projects/riemann/operators/ (l2_edge_sweep,
 directional_cert, resonant_cert, band_sweep_cert, kr_frontier, arb_dense_cert, apriori_chain, arch_floor,
 w_sweep_chain) and ~/projects/riemann/arsenal/.
+
+## ADDENDUM (late evening) — Roundtable #5 banked + the registered prints EXECUTED (§343-344)
+RT#5 deposit: Q5 gated (sampling-set statement = wall re-lettered; only prime-side middle objects admissible);
+Q1→Q4 reduction via minor-arc large sieve (density-only input); cost fused into coupling²/gap_residual with
+marginal buyback d(gap)/dR as the criterion; Frobenius Σ|c_k|² charged unconditionally, phases witness-only;
+load-bearing arithmetic input = PNT short-interval sums (Re=1). §342 corrected: e^{c/w} was REACH; count R is
+the obstruction measure. §337 corrected: "n*=γ/2π RS crossover" was annotation; measured law is log n*≈2π/s.
+Prints (rt5_specs.py, Handle): Synth's w=4..2 numbers reproduce EXACTLY. NEW: w=1.5 gives R=37 (not ~27) —
+count law super-linear at smallest width (local exponent ~3), buyback non-monotone there (greedy core ordering
+suboptimal); phase-corr witness hits 0.96 on u-adjacent pairs (4,7)/(17,19) — slot crowding as coherence ⟹
+merged-slot blocks indicated; Σ|c_k|² bounded O(1) (coupling mass is NOT the wall); T-grid: NO climb in
+q²/gap with band height, R grows slowly (15→19→24 at w=2). Open fronts now: (i) w→0 count law past w=1.5 —
+crossover or divergence; (ii) optimal core SELECTION vs greedy; (iii) merged-slot basis for correlated pairs.

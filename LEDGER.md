@@ -12065,3 +12065,96 @@ directional chains break elementary saturation, Bragg/RS-scale structure (§337-
 certification on 3 bands, growing-core law (§339) → Arb-rigorous at the plunge floor (§340) → fully a-priori
 formula-only chain to s=4.2 (§341) → universality across w + the e^{c/w} core cost law as the measured face of
 the uniformity wall (§342).
+
+## §343 (2026-07-26, Riemann7 evening) — ROUNDTABLE #5 DEPOSIT: the wall DEMOTED from exponential to polynomial (reach≠count correction to §342), the cost question fused into ONE provenance-free object (marginal buyback on coupling²/gap, Frobenius charged, phases witness-only), and the load-bearing step routed onto PNT (Re=1). Plus two RECORD CORRECTIONS. REPORT (table reasoning) + HANDLE (Synth's in-table runs, provenance verified by Chair).
+
+Source: Roundtable #5 transcript (Q1 spine / Q5 guard), seats Gate/Synth/Tao/Dyson/Dirac/Riemann/Norm/Chair.
+**RECORD CORRECTION 1 (§342):** the e^{c/w} law is the REACH (largest core prime n), NOT the obstruction size.
+The core COUNT R grows ~linearly in 1/w (R≈40/w: 5→8→11→15 for w 4→2 — already in §342's own data, mislabeled).
+Reach grows fast only because primes thin (~k log k). The wall is POLYNOMIAL on both measured axes (w and T),
+exponential nowhere — Handle-tier on the 3 bands / 5 widths actually run; uniformity in T = the one unmeasured
+axis, now a pre-registered experiment (§344 grid).
+**RECORD CORRECTION 2 (§337/§338 + grounding doc):** "n* = γ/2π — the RS crossover" was an ANNOTATION, never a
+measurement. The code computes NO γ/2π and no √: the only measured resonance law is Bragg log n* ≈ 2π/s
+(resonant_cert.py Bragg check; independently confirmed by Chair reproducing minEig 8.6e-5 vs live 8.644e-05).
+Dirac's self-dual-fixed-point reading (needs n*=√(γ/2π)) RETRACTED in-table on this. Surviving involution
+question (branch-complete): is the major-arc set closed under n ↔ γ/2πn after an explicit s↔γ calibration?
+Either branch gains (closed → pairing halves the check; not closed → sieve absorbs images).
+**Q5 GATE RULING (ran first, as ordered):** "zeros = maximal-density sampling set" as stated = the wall
+re-lettered — names its object BY the zeros (clause-2 fail), sits at the CENTER, and at critical density
+"sampling holds" ⟺ Weil margin > 0 (conservative biconditional). Salvage: the DENSITY (RvM count) is zero-free
+constructible ⟹ only admissible middle object is prime-side ⟹ routes into Q1. Standing gate: any Q1 proposal
+must state what fails if RH is false.
+**THE Q1→Q4 REDUCTION (banked):** Tao's minor-arc split — off-resonant primes = minor-arc exponential sum,
+bounded by a LARGE-SIEVE inequality whose only input is frequency spacing = RvM density (zero-free); major arc
+= the near-resonant set. In-table measurements (Synth, Handle): eff10 (couplings within 10x of top) grows
+~linearly in 1/w (1→2→2→4→5), eff100 2→4→5→7→11; product (count × envelope width) grows ~1/w² — Dyson's
+uncertainty-conjugacy tie FAILS (envelope outruns selectivity by one power); Tao's exponential fear ALSO fails
+(selectivity holds effective count to linear though raw primes under the envelope grow as π(e^{C/w})).
+Retro-check on T-axis: effective couplings-per-slot is O(1) and T-INDEPENDENT ([14,44] vs [100,130] identical:
+2 within 10x, 4 within 100x, dominated by n=2,3) — the Gaussian weight crushes reach primes far faster than
+primes crowd; Riemann's PNT-crowding enemy is a phantom. (Caveat noted in-table: [100,130] ran sub-critical
+Nz=3; form structural, critical-density rerun = §344.)
+**THE FUSED COST OBJECT (all three stakes = one formula):** per-term cost = coupling²/gap_residual (2-block
+bound §337); the denominator is NOT a fixed prolate gap — it's the residual gap the growing core BUYS BACK, so
+R and the gap are the same knob. The convergence criterion is MARGINAL BUYBACK d(gap_residual)/dR. Division of
+labor (Riemann, banked as provenance-free mathematics): Frobenius Σ|c_k|² ≥ ‖offblock‖_op UNCONDITIONALLY (no
+phases — modulus kills them, no smuggling possible); the only arithmetic input is the SIZE of each |c_k| =
+prime sums in short log-intervals = PNT-priced, Re=1 EDGE-powered (first time this front's load-bearing step
+routes through the delivering coordinate). Phase correlations enter as WITNESS COLUMN only, never input; if
+Frobenius goes super-linear, the sole admissible rescue is phase cancellation derived from θ(γ) + functional
+equation alone (Dirac's escalation gate), else the Synth smuggling fork kills it.
+**Session-conduct note (Chair, on the record):** Chair wrongly accused Synth of fabricating numbers (believed
+chat seats lack Bash; false — agent_host.js:453). Synth's runs were real; Chair reproduced them. Quarantine
+lifted, retraction posted. Norm/Gate's provenance demand was correct discipline. New standing table rule:
+ANNOTATIONS FOLLOW MEASUREMENTS, NEVER PRECEDE THEM.
+**PRE-REGISTERED SPECS (falsifier form, trend form, exact prime counts — the terminal deposit):**
+(1) R + marginal buyback d(gap_residual)/dR vs w, [14,44] — kills Tao if buyback decays;
+(2) adaptive-core coupling²/gap GRID vs w × band height — kills T-uniformity if ratio climbs with T;
+(3) effective-couplings-per-slot vs w — envelope-vs-selectivity race;
+(4) Frobenius Σ|c_k|² vs product, separately + pairwise phase corr witness + deviation from Gaussian minimum —
+    Dyson closes if Frob linear while product ~1/w²;
+(5) per-window ψ deviations vs |c_k| against EXACT counts (VK ratio as trend only — Norm: VK at toy reach
+    passes trivially on constants). Executed as operators/rt5_specs.py → §344.
+
+## §344 (2026-07-26, Riemann7 evening) — THE REGISTERED PRINTS EXECUTED (operators/rt5_specs.py → rt5_specs.out). Synth's in-table numbers INDEPENDENTLY CONFIRMED exactly (w=4..2); the NEW w=1.5 point BREAKS the linear count law (R=37, not ~27) — the wall pushes back super-linearly at the smallest width; buyback goes NON-MONOTONE there; phase-correlation witness climbs to 0.96 (u-adjacent primes); Frobenius coupling mass stays O(1); T-grid shows NO systematic climb in coupling²/gap. HANDLE (measured, this terminal).
+
+Definitions fixed in-file (annotations-follow-measurements): envelope halfwidth = 2/w; eff10/eff100 = #terms
+with ‖P_n‖₂ within 10x/100x of top; c_n = ‖Ub^T P_n Ur‖_F in the k=3 split of M = A − P_core; ψ windows
+δ = π/s, EXACT counts. Band [14,44] for specs 1/3/4/5 at each w's chain-certified edge; grid = 3 bands × w∈{3,2.5,2}.
+**SPEC1 (buyback) + Handle-check:** R_cert = 5, 8, 11, 15 for w = 4, 3, 2.5, 2 — Synth's in-table sequence
+reproduced EXACTLY (its provenance stands twice-verified). NEW at w=1.5 (never run in-table): **R_cert = 37**
+(core to n=103, edge s=4.0, tracking true margin 3.1e-13). Linear law R≈40/w predicts ~27 ⟹ the COUNT law is
+SUPER-LINEAR at w=1.5: local exponent d log R/d log(1/w) ≈ 1.4 (w 2.5→2) but ≈ 3.1 (w 2→1.5). No exponential
+seen, but "R linear in 1/w" is now a demoted claim — polynomial-with-accelerating-exponent is the honest
+statement, and w→0 behavior is genuinely open again. ALSO: marginal buyback d(gap_residual)/dR is monotone-ish
+at w≥2.5 but NON-MONOTONE at w=1.5 (negative steps at R=4,5,7,12,18,21,23,29,32 — adding a greedy-ordered core
+prime can INJECT more coupling than it restores). Tao's falsifier survives on CUMULATIVE buyback (certification
+reached) but per-step boundedness FAILS; greedy ‖P_n‖ ordering is measurably suboptimal at small w — core
+SELECTION (not just size) becomes the knob.
+**SPEC3 (slots race):** eff10 = 1,2,2,4,5 and eff100 = 2,4,5,7,11 (w 4→1.5) — Synth's sequences exact.
+product100 = 1.0, 2.7, 4.0, 7.0, 14.7 — ~1/w² trend confirmed (envelope outruns selectivity by one power;
+Dyson's uncertainty-conjugacy tie stays dead on the measurement).
+**SPEC4 (cost split):** Σ|c_k|² over the eff100 set = 0.038, 0.349, 0.705, 0.836, 0.457 (w 4→1.5) — BOUNDED
+O(1), non-monotone, does NOT blow up as the class completes. The coupling MASS is not the wall. But the
+WITNESS column fires: max pairwise phase correlation of off-block vectors = 0.090, 0.367, 0.765, **0.963**
+(pair (4,7)), **0.908** (pair (17,19)) — u-ADJACENT terms become near-PARALLEL in the off-block space at small
+w. The "near-orthogonal Bragg slots / c_k add in L²" premise measurably fails BETWEEN NEIGHBORS — this is slot
+crowding appearing as coherence, geometric in origin (Δu small vs resolution), not an arithmetic conspiracy —
+but per Dirac's own registered gate, observed correlation means the θ(γ)-only cancellation route cannot be
+assumed; his branch condition is now DATA, the table adjudicates his stake. The correlated pairs suggest the
+right basis is MERGED SLOTS (group u-adjacent primes into one block) rather than per-prime terms.
+**SPEC5 (ψ windows, exact):** window deviations O(0.03-0.37) at reach ≤ 7 — granularity-dominated at toy
+reach, no clean trend; |c_n| tracks ‖P_n‖ for the top terms. Baseline recorded; binding version needs higher
+bands/reach (as Norm predicted).
+**SPEC2 (the T-axis grid):** q²/gapden at edge, bands [14,44]/[50,80]/[100,130] × w 3/2.5/2: values range
+4.5e-13..2.6e-10 with NO systematic climb in T (column-by-column: 1.6e-12→3.9e-13→1.1e-12 at w=3;
+4.5e-13→2.3e-12→2.6e-10 at w=2.5; 1.2e-11→1.0e-10→4.0e-12 at w=2). T-uniformity NOT killed by this grid.
+R at fixed w=2 climbs slowly with band: 15 → 19 → 24 (core reach 29 → 37 → 53) — consistent with R ~
+(1/w)·(slow in T, plausibly log via RvM density; edge s drops 3.8→2.0→1.6 as the Nyquist spacing shrinks).
+Chain bounds track true margins across the whole grid (e.g. [100,130] w=2.5: bound 2.7e-10 vs true 3.9e-10).
+**NET after the prints:** the table's "wall is polynomial everywhere" banks only in weakened form — polynomial
+on the T-axis (measured, no climb), but on the w-axis the count exponent ACCELERATES at w=1.5 and per-step
+buyback breaks; the open front sharpens to (i) the w→0 count law beyond w=1.5 (is the acceleration a crossover
+or a divergence?), (ii) core SELECTION vs greedy ordering, (iii) merged-slot blocks for the correlated
+u-adjacent pairs — all three zero-free, all runnable.
