@@ -1,0 +1,22 @@
+A-PRIORI PRICING of ||DT|| + the cut race.  cert = lmin(M) - charge - tailbnd
+   w    n0  #res meas||DT||   ||Ce||F  loss_e   ||Cc||F    eps reach_meas reach_exact reach_const
+ 2.0   100    35   1.69e-09  3.46e-09       2  7.44e-09  0.068 3.9999999999999982 3.9999999999999982 3.9999999999999982
+ 2.0   500   114   3.26e-16  3.83e-17       0  1.10e-16  0.025 3.799999999999998 3.799999999999998 3.799999999999998
+ 2.0  2000   333   3.33e-16  1.40e-25       0  4.52e-25  0.012 3.799999999999998 3.799999999999998 3.799999999999998
+ 2.0  5000   711   2.25e-16  3.64e-32       0  1.36e-31  0.007 3.799999999999998 3.799999999999998 3.799999999999998
+/Users/scones/projects/riemann/operators/rt5_dtprice.py:63: IntegrationWarning: The integral is probably divergent, or slowly convergent.
+  I, _ = quad(lambda u, cj=cs[j], ck=cs[k]: np.exp(u / 2) * L.g_pair(cj, ck, w, u),
+ 1.5   100    35   6.66e-06  3.47e-05       5  9.08e-05  0.068 4.399999999999999 4.399999999999999 4.399999999999999
+ 1.5   500   114   1.97e-09  9.90e-10       1  2.81e-09  0.025 4.199999999999998 4.199999999999998 4.199999999999998
+ 1.5  2000   333   4.87e-14  1.49e-14       0  4.88e-14  0.012 3.9999999999999982 3.9999999999999982 3.9999999999999982
+ 1.5  5000   711   2.34e-16  2.56e-18       0  9.46e-18  0.007 3.9999999999999982 3.9999999999999982 3.9999999999999982
+ 1.2   100    35   4.51e-04  2.65e-03       6  8.02e-03  0.068 4.599999999999999 4.599999999999999 4.599999999999999
+ 1.2   500   114   6.19e-07  2.85e-06       5  8.57e-06  0.025 4.399999999999999 4.399999999999999 4.399999999999999
+ 1.2  2000   333   8.47e-09  2.18e-09       0  7.12e-09  0.012 4.399999999999999 4.399999999999999 4.399999999999999
+ 1.2  5000   711   5.97e-11  7.40e-12       0  2.77e-11  0.007 4.199999999999998 4.199999999999998 4.199999999999998
+
+Reading: loss_e = pure |.|-loss (cancellation inside the fluctuation that pointwise
+partial summation cannot see). If reach_exact/const still hits ~4.4-4.6 at n0=2000-5000,
+the a-priori collective chain closes mid-plunge with a few hundred resolved primes;
+if reach dies at every cut, the charge loss beats self-averaging and mean-square
+(large-sieve) pricing replaces pointwise partial summation as the named ingredient.

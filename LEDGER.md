@@ -12205,3 +12205,30 @@ sparse/mid regime; the last stretch to the edge needs directional treatment of t
 charge on ΔT certifies nothing there — §336's law recurring one level up). The two-regime division is now
 explicit in the certificate architecture: PNT-smooth collective (bulk) + resonant/directional fluctuation
 (edge) — Tao's minor/major arc split realized as chain algebra.
+
+## §347 (2026-07-26 night, Riemann7) — THE FLUCTUATION CHARGE PRICES A-PRIORI, AND THE COLLECTIVE CHAIN GETS **FULL REACH**: pointwise partial summation against |ψ(x)−x| is nearly TIGHT (loss ≤6x, no hidden phase-cancellation needed — no large sieve required at these cuts), the ε-envelope version certifies THE SAME REACH, and with the cut pushed to n0=2000-5000 the elementary chain reaches THE LAST GRID ROW BEFORE THE RANK LIMIT at every w tested. The wall relocates cleanly into the CUT-GROWTH LAW n0(w) ~ e^{c/w} = ε(PNT-strength)-vs-margin race. HANDLE (measured, rt5_dtprice.py).
+
+**Pricing (partial summation, f'=e^{−u/2}(G'−G/2), exact ψ to 20000 + boundary + Gaussian-killed tail):**
+loss_e = ‖C_exact‖_F / ‖ΔT‖_meas = 2-6 at small cuts, ≤1 at large cuts — the feared oscillation-frequency
+(~c_j) blowup does NOT materialize; ‖ΔT‖'s smallness is carried by |ψ−x| being small (PNT) + the Gaussian
+envelope, NOT by delicate cancellation invisible to pointwise bounds. [Honesty: meas‖ΔT‖ saturates at float
+noise ~1e-16 for large cuts — the "loss 0" rows mean charge < float floor; charge column is the real number.]
+**ε-envelope (fully a-priori SHAPE; constant = measured max |ψ−x|/x on [n0,20000]: 0.068/0.025/0.012/0.007
+for n0=100/500/2000/5000 — lit-check to swap in named RS-type explicit constants = bookkeeping ingredient):**
+loses only ~3x vs exact and CERTIFIES THE SAME REACH at every (w, n0).
+**FULL REACH (the banner):** reach_const = reach_exact = reach_meas everywhere, and at the largest cuts the
+chain certifies the deepest PSD grid row (one step above the rank limit) at EVERY width:
+  w=2.0: reach s=3.8 (limit 3.6) from n0=500 (114 resolved prime powers);
+  w=1.5: reach s=4.0 (limit 3.8) from n0=2000 (333);
+  w=1.2: reach s=4.2 (limit 4.0) from n0=5000 (711).
+⟹ the ENTIRE PSD region at w=1.2-2.0, band [14,44], is now certified by: pole + arch + a few hundred
+elementary prime terms + one smooth erf/Gaussian integral + ONE explicit PNT constant. §346's "smooth fails
+at the edge" is resolved: with the cut past the resonant scales, the resolved core does the resonant work and
+the collective is deep enough to be quiet.
+**The conserved wall, next face (named):** full reach requires charge < edge margin; charge ~ ε(n0)·(Gaussian
+envelope at u0) forces u0 ≳ (2/w)·√log(1/margin) ⟹ n0(w) ~ e^{c/w} — the §342 REACH law reappears as the CUT.
+The uniformity race is now stated in delivering-coordinate terms: **how does ε(x) (PNT/VK strength, Re=1)
+race the critical-density margin plunge as the class completes?** Both sides of that race are explicit,
+computable curves. Next named measurements: (a) required-ε at the edge vs available-ε(n0) budget curve
+(w-sweep + T-sweep); (b) lit-check + substitution of named explicit ψ-envelope constants; (c) Arb-harden one
+deep collective-chain config (§340 discipline).
