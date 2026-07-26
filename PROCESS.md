@@ -8907,3 +8907,373 @@ any reachable machine when this was built; tools/dispatch.py is ready to fire th
 
 Proof pointers: registry/claims.jsonl, results/dispatch/test_remote/manifest.json (local/remote diff identical),
 membrane_pulls/corpus.db.
+
+## 2026-07-25 (Sam, Fable) — §256: pencil resolution of the L2 fork; the roundtable discipline applied
+Two roundtables handed a clean directive: Hamming (derive, don't sweep; lit-check first), Dyson (prolate=Slepian
+concentration extremizer, check Slepian↔HP), Norm/Norma (lit-check FIRST, pre-register the fork, "compute-run opening
+the session = momentum won"). A parallel bot-session had instead launched 5+ sweeps characterizing the decay law —
+excellent hygiene, wrong activity per the panel; its own sharpest output (Purple/Yellow deflation) showed §253b
+reduces to the wall.
+DECISION CHAIN: (1) verified the bot results were real (§255a banked, scripts exist) not confabulation. (2) Ran the
+PENCIL fork with pre-registered criteria (80% prior kinematic). (3) Kinematic branch confirmed: E(ω)~ω^{2K+1} ⟺
+boundary-flatness of the near-null, an E-map (u^½Σf(nu)) kinematic; numerically confirmed the flatness ladder.
+(4) L2 closed with mechanism; difficulty-conservation law extracted. (5) Grounded Dyson's check in the real CCM
+source (W_λ formula + discrepancy-dₙ open program).
+BEHAVIORAL NOTE (Jacob, emphatic, 4× this session): I repeatedly ended turns saying "continuing/picking it up/doing
+it now" WITHOUT a tool call in the turn — narration masquerading as action, costing him wait-time. FIX ADOPTED: never
+claim to be working unless a tool call is in the same turn; otherwise stop and ask. Also built a 30-min idle watcher
+(Monitor, persistent) that pings his ntfy + wakes the session if no compute/repo-write in 35 min — enforces "working
+or pinging."
+Proof pointers: LEDGER §256, STATUS 2026-07-25 §256 block, CCM read membrane_pulls/d_2310.18423/mainc2m24fine.tex.
+Open: Lane B CCM dₙ discrepancy probe (fresh session); Lane A arc-Toeplitz bound (room's lane).
+
+## 2026-07-25 (Sam, Fable) — §257 arc: Lane B / CCM discrepancy program → Meixner-Pollaczek identification
+Full autonomy night (Jacob asleep). Opened Lane B (CCM 2310.18423 semilocal-prolate frontier) with a coherent
+computed arc, 6 verify-catches:
+- §257: computed CCM discrepancy coefficients d_n (measure |L_∞·∏L_p|²). Archimedean baseline reproduced+DOUBLE-
+  verified (a_n=½√((2n+1)(2n+2)) vs paper line 525/543; d_n^arch~1e-39 = their dzero thm, pipeline validated). First
+  explicit semilocal d_n.
+- §257b: higher-n via modified-Chebyshev/Wheeler (bug caught: even-integration shortcut applied to ODD modified
+  moments; fixed by symmetry, arch gate then passes 1e-36). d_n DON'T decay — O(1) log-p modulation.
+- §257c→§257d: primes imprint as index-n oscillations; §257c claimed freq∝log p (1% p2:p3 match) but §257d CORRECTED
+  it via n=35 FFT — freq is SUBLINEAR/saturating (a rotation-number law); §257c's match was coarse-resolution
+  coincidence.
+- §257e (the payoff): CCM's archimedean cyclic pair (Scal, Gaussian) IS Meixner-Pollaczek (λ=¼, φ=π/2), verified
+  EXACTLY (b_arch(n)=4·b_MP(n), ratio 1.000). ⟹ their open semilocal program = a Szegő perturbation of a classical OP
+  family; the primes = an index-frequency spectrum ordered by {log p} saturating at Nyquist (aliasing of the fast
+  s-perturbation onto the discrete index).
+- §257f: freq law measured cleanly (7 primes, sub-bin periodogram): freq(p)≈0.5(1−p^{−0.84}), rms 0.0085. Concluded
+  the frequency sub-line; triaged remaining freq/amplitude closed-forms as classical Geronimo-Nevai territory (lower
+  marginal value).
+- LIVE (post-§257f): building CCM's OPEN semilocal prolate operator W_λ from the perturbed-MP Jacobi (their Prop
+  jacobprol J^± formula) — archimedean gate assembled, Sonin/negative spectrum extracted as their theory predicts;
+  next add primes and track the spectrum.
+Methodology: every claim gate-verified or cross-checked; 6 self-caught overclaims (odd-moment integration, freq∝log p,
++ the arc's earlier §248b/§250/§253/§254 catches). Narration-vs-execution behavioral fix held (tool in every turn).
+Tools: operators/ccm_discrepancy.py. Proof pointers: LEDGER §257-257f, STATUS 2026-07-25.
+
+---
+## Arc §258–265 — from operator-spectrum probes to the intersection-theory wanted-poster (2026-07-25, Sam/Fable)
+
+**Problem framing at start of arc:** the CCM/Lane-B frontier (perturbed Meixner–Pollaczek, closed-form discrepancy
+d_n) was consolidated; question = where does an actual proof-route live?
+
+**Decision fork 1 — build CCM's semilocal operator W_λ vs. step back to strategy.** Tried (§258) to build W_λ from
+the perturbed-MP Jacobi. FAILED two ways: (a) float direct-Stieltjes unstable past n~5 (needed slow mpmath modified-
+Chebyshev, too slow for the 2M index range — 2 timeouts); (b) *even if built, the raw W_λ spectrum does NOT show the
+zeros* — CCM extract them from the scaling operator on the quotient by range(E) as λ→∞. So it was BOTH unstable AND the
+wrong object. → Deprioritized the operator build.
+
+**Pivot — the difficulty-conservation law (§259/§263) as the compass.** Distilled the whole campaign into one law:
+every framework gets exactly ONE of {reality, correspondence} free; the other = RH. Audited across 11 number-field
+frameworks — none breaks it; the unique breaker is the function-field polarization (geometry). Deposited as
+RH_DIFFICULTY_CONSERVATION_MAP.md. This converts "try more frameworks" → "the frameworks provably can't win; supply
+the link."
+
+**Decision fork 2 — which permitted attack to sharpen.** Three link-supplying attacks ranked. Overnight, tested
+map-attack #2 (forward monotonicity) numerically (§264): moved a zeta zero off-line, watched three level-functionals
+(log-gas ζ'/ζ level, |ζ|²-level candidates). RESULT: all respond smooth O(δ²); signs (on-line = min for log-gas, max
+for inv-square) are forced BY PYTHAGORAS ALONE (|γ+iδ−γ'|=√((γ−γ')²+δ²)≥|γ−γ'|), so any position-only functional is
+RH-blind. → Sharpened map-attack #2: a real forward-monotone MUST be prime-coupled (else trivial). Killed the
+"cleverer position-functional" sub-lane.
+
+**Decision fork 3 — anchor to the proven case (§265).** Instead of forcing more number-field numerics, computed the
+PROVEN function-field exemplar: elliptic-curve Frobenius eigenvalues = zeta_E zeros, verified |α|=√p to 25+ digits for
+p=5..61. Decomposed it into what supplies each half (surface C×C; Frobenius = algebraic correspondence; intersection
+form positive by Hodge-index; Rosati ⟹ |α|=√q). Read off the number-field wanted-poster: RH ⟺ a HODGE-INDEX THEOREM
+for Spec Z ×_{F₁} Spec Z, scaling flow as Frobenius, Sonin space as H¹ — the unique missing keystone being
+positivity-by-geometry. **Methodological correction earned here:** the proven case gets positivity from INTERSECTION
+THEORY on a surface, not operator eigenvalues — so §236/§258/§260's operator-spectrum probes attacked the wrong
+structure. Re-specified attack #1 from "read the operator" → "build the intersection/cup-product pairing on Sonin
+cohomology and find a diagonal class with computable self-intersection."
+
+**What broke / self-caught this arc:** (1) macOS `timeout` wrapper misfire — the §264 experiment's first run produced
+only "(fallback ran)"; re-ran clean without the wrapper. (2) Map doc listed §247's a²-superresolution as an open
+"why?" surplus — stale; §252 already resolved it as the classical prolate concentration; annotated. (3) Nearly
+re-ran the semilocal operator build with stable closed-form coefficients before search-before-build surfaced §258(b)
+(wrong object regardless of stability) — avoided the wrong-object re-run.
+
+**State:** every concrete overnight probe rejoins the wall exactly as the law predicts — not a dead end but the law
+operating. The one permitted, correctly-specified route = arithmetic intersection theory on the Sonin cohomology
+(research-program scale, not overnight numerics). Proof pointers: LEDGER §258–265, RH_DIFFICULTY_CONSERVATION_MAP.md,
+MORNING_BRIEF_2026-07-25.md. Tools: operators/ccm_discrepancy.py (unchanged). No proof; sharper target + correct method.
+
+---
+## Arc §266–273c — verifying the keystone against the proven case, then building a validated Weil instrument (2026-07-25, Sam/Fable)
+
+**Continuation of §258–265.** Having sharpened the difficulty-conservation "link" into the intersection-theory
+keystone (§265), the second half of the night VERIFIED the target against the proven case and BUILT the tool to attack it.
+
+**Verifying the template (§266–267).** Computed the proven function-field case explicitly: elliptic-curve (§266) and
+genus-2 (§267, real point-count of y²=x⁵+x+1 over F₇/F₄₉, #=9,63) Frobenius eigenvalues = zeta_C zeros, all on |z|=√q.
+Extracted + verified (machine precision, dim 2 and 4) the exact 3-part polarization TEMPLATE the number-field Sonin
+space must replicate: cup product J, Frobenius scaling it by q (correspondence), invariant pos-def metric (reality).
+KEY PIN (§266): "invariant metric exists" ⟺ RH is CIRCULAR; the function-field proof is non-circular ONLY because the
+Hodge-index theorem furnishes the positivity A PRIORI from geometry. ⟹ the keystone = an a-priori, zeros-independent,
+flow-invariant pos-def metric at the Weil level = arithmetic-surface Hodge index.
+
+**Triangulation (§268–270b).** Three independent angles converged on "the RH content is at the Weil/log-derivative
+(p⁻½) level, everything below is blind": §268 (measure |ζ|²≥0 is the wrong level), §269–269f (de Branges canonical
+coefficients see primes at p⁻¹ via the sech^½ arch-FT decay — tied back to §261's closed form, with a verify-catch on
+my own "moment-averaging" hand-wave), §270 (raw Weil signature is generically ~half-negative, no zero structure). §270b
+CORRECTED my own loaded probe: Sylvester's law makes the "signature in a Hermite basis" idea moot (signature is
+basis-invariant) — the real object is the primitive-subspace positivity in the λ→∞ limit.
+
+**Building the instrument (§271–273c) — a real debug slog with 3 self-corrections that all turned out instructive.**
+To attack the primitive-subspace question float-free, built a self-contained mpmath Riemann-Weil quadratic form.
+(§271) verified the arch density Ω=Re ψ(¼+ir/2)−log π against the zero count (offset = the 2 poles). (§272) assembled
+pole+arch+prime; debug arc: mis-designed guard (Ω<0 at small r), monomial ill-conditioning → Hermite → normalized
+Hermite; then diagnosed the naive origin-Gaussian basis is ZERO-BLIND (γ≥14). (§273) fixed with zero-overlapping test
+functions → form is positive-definite (Weil positivity), matching the direct zero-Gram in signature+scale but off by 1.7.
+DECISION FORK on the 1.7: guessed "precision" (§273) → refuted by dps-invariance; guessed "systematic formula error"
+(§273b) → also wrong; LOCALIZED entry-by-entry (§273c) → found the true cause: mp.quad under-resolves a Gaussian bump
+far from the origin (r=38). Fixed with integration breakpoints → the instrument now matches the direct zero-Gram to
+7e-16 (machine precision). VALIDATED. The lesson: two wrong hypotheses killed by direct per-entry measurement, not by
+trusting a hunch — verify-before-ship working to completion.
+
+**State:** a validated, float-free Weil-positivity instrument now exists (operators/weil_selfcontained.py,
+weil_zerobasis.py). The strategic target is triangulated and pinned (Hodge-index positivity at the Weil level). ~13
+verify-catches across the night, several on my own claims. NEXT: use the instrument for the §270b/§266b
+primitive-subspace-signature and Weil-level positivity-margin studies (de-risked, loaded). Proof pointers: LEDGER
+§266–273c, MORNING_BRIEF, RH_DIFFICULTY_CONSERVATION_MAP.md (Keystone Specification). No proof; sharper target +
+verified template + a working instrument.
+
+---
+## Arc §274–287 — operator-norm characterization -> proof skeleton -> Fourier-LP certificate with explicit partials (2026-07-25, Sam/Fable, overnight cont'd)
+
+**Continuation of §266–273c** (which built + validated the self-contained Weil instrument). With a working instrument,
+the second half of the night CHARACTERIZED and partially-PROVED the keystone.
+
+**Operator-norm reframing (§277-278).** Recast Weil positivity = RH as lambda_max(prime rel. arch+pole) < 1 a-priori.
+Measured it robustly ~0.3 (large margin, 65-71% headroom); the difficulty is a-priori-ness/uniformity, NOT tightness.
+
+**Validated it's genuine (§279).** Off-line zeros contribute NEGATIVELY (2Re[g(gamma-i*delta)^2] flips sign), so
+lambda_max<1 <=> RH is real, not automatic. (Verify-catch: operator-precedence bug caught by an absurd 1e28 scan value.)
+
+**Structural findings (§280-283).** Per-prime decomposition: operator norm dominated by primes 2,3, super-exp convergence
+(§280). Height sweep: lambda_max DECREASES with height ~C/log(r0) (arch growth), MAX at low height (§281, correcting §277b's
+rank-artifact "increase"). => the hard core is FINITE: low zeros x small primes, with two controllable tails (§282). And
+§283: Weil positivity is NOT a pointwise inequality -- prime SAMPLES FT[F^2] at the primes (multiplier-vs-sampling duality),
+which killed the tempting pointwise-symbol shortcut.
+
+**The decisive pivot -- Fourier-LP/Viazovska (§283b).** Recognized the dual-domain problem IS a Fourier-LP extremal problem
+(the Cohn-Elkies/Viazovska shape that solved sphere-packing dims 8,24 via exact modular certificates). This became the #1
+attack direction and immediately yielded PARTIALS.
+
+**Explicit partial certificates (§284-287) -- the night's most proof-like results.**
+ - §284: explicit closed-form certificate Omega(c) >= 2 Sum Lambda(n)/sqrt(n) e^{-w^2(log n)^2/4} PROVES single-Gaussian
+   (diagonal) Weil positivity for w>=3. Honest scope: diagonal, Laplace-approx, Gaussian subclass.
+ - §285: the Weil form is DIAGONALLY DOMINANT for well-separated Gaussians => the diagonal cert LIFTS to full-form
+   positivity via Gershgorin (rigorous, exact diagonals). Split the problem: well-separated regime PROVABLE (arch-magnitude);
+   DENSE regime = where RH's content lives (positivity from the zeros' reality).
+ - §286: located the provable/RH-core boundary precisely -- the crude certificate reaches probe-spacing ~2-widths; the gap
+   from ~2-widths to full density = the exact-certificate target (Viazovska analog).
+ - §287: tested the sharper H-matrix (comparison-matrix-PD) certificate -- it does NOT extend past ~2-widths; the form is
+   PSD comfortably denser (minEig 0.24 at spacing 5) but no elementary certificate proves it. => elementary certificates
+   provably saturate; RH genuinely needs the EXACT certificate.
+
+**State.** RH compressed to one operator-norm inequality, validated, decomposed (finite core + controlled tails), with the
+irreducible content pinned to the dense regime and a precise proof target (exact Fourier-LP certificate closing the
+spacing-2-to-0 gap). Elementary shortcuts ruled out. ~18 verify-catches (several on my own claims -- precision/formula/mechanism
+guesses corrected by direct measurement). NEXT: the exact/automorphic certificate (research-scale) or the geometric Hodge-index.
+Proof pointers: LEDGER §274-287, MORNING_BRIEF (9 items), NEXT_SESSION (synthesis roadmap + 3 ranked directions). No proof;
+explicit partials + a precise, ranked, instrument-backed target.
+
+## Arc §299–326 (2026-07-25→26) — the LP/Jensen deep-dive, the Roundtable, and the honest rediscovery catch
+
+**Problem framing at arc start.** After the storm (§290–298) mapped the positivity-criterion family as ONE analytic
+wall (Weil≈CCM≈Li≈de Branges, all reducing to the |ζ|²→ζ'/ζ log-continuation), and the geometric keystone (arithmetic-
+surface Hodge index) as a MISSING FUNCTOR not a missing computation, the forward lever was the reality↔correspondence
+LINK. §299–302 probed it as a generalized eigenproblem (Weil = arch-background A vs prime-correction P): found a spectral
+GAP localizing RH-difficulty to the de Branges/annihilator subspace — then SELF-AUDITED (§301) that the localization is
+mostly the explicit formula's own kernel structure, not new leverage. Difficulty-conservation held; single-framework
+numerics land on the wall.
+
+**The pivot to Laguerre-Pólya (§303→).** §303 built the exact CCM↔Weil ladder (Weil = (ω/2)·log-spectrum of |ζ|²) and
+pinned the RH-hard step to the LOG. §304-306 placed the whole line on Li/Bombieri-Lagarias and showed (verified) the Li
+prime-term S_j^{prime} is an analytic-continuation constant, NOT a convergent {log n} moment like our CCM ν_k — so the
+ν_k↔Li hope closed with a verified negative. This forced a jump to a DIFFERENT front: Laguerre-Pólya / Jensen-GORZ
+(RH ⟺ Ξ∈LP ⟺ all Jensen polys hyperbolic), the front where mainline math actually moved recently.
+
+**The effective-GORZ line (§307–316) — and its later downgrade.** §307-311: from Φ's modular saddle (Φ~exp(−πe^{2u}),
+double-exp) derived a closed-form margin law r_m ≈ −4u*/(m(2u*+1)) (2nd order) and c_m (3rd order), verified sub-1%.
+§313-316: turned this into an "effective ladder" — proved Hermite margins (alternation criterion), thresholds
+N(d)=√(d³/3ε_d), and claimed Jensen degrees 3–25 hyperbolic for ALL n, "apparently unpublished territory." §315's
+"two-constant race": the WORST-CASE Hermite margin decays geometrically but the STRUCTURED (cubic-direction) tolerance
+τ_d≈0.6/d³ decays polynomially ⟹ polynomial ladder N_dir≈0.745 d^{3/2}; Pólya-Schur placement (cubic = first
+non-multiplier direction). §318: derived the τ collapse mechanism = Hermite edge-pair collision, √-collision factor ½.
+
+**The corner analysis (§317–324) — where RH actually hides on this front.** §317: the seam n~N_dir is FEATURELESS
+(margin monotone in n) — tension lives only at the n=0 corner. §319: VERIFY-CATCH — the §317b corner exponent was an
+X=−t² coordinate artifact; in t=√|X| coords the margin is order-unity, decaying toward −1/3. §321: DERIVED the corner
+law as a deterministic two-scale decomposition (bottom = frozen shifted-Borel structure, top = section front), REPLACING
+the RMT/−1/3 reading with exponent → −½. §321b/§322: verified the corner bottom = zeros of the Borel function
+B_n(s)=Σγ_{n+k}(−s²)^k/k! to ≤3% across windows n=0,6,16 — and the zeta ladder FAILS everywhere ⟹ the finite Jensen
+plane NEVER resolves the actual zeros; RH confined to the joint (n,d)→∞ limit. §323: identified the Borel kernel
+G=₀F₂(;½,1;−·)∈LP; reduced "corner unconditionally RH-free" to the mixture-LP lemma "Stieltjes→LP via Bessel
+weighting." §324: STRONG delta-mixture evidence FOR the lemma + TWO verify-catches (self #6,#7): both continuous-Φ
+numeric methods were artifacts (complex-quadrature garbage killed by the e^{−s²} closed form; Taylor-truncation Szegő
+zeros caught by the method's own anchor reporting the Gaussian as non-LP).
+
+**THE ROUNDTABLE (Jacob's multi-Fable superprism, §325).** Jacob ran 6 equally-capable Fable seats (Riemann, Gauss,
+Gödel, Grothendieck, Euler, Red) on "geometric keystone vs LP/saddle front + cross-over." They CONVERGED on the SAME
+LP/Jensen front and, via a literature gate, CAUGHT that my §313–324 deep-dive substantially REDISCOVERED published work.
+Corrections I VERIFIED myself (not trusting the agents): Dimitrov-Lucas 2011 proved degree-3 Jensen hyperbolicity
+UNCONDITIONALLY (confirmed, Proc. AMS 139); GORTTW/Chasse pushed all-n hyperbolicity to d≲10^17–10^20; GORTTW Theorem
+1.2 (verify to height T ⟹ hyperbolic ∀n, d≤T²) is the PUBLISHED quantitative form of my §322 "finite plane never sees
+the zeros." So §313-316's "effective ladder, unpublished" was FALSE — a tiny corner of settled results. The genuine
+downgrade banked (§325). What survived as plausibly-new: the modular-saddle margin LAW (§311) and the ₀F₂-Borel-kernel
+identification (§323c), both non-RH-bearing. TRIPLE+ CONVERGENCE (real finding): my §322 + GORTTW Thm 1.2 + Red's 21-
+kernel sweep + my §324 mixture-LP ALL say the fixed-degree Jensen ladder is kernel-local and RH-free — RH lives ONLY in
+uniformity in d. The Roundtable's forward object: the d*(T0) exchange-rate experiment (measure where transform-reality
+enters the moment conditions; null d*∝T0²; negative-specify the missing keystone as a non-local-in-g Poisson/lattice
+property beating T²), with a disciplined 3-arm sealed protocol.
+
+**The d*(T0) first attempt (§326) — hit the pre-registered range wall.** Ran it: d*=2 flat for T0∈{3..10}, null
+rejected — but TRIVIALLY (all T0 < first zeta zero 14.13; the multiplier's (2m)(2m−1) amplification makes the "pair" a
+gross low-height distortion caught at d=2). The real regime (T0≫14, small pair) needs d*~T0²≳200, beyond the 131 cached
+moments and into unstable high-degree polyroots — EXACTLY Red's pre-registered failure mode #3. Deferred with the correct
+redesign noted (plant above the low zeros, rescale δ for a genuinely small perturbation, Sturm-sequence hyperbolicity
+cert for high degree).
+
+**Process lessons banked.** (1) Single-framework numeric sharpenings land on the wall — proved 4× this arc (§301, and
+the whole ladder = published). (2) Low-order entire functions DEFEAT truncation/coarse-quadrature root tests — 2 self-
+catches (§324); use exact functions + winding on the true function, or Sturm/Hankel-signature certs. (3) The Roundtable
+(independent equally-capable critics + a literature gate) caught a rediscovery I could not see from inside the compute —
+a genuine argument for adversarial multi-agent review before claiming novelty. (4) 7 self-catches total this arc kept it
+honest; every "new" claim now carries a literature-check flag. Proof pointers: LEDGER §299–326, RH_DIFFICULTY_
+CONSERVATION_MAP.md (2026-07-25/26 sections), STATUS §299–318. Verified citations: Dimitrov-Lucas 2011 (AMS record);
+GORTTW arXiv:1910.01227 (bounds as reported, full-text unverified). NO proof; a mapped wall, a caught rediscovery, and
+one genuinely-forward (moment-limited) experiment.
+
+## Roundtable #2 (2026-07-26, strategy) — the reframe that outlasts the night
+
+After §325-326 (Roundtable #1 caught the LP rediscovery; d*(T0) hit the range wall), Jacob ran a SECOND 6-Fable
+roundtable asking the strategic question directly: "where is the best RH ground, honestly — is (b)-the-geometric-
+keystone right, or is that tiredness?" The table rejected BOTH forks and produced the project's sharpest strategic
+frame. Decision chain captured because it changes how ALL future RH work is prioritized (LEDGER §327):
+
+1. **The pivot (Prune):** criteria certify, objects prove — the only RH-class problems that ever fell (Weil, Deligne)
+   fell by building the right HOME for the zeros, positivity a corollary. So stop treating instruments as front-testers;
+   make them CONSTRAINT-COMPILERS for a "wanted poster" of the missing object, used top-down to score candidate homes.
+   Reject both failure modes explicitly: pure instrument-grinding (measures forever, proves nothing) and pure functor-
+   marching (decades of wandering) — the only live lane is the middle, where numerics force the abstraction's hand.
+2. **The cut that reorganizes everything (Keystone):** the explicit formula IS the Lefschetz trace identity, banked
+   since the 1950s; over F_q, RH lived entirely in the SIGN (Castelnuovo/Hodge-index), not the trace. So "identity is
+   homeless" is false — only the SIGNATURE is. Retroactively tombstones every trace-formula-shaped proposal. This is the
+   same conclusion my own keystone-map reached (§264-267: the missing keystone is the a-priori zeros-independent
+   POSITIVE intersection form), now stated as a scoring rule.
+3. **The scorecard (Weil's template transcribed):** prior / generative / signature-bearing. Operationalizes "the right
+   object" — C-C=2/3, de Branges prior-empty, Borger no-index, BN venue-only. The whole functor hunt becomes a checklist
+   with kill conditions instead of a prayer.
+4. **Front-independence as evidence:** the finite-is-free/RH-in-the-limit wall recurs in 4+ formalisms (Jensen degree,
+   C-C prime set, sym-power degree, Deninger flow) — difficulty-conservation shown, not asserted.
+5. **The one computable experiment (control grid + basis swap):** calibrate any criterion against guilty/innocent/Euler-
+   only/duality-only/null controls, in dual additive & multiplicative bases; the both-structures cells survive the swap
+   = the interaction signature. Genuinely-new METHOD even if every curve reads banked.
+
+**My verify-before-build gates (2 WebSearches):** HALF-HOT — Báez-Duarte-with-off-line-zeros is published
+(arXiv:1705.09918); Beurling/Selberg objects heavily studied. The grid's real novelty narrows to the systematic harness
++ the basis-swap signature. Recorded so we don't book banked controls as new ground (the exact §325 failure mode, this
+time caught BEFORE building).
+
+**Process lesson banked.** Two roundtables in one night: #1 (adversarial critics + literature gate) caught a rediscovery
+I couldn't see from inside the compute; #2 (strategic) produced a frame sharper than either solo fork. The multi-Fable
+roundtable is now a proven tool for (a) pre-novelty adversarial review and (b) strategic reframing — worth running
+before committing a build. The durable output of the whole night is NOT a step toward a proof — it is the operational
+compression *RH = an inequality that knows its identity but not its surface*, plus a scorecard that turns the missing-
+surface hunt into scored, kill-conditioned lanes. Highest-leverage next work = "check 8" (extract whether C-C's scaling-
+site positivity is signature-bearing or compactness-based — decides whether the last 3/3 home stands), a real reading
+investment gated by verification, not marched on for being hard. Proof pointers: LEDGER §327, [[rh-roundtable-
+literature-gate]], RH_DIFFICULTY_CONSERVATION_MAP.md.
+
+## Roundtable #3 (2026-07-26, object hunt) + my §329-331 arch work — convergence on the archimedean signature
+
+The chain §327→332 is the strongest strategic stretch of the project. After Roundtable #2's frame (criteria certify,
+objects prove; identity banked, sign homeless; 3-clause scorecard), I ran the check-8 → scoring → arch-fiber line:
+§328 (C-C positivity is spectral-estimate + RR-identity, NOT signature — no home 3/3), §329 (the SIGNATURE theorem is
+PROVEN: arithmetic Hodge index / Faltings-Hriljac→Yuan-Zhang, positivity = −Néron-Tate height; fails RH only because it
+needs a fibration and Spec Z is the base), §330-331 (the arch fiber = C-C's positivity = arch Weil form's positive
+PRIMITIVE part after removing the low-r indefinite "fiber" band; computed the (12,4) signature decomposition; welded to
+my own §298/§299-302). Then Jacob ran Roundtable #3 (+Grothendieck +Witten), which INDEPENDENTLY converged on the same
+conclusion from the algebraic/geometric side and produced the sharpest concrete object:
+
+**Decision chain (all captured, LEDGER §332):**
+1. Grothendieck: the fibration hypothesis is NOT removable in schemes (failing step = vertical/horizontal decomposition
+   that manufactures Néron-Tate positivity); Spec Z's self-square degenerates because Ω¹(diagonal)=0. So the FIRST object
+   is the normal bundle of the diagonal = the arithmetic differentials δ_p (Borger Λ-geometry), and the homeless
+   coordinate is the CROSS-PRIME pairing ⟨δ_p,δ_q⟩. VERIFIED by me: δ_p don't commute (his hand values exact), the
+   commutator is a rich nonzero antisymmetric table, twisted Leibniz (Hirota signature) holds.
+2. Prediction: the Λ-structure is initial ⟹ the δ-cochain is likely a coboundary at finite places ⟹ the signature class
+   CONCENTRATES AT ∞ (the scaling flow). Witten: that's an ANOMALY, and anomaly-inflow makes it an APS ETA boundary term;
+   the Weil metaplectic index (spectral flow at ∞) is the same asymmetry.
+3. CONVERGENCE with my §331: I already computed that the arch Weil form has the fiber⊕primitive structure with the
+   signature living at the archimedean place. Roundtable #3 predicts the signature concentrates at ∞ from pure algebra.
+   Same object, two directions. Witten's sharper test: OS reflection-positivity of the prolate kernel (x→1/x) — hands the
+   self-adjoint generator by theorem = Hilbert-Pólya done right.
+
+**Process lesson.** Three roundtables in one night, each verified-not-trusted: #1 caught the LP rediscovery; #2 gave the
+scorecard frame; #3 produced the first concrete homeless object (⟨δ_p,δ_q⟩) and converged with my independent arch
+numerics. The multi-Fable roundtable + a live compute/literature-gate loop is now the project's core method: agents
+generate structure, I verify the load-bearing computation (δ_p checked exact; arch decomposition computed) and gate the
+literature (Buium/Burnol/Weil-metaplectic/APS pre-greps owed). The genuinely-new research object with no literature to
+rediscover: the cross-prime pairing ⟨δ_p,δ_q⟩ and whether its signature class concentrates at ∞ as a Weil-index/APS-eta
+of the scaling flow — the ONE homeless clause (signature) at the ONE place (∞) my numerics already see it. Proof
+pointers: LEDGER §327-332, RH_DIFFICULTY_CONSERVATION_MAP.md, [[rh-roundtable-literature-gate]], [[connes-decisive-diagnostic]].
+
+---
+
+## 2026-07-26 (overnight) — RH Arsenal built: 11 tools + honesty layer + adversarial gate
+
+**Problem framing (Jacob):** other people attack RH with the same numerics/bots or better. Build
+tools that are *different in kind* — exploit our asymmetric assets (cross-domain synthesis, tireless
+bookkeeping, adversarial self-check), not raw analytic skill. Prism'd 20 tool ideas, ranked them,
+built Tiers S+A+B (11 tools). Hard constraint: full verification + a "SICK_HIM" adversarial pass so
+NOTHING gets a false certification (the project's twice-burned failure mode).
+
+**Key design decision — the honesty layer FIRST.** Built `arsenal/core/honesty.py` before any tool:
+three tiers (CLAIMED/REPORT/HANDLE), `assert_handle` refuses HANDLE without a proof-pointer file that
+exists on disk, banned-phrase guard blocks "proven/certified RH". This makes false certs structurally
+hard rather than a matter of discipline. Only t04 (validated L-margins) and t08 (exact ℚ PD certs)
+earn HANDLE; the other 9 are REPORT (finite/numeric, explicitly not RH proofs).
+
+**Shared engine, self-validating.** `core/weil.py` computes the Weil explicit-formula functional
+A+B−P AND the zero-side sum independently; the closing residual (~1e-12 for ζ) is its own correctness
+certificate — anti-fabrication by construction. Anchored to `operators/connes_decisive_v3.py`.
+
+**What each tool actually is (honest v1):** t01 proof-shape-spec + prior-art classifier; t02 route→
+obstruction reduction graph (8 routes collapse to the Wall Invariant); t03 home scorer (function-field
+=10/10 exemplar, C-C spectral=7/10 missing signature/pairing = confirmed keystone); t04 REAL compute
+across ζ+6 Dirichlet L (each validated vs own zeros, conductor auto-calibrated to c=1, all margins >0);
+t05 reverse-math frontier (support_C = nearest rung, matches the continuum target); t06 anti-fraud
+(independent mpmath re-derivation, agrees to 6e-13; catches planted certs); t07 equivalence transport;
+t08 exact ℚ LDL^T (reproduces moment route death: det=−373198472887/1e14=−0.003732, matching the
+project's −0.0037 exactly); t09 de Branges via Laguerre L(t)=A'²−AA''≥0 (ties de Branges↔Jensen);
+t10 tunable-axiom sandbox (slack sweep shows positivity tightening 0.269→3.7e-9 as t→0.45; kappa*=1.012);
+t11 disproof adversary (breaking PNT/inflating a prime weight breaks positivity; mislocating primes helps).
+
+**Verification + SICK_HIM (the point of the exercise).** `VERIFY.py`: 13/13 selftests pass, 0 unbacked
+HANDLE claims. `SICK_HIM.py`: 8 adversarial checks. The mutation probe (inject a sign flip, require the
+selftest to THEN fail) CAUGHT a real rubber-stamp: the weil selftest only validated at small t where the
+prime term is ~1e-11, so it wasn't testing the prime term at all — fixed by adding t=0.28/0.35 where P~0.15.
+Also caught a guard gap ("a complete proof of RH" slipped a wrong-word-order banned entry) — fixed.
+
+**Three skeptic agents (in-session fan-out; control session re-verified every finding):**
+- Skeptic A (math): found `omega_dirichlet` in weil.py was dead-but-wrong (conductor zeroed by a `*0.0`
+  placeholder). Unused (t04 uses the correct `omega_chi_grid`), but a fabrication trap — fixed. All other
+  formulas independently verified correct.
+- Skeptic B (overclaims): none found; guard confirmed working.
+- Skeptic C (fraud): found `audit_runs` was fooled by directory/symlink/1-byte evidence (getsize on a dir
+  =64 bypassed the empty check). Verified the bypass concretely, hardened audit_runs (reject symlink/dir,
+  require JSON-parseable), and added `deep_reverify` that reconstructs t08 certs from their stored matrix
+  and re-runs the check — catches a fabricated PD cert whose matrix is actually indefinite. t08 + t06
+  independence confirmed robust.
+
+**Proof pointers:** commit 561e7d7. `arsenal/RESULTS.md` (all-green table), `arsenal/runs/*.json` (run
+records + HANDLE evidence). Re-runnable: `python3 arsenal/VERIFY.py && python3 arsenal/SICK_HIM.py`.
+
+**What this opens:** the moat cluster (t03 home-compiler + t04 family-comparator) now gives a scored,
+family-universal frame to hunt the missing definite-signature pairing; t01/t02/t05 stop wasted sessions;
+t06 makes our own future certs un-fakeable without an independent catch. Next lever: point t04's family
+comparator + t03's scorer at the keystone (does any candidate home carry a signature pairing that
+survives the family). Nothing here proves RH — these are instruments and gates.
