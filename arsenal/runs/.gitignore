@@ -1,0 +1,5 @@
+# transient timestamped run stamps (regenerable via VERIFY.py)
+*-20*.json
+# keep the named HANDLE evidence files (proof-pointers): t04_*_margin.json, t08_*_exactcert.json
+!*_margin.json
+!*_exactcert.json
