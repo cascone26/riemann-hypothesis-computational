@@ -1,0 +1,14 @@
+cliff location n* (W/overlap first < 0.02) vs exact RvM count of the effective band [lo-2w, hi+2w]
+      band  n*  RvM_eff rawzeros  n*/RvM    W@n*-1      W@n*
+  [14, 44]   8     8.75        8   0.915 +5.57e-01 +1.45e-03
+  [30, 60]  11    11.72       11   0.939 +2.61e-01 +1.28e-04
+  [50, 80]  14    14.04       14   0.997 +2.25e-03 +4.68e-04
+ [75, 105]  16    16.05       12   0.997 +6.40e-04 +1.22e-05
+[100, 130]  17    17.55        1   0.968 +1.23e-03 +1.30e-06
+[135, 165]  19    19.17        0   0.991 +4.82e-05 +7.77e-08
+[185, 215]  20    20.92        0   0.956 +1.51e-05 +4.98e-07
+[245, 275]  22    22.51        0   0.977 +3.11e-06 +1.59e-09
+
+reading: if n*/RvM_eff ~ const (ideally ~1), the arithmetic-collapse fill IS the Weyl count —
+§335 pinned: the Weil form cliffs exactly when probe count reaches the zero count of the band,
+a precise zero-free critical-density law. Scatter in the constant = the O(1) resolution factor.

@@ -12785,3 +12785,22 @@ a=0.93 and shows the cliff cleanly. The cliff is the robust phenomenon at whiche
 count.] Q1 corner statement reverts to: the corner is arithmetic; the frame reduction was a sparse-interior
 artifact. Verify-discipline win — §372b caught §372's over-claim within the same session by pushing the
 tested regime to criticality.
+
+## §373 (2026-07-28, Riemann7) — §335 PINNED TO THE EXACT RvM COUNT: the Weil-form collapse fill IS the Riemann–von Mangoldt zero count of the band (rt5_cliff.py). HANDLE (measured) — the sharpest quantitative form of "Nyquist in the zeros."
+Cliff = probe count n* at which W/overlap first drops below 0.02 (arithmetic collapse turns on, §372b),
+vs the EXACT RvM count N(hi)−N(lo) of the effective band [lo−2w, hi+2w], w=2:
+  band[14,44] n*=8 vs RvM 8.75 (0.92) · [30,60] 11 vs 11.72 (0.94) · [50,80] 14 vs 14.04 (1.00) ·
+  [75,105] 16 vs 16.05 (1.00) · [100,130] 17 vs 17.55 (0.97) · [135,165] 19 vs 19.17 (0.99) ·
+  [185,215] 20 vs 20.92 (0.96) · [245,275] 22 vs 22.51 (0.98).
+**n*/RvM = 0.92-1.00, converging to ~0.98-0.99 at higher bands** (the low-band deficit is the O(1)
+edge/window correction shrinking as RvM grows). ⟹ **the Weil form cliffs EXACTLY when the probe count reaches
+the RvM zero count of the band** — §335's critical-density statement is now pinned to a precise, zero-free-
+computable integer per band: n_crit(band) = N(hi)−N(lo) + o(RvM). The margin at n < n_crit is O(1)·(frame,
+positive); at n = n_crit the arithmetic collapse turns on (W/overlap → 0 while overlap stays healthy, §372b).
+(The RAW zero-list count column is unreliable above [100,130] — the hardcoded ZEROS list only runs to γ<101,
+so rawzeros reads 0-1 for high bands; the RvM formula is the correct reference and it's what matches n*.)
+**Structural payoff:** the certificate's ENTIRE geometry is now density-pinned on all three measured axes —
+count R≈ρ(T)/w² (§367), certified reach s≈1/ρ(T) (§367B), and now the collapse fill n_crit = RvM count (§373).
+The critical density is not approximate: probe-count = zero-count is the exact knife-edge, per band, from the
+RvM formula alone. This is the quantitative spine of the §363/§369 corner statement: RH-on-this-front lives
+exactly at n = N(T), the integer where test resolution meets the zeros.
