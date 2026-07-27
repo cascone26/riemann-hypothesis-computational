@@ -12712,3 +12712,23 @@ local rank parity (§364 rank-2 vs rank-1), so a prime-side count locked to ρ(T
 at finite scale. HONEST: §368 shows the resonant-scale↔γ map is only O(1)-pinned, so "one resonant prime per
 zero" is order-right not exact — the middle-object inequality must be stated with the O(1) constant, not as an
 identity. Still REPORT; no inequality written yet. This is the sharpest density-anchored form of the target.
+
+## §370 (2026-07-28, Riemann7) — Q3 LIT-GATE RESOLVED (subagent, sourced): OUR OBJECTS ARE NAMED, THE COLLAPSE IS A KNOWN THEOREM, AND THE UNIFORM SUB-CRITICAL BOUND (what Q1 needs) IS FLAGGED OPEN. REPORT + a checkable prediction.
+- **The arch matrix A is a named object:** a Gaussian-windowed Toeplitz/localization operator with a
+  log-type symbol Ω — Berezin/anti-Wick (Daubechies localization operators), cross-Toeplitz on Fock–Segal–
+  Bargmann spaces (arXiv:2108.13710), Szegő/Berezin asymptotics (Bayer–Gröchenig 2015). NOT a novel object.
+- **The margin collapse at critical density is a named theorem cluster:** Borichev–Gröchenig–Lyubarskii 2009
+  (arXiv:0909.4937, Gaussian Gabor frame LOWER bound A→0 at density→1, upper bound stays O(1)); Seip 1992
+  (ρ=1 exact phase transition, Gaussian has no reproducing partner); Balian–Low; Landau/Gröchenig 1996
+  necessary density. §335's "collapse = critical-density sampling" is EXACTLY this cluster — confirms the
+  §336 lit read and names it precisely.
+- **BGLy quantitative rate:** lower frame bound A(a) ≍ (1−a²)² as lattice density a→1⁻ — a QUADRATIC vanishing.
+  This is Dyson's roundtable-predicted (1−ρ/ρc)² law, PUBLISHED. Immediately checkable against our plunge (§371).
+- **THE OPEN FRONTIER (what Q1 is):** a UNIFORM, configuration-independent lower bound on λ_min strictly below
+  critical density is NOT solved (BGLy give an asymptotic RATE, not a uniform certificate margin; the 2026
+  arXiv:2606.00764 shows even at ρ=1 only a weighted lower semi-frame). So our per-configuration certificates
+  (§359-362) produce explicit sub-critical margins that the frame literature does NOT have uniformly — we are
+  on the open side from the constructive/per-config direction. B=A−T ("density minus density") is our own
+  construction, not named. NET: the interior physics is classical frame theory (do not re-derive); the Q1
+  uniform bound is a genuine open frontier, and our elementary density-governed certificates (§367) are a
+  constructive foothold on it.
