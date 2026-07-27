@@ -1,0 +1,11 @@
+§379b stiffness at FIXED depth lmin0~1e-06 (w=3): Lambda(2) cushion b*-1 vs band
+      band     s      lmin0     b*-1  n2termnorm cushion*norm
+  [14, 44]  3.77   1.00e-06 +0.0000  7.4750e-01   6.5897e-06
+  [30, 60]  2.50   2.30e-06 +0.0061  1.1213e+00   6.7891e-03
+  [50, 80]  2.20   1.00e-06 +0.0625  1.2787e+00   7.9872e-02
+ [75, 105]  2.00   1.00e-06 +0.4793  1.4001e+00   6.7113e-01
+[100, 130]  2.00   1.29e-06 +0.3900  1.3985e+00   5.4545e-01
+[135, 165]  2.01   1.00e-06 +0.7979  1.3905e+00   1.1095e+00
+
+reading: b*-1 band-flat at matched depth => uniform Lambda(2) stiffness (RH-robustness); the
+magnitude-normalized cushion (b*-1)*termnorm removes the trivial scaling and is the intrinsic cushion.

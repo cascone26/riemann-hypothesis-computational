@@ -12906,3 +12906,19 @@ a protective-resonance signal. n=2 (largest norm) is cheapest to flip; that's ma
 Away from criticality the arithmetic has a substantial positivity cushion; only AT the RvM-count row does it
 vanish (consistent §335/§373). **NAMED FIX (next):** redo at FIXED lmin0 depth (bisect s to a target margin,
 not row index) to kill the aliasing before claiming uniform-vs-vanishing stiffness (§379b).
+
+## §379b (2026-07-28) — depth-controlled stiffness: SHIFTS the picture but STILL not cleanly deconfounded (rt5_stiffness2.py). REPORT.
+At fixed lmin0~1e-6 (bisected s per band), Λ(2) cushion b*−1 = 0.000/0.006/0.063/0.48/0.39/0.80 across
+[14,44]..[135,165]; magnitude-normalized (b*−1)×termnorm = 6.6e-6/6.8e-3/0.08/0.67/0.55/1.11 — monotonically
+GROWING with band, NOT band-flat. Two honest problems remain: (1) "fixed lmin depth" ≠ "fixed relative plunge
+position" (the plunge SHAPE varies by band, so 1e-6 sits at different relative criticality — [14,44] pins at
+cushion 0.000, still effectively at collapse); (2) can't separate "intrinsic cushion grows with T" from
+residual depth-confound. NET: the stiffness/RH-robustness question resists clean measurement on this
+instrument — the pervasive plunge-shape confounding (recurring §345d/§366/§379) is the limiting factor. ROBUST
+across §379+§379b: healthy-position cushion is substantial (10-80%), collapse-position cushion → 0; a clean
+band-uniformity verdict needs a plunge-shape-invariant normalization not yet found. Two inconclusive stiffness
+probes in a row = the numeric-probing edge on this corner is saturated. Loaded next attacks (better with steer
+/ at a table, per their register): (a) M-S pair-rigidity → corner-inequality CONSTRUCTION (§369, arithmetic
+theory, not measurement); (b) extremal Beurling–Selberg test functions to optimize the certificate constant
+(§377 — sharpens reach, won't remove wall); (c) Fejer-instrument ELEMENTARY THEOREM (upgrade §377 universality
+from phenomena to theorem — clean, non-confounded, the immediately-runnable one). Taking (c) next.
