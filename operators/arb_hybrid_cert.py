@@ -173,7 +173,10 @@ def certify(s_str):
         for k in range(n):
             Cf2 = Cf2 + C[j][k] * C[j][k]
     CHG = EPS * Cf2.sqrt() + n * exact_tail_beyond()
-    print(f"  charge scalar (eps*||C||_F + exact tail): {CHG}", flush=True)
+    # subtract the exact UPPER ENDPOINT (point value, zero width): rigorous (over-subtracting
+    # only weakens the bound) and kills the ball width that near-singular LDL amplifies ~1e11x
+    CHG = CHG.mid() + CHG.rad()
+    print(f"  charge scalar upper endpoint (exact): {CHG}", flush=True)
     M = [[None] * n for _ in range(n)]
     for j in range(n):
         for k in range(j, n):

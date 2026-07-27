@@ -12293,3 +12293,36 @@ NO ** on balls (§340 gotcha respected). Smallest pivot at s=3.9: [0.007462649 �
 w=2, s=3.9) is PD, proven from: 79 prime powers' closed forms + a finite computation about ψ up to 20000 +
 ψ(x) < 1.04x + interval arithmetic. No zeros consulted anywhere. This is the §347-349 architecture surviving
 first contact with full rigor — the fluctuation-charge route is not a float artifact.
+
+## §351 (2026-07-27, Riemann7) — SAINTS' TABLE BANKED (Report-tier) + TERMINAL GATE READING + PRE-REGISTRATION IN INK (before any computation — the table's own Kierkegaard clause).
+
+**Banked reasoning (their crystallization):** over F_q the equidistribution suppression IS charged a-priori,
+and the charging agent is nonabelian monodromy (Katz–Sarnak; zeros = Frobenius eigenvalues, positivity on
+X×X). Over ℚ the idele class group is GL₁ — abelian — so the suppression stays measured, never charged: the
+completeness that hands us the Euler-product positive object (unique factorization = commutativity) is the
+same abelianness that starves Schur of an irreducible to force the edge. CFT gave reciprocity, never RH.
+U(N)/Keating–Snaith produces only g_k (archimedean bulk); the primes live in a_k, inserted by hand, outside
+the group — Schur on U(N) certifies the half never on trial. The missing nonabelian structure can only live
+in how primes COMPOSE (k-point correlations / H-L singular series / a_k) — a group shows its nonabelianness
+only in its multiplication law. Connes–Consani noted: same direction, polarization still comes out ⟺ RH.
+Discovered-vs-imposed resolution (Aquinas): the rigidity must be READ as a relation-of-origin, never BUILT
+(every imposed group = the smuggled zero). Augustine's test: an ARROW (irreversibility) — Dyson: β=2 broken
+time-reversal is already measured in the zeros (GUE, not Selberg's GOE).
+**Terminal gate reading (t01-style, before investing):** the k=2 arrow is likely NOT new physics — the
+candidate identity: Σ_{h≤H}𝔖₂(h) − H ~ −½·log H + C, an UNCONDITIONAL, ZERO-FREE, purely arithmetic
+second-order term (attribution from memory: Montgomery–Soundararajan; lit-check queued — MEASUREMENT FIRST,
+annotation after, per standing rule). If the coefficient measures −½: the "discovered" nonabelian rigidity
+exists as proven arithmetic, sitting in exactly the object our §347 charge prices. Its charging route into
+the certificate is the VARIANCE (mean-square) pricing of ΔT — the §347-named upgrade that pointwise ε did
+not need at fixed w and that the w→0 race may. This routes the saints' answer INTO the hybrid architecture
+instead of parallel to it.
+**PRE-REGISTERED CRITERIA (in ink, before computing — rt5_arrow.py):**
+  A (singular-series arrow): fit slope of [Σ_{h≤H}𝔖(h) − H] against log H over H = 10³..2·10⁶.
+    NULL (abelian/commutes): |slope| < 0.05. ARROW: slope = −0.50 ± 0.05. Anything else: flag, no story.
+  B (ψ-variance arrow): Var over x∈[X/2,X] of ψ(x+H)−ψ(x)−H, X=3·10⁷, H=10²..10⁵. Plot Var/H − log x̄ vs
+    log H. NULL (Cramér/Poisson): slope 0 ± 0.1. ARROW (H-L/GUE rigidity): slope −1.0 ± 0.15.
+  C (the bridge): model-predicted E[ΔT_entry²] for OUR window (edge probe, w=1.5, n0=100, n≤5000) under
+    (i) Poisson diag-only and (ii) H-L covariance [diag log n; offdiag 𝔖(n−m)−1]. PASS (arrow charges our
+    object): actual ΔT² ≤ 3× HL-prediction AND HL-prediction ≤ Poisson/3. FAIL: actual >> HL (model wrong)
+    or HL ≈ Poisson (rigidity invisible at our window — arrow real but not load-bearing here).
+All three zero-free. Results → §352 AFTER these criteria, unchanged.
