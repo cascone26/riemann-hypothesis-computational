@@ -12922,3 +12922,18 @@ probes in a row = the numeric-probing edge on this corner is saturated. Loaded n
 theory, not measurement); (b) extremal Beurling–Selberg test functions to optimize the certificate constant
 (§377 — sharpens reach, won't remove wall); (c) Fejer-instrument ELEMENTARY THEOREM (upgrade §377 universality
 from phenomena to theorem — clean, non-confounded, the immediately-runnable one). Taking (c) next.
+
+## §380 (2026-07-28) — RIGOROUS FEJER CERTIFICATE: computationally INFEASIBLE by naive acb.integral (arb_fejer_cert.py, killed mid-row-0). REPORT + the enabler named.
+Each B_full entry needs ~30 prime integrals of a heavily-OSCILLATING sinc⁴×cos integrand over [−120,120] at
+prec 300 (adaptive subdivision explodes on sinc oscillation), ×36 entries — did not complete one row in
+minutes. This is a PRACTICAL wall specific to naive numerical integration of the Fejer prime side, NOT a math
+obstruction. The ENABLER (named, deferred): the Fejer kernel has a TRIANGLE Fourier transform (compact
+support), so the prime g_pair = (1/2π)∫F_jF_k cos(ur)dr is CLOSED-FORM (piecewise-polynomial triangle
+convolutions, exactly zero for log n > 4W) — deriving it makes the prime side instant+exact and the rigorous
+cert feasible. Substantial careful derivation (validatable against §376's numerical prime matrix at 4e-7);
+flagged for a supervised/table session, not rushed unsupervised (two inconclusive §379 probes + this
+infeasibility = clear diminishing-returns signal on this autonomous run). **§377's universality result stands
+on the FLOAT-validated Fejer instrument (§376-378)** — the phenomena (RvM-collapse, zero-interpolation corner,
+δ² off-line lift) are confirmed test-class-universal; upgrading to a rigorous 2nd-instrument THEOREM awaits the
+closed-form g_pair. Honest state of the Fejer thread: instrument built+validated+phenomena-universal (done);
+rigorous theorem (deferred, enabler identified).
