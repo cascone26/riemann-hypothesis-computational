@@ -444,3 +444,11 @@
   Cats: math.NT
   https://arxiv.org/abs/9809119v2
   > I give a new derivation of the Explicit Formula for the general number field K, which treats all primes in exactly the same way, whether they are discrete or archimedean, and also ramified or not. In another token, I advance a probabilistic interpretation of Weil's positivity criterion, as opposed t
+
+## 2026-07-27 — 1 new paper(s)
+
+- **2503.15832v2** (2025-03-20) — The positivity technique and low-lying zeros of Dirichlet $L$-functions
+  Authors: Tianyu Zhao
+  Cats: math.NT
+  https://arxiv.org/abs/2503.15832v2
+  > Assuming the generalized Riemann hypothesis, we sharpen the error terms in a number of estimates related to the distribution of low-lying zeros of Dirichlet $L$-functions. The refinements, building upon earlier work of Omar, come from the use of the positivity technique, which involves choosing cert

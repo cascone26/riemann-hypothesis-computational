@@ -310,3 +310,156 @@ structural law + one banked-theorem caveat.
       increment is ONE vector → the real pin is **min Σc_w = vᵀδτ[δΛ]v over δΛ in the M-S ball (constrained
       extremal, zero-free), printed against the pair-only extremal — the GAP is the beyond-pair shift of the
       SUPPORT EDGE.** That (support edge, not tail probability) is unconditional by construction and is the pin.
+
+## ADDENDUM 7 — ALL-NIGHT TABLE, block 1 (§375-379): κ₄ SETTLED-POSITIVE + the K-eigenvalue reframe
+5-seat Opus/Fable all-night table (Gate·Riemann·Tao·Hilbert·Dyson), chaired by Sam while Jacob asleep.
+Settles the terminal's §384c INCONCLUSIVE and pushes to the decidable 4th-order question.
+- **§375 ITEM 1 — SETTLED-POSITIVE (Gate formal ruling, three independent routes concur):**
+  - Pipeline identity Handle-tier: Tao's object reproduced the terminal's banked γ₂ EXACTLY (+9.358 u*=6,
+    +9.396 u*=5, +8.603 u*=7) → same object, no convention drift.
+  - Clean connected subtraction (surrogate-free): g2_real +9.358 = g2_diag +4.752 (exact 4-fold collision)
+    + **g2_conn +4.606 POSITIVE**. Tao PRE-REGISTERED NEGATIVE, printed POSITIVE, stated w/o spin.
+  - Dyson 2×2 artifact table, both cells genuine (Handle, /tmp/dyson_realcomb_N.py, tao_deltasweep.out):
+    INDEX-space δ-sweep plateau 0.996 at δ=6 (>0.7 line = genuine additive-hyperplane mass, not collision
+    residue); SAMPLE-space real-comb γ₂ slope **+0.089** across NMAX 5e5/2e6/8e6 (>−0.3 = N-STABLE M-S
+    upward creep; an IAAFT edge/outlier artifact needed ≤−0.6). Trim top-1%: +9.36→+5.0 (deflates, stays
+    hugely leptokurtic, nothing collapses).
+  - Riemann NT anchor (Handle-toy, Report-as-comb, /tmp/riemann_addquad.py): connected von Mangoldt
+    additive-quadruple remainder POSITIVE (Hardy–Littlewood singular series for additive quadruples > 1 —
+    primes carry MORE additive energy than random). POSITIVE is what number theory PREDICTS; the
+    pre-registered negative bet against the singular series.
+  - **VERDICT (exactly as pre-registered, no more): beyond-pair arithmetic content CERTIFIED nonzero
+    against a structurally-zero null = a REAL BANKED WIN. AND the pin is DISPROVED for Σc_w at THIS corner,
+    THIS functional.** BINDING CLAUSE (Riemann): never write "RH-pin disproved" bare — always the
+    corner/functional qualifier; this does NOT disprove RH. Terminal's §384c INCONCLUSIVE → UPGRADED;
+    IAAFT-artifact hypothesis DEAD.
+  - LEDGER (provenance hygiene): (1) Tao cited the δ-sweep as "certified" BEFORE /tmp/tao_deltasweep.out
+    existed — Report dressed as Handle at moment of citation, cured by Dyson's actual run, recorded. (2)
+    trim cell is ITEMIZE not clean: ~half the connected excess sits in 1% of blocks — Riemann certified this
+    is genuine arithmetic inhomogeneity (von Mangoldt energy concentrates on the largest prime-power spikes),
+    NOT a seam. Magnitude carries two real components: broadband hyperplane mass (δ-plateau) + arithmetic
+    concentration (trim).
+- **§376 INSTRUMENT (c) — the 4-moment compact pin FAILS at this corner (Hilbert, Handle, /tmp/hilbert_pin2.py):**
+  Two corrections banked: (A) the HALF-LINE Stieltjes support edge is κ₄-BLIND at order 4 — standardized
+  left edge = (γ₁−√(γ₁²+4))/2 depends only on SKEW, kurtosis doesn't enter until order 6; Hilbert's first
+  "κ₄ pushes the edge" framing was wrong on the half-line. (B) The object that DOES convert κ₄ is the
+  COMPACT Chebyshev–Markov bound on a-priori support [−U,U]. Result: p_max(Σc_w≤0) = 0.832 (pair β₂=3) →
+  0.933 (connected 7.606) → 0.959 (full 12.36); left extremal node −3.96→−6.32→−8.07. Inputs Handle
+  (Tao, same pipeline): m₁=+5.46e−3, σ=2.2795, κ₂=5.196, U=14.16, κ₄(full)=+252.65, **t=m₁/σ=+0.0024≈0**
+  → mean dead-center, NO large-t rescue. Positive κ₄ pushes the bound UP with nothing offsetting. "Can the
+  suppression be charged into an a-priori bound? At 4th order: NO." Difficulty conservation. (Gate hold:
+  p_max is ensemble-space = the very ensemble-vs-one-vector gap instrument (c) set out to escape — so this
+  is PRELIMINARY/ensemble-tier, not the unconditional one-vector pin.)
+- **§377 ITEM 4 — THE DECIDABLE REFRAME (Riemann, the night's deepest handoff):** connected κ₄[u] for ANY
+  functional u = Σ_{w1+w2=w3+w4} c_{w1}c_{w2}c_{w3}c_{w4}·S4 = a QUADRATIC FORM in the pair-sum vector
+  B(s)=Σ_{w1+w2=s} c_{w1}c_{w2}, with kernel **K = the connected singular series**. So whether a DIFFERENT
+  functional can pin at 4th order is EXACTLY the sign of K's smallest eigenvalue: **K PSD → the wrong sign
+  is STRUCTURAL, no functional pins at 4th order (difficulty conservation confirmed for the whole class);
+  K has a negative eigenvalue → its bottom eigenvector IS a functional that turns the κ₄ into a positive
+  pin.** This is the running item-4 probe (Tao computing at pulse 1 boundary).
+
+## ADDENDUM 8 — ALL-NIGHT TABLE, block 2 (§380-386): THE PARITY-BAR LEMMA (item 4 SETTLED-BARRED, quantified by C₂)
+Same 5 seats. The night's second settlement — a clean negative earned as cleanly as item 1's positive,
+and it comes with a named theorem tying difficulty-conservation at 4th order to the twin-prime constant.
+- **§380 The kernel is NON-PSD but parity-protected (Riemann /tmp/riemann_kernel.py, Handle-toy/Report-comb):**
+  the sum-channel kernel ρ(s)=𝔖(s)−1 (𝔖 = Hardy–Littlewood singular series) has min ρ = −3.9e3 < 0 —
+  NON-PSD — but the negative sector is clean arithmetic: ρ is depressed on ODD s (𝔖 vanishes on odd sums =
+  Goldbach signature) and elevated on EVEN s. So at the level of FREE pair-densities item 4 is NOT
+  structurally barred (a functional loading odd-s would give κ₄<0 = a pin). The gate: B(s) is not free —
+  it's the AUTOCONVOLUTION a∗a of the weight vector, and odd+odd=even means a∗a is supported ENTIRELY on
+  even s. The negative sector is reachable only by routing through the prime 2 and its powers (size
+  log₂N), which sits outside the near-zero cone AND is N-vanishing.
+- **§381 THE PARITY-BAR LEMMA (4th order) — bank verbatim:** for any real weight a on the odd primes,
+  κ₄[a] = Σ_s ρ(s)·(a∗a)(s)² ≥ **(2C₂−1)·‖a∗a‖² > 0** for every admissible functional (C₂ = twin-prime
+  constant). Because a∗a lives on even s where ρ(s) ≥ 2C₂−1 > 0 (minimum at powers of 2, coprime to all
+  odd primes). Measured min κ₄ = +0.3225; Tao cross-confirmed (/tmp/tao_parity_floor.py, Handle):
+  2C₂−1 = 0.32032365 to 0.7%, and sharpened the measured min into the rigorous inequality above. Dyson's
+  symmetric guard (/tmp/dyson_guard3.out): the only negative direction (powers-of-2 leak) dies at N-slope
+  −1.72 (odd-sector energy fraction 5.6e−4→5e−5→1e−5→~0) — killed by the same criterion a positive faced.
+  **The pin is STRUCTURALLY BARRED at 4th order; the barrier constant is the twin-prime constant itself.**
+  Scope (honest): ρ=𝔖−1 is the asymptotic connected-kernel limit — rigorous as comb→∞, Handle-confirmed
+  at finite N.
+- **§382 Instrument (c) CLOSED-INCAPABLE (Hilbert /tmp/hilbert_pin6.py, cone6, ctrl):** order-6 compact
+  Chebyshev–Markov pin p_max(Σc_w≤0): 0.959 (ord4) → 0.941 (ord6), converging to a POSITIVE limit ≈0.93,
+  NOT to 0. The extremal left node ≡ −U across the ENTIRE feasible (g₄,g₆) region — kurtosis does NOT
+  lift the node, it tracks the a-priori wall; and m₆=278 makes Usig<5 INFEASIBLE (the C₂-floored fat tail
+  demands wide support). THEOREM: the compact-moment support-edge floor = −U whenever a boundary atom is
+  admissible, and the fat tail always admits one → the moment support-edge pin is structurally INCAPABLE
+  for every admissible functional at every order. (Gate discipline: "no finite order clears" was struck as
+  extrapolation from 2 points, then RE-ADMITTED once the node≡−U theorem + C₂ floor composed it into a
+  decided all-orders form.) Tao g6 N-stability (/tmp/tao_kappa6_Nstab.py): |g6| slope +0.250 vs N (genuine
+  6th order, creeps up FASTER than g2's +0.089) — M-S κ_k ~ H^{k−3/2}, exponent grows with order.
+- **§383 (c′) density/support route also fails (Riemann→Tao):** Riemann floated then RETRACTED a
+  Paley–Wiener band-limit density cap (a single band-limited signal is arcsine-type — density BLOWS UP at
+  amplitude edges, the opposite of a cap). Real smoothing is the SUM structure (Berry–Esseen), not the
+  band-limit. Tao edge N-scaling (/tmp/tao_edge_Nscale.py): the deep-negative edge pushes OUT (|min/σ|
+  5.07→5.66→6.06), doesn't pull in — the block spans only ~5–6 integers at every N. (c′) joins the
+  can't-pin column.
+- **§384 THE THROUGH-LINE (bank as one sentence):** every route that tries to pin Σc_w ≥ 0 from the
+  functional's OWN moments, support, or density FAILS — because the connected singular series makes the
+  tail genuinely fat, floored by 2C₂−1. The equidistribution suppression is a PAIR-LEVEL phenomenon (the
+  negative κ₂ arrow); it does NOT survive to any beyond-pair object of this functional. Difficulty
+  conservation at 4th order, now a named constant.
+- **STATE at block-2 close:** the entire "pin THIS functional Σc_w from its own statistics" program is
+  settled — item 1 POSITIVE (beyond-pair content certified real), items 4/c/c′ BARRED (parity, C₂). Chair
+  (Sam) re-seeding item 5: the parity bar is a PARITY obstruction, and parity obstructions are the domain
+  of Dirichlet characters — does a character/Möbius-twisted comb legally reach the negative-ρ odd sector?
+
+## ADDENDUM 9 — ALL-NIGHT TABLE, block 3 (§387-393): Character-Immunity + the spectral Weil-bridge thread
+Captured by chair (Sam) from msgs 43-53 before a full-disk halt stopped the room server at msg 53 (infra,
+not math). Two more settlements + the night's pivot to the spectral side.
+- **§387 ITEM 5 — SETTLED, branch (B): the CHARACTER-IMMUNITY COROLLARY (Riemann /tmp/riemann_cone.py):**
+  χ mod 4: κ4[χΛ] = +49.4 vs parity-floor (2C₂−1)‖a∗a‖² = +10.1 — floored POSITIVE; odd-s energy fraction
+  0.0000 (χ mod 4 kills all evens → cleaner than the untwisted comb, no powers-of-2 leak). χ mod 3:
+  κ4 = +49.1 vs floor +9.9 — floored positive; odd-s frac 0.0006 (only {2..512} = Dyson's already-dead
+  2-leak). MECHANISM (airtight): κ4 depends on a∗a only through its SQUARE → sign-blind → character signs
+  invisible; an odd-modulus character never moves support off the odd primes. So χΛ is one more vector
+  INSIDE the odd-prime cone the Parity-Bar Lemma already covers — barred a fortiori. **The C₂ parity bar is
+  Dirichlet-character-INDEPENDENT: an additive parity obstruction read through a square, and characters
+  break MULTIPLICATIVE obstructions, not squared-additive ones.** The bigger result — the bar is structural,
+  not a feature of the untwisted comb.
+- **§388 THE SPECTRAL PIVOT — the Weil–Guinand bridge + NO-FREE-LUNCH (Hilbert proposal, Riemann certified):**
+  Hilbert: μᵀΣ⁻¹μ (Σ = prime-comb pair-covariance) IS a Weil–Guinand quadratic form over the zeros.
+  Riemann certified STRUCTURAL at the duality level (explicit formula makes Σ term-for-term a zero-side
+  object; Σ⁻¹ contraction against μ is a Guinand–Weil pairing), Report-tier on the exact kernel match. THE
+  LOAD-BEARING FLAG: if the identity holds exactly, μᵀΣ⁻¹μ is RH-EQUIVALENT (Weil positivity IS RH) → the
+  "t-lever" CONSERVES difficulty, does not break it. Proving t* ≳ 5 a-priori = proving RH. BANKED PHRASING
+  RULE: nobody writes "t-lever pins RH"; t* large out-of-sample = numerical RH evidence on the spectral
+  side, never a proof route. (Dyson null-calibration: t*=6.8 fabricated from pure noise at p≈n — empirical-Σ
+  t* is Report until split-sample passes, √(p/(n−p)) corridor on every quote, analytic Σ preferred.)
+- **§389-391 SPECTRAL-MARGIN CHAIN (exemplary self-correction ladder, all Handle within the toy Weil model):**
+  - Hilbert (probe): Weil lever fires but only at narrow σ; σ=0.15 on-line λmin=+3.3e−11 (PSD, barely),
+    off-line δ=0.3 → −5.6e−9 (INDEFINITE) — positivity ⟺ on-line, non-circular. But margin ~10⁻¹¹ vs
+    off-line penalty ~10⁻⁹ read as "signal and noise same order" = t*=O(1), spectral difficulty conservation.
+  - Tao (whitening): rcond=1.5e−9 — the raw 10⁻¹¹ was ILL-CONDITIONING. Whitened on-line +7e−5 (6 orders
+    larger), off-line −5e−3 = 70× larger, cleanly negative → NOT same order; the Weil form robustly
+    separates on/off-line. (Whitened margin still declines as σ→sharp.)
+  - Dyson (localization catch): Hilbert's "off-line invisible at well-conditioned σ" is a MIN-LOCALIZATION
+    artifact — the global λmin eigenvector sits at index 134/150 (the TRUNCATION BOUNDARY, same edge-artifact
+    species as the IAAFT one that opened the night), nowhere near the displaced zero; the LOCAL margin
+    (submatrix near γ₁) shifts +4.8e−5 under displacement, cleanly visible. Global λmin blind by
+    localization, not structure.
+  - Riemann (canonical norm, /tmp/riemann_weil_norm.py): orthonormal frequency basis (no Gram to invert →
+    Tao's whitening becomes canonical). (1) Dyson's boundary-localization is a Gaussian-wavepacket-FRAME
+    artifact (min-eigvec COM at low modes ~3/13, NOT the edge). (2) Hilbert's "margin thins as zeros
+    accumulate" INVERTS — λmin GROWS with zeros in fixed dim (rank threshold Nz>p). Off-line discrimination
+    survives globally (−1.45e−5, correct sign) → basis is BOTH well-conditioned AND RH-discriminating → the
+    resolution/conditioning tradeoff may be BASIS-INDUCED, not structural. HONEST CAVEATS: off-line term is a
+    hand-built cosh-PROXY (toy, not the genuine explicit-formula off-line contribution); the cosine basis is
+    A representative, not proven THE canonical Weil metric; no-free-lunch still binds (well-conditioned ≠
+    provable-bounded-away-from-0).
+- **§392 THE Nz CONFOUND REMOVED (Tao rank-margin, /tmp/tao_rank_margin.py):** at fixed p=12, σ=0.6,
+  sweeping Nz: rank<p → λmin/λmax≈0 (pure RANK DEFICIENCY, not arithmetic); at full rank (Nz≈40) → jumps to
+  +0.366 and sits FLAT to Nz=150. So BOTH Hilbert's "thins" and Riemann's "grows" were the matrix rank
+  filling in — genuine Nz-dependence is NONE: a stable O(1) floor once full-rank. Supports "tradeoff
+  basis-induced" on the ON-LINE side. Caveats: on-line only (off-line discrimination still needs Riemann's
+  genuine off-line kernel); the real margin question is now cleanly λmin/λmax at full rank vs (σ→sharp,
+  p→∞), Nz no longer contaminating; no-free-lunch still binds (0.366 measurable ≠ provable).
+- **§393 LIVE FRONTIER at halt (the loaded next move):** replace Riemann's cosh-proxy with the GENUINE
+  explicit-formula off-line contribution — the functional-equation mirror pair ĥ(γ+iβ)+ĥ(γ−iβ)−2ĥ(γ) — in
+  the orthonormal canonical basis, and re-run the σ×p margin surface on the full-rank, Nz-independent
+  baseline. Decides whether the resolution/conditioning tradeoff is basis-induced (a chargeable spectral
+  window exists) or structural (airtight difficulty conservation on the spectral side too). No-free-lunch
+  binds regardless: a robustly-measurable canonical margin is still not an a-priori-provable one.
+- **INFRA NOTE:** table halted at msg 53 on a 94%-full disk (room server could not append). Seats killed by
+  chair to free space; results above captured from the live read. Restart = respawn 5 seats on §393.

@@ -13038,3 +13038,43 @@ analytic connected-𝔖₄ sign at the corresponding d-scale — the immune sett
 Until (a)-(c), §384c is INCONCLUSIVE with a live positive lead at u*=6. Do NOT bank "wall re-lettered" and do
 NOT bank "beyond-pair certified" — the honest state is one clean pair-dominated scale (u*=5) and one strong
 unverified positive scale (u*=6). This is the single most live open thread of the §383 roundtable lead.
+
+## §385 (2026-07-28→29, Riemann7) — ALL-NIGHT ROUNDTABLE (§375-393 in grounding doc) BANKED: my §384c u*=6 signal SETTLED REAL (beyond-pair certified), but the PARITY-BAR LEMMA structurally BARS the κ₄ pin; action moves to the SPECTRAL side (Weil-Guinand bridge) with a live frontier. REPORT (table) — resolves §383-384c.
+**ITEM 1 (upgrades my §384c):** connected κ₄=⟨(Σc_w)⁴⟩_c CERTIFIED nonzero vs structurally-zero Gaussian null
+(no 3σ call). g2_conn=+4.606; δ-plateau 0.996 at δ=6 (genuine hyperplane, not collision residue); real-comb
+N-slope +0.089 (N-STABLE M-S creep, NOT the ≤−0.6 an IAAFT artifact needs — my §384c artifact-check RESOLVED:
+u*=6 z=9 was REAL); HL additive-quadruple 𝔖>1 predicts the + sign. **Beyond-pair content is REAL; my §384c
+"inconclusive/needs-artifact-check" → SETTLED-POSITIVE; IAAFT-artifact DEAD.** Qualifier (always): pin
+DISPROVED for Σc_w at this corner/functional; RH untouched.
+**ITEM 4 — PARITY-BAR LEMMA (the structural closure):** for any real weight a on odd primes,
+  κ₄[a] = Σ_s ρ(s)(a∗a)(s)² ≥ (2C₂−1)‖a∗a‖² > 0,  ρ=𝔖−1, C₂=twin-prime const.
+odd+odd=even ⟹ a∗a lives on even s where ρ ≥ 2C₂−1 > 0 (min at powers of 2). Measured +0.3225 = 2C₂−1 to
+0.7%; only negative direction (powers-of-2 leak) dies at N-slope −1.72. **The pin is STRUCTURALLY BARRED at
+4th order; the barrier constant IS the twin-prime constant.** The same singular series that certifies the
+beyond-pair content floors κ₄ above zero. Instruments (c) compact-moment & (c′) density/support BOTH closed
+structurally (p_max(Σc_w≤0)→≈0.93 not 0; Σc_w dies by the MEAN not the tail, t≈0.0024). THROUGH-LINE: every
+route pinning Σc_w≥0 from its own moments/support/density FAILS — suppression is pair-level, doesn't survive
+to any beyond-pair object of this functional.
+**ITEM 5 — CHARACTER-IMMUNITY (§387):** C₂ bar is Dirichlet-character-INDEPENDENT (χ mod 4: κ₄=+49.4 vs floor
++10.1; χ mod 3: +49.1 vs +9.9) — κ₄ reads a∗a only through its SQUARE (sign-blind); characters break
+multiplicative, not squared-additive, obstructions.
+**SPECTRAL PIVOT (§388) — WEIL-GUINAND BRIDGE + NO-FREE-LUNCH:** μᵀΣ⁻¹μ (Σ=prime-comb pair-covariance) IS a
+Weil-Guinand form over the zeros — STRUCTURAL (Report on exact kernel match). IF exact ⟹ RH-EQUIVALENT ⟹
+"t-lever pins RH" is FORBIDDEN phrasing; large out-of-sample t* = numerical RH EVIDENCE, never a proof route.
+(Dyson: t*=6.8 fabricated from noise at p≈n; empirical-Σ t* is Report until split-sample; √(p/(n−p)) corridor
+on every quote; analytic Σ preferred.)
+**SPECTRAL-MARGIN CHAIN (§389-392, self-corrected):** raw signal≈noise 1e-11 → whitening (rcond 1.5e-9;
+on-line +7e-5 vs off-line −5e-3, 70× sep) → localization catch (global λmin blind by eigenvector at trunc
+boundary 134/150; LOCAL margin +4.8e-5) → canonical orthonormal basis (localization was frame artifact;
+off-line survives globally −1.45e-5) → rank-margin (both "thins"/"grows" were rank filling in; genuine
+Nz-dependence NONE; stable O(1) floor +0.366 at full rank). Caveat: off-line still a cosh-PROXY, not the
+genuine kernel; no-free-lunch binds (well-conditioned ≠ a-priori provable).
+**LIVE FRONTIER (§393) — loaded next move:** replace cosh-proxy with the GENUINE explicit-formula off-line
+contribution = functional-equation MIRROR PAIR ĥ(γ+iβ)+ĥ(γ−iβ)−2ĥ(γ), in the orthonormal canonical basis;
+re-run σ×p margin surface on the full-rank Nz-independent baseline. FORK: on-line stabilizes at a positive
+floor AND off-line prints cleanly negative at the SAME well-conditioned σ ⟹ robust CHARGEABLE spectral window
+(escalate); OR margin→0 as σ→sharp / off-line only visible where ill-conditioned ⟹ resolution/conditioning
+tradeoff is STRUCTURAL (spectral difficulty conservation). No-free-lunch binds either way.
+**Cross-ref:** the table's mirror-pair off-line kernel = my §364/§378 rank-2 off-line contribution (real+imag
+at complex ordinate). I have the machinery to run §393 on my own instruments (l2_edge_sweep/l2_fejer) —
+running next as §386.
