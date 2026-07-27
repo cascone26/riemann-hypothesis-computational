@@ -1,0 +1,56 @@
+building psi to 20000, proving eps on [300,20000] ...
+  eps upper = [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67]
+building Omega left-endpoint values (monotonicity lemma) ...
+  10240 cells, [0,7] floor = Omega(0) = [-5.3721834192256655822329574974497422890145392516235538431689026310 +/- 7.67e-66]
+config: w=2 band=[50,80] RMAX=160.00000000000000000000000000000000000000000000000000000000000000
+
+s=3.0: 11 probes — B_elem (all closed forms, 10240 minorant cells) ...
+  charge upper endpoint: [1.4605741579354273305950422180330969667373874573263366401565265078e-12 +/- 3.83e-77]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  ALL 11 PIVOTS POSITIVE -> B_elem(s=3.0) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.553048647577692624468341633296754868541455509989373779727930 +/- 2.22e-61]
+
+s=2.6: 12 probes — B_elem (all closed forms, 10240 minorant cells) ...
+  charge upper endpoint: [1.5796585638689353182607461071999588047779685779260201798044338342e-12 +/- 4.24e-77]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  row 11 done
+  ALL 12 PIVOTS POSITIVE -> B_elem(s=2.6) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.480765505131341148420441262242282552273822576895767798 +/- 5.06e-55]
+
+s=2.4: 13 probes — B_elem (all closed forms, 10240 minorant cells) ...
+  charge upper endpoint: [1.7139764948056642943527223881408339989920657784038580800152771853e-12 +/- 4.77e-77]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  row 11 done
+  row 12 done
+  ALL 13 PIVOTS POSITIVE -> B_elem(s=2.4) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.207375860652713510042558322396153860729210672507383785417 +/- 4.48e-58]

@@ -33,11 +33,14 @@ if '--h' in _args:
     i = _args.index('--h'); _hv = _args[i + 1]; del _args[i:i + 2]
 W = arb(_wv)
 assert W.rad() == 0
-BAND0, BAND1 = arb(14), arb(44)
+_b0, _b1 = '14', '44'
+if '--band' in _args:
+    i = _args.index('--band'); _b0, _b1 = _args[i + 1], _args[i + 2]; del _args[i:i + 3]
+BAND0, BAND1 = arb(_b0), arb(_b1)
 N0 = 300
 XCUT = 20000
 R1 = arb(0)          # cells extend to 0 — monotonicity lemma holds on all of (0,inf), no flat floor needed
-RMAX = arb(120)      # minorant support
+RMAX = BAND1 + arb(80)   # minorant support scales with band
 HCELL = arb(_hv)     # cell width (dyadic)
 assert HCELL.rad() == 0
 
@@ -274,6 +277,6 @@ def certify(s_str):
     return True
 
 if __name__ == "__main__":
-    print(f"config: w={_wv}")
+    print(f"config: w={_wv} band=[{_b0},{_b1}] RMAX={RMAX}")
     for s_str in (_args or ["4.5", "4.4", "4.3", "4.2"]):
         certify(s_str)
