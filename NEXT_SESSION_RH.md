@@ -1,3 +1,41 @@
+# NEXT SESSION — updated 2026-07-28 (Riemann7 long autonomous stretch: LEDGER through §378)
+
+**Grounding doc for next table: `ROUNDTABLE_GROUNDING_2026-07-27.md`** — current through §375, 6 addenda.
+
+THE ARC SINCE §360 (all HANDLE unless noted):
+- **Density law (§366-367):** resonant-core count R ≈ ρ(T)/w² (Weyl zero density / w², clean rel-rms 0.11);
+  the PROVEN elementary-certificate reach tracks Nyquist 1/ρ(T) to 5-11% across T=29..440. Certificate geometry
+  density-locked on all 3 axes.
+- **s↔γ (§368):** critical resonant scale ~T/2π, RS-order but O(1)-drifts (not pinned).
+- **Q3 lit-gate (§370):** arch matrix = named Gaussian localization / cross-Toeplitz operator; collapse =
+  BGLy-2009 / Seip critical-density frame theorem (rate (1−a²)²); UNIFORM sub-critical bound = OPEN (=Q1).
+- **§372→372b (self-correction):** measured Weil≈0.5·overlap in the sparse interior, briefly claimed Q1 reduces
+  to the pure frame bound — REFUTED at criticality (frame stays healthy lmin≈3 while Weil cliffs to 0 + bent-prime
+  flips NEG). Arithmetic IS the corner, frame blind to it.
+- **THE CORNER TRIO (§373-375):** collapse pins to EXACT RvM count (§373, n*/RvM→0.99); NO fixed-direction
+  zero-free certificate (§374, tight direction is arithmetic/circular); that direction IS the zero-interpolating
+  mode (§375, φ vanishes on zeros, BRS §336 realized). Corner mapped to its core, reaffirms wall (Q5).
+- **Universality (§376-378):** built+validated a SECOND instrument (Fejer/sinc², compact-freq, finite prime
+  side, l2_fejer.py, rel resid 4e-7). RvM-collapse + zero-interpolation corner + δ² off-line floor-lift all
+  REPRODUCE — the phenomena are intrinsic to the explicit formula, not Gaussian artifacts.
+- **k=3 (§356-361b):** pairwise-exhausted at log order, M-S-2004-anchored; exclusion program (§364-365) parked
+  (mechanism real but no primes-only certificate, §374 obstruction).
+
+STATE: RH-on-this-front = positivity of the Weil form along the zero-interpolation mode at critical density —
+arithmetic, conservative (Q5). The concrete deliverable is the elementary theorem grid (§359-362): zero-free
+interval-arithmetic PD certificates, 4 bands × 3 widths, density-governed boundary.
+
+OPEN LEVERS (ranked): (1) the M-S pair-rigidity → corner-inequality connection (§369, the one ARITHMETIC angle
+on the corner not yet constructed — sharpest); (2) extremal Beurling-Selberg test functions to optimize the
+certificate CONSTANT (won't remove the wall per §377, but sharpens reach); (3) the uniform sub-critical frame
+bound (§370, genuinely open frame-theory frontier, our per-config certs are a constructive foothold).
+
+Standing: 15 rh-working-rules; ask-don't-assert; Report/Handle; LEDGER append-only. Verify-catch classes this
+arc: 3× log-vs-constant-order anchoring, arb ball-equality/non-dyadic/ball-digamma, §372 over-claim (caught same
+session by pushing to criticality). Tools: rt5_cT/cT2/sgamma/bgly/uniform/ratio/cliff/nullproj/nullshape/
+interp_offline; l2_fejer (2nd instrument); arb_elementary_cert (--w/--h/--band), arb_hybrid_cert (--w/--n0).
+
+---
 # NEXT SESSION — updated 2026-07-28 early (Riemann7 autonomous arc complete: LEDGER §343-360c)
 
 **Grounding doc (paste into next table): `ROUNDTABLE_GROUNDING_2026-07-27.md`** — current through §360, 3 addenda.
