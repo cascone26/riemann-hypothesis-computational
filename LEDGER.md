@@ -12890,3 +12890,19 @@ zeros' own interpolation mode (circular). So §378 explains WHY RH is geometrica
 Q5 status. The mechanism is now explicit, universal, and δ²-quantified; the obstruction to weaponizing it
 (§374) is unchanged. Net: the geometric content of RH-on-this-front is "on-line = interpolable to the floor;
 off-line = δ² above it", intrinsic to the explicit formula (two instruments), and conservative.
+
+## §379 (2026-07-28, Riemann7) — ARITHMETIC STIFFNESS: CONFOUNDED (rt5_stiffness.py), one robust takeaway. REPORT + honest limits.
+Critical multiplicative bend b*−1 (on Λ of a given prime's powers) to flip the near-crit corner margin
+negative, w=3: band[30,60] n=2:+0.45 n=3:+0.70 n*=7:+2.17 ALL:+0.22 · [50,80] +0.42/+0.40/+4.04/+0.17 ·
+[75,105] +0.13/+0.35/+5.25/+0.06 · [100,130] +0.33/+0.48/+7.02/+0.15. ([14,44] gave 0.0000 — the row landed
+AT collapse, lmin0=2.4e-7, so no cushion by construction.)
+**CONFOUNDS (owned):** (1) depth-aliasing (§345d/§366 recurring): the "ncrit−1" row landed at lmin0 ranging
+2.4e-7..9.9e-9..8.3e-4 — cushions measured at incomparable plunge depths, so the band-uniformity question is
+NOT answered. (2) the "n* is stiffest" ordering (+2 to +7) is a TERM-MAGNITUDE artifact: n*=7,11,17,19 have
+tiny term-norm Λ(n)/√n·e^{−(log n)²w²/4} at these bands, so a huge relative bend barely moves the form — NOT
+a protective-resonance signal. n=2 (largest norm) is cheapest to flip; that's magnitude ordering, not RH depth.
+**ROBUST TAKEAWAY:** at a HEALTHY sub-critical row (lmin0 ≳ 1e-4) the Λ(2) cushion is O(13-45%) — so §372b's
+"5% bend flips it" is specific to the EXACT collapse row (margin already ~0 there), not a generic marginality.
+Away from criticality the arithmetic has a substantial positivity cushion; only AT the RvM-count row does it
+vanish (consistent §335/§373). **NAMED FIX (next):** redo at FIXED lmin0 depth (bisect s to a target margin,
+not row index) to kill the aliasing before claiming uniform-vs-vanishing stiffness (§379b).

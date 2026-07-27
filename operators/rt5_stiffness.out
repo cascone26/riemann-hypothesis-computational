@@ -1,0 +1,12 @@
+§379 arithmetic stiffness: critical bend b*-1 to flip corner margin negative (w=3, near-crit row)
+      band   n      lmin0  bend n=2  bend n=3   bend n*  bend ALL
+  [14, 44]   9   2.40e-07 +0.0000 +0.0000   none (n*=5) +0.0000
+  [30, 60]  12   8.34e-04 +0.4529 +0.7001 +2.1678(n*=7) +0.2229
+  [50, 80]  14   1.70e-05 +0.4216 +0.4016 +4.0366(n*=11) +0.1701
+ [75, 105]  17   3.23e-08 +0.1322 +0.3510 +5.2501(n*=17) +0.0608
+[100, 130]  18   9.92e-09 +0.3349 +0.4832 +7.0171(n*=19) +0.1492
+
+reading: b*-1 = arithmetic cushion. If bounded below uniformly (band-flat, >0), primes have
+uniform stiffness = quantitative RH-robustness on this front. If ->0 with band, the corner is
+marginal everywhere (no cushion, §335 'arithmetic only tested at criticality' made quantitative).
+n* being the cheapest to flip = the resonant prime is the RH-critical arithmetic dof.
