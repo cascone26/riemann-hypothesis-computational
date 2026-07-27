@@ -1,0 +1,29 @@
+ε-BUDGET RACE at the edge (deepest PSD spacing).  won iff eps_avail < eps_req
+      band    w s_edge       true | n0=100   | n0=300   | n0=1000  | n0=3000  | n0=10000   (cells: eps_req/eps_avail; * = won)
+  [14, 44]  2.0    3.8  +6.26e-12 |  2.9e-04/6.0e-02  |  2.7e+00/3.0e-02* |  6.4e+06/2.1e-02* |  5.6e+13/1.1e-02* |  3.1e+22/6.5e-03*
+  [14, 44]  1.5    4.0  +3.07e-13 | -1.0e+00/6.0e-02  | -1.0e+00/3.0e-02  |  7.8e-03/2.1e-02  |  1.8e+00/1.1e-02* |  1.2e+05/6.5e-03*
+  [14, 44]  1.2    4.2  +1.99e-10 | -1.0e+00/6.0e-02  |  3.4e-04/3.0e-02  |  4.4e-04/2.1e-02  | -1.0e+00/1.1e-02  |  2.5e+00/6.5e-03*
+  [50, 80]  2.0    2.0  +4.02e-10 |  8.4e-04/6.0e-02  |  5.0e+01/3.0e-02* |  1.3e+08/2.1e-02* |  1.1e+15/1.1e-02* |  6.5e+23/6.5e-03*
+/Users/scones/projects/riemann/operators/rt5_budget.py:61: IntegrationWarning: The integral is probably divergent, or slowly convergent.
+  I, _ = quad(lambda u, cj=cs[j], ck=cs[k]: np.exp(u / 2) * L.g_pair(cj, ck, w, u),
+  [50, 80]  1.5    2.2  +1.79e-12 | -1.0e+00/6.0e-02  |  6.1e-04/3.0e-02  |  6.1e-04/2.1e-02  |  3.3e+00/1.1e-02* |  2.4e+05/6.5e-03*
+  [50, 80]  1.2    2.3  +5.09e-08 |  3.8e-05/6.0e-02  | -1.0e+00/3.0e-02  |  6.4e-04/2.1e-02  |  2.0e-01/1.1e-02* |  2.2e+02/6.5e-03*
+[100, 130]  2.0    1.6  +1.18e-11 |  4.6e-04/6.0e-02  |  7.4e-01/3.0e-02* |  1.9e+06/2.1e-02* |  1.6e+13/1.1e-02* |  1.0e+22/6.5e-03*
+[100, 130]  1.5    1.8  +2.22e-08 |  1.7e-04/6.0e-02  |  9.8e-04/3.0e-02  |  3.1e+00/2.1e-02* |  2.0e+04/1.1e-02* |  1.5e+09/6.5e-03*
+[100, 130]  1.2    1.8  +3.07e-12 |  3.1e-04/6.0e-02  | -1.0e+00/3.0e-02  | -1.0e+00/2.1e-02  |  1.0e-03/1.1e-02  |  7.3e-03/6.5e-03*
+
+SUMMARY — winning cut n0*, victory margin eps_req/eps_avail, resolved core size:
+      band    w s_edge    n0*  victory  #core
+  [14, 44]  2.0    3.8    300      91x     79
+  [14, 44]  1.5    4.0   3000     154x    466
+  [14, 44]  1.2    4.2  10000     381x   1280
+  [50, 80]  2.0    2.0    300    1693x     79
+  [50, 80]  1.5    2.2   3000     293x    466
+  [50, 80]  1.2    2.3   3000      18x    466
+[100, 130]  2.0    1.6    300      25x     79
+[100, 130]  1.5    1.8   1000     150x    193
+[100, 130]  1.2    1.8  10000       1x   1280
+
+Trajectories: log n0* vs 1/w (fixed band) = the w-axis cut law;
+log n0* vs band height (fixed w) = the T-axis cut law. Victory margin >> 1 means
+named RS/VK constants (lit values, larger than on-range measured eps) will still win.

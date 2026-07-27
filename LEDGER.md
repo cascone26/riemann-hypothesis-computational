@@ -12232,3 +12232,28 @@ race the critical-density margin plunge as the class completes?** Both sides of 
 computable curves. Next named measurements: (a) required-ε at the edge vs available-ε(n0) budget curve
 (w-sweep + T-sweep); (b) lit-check + substitution of named explicit ψ-envelope constants; (c) Arb-harden one
 deep collective-chain config (§340 discipline).
+
+## §348 (2026-07-27 night, Riemann7) — THE ε-BUDGET RACE MEASURED (rt5_budget.py): the T-AXIS IS FLAT (n0* does not climb with band height — the entire uniformity cost of the collective chain lives on the w-axis), the cut law is n0* ~ e^{c/w} (c≈10.5 on [14,44]), and the STRUCTURAL SURPRISE: the race is won by the GAUSSIAN ENVELOPE, not by PNT strength — CHEBYSHEV-GRADE ε (~0.06) suffices; ε(x) decay is nearly unused. HANDLE (measured).
+
+**Grid (3 bands × w∈{2,1.5,1.2} × cuts 100..10000, at each config's deepest PSD spacing):**
+ε_req = budget/‖C_unit‖_F vs ε_avail = max|ψ−x|/x on [n0,20000] (exact).
+**T-axis FLAT:** winning cut n0* at w=2: 300/300/300 across bands [14,44]/[50,80]/[100,130] (victory margins
+91x/1693x/25x); at w=1.5: 3000/3000/1000; at w=1.2: 10000/3000/10000 (depth-aliasing noise at deep margins,
+no T-trend anywhere). Combined with §344's clean q²/gap grid: **T-uniformity is cheap for this architecture —
+the wall is ONE-AXIS (w).**
+**w-axis cut law:** [14,44]: n0* = 300→3000→10000 for w=2→1.5→1.2 ⟹ log n0* ≈ 10.5/w — exponential, the §342
+reach law in its final costume. Resolved core = 79→466→1280 prime powers.
+**The surprise (race anatomy):** across cuts 100→10000, ε_req climbs 22 ORDERS (Gaussian kills the unit
+charge) while ε_avail falls only 0.06→0.0065. The win always happens when ε_req crosses O(1) — i.e. the
+binding constraint is "cut deep enough for the envelope," and even a CONSTANT Chebyshev-grade envelope
+|ψ(x)−x| ≤ 0.06x (elementary, pre-PNT!) shifts n0* only marginally. ⟹ (i) GOOD: the certificate's arithmetic
+input is even weaker than PNT — named explicit constants are trivially available at these ε levels (victory
+margins 18x-1693x; only [100,130] w=1.2 is marginal at 1x, needs cut slightly past 10000); (ii) HONEST/WALL:
+stronger prime knowledge buys ~nothing here — ε decay is too slow against super-exponential envelope/margin
+scales, so the w→0 completing-class cost is carried ENTIRELY by the e^{c/w} exact-core growth. PNT strength
+cannot win the w→0 race by itself on this front; the exponential cut is intrinsic to the split-at-a-scale
+architecture.
+**Efficiency gap → next build (named):** the collective chain treats ALL n<n0* exactly (1280 at w=1.2) while
+the directional chain needs only R≈40/w² (26-37) resonant terms. THE HYBRID CHAIN: gap-bound (k=5) with
+R~40/w² resonant terms exact + collective remainder (smooth integral + ε-charge) — if it gets full reach,
+the leanest elementary certificate yet: polynomial exact count + one Chebyshev-grade constant + formulas.
