@@ -1,0 +1,12 @@
+Q4 REDO — resonance by MINIMIZER PROJECTION p_n = |<v, P_n v>|, v = argmin eig(A)
+      band s_edge n*proj  log n*  2pi/s log(gc/2pi)                      top-5 by projection
+  [14, 44]    3.8      5   1.609  1.653       1.529 5:2.01e-01, 4:5.16e-02, 3:3.55e-02, 2:3.39e-02, 7:2.16e-02
+  [50, 80]    2.0     19   2.944  3.142       2.337 19:5.09e-04, 23:2.50e-04, 17:2.01e-04, 13:1.05e-04, 7:2.43e-05
+[100, 130]    1.6     43   3.761  3.927       2.907 43:2.99e-06, 41:2.69e-06, 31:2.38e-06, 47:1.48e-06, 19:6.52e-07
+[200, 230]    1.4     61   4.111  4.488       3.533 61:7.42e-08, 59:3.90e-08, 73:3.09e-08, 53:3.08e-08, 67:2.58e-08
+
+Involution closure on projection-eff10 (images under n -> gc/(2pi n)):
+    [14, 44] eff10=[5, 4, 3, 2, 7]: 5->pole-side | 4->pole-side | 3->1.5~2 IN | 2->2.3~2 IN | 7->pole-side
+    [50, 80] eff10=[19, 23, 17, 13]: 19->pole-side | 23->pole-side | 17->pole-side | 13->pole-side
+  [100, 130] eff10=[43, 41, 31, 47, 19, 23]: 43->pole-side | 41->pole-side | 31->pole-side | 47->pole-side | 19->pole-side | 23->pole-side
+  [200, 230] eff10=[61, 59, 73, 53, 67, 71]: 61->pole-side | 59->pole-side | 73->pole-side | 53->pole-side | 67->pole-side | 71->pole-side

@@ -1,0 +1,31 @@
+====================================================================================================
+Q4 — s<->gamma calibration at the edge (w=2)
+====================================================================================================
+      band s_edge    n*  log n*  2pi/s log(gc/2pi) 0.5log(gc/2pi)
+  [14, 44]    3.8     2   0.693  1.653       1.529          0.765
+  [50, 80]    2.0     2   0.693  3.142       2.337          1.168
+[100, 130]    1.6     2   0.693  3.927       2.907          1.454
+[200, 230]    1.4     2   0.693  4.488       3.533          1.766
+
+Involution closure test: images of eff10 set under n -> gc/(2pi n)
+    [14, 44]: 2->img 2.31~pp 2 (du=0.14) IN eff100 | 3->img 1.54~pp 2 (du=0.26) IN eff100 | 5->img 0.92 (<2: maps to POLE/leading side) | 4->img 1.15 (<2: maps to POLE/leading side)
+    [50, 80]: 2->img 5.17~pp 5 (du=0.03) IN eff100 | 3->img 3.45~pp 3 (du=0.14) IN eff100 | 5->img 2.07~pp 2 (du=0.03) IN eff100 | 4->img 2.59~pp 3 (du=0.15) IN eff100
+  [100, 130]: 2->img 9.15~pp 9 (du=0.02) minor arc | 3->img 6.10~pp 7 (du=0.14) IN eff100 | 5->img 3.66~pp 4 (du=0.09) IN eff100 | 4->img 4.58~pp 5 (du=0.09) IN eff100
+  [200, 230]: 2->img 17.11~pp 17 (du=0.01) minor arc | 3->img 11.41~pp 11 (du=0.04) minor arc | 5->img 6.84~pp 7 (du=0.02) IN eff100 | 4->img 8.55~pp 9 (du=0.05) minor arc
+
+====================================================================================================
+Q2 — factorization R = slots x couplings-per-slot at margin depth 1e-8
+====================================================================================================
+      band    w  s@1e-8  R(k5)  slots   cps slots*cps    Rw2 eff100
+  [14, 44]  2.5    3.80      7      2  3.50       7.0   43.8      5
+  [14, 44]  2.0    3.95     11      3  3.67      11.0   44.0      6
+  [14, 44]  1.5    4.15     16      3  5.33      16.0   36.0     11
+  [50, 80]  2.5    2.00      9      2  4.50       9.0   56.2      4
+  [50, 80]  2.0    2.20     10      2  5.00      10.0   40.0      6
+  [50, 80]  1.5    2.25     24      2 12.00      24.0   54.0     12
+[100, 130]  2.5    1.70     12      2  6.00      12.0   75.0      4
+[100, 130]  2.0    1.75     12      2  6.00      12.0   48.0      6
+[100, 130]  1.5    1.90     27      2 13.50      27.0   60.8     12
+
+Registered reading: quadratic derived iff slots ~ 1/w AND cps ~ 1/w; T-growth of R should
+localize in one factor. If slots is w-flat or cps is superlinear, the hypothesis fails — report as-is.

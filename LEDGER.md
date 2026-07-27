@@ -12394,3 +12394,29 @@ Interpretation registered up front: A3-arrow + B3-exhausted + C3-Gaussian ⟹ th
 PAIRWISE-GENERATED — k=2 is all there is at this order, and the saints' composition depth stops at pairs
 (a real negative: the nonabelian structure would then need a different face than k-point correlations).
 B3 or C3 firing ⟹ a genuinely new rigidity level exists above the variance — next charging object named.
+
+## §354 (2026-07-27, Riemann7 autonomous) — Q4 CALIBRATION + Q2 FACTORIZATION (rt5_calib.py, rt5_calib2.py): a selection-notion catch (raw-norm n* is ALWAYS 2 — the Bragg law lives in the MINIMIZER PROJECTION), the Bragg law confirmed on the right object across 4 bands to [200,230], Dirac's fixed-point reading EXCLUDED, and the involution question resolved by a THIRD branch: the major arc's dual partner is the POLE SIDE. Q2's registered factorization hypothesis FAILS as stated. HANDLE (measured).
+
+**Selection-notion catch (correction note on §337/§338 language):** raw term norm ‖P_n‖₂ is maximized by n=2
+at every band and width (Λ(n)/√n weight) — "n*" in the Bragg law is the MINIMIZER-PROJECTION maximizer
+p_n = |⟨v, P_n v⟩| (v = bottom eigenvector of A), the §337 directional object. Same annotation-vs-measurement
+error class as §343's; the eff10/eff100 sets of §344 (norm-based) and the projection sets are DIFFERENT sets.
+**Q4 calibration (projection object, w=2, edges of [14,44]/[50,80]/[100,130]/[200,230]):**
+n*_proj = 5, 19, 43, 61; log n* = 1.61, 2.94, 3.76, 4.11 vs 2π/s_edge = 1.65, 3.14, 3.93, 4.49 — **Bragg law
+log n* ≈ 2π/s confirmed within 3-9% at every band.** vs log(γc/2π) = 1.53, 2.34, 2.91, 3.53 — the RS-endpoint
+reading is order-right at criticality but 1.5-2x off at finite bands (±2w window inflates the effective zero
+count, pushing s_edge below true critical spacing). vs ½log(γc/2π) — EXCLUDED (factor ~2.5 in log): the
+fixed-point/RS-crossover reading is definitively dead (Dirac's in-table retraction now has its measurement).
+**Involution resolution (the registered branches both miss):** images γc/(2πn) of EVERY projection-eff10 term
+at every band land < 1.5 — BELOW the prime range, on the pole/leading-term side. The involution does not pair
+major-arc primes with primes (closed) nor push them to the minor arc (absorbed): **at criticality the dual
+partner of the resonant primes is the POLE/ARCHIMEDEAN side — the term every chain already treats exactly in
+closed form.** (Consistent with RS-duality structure: n ~ γ/2π pairs with ~1.) Dirac's surviving thread lands
+here: the symmetry says the last enemy's dual is the FIRST term of the certificate.
+**Q2 factorization (registered hypothesis FAILS as stated):** at margin depth 1e-8 across 3 bands × w=2.5/2/1.5:
+occupied Bragg slots = 2-3 EVERYWHERE (flat in both w and T — does not resolve a power law at these counts);
+couplings-per-slot carries ALL growth (3.5→5.3 in w on [14,44]; 5→13.5 in T at w=1.5). The quadratic is NOT
+cleanly (slots ~ 1/w)×(cps ~ 1/w). ALSO: the §346 constant R·w² is BAND-DEPENDENT, drifting up with T
+(43.8/56.2/75.0 at w=2.5 across the three bands) — "R ≈ 40/w²" is the [14,44] instance of R ≈ C(T)/w² with
+C(T) growing mildly (consistent with §344's R 15→19→24). Deriving C(T) = open; the slot factorization needs
+finer resolution (larger R regimes) before it can support or kill the envelope×slot-density derivation.

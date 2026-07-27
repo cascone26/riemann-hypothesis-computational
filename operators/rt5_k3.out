@@ -1,0 +1,32 @@
+sieving spf to 4000 and building S2 ...
+computing C2, C3 tail constants ...
+  C2 = 0.6601618606   C3 (p>=5 generic product) = 0.6351664838
+accumulating S3 and S3pair over even pairs to HMAX ...
+  d1=400 done
+  d1=800 done
+  d1=1200 done
+  d1=1600 done
+  d1=2000 done
+  d1=2400 done
+  d1=2800 done
+  d1=3200 done
+  d1=3600 done
+  d1=4000 done
+
+  H       S3(H)          S3pair(H)      S3-H^2/H     (S3-S3pair)/H
+    250         59123.3       121335.0     -13.5067    -248.8466
+    500        242753.4       499610.7     -14.4932    -513.7146
+   1000        983895.1      2027595.0     -16.1049   -1043.6999
+   2000       3965162.7      8179626.3     -17.4186   -2107.2318
+   4000      15924096.2     32863308.1     -18.9760   -4234.8030
+
+  A3: b = -2.0001  ->  NEITHER (b=-2.000) - flag
+  B3: b = -1379.9999  ->  GENUINE k=3 RIGIDITY (b=-1380.000)
+
+C3: sieving Lambda to 30000000 ...
+  H        skew      3*std_gauss   verdict
+       100   +0.1761     0.0300      EXCEEDS
+       300   +0.0766     0.0520      EXCEEDS
+      1000   +0.0353     0.0949      gaussian
+      3000   -0.0361     0.1643      gaussian
+     10000   -0.0111     0.3001      gaussian
