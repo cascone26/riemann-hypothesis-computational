@@ -147,14 +147,19 @@ def cenv_entry(cj, ck):
     assert I.imag.contains(arb(0))
     g0 = g_pair_arb(cj, ck, U0)
     bdry = arb(N0) * (-(U0) / 2).exp() * abs(g0)
-    return 2 * (bdry + I.real)
+    gX = g_pair_arb(cj, ck, UC)
+    bdryX = arb(XCUT) * (-(UC) / 2).exp() * abs(gX)          # audit fix §353: X-side boundary
+    return 2 * (bdry + bdryX + I.real)
 
 def exact_tail_beyond():
-    """sum_{n>XCUT} Lambda(n)/sqrt(n)*|2 g_pair| <= 2*1.04*Int e^{u/2}4P gauss du beyond UC."""
+    """sum_{n>XCUT} Lambda(n)/sqrt(n)*|2 g_pair|: h(x)=x^{-1/2}*4P*e^{-(log x)^2 w^2/4} decreasing;
+    int_X^inf h dpsi <= 1.04*(int_X^inf h dx + h(X)*X)  [partial summation boundary INCLUDED
+    — audit fix §353; both pieces e^{-93}-scale]."""
     P4 = 4 * W * arb.pi().sqrt() / (2 * arb.pi())
     rate = UC * W * W / 2 - arb(1) / 2
-    I = (UC / 2 - UC * UC * W * W / 4).exp() / rate
-    return 2 * arb('1.04') * P4 * I
+    I = (UC / 2 - UC * UC * W * W / 4).exp() / rate          # int_X^inf h dx  (u-substituted)
+    bdryX = (UC / 2 - UC * UC * W * W / 4).exp()             # h(X)*X = 4P e^{UC/2-UC^2w^2/4} / 4P
+    return 2 * arb('1.04') * P4 * (I + bdryX)
 
 def certify(s_str):
     s = arb(s_str)

@@ -1,4 +1,4 @@
-# ROUNDTABLE GROUNDING — state as of 2026-07-27 (LEDGER through §350)
+# ROUNDTABLE GROUNDING — state as of 2026-07-27 (LEDGER through §353)
 
 Paste-ready banked block. Supersedes ROUNDTABLE_GROUNDING_2026-07-26.md (kept for history).
 Everything here is DEPOSITED — restating scores nothing; build on it or ATTACK it.

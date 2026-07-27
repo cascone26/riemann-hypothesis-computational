@@ -1,0 +1,30 @@
+building psi to 20000 and proving eps on [300,20000]...
+  eps enclosure on [300,20000]: [+/- 0.0325]  (upper bound used: [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67])
+
+s=3.9: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
+  charge scalar upper endpoint (exact): [5.5786417944930786023234509367021904868643506429790447786160870202e-13 +/- 4.06e-78]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_lower(s=3.9) CERTIFIED PD (arb prec 220)
+  => B_full PD, THEOREM-GRADE: arithmetic input = primes<300 exact + proved eps([0.016225154432153496362532957000916370132197995453139991565728768458 +/- 3.09e-67]) on [300,20000] + psi<1.04x beyond
+  smallest pivot: [0.0074626490840289914469341127931655343 +/- 4.50e-38]
+
+s=3.8: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
+  charge scalar upper endpoint (exact): [5.5338368013721321573686304766214656497720873115098489906211500267e-13 +/- 3.58e-78]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_lower(s=3.8) CERTIFIED PD (arb prec 220)
+  => B_full PD, THEOREM-GRADE: arithmetic input = primes<300 exact + proved eps([0.016225154432153496362532957000916370132197995453139991565728768458 +/- 3.09e-67]) on [300,20000] + psi<1.04x beyond
+  smallest pivot: [0.0035857357789596291310367805356242232 +/- 5.18e-38]

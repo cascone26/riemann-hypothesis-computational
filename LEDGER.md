@@ -12350,3 +12350,27 @@ architecture through the variance pricing of ΔT. Upgrade path now concrete: rep
 needs it. The rigidity is DISCOVERED (measured in 𝔖 and ψ-variance, zero-free) — not imposed.
 
 ## §350b (2026-07-27, Riemann7) — s=3.8 CERTIFIED: the width diagnosis was exact. Root cause: the charge scalar was a BALL of 100% relative width (ε enclosure [0, 0.0325] → CHG [2.8e-13 ± 2.8e-13]) sitting on every diagonal; near-singular LDL amplified that width ~1.6e11x (condition ≈ 1/margin) → the ±0.075 pivot. Fix: subtract the EXACT UPPER ENDPOINT (point value, zero width — over-subtracting is conservative). Result: B_lower(s=3.8) ALL 8 PIVOTS POSITIVE, smallest pivot [0.00358573... ± 4.12e-38] — width down 36 ORDERS. ⟹ **the collective certificate is THEOREM-GRADE on the deepest PSD rows (s=3.9 AND 3.8, rank limit 3.7) at w=2**: the entire certified region of the §347-349 architecture at this width now stands on interval arithmetic + 79 explicit prime powers + in-script-proved ε + ψ<1.04x. HANDLE (arb). 23rd verify-class catch banked: interval BALLS on the diagonal of a near-singular LDL are amplified by the condition number — always subtract one-sided point bounds, not enclosures (generalizes the §199.5/§340 discipline).
+
+## §353 (2026-07-27, Riemann7) — FULL AUDIT PASS over §343-352 ("look over everything"): the theorem SURVIVES with two formally-missing boundary terms caught, patched, and RE-CERTIFIED; one prose slip corrected; one bonus consistency discovered; all proof pointers verified; independent spot-recomputations reproduce banked numbers exactly. HANDLE (audit + re-certification).
+
+**Audit catches (both e^{-93}-scale — invisible to every conclusion, but the bound-as-coded was incomplete):**
+(1) exact_tail_beyond() bounded ∫_X^∞ h dψ by 1.04∫h dx alone — the Stieltjes partial-summation BOUNDARY term
+1.04·h(X)·X was missing; (2) cenv_entry's partial summation had the x0-side boundary but not the X-side
+ε·X·|f(X)|. Both patched (arb_hybrid_cert.py, marked "audit fix §353"), both configs RE-CERTIFIED:
+s=3.9 charge 5.5786e-13, smallest pivot [0.0074626... ± 4.5e-38]; s=3.8 charge 5.5338e-13, pivot
+[0.0035857... ± 5.2e-38]. §350/350b theorem claims now stand on a formally complete script.
+**Verified sound on re-derivation:** B_full ⪰ B_lower inequality chain (T_exact ⪯ T_smooth + λmax(ΔT)I,
+‖ΔT‖₂ ≤ ‖C‖_F, entrywise |ΔT| ≤ C by split [x0,X] + beyond-X); the ε-proof loop is conservative by arb
+comparison semantics (cand < EPS requires disjointness, so every candidate unions in — enclosure certain);
+endpoint subtraction rigorous (ball contains exact upper endpoint; over-subtraction conservative);
+|G'| ≤ 4P·gauss·(uw²/2 + a) envelope correct (a ≥ |b|, en+ef ≤ 2); tsm tail exp-domination correct.
+**Prose correction:** §348 said ε_req climbs "22 orders" across cuts — it is 26 orders (2.9e-04 → 3.1e+22).
+**Bonus consistency (Report-tier annotation on §352B, measurement already banked):** the ψ-variance intercept
+B = val + log H measures −1.42/−1.46/−1.45 on the clean decades (H=300-3000) vs 1−γ−log 2π = −1.4151 —
+the arrow measurement has the right SLOPE AND INTERCEPT. (Drifts at H=10⁴-3·10⁴ where samples thin.)
+**Honesty notes attached to banked entries:** §352C covariance model treats even-n parity crudely (the 3x
+tolerance was the guard; PASS stands as registered); §344's Σ|c_k|² includes core members in the eff100 set
+(a defined, reported quantity — loose as a "cost" reading); §352A per-decade slopes oscillate ±1 (LS fit was
+the registered criterion); M-S lit attribution still queued; float-chain ε values are measured-tier (only the
+arb chain's ε is proved). **Spot-recomputations (independent code):** instrument minEig +8.6439e-5 /
+residual 1.8e-10 ✓; count-law point w=2 s=3.95 margin 6.662e-9 ✓ — exact matches to banked values.
