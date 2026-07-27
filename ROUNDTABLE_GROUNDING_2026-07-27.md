@@ -1,4 +1,4 @@
-# ROUNDTABLE GROUNDING — state as of 2026-07-27 late (LEDGER through §356)
+# ROUNDTABLE GROUNDING — state as of 2026-07-28 (LEDGER through §360)
 
 Paste-ready banked block. Supersedes ROUNDTABLE_GROUNDING_2026-07-26.md (kept for history).
 Everything here is DEPOSITED — restating scores nothing; build on it or ATTACK it.
@@ -130,3 +130,21 @@ level buy a constant factor only (difficulty conservation again)? Pre-register b
   lives elsewhere — the §354 pole-side pairing points at the prime↔archimedean interface (a_k↔g_k), not
   deeper prime-prime correlations. Next: k=3 at the NEXT order; the RS-dual weight probe.
 - Arb-rigor extension in flight at close: w=1.5, n0=3000, s=4.1/4.0 (second width for the theorem).
+
+## ADDENDUM 3 — the rigor sweep (§357-360)
+- **Lit locked (§357):** Montgomery–Soundararajan 2004 (CMP 252) is the theorem behind BOTH arrow
+  coefficients (k=2: −½; k=3 anchored: −2 — our measurements match to 4 decimals; their C(k,2) log
+  coefficient literally counts pairs, making §356's pairwise-exhaustion a theorem-level structure).
+  RS 1962 ψ<1.03883x covers the tail envelope. Genuine k-wise content = the M-S O(H^{k−3/2}) remainder.
+- **Dual-weight (§358):** the pole MATRIX is weightless in-band (e^{−c²/2w²}) — the involution's real
+  statement: **the last enemy's dual is the PNT MAIN TERM** (arch density), the object the collective
+  chain holds exactly. Major arc carries ~half the arch projection at criticality (0.49-0.87 across bands).
+- **Constant-order discipline (§358b):** naive differentiation of weighted sums fails at constant order
+  (Abel boundary) — three anchoring-arithmetic errors owned this arc; log orders robust throughout.
+- **THE ELEMENTARY THEOREM (§359-360):** B_full PD with ZERO numeric integration — every entry
+  erf/exp/cos/Λ closed forms + digamma gridpoint constants + in-script-proved ε + RS 1962. Coverage:
+  w=2: s=4.5-4.3; w=3: s=4.5-4.1 (EXCEEDS §341's float reach, now at full rigor). Includes a NEW
+  two-line lemma: Ω strictly increasing on (0,∞) by termwise sign of the ψ′ series (replaces §341's
+  numerical monotonicity check). h-refinement to 1/256 in flight for w=3 s=4.0.
+- **Collective theorem coverage (§350/350b/360):** w=2: s=3.9, 3.8 AND w=1.5: s=4.1, 4.0 — both widths
+  certified to their deepest PSD grid rows. The architecture is theorem-grade everywhere it's been asked.
