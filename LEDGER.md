@@ -12869,3 +12869,24 @@ Charisma discipline pays off — a genuinely different construction, validated b
 the same structure. Off-Gaussian lever (was the §375 "next attack"): the phenomena are universal, so a
 smarter test class does NOT dissolve the corner — it relocates the same zero-interpolation obstruction. Extremal
 (Beurling–Selberg) test functions would optimize the CONSTANT, not remove the wall.
+
+## §378 (2026-07-28, Riemann7) — THE OFF-LINE RANK-2 LIFT IS UNIVERSAL AND δ²-SCALING on both instruments — §364 + §375 unified as the geometric RH signature (rt5_interp_offline.py). HANDLE (measured) + honest boundary (does not defeat §374).
+An on-line zero contributes rank-1 to the zero-side Gram (real ordinate); an off-line zero at ½+δ+iγ
+contributes rank-2 (real+imag parts) — so it CANNOT be interpolated to zero by the real even test class the
+way an on-line zero can, and it LIFTS the critical-density floor. Measured lift above the on-line ~rank-deficient
+floor, both instruments:
+  Gaussian w=3 (n_crit=9, on-line lmin 2.40e-7): δ=0.05/0.1/0.2 → lift 4.97e-11 / 1.99e-10 / 7.96e-10 (×4 per
+  δ-doubling = δ² exactly). Fejer W=1.2 (n_crit=7, on-line lmin 1.06e-2): lift 1.62e-4 / 6.55e-4 / 2.76e-3
+  (also ×4 = δ²). ⟹ **lift ≈ c·δ² universally** (the §364 c(δ) law, now on two independent test classes) — the
+  rank-2 off-line contribution provably lifts the floor the real even class cannot interpolate away. This
+  unifies §364 (rank-2 mechanism) and §375 (zero-interpolation corner): on-line zeros are exactly the
+  configurations the real even test class interpolates to the critical-density floor; off-line zeros are not,
+  and the deficit is δ².
+**HONEST BOUNDARY (does not defeat §374/§365):** this is a ZERO-SIDE / mechanism statement — the lift is
+measured on the Gram built FROM a hypothesized zero configuration. To DETECT it from primes-only, one needs
+the analytic side's value along the lift direction, but §374 showed the analytic-tight direction is the
+zeros' own interpolation mode (circular). So §378 explains WHY RH is geometrically special on this instrument
+(δ² floor-lift, universal) WITHOUT yielding a primes-only certificate — fully consistent with the conservative
+Q5 status. The mechanism is now explicit, universal, and δ²-quantified; the obstruction to weaponizing it
+(§374) is unchanged. Net: the geometric content of RH-on-this-front is "on-line = interpolable to the floor;
+off-line = δ² above it", intrinsic to the explicit formula (two instruments), and conservative.

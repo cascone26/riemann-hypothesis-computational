@@ -1,0 +1,14 @@
+§378 off-line signature on the zero-side Gram at criticality (on-line rank-deficient ~0):
+  [Gaussian w=3] n=9 on-line zero-side lmin = +2.402e-07
+    delta=0.05: off-line lmin = +2.402e-07  lift = +4.971e-11
+    delta=0.1: off-line lmin = +2.404e-07  lift = +1.989e-10
+    delta=0.2: off-line lmin = +2.410e-07  lift = +7.962e-10
+  [Fejer W=1.2] n=7 on-line zero-side lmin = +1.063e-02
+    delta=0.05: off-line lmin = +1.079e-02  lift = +1.616e-04
+    delta=0.1: off-line lmin = +1.129e-02  lift = +6.553e-04
+    delta=0.2: off-line lmin = +1.340e-02  lift = +2.763e-03
+
+reading: if off-line consistently LIFTS the zero-side lmin above the on-line ~0 floor (a
+POSITIVE lift growing with delta) on BOTH instruments, the rank-2 off-line contribution
+provably cannot be interpolated away by the real even class — the geometric RH signature
+(§364 rank-2 + §375 interpolation unified). Lift ~ c*delta^2 expected (§364 c(delta) law).
