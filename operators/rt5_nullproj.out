@@ -1,0 +1,35 @@
+CORNER INEQUALITY: <v0, B v0> along the frame-null mode at n=n_crit (RvM count).
+margin = P0 + A0 - primesum;  RH-at-corner <=> primesum <= P0+A0.
+
+band (14.0, 44.0)  n_crit=9
+  P0=+2.4295e-24  A0=+4.3630e-01  primesum=-1.8121e-01
+  MARGIN along v0 = +6.1751e-01   (full-form lmin = -2.0667e-13)
+  slack = margin/(P0+A0) = 1.4153   (0 = at violation, 1 = primes irrelevant)
+  pow2 contribution = -1.3905e-02 (7.7% of primesum) -> 5% bend moves margin by +6.95e-04 (flips if > margin)
+  top-5 |contrib| n: 5:-1.84e-01, 4:-1.49e-02, 7:+9.34e-03, 3:+6.89e-03, 2:+6.54e-04
+
+band (50.0, 80.0)  n_crit=14
+  P0=+5.5003e-274  A0=+1.5901e-02  primesum=+4.4741e-03
+  MARGIN along v0 = +1.1427e-02   (full-form lmin = +4.6797e-04)
+  slack = margin/(P0+A0) = 0.7186   (0 = at violation, 1 = primes irrelevant)
+  pow2 contribution = +2.5089e-04 (5.6% of primesum) -> 5% bend moves margin by -1.25e-05 (flips if > margin)
+  top-5 |contrib| n: 13:+4.34e-03, 11:-7.21e-04, 17:+4.55e-04, 19:+3.32e-04, 16:+2.10e-04
+
+band (100.0, 130.0)  n_crit=18
+  P0=+0.0000e+00  A0=+2.3797e-04  primesum=+2.4208e-05
+  MARGIN along v0 = +2.1377e-04   (full-form lmin = +4.9458e-07)
+  slack = margin/(P0+A0) = 0.8983   (0 = at violation, 1 = primes irrelevant)
+  pow2 contribution = +4.7938e-06 (19.8% of primesum) -> 5% bend moves margin by -2.40e-07 (flips if > margin)
+  top-5 |contrib| n: 29:+2.81e-05, 31:-2.00e-05, 25:-1.63e-05, 23:+1.61e-05, 37:-9.19e-06
+
+band (185.0, 215.0)  n_crit=21
+  P0=+0.0000e+00  A0=+5.0351e-06  primesum=-3.1340e-07
+  MARGIN along v0 = +5.3485e-06   (full-form lmin = +1.2632e-08)
+  slack = margin/(P0+A0) = 1.0622   (0 = at violation, 1 = primes irrelevant)
+  pow2 contribution = +5.9649e-08 (-19.0% of primesum) -> 5% bend moves margin by -2.98e-09 (flips if > margin)
+  top-5 |contrib| n: 47:-6.17e-07, 53:-3.59e-07, 49:+2.28e-07, 61:+1.39e-07, 41:+1.27e-07
+
+reading: the corner inequality primesum <= P0+A0 holds (margin>=0) for TRUE primes;
+slack quantifies tightness. pow2 dominating primesum explains §372b (5% Lambda(2) bend flips
+the margin negative). The RH content at the corner = why the TRUE Lambda keeps primesum just
+under P0+A0 while a small bend exceeds it — an explicit inequality on q_n-weighted prime sums.

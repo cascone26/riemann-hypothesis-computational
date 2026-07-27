@@ -12804,3 +12804,22 @@ count R≈ρ(T)/w² (§367), certified reach s≈1/ρ(T) (§367B), and now the c
 The critical density is not approximate: probe-count = zero-count is the exact knife-edge, per band, from the
 RvM formula alone. This is the quantitative spine of the §363/§369 corner statement: RH-on-this-front lives
 exactly at n = N(T), the integer where test resolution meets the zeros.
+
+## §374 (2026-07-28, Riemann7) — CORNER-INEQUALITY ATTEMPT: clean NEGATIVE + a precise obstruction statement (rt5_nullproj.py). The frame-null direction is NOT the RH-critical direction, so projecting the Weil form onto it gives a BENIGN (non-tight) inequality — the tight direction is arithmetic, and projecting there is circular. HANDLE (measured) — reconfirms §365/§372b and states WHY the corner resists a fixed-direction certificate.
+Construction: project B_full = pole+arch−prime onto v0 = bottom eigenvector of the OVERLAP Gram (frame-null,
+zero-free), hoping <v0,B v0> ≥ 0 becomes an explicit prime-sum inequality (primesum ≤ P0+A0) that IS the
+corner RH condition. RESULT — the projection is NOT tight: margin along v0 = 0.617 / 1.1e-2 / 2.1e-4 / 5.3e-6
+across [14,44]/[50,80]/[100,130]/[185,215], while the ACTUAL full-form lmin = −2e-13 / 4.7e-4 / 4.9e-7 /
+1.3e-8 — v0's margin is 1-12 ORDERS above the true collapse. So the overlap-null (frame-critical) direction
+is a HEALTHY direction for the Weil form; the Weil collapse lives in a DIFFERENT direction. slack 0.72-1.42
+(not small) confirms non-tightness.
+**Why it fails, precisely (the useful part):** the RH-critical direction is the full-form's OWN bottom
+eigenvector v_full — the direction where the primes make pole+arch−prime smallest. That direction is
+arithmetic-determined (depends on Λ), and projecting onto it is circular (⟨v_full,B v_full⟩ = lmin, recovers
+the margin, no new inequality). Any FIXED zero-free direction (frame-null or any a-priori choice) is
+generically healthy and gives slack. ⟹ **there is no fixed-direction zero-free corner certificate: the tight
+direction is itself arithmetic.** This is the precise obstruction behind §365 (exclusion near-null failed) and
+§372b (frame blind to collapse) — restated as a theorem-shaped statement: the corner's critical functional is
+not a-priori constructible; it is the argmin over directions of the prime-dependent form. (Byproduct still
+banked: pow2 is 6-20% of primesum along v0, order-consistent with §372b's bent sensitivity, but on the
+non-tight direction so not the RH mechanism.) Genuine negative; the obstruction is now named sharply.
