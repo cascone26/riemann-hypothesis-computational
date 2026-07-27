@@ -1,5 +1,52 @@
-Traceback (most recent call last):
-  File "/Users/scones/projects/riemann/operators/arb_elementary_cert.py", line 42, in <module>
-    assert HCELL.rad() == 0
-           ^^^^^^^^^^^^^^^^
-AssertionError
+building psi to 20000, proving eps on [300,20000] ...
+  eps upper = [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67]
+building Omega left-endpoint values (monotonicity lemma) ...
+  7680 cells, [0,7] floor = Omega(0) = [-5.3721834192256655822329574974497422890145392516235538431689026310 +/- 7.67e-66]
+config: w=1.5
+
+s=4.6: 7 probes — B_elem (all closed forms, 7680 minorant cells) ...
+  charge upper endpoint: [8.8205513929621545452052849159539104712760219291790325050669338304e-7 +/- 4.79e-72]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  ALL 7 PIVOTS POSITIVE -> B_elem(s=4.6) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.0932525322149590306852842896833066606863411851342741072893220 +/- 7.27e-62]
+
+s=4.4: 7 probes — B_elem (all closed forms, 7680 minorant cells) ...
+  charge upper endpoint: [8.6409627055632736180234729189290954350092595128178023891580629182e-7 +/- 1.13e-72]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  ALL 7 PIVOTS POSITIVE -> B_elem(s=4.4) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.017373412959293050785455328240479836568468713674038448323120 +/- 5.16e-61]
+
+s=4.3: 7 probes — B_elem (all closed forms, 7680 minorant cells) ...
+  charge upper endpoint: [8.5914792282789618580388431847017775625973825994936066250164047089e-7 +/- 3.72e-72]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  PIVOT 3: [-0.00122498188711162194984117156561774310338624142652508047207 +/- 2.42e-60] not certified > 0 -> NOT CERTIFIED at s=4.3
+
+s=4.2: 8 probes — B_elem (all closed forms, 7680 minorant cells) ...
+  charge upper endpoint: [1.0355455686545648707198343525204406878052167938114680800986434020e-6 +/- 4.99e-71]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  PIVOT 3: [-0.03521223270675739108394430787929999677775578923750430467303 +/- 8.54e-60] not certified > 0 -> NOT CERTIFIED at s=4.2

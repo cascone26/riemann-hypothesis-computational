@@ -28,7 +28,7 @@ _args = sys.argv[1:]
 _wv = '2'
 if '--w' in _args:
     i = _args.index('--w'); _wv = _args[i + 1]; del _args[i:i + 2]
-_hv = '0.02'
+_hv = '0.015625'
 if '--h' in _args:
     i = _args.index('--h'); _hv = _args[i + 1]; del _args[i:i + 2]
 W = arb(_wv)

@@ -1,3 +1,26 @@
+# NEXT SESSION — updated 2026-07-28 early (Riemann7 autonomous arc complete: LEDGER §343-360c)
+
+**Grounding doc (paste into next table): `ROUNDTABLE_GROUNDING_2026-07-27.md`** — current through §360, 3 addenda.
+
+THE THEOREM MAP (all interval-arithmetic proven, zero-free):
+  collective (integral-grade): w=3: s=3.5,3.4 (§340) · w=2: s=3.9,3.8 (§350) · w=1.5: s=4.1,4.0 (§360)
+  ELEMENTARY (zero numeric integration): w=3: s=4.5→4.0 · w=2: s=4.5→4.3 · w=1.5: [run landing at close]
+  Arithmetic inputs: a few hundred prime powers + in-script-proved ε + RS 1962. Plus the new 2-line
+  monotonicity lemma (Ω↑ on (0,∞) via termwise ψ′-series sign).
+
+The autonomous arc also settled: Q4 (Bragg law on the projection object, 4 bands; fixed-point excluded;
+involution → the last enemy's dual is the PNT MAIN TERM §358); Q6 k=3 (pairwise-exhausted at log order,
+M-S-2004-anchored to 4 decimals §356-357); saints' k=2 arrow (all three pre-registered tests ARROW §352,
+intercept matches 1−γ−log2π); Q2 partial (R = C(T)/w², C band-dependent; slot factorization failed §354).
+
+Open fronts, ranked: (1) grounding Q1 — the w→0 statement of the hybrid; (2) k=3 NEXT-order probe vs the
+M-S O(H^{3/2}) remainder (pre-register first!); (3) derive C(T); (4) h-refinement ladder if deeper elementary
+rungs wanted (available, not strategic); (5) elementary chain at higher bands (T-flat per §348, should be cheap).
+
+Standing: 15 rh-working-rules; ask-don't-assert; Report/Handle; LEDGER append-only; 4 verify-catch classes
+added this arc (log-vs-constant order anchoring ×3, arb ball-equality/non-dyadic/ball-digamma).
+
+---
 # NEXT SESSION — updated 2026-07-27 (Riemann7 close: the collective arc, LEDGER §343-350)
 
 **Grounding doc for the next table: `ROUNDTABLE_GROUNDING_2026-07-27.md`** (supersedes 07-26; paste that file).
