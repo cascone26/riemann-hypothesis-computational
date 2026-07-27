@@ -162,3 +162,53 @@ level buy a constant factor only (difficulty conservation again)? Pre-register b
   between the M-S pair-rigidity constants (unconditional, zero-free 𝔖 sums) and the corner rank — an
   off-line zero adds a non-L² mode whose sampling excess must violate 𝔖-rigidity at finite scale. If
   quantitative, it is a genuine 3-clause middle object. Gate it hard before investing.
+
+## ADDENDUM 5 — the prime↔archimedean (a_k↔g_k) interface probe (§364-368)
+6-seat Opus/Fable table (Riemann·Grothendieck·Tao·Dirac·Dyson·Gate), chat mode, live instrument.
+VERDICT: the interface mints NO new nonabelian rigidity — a clean, REASONED negative (Deligne
+decoupling + wrong-ensemble correction), plus two real structural byproducts. This CLOSES the front.
+- **§364 Gate ruling (in ink, then upgraded):** interface split — a_k side passes clause 2 clean
+  (Euler product, prime-constructible; involution map = FE Gamma-factor, unconditional), so naming the
+  pole as dual partner does NOT smuggle the center coordinate. Wall enters iff g_k(k≥3) is used as input
+  (calibrated on zero stats). k=2 factorization is a THEOREM (Ingham/Heath-Brown) → the one ground spot.
+  Falsification (3) TRIGGERED on the modulus → ruling decided: **NOT a new coordinate; at best a transfer wire.**
+- **§365 Dirac (Handle, dirac_rsdual_probe.py, seed 354, Stirling/RS saddle, zero-free):** winding number 1,
+  oriented 2-cycle, z-phase = π+2πz EXACTLY (bins match prediction to 3 decimals; antiphase −1 only at z=0,
+  the continuity guard). BUT mean cross-weight 0.003–0.007 = inside pre-stated abelian null (3σ/√M=0.0122).
+  Then l2_zcond probe (dirac_l2_zcond_probe.py, M=240000): **the wire does NOT price charge** — Var(Z)=15.672
+  vs pre-stated 15.9, shortfall = Stirling band-leakage (β 0.898→0.964), residual z-profile FLAT
+  (χ²=10.0/8 bins, two-node c=−0.0047±0.0114 ≈ 0). Conductor band j*=(3N/8)^{1/3}=8 at T=1e7, theory-fixed not tuned.
+- **§366 Grothendieck (the REASON, twice-corrected):** over F_q there is one H¹, two functors — g_k = geometric-
+  monodromy moment (Deligne equidistribution, maximal symplectic), a_k = arithmetic Frobenius specialization.
+  Clean product / no cross-term = **Deligne's theorem** (geometric monodromy maximal ⟹ arithmetic decouples),
+  not a measured coincidence. SELF-CORRECTION banked: he first put the invariant in ∧²(trivial summand) —
+  correct for SYMPLECTIC (quadratic Dirichlet/F_q) but zeta is UNITARY/GUE. Right home: V⊗V̄, whose invariant
+  is the **Rankin–Selberg pole** (residue of L×L̄) — archimedean, abelian. Same kill, correct clothes.
+- **§367 Dyson (symmetry class + the zero-trap):** RS self-duality on Re=½ is antiunitary; measured phase
+  π+2πz (Im 0.90 at quarter points) EXCLUDES orthogonal (T²=+1) and symplectic (Kramers, but z=0 fixed point
+  exists) → class **U, β=2, no antiunitary constraint**: the RM side FORBIDS NOTHING here; whatever forbids is
+  arithmetic. TRAP caught before spending a run: A(t)=Σ a_p a_q sin(t log p/q) with symmetric weight is
+  IDENTICALLY ZERO (skew kernel on symmetric domain) — a false-positive machine; the antisymmetric channel
+  must be handed orientation explicitly. Final chain-read (arb_hybrid_cert.py L120-200): the node coordinate
+  **does not map into the certificate at all** — no height variable t, every live term oscillates at sum freq
+  a=(cj+ck)/2 ≥ BAND0=14, no zero-frequency component → **the worst-case-at-nodes adversary dissolves in the
+  actual certificate frame.** e_far ≤ e^{−49} at band floor (dead).
+- **§368 Tao (off-diagonal, the one live lane) + Riemann envelope:** large-sieve split — Var is bilinear
+  Σ a_p a_q⟨u_p ū_q⟩; diagonal p=q = (prime density)×(universal winding) = exactly Deligne's decoupled term;
+  Deligne is SILENT on the off-diagonal at the archimedean place → Tao planted the flag there (tao_sesqui_probe.py,
+  M=240000). Results (Handle): prime-prime A skew-symmetric to machine zero (Dyson's trap confirmed, A+Aᵀ=0.00);
+  ε-null real+structured (Im O_null = |sin 2πz|, amp ~0.045, mean 0.0274 = the abelian theta/root-number winding
+  we ALREADY own); arithmetic excess FLAT (1.67σ, 25× under ε-null, no node structure). Riemann envelope null
+  (pre-run Report → Dirac Handle): Σ_band n^{-1/2} ~ (T/2π)^{-1/12}, slope −0.083 Report vs measured −0.0949
+  converging to −1/12 from below → **envelope SHRINKS**, so Gate's non-vacuity is automatic at large T
+  (a decaying bound can't exceed the term where the certificate lives).
+- **AMENDMENTS TO BANK (Gate-ordered):** (a) §354's pole-partner claim is CORRECTED — Riemann's rank-2 pole
+  term B is NOT the resonant prime's dual partner (n=1 = dead noise); the locking object is the RS-involution
+  FIXED POINT (self-dual saddle where main sum = dual sum), a local stationary-phase coordinate, not the s=1
+  residue. (b) The winding-1 lock is Handle (dirac_rsdual_probe.py) with Grothendieck's abelian-archimedean kill
+  attached — do NOT re-inflate it into depth next table. (c) Interface observables live in V⊗V̄ (sesquilinear,
+  unitary class); the F_q symplectic ∧² analogy borrows the WRONG ensemble — the family fixes the ensemble.
+- **NET:** difficulty conservation, but WITH a reason. The interface is a transfer wire carrying the abelian
+  ε-factor (theta/root-number winding) entire; it prices no charge in the variance channel. Front CLOSED.
+  The sharpest target reverts to §363: the M-S pair-rigidity ↔ corner-rank inequality (Q1's single w-uniform
+  inequality). Gate it hard before investing.

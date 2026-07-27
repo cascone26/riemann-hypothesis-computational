@@ -1,0 +1,29 @@
+s<->gamma: is the projection resonant scale n*_edge ~ T/(2pi)?  (Bragg + Nyquist prediction)
+   Tc s_edge  2pi/s log(T/2pi) n*_proj  T/2pi n*/(T/2pi)
+   29   3.80  1.653      1.529       5    4.6      1.083
+   45   2.45  2.565      1.969      11    7.2      1.536
+   65   1.95  3.222      2.337      19   10.3      1.837
+   90   1.75  3.590      2.662      31   14.3      2.164
+  115   1.60  3.927      2.907      43   18.3      2.349
+  150   1.45  4.333      3.173      53   23.9      2.220
+  200   1.40  4.488      3.460      59   31.8      1.854
+  260   1.35  4.654      3.723      73   41.4      1.764
+  340   1.25  5.027      3.991      97   54.1      1.793
+  440   1.15  5.464      4.249     137   70.0      1.956
+
+n*/(T/2pi): mean 1.856, sd 0.345
+verdict: if mean~O(1) and sd small, the RS scale gamma/2pi IS the critical resonant scale
+(derived from Bragg+Nyquist, not assumed) — Q4 calibration pinned; §343 retraction refined:
+the ANNOTATION was wrong to state as measured, but the RELATION is true and now IS measured.
+
+involution n -> (T/2pi)/n* on the resonant scale:
+  T=29: n*=5 -> 0.92  (pole/leading side)
+  T=45: n*=11 -> 0.65  (pole/leading side)
+  T=65: n*=19 -> 0.54  (pole/leading side)
+  T=90: n*=31 -> 0.46  (pole/leading side)
+  T=115: n*=43 -> 0.43  (pole/leading side)
+  T=150: n*=53 -> 0.45  (pole/leading side)
+  T=200: n*=59 -> 0.54  (pole/leading side)
+  T=260: n*=73 -> 0.57  (pole/leading side)
+  T=340: n*=97 -> 0.56  (pole/leading side)
+  T=440: n*=137 -> 0.51  (pole/leading side)

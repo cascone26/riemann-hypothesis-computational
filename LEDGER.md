@@ -12680,3 +12680,35 @@ So this is a MILD confirmation of the density law, not a derivation. Named tight
 returns vs the noise): average C over a margin-depth WINDOW [1e-9,1e-7] per band to kill the aliasing, and
 extend the ladder to T~2000 for lever arm. The qualitative result — density-growth beats constant — is robust;
 the constant (~127·ρ, i.e. R ≈ (Weyl count of the band)/w² up to O(1)) is order-right but not pinned.
+
+## §367 (2026-07-28, Riemann7) — C(T) TIGHTENED + THE REACH–DENSITY TIE (rt5_cT2.py): depth-window averaging makes ρ(T) the CLEAN winner (rel-rms 0.112 at w=2 vs const 0.274, √T 0.172; w=1.5: 0.148), AND the PROVEN elementary-certificate reach tracks the Nyquist spacing 1/ρ(T) to 5-11% across the band ladder. HANDLE (measured).
+Depth-window [1e-9,1e-6] average kills §366's aliasing: C/ρ tightens to ~103-159 (w=2). Fit rel-rms: ρ(T)
+0.112 ≪ const 0.274 — **R ≈ ρ(T)/w² confirmed clean** (ρ(T)=(1/2π)log(T/2π) the Weyl zero density).
+REACH TIE (B), the strong new result — ties the §359-362 THEOREM boundary (not just the float count) to
+density with NO new arb runs: elementary-certified s_edge vs 1/ρ(T): T=29: 4.30 vs 4.11 (1.05); T=65:
+2.40 vs 2.69 (0.89); T=115: 2.00 vs 2.16 (0.93); T=215: 1.60 vs 1.78 (0.90). Ratio ≈ 0.9-1.05 across a 7x
+band range ⟹ **the proven certificate reach is set by the Nyquist/zero-density spacing** — same ρ(T) law as
+the float count. The theorem grid is not a set of unrelated points; it is one density-governed boundary.
+
+## §368 (2026-07-28) — s↔γ CALIBRATION (rt5_sgamma.py): the RS scale n*_edge ~ T/2π is ORDER-RIGHT but DRIFTS (ratio 1.08→2.35→1.79 over T=29..340) — NOT a clean identity. Refines the §343 retraction. HANDLE (measured).
+At the edge, 2π/s_edge (1.65→5.03) exceeds log(T/2π) (1.53→3.99): s_edge runs SMALLER than pure-Nyquist
+1/ρ, so the Bragg resonant scale n*_proj OVERSHOOTS T/2π, growing 5→11→19→...→97 vs T/2π = 4.6→7.2→...→54.
+The ratio n*/(T/2π) is O(1) (1.1-2.4) but band-dependent — so **the RS scale γ/2π is the right ORDER for the
+critical resonant scale but not the exact constant** at these heights. §343 refined: the retraction (code
+never computed γ/2π) stands; the RELATION "critical resonance ≈ RS scale" is true to O(1), NOT pinned — the
+overshoot likely = the sub-Nyquist s_edge (chain reaches slightly past pure Nyquist, §367 ratio 0.9<1).
+Involution n→(T/2π)/n* lands on the pole/leading side at every band (T/2π/n* < 1.2) — consistent with §358
+(dual = archimedean side), now on the projection object across the ladder.
+
+## §369 (2026-07-28) — Q1/Q5 SHARPENED by the density law (REPORT). The clean §367 facts (count R≈ρ(T)/w², reach s_edge≈1/ρ(T)) recast the corner:
+Both the resonant-core COUNT and the certified REACH scale as the Weyl zero density ρ(T) — the certificate's
+structure is density-governed on both axes it was measured on. Corner reading: interior = core count < the
+window's zero count (finite, certified, RH-free — now with elementary proofs whose BOUNDARY is itself ρ(T)-set,
+§367B); the wall = the w→0 completion where the core must meet the full zero count (§335 rank identity). Q5
+quantifier switch, sharpened: the certified family is "for probe density < ρ(T), margin > 0" — RH is the
+density = ρ(T) endpoint. Candidate middle object (unchanged shape, now density-anchored): an inequality tying
+the Bragg+PNT-countable resonant multiplicity to ρ(T) from arithmetic alone; gate — an off-line zero flips the
+local rank parity (§364 rank-2 vs rank-1), so a prime-side count locked to ρ(T) would mismatch the true rank
+at finite scale. HONEST: §368 shows the resonant-scale↔γ map is only O(1)-pinned, so "one resonant prime per
+zero" is order-right not exact — the middle-object inequality must be stated with the O(1) constant, not as an
+identity. Still REPORT; no inequality written yet. This is the sharpest density-anchored form of the target.
