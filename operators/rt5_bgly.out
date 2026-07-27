@@ -1,0 +1,12 @@
+BGLy check: log(margin) vs log(1-a^2), a = #probes/Weyl-count.  BGLy predicts slope 2.
+      band    w |  slope full  slope overlap (BGLy=2)
+  [14, 44]  2.0 |        8.50           0.39
+  [14, 44]  3.0 |        4.53           0.97
+  [50, 80]  2.0 |        1.77           1.77
+  [50, 80]  3.0 |        4.13           3.89
+[100, 130]  2.0 |        2.70           2.37
+[100, 130]  3.0 |        4.82           4.72
+
+reading: overlap-Gram slope ~2 confirms our collapse IS the BGLy frame-bound plunge (pure
+geometry). If the FULL Weil margin slope differs from 2, that gap is the arithmetic content
+riding on the frame collapse — the quantity the certificate must control beyond frame theory.

@@ -12732,3 +12732,13 @@ identity. Still REPORT; no inequality written yet. This is the sharpest density-
   construction, not named. NET: the interior physics is classical frame theory (do not re-derive); the Q1
   uniform bound is a genuine open frontier, and our elementary density-governed certificates (§367) are a
   constructive foothold on it.
+
+## §371 (2026-07-28) — BGLy (1−a²)² RATE CHECK: INCONCLUSIVE (rt5_bgly.py). The plunge IS fast approaching a→1 (qualitatively consistent with BGLy), but the exponent does NOT come out cleanly 2 — slopes scatter 0.4–8.5 across bands/widths. HANDLE (measured) + honest null.
+Cause: the fit log(margin) vs log(1−a²) requires the EXACT frame-critical count a_crit, and my estimate
+a_crit ≈ ρ(T)·width+1 is crude; near a=1 the fit is dominated by that uncertainty (log(1−a²)→−∞). Overlap-Gram
+slopes: 0.39/0.97/1.77/3.89/2.37/4.72; full-margin: 8.5/4.53/1.77/4.13/2.70/4.82 — no stable slope-2. So:
+CANNOT claim our collapse matches the published (1−a²)² exponent from this test — the qualitative
+super-fast plunge is consistent with BGLy (§370, which stands on the subagent's sourcing), but pinning the
+exponent needs the exact critical count, which is itself the frame machinery. Not pursued further (the
+exponent is a frame-theory fact already published; re-deriving it numerically is not our edge). The USEFUL
+direction the lit result opened is the OPEN uniform sub-critical bound — probed next (§372).
