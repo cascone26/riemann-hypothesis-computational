@@ -9307,3 +9307,18 @@ non-monotone → selection matters); phase-corr witness 0.96 on u-adjacent pairs
 Σ|c_k|² bounded; T-grid clean. LEDGER §343 (deposit+corrections) + §344 (prints). Lesson deposited twice this
 session: annotations follow measurements — the §337 mislabel and the Chair's chat-mode assumption were the
 same error class in opposite directions.
+
+---
+### 2026-07-26/27 night — the collective arc (Riemann7 continued, §345-348)
+Decision chain: table's three fronts probed → bound-greedy selection myopic (kills "smarter greedy") →
+du-clustering degenerates into a single mega-tail → REREAD the degeneracy as physics (beyond Bragg resolution,
+primes are one collective object = Tao's minor arc) → built the collective-tail chain (resolved core exact +
+PNT smooth main term + measured fluctuation charge ‖ΔT‖) → ‖ΔT‖ self-averages 3 orders/cut-step → priced ‖ΔT‖
+a-priori by partial summation: nearly TIGHT (loss ≤6x; feared oscillation blowup absent) → pushed cuts:
+FULL REACH at every w with a few hundred elementary primes + one ψ-envelope constant → ε-budget race grid:
+T-axis FLAT, cut law e^{10.5/w}, and the race is won by the Gaussian envelope not PNT decay (Chebyshev-grade
+ε suffices — arithmetic input weaker than PNT; conversely stronger prime knowledge buys nothing — the w→0
+cost is intrinsic to the split-at-a-scale architecture). Count law deconfounded en route: R ≈ 40/w²
+(quadratic; both the table's "linear" and §344's "exponent 3" were depth-aliasing). k=3 directional
+saturation breaks at w=1.3 (k=5; wall is 2D in (R,k)). Next: hybrid chain (R exact + directional + collective
+tail) for the leanest architecture; then Arb-harden + named lit constants.
