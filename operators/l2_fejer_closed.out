@@ -1,0 +1,6 @@
+closed-form vs numerical Fejer prime matrix: maxabs err 6.379e-09  rel 4.190e-09
+(also cross-check the grid-J vs antideriv-J on a few entries)
+  J(0.693,0): grid 9.7923e+00+0.0000e+00j  antideriv 9.7923e+00+0.0000e+00j  diff 4.40e-09
+  J(1.099,-6): grid 1.6082e-01-2.5004e-02j  antideriv 1.6082e-01-2.5004e-02j  diff 7.77e-09
+  J(0.693,0): grid 9.7923e+00+0.0000e+00j  antideriv 9.7923e+00+0.0000e+00j  diff 4.40e-09
+GATE: rel err small => closed-form Fejer prime side VALID => rigorous §380 cert feasible.
