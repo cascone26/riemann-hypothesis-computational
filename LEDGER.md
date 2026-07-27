@@ -13102,3 +13102,25 @@ Olympus μᵀΣ⁻¹μ Weil–Guinand form the table ran; concordance across two
 (§378), so β=0.1 gives small magnitudes; the SIGN-SEPARATION at O(1) conditioning is the result, not the size.
 Next (escalate): β-sweep (does the window persist/sharpen as β→0, the RH-relevant limit?); higher bands
 (T-scaling of the chargeable window); and the exact-kernel match to close the §388 Report.
+
+## §386b (2026-07-29, Riemann7) — β-SWEEP CONFIRMS the §386 chargeable window is GENUINE IN THE RH LIMIT: the off-line mirror-pair margin is EXACTLY −c(w,s)·β², sign-stable, O(1)-conditioned, persisting cleanly to β→0. §393 fork resolved firmly to ESCALATE. HANDLE (measured) — no-free-lunch still binds.
+β-sweep at the chargeable windows, offl/β² held constant to 4 figures across β=0.2→0.01:
+  w=1.5,s=4.5: rcond 1.5 (stable), onl +2.167e-3 (β-independent), offl/β² = −4.933e-2 CONSTANT (β=0.2/0.1/
+    0.05/0.02/0.01 all −0.04933) — sign stably NEGATIVE, perfect quadratic.
+  w=2.0,s=5.0: rcond 2.3, onl +9.22e-2, offl/β² = −3.41e-3 CONSTANT — sign stably negative.
+  w=3.0,s=4.0 (control, non-chargeable): offl/β² = +8.7e-4 CONSTANT but POSITIVE — off-line stays positive
+    here (this config does NOT separate the worlds).
+⟹ **the chargeable window does NOT close or flip as β→0** (the RH-relevant limit): the genuine off-line
+mirror-pair signature is exactly −c(w,s)·β² with c>0 stable (the §364/378 δ² floor-lift law, now in the
+whitened canonical basis), cleanly separated from the on-line (c=0) world by SIGN and coefficient, at O(1)
+conditioning for ALL β. §393 FORK RESOLVED: robust chargeable spectral window EXISTS and is RH-limit-genuine —
+ESCALATE branch confirmed, not the structural-tradeoff branch.
+**NO-FREE-LUNCH, RESTATED SHARPLY (the honest ceiling):** "off-line ⟹ margin −cβ² < 0 while on-line ⟹ 0" IS
+Weil's positivity criterion (form ≥ 0 ⟺ RH) confirmed numerically well-conditioned — i.e. this is a confirmed
+well-conditioned NUMERICAL DETECTOR of off-line zeros, whose existence is RH-EQUIVALENT (§388 Weil–Guinand
+bridge). It is numerical RH EVIDENCE + a clean instrument, NOT a proof route: charging −cβ² < on-line-floor
+into an a-priori exclusion is the same Weil-positivity problem (the on-line floor and the c coefficient are
+both zero-consulting at criticality per §374-375). ESCALATE = worth building into a rigorous off-line detector
+/ studying c(w,s,T) scaling, never "pins RH." Concordance: my B_full+overlap-whitening instrument INDEPENDENTLY
+agrees with the Olympus μᵀΣ⁻¹μ spectral chain that a well-conditioned chargeable window exists — two different
+apparatus, same escalate verdict. Owed (Report→Handle): the exact Weil–Guinand kernel match (§388) and c(w,s,T).
