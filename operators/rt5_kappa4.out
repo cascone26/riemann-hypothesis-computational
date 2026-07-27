@@ -1,0 +1,10 @@
+sieving Lambda to 2000000 ...
+   u*  sigma   g2_real  g2_surr mean  g2_surr sd       z    verdict
+  3.0   0.80   +10.111        +0.024       0.322  +31.37 BEYOND-PAIR+
+  4.0   1.00   +12.819        +0.019       0.357  +35.82 BEYOND-PAIR+
+  5.0   1.20    +9.046        -0.042       0.274  +33.21 BEYOND-PAIR+
+  6.0   1.50    +6.251        -0.028       0.319  +19.66 BEYOND-PAIR+
+
+reading: sign(g2_real - surr) with |z|>3 = structural beyond-pair (surrogate kills all pair
+structure, so any robust excess is connected kappa_4). NEGATIVE => platykurtic => the pin lead;
+POSITIVE => beyond-pair real but pin disproved; ~0 => pair-dominated at 4th order.

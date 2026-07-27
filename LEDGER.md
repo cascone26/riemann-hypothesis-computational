@@ -12966,3 +12966,20 @@ not iid), 2 scales — 3-way falsifier: γ₂<0 clearing zero & covering the O(1
 wall re-lettered. (b) Tao: connected 𝔖₄ sign analytically, must match Dyson's γ₂ sign. (c) Hilbert: truncated
 moment problem (Chebyshev–Markov–Stieltjes one-sided tail from κ₂,κ₄) + the real pin = min Σc_w=vᵀδτv over the
 M-S ball vs pair-only extremal (GAP = beyond-pair support-edge shift, unconditional). Running (a) next (§384).
+
+## §384 (2026-07-28, Riemann7) — instrument (a) γ₂ run: strongly POSITIVE (z=+20..+36) but CONTAMINATED by the marginal — NOT a clean connected-κ₄ read; cannot fire the pre-registered falsifier as-is (rt5_kappa4.py). REPORT + honest confound + fix.
+γ₂_real = +6.3..+12.8 vs phase-randomized surrogate mean ≈0 (sd ~0.3) → z = +19.7..+35.8 across corner
+scales u*=3..6. Naively this reads "γ₂>0 ⟹ beyond-pair CERTIFIED, RH-pin disproved" (pre-reg §383). BUT the
+surrogate is WRONG for this null: **phase randomization preserves the 2-point/power spectrum but GAUSSIANIZES
+THE MARGINAL**, so the huge +γ₂ is dominated by the intrinsic leptokurtosis of Λ as a SPARSE SPIKE TRAIN
+(Λ(n)=log p on prime powers, 0 else — a 1-point/support property), NOT by beyond-PAIR-CORRELATION (the actual
+κ₄ target). The connected κ₄ of a weighted sum Σc_wδ_w also picks up the DIAGONAL marginal term Σc_i⁴·κ₄(δ_i),
+which is not the beyond-pair-correlation signal. So §384 conflates "non-Gaussian marginal" (trivial, spikiness)
+with "connected 4-point correlation" (the real object). **The pre-registered falsifier CANNOT be read off this
+run** — the surrogate doesn't isolate κ₄^connected. NAMED FIXES (either immune to the marginal): (1) IAAFT /
+amplitude-adjusted surrogate (preserves BOTH marginal histogram AND power spectrum, destroys only higher
+CORRELATIONS) — then γ₂_real−γ₂_surr isolates correlation-κ₄; (2) Tao's (b) directly: the OFF-DIAGONAL
+connected 4-point singular series 𝔖₄(d1,d2,d3), d's distinct & nonzero (excludes the diagonal marginal by
+construction) — the clean immune object, extends §356/361b machinery. Verify-catch: surrogate-null must match
+the RIGHT invariants — for a beyond-pair test the marginal is a nuisance parameter to PRESERVE, not destroy.
+The z=+30 is real but it is the spikiness of the primes, already known; the roundtable's question is untouched.
