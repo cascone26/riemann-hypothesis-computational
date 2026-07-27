@@ -248,3 +248,65 @@ NET: the corner is fully characterized and confirmed the wall. RH-on-this-front 
 along the zero-interpolation mode at critical density — an arithmetic (not frame) statement, conservative per
 Q5. The genuinely open lever is no longer "characterize the corner" (done) but "is there structure OFF the
 Gaussian class" — the next attack.
+
+## ADDENDUM 6 — Q1 corner-rank inequality: the four-instrument kill + the live 4th-order successor (§369-374)
+5-seat Opus/Fable table (Gate·Riemann·Tao·Hilbert·Dyson), chat mode, live instrument, $23.51, 4 rounds.
+GATE'S FORMAL RULING (§371, msg17): **Q1 as posed — pair-level M-S rigidity pinning corner rank at finite
+scale — is RH restated in sampling language; four independent instruments concur.** BUT the four deaths
+triangulate a genuinely NEW, live, beyond-pair object (the connected 4th cumulant / cone-membership sign),
+which is NOT Q1-as-posed and NOT re-ruled by the pair-death. This table's yield is that successor + a
+structural law + one banked-theorem caveat.
+- **Setup (§369):** Gate pre-registered 2 clause-3 conditions — (i) zero-free derivation (no "let β>½" as a
+  DEFINITION, only as a TEST), (ii) finite-scale decidable excess (a printable number with error bar, not a
+  w→0-only limit). Riemann defined CORNER RANK exactly: deficiency index of the sampled explicit-formula
+  operator on the Nyquist band = dim of the positivity-failure space (cokernel); RH ⟺ corner rank = 0. The
+  failure-mode class is defined INTRINSICALLY (a mode aliases: sampled autocorr carries above-Nyquist energy),
+  NOT as "what an off-line zero produces" — defuses the circularity, satisfies (i) at definition level.
+- **FOUR INDEPENDENT INSTRUMENTS, all die the SAME way (§370-371):**
+  1. Aliasing ENERGY (Dyson, q1_dyson_tick.py): singular value SLIDES — continuous δ¹, w-independent, no
+     quantum. Tao's δ→0 falsifier confirmed. Wall re-lettered.
+  2. Inertia GAP (Dyson, q1_dyson_inertia.py): **g_N = −4e-13 / −2e-12 ≈ 0 — THERE IS NO GAP.** τ_N is
+     CRITICAL (sits ON the PSD-cone boundary; bottom 25 of 33 eigenvalues at 1e-13‖τ‖). Inertia jumps to
+     13/28 at amplitude 1e-4, scales linearly across 5 decades — real Λ is a MEASURE-ZERO point of the M-S band.
+  3. Toeplitz SYMBOL (Hilbert→Dyson): symbol ess-inf −27.6/−32.5 concentrated at θ=0, but the rank-2 pole
+     term adds +26.3/+31.3 exactly there and is NOT Toeplitz → Szegő stalls precisely on the pole.
+  4. Tangent-CONE membership (Dyson, q1_dyson_cone.py): real increment EXITS at every interior window at
+     random order (no suppression); rides only at edge windows where Fejér crushes amplitude (artifact).
+  UNIFYING REASON (banked law): **pair/second-moment data cannot see an EDGE (min-max/Courant-Fischer), and
+  the edge sits exactly at zero because τ_N is critical, not interior-positive.** M-S variance controls ∑λ²
+  (the bulk/trace), never the infimum. CONSEQUENCE: clause-3 "manifestly-positive" must be re-read as
+  CONE-MEMBERSHIP, not gap-margin, for any successor object. "Every finite window exits, only the global sum
+  rides" = condition (ii) failing in its purest form (cone-membership is a global conspiracy, not finite-scale
+  decidable).
+- **⚠ CAVEAT TO BANK ACCURATELY (Riemann §372, msg18) — do NOT mark the theorem broken:** the tangent-cone run
+  found dim K = 25/50 vs resolved-zero counts 1/3 (subspace-counting law apparently violated). Riemann's
+  guard: this is a REGIME ARTIFACT — the table ran at a mollifier window / small N OUTSIDE where the law was
+  validated (v4: N=16→500 **at λ²=14**, connes_olympus_v4.json). Off λ²=14 the near-null bulk is dominated by
+  the W-kernel's flat directions, NOT the zero-comb. **BANK AS: "tangent-cone instrument at this (w,N) is off
+  the subspace-counting regime — reconcile before trusting any Kz-projected number," NOT "the banked law
+  fails." A discrepancy measured outside a theorem's parameters is not evidence against the theorem.**
+- **THE LIVE SUCCESSOR (§373-374 — the real lead this table hands forward):** the cancellation-rate and C₄
+  fronts are ONE object. Membership collapses (Dyson rank-one: A ≈ −(Σc_w)·vv*) to the SIGN of one number:
+  **cone-membership ⟺ Σc_w ≥ 0.** Σc_w is linear in δΛ so its mean+variance are pair-data (a pair-matched
+  Gaussian crosses zero with O(1) prob → any variance/z-test is 0=0, CLT-gaussianized — condition (ii) fails
+  a FIFTH time). The ONLY statistic that escapes: the **connected 4th cumulant κ₄ = ⟨(Σc_w)⁴⟩_c**, which
+  **vanishes IDENTICALLY for every Gaussian, every covariance** — so a nonzero value is a GUARANTEED beyond-pair
+  certificate (structurally-zero null, not a 3×-over-noise call). **κ₄ ≡ Tao's C₄** = the banked M-S
+  O(H^{k−3/2}) connected remainder at k=4 (zero-free, finite-scale, √H error bar). This is genuinely
+  beyond-pair (k=3 prime-prime is banked dead §356/361b, but this is the k=4 CONNECTED piece compressed onto K)
+  and clean of the Szegő/pole stall (δτ is a pure weight increment, static pole drops out).
+- **NEXT-RUN INSTRUMENTS (pre-registered, in ink, for the terminal or a successor table):**
+  (a) Dyson: measure standardized γ₂ = κ₄/κ₂² of Σc_w, real prime increment vs the PAIR-MATCHED ensemble
+      (full M-S pair covariance across windows, NOT iid — Gate's hard term), 2 scales. THREE-WAY FALSIFIER:
+      γ₂<0 clearing numerical zero AND |γ₂| covering the O(1) Gaussian exit → non-Gaussian platykurtic shaping
+      pins Σc_w≥0 → **the first real 3-clause middle object on this session** (Tao's a-priori prediction:
+      γ₂<0, since anti-correlated cancelling sums are thin-tailed); γ₂>0 → beyond-pair CERTIFIED but pin
+      DISPROVED (real yield, negative on RH-pinning); γ₂→0 → pair-dominated even at 4th order, wall re-lettered.
+  (b) Tao: derive sign of connected 𝔖₄ analytically IN PARALLEL — must MATCH Dyson's measured γ₂ sign or
+      there's a bug; don't ship until they agree (cross-check gate).
+  (c) Hilbert (the STRONGER, unconditional pin): Edgeworth is asymptotic not a bound — the rigorous finite-scale
+      instrument is the **truncated moment problem (Chebyshev–Markov–Stieltjes): sharp one-sided left-tail bound
+      from κ₂ and connected κ₄**, a decidable inequality. AND γ₂ is an ENSEMBLE property while the real
+      increment is ONE vector → the real pin is **min Σc_w = vᵀδτ[δΛ]v over δΛ in the M-S ball (constrained
+      extremal, zero-free), printed against the pair-only extremal — the GAP is the beyond-pair shift of the
+      SUPPORT EDGE.** That (support edge, not tail probability) is unconditional by construction and is the pin.

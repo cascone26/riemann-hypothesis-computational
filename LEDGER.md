@@ -12937,3 +12937,32 @@ on the FLOAT-validated Fejer instrument (§376-378)** — the phenomena (RvM-col
 δ² off-line lift) are confirmed test-class-universal; upgrading to a rigorous 2nd-instrument THEOREM awaits the
 closed-form g_pair. Honest state of the Fejer thread: instrument built+validated+phenomena-universal (done);
 rigorous theorem (deferred, enabler identified).
+
+## §383 (2026-07-28, Riemann7) — RH ROUNDTABLE Q1 RULING (banked): Q1-AS-POSED (pair-level M-S rigidity pinning corner rank at finite scale) = RH RESTATED IN SAMPLING LANGUAGE — dead on 4 independent instruments. LIVE SUCCESSOR: the connected 4th cumulant κ₄ (structurally-zero Gaussian null ⟹ nonzero = guaranteed beyond-pair certificate). REPORT (table) + pre-registration.
+Seats Gate·Riemann·Tao·Hilbert·Dyson, 4 rounds. Q1 death — 4 instruments, same failure: (1) aliasing SV
+slides continuously (δ¹, no quantum); (2) inertia gap g_N≈0 — τ_N sits ON the PSD-cone boundary (critical,
+not interior-positive; real Λ = measure-zero point of the M-S band); (3) Toeplitz symbol ess-inf negative but
+the rank-2 pole cancels it exactly there and is non-Toeplitz → Szegő stalls; (4) tangent-cone: real increment
+EXITS every interior window, rides only edge windows (Fejér amplitude artifact). UNIFYING LAW (banked): pair/
+2nd-moment data CANNOT SEE AN EDGE (min-max not trace/Σλ²), and the edge sits AT ZERO (τ_N critical). Clause-3
+"manifestly positive" = CONE-MEMBERSHIP (global conspiracy), not gap-margin. **This matches THIS session's
+independent findings:** §372b (frame blind to the collapse, arithmetic cliffs while overlap healthy), §374 (no
+fixed-direction zero-free certificate, tight direction arithmetic/circular), §375 (corner = zero-interpolation
+mode). Same wall, two directions (sampling/cone + interpolation).
+⚠ CAVEAT (banked, do NOT mark theorem broken): the cone run's dim K=25/50 vs resolved-zero 1/3 is a REGIME
+ARTIFACT — ran off the λ²=14 subspace-counting regime (connes_olympus_v4.json N=16→500); off-regime null bulk
+= W-kernel flat directions, not the zero-comb. "Tangent-cone at this (w,N) is off the subspace-counting regime,
+reconcile before trusting Kz numbers" — a discrepancy outside a theorem's parameters is not evidence against it.
+**THE LIVE LEAD (not re-ruled by pair-death):** cone-membership collapses rank-one (A≈−(Σc_w)vv*) to sign(Σc_w).
+Σc_w linear in δΛ ⟹ mean+var are pair-data ⟹ pair-matched Gaussian crosses 0 w/ O(1) prob (clause-ii fails a
+5th time). ONLY escaping statistic: connected κ₄=⟨(Σc_w)⁴⟩_c — VANISHES for every Gaussian/covariance ⟹
+nonzero = STRUCTURAL beyond-pair certificate (not a σ-call). κ₄ = Tao's connected 𝔖₄ at k=4 = banked M-S
+O(H^{k−3/2}) connected remainder; distinct from the dead k=3 prime-prime (§356/361b); clean of Szegő/pole stall.
+Note: c_w = ⟨v,P_w v⟩ IS this session's §374 q_n (per-prime projection on the corner null mode) — the table's
+Σc_w and my §374 corner functional are the SAME object.
+**PRE-REGISTERED (in ink):** (a) Dyson γ₂=κ₄/κ₂² of Σc_w, real vs PAIR-MATCHED ensemble (full M-S pair cov,
+not iid), 2 scales — 3-way falsifier: γ₂<0 clearing zero & covering the O(1) exit ⟹ platykurtic shaping pins
+Σc_w≥0 = FIRST 3-clause middle object; γ₂>0 ⟹ beyond-pair certified but pin DISPROVED; γ₂→0 ⟹ pair-dominated,
+wall re-lettered. (b) Tao: connected 𝔖₄ sign analytically, must match Dyson's γ₂ sign. (c) Hilbert: truncated
+moment problem (Chebyshev–Markov–Stieltjes one-sided tail from κ₂,κ₄) + the real pin = min Σc_w=vᵀδτv over the
+M-S ball vs pair-only extremal (GAP = beyond-pair support-edge shift, unconditional). Running (a) next (§384).
