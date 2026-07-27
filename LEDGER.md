@@ -12842,3 +12842,13 @@ collapse mode being the zero-interpolator is that statement made concrete, confi
 conservative/RH-equivalent, not a new coordinate. The §373-375 trio fully characterizes the corner: collapse
 pins to the RvM count (§373), no fixed-direction zero-free certificate exists (§374), because the critical
 direction is the zeros' own interpolation mode (§375). The wall is now mapped to its exact geometric core.
+
+## §376 (2026-07-28, Riemann7) — SECOND INSTRUMENT BUILT + VALIDATED: Fejer/sinc² test class (compact frequency support, FINITE exact prime side n≤121) reproduces the collapse — the phenomena are NOT Gaussian-specific. HANDLE (validated).
+l2_fejer.py: probes F_c(r)=fej(r−c)+fej(r+c), fej(x)=(sin(Wx)/Wx)² (W=1.2). Compact u-support ⟹ prime sum is
+EXACTLY finite (log n < 4W=4.8, n≤121) — genuinely different from the Gaussian's infinite tail. VALIDATION
+(analytic pole+arch−prime vs zero side): rel residual ~4e-7 stable across s=6→2 — the explicit formula CLOSES
+(7 sig figs; looser than Gaussian's 1e-10 because sinc² decays as 1/r² so far zeros + numerical arch grid
+contribute, but the construction is correct). Collapse present: minEig(full) 0.69→1.06e-2→3.3e-6→2.2e-7→
+9.8e-12→1.8e-11 as s=6→2 (n=6→16) — SAME super-exponential plunge to rank deficiency as Gaussian. So the
+density-collapse is intrinsic to the explicit formula, not a Gaussian artifact. Universality of the RvM-pin
+and zero-interpolation corner tested next (§377).

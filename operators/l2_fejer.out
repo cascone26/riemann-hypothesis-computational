@@ -1,0 +1,9 @@
+FEJER INSTRUMENT (W=1.2, prime cutoff log n<4.8 => n<=121). VALIDATION:
+    s   n  minEig(full)  minEig(zero)      resid       rel
+  6.0   6   +6.9354e-01   +6.9354e-01   3.86e-07  1.96e-07
+  5.0   7   +1.0634e-02   +1.0634e-02   4.23e-07  2.15e-07
+  4.0   8   +3.3051e-06   +3.0948e-06   5.51e-07  2.80e-07
+  3.0  11   +2.1516e-07   +1.7814e-07   3.86e-07  1.94e-07
+  2.5  13   +9.7735e-12   +7.3144e-12   4.29e-07  2.18e-07
+  2.0  16   +1.7557e-11   +1.0230e-11   5.51e-07  2.80e-07
+GATE: rel residual small => Fejer instrument VALID (analytic side = zero side).
