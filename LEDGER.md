@@ -13078,3 +13078,27 @@ tradeoff is STRUCTURAL (spectral difficulty conservation). No-free-lunch binds e
 **Cross-ref:** the table's mirror-pair off-line kernel = my §364/§378 rank-2 off-line contribution (real+imag
 at complex ordinate). I have the machinery to run §393 on my own instruments (l2_edge_sweep/l2_fejer) —
 running next as §386.
+
+## §386 (2026-07-29, Riemann7) — §393 LIVE FRONTIER, independent cross-check on MY instrument (l2_edge_sweep, NOT the Olympus μᵀΣ⁻¹μ form): the FORK resolves toward CHARGEABLE-WINDOW / ESCALATE — well-conditioned σ where on-line holds a positive floor AND the genuine off-line mirror-pair margin prints cleanly negative. HANDLE (measured) + binding no-free-lunch caveat.
+Whitened Weil form (canonical orthonormal basis via overlap-Gram eig-whitening = the §391 frame-artifact fix);
+GENUINE off-line kernel M_β[j,k] = Σ_{γ∈band}[F_j(γ+iβ)F_k(γ+iβ)+F_j(γ−iβ)F_k(γ−iβ)−2F_j(γ)F_k(γ)] (exact
+functional-equation mirror pair, = my §364/378 rank-2 off-line contribution), β=0.1. σ×p surface, band [14,44]:
+**CHARGEABLE WINDOWS (well-conditioned, both conditions met):**
+  w=1.5, s=4.5: rcond 1.5, onl_white +2.2e-3 (positive floor), offl_white −4.9e-4 (clean neg), true +1.0e-2 —
+    off-line signal only ~5× below the on-line floor, both at rcond 1.5 (excellent).
+  w=2.0, s=5.0: rcond 2.3, onl +9.2e-2, offl −3.4e-5, true +0.56 — same sign-separation, well-conditioned.
+The off-line margin crosses +→− as w SHARPENS (positive at large-w/sparse: w=4 s=6 +1.8e-5, w=2 s=6 +2.8e-4;
+negative once resolution tightens), and it does so at configs where onl_white is a HEALTHY POSITIVE FLOOR and
+rcond is O(1) — NOT only where onl→0 or rcond→0. ⟹ **the FORK lands on "robust chargeable spectral window
+exists" (escalate), NOT "resolution/conditioning tradeoff is structural."** On my instrument the on-line and
+off-line worlds are STABLY DISTINGUISHABLE in a well-conditioned whitened basis.
+**BINDING NO-FREE-LUNCH CAVEAT (per §385/§388, mandatory):** this is NUMERICAL RH EVIDENCE (on-line ≠ off-line
+stably in a well-conditioned basis), NOT an a-priori proof route. The Weil–Guinand bridge (§388): if the form
+is exact it is RH-EQUIVALENT ⟹ charging the window into a PROOF is FORBIDDEN; "chargeable" = worth deeper
+numerical study (larger β, higher bands, the genuine kernel), never "pins RH." QUALIFIER: this is an
+INDEPENDENT instrument (B_full + overlap-whitening) AGREEING a chargeable window exists — it is NOT the
+Olympus μᵀΣ⁻¹μ Weil–Guinand form the table ran; concordance across two different apparatus strengthens the
+"escalate" reading but the exact-kernel match (Report-tier per §388) is still owed. Off-line signal ~β²
+(§378), so β=0.1 gives small magnitudes; the SIGN-SEPARATION at O(1) conditioning is the result, not the size.
+Next (escalate): β-sweep (does the window persist/sharpen as β→0, the RH-relevant limit?); higher bands
+(T-scaling of the chargeable window); and the exact-kernel match to close the §388 Report.
