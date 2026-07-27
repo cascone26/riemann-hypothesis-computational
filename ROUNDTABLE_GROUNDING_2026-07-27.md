@@ -53,8 +53,10 @@ The night's arc: per-prime chains → collective-tail chain → hybrid chain. Cu
    certificate is now THEOREM-GRADE at w=2, s=3.9 — interval LDL^T on B_lower with arithmetic input =
    79 explicit prime powers + ε ≤ 0.0325 PROVED in-script (exhaustive interval check of |ψ−x|/x on
    [300, 20000]) + classical ψ < 1.04x beyond. Charge enclosure ±5.6e-13 vs margin 6.8e-10. The
-   fluctuation-charge route is NOT a float artifact. (s=3.8, margin 6.3e-12, currently width-limited
-   in the integrator — precision-320 retry in flight; a sign failure it is not.)
+   fluctuation-charge route is NOT a float artifact. §350b: **s=3.8 ALSO CERTIFIED** (margin 6.3e-12,
+   smallest pivot width 4e-38) after the endpoint fix — interval balls on a near-singular LDL diagonal get
+   amplified by the condition number; subtract one-sided point bounds. Both deepest PSD rows at w=2 are
+   now theorem-grade: the collective architecture stands on interval arithmetic end to end.
 6. **Correlation witness (§344, unresolved):** max pairwise phase correlation of off-block vectors climbs
    to 0.96 at u-adjacent pairs (4,7)/(17,19) as w→1.5 — slot crowding as coherence. Geometric in origin,
    but Dirac's registered branch fired: the θ(γ)-only cancellation route cannot be ASSUMED. His involution
