@@ -12542,3 +12542,31 @@ REGISTERED CRITERIA (judged unchanged):
 ## §361b (2026-07-28) — k=3 REMAINDER PROBE RESULTS (rt5_k3b.py vs §361 criteria): letter-verdict R3 (max|resid| 6164 vs band 4605 — ONE of 21 checkpoints at 1.3x the band, an expected exceedance under pure noise; the max-vs-band criterion was imprecise for 21 samples — 4th registration-imprecision owned this arc). SUBSTANTIVE verdict = R1: residuals SIGN-FLIP with no shape, and the fitted √H component is 500x SUB-NOISE (β√Hmax = 8.2 vs jitter band 4605) ⟹ NO VISIBLE k=3 remainder at H≤8000. EMPIRICAL BOUND banked: |beyond-pairwise term| ≲ 2300 ≈ 26·√H at H=8000 — consistent with M-S O(H^{1/2+ε}) at modest constant. The composition-depth object is measurably SMALL where measurable. (Fit cross-check: a=1.000032, b=−2.108 on 21 points ✓.) HANDLE (measured) + honest negative: at every order accessible to direct computation, prime composition shows pairwise structure + noise — the saints' nonabelian depth does not surface in k-point correlations at these scales; the surviving candidate interface remains prime↔archimedean (§358).
 
 ## §362 (2026-07-28) — THE T-AXIS AT RIGOR GRADE: the elementary (zero-integration) theorem is PORTABLE across band height — [50,80] w=2 CERTIFIED at s=3.0, 2.6, 2.4 (11-13 probes, RMAX=band+80, same n0=300/proved-ε/RS-1962 inputs, nothing retuned). §348's measured T-flatness now has its first interval-arithmetic witnesses off the home band. [100,130] run launched. HANDLE (arb).
+
+## §363 (2026-07-28, Riemann7 autonomous) — Q1/Q5 ANALYSIS DRAFT for the next table (REPORT — reasoning, no new measurement): what the w→0 statement of the hybrid architecture IS, and where the exact quantifier switch to the wall sits.
+
+**The certified object, stated as a family:** for every tested (band, w) and every spacing s strictly above
+the rank limit s_edge(band, w), the hybrid/collective/elementary certificates prove B_full ≻ 0 with explicit
+structure (R ≈ C(T)/w² resonant terms, k ≤ 5-6, cut n0 ~ e^{c/w}, one ψ-envelope constant). All chain
+ingredients are CONTINUOUS in (w, s, band) ⟹ the natural w-uniform statement is a COMPACT-FAMILY theorem:
+  (*) for every compact K ⊂ {(w, s, T): s > s_edge(T, w)}, inf_{K} margin > 0 — provable by finitely many
+  certificates + continuity. This is a genuine theorem-shape covering the ENTIRE OPEN INTERIOR of the PSD
+  region, with the §348/§346 rates quantifying certificate cost toward the boundary.
+**The quantifier switch (Q5's answer, drafted):** RH is NOT (*) — RH is positivity AT the boundary corner
+(w→0, s→s_edge): the completeness limit of the test class. Per §335 the margin at the corner IS carried by
+the zero-set discreteness (rank saturation at the Weyl count), and §346's collective chain measured exactly
+this: the smooth/PNT description owns the interior and FAILS at criticality, where the fluctuation is the
+margin. So: interior = conservative-side, certified, RH-free content (now with elementary proofs); the wall
+= the corner limit — the same wall, but CONFINED: everything except the corner is now theorem territory, and
+the approach RATES are measured (R quadratic, k bounded-then-slowly-growing, n0 exponential, T flat).
+**What the table should attack (Q1 sharpened):** not "make the family uniform" (that re-encodes the wall per
+the above) but the CORNER OBJECT itself: the §335 identity margin(corner) = discreteness = fluctuation says
+the corner statement is exactly "the windowed prime fluctuation achieves the Weyl-count rank" — a sampling/
+frame statement whose PRIME-SIDE form (per the Q5 gate ruling in §343: only prime-side middle objects
+admissible) is: the (measured, M-S-theorem-anchored) pairwise rigidity of 𝔖 forces the fluctuation form's
+rank. Gate question for any attempt: what fails if RH is false — an off-line zero adds a NON-L² mode to the
+zero side (complementary-series direction, §334) whose sampling excess must surface as a VIOLATION of the
+𝔖-rigidity bounds at some finite scale. If that surfacing can be made quantitative (an inequality between
+the M-S pair-rigidity constants and the corner rank), it is a genuine middle object: non-conservative,
+zero-free-constructible (𝔖 sums), manifestly-positive-shaped (a rank/frame bound). That is the sharpest
+Q1 target this arc can hand the table. [All REPORT until someone writes the inequality.]
