@@ -12823,3 +12823,22 @@ direction is itself arithmetic.** This is the precise obstruction behind §365 (
 not a-priori constructible; it is the argmin over directions of the prime-dependent form. (Byproduct still
 banked: pow2 is 6-20% of primesum along v0, order-consistent with §372b's bent sensitivity, but on the
 non-tight direction so not the RH mechanism.) Genuine negative; the obstruction is now named sharply.
+
+## §375 (2026-07-28, Riemann7) — THE ARITHMETIC-CRITICAL DIRECTION IS THE ZERO-INTERPOLATING MODE — BRS (§336) realized on the instrument, and the §374 obstruction NAMED (rt5_nullshape.py). HANDLE (measured) — closes the §373-375 corner trio; reaffirms the wall (Q5).
+At n=n_crit, form phi(r)=Σ v_full[j]F_j(r) with v_full = bottom eigenvector of B_full. Measured |phi| at the
+zero ordinates vs at midpoints between zeros:
+  [14,44] n=9: v_full |phi(zero)| mean 0.000, |phi(mid)| mean 0.169 → ratio 0.000; v0(frame) ratio 1.56.
+  [50,80] n=14: v_full ratio 0.070 (zeros 0.021 vs mids 0.302); v0(frame) ratio 0.73.
+⟹ **the collapse mode is exactly the Gaussian combination that INTERPOLATES ZERO on the zero set** — the
+Bondarenko–Radchenko–Seip "zeros are an interpolation set at RvM density" picture (§336) realized directly:
+at critical density (probe count = RvM count, §373) the unique near-null direction of the Weil/zero-side Gram
+is the function vanishing on the zeros. The frame-null v0 does NOT vanish at zeros (ratio ≥ 0.73) — confirming
+§374 (frame ≠ arithmetic direction) with the mechanism now explicit.
+**Names the §374 obstruction:** the RH-critical direction is not a-priori constructible precisely because it
+is DEFINED BY THE ZEROS (the interpolation kernel of the zero set). A zero-free certificate cannot fix it
+because fixing it IS locating the zeros. **Honest tie-back — this REAFFIRMS the wall, does not break it:** the
+§343 Q5 ruling ("zeros = maximal-density sampling set = the wall re-lettered") is now literally realized — the
+collapse mode being the zero-interpolator is that statement made concrete, confirming the corner is
+conservative/RH-equivalent, not a new coordinate. The §373-375 trio fully characterizes the corner: collapse
+pins to the RvM count (§373), no fixed-direction zero-free certificate exists (§374), because the critical
+direction is the zeros' own interpolation mode (§375). The wall is now mapped to its exact geometric core.

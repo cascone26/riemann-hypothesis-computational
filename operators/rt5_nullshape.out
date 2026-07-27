@@ -1,0 +1,26 @@
+Does the arithmetic-null mode phi VANISH at the zeros? (BRS interpolation picture, §336)
+
+  band (14.0, 44.0) n_crit=9 lmin=-2.07e-13  mode=v_full(arith)
+    |phi(zero)| mean=0.000 max=0.000
+    |phi(midpt)| mean=0.169 max=0.997
+    ratio zeros/midpts = 0.000 (<<1 => vanishes at zeros = interpolation)
+
+  band (14.0, 44.0) n_crit=9 lmin=-2.07e-13  mode=v0(frame)
+    |phi(zero)| mean=0.582 max=0.947
+    |phi(midpt)| mean=0.374 max=0.589
+    ratio zeros/midpts = 1.559 (<<1 => vanishes at zeros = interpolation)
+
+  band (50.0, 80.0) n_crit=14 lmin=+4.68e-04  mode=v_full(arith)
+    |phi(zero)| mean=0.021 max=0.099
+    |phi(midpt)| mean=0.302 max=0.961
+    ratio zeros/midpts = 0.070 (<<1 => vanishes at zeros = interpolation)
+
+  band (50.0, 80.0) n_crit=14 lmin=+4.68e-04  mode=v0(frame)
+    |phi(zero)| mean=0.361 max=0.783
+    |phi(midpt)| mean=0.497 max=0.992
+    ratio zeros/midpts = 0.726 (<<1 => vanishes at zeros = interpolation)
+
+reading: if v_full's phi is small at zeros / O(1) at midpoints (ratio << 1) while v0's is not,
+the arithmetic-critical mode IS the zero-interpolating function (BRS §336) — the collapse
+direction is 'the Gaussian combination that hits zero exactly on the zero set'. That names the
+arithmetic direction §374 could not fix a-priori: it's fixed by the ZEROS (why no zero-free choice).
