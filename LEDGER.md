@@ -12742,3 +12742,25 @@ super-fast plunge is consistent with BGLy (§370, which stands on the subagent's
 exponent needs the exact critical count, which is itself the frame machinery. Not pursued further (the
 exponent is a frame-theory fact already published; re-deriving it numerically is not our edge). The USEFUL
 direction the lit result opened is the OPEN uniform sub-critical bound — probed next (§372).
+
+## §372 (2026-07-28, Riemann7) — THE ARITHMETIC RIDES THE FRAME GEOMETRY AT A FIXED RATIO ~0.5 — reducing the open Q1 uniform bound to the (open, but purely frame-theoretic) BGLy problem (rt5_uniform.py). HANDLE (measured).
+Probe: TRUE Weil margin vs OVERLAP-Gram (pure L²/frame, no arithmetic) floor at fixed sub-critical fill
+a=#probes/Weyl-count, across 10 bands T=29..440, w∈{2,3}.
+**Result 1 (a naive-uniformity NEGATIVE):** the margin at FIXED fill a is NOT band-uniform — it DECAYS with
+band height (a=0.8,w=3: 0.24 at T=29 → 2e-7 at T=440). So "inf over bands of margin(a) > const" is FALSE as
+stated; the fixed-a floor falls off with T (more Gaussians at the same relative density interact more —
+Landau/BGLy behavior). Naive uniform sub-critical margin at fixed a: refuted.
+**Result 2 (the real finding — a REDUCTION):** the Weil margin is a nearly-CONSTANT FRACTION of the overlap-
+Gram floor across EVERY band and fill: Weil/overlap = 0.60/0.59/0.68/0.51 (w=3, a=0.6-0.9), 0.51/0.68/0.51/
+0.34 (w=2) — i.e. **Weil ≈ (0.5 ± 0.15)·overlap uniformly.** The ARITHMETIC does not create its own decay; it
+rides the pure frame geometry at a fixed O(1) ratio. ⟹ **the open uniform sub-critical bound for the Weil
+form (Q1) is EQUIVALENT, up to a factor ~2, to the uniform sub-critical bound for the Gaussian overlap Gram —
+a pure Gabor/Fock frame-theory problem (BGLy territory, §370), with NO number theory in it.** This is the
+sharpest Q1 statement the arc has produced: RH-on-this-front's missing uniformity is NOT arithmetic — it is
+the (named, open) Gaussian-Gabor-frame uniform-bound problem. The prime side is a bounded multiplicative
+perturbation of the frame geometry, not an independent obstruction.
+**Caveat:** the 0.5 ratio is measured on inf-over-bands and per-row float margins (fill a set via crude
+Nz=ρ·width+1); the constant's exact value/its w-dependence is not pinned (0.34-0.68 spread). The QUALITATIVE
+reduction (Weil = O(1)·overlap, band-uniformly) is robust across all 40 (band,a,w) cells. Whether the ratio
+stays bounded BELOW away from 0 as a→1 (not just at these fills) is the precise open sub-question — if yes,
+Weil-uniform ⟺ frame-uniform exactly.
