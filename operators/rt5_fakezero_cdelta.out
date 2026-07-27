@@ -1,0 +1,8 @@
+c(delta) EMPIRICS: lambda_min at the first rank-deficient row — true world vs one zero off-line
+   w s_rank   lmin_true | d=0.02 | d=0.05 | d=0.1  | d=0.2 
+ 3.0    3.3   1.525e-14 |  1.41e-05 |  5.36e-05 |  6.00e-05 |  6.09e-05 | 
+ 2.0    3.7   1.188e-15 |  2.55e-05 |  1.59e-04 |  6.36e-04 |  2.54e-03 | 
+ 1.5    3.9  -6.474e-17 |  4.32e-06 |  2.70e-05 |  1.08e-04 |  4.23e-04 | 
+
+reading: lmin_fake at the rank row = the empirical c(delta) — the floor an off-line zero
+FORCES on the (zero-free-computable) form; scaling vs delta and w is the target inequality's shape.

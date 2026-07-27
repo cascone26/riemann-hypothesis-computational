@@ -1,0 +1,14 @@
+OFF-LINE-ZERO SIGNATURE: first zero moved to beta = 1/2 + delta
+ delta    w     s true margin      ||D||  D/margin detectable
+  0.05  2.0   4.2   1.472e-04  1.274e-03  8.65e+00        YES
+   -> delta=0.05 w=2.0: detection frontier s = 4.200000000000006 (rank-limit region begins ~3.7)
+  0.05  1.5   4.4   1.108e-03  2.213e-03  2.00e+00        YES
+   -> delta=0.05 w=1.5: detection frontier s = 4.400000000000006 (rank-limit region begins ~4.1)
+  0.10  2.0   4.3   2.031e-03  5.095e-03  2.51e+00        YES
+   -> delta=0.1 w=2.0: detection frontier s = 4.300000000000006 (rank-limit region begins ~3.7)
+  0.10  1.5   4.4   1.108e-03  8.867e-03  8.00e+00        YES
+   -> delta=0.1 w=1.5: detection frontier s = 4.400000000000006 (rank-limit region begins ~4.1)
+  0.20  2.0   4.4   1.097e-02  2.044e-02  1.86e+00        YES
+   -> delta=0.2 w=2.0: detection frontier s = 4.400000000000006 (rank-limit region begins ~3.7)
+  0.20  1.5   4.5   1.022e-02  3.568e-02  3.49e+00        YES
+   -> delta=0.2 w=1.5: detection frontier s = 4.500000000000005 (rank-limit region begins ~4.1)

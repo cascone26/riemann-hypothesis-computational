@@ -27,3 +27,46 @@ s=2.0: 16 probes — B_elem (all closed forms, 19840 minorant cells) ...
 
 s=1.8: 17 probes — B_elem (all closed forms, 19840 minorant cells) ...
   charge upper endpoint: [6.5724415728502627067217884541943704724938538399835875645947484425e-12 +/- 3.96e-77]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  row 11 done
+  row 12 done
+  row 13 done
+  row 14 done
+  row 15 done
+  row 16 done
+  ALL 17 PIVOTS POSITIVE -> B_elem(s=1.8) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.127876926203389888744651540081179309408913156 +/- 8.08e-46]
+
+s=1.6: 19 probes — B_elem (all closed forms, 19840 minorant cells) ...
+  charge upper endpoint: [7.3454891439882203208710751316045934645571025327068602220953568074e-12 +/- 4.91e-77]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  row 8 done
+  row 9 done
+  row 10 done
+  row 11 done
+  row 12 done
+  row 13 done
+  row 14 done
+  row 15 done
+  row 16 done
+  row 17 done
+  row 18 done
+  ALL 19 PIVOTS POSITIVE -> B_elem(s=1.6) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.049931602424587299640304834042209453613 +/- 1.84e-40]

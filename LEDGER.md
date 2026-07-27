@@ -12577,3 +12577,31 @@ Q1 target this arc can hand the table. [All REPORT until someone writes the ineq
 All zero-integration (erf/exp/cos/Λ + digamma gridpoints + one proved ψ-envelope + RS 1962), all interval
 LDL^T, all zero-free. The §348 T-flatness and the §349 architecture now stand as PROVEN instances across
 3 bands × 3 widths. [200,230] run launched to extend the ladder. HANDLE (arb).
+
+## §362c (2026-07-28) — [200,230] w=2 CERTIFIED at s=2.0, 1.8, 1.6 (16-19 probes): FOUR bands in the elementary theorem map, γ up to 230, nothing retuned. HANDLE (arb).
+
+## §364 (2026-07-28, Riemann7 autonomous) — THE OFF-LINE-ZERO SIGNATURE MEASURED AND THE CERTIFICATE DIRECTION INVERTED: an off-line zero contributes a RANK-2 term (Re+Im modes) where an on-line zero gives rank 1 ⟹ it BREAKS the §335 exact rank collapse at the Weyl count, forcing λmin > 0 at the Nyquist row — and the forced floor is measured **c(δ) ≈ κ(w)·δ²** (κ(2)≈0.064, κ(1.5)≈0.011; δ²-scaling exact over δ=0.02..0.2 at w≤2), NINE-TO-TWELVE ORDERS above the true world's collapse value (~1e-15). ⟹ THE ZERO-FREE ZERO-EXCLUSION PROGRAM. HANDLE (measurements) + REPORT (program; lit-gate flagged).
+
+**Frontier measurements (rt5_fakezero.py):** ‖D‖ (form imprint of moving γ₁ off-line) exceeds the true
+margin at s=4.2-4.5 — INSIDE the region the elementary theorems already certify, for δ as small as 0.05.
+**The mechanism:** on-line zero → rank-1 PSD term (real vector); off-line (γ+iδ) → rank-2 (Re v, Im v
+independent) → at probe count = Weyl count + 1 the fake world's zero side has FULL rank where the true
+world is exactly singular. §335's rank collapse is the RH-sensitive observable, now with its violation
+QUANTIFIED: λmin_fake(rank row) = c(δ) ≈ κ(w)δ² (rt5_fakezero_cdelta.out).
+**The inversion (the arc's sharpest product):** the corner statement is an UPPER bound (λmin → 0 at
+criticality) — and upper bounds are certified by EXHIBITING one test vector: ⟨v, B_full v⟩ with BOTH v and
+the evaluation computable ZERO-FREE (v = near-null eigenvector of the analytic side pole+arch−prime; the
+value = one elementary number, arb-certifiable by the §359 machinery). Program: certify ⟨v,Bv⟩ ≤ t at the
+Nyquist row of a band; prove rigorously that any zero with ordinate effectively in the band and |β−½| ≥ δ
+forces λmin ≥ c_rig(δ); conclude NO SUCH ZERO — **a zero-exclusion certificate whose only inputs are
+primes, erf/exp/cos formulas, and interval arithmetic. RH-window verification from prime data alone,**
+swept band by band. With measured κ: t = 1e-8 at w=2 excludes |β−½| ≥ 4e-4 at the tested heights.
+**Named ingredients (the honest hard parts):** (a) c_rig(δ): a rigorous lower bound on the fake-world λmin
+— finite-dimensional Gram/transversality geometry of N+1 Gaussian-sampled vectors (BGL-frame-flavored;
+the extra mode ~ δ·F′(γ) must be quantitatively transversal to the true modes' span); (b) the "effectively
+in the band" localization (far zeros' Gaussian leakage — same tail machinery as everything else); (c) THE
+LIT-GATE (mandatory before any novelty claim): compare against classical explicit-formula zero-free-region
+technology (Weil positivity abstractly yields zero-free statements; numerical RH verification classically
+uses argument-principle/Turing with ζ-evaluations — a PRIMES-ONLY window method at critical density may or
+may not exist; subagent lit-check queued). Until (a)-(c): the program is REPORT; the c(δ)=κδ² law and the
+rank-2 mechanism are HANDLE.
