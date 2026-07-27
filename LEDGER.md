@@ -12519,3 +12519,5 @@ h-refinement run (dyadic h=1/256) in flight — s=4.0 would supersede §341's st
 **Deepened-variant negative (banked §359 context):** extending minorant cells to r=0 changed the failing
 s=4.2 (w=2) pivot by 5e-4 relative — the low-zone floor was never the binding loss; in-band h-residue is.
 (Also caught: arb('0.005') is non-dyadic — the HCELL.rad()==0 assert correctly refused it; dyadic 1/256 used.)
+
+## §360b (2026-07-28) — ELEMENTARY s=4.0 AT w=3 CERTIFIED (h=1/256, 30720 cells; smallest pivot [0.19032 ± 4e-59]): the zero-integration theorem now covers w=3 to s=4.0 — §341's named target ("expected recovery of s≈3.9-4.0 after mechanical refinements") is DELIVERED AT FULL RIGOR, one better than its float chain ever reached. The h-scaling behaved exactly as the loss law predicts (h=0.02 fails at 4.0, h=1/256 certifies with room). s=3.9 attempt in flight. HANDLE (arb).

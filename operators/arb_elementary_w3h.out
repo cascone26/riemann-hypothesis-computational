@@ -11,3 +11,8 @@ s=4.0: 8 probes — B_elem (all closed forms, 30720 minorant cells) ...
   row 2 done
   row 3 done
   row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_elem(s=4.0) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.1903156873537642643518786885868423651441726934952047064428 +/- 3.99e-59]
