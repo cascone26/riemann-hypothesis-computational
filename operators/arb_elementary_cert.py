@@ -28,7 +28,7 @@ W = arb(2)
 BAND0, BAND1 = arb(14), arb(44)
 N0 = 300
 XCUT = 20000
-R1 = arb(7)          # low-zone edge
+R1 = arb(0)          # cells extend to 0 — monotonicity lemma holds on all of (0,inf), no flat floor needed
 RMAX = arb(120)      # minorant support
 HCELL = arb('0.02')  # cell width (dyadic)
 

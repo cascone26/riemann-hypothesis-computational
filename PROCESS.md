@@ -9332,3 +9332,19 @@ as the theorem, name 3.8 as width-limited. Grounding doc v2 written (ROUNDTABLE_
 supersedes 07-26) with 5 ranked open questions (Q1 w→0 of the hybrid; Q2 derive 40/w²; Q3 name the collective
 object in frame-theory; Q4 s↔γ calibration; Q5 conservativity guard on the hybrid statement). NEXT_SESSION
 header refreshed (.bak3).
+
+---
+### 2026-07-27 autonomous stretch (Jacob away) — §354-359 decision chain
+Q4 calibration → selection-notion catch (raw-norm n*=2 always; Bragg lives in minimizer projection) → redo
+on projection object → Bragg confirmed 4 bands, fixed-point reading excluded, involution resolves to
+POLE-SIDE (third branch) → dual-weight probe → pole matrix weightless ⟹ last enemy's dual = PNT MAIN TERM.
+Q6 k=3: pre-registered (§355) → p=3 admissibility bug fixed → A3 measured −2.0001; my registered −1.5 was
+a miscount (ordered-square double weight); B3 null was unnormalized (mean 2.06) → corrected residual +0.08 →
+PAIRWISE-EXHAUSTED at log order → lit agent: M-S 2004 anchors everything (C(k,2) counts pairs; both arrow
+coefficients derive exactly); constant-order mismatch traced to Abel-boundary artifact (§358b) — three
+anchoring-arithmetic errors owned this arc, log orders robust throughout. Elementary cert: erf availability
+checked → complex-erfc closed-form Tsm → ball-digamma uselessly wide → MONOTONICITY LEMMA (2-line ψ′-series
+proof) replaces ball evaluation AND §341's numerical check → arb ball-equality assert trap (24th catch) →
+s=4.5/4.4/4.3 CERTIFIED zero-integration → flat [0,7] floor recognized unnecessary (lemma holds to 0) →
+deepened variant launched. w=1.5 collective arb (n0=3000) launched; s=4.1 certified, s=4.0 in flight at
+this writing.
