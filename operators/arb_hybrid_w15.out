@@ -4,3 +4,4 @@ config: w=1.5  n0=3000
 
 s=4.1: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
   charge scalar upper endpoint (exact): [1.7194831242234423345266492775869509380679418458189620368978834660e-14 +/- 1.56e-79]
+  row 0 done

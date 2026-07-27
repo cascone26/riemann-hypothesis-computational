@@ -12443,3 +12443,22 @@ POLE/ARCHIMEDEAN side — the composition structure that matters may tie primes 
 a_k↔g_k interface), not to deeper prime-prime correlations. Next named probes: (i) k=3 at the NEXT order
 (H·log²H / constant structure — where M-S-type theory puts genuine k-dependence); (ii) the prime↔pole pairing
 made quantitative: measure the RS-dual weight of the resonant term against the pole term across bands.
+
+## §357 (2026-07-27, Riemann7 autonomous) — LIT-CHECK RESOLVED (subagent, sources verified): the §351-352 queued attributions land, and the k=2/k=3 measurements are now THEOREM-ANCHORED. REPORT (literature) + the anchor tightens §352/§356 to theorem-consistency.
+
+**Montgomery–Soundararajan 2004 (Comm. Math. Phys. 252, 589-617), unconditional:** Σ_{distinct d₁..d_k ≤ H}
+𝔖(d₁..d_k) = H^k − C(k,2)H^{k−1}log H + C(k,2)(1−γ−log 2π)H^{k−1} + O(H^{k−3/2+ε}).
+Derivative-matching to our anchored sums: k=2 ⟹ Σ_{h≤H}𝔖₂(h) = H − ½log H + ... (our registered −½, measured
+−0.48 ✓); k=3 anchored ⟹ log coefficient −2 (our measured −2.0001 ✓✓ — four-decimal agreement with a
+published theorem = the 𝔖₃ machinery is validated against the literature). CRUCIALLY: the M-S log coefficient
+C(k,2) COUNTS PAIRS — the pairwise-exhaustion §356 measured is the theorem's own structure; genuine k-wise
+content sits in their O(H^{k−3/2}) remainder (the "next order" probe named in §356 now has a precise target).
+**ψ envelope:** ψ(x) < 1.03883x for ALL x>0 = Rosser–Schoenfeld 1962 (Illinois J. Math 6, 64-94) — our 1.04
+tail envelope is covered by a named classical theorem. Explicit intermediate-range ε tables (Dusart etc.)
+flagged inaccessible by the agent; our in-script exhaustive interval proof on [n0, 20000] (§350) remains the
+operative — and sharper — rigorous input. Also noted: Platt–Trudgian-era bounds reach ε ~ 5e-15 for
+astronomically large x (Report; irrelevant at our scales per §348's envelope-dominance).
+**Variance form:** Var ≈ H(log(X/H) + 1−γ−log 2π) confirmed as the Goldston–Montgomery / M-S shape — with
+the honest boundary: the VARIANCE statement is conditional in the literature; our §352B measurement is its
+empirical confirmation at X=3·10⁷, while the Σ𝔖 side we charge with (§352A) is UNCONDITIONAL (M-S theorem).
+⟹ the H-L variance charge named in §352 as the w→0 upgrade path has an unconditional arithmetic core.
