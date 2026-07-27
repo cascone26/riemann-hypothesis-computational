@@ -1,0 +1,41 @@
+building psi to 20000, proving eps on [300,20000] ...
+  eps upper = [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67]
+building Omega cell lower bounds ...
+  5650 cells, [0,7] floor = nan
+
+s=4.5: 7 probes — B_elem (all closed forms, 5650 minorant cells) ...
+  charge upper endpoint: [4.8599811426389174224112375923763215050594922496634507254574082335e-13 +/- 4.01e-78]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  PIVOT 0: nan not certified > 0 -> NOT CERTIFIED at s=4.5
+
+s=4.4: 7 probes — B_elem (all closed forms, 5650 minorant cells) ...
+  charge upper endpoint: [4.7882388373865444931842104510979851280604973692974422718572657233e-13 +/- 3.59e-78]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  PIVOT 0: nan not certified > 0 -> NOT CERTIFIED at s=4.4
+
+s=4.3: 7 probes — B_elem (all closed forms, 5650 minorant cells) ...
+  charge upper endpoint: [4.7848395379810449252749763319438858264912355208901552306278718019e-13 +/- 2.56e-78]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  PIVOT 0: nan not certified > 0 -> NOT CERTIFIED at s=4.3
+
+s=4.2: 8 probes — B_elem (all closed forms, 5650 minorant cells) ...
+  charge upper endpoint: [5.7276222723983271814482052323794997925738527815139375494920039320e-13 +/- 3.61e-78]
+  row 0 done
