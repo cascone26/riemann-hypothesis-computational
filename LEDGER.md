@@ -13019,3 +13019,22 @@ hashing of arb balls. NEAR-CRITICAL rows (s≤4.5) need tighter arch enclosures 
 cell integrals of sinc⁴, the Fejer analog of §359's erf minorant) is the named next enabler (deferred, clean).
 Standing rigorous-theorem map now spans TWO instruments: Gaussian (elementary, 4 bands×3 widths, §359-362) +
 Fejer (sub-critical s=6/5, §382).
+
+## §384c (2026-07-28, Riemann7) — κ₄ RESOLVER (larger N=8e6): the §384b z-trend is SCALE-STRUCTURED, not uniform — the "wall re-lettered" call is NOT clean. u*=5 pair-dominated (noise), but u*=6 shows a STRONG surviving beyond-pair signal (z≈9). REPORT — flagged for artifact-check, NOT a verdict either way. (u*=7 killed: anomalously slow, non-essential.)
+IAAFT (marginal+spectrum-preserving null), NMAX=8e6, block 1024:
+  u*=5.0: g2_real +9.40 vs iaaft +5.92 (sd 3.17) → z=+1.10 — DOWN from §384b's +2.79 at NMAX=2e6 ⟹ the u*=5
+    trend WAS few-sample noise (shrinks with N), pair-dominated confirmed at this scale.
+  u*=6.0: g2_real +9.36 vs iaaft +1.76 (sd 0.84) → **z=+9.01** — a LARGE surviving connected-κ₄ signal
+    (gap 7.6, tight surrogate sd). Does NOT shrink; not obviously noise.
+**HONEST STATE — NOT a clean verdict:** the beyond-pair signal is SCALE-DEPENDENT. My earlier "wall re-lettered
+stands firm" preview (based on u*=5 alone) was PREMATURE — u*=6 contradicts it. Two live possibilities, NOT yet
+distinguished: (i) a GENUINE connected-κ₄ / beyond-pair signal emerging at the u*~6 (n~e^6≈400) scale — which
+would be the roundtable's beyond-pair certificate (revisit the §383 falsifier: γ₂>0 ⟹ beyond-pair certified,
+RH-pin disproved); (ii) an IAAFT/edge/spectral ARTIFACT specific to u*=6 (the surrogate failing to reproduce a
+narrow spectral feature the corner bump overlaps at that scale). MANDATORY before any claim (pre-registered):
+(a) verify u*=6 is stable across NMAX (2e6/8e6/3e7) and block size — real signal is N-stable, artifact drifts;
+(b) check the u*=6 bump isn't hitting an FFT-periodicity/edge feature (taper, mirror-pad, vary NG); (c) Tao's
+analytic connected-𝔖₄ sign at the corresponding d-scale — the immune settler (structural null, no surrogate).
+Until (a)-(c), §384c is INCONCLUSIVE with a live positive lead at u*=6. Do NOT bank "wall re-lettered" and do
+NOT bank "beyond-pair certified" — the honest state is one clean pair-dominated scale (u*=5) and one strong
+unverified positive scale (u*=6). This is the single most live open thread of the §383 roundtable lead.
