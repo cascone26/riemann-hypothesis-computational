@@ -12374,3 +12374,23 @@ tolerance was the guard; PASS stands as registered); §344's Σ|c_k|² includes 
 the registered criterion); M-S lit attribution still queued; float-chain ε values are measured-tier (only the
 arb chain's ε is proved). **Spot-recomputations (independent code):** instrument minEig +8.6439e-5 /
 residual 1.8e-10 ✓; count-law point w=2 s=3.95 margin 6.662e-9 ✓ — exact matches to banked values.
+
+## §355 (2026-07-27, Riemann7 autonomous) — PRE-REGISTRATION (in ink, before computing): the k=3 rung of the rigidity ladder (grounding Q6). The decisive question: is prime-composition rigidity EXHAUSTED at k=2 (pairwise), or is there genuine 3-way structure — the composition depth the saints' nonabelian reading requires?
+
+Objects (all zero-free, computable): 𝔖₃(d₁,d₂) = ∏_p (1−ν(p)/p)/(1−1/p)³, ν(p) = #{0,d₁,d₂ mod p}
+(support: d₁,d₂ even, d₁≠d₂). Pairwise-null model: 𝔖₃^pair(d₁,d₂) := 𝔖₂(d₁)𝔖₂(d₂)𝔖₂(d₁−d₂)
+(they differ at O(1/p²) per prime — the difference IS the candidate 3-way rigidity).
+**REGISTERED CRITERIA (rt5_k3.py, judged unchanged):**
+  A3 (triple arrow): slope of [S₃(H) − S₃-leading]/H vs log H where S₃(H) = Σ_{d₁,d₂≤H}𝔖₃. Pairwise-
+     dominated prediction: slope −1.5 ± 0.2 (three pairs among {0,d₁,d₂} × the k=2 coefficient −½).
+     NULL (no arrow at all): |slope| < 0.2. Outside both: flag, no story.
+  B3 (genuine 3-way rigidity): slope of [S₃(H) − S₃^pair(H)]/H vs log H, S₃^pair = Σ 𝔖₃^pair.
+     PAIRWISE-EXHAUSTED: |slope| < 0.1 (residual sum grows sublinearly in H·log H — 3-way term
+     contributes no new log). GENUINE k=3 RIGIDITY: |slope| ≥ 0.1 with stable sign.
+  C3 (bridge): third central moment (skewness) of ψ(x+H)−ψ(x)−H over x∈[X/2,X], X=3·10⁷, H=10²..10⁴.
+     GAUSSIAN/pair-exhausted: |skew| < 3·(sampling std of skew under Gaussian ≈ √(15/Nsamples)).
+     3-RIGIDITY VISIBLE: |skew| exceeding that band with a consistent sign trend in H.
+Interpretation registered up front: A3-arrow + B3-exhausted + C3-Gaussian ⟹ the rigidity ladder is
+PAIRWISE-GENERATED — k=2 is all there is at this order, and the saints' composition depth stops at pairs
+(a real negative: the nonabelian structure would then need a different face than k-point correlations).
+B3 or C3 firing ⟹ a genuinely new rigidity level exists above the variance — next charging object named.
