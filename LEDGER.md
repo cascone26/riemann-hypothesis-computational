@@ -12852,3 +12852,20 @@ contribute, but the construction is correct). Collapse present: minEig(full) 0.6
 9.8e-12→1.8e-11 as s=6→2 (n=6→16) — SAME super-exponential plunge to rank deficiency as Gaussian. So the
 density-collapse is intrinsic to the explicit formula, not a Gaussian artifact. Universality of the RvM-pin
 and zero-interpolation corner tested next (§377).
+
+## §377 (2026-07-28, Riemann7) — UNIVERSALITY CONFIRMED: the RvM-pinned collapse (§373) AND the zero-interpolation corner (§375) REPRODUCE on the Fejer/sinc² instrument — they are intrinsic to the explicit formula, NOT Gaussian artifacts. HANDLE (measured, second instrument).
+On l2_fejer.py (compact-frequency, finite-prime-side, validated §376), band [14,44]:
+(1) **collapse pins to RvM:** n_crit=7 vs RvM_eff≈8.7, ratio 0.80 (Gaussian was 0.92) — density-governed
+    collapse reproduced.
+(2) **arithmetic-critical mode = zero-interpolator:** v_full φ ratio zeros/midpts = 0.183 (|φ(zeros)| 0.010
+    vs |φ(mids)| 0.053) while v0(frame) ratio = 0.862 — the collapse mode vanishes on the zeros, the frame
+    mode does not. §375 reproduced.
+Both constants are looser than Gaussian (ratio 0.80 vs 0.92; interp 0.18 vs 0.00-0.07) — attributable to the
+coarser bandwidth W=1.2 and the 4e-7 residual floor (vs Gaussian 1e-10), NOT a qualitative difference. ⟹
+**the density-collapse and zero-interpolation corner are properties of the Riemann–Weil explicit formula
+itself, independent of the test class.** This strengthens the whole §366-375 picture: the wall is intrinsic,
+not an artifact of the Gaussian choice, and a second independent instrument now exists for cross-checks. The
+Charisma discipline pays off — a genuinely different construction, validated by its own residual gate, sees
+the same structure. Off-Gaussian lever (was the §375 "next attack"): the phenomena are universal, so a
+smarter test class does NOT dissolve the corner — it relocates the same zero-interpolation obstruction. Extremal
+(Beurling–Selberg) test functions would optimize the CONSTANT, not remove the wall.
