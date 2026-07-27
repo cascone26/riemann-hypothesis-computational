@@ -1,0 +1,11 @@
+EXCLUSION CERTIFICATE (float PoC): U = <u,B_full u> (primes only) vs L(delta) (fake worlds)
+   w     s  U (primes)  true lmin | L(0.05) | L(0.1) | L(0.2)  excl_delta
+ 3.0   3.3  +1.505e-14  +1.50e-14 | 1.41e-14 | 1.46e-14 | 1.51e-14   >= None
+ 2.0   3.7  -3.659e-14  +7.84e-16 | 4.34e-16 | 3.71e-16 | 1.36e-15   >= 0.2
+ 1.5   4.0  -1.157e-07  +3.07e-13 | 3.08e-13 | 3.09e-13 | 3.11e-13   >= 0.05
+
+Reading: U is computed from PRIMES ONLY (analytic side). Where U < L(delta), a true off-line zero at
+displacement delta in-window is EXCLUDED (it would force lmin >= L(delta) > U, contradicting the
+measured primes-only U). This is the zero-free half; the rigorous version needs (a) arb interval U
+(upper), (b) an analytic lower bound on L(delta) [the c(delta)=kappa*delta^2 law, transversality of
+the Im-mode], (c) out-of-window leakage charge. Lit-gate pending before any novelty claim.

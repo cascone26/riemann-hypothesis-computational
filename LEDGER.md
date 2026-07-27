@@ -12629,3 +12629,23 @@ primes-only critical-density-sampling version may or may not exist — CHECK; (i
 window" localization needs care (Gaussian tails see all zeros — the exclusion statement must charge
 out-of-window zeros' leakage); (iii) c(δ) rigorous lower bound not yet constructed — everything is
 conditional on it. Next runnable: the certificate side (arb upper bound ⟨v,Bv⟩ at a rank row, zero-free).
+
+## §365 (2026-07-28, Riemann7) — EXCLUSION CERTIFICATE PoC: HONEST NEGATIVE at the rank row (rt5_exclude.py). The zero-free upper U and the fake-world floors L(δ) are ALL at the 1e-14..1e-13 float-noise floor exactly where the mechanism is supposed to bite, so the PoC does NOT demonstrate exclusion — it demonstrates the CRUX. REPORT.
+
+Measured (float): w=3 s=3.3: U=1.5e-14, L(0.05/0.1/0.2)=1.41/1.46/1.51e-14 — U and L INDISTINGUISHABLE
+(no exclusion); w=2 s=3.7: U=−3.7e-14 (float-noise negative), L~4e-16..1e-15 (excl_delta=0.2 is noise,
+not signal); w=1.5 s=4.0: U=−1.2e-7 is a FLOAT ARTIFACT (true lmin +3e-13). **The honest reading:** at the
+rank row the on-line world's λmin is already ~0, and moving ONE zero off by δ lifts the SMALLEST eigenvalue
+by only ~κδ²·(single-mode weight) — which at the rank row is the SAME 1e-14 scale as the collapse itself,
+NOT the 1e-5..1e-3 scale §364 measured. §364's big c(δ) was λmin of the WHOLE fake zero-side Gram (all
+modes); §365's L(δ) is correctly the min over the SAME probe directions as U, and there the off-line lift is
+tiny. **So the mechanism as stated does NOT separate at the rank row** — the rank-2-vs-rank-1 argument moves
+a bulk eigenvalue, not the near-null direction U probes. This is the real obstruction, found by building it:
+the exclusion needs U measured NOT at the rank row but in the SPARSE regime where U is O(1) and an off-line
+zero's forced lift is comparable — i.e. exactly the §335 statement that arithmetic is only tested at critical
+density, recurring as: the primes-only form is only SENSITIVE to zero displacement where it is also
+near-singular, and those two scales coincide. §364's "9-12 orders above collapse" compared the wrong pair
+(whole-Gram λmin vs collapse) — corrected here. §364's zero-exclusion PROGRAM is therefore NOT supported by
+§365; downgrade §364's operational claim to: the rank-2 mechanism is real but its signal lives in bulk
+eigenvalues that the primes-only near-null test vector does not see. Lit-gate still relevant (does anyone
+extract zero-location from the bulk spectrum of the primes-only form?) — rerunning after prior agent API-died.
