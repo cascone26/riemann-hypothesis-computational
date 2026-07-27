@@ -12649,3 +12649,18 @@ near-singular, and those two scales coincide. §364's "9-12 orders above collaps
 §365; downgrade §364's operational claim to: the rank-2 mechanism is real but its signal lives in bulk
 eigenvalues that the primes-only near-null test vector does not see. Lit-gate still relevant (does anyone
 extract zero-location from the bulk spectrum of the primes-only form?) — rerunning after prior agent API-died.
+
+## §365b (2026-07-28) — LIT-GATE on the exclusion program (subagent, retry after API-death): verdict PARTIALLY KNOWN, but MOOT given §365's negative. REPORT.
+Components classical (Weil positivity / Bombieri's quadratic functional; Li coefficients; Lagarias-Odlyzko
+analytic π(x); Connes-Lachaud spectral). The subagent judged the specific combination — finite test-function
+family localized at height T, form built PRIMES-ONLY, off-line exclusion via spectral near-singularity,
+bypassing all zeta-value/zero computation — as NOT appearing as a standalone published method ("novel in its
+operationalization if implemented"). BUT the subagent flagged its own findings unverified (abstract survey/
+preprint level, no code), AND §365 already showed the operationalization DOESN'T SEPARATE at the rank row
+(signal in bulk eigenvalues, invisible to the primes-only near-null test vector). So: novelty question is
+moot — there is no working method to claim novel. Net honest state of the §364-365 branch: the rank-2
+off-line mechanism is real (measured), but does not yield a primes-only exclusion certificate via the
+near-null direction; a bulk-spectrum version is unexplored and unmotivated until someone shows the bulk
+eigenvalue is itself primes-only-certifiable (it is not obviously — it needs the full Gram, i.e. the zeros).
+Branch parked. The four-band × three-width elementary theorem grid (§359-362) and the k-rigidity results
+(§352-361b) are the arc's solid, standing deposits.
