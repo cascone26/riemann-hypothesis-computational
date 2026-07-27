@@ -1,0 +1,16 @@
+building psi to 20000, proving eps on [300,20000] ...
+  eps upper = [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67]
+building Omega left-endpoint values (monotonicity lemma) ...
+  30720 cells, [0,7] floor = Omega(0) = [-5.3721834192256655822329574974497422890145392516235538431689026310 +/- 7.67e-66]
+config: w=1.5
+
+s=4.3: 7 probes — B_elem (all closed forms, 30720 minorant cells) ...
+  charge upper endpoint: [8.5914792282789618580388431847017775625973825994936066250164047089e-7 +/- 3.72e-72]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  PIVOT 4: [-0.09738289210373910028637493420692433742166574541552645964 +/- 7.31e-57] not certified > 0 -> NOT CERTIFIED at s=4.3

@@ -12523,3 +12523,18 @@ s=4.2 (w=2) pivot by 5e-4 relative — the low-zone floor was never the binding 
 ## §360b (2026-07-28) — ELEMENTARY s=4.0 AT w=3 CERTIFIED (h=1/256, 30720 cells; smallest pivot [0.19032 ± 4e-59]): the zero-integration theorem now covers w=3 to s=4.0 — §341's named target ("expected recovery of s≈3.9-4.0 after mechanical refinements") is DELIVERED AT FULL RIGOR, one better than its float chain ever reached. The h-scaling behaved exactly as the loss law predicts (h=0.02 fails at 4.0, h=1/256 certifies with room). s=3.9 attempt in flight. HANDLE (arb).
 
 ## §360c (2026-07-28) — elementary s=3.9 at w=3 NOT certified at h=1/256 (pivot −0.56): the elementary reach at w=3 closes at s=4.0 — consistent with the loss law (3.9's margin sits ~2 orders below 4.0's; would need h ~ 2^{-12}-2^{-14}, ~10⁶ cells — noted as available, not pursued: the marginal rung is not where the wall is). Elementary map final for tonight: w=3: 4.5→4.0 · w=2: 4.5→4.3 · w=1.5: run in flight. Next fronts unchanged: k=3 remainder probe; C(T) derivation; the w→0 statement (grounding Q1).
+
+## §360d (2026-07-28) — THE THREE-WIDTH ELEMENTARY MAP, FINAL FOR THE ARC: w=3: s=4.5→4.0 · w=2: s=4.5→4.3 · w=1.5: s=4.6→4.4 — all zero-integration interval theorems. w=1.5 s=4.3 fails at h=1/64 AND 1/256 — CONSISTENT arithmetic: its true margin is 5.4e-5 (rt5_hybrid row) and the minorant h-residue needs h≈2^{-11} (~245k cells) to undercut it; available, not strategic (the marginal rung is not the wall). HANDLE (arb).
+
+## §361 (2026-07-28) — PRE-REGISTRATION (in ink, before computing): the k=3 NEXT-ORDER probe — empirically measuring the M-S remainder (the named home of genuine beyond-pairwise structure, §357).
+Setup: recompute S3(H) with HMAX=8000 and ~18 log-spaced checkpoints; fit a·H² + b·H·logH + c·H (3 params);
+examine the RESIDUAL against candidate next-order shapes.
+REGISTERED CRITERIA (judged unchanged):
+  R1: if the residual is consistent with 0 within the 𝔖-fluctuation noise band (|resid| < 2× the rms of
+      successive-checkpoint jitter), verdict = NO VISIBLE k=3 REMAINDER at H≤8000 (an honest bound, not a
+      disproof — M-S allows O(H^{1/2+ε}) which may be sub-noise here).
+  R2: if the residual tracks β·√H with a SIGN-STABLE β across the upper decade and |β·√H| > the noise band,
+      verdict = THE M-S REMAINDER MEASURED — magnitude β banked as the first empirical size of the genuine
+      k-wise (beyond-pairwise) term; next step then = its k=2-analog comparison (is it the same-order object
+      as the pair remainder, or larger — the actual composition-depth question).
+  R3: any other systematic shape: flag, no story.
