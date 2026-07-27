@@ -1,0 +1,30 @@
+Part A: sieving smallest-prime-factor to 2000000
+  C2 (twin-prime const, computed) = 0.6601618606
+  H        sum S(h)-H      [per-decade slope vs log H]
+      1000       -3.9183
+      3000       -3.2806   +0.5804
+     10000       -4.8774   -1.3263
+     30000       -4.7847   +0.0845
+    100000       -6.2261   -1.1973
+    300000       -5.7933   +0.3940
+   1000000       -7.3704   -1.3099
+   2000000       -6.7539   +0.8894
+  Part A least-squares slope = -0.4796  ->  ARROW (-0.5)
+
+Part B: sieving Lambda to 30000000 ...
+  H        Var/H - log(xbar)   [slope vs log H]
+       100       -5.9530
+       300       -7.1233   -1.0653
+      1000       -8.3701   -1.0355
+      3000       -9.4594   -0.9915
+     10000      -10.1061   -0.5371
+     30000      -11.0087   -0.8216
+    100000      -13.0094   -1.6617
+  Part B least-squares slope = -0.9519  ->  ARROW (-1)
+
+Part C: model-predicted E[DT_entry^2] for the [14,44] w=1.5 edge window, n0=100
+  actual DT entry        = -2.2828e-06   actual^2 = 5.2110e-12
+  Poisson prediction     = 2.5680e-11
+  Hardy-Littlewood pred  = 7.9092e-12   (ratio HL/Poisson = 0.308)
+  pre-registered PASS requires: actual^2 <= 3xHL AND HL <= Poisson/3  ->  PASS
+    (actual^2 <= 3HL: True;  HL <= Poisson/3: True)

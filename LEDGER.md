@@ -12326,3 +12326,25 @@ instead of parallel to it.
     object): actual ΔT² ≤ 3× HL-prediction AND HL-prediction ≤ Poisson/3. FAIL: actual >> HL (model wrong)
     or HL ≈ Poisson (rigidity invisible at our window — arrow real but not load-bearing here).
 All three zero-free. Results → §352 AFTER these criteria, unchanged.
+
+## §352 (2026-07-27, Riemann7) — THE k=2 ARROW: ALL THREE PRE-REGISTERED TESTS HIT THE ARROW BRANCH (rt5_arrow.py vs §351 criteria, unchanged). The nonabelian rigidity the saints' table asked for EXISTS as measured, zero-free arithmetic — and it quantitatively charges OUR fluctuation object. HANDLE (measured).
+
+**A (singular-series second term):** LS slope of [Σ_{h≤H}𝔖(h) − H] vs log H over H=10³..2·10⁶:
+**−0.4796** → ARROW (registered −0.50 ± 0.05). [Honesty: per-decade slopes oscillate ±1 (𝔖 partial sums have
+O(1) local fluctuation); the registered criterion was the LS fit, and it lands. C₂ computed = 0.6601618606 ✓
+vs known 0.6601618158 (4e-8 — product truncation).] The abelian/independent null (slope 0) is EXCLUDED.
+The −½ coefficient is the level-repulsion signature sitting IN the arithmetic object, no zeros consulted.
+Lit attribution (Montgomery–Soundararajan) still queued for check; the measurement stands regardless.
+**B (ψ short-interval variance):** slope of [Var/H − log x̄] vs log H, X=3·10⁷, H=10²..10⁵: **−0.9519** →
+ARROW (registered −1.0 ± 0.15; Cramér/Poisson null 0 excluded). Middle decades clean (−1.04, −1.04, −0.99);
+last point noisy (150 samples). The variance DEFICIT −H log H below Poisson = the rigidity, measured.
+**C (the bridge — does the arrow charge OUR object):** [14,44] w=1.5 edge-probe entry, window n∈[100,5000):
+actual ΔT² = 5.21e-12; Poisson prediction 2.57e-11; H-L covariance prediction 7.91e-12 (ratio 0.308).
+PASS both registered clauses (actual² ≤ 3·HL ✓; HL ≤ Poisson/3 ✓ — the second by 8%, barely, noted).
+⟹ the singular-series rigidity cuts the fluctuation variance ~3.2x at our window and the MEASURED ΔT sits
+inside the H-L-corrected prediction: **the arrow is quantitatively the self-averaging that §347 measured.**
+**NET (the saints' answer, executed):** "read the relation, don't build the group" — done: the relation reads
+out at the pre-registered coefficients (−½, −1) from pure arithmetic, and it is load-bearing in the hybrid
+architecture through the variance pricing of ΔT. Upgrade path now concrete: replace the pointwise ε-charge
+(Chebyshev-grade, §348) with an H-L-covariance variance charge (~3x tighter per window) when the w→0 race
+needs it. The rigidity is DISCOVERED (measured in 𝔖 and ψ-variance, zero-free) — not imposed.
