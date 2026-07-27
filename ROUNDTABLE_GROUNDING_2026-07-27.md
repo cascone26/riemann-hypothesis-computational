@@ -49,8 +49,12 @@ The night's arc: per-prime chains → collective-tail chain → hybrid chain. Cu
    formula-only shape. **Exponential BULK (n0 ~ e^{10.5/w}, enters only as summation ranges),
    polynomial STRUCTURE (R ~ 40/w², k=5).** The §342 difficulty conservation now lives entirely in
    bulk objects handled wholesale by norm/directional bounds.
-5. **Arb-rigor (§340 + §350):** B_full PD theorem-grade at w=3 s=3.5/3.4 (§340). §350: [ARB RESULT — see
-   addendum line below].
+5. **Arb-rigor (§340 + §350):** B_full PD theorem-grade at w=3 s=3.5/3.4 (§340). §350: the COLLECTIVE
+   certificate is now THEOREM-GRADE at w=2, s=3.9 — interval LDL^T on B_lower with arithmetic input =
+   79 explicit prime powers + ε ≤ 0.0325 PROVED in-script (exhaustive interval check of |ψ−x|/x on
+   [300, 20000]) + classical ψ < 1.04x beyond. Charge enclosure ±5.6e-13 vs margin 6.8e-10. The
+   fluctuation-charge route is NOT a float artifact. (s=3.8, margin 6.3e-12, currently width-limited
+   in the integrator — precision-320 retry in flight; a sign failure it is not.)
 6. **Correlation witness (§344, unresolved):** max pairwise phase correlation of off-block vectors climbs
    to 0.96 at u-adjacent pairs (4,7)/(17,19) as w→1.5 — slot crowding as coherence. Geometric in origin,
    but Dirac's registered branch fired: the θ(γ)-only cancellation route cannot be ASSUMED. His involution

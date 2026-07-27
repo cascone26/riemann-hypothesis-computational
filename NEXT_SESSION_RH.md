@@ -1,3 +1,26 @@
+# NEXT SESSION — updated 2026-07-27 (Riemann7 close: the collective arc, LEDGER §343-350)
+
+**Grounding doc for the next table: `ROUNDTABLE_GROUNDING_2026-07-27.md`** (supersedes 07-26; paste that file).
+
+State in one paragraph: RT#5 ran (Q1 spine/Q5 guard), its five registered specs were executed, and the arc
+they opened ended in a NEW ARCHITECTURE: the hybrid/collective chain — R ≈ 40/w² resonant primes exact
+(quadratic count law, deconfounded §346) + k=5 directional bound on remaining primes < n0 ~ e^{10.5/w} (bulk)
++ PNT-smooth tail integral + fluctuation charge ε‖C‖ (partial summation nearly tight, §347; Chebyshev-grade
+ε suffices, §348) = FULL REACH to the Weyl rank limit at every width tested, T-axis FLAT (§348), and
+THEOREM-GRADE at w=2 s=3.9 via interval arithmetic with ε ≤ 0.0325 proved exhaustively (§350). Exponential
+bulk / polynomial structure. The wall now = w→0 uniformity of the polynomial structure part (grounding Q1).
+
+Next work moves (any session):
+1. Grounding Q2 — DERIVE the 40/w² law (envelope × Bragg-slot density × band factor); test its T-prediction.
+2. s=3.8 arb width fix (prec-320 retry was in flight at close; check arb_hybrid_38.out; if still wide, split
+   the arch integral or raise degree) + arb at w=1.5 s=4.0 (n0=3000 — bigger ψ check, same machinery).
+3. Named lit constants: swap the in-script proved ε for RS explicit bounds (headroom 18-1693x, bookkeeping).
+4. Grounding Q4 — the s↔γ calibration for the involution branch.
+5. §341 minorant-ification of the arch entries INSIDE the hybrid (makes the whole B_lower formula-only).
+
+Standing: rh-working-rules (15) unchanged; ask-don't-assert endings; Report/Handle labels; LEDGER append-only.
+
+---
 # NEXT SESSION (updated 2026-07-26 evening, LEDGER through §342) — READ THIS + ROUNDTABLE_GROUNDING_2026-07-26.md FIRST
 
 ## CURRENT STATE in one paragraph

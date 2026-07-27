@@ -9322,3 +9322,13 @@ cost is intrinsic to the split-at-a-scale architecture). Count law deconfounded 
 (quadratic; both the table's "linear" and §344's "exponent 3" were depth-aliasing). k=3 directional
 saturation breaks at w=1.3 (k=5; wall is 2D in (R,k)). Next: hybrid chain (R exact + directional + collective
 tail) for the leanest architecture; then Arb-harden + named lit constants.
+
+---
+### 2026-07-27 — arc close: arb rigor + grounding v2 (Riemann7)
+§350: collective certificate theorem-grade at w=2 s=3.9 (proved-in-script ε ≤ 0.0325 via exhaustive interval
+ψ check to 20000; charge ±5.6e-13; smallest pivot 0.00746 ± 4.7e-10). s=3.8 fails on interval WIDTH (±0.075
+pivot — integrator strain at w=2's narrow Gaussians), not sign; prec-320 retry launched. Decision: bank 3.9
+as the theorem, name 3.8 as width-limited. Grounding doc v2 written (ROUNDTABLE_GROUNDING_2026-07-27.md,
+supersedes 07-26) with 5 ranked open questions (Q1 w→0 of the hybrid; Q2 derive 40/w²; Q3 name the collective
+object in frame-theory; Q4 s↔γ calibration; Q5 conservativity guard on the hybrid statement). NEXT_SESSION
+header refreshed (.bak3).
