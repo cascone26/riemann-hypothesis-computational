@@ -12664,3 +12664,19 @@ near-null direction; a bulk-spectrum version is unexplored and unmotivated until
 eigenvalue is itself primes-only-certifiable (it is not obviously — it needs the full Gram, i.e. the zeros).
 Branch parked. The four-band × three-width elementary theorem grid (§359-362) and the k-rigidity results
 (§352-361b) are the arc's solid, standing deposits.
+
+## §366 (2026-07-28, Riemann7) — C(T) BAND-DEPENDENCE (rt5_cT.py): the resonant-core count law is R ~ C(T)/w² with C(T) growing like the WEYL ZERO DENSITY (log T / ρ(T)), NOT constant — a MILD confirmation of the structure-side link to §335, but NOT a clean flat ratio (±25% scatter from depth-aliasing). HANDLE (measured) + honest limits.
+
+Setup: 10 band centers T=29..440, w∈{2,1.5}, R = norm-greedy exact core (k=5) at true margin nearest 1e-8;
+C := R·w². **w²-scaling confirmed per-band** (C≈width-independent: e.g. T=29: 44 vs 36; T=440: 84 vs 88;
+T=200: 68 vs 56 — same ballpark both widths). **C(T) fit (w=2, rel-rms residual):** logT 0.152 · ρ(T) 0.161
+· const 0.258 · √T 0.212 — LOG-type growth (= zero density ρ(T)=(1/2π)log(T/2π)) clearly beats const and √T;
+logT and ρ(T) tie (identical to leading order). So R ~ ρ(T)/w² is the favored law: **the exact-core count is
+tied to the Weyl zero density** — the §335 critical-density picture appearing on the STRUCTURE side (count of
+resonant terms), not just the collapse side. **HONEST LIMITS:** C/ρ is NOT tightly flat — it scatters 100-180
+(~±25%) across the ladder, the residual is 15%, and the extraction is single-point-per-band at a fixed 1e-8
+depth (depth-aliasing: the 1e-8 row lands at different plunge positions per band, §345d's confound recurring).
+So this is a MILD confirmation of the density law, not a derivation. Named tightening (not run — diminishing
+returns vs the noise): average C over a margin-depth WINDOW [1e-9,1e-7] per band to kill the aliasing, and
+extend the ladder to T~2000 for lever arm. The qualitative result — density-growth beats constant — is robust;
+the constant (~127·ρ, i.e. R ≈ (Weyl count of the band)/w² up to O(1)) is order-right but not pinned.
