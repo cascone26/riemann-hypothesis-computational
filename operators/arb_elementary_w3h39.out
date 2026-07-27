@@ -7,3 +7,11 @@ config: w=3
 s=3.9: 8 probes — B_elem (all closed forms, 30720 minorant cells) ...
   charge upper endpoint: [1.1085243485448191168529590982786177969212403340983111115796058091e-30 +/- 1.81e-95]
   row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  PIVOT 7: [-0.562830875815212220025186492125025172042501162224520 +/- 5.10e-52] not certified > 0 -> NOT CERTIFIED at s=3.9

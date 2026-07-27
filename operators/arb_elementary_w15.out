@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/scones/projects/riemann/operators/arb_elementary_cert.py", line 42, in <module>
+    assert HCELL.rad() == 0
+           ^^^^^^^^^^^^^^^^
+AssertionError
