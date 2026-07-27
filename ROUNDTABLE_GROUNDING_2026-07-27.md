@@ -1,4 +1,4 @@
-# ROUNDTABLE GROUNDING — state as of 2026-07-28 (LEDGER through §360)
+# ROUNDTABLE GROUNDING — state as of 2026-07-28 (LEDGER through §363)
 
 Paste-ready banked block. Supersedes ROUNDTABLE_GROUNDING_2026-07-26.md (kept for history).
 Everything here is DEPOSITED — restating scores nothing; build on it or ATTACK it.
@@ -148,3 +148,17 @@ level buy a constant factor only (difficulty conservation again)? Pre-register b
   numerical monotonicity check). h-refinement to 1/256 in flight for w=3 s=4.0.
 - **Collective theorem coverage (§350/350b/360):** w=2: s=3.9, 3.8 AND w=1.5: s=4.1, 4.0 — both widths
   certified to their deepest PSD grid rows. The architecture is theorem-grade everywhere it's been asked.
+
+## ADDENDUM 4 — arc close (§361-363): the theorem map + the sharpest target
+- **k=3 remainder sub-noise (§361b):** the beyond-pairwise term is ≲ 26·√H empirically at H≤8000 —
+  composition shows pairwise structure + noise at every directly measurable order.
+- **THE THEOREM MAP (all zero-integration, interval-proven, zero-free):**
+  [14,44]: w=3 s≥4.0 · w=2 s≥4.3 · w=1.5 s≥4.4 | [50,80] w=2 s≥2.4 | [100,130] w=2 s≥2.0 |
+  [200,230] in flight. Collective-grade additionally: [14,44] w=2: 3.9/3.8 · w=1.5: 4.1/4.0 · w=3: 3.5/3.4.
+  The architecture is portable across bands with NOTHING retuned — T-flatness proven by instances.
+- **Q1/Q5 drafted (§363, REPORT):** the interior of the PSD region is now compact-family theorem territory
+  (elementary certificates + continuity); RH = the corner limit (w→0, s→Nyquist) where §335's
+  discreteness-margin identity lives. THE SHARPEST TARGET this arc hands the table: write the inequality
+  between the M-S pair-rigidity constants (unconditional, zero-free 𝔖 sums) and the corner rank — an
+  off-line zero adds a non-L² mode whose sampling excess must violate 𝔖-rigidity at finite scale. If
+  quantitative, it is a genuine 3-clause middle object. Gate it hard before investing.
