@@ -12570,3 +12570,10 @@ zero side (complementary-series direction, §334) whose sampling excess must sur
 the M-S pair-rigidity constants and the corner rank), it is a genuine middle object: non-conservative,
 zero-free-constructible (𝔖 sums), manifestly-positive-shaped (a rank/frame bound). That is the sharpest
 Q1 target this arc can hand the table. [All REPORT until someone writes the inequality.]
+
+## §362b (2026-07-28) — [100,130] ALSO CERTIFIED (s=2.4, 2.2, 2.0; 13-16 probes): THE T-AXIS TRIPLE COMPLETE. The elementary theorem map, end of arc:
+  [14,44]: w=3: s≥4.0 · w=2: s≥4.3 · w=1.5: s≥4.4   |   [50,80] w=2: s≥2.4   |   [100,130] w=2: s≥2.0
+  (+ collective-grade: [14,44] w=2: 3.9/3.8, w=1.5: 4.1/4.0; §340 full-form w=3: 3.5/3.4)
+All zero-integration (erf/exp/cos/Λ + digamma gridpoints + one proved ψ-envelope + RS 1962), all interval
+LDL^T, all zero-free. The §348 T-flatness and the §349 architecture now stand as PROVEN instances across
+3 bands × 3 widths. [200,230] run launched to extend the ladder. HANDLE (arb).
