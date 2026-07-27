@@ -12479,3 +12479,29 @@ real structure — and constant order is EXACTLY where genuine beyond-pairwise c
 statement (ordered/distinct/diagonal/boundary bookkeeping), then re-compare before touching any k=3 claim.
 
 ## §358b (2026-07-27) — the §358 constant-order flag RESOLVED (derivation, no new run needed): naive differentiation of the M-S weighted sum is INVALID at constant order (Abel/boundary term of the (H−span) weight), and the same-size mismatch already exists at k=2 where the log order matched perfectly ⟹ the k=3 constant mismatch (−2.4 vs naive −3.83) is a heuristic artifact, NOT beyond-pairwise structure. The correct weighted↔unweighted relation (derived): d/dH[M-S₃] = 3·S3(H) via the three sign-quadrant decomposition ((+,+) = S3; each mixed quadrant = S3/2 by the translation 𝔖({0,−a,b}) = 𝔖₃(a,a+b)) — this preserves LOG order (−2 confirmed twice over) but the constant term of the UNWEIGHTED sum requires its own expansion (Friedlander–Goldston-type; queued as low-priority bookkeeping, not a rigidity probe). Verify-class note: third instance of the anchoring-arithmetic error family this arc — log orders are robust to it, constant orders are not; any future constant-order claim needs the exact weighted derivation first.
+
+## §359 (2026-07-27, Riemann7 autonomous) — THE FULLY ELEMENTARY INTERVAL THEOREM (arb_elementary_cert.py): B_full PD at w=2, band [14,44], s = 4.5, 4.4, 4.3 — CERTIFIED with ZERO numeric integration: every entry is erf/exp/cos/Λ closed forms + digamma gridpoint constants; arithmetic input = 79 prime powers + in-script-proved ε ≤ 0.0325 + ψ<1.03883x (RS 1962). PLUS: the §341 Ω-monotonicity upgraded from "verified numerically" to a TWO-LINE THEOREM. HANDLE (arb) + one new verify-catch class.
+
+**The construction, all closed-form:** pole (exp) + M_Ψ (left-endpoint Riemann minorant, 5650 cells h=0.02
+on [7,120], zone masses = telescoped real-erf differences; floor Ω(0)=ψ(¼)−logπ = −5.3721834... on [0,7]) −
+P_small (Λ closed forms) − T_smooth (CLOSED via complex erfc: ∫_{u0}^∞ e^{cu−qu²}du =
+e^{c²/4q}(√π/2√q)erfc(√q(u0−c/2q)), c=½+iα — integrated to ∞, no tail split) − ε·C_env (linear×Gaussian
+integrals, real-erf closed, both partial-summation boundaries per §353) − RS-1962 tails. Interval LDL^T.
+**THE MONOTONICITY LEMMA (upgrades §341's numerical check to proof):** Ω(r)=Reψ(¼+ir/2)−logπ is strictly
+increasing on (0,∞): ψ′(z)=Σ_{n≥0}(n+z)^{−2}, and at z=¼+it (t>0) every term has Im(n+z)^{−2} =
+−2(n+¼)t/|n+z|⁴ < 0 ⟹ Imψ′<0 ⟹ Ω′(r)=−½Imψ′>0. Hence left-endpoint values minorize per cell and
+Ω ≥ Ω(0) on [0,7]. Two lines, series-term-positivity, no asymptotics.
+**Results:** s=4.5 CERT (smallest pivot 0.2349), s=4.4 CERT (0.1467), s=4.3 CERT (0.0859); s=4.2 NOT
+(pivot 5 = −0.365; minorant loss at h=0.02 + the Ω(0) flat floor — the elementary construction's honest
+floor at this cell size; §341's named refinements [finer h, piecewise low zone] would push deeper).
+Charge upper endpoints ~4.8e-13 (identical machinery to §350).
+**What is now a theorem:** the Weil form on symmetrized Gaussian probes (7 probes, band [14,44], w=2,
+s=4.3-4.5) is PD, and the ENTIRE proof is: finitely many elementary closed-form numbers (erf/exp/cos/log at
+explicit points + ψ(¼) + digamma at 5650 gridpoints, each an interval-certified constant) + a finite ψ
+computation to 20000 + RS 1962 + interval linear algebra. No integral was numerically evaluated anywhere in
+the certificate. This is the §341 "formula-only" goal REALIZED at rigor grade, one architecture level up
+(collective split included).
+**24th verify-catch class:** arb `x == x` is BALL equality — False for any inexact value; a nan-check via
+`x == x` fires on every healthy ball (cost: two spurious debug cycles). Use math.isnan(float(x.mid())).
+Also: arb's ball-argument digamma enclosures are uselessly wide (±6.6 for radius-0.01 balls) — prefer point
+evaluations + analytic monotonicity/Lipschitz over ball propagation for special functions.

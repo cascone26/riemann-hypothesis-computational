@@ -141,21 +141,30 @@ def exact_tail_beyond():
     bdry = P4 * (UC / 2 - Q * UC * UC).exp()
     return 2 * arb('1.04') * (I + bdry)
 
-# ---- M_Psi: cell lower bounds of Omega + erf zone masses ----
-print("building Omega cell lower bounds ...", flush=True)
+# ---- M_Psi: LEFT-ENDPOINT point values, rigorous by the MONOTONICITY LEMMA ----
+# LEMMA (2-line proof): Omega(r) = Re psi(1/4 + ir/2) - log pi is strictly increasing on
+# (0, inf): psi'(z) = sum_{n>=0} 1/(n+z)^2, and for z = 1/4 + it (t>0) each term has
+# Im 1/(n+z)^2 = -2(n+1/4)t/|n+z|^4 < 0, so Im psi' < 0 and
+# Omega'(r) = -(1/2) Im psi'(1/4+ir/2) > 0.  Hence on [r_i, r_i+h): Omega >= Omega(r_i),
+# and on [0, R1]: Omega >= Omega(0) = psi(1/4) - log pi.  (Ball evaluation not needed —
+# arb's disk-variation digamma enclosures are uselessly wide.)
+print("building Omega left-endpoint values (monotonicity lemma) ...", flush=True)
 LOGPI = arb.pi().log()
 ncell = int(float((RMAX - R1) / HCELL) + 0.5)
 cell_lo = []
 r = R1
 for i in range(ncell):
-    ball = r.union(r + HCELL)                      # arb ball covering the cell
-    om = (acb(arb(1) / 4, ball / 2).digamma()).real - LOGPI
-    cell_lo.append(om.mid() - om.rad())            # exact dyadic lower bound
+    om = (acb(arb(1) / 4, r / 2).digamma()).real - LOGPI
+    cell_lo.append(om.mid() - om.rad())            # exact dyadic lower bound of the point value
     r = r + HCELL
-ball0 = arb(0).union(R1)
-om0 = (acb(arb(1) / 4, ball0 / 2).digamma()).real - LOGPI
+om0 = (acb(arb(1) / 4, 0).digamma()).real - LOGPI
 FLOOR0 = om0.mid() - om0.rad()
-print(f"  {ncell} cells, [0,7] floor = {FLOOR0}", flush=True)
+# NB: arb __eq__ is ball-equality (False for any inexact value) — nan-check via float(mid)
+import math
+assert not math.isnan(float(FLOOR0.mid())), "floor nan"
+for i, cl in enumerate(cell_lo):
+    assert not math.isnan(float(cl.mid())), f"cell {i} nan"
+print(f"  {ncell} cells, [0,7] floor = Omega(0) = {FLOOR0}", flush=True)
 
 def erf_edges(cj, ck):
     """for each sign-combo m=(±cj±ck)/2 pair-center: erf((edge−m)/W) at all cell edges,
