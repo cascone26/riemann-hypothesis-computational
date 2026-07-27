@@ -49,7 +49,7 @@ w = 2.0
 BANDS = [(14.0, 44.0), (50.0, 80.0), (100.0, 130.0), (200.0, 230.0)]
 print("PRIME<->POLE dual weight, w=2 (exploratory probe — no charge until derived)")
 print(f"{'band':>10} {'s':>5} {'true':>10} {'p_pole':>10} {'p_arch':>9} {'n*':>4} {'p_n*':>10} "
-      f"{'p_n*/p_pole':>11} {'sum_res':>10} {'sumres/pole':>11}")
+      f"{'p_n*/p_arch':>11} {'sum_res':>10} {'sumres/arch':>11}")
 for band in BANDS:
     set_grid(band[1] + 30.0)
     rows = 0
@@ -82,5 +82,5 @@ for band in BANDS:
         top = proj[nstar]
         sumres = sum(proj[n] for n in order if proj[n] >= top / 10)
         print(f"{str([int(band[0]), int(band[1])]):>10} {s:5.1f} {tm:+10.2e} {p_pole:10.3e} "
-              f"{p_arch:9.3e} {nstar:4d} {top:10.3e} {top/p_pole:11.3e} {sumres:10.3e} "
-              f"{sumres/p_pole:11.3e}", flush=True)
+              f"{p_arch:9.3e} {nstar:4d} {top:10.3e} {top/p_arch:11.3e} {sumres:10.3e} "
+              f"{sumres/p_arch:11.3e}", flush=True)

@@ -12462,3 +12462,18 @@ astronomically large x (Report; irrelevant at our scales per §348's envelope-do
 the honest boundary: the VARIANCE statement is conditional in the literature; our §352B measurement is its
 empirical confirmation at X=3·10⁷, while the Σ𝔖 side we charge with (§352A) is UNCONDITIONAL (M-S theorem).
 ⟹ the H-L variance charge named in §352 as the w→0 upgrade path has an unconditional arithmetic core.
+
+## §358 (2026-07-27, Riemann7 autonomous) — DUAL-WEIGHT PROBE (rt5_dualweight.py, exploratory — no charge): the pole MATRIX carries no band weight anywhere (e^{−c²/2w²}: 4e-23 at [14,44], underflow-0 by [100,130]) ⟹ the §354 "pole-side pairing" matures: the involution maps the major arc to u≈0 in SCALE space, and the object there with actual weight is the ARCH/MAIN-TERM density — **the last enemy's dual is the PNT main term**, precisely the object the collective chain holds in closed form. HANDLE (measured) + one flagged bookkeeping mismatch.
+
+Measured (w=2, last 4 spacings above each edge, 4 bands to [200,230]): sumres/p_arch (major-arc primes' total
+projection over arch projection) at the edge = 0.87 / 0.53 / 0.49 / 0.58 — the major arc carries an O(1),
+roughly-half share of the arch projection at criticality (the §335 marginality seen DIRECTIONALLY); single
+resonant share p_n*/p_arch dilutes with T (0.51 → 0.11) as the resonant set spreads. No crisp constant yet —
+observations only, nothing charges until derived.
+**FLAGGED (constant-order bookkeeping, must be exact before any beyond-pairwise claim):** the anchored k=3
+H-coefficient measures c ≈ −2.3..−2.5 (drifting) vs my naive anchored reading of M-S's constant term
+C(3,2)(1−γ−log2π) ⟹ −1+2(1−γ−log2π) = −3.83. The LOG order matched the theorem to 4 decimals (§357), so this
+mismatch is either my anchoring arithmetic at constant order (a third instance of the §356 error class) or
+real structure — and constant order is EXACTLY where genuine beyond-pairwise content would first appear
+(M-S remainder O(H^{k−3/2})). Named micro-task: derive the anchored k=3 expansion exactly from the M-S
+statement (ordered/distinct/diagonal/boundary bookkeeping), then re-compare before touching any k=3 claim.
