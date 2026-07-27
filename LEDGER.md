@@ -13003,3 +13003,19 @@ saturates <3σ, wall re-lettered stands firm. Tao's (b) analytic connected-𝔖�
 cross-check (structurally-zero null, no statistics) — the definitive settler, still worth deriving.
 NET for the roundtable: instrument (a), correctly nulled, lands on "wall re-lettered" with a scale-trend caveat;
 the κ₄ pin is NOT established (and NOT cleanly refuted — the trend is the open thread).
+
+## §382 (2026-07-28, Riemann7) — RIGOROUS 2ND-INSTRUMENT THEOREM: the Weil form is PD, PROVEN by interval arithmetic on the FEJER/sinc² test class at s=6.0 AND s=5.0 (arb_fejer_cert2.py, enabled by the §381 closed-form prime side). HANDLE (arb). §377 universality upgraded: phenomena AND theorem transfer.
+B_full = pole (closed) + arch (rigorous acb.integral, sinc⁴×Ω + explicit 1/r⁴ tail) − prime (CLOSED-FORM
+triangle-FT, §381) on Fejer probes, band [14,44], W=1.2. Interval LDL^T:
+  s=6.0 (n=6): ALL 6 PIVOTS POSITIVE, smallest [0.6944 ± 2.3e-5] — CERTIFIED PD.
+  s=5.0 (n=7): ALL 7 PIVOTS POSITIVE, smallest [0.0111 ± 1.9e-5] — CERTIFIED PD.
+  s=4.5 (n=8): PIVOT 4 = [±2.21] — NOT certified (interval-WIDTH failure, not sign: the oscillatory sinc⁴ arch
+  acb.integral leaves enclosures too wide for the smaller margin; §350b-class limitation).
+⟹ **the rigorous certificate architecture (interval-arithmetic PD proof) TRANSFERS to a second, compact-
+frequency test class** — §377's universality is now theorem-grade at sub-critical configs, not just phenomena.
+Enabled entirely by §381 (closed-form prime dropped the cost from 36×30 oscillatory integrals — infeasible §380
+— to 36 arch integrals). Fixes this run: ball-safe acb.sinc() for the removable node singularity; no set()-
+hashing of arb balls. NEAR-CRITICAL rows (s≤4.5) need tighter arch enclosures — the closed-form arch (Si/Ci
+cell integrals of sinc⁴, the Fejer analog of §359's erf minorant) is the named next enabler (deferred, clean).
+Standing rigorous-theorem map now spans TWO instruments: Gaussian (elementary, 4 bands×3 widths, §359-362) +
+Fejer (sub-critical s=6/5, §382).
