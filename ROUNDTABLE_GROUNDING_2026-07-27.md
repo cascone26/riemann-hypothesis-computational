@@ -463,3 +463,26 @@ not math). Two more settlements + the night's pivot to the spectral side.
   binds regardless: a robustly-measurable canonical margin is still not an a-priori-provable one.
 - **INFRA NOTE:** table halted at msg 53 on a 94%-full disk (room server could not append). Seats killed by
   chair to free space; results above captured from the live read. Restart = respawn 5 seats on §393.
+
+## §393 RESOLVED — CROSS-CONFIRMED ESCALATE (terminal independent cross-check, LEDGER §386/§386b, commit de42498)
+The §393 fork is settled toward the CHARGEABLE-WINDOW / ESCALATE branch, and by a DIFFERENT instrument than
+the roundtable's — strong cross-validation, not a single-apparatus result.
+- **Roundtable apparatus (Sam):** μᵀΣ⁻¹μ Weil–Guinand form + prime-comb whitening, predicted the fork.
+- **Terminal apparatus (Olympus track):** B_full / l2_edge_sweep + overlap-Gram whitening (the §391 fix),
+  driving the GENUINE functional-equation mirror-pair off-line kernel M_β[j,k] = Σ_{γ∈band}
+  [F_j(γ+iβ)F_k(γ+iβ) + F_j(γ−iβ)F_k(γ−iβ) − 2F_j(γ)F_k(γ)] across the σ(=w)×density(=s) surface.
+- **VERDICT (§386):** a WELL-CONDITIONED window exists where on-line holds a positive floor AND off-line
+  prints cleanly negative — NOT where on-line→0 or rcond→0. Two chargeable configs: w=1.5,s=4.5 (rcond 1.5,
+  on-line +2.2e−3, off-line −4.9e−4) and w=2.0,s=5.0 (rcond 2.3, on-line +0.092, off-line −3.4e−5).
+- **VERIFY-BEFORE-SHIP β-sweep (§386b):** at both windows offl/β² is EXACTLY constant across β=0.2→0.01
+  (w=1.5,s=4.5: −0.04933 to 4 figures; w=2,s=5.0: −0.00341), sign stably negative, rcond stable, on-line
+  floor β-independent — a perfect −c(w,s)·β² (the §364/378 δ²-lift law in the whitened basis), persisting
+  cleanly to the RH limit β→0. The non-chargeable config w=3,s=4.0 stays POSITIVE (+8.7e−4·β²). So the
+  window is genuine in the limit that matters, not a large-displacement-only detector.
+- **HONEST CEILING (held, binding):** this is a confirmed well-conditioned NUMERICAL DETECTOR of off-line
+  zeros; its existence IS Weil-positivity = RH-EQUIVALENT (§388). So it is numerical RH EVIDENCE, never a
+  proof route — "escalate" means build it into a rigorous detector and study c(w,s,T), NOT "pins RH."
+  No-free-lunch binds (well-conditioned ≠ a-priori provable).
+- **LOADED NEXT (whenever resumed):** (1) the exact Weil–Guinand kernel match to move §388 from Report to
+  Handle (which test function μ, does Σ⁻¹ reproduce the Weil pairing coefficient-exact); (2) c(w,s,T)
+  scaling of the chargeable window.
