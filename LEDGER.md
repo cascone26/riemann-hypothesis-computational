@@ -12605,3 +12605,27 @@ technology (Weil positivity abstractly yields zero-free statements; numerical RH
 uses argument-principle/Turing with ζ-evaluations — a PRIMES-ONLY window method at critical density may or
 may not exist; subagent lit-check queued). Until (a)-(c): the program is REPORT; the c(δ)=κδ² law and the
 rank-2 mechanism are HANDLE.
+
+## §362c (2026-07-28) — [200,230] ALSO CERTIFIED (s=2.0, 1.8, 1.6; 16-19 probes): the elementary theorem ladder now spans FOUR bands to T=230, still nothing retuned. HANDLE (arb).
+
+## §364 (2026-07-28, Riemann7 autonomous) — THE OFF-LINE-ZERO SIGNATURE MEASURED (rt5_fakezero.py + c(δ) empirics) AND THE REFRAMING IT FORCES: an on-line zero contributes a RANK-1 PSD term, an off-line zero contributes RANK-2 (Re+Im modes) ⟹ an off-line zero BREAKS the §335 exact rank collapse at the Weyl count, forcing λmin > 0 at the Nyquist row. Measured: **c(δ) = λmin_fake(rank row) ≈ κ(w)·δ² — a clean quadratic, sitting 9-12 ORDERS above the true world's collapse** (true λmin ~1e-15; fake: e.g. w=2: 2.6e-5/1.6e-4/6.4e-4/2.5e-3 at δ=0.02/0.05/0.1/0.2 — δ²-ratios exact; κ(w=2)≈0.064, κ(1.5)≈0.011; w=3 saturates beyond δ~0.05). Detection frontiers (‖D‖>margin): s=4.2-4.5 — INSIDE the elementary-certified region. HANDLE (measured) + REPORT (the program).
+
+**THE REFRAMING (the §363 corner made operational — Report until lit-gated and built):** the corner
+observable "λmin → 0 at the Nyquist row" is an UPPER-bound statement, and upper bounds on quadratic forms
+are certified by EXHIBITING A TEST VECTOR — one zero-free elementary evaluation ⟨v, B_full v⟩ with B_full
+computed from the ANALYTIC side (pole+arch−prime, no zeros) and v itself computable zero-free (the analytic
+side's own near-null eigenvector). Combined with a rigorous lower bound c(δ, window) on the fake-world λmin
+(a FINITE-dimensional Gram-geometry problem: transversality of the extra Im-mode against the N on-line
+modes' span — the named analysis ingredient), this yields **ZERO-FREE ZERO-EXCLUSION CERTIFICATES**:
+  certify ⟨v,Bv⟩ ≤ t at the rank row (primes-only input) with t < c(δ) ⟹ no zero with |β−½| ≥ δ at
+  ordinates effectively in the window. At measured κ: t = 1e-8 excludes |β−½| ≥ 4e-4 at w=2.
+Per-window, elementary, never computes a zero — RH-window verification FROM PRIME DATA ONLY, and RH itself
+= the statement that these certificates exist for every window with t → 0 (the corner limit again — the
+wall conserved, but now the certificate DIRECTION at the corner is cheap and the hard part is isolated in
+c(δ): finite-dim geometry, plausibly BGL/frame-theory-provable).
+**GATE FLAGS (mandatory before novelty claims):** (i) lit-check — Weil-positivity/explicit-formula
+zero-free regions are classical; numerical RH verification is classically ζ-based (Turing's method); the
+primes-only critical-density-sampling version may or may not exist — CHECK; (ii) the "effectively in the
+window" localization needs care (Gaussian tails see all zeros — the exclusion statement must charge
+out-of-window zeros' leakage); (iii) c(δ) rigorous lower bound not yet constructed — everything is
+conditional on it. Next runnable: the certificate side (arb upper bound ⟨v,Bv⟩ at a rank row, zero-free).
