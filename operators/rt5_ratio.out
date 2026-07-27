@@ -1,0 +1,31 @@
+Weil/overlap ratio approaching criticality; bent-prime margin (arith sign flip) alongside.
+overlap Gram is ALWAYS PSD (>=0); Weil & bent can go negative — that gap IS the arithmetic.
+
+band (14.0, 44.0)  Weyl~8.3
+    a   n overlap>=0        Weil   W/ovl        bent bent<0?
+ 0.70   6   5.74e+00   +1.40e+00   0.244   +1.38e+00     pos
+ 0.80   7   4.36e+00   +5.57e-01   0.128   +5.32e-01     pos
+ 0.85   7   4.36e+00   +5.57e-01   0.128   +5.32e-01     pos
+ 0.90   7   4.36e+00   +5.57e-01   0.128   +5.32e-01     pos
+ 0.93   8   2.98e+00   +1.45e-03   0.000   -2.66e-02     NEG
+ 0.96   8   2.98e+00   +1.45e-03   0.000   -2.66e-02     NEG
+ 0.99   8   2.98e+00   +1.45e-03   0.000   -2.66e-02     NEG
+ 1.02   8   2.98e+00   +1.45e-03   0.000   -2.66e-02     NEG
+ 1.05   9   1.84e+00   -2.07e-13  -0.000   -3.01e-02     NEG
+
+band (100.0, 130.0)  Weyl~14.9
+    a   n overlap>=0        Weil   W/ovl        bent bent<0?
+ 0.70  10   1.03e+00   +3.06e-01   0.297   +3.03e-01     pos
+ 0.80  12   2.48e-01   +1.14e-01   0.461   +1.14e-01     pos
+ 0.85  13   1.07e-01   +1.83e-02   0.170   +1.75e-02     pos
+ 0.90  13   1.07e-01   +1.83e-02   0.170   +1.75e-02     pos
+ 0.93  14   4.29e-02   +1.16e-02   0.271   +1.04e-02     pos
+ 0.96  14   4.29e-02   +1.16e-02   0.271   +1.04e-02     pos
+ 0.99  15   1.58e-02   +3.24e-03   0.205   +3.21e-03     pos
+ 1.02  15   1.58e-02   +3.24e-03   0.205   +3.21e-03     pos
+ 1.05  16   5.43e-03   +1.23e-03   0.226   +1.18e-03     pos
+
+reading: if W/ovl stays ~0.5 to a=1 and beyond, the arithmetic is a benign bounded
+perturbation (the §372 reduction is tight). If W/ovl DROPS toward 0 as a->1 while overlap
+stays positive, the arithmetic is precisely the ratio-deficit at criticality — and the
+bent-prime going NEG where the true stays >=0 marks the exact sign-sensitive corner (§335).

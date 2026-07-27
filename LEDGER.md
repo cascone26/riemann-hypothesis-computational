@@ -12764,3 +12764,24 @@ Nz=ρ·width+1); the constant's exact value/its w-dependence is not pinned (0.34
 reduction (Weil = O(1)·overlap, band-uniformly) is robust across all 40 (band,a,w) cells. Whether the ratio
 stays bounded BELOW away from 0 as a→1 (not just at these fills) is the precise open sub-question — if yes,
 Weil-uniform ⟺ frame-uniform exactly.
+
+## §372b (2026-07-28, Riemann7) — CORRECTION TO §372: the Weil/overlap ratio does NOT stay ~0.5 to criticality — it CLIFFS TO ZERO at critical density while the overlap frame stays HEALTHY. The §372 "reduction to pure frame theory" is RETRACTED. The arithmetic is exactly what the frame geometry cannot see. HANDLE (measured) — reaffirms §335 and the edge-vs-center law.
+Decisive data, band [14,44] (Weyl~8.3), fills a→criticality, w=2:
+  a=0.70: overlap 5.74, Weil 1.40 (ratio 0.24) · a=0.80-0.90: overlap 4.36, Weil 0.557 (0.13) ·
+  **a=0.93 (n=8, CRITICAL): overlap STILL 2.98 (robustly positive), Weil CLIFFS to +1.45e-3 (ratio 0.0005),
+  and the BENT-prime control (Λ(2)×1.05) goes NEGATIVE −2.66e-2 — with the overlap frame at 2.98!** ·
+  a=1.05: Weil −2e-13 (rank collapse), overlap still 1.84.
+So: at exactly critical density the FRAME geometry (overlap Gram) is perfectly healthy (lmin~3), but the Weil
+form has collapsed to ~0 and the arithmetic sign-probe has flipped NEGATIVE. **The collapse is purely
+arithmetic/discreteness — the overlap Gram is BLIND to it** (exactly §335's "sign-blind controls show no
+threshold", now shown with a bent-prime flip while the frame stays positive). ⟹ §372's claim "Weil-uniform
+bound reduces to the frame (BGLy) bound up to a factor ~2" is FALSE: the O(0.5) ratio holds ONLY in the sparse
+interior; at criticality W/ovl → 0 while overlap stays O(1), so the Weil form's positivity at the corner is
+NOT captured by the frame geometry at all. The arithmetic IS the corner — reaffirming the edge-vs-center law
+and §335, and refuting my own §372 over-reading (the always-PSD overlap Gram could never have carried RH; the
+cliff is where that becomes visible). [Nuance: band [100,130] kept ratio ~0.2-0.46 through a=1.05 with bent
+still positive — its true critical row sits deeper than the tested fills reached; [14,44] hit criticality at
+a=0.93 and shows the cliff cleanly. The cliff is the robust phenomenon at whichever fill reaches the Weyl
+count.] Q1 corner statement reverts to: the corner is arithmetic; the frame reduction was a sparse-interior
+artifact. Verify-discipline win — §372b caught §372's over-claim within the same session by pushing the
+tested regime to criticality.
