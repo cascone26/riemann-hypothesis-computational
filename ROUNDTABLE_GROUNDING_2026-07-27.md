@@ -1,4 +1,4 @@
-# ROUNDTABLE GROUNDING — state as of 2026-07-27 (LEDGER through §353)
+# ROUNDTABLE GROUNDING — state as of 2026-07-27 late (LEDGER through §356)
 
 Paste-ready banked block. Supersedes ROUNDTABLE_GROUNDING_2026-07-26.md (kept for history).
 Everything here is DEPOSITED — restating scores nothing; build on it or ATTACK it.
@@ -112,3 +112,21 @@ the w→0 race needs it). New open q for this table: **Q6 — the k≥3 ladder**
 carry MORE rigidity per level (the a_k of CFKRS), and does the variance→k-th-moment pricing of ΔT keep
 tightening — i.e., is there a k at which the composed rigidity closes the e^{c/w} cut race, or does each
 level buy a constant factor only (difficulty conservation again)? Pre-register before computing, same as k=2.
+
+## ADDENDUM 2 — Q4/Q2/Q6 executed autonomously (§354-356)
+- **Q4 SETTLED (§354):** Bragg law log n* ≈ 2π/s CONFIRMED on the right object (minimizer projection; raw
+  norm always picks n=2 — a selection-notion conflation in older language, corrected). n*_proj = 5/19/43/61
+  across bands to [200,230]. The ½log(γ/2π) fixed-point reading EXCLUDED. **The involution resolves by a
+  third branch neither camp registered: at criticality the major arc's dual partner is the POLE/ARCHIMEDEAN
+  side** (all images γc/2πn < 1.5) — the last enemy's dual is the first, exactly-treated term of every chain.
+  Dirac's thread lands there: quantify the prime↔pole RS-dual weight (open probe).
+- **Q2 partial (§354):** the slots×couplings factorization FAILS as registered (slots flat at 2-3 on both
+  axes; cps carries all growth). The §346 constant is BAND-DEPENDENT: R ≈ C(T)/w², C = 44/40-56/48-75 across
+  the three bands — deriving C(T) still open; needs larger-R regimes to resolve the power structure.
+- **Q6 k=3 rung (§355 pre-reg → §356): PAIRWISE-EXHAUSTED at log order.** Measured Σ𝔖₃ second term
+  b = −2.0001 = EXACTLY the corrected pairwise prediction (−½−½−1; the −1.5 in the registration was a
+  miscount, owned); normalized product-null residual +0.077 ≈ 0; ψ-window skew = small-H discreteness only.
+  A real negative: no new composition rigidity at k=3/log order. The saints' nonabelian depth, if real,
+  lives elsewhere — the §354 pole-side pairing points at the prime↔archimedean interface (a_k↔g_k), not
+  deeper prime-prime correlations. Next: k=3 at the NEXT order; the RS-dual weight probe.
+- Arb-rigor extension in flight at close: w=1.5, n0=3000, s=4.1/4.0 (second width for the theorem).

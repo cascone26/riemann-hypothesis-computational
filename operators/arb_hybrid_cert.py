@@ -19,10 +19,18 @@ from flint import arb, acb, ctx
 
 PREC = 220
 ctx.prec = PREC
-W = arb(2)
+# CLI: [--w W] [--n0 N0] s1 s2 ...   (W must be dyadic-exact: 2, 1.5, 1.25 ...)
+_args = sys.argv[1:]
+_wv, _n0v = '2', 300
+if '--w' in _args:
+    i = _args.index('--w'); _wv = _args[i + 1]; del _args[i:i + 2]
+if '--n0' in _args:
+    i = _args.index('--n0'); _n0v = int(_args[i + 1]); del _args[i:i + 2]
+W = arb(_wv)
+assert W.rad() == 0, "W must be dyadic-exact"
 BAND0, BAND1 = arb(14), arb(44)
 RCUT = arb(95)
-N0 = 300
+N0 = _n0v
 XCUT = 20000
 
 def logpi(): return arb.pi().log()
@@ -216,5 +224,6 @@ def certify(s_str):
     return ok
 
 if __name__ == "__main__":
-    for s_str in (sys.argv[1:] or ["3.9", "3.8"]):
+    print(f"config: w={_wv}  n0={N0}")
+    for s_str in (_args or ["3.9", "3.8"]):
         certify(s_str)
