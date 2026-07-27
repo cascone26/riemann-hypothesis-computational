@@ -1,0 +1,28 @@
+building psi to 20000 and proving eps on [300,20000]...
+  eps enclosure on [300,20000]: [+/- 0.0325]  (upper bound used: [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67])
+
+s=3.9: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
+  charge scalar (eps*||C||_F + exact tail): [+/- 5.58e-13]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_lower(s=3.9) CERTIFIED PD (arb prec 220)
+  => B_full PD, THEOREM-GRADE: arithmetic input = primes<300 exact + proved eps([0.016225154432153496362532957000916370132197995453139991565728768458 +/- 3.09e-67]) on [300,20000] + psi<1.04x beyond
+  smallest pivot: [0.007462649 +/- 4.65e-10]
+
+s=3.8: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
+  charge scalar (eps*||C||_F + exact tail): [+/- 5.54e-13]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  PIVOT 6: [+/- 0.0750] does NOT certify > 0 -> NOT CERTIFIED at s=3.8

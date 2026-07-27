@@ -46,7 +46,7 @@ def omega_acb(r):
 def arch_entry(cj, ck):
     def integ(r, _):
         return F_acb(acb(cj), r) * F_acb(acb(ck), r) * omega_acb(r)
-    ctx.prec = 260
+    ctx.prec = 320
     I = acb.integral(integ, acb(0), acb(RCUT))
     ctx.prec = PREC
     assert I.imag.contains(arb(0)), "arch imag not enclosing 0"
@@ -121,7 +121,7 @@ def tsm_entry(cj, ck):
     """2 Int_{U0}^{UC} e^{u/2} g_pair du  + tail radius beyond UC (envelope, exp-dominated)."""
     def integ(u, _):
         return (u / 2).exp() * g_pair_acb(acb(cj), acb(ck), u)
-    ctx.prec = 260
+    ctx.prec = 320
     I = acb.integral(integ, acb(U0), acb(UC))
     ctx.prec = PREC
     assert I.imag.contains(arb(0)), "tsm imag not enclosing 0"
@@ -141,7 +141,7 @@ def cenv_entry(cj, ck):
     P4 = 4 * W * arb.pi().sqrt() / (2 * arb.pi())
     def integ(u, _):
         return (u / 2).exp() * P4 * (-(u * u) * W * W / 4).exp() * (u * W * W / 2 + a + arb(1) / 2)
-    ctx.prec = 260
+    ctx.prec = 320
     I = acb.integral(integ, acb(U0), acb(UC))
     ctx.prec = PREC
     assert I.imag.contains(arb(0))

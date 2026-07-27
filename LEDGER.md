@@ -12280,3 +12280,16 @@ victory margins 18-1693x say it's bookkeeping); beyond-20000 tail via crude 1.04
   − directional bound on remaining primes < e^{c/w} (closed-form sum, 2-block gap, k=5)
   − smooth tail integral (elementary) − ε·(explicit charge matrix) − Gaussian tail bound.
   Zero-free, formula-only shape, full PSD-region reach at w = 1.2-2.0, T-flat per §348.
+
+## §350 (2026-07-27, Riemann7) — ARB-RIGOROUS COLLECTIVE CERTIFICATE (arb_hybrid_cert.py): B_lower = pole + arch − P_small(n<300) − T_smooth − charge·I CERTIFIED PD at w=2, s=3.9 by interval LDL^T ⟹ B_full PD THEOREM-GRADE with arithmetic input = 79 explicit prime powers + ε ≤ 0.0325 PROVED in-script (exhaustive interval check of |ψ(x)−x|/x on [300, 20000]) + classical ψ<1.04x beyond. First theorem-grade certificate of the collective architecture. s=3.8 fails on INTERVAL WIDTH (pivot enclosure ±0.075 — an integral width blowup at w=2's narrower Gaussians, not a sign failure); retry at integral prec 320 running. HANDLE (s=3.9) / width-limited (s=3.8).
+
+Details: PREC 220, integrals 260 (retry 320). ε enclosure [0, 0.0325] proved by exhaustive integer-breakpoint
+sup over [300, 20000] (interval ψ accumulation, [n,n+1) handled by max(|ψ(n)−n|,|ψ(n)−n−1|)/n). Charge scalar
+(ε·‖C_env‖_F + exact tail beyond 20000 via 1.04-envelope + smooth-tail radius): [±5.6e-13] — 3 orders under
+the s=3.9 margin (6.8e-10). All acb integrals with imag-encloses-0 assertions + explicit tail radii; envelope
+charge integrand is positive/entire (no abs-of-oscillation inside the integral — enveloped analytically);
+NO ** on balls (§340 gotcha respected). Smallest pivot at s=3.9: [0.007462649 ± 4.65e-10].
+**What is now a THEOREM (config-level):** the Weil form on the 8 symmetrized Gaussian probes (band [14,44],
+w=2, s=3.9) is PD, proven from: 79 prime powers' closed forms + a finite computation about ψ up to 20000 +
+ψ(x) < 1.04x + interval arithmetic. No zeros consulted anywhere. This is the §347-349 architecture surviving
+first contact with full rigor — the fluctuation-charge route is not a float artifact.
