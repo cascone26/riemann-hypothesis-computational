@@ -92,3 +92,21 @@ not in this doc. Chat seats HAVE Bash (agent_host.js:453) — runs are legitimat
 request. Tools: ~/projects/riemann/operators/ — l2_edge_sweep (instrument), rt5_specs/followup/kprobe/
 collective/dtprice/budget/hybrid (this arc, all runnable), arb_dense_cert + arb_hybrid_cert (rigor),
 apriori_chain/arch_floor (§341 minorants), arsenal/ (t01 gate etc.). LEDGER §§343-350 = this arc.
+
+## ADDENDUM — the saints' table + the k=2 arrow, EXECUTED (§351-352)
+Saints' crystallization banked (§351): over F_q the suppression is charged by nonabelian monodromy
+(Katz–Sarnak); over ℚ the idele class group is abelian — the Euler-product completeness that gives the
+positive object starves Schur of the irreducible that would force the edge. U(N) makes only g_k; primes live
+in a_k, outside the group. The missing nonabelianness can only live in how primes COMPOSE (correlations /
+singular series). Test: an ARROW (irreversibility), read not built; pre-register before computing.
+EXECUTED with pre-registration in ink (§351 criteria, then §352 measurements, all zero-free):
+  A: Σ_{h≤H}𝔖(h) − H slope vs log H = **−0.48** (registered arrow −0.5±0.05; abelian null 0 EXCLUDED).
+  B: ψ short-interval variance, [Var/H − log x̄] slope = **−0.95** (registered −1.0±0.15; Poisson EXCLUDED).
+  C: our ΔT entry vs covariance models: actual² = 5.2e-12 ≤ H-L prediction 7.9e-12 << Poisson 2.6e-11 —
+     PASS: **the singular-series rigidity IS quantitatively the §347 self-averaging** (~3.2x below Poisson).
+⟹ The nonabelian rigidity is DISCOVERED, measured, arithmetic, zero-free — and load-bearing in the hybrid
+architecture via variance pricing of the fluctuation charge (~3x tighter than the pointwise ε-charge when
+the w→0 race needs it). New open q for this table: **Q6 — the k≥3 ladder**: does the k-point singular series
+carry MORE rigidity per level (the a_k of CFKRS), and does the variance→k-th-moment pricing of ΔT keep
+tightening — i.e., is there a k at which the composed rigidity closes the e^{c/w} cut race, or does each
+level buy a constant factor only (difficulty conservation again)? Pre-register before computing, same as k=2.
