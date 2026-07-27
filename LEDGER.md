@@ -12505,3 +12505,17 @@ the certificate. This is the §341 "formula-only" goal REALIZED at rigor grade, 
 `x == x` fires on every healthy ball (cost: two spurious debug cycles). Use math.isnan(float(x.mid())).
 Also: arb's ball-argument digamma enclosures are uselessly wide (±6.6 for radius-0.01 balls) — prefer point
 evaluations + analytic monotonicity/Lipschitz over ball propagation for special functions.
+
+## §360 (2026-07-27/28, Riemann7 autonomous) — THE RIGOR MAP EXTENDS TO A SECOND WIDTH AND THE ELEMENTARY THEOREM TO A SECOND WIDTH: w=1.5 collective certificate CERTIFIED at s=4.1 AND s=4.0 (its deepest PSD rows, n0=3000, ε ≤ 0.0114-range proved in-script, charge 1.7e-14); elementary (zero-integration) theorem at w=3 reaches s=4.1 (4.5/4.3/4.2/4.1 all CERT — already past §341's float reach); deepening-to-0 was a clean negative (the [0,7] floor was never binding). HANDLE (arb).
+
+**Collective theorem coverage now:** w=2: s=3.9, 3.8 (§350/350b) + w=1.5: s=4.1, 4.0 (arb_hybrid_w15.out;
+smallest pivots [0.00104 ± 5e-19] at 4.1) — BOTH widths certified to their deepest PSD grid rows. The
+architecture (resolved primes + PNT-smooth collective + proved-ε charge) is theorem-grade wherever it has
+been asked to perform.
+**Elementary (zero-integration) theorem coverage:** w=2: s=4.5/4.4/4.3 (§359); w=3: s=4.5/4.3/4.2/4.1
+(arb_elementary_w3.out — smallest pivots 0.73/0.45/0.34/0.26; charge ~1e-30 at w=3, envelope-crushed) —
+the w=3 elementary reach EXCEEDS §341's float chain (4.2) at full rigor. s=4.0/3.9 fail at h=0.02;
+h-refinement run (dyadic h=1/256) in flight — s=4.0 would supersede §341's stretch target rigorously.
+**Deepened-variant negative (banked §359 context):** extending minorant cells to r=0 changed the failing
+s=4.2 (w=2) pivot by 5e-4 relative — the low-zone floor was never the binding loss; in-band h-residue is.
+(Also caught: arb('0.005') is non-dyadic — the HCELL.rad()==0 assert correctly refused it; dyadic 1/256 used.)

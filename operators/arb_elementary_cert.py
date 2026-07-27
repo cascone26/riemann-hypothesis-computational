@@ -24,13 +24,22 @@ from flint import arb, acb, ctx
 
 PREC = 220
 ctx.prec = PREC
-W = arb(2)
+_args = sys.argv[1:]
+_wv = '2'
+if '--w' in _args:
+    i = _args.index('--w'); _wv = _args[i + 1]; del _args[i:i + 2]
+_hv = '0.02'
+if '--h' in _args:
+    i = _args.index('--h'); _hv = _args[i + 1]; del _args[i:i + 2]
+W = arb(_wv)
+assert W.rad() == 0
 BAND0, BAND1 = arb(14), arb(44)
 N0 = 300
 XCUT = 20000
 R1 = arb(0)          # cells extend to 0 — monotonicity lemma holds on all of (0,inf), no flat floor needed
 RMAX = arb(120)      # minorant support
-HCELL = arb('0.02')  # cell width (dyadic)
+HCELL = arb(_hv)     # cell width (dyadic)
+assert HCELL.rad() == 0
 
 def probes(s):
     cs = []
@@ -265,5 +274,6 @@ def certify(s_str):
     return True
 
 if __name__ == "__main__":
-    for s_str in (sys.argv[1:] or ["4.5", "4.4", "4.3", "4.2"]):
+    print(f"config: w={_wv}")
+    for s_str in (_args or ["4.5", "4.4", "4.3", "4.2"]):
         certify(s_str)

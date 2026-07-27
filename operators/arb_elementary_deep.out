@@ -18,3 +18,11 @@ s=4.2: 8 probes — B_elem (all closed forms, 6000 minorant cells) ...
 s=4.1: 8 probes — B_elem (all closed forms, 6000 minorant cells) ...
   charge upper endpoint: [5.6697116205821732762745083000962830409360614528023545822119643143e-13 +/- 5.16e-78]
   row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  PIVOT 4: [-1.72378186500917223913809135841516800407755951471260516 +/- 5.80e-54] not certified > 0 -> NOT CERTIFIED at s=4.1

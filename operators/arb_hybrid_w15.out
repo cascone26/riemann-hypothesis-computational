@@ -20,3 +20,12 @@ s=4.0: 8 probes — rigorous B_lower (36 arch + 36 tsm integrals)...
   charge scalar upper endpoint (exact): [1.7055933087445244467641969491311571859357106648709515955397736486e-14 +/- 4.10e-79]
   row 0 done
   row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_lower(s=4.0) CERTIFIED PD (arb prec 220)
+  => B_full PD, THEOREM-GRADE: arithmetic input = primes<3000 exact + proved eps([0.0058589884425257682492831712981416823539069157149278587356651108930 +/- 4.60e-68]) on [3000,20000] + psi<1.04x beyond
+  smallest pivot: [0.000332458750031575 +/- 7.49e-19]

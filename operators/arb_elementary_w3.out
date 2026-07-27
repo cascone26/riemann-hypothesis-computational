@@ -1,0 +1,55 @@
+building psi to 20000, proving eps on [300,20000] ...
+  eps upper = [0.032452026739169079281653745575135120132197995453139991565728768458 +/- 3.64e-67]
+building Omega left-endpoint values (monotonicity lemma) ...
+  6000 cells, [0,7] floor = Omega(0) = [-5.3721834192256655822329574974497422890145392516235538431689026310 +/- 7.67e-66]
+config: w=3
+
+s=4.5: 7 probes — B_elem (all closed forms, 6000 minorant cells) ...
+  charge upper endpoint: [9.6613001598036630935683956890867531624123915073671414848536363494e-31 +/- 1.68e-96]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  ALL 7 PIVOTS POSITIVE -> B_elem(s=4.5) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.72883200716123001326718718042572788302005908793435900385 +/- 3.44e-57]
+
+s=4.3: 7 probes — B_elem (all closed forms, 6000 minorant cells) ...
+  charge upper endpoint: [9.5542545321637756695719812650611337140546016667815227815303498524e-31 +/- 1.69e-96]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  ALL 7 PIVOTS POSITIVE -> B_elem(s=4.3) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.45112069919341602393443929542109273719096100691815560655 +/- 5.32e-57]
+
+s=4.2: 8 probes — B_elem (all closed forms, 6000 minorant cells) ...
+  charge upper endpoint: [1.1291083926896359385692033873716202318059087165274667453473303508e-30 +/- 2.78e-95]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_elem(s=4.2) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.34462424566452169122786568720353099922085330565464139447 +/- 4.81e-57]
+
+s=4.1: 8 probes — B_elem (all closed forms, 6000 minorant cells) ...
+  charge upper endpoint: [1.1196924487617084848264994610887761752526790716158287026506109908e-30 +/- 4.36e-95]
+  row 0 done
+  row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+  row 6 done
+  row 7 done
+  ALL 8 PIVOTS POSITIVE -> B_elem(s=4.1) CERTIFIED PD
+  => B_full PD by ELEMENTARY CLOSED FORMS ONLY (erf/exp/cos/Lambda + digamma gridpoints + proved eps + psi<1.04x). smallest pivot: [0.25792786370939541329426621104021386102643911538296454822 +/- 8.18e-57]
