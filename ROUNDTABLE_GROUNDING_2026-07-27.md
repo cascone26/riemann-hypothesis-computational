@@ -229,3 +229,22 @@ decoupling + wrong-ensemble correction), plus two real structural byproducts. Th
   bent-prime (Λ(2)×1.05) flips NEGATIVE. The frame geometry is BLIND to the collapse — the arithmetic IS
   the corner (reaffirms §335, edge-vs-center). Net: the corner is not frame-reducible; RH-on-this-front's
   uniformity is genuinely arithmetic, living in the ratio-cliff at critical density.
+
+## ADDENDUM 6 — the corner mapped to its core (§373-375, autonomous)
+- **§373 collapse pinned to the EXACT RvM count:** the Weil form cliffs (W/overlap→0) precisely when probe
+  count = Riemann–von Mangoldt zero count of the band (n*/RvM = 0.92→0.99 across T=14..275). §335 made
+  quantitative: n_crit(band) = N(hi)−N(lo). Certificate geometry now density-pinned on all 3 axes (count
+  R≈ρ/w² §367, reach s≈1/ρ §367B, collapse n_crit=RvM §373).
+- **§374 no fixed-direction zero-free certificate:** projecting the Weil form onto the frame-null (or any
+  a-priori) direction gives a non-tight/benign inequality (margin along frame-null is 1-12 orders above the
+  true lmin). The RH-critical direction is the full form's OWN eigenvector — arithmetic-determined, circular
+  to project onto. Precise obstruction: the corner's critical functional is not a-priori constructible.
+- **§375 that direction IS the zero-interpolating mode (BRS §336 realized):** at n_crit the near-null φ=Σv_full·F
+  VANISHES on the zero set (ratio zeros/midpoints 0.00–0.07) while the frame-null does not (≥0.73). The
+  collapse mode is the Gaussian combination interpolating zero on the zeros. This NAMES §374's obstruction
+  (the direction is defined by the zeros ⇒ no zero-free choice fixes it) and REAFFIRMS the wall: the §343 Q5
+  ruling "zeros = maximal-density sampling set = wall re-lettered" is now literally realized.
+NET: the corner is fully characterized and confirmed the wall. RH-on-this-front = positivity of the Weil form
+along the zero-interpolation mode at critical density — an arithmetic (not frame) statement, conservative per
+Q5. The genuinely open lever is no longer "characterize the corner" (done) but "is there structure OFF the
+Gaussian class" — the next attack.
