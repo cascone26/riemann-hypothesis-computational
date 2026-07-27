@@ -1,0 +1,8 @@
+sieving Lambda to 2000000 ...
+   u*   sig   g2_real g2_iaaft mean      sd       z       verdict
+  3.0  0.80   +10.111        +9.301   0.860   +0.94 pair-dominated ~0
+  4.0  1.00   +12.819        +6.465   4.550   +1.40 pair-dominated ~0
+  5.0  1.20    +9.046        +2.608   2.309   +2.79 pair-dominated ~0
+
+reading: IAAFT preserves marginal+spectrum => g2_real-g2_iaaft is the CONNECTED kappa_4 only
+(marginal spikiness now in BOTH, cancels). sign+|z|>3 = clean beyond-pair verdict per §383.

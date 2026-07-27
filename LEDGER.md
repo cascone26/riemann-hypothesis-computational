@@ -12983,3 +12983,23 @@ connected 4-point singular series 𝔖₄(d1,d2,d3), d's distinct & nonzero (exc
 construction) — the clean immune object, extends §356/361b machinery. Verify-catch: surrogate-null must match
 the RIGHT invariants — for a beyond-pair test the marginal is a nuisance parameter to PRESERVE, not destroy.
 The z=+30 is real but it is the spikiness of the primes, already known; the roundtable's question is untouched.
+
+## §384b (2026-07-28, Riemann7) — instrument (a) DONE RIGHT (IAAFT surrogate): the connected-κ₄ beyond-pair signal is NOT significant — γ₂→0, PAIR-DOMINATED at 4th order ⟹ per §383 falsifier, "wall re-lettered." The §384 z=+30 was FULLY the marginal spikiness (IAAFT reproduces it). One hedge: z trends UP with scale. HANDLE (measured).
+IAAFT surrogate (Schreiber–Schmitz: preserves marginal histogram AND power spectrum, Gaussianizes only higher
+CORRELATIONS — the correct pair-matched null). g2_real vs g2_iaaft, corner scales u*=3/4/5:
+  u*=3: real +10.11 vs iaaft +9.30 (sd 0.86) → z=+0.94 · u*=4: +12.82 vs +6.47 (4.55) → z=+1.40 ·
+  u*=5: +9.05 vs +2.61 (2.31) → z=+2.79. **All |z|<3** (pre-reg threshold). The huge §384 excess (+10) is
+REPRODUCED by IAAFT (+9.3 at u*=3) ⟹ it was marginal spikiness of Λ, exactly as §384 flagged; the genuine
+beyond-pair (connected-κ₄) residual does NOT clear the pair-matched null. Per §383 3-way falsifier: **γ₂→0
+branch ⟹ pair-dominated even at 4th order, wall re-lettered** (NOT the platykurtic-pin lead, NOT beyond-pair-
+certified). So Dyson's instrument (a), run with the correct null, does NOT yield the 3-clause middle object at
+these scales.
+**HONEST HEDGE (the one live thread):** z trends UP monotonically with resonant scale u* (0.94→1.40→2.79),
+approaching 3σ at u*=5. Either (i) a genuine weak beyond-pair signal emerging at larger scales, or (ii) IAAFT
+statistics degrading at large u* (wider Gaussian bump → sparser field → fewer effective blocks → noisier). Not
+resolvable at NMAX=2e6 / this block count. PRE-REGISTERED NEXT: rerun at NMAX=2e7-1e8 with u*=5,6,7 and more
+blocks — if z keeps climbing past 3σ with range, the beyond-pair signal is real (revisit the falsifier); if it
+saturates <3σ, wall re-lettered stands firm. Tao's (b) analytic connected-𝔖₄ sign remains the immune
+cross-check (structurally-zero null, no statistics) — the definitive settler, still worth deriving.
+NET for the roundtable: instrument (a), correctly nulled, lands on "wall re-lettered" with a scale-trend caveat;
+the κ₄ pin is NOT established (and NOT cleanly refuted — the trend is the open thread).
