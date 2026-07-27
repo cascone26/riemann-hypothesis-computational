@@ -212,3 +212,20 @@ decoupling + wrong-ensemble correction), plus two real structural byproducts. Th
   ε-factor (theta/root-number winding) entire; it prices no charge in the variance channel. Front CLOSED.
   The sharpest target reverts to §363: the M-S pair-rigidity ↔ corner-rank inequality (Q1's single w-uniform
   inequality). Gate it hard before investing.
+
+## ADDENDUM 5 — density law + the frame-reduction that failed (§366-372b, autonomous)
+- **Count & reach both density-governed (§366-367):** R ≈ ρ(T)/w² (resonant-core count = Weyl zero density
+  ρ(T)=(1/2π)log(T/2π) over w², clean rel-rms 0.11); AND the PROVEN elementary-certificate reach tracks the
+  Nyquist spacing 1/ρ(T) to 5-11% across T=29..440. The §359-362 theorem grid is ONE density-governed
+  boundary, not scattered points.
+- **s↔γ (§368):** the critical resonant scale is RS-order (~T/2π) but O(1)-drifts, not a pinned constant.
+- **Q3 lit-gate (§370):** the arch matrix is a NAMED object (Gaussian localization / cross-Toeplitz /
+  Berezin-Daubechies); the collapse is the NAMED BGLy-2009 / Seip critical-density frame theorem (rate
+  (1−a²)²); the UNIFORM sub-critical lower bound (= Q1) is flagged OPEN in the frame literature. Do not
+  re-derive the frame side.
+- **The reduction that FAILED, honestly (§372→§372b):** measured Weil ≈ 0.5·overlap-Gram in the sparse
+  interior → briefly claimed "Q1 reduces to the pure Gabor-frame bound." REFUTED by pushing to criticality:
+  at the critical fill the overlap frame stays HEALTHY (lmin≈3) while the Weil form cliffs to ~0 and the
+  bent-prime (Λ(2)×1.05) flips NEGATIVE. The frame geometry is BLIND to the collapse — the arithmetic IS
+  the corner (reaffirms §335, edge-vs-center). Net: the corner is not frame-reducible; RH-on-this-front's
+  uniformity is genuinely arithmetic, living in the ratio-cliff at critical density.
