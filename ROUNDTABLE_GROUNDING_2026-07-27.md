@@ -486,3 +486,35 @@ the roundtable's — strong cross-validation, not a single-apparatus result.
 - **LOADED NEXT (whenever resumed):** (1) the exact Weil–Guinand kernel match to move §388 from Report to
   Handle (which test function μ, does Σ⁻¹ reproduce the Weil pairing coefficient-exact); (2) c(w,s,T)
   scaling of the chargeable window.
+
+## ADDENDUM 10 — stop-window posts (§394-395): the §393 SIGN/FRAME correction + auto-Scribe consensus
+Three posts (55-57) landed in the window between the disk-recovery restart and the chair stop; banked here.
+The material item: the §393 "escalate" verdict has a frame subtlety that must be reconciled before it's
+fully earned.
+- **§394 Riemann genuine off-line kernel + SIGN/FRAME CORRECTION (/tmp/riemann_local_offline.py, Handle-toy):**
+  Displacing a CENTRAL zero (γ=79.3): global off-line λmin is β-invariant, eigenvector COM at ~31 (Dyson's
+  localization confirmed). The LOCAL statistic (submatrix at the displaced height, σ=1.0, rcond=0.039
+  WELL-CONDITIONED): 1.000→1.023→1.094→1.431 across β=0/0.15/0.30/0.60 — cleanly β-monotone and SHARPENS as
+  σ→1. So off-line IS visible at well-conditioned σ in the local (zero-height) statistic → Hilbert's "no σ
+  both robust and discriminating" FAILS on the genuine kernel. **BUT THE FRAME:** for a Gaussian test
+  function the off-line mirror pair is exp(β²/2σ²)cos(·)−1 > 0 at the center — it ENHANCES the zero-sum M.
+  The RH-pinning object is **W = (archimedean+prime) − M = C − M**; off-line RAISING M *lowers* W toward
+  indefinite. Riemann read M's local margin (up=signal) — correct signal, INVERTED frame. So the genuine
+  adjudicator is **λmin(C−M)**, not λmin(M): need λmin(W_on)≥0 AND λmin(W_off)<0 at the same
+  well-conditioned σ. The C−M subtraction (genuine archimedean+prime C from C4_offline_zero.py) has NOT been
+  run in the roundtable — it is the actual §393 decider.
+- **RECONCILIATION FLAG vs terminal §386/§386b (commit de42498):** the terminal's B_full / l2_edge_sweep
+  instrument uses the ALREADY-SUBTRACTED Weil form (B_full = pole+arch−prime−…), so its "off-line prints
+  cleanly negative" likely has the frame RIGHT — i.e. the two tracks probably agree once the roundtable
+  forms C−M. So this is a RECONCILIATION, not a reversal. But until the C−M subtraction is run and matched
+  against B_full, the §393-RESOLVED/ESCALATE (commit e664c0f) stands as PROVISIONAL-IN-FRAME: the
+  discrimination is robust and β-monotone (the ROBUST-WINDOW half), the subtraction decides the sign.
+- **§395 AUTO-SCRIBE CONSENSUS (msg 57) — the night in one banked block:** Item 1 SETTLED-POSITIVE (κ4
+  certified nonzero, pin disproved for Σc_w at this corner/functional). Item 4 SETTLED-BARRED (C₂ Parity-Bar
+  Lemma). Item 5 SETTLED branch-B (Character-Immunity). Instrument (c) CLOSED-INCAPABLE, (c′) CLOSED
+  (Hilbert collapse: smooth law → strength lives in t=m₁/σ≈0.0024, Σc_w dies by the MEAN not the tail).
+  Weil bridge μᵀΣ⁻¹μ certified STRUCTURAL + no-free-lunch (RH-equivalent → "spectral window pins RH"
+  forbidden). Margin chain resolved (stable O(1) floor ~0.366 once full-rank; thins/grows both were rank
+  filling in). UNFIRED: Dyson's split-sample t* battery (μ,Σ never arrived before the disk filled) — armed
+  for the next table. All margin MAGNITUDES remain Report until the canonical inner-product / kernel-match
+  derivation lands (four consumers waiting).
