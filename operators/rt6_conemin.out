@@ -1,0 +1,7 @@
+s=36 (RT checkpt): 27 shapes | full min-eig -2.0453 max +0.3944 | off-diag O: min -1.8724 max +0.3891 ||O||=1.8724
+105-adjacent s=60: 75 shapes | full min-eig -5.8186 max +0.9842 | off-diag O: min -5.6387 max +0.9860 ||O||=5.6387
+1155-adjacent s=120: 300 shapes | full min-eig -24.0350 max +3.7995 | off-diag O: min -23.8493 max +3.8021 ||O||=23.8493
+
+caveat: MY normalization (Aconn=alternating local sieve), NOT the RT's exact connected-6-pt object
+(couldn't reproduce their p=5,s=36 checkpoint {0.6,3.49,-7.56}). SIGN cross-check only:
+O min-eig sign per cell; a NEGATIVE that is aligned+N-stable would warrant RT reconciliation.

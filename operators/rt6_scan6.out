@@ -1,0 +1,13 @@
+P1: 4-point gap-triple {0,d1,d1+d2,36}, p=5 — 27 unordered shapes
+  value histogram: {-0.05: 2, -0.01: 9, 0.01: 15, 0.03: 1}
+  shapes near target values: []
+
+P3: 6-point palindrome {0,d1,d1+d2,36-d1-d2,36-d1,36}, p=5
+  value histogram: {-0.01: 6, 0.0: 50}
+  shapes near target: []
+
+P4: A_5 as function of d mod 5 for symmetric 3-term progression {0,d,2d,...}? quick scans:
+  X={0,2,34,36}: A_5 = -0.012;    X={0,4,32,36}: A_5 = -0.012;    X={0,6,30,36}: A_5 = +0.027;    X={0,8,28,36}: A_5 = +0.008;    X={0,10,26,36}: A_5 = +0.027;  
+
+reading: if any parametrization's value multiset contains the target 5-pattern
+  [-7.56, -7.56, 0.6, 3.49, 3.49] on its tested cells, that is the RT's object — proceed to O-kernel build.

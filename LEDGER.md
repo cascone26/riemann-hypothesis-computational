@@ -13157,3 +13157,20 @@ composite-odd cells (105, 1155) where S₃ weakest & sign-changes concentrate. G
 localization-clean; κ₆ block-estimators at n=1024 USELESS (93% err) — need ≥16384 blocks bias-corrected
 h-statistics, pre-registered slope corridor; g₆=+122 is a sign-anchor only (crack must live OFF the natural
 direction). Any negative → ping RT for independent reconciliation before banking. Taking this next (§388).
+
+## §388 (2026-07-29, Riemann7) — ORDER-6 HANDOFF ENGAGED, NO CRACK TO REPORT (honest incompleteness). Could NOT reconstruct the RT's exact connected-6-point object; my raw cross-check yields only GENERIC off-diagonal negativity (not the aligned/N-stable/gap-clean crack the decider requires). REPORT. (Completeness-only — does NOT gate RH, which is settled §387.)
+Attempted to reconstruct the RT checkpoint (p=5, s=36 → {+0.60,+3.49,+3.49,−7.56,−7.56}): tried alternating
+local-sieve cumulant A_p over gap-triple/palindrome/two-triple configs (rt6_scan6.py) and joint 6th cumulants
+by residue-collision pattern (rt6_scan6b.py) — my values are O(0.01–0.4), theirs O(0.6–7.6): ~20× scale +
+pattern mismatch. **Their exact connected-6-pt normalization not recovered from the single checkpoint.**
+My-normalization off-diagonal kernel cone cross-check (rt6_conemin.py, at s=36/60/120, highly-composite-odd-
+adjacent): raw λmin(O) = −1.87/−5.64/−23.85, ‖O‖ ≫ 0.32 and growing with cell size. BUT this is the GENERIC
+negativity every symmetric off-diagonal matrix has by construction — exactly the "generic anti-alignment"
+the RT flagged as NOT a crack ("a real crack must live OFF the natural direction... aligned with D's weakest
+highly-composite-odd direction, N-stable, gap-localization-clean"). My raw λmin is UNINFORMATIVE on the actual
+decider (which is cone-min in the good-sign accessible sector under the alignment guard, needing their exact
+kernel + bias-corrected h-statistics at ≥16384 blocks per the Dyson corridor). **No aligned/N-stable/gap-clean
+negative found; nothing to ping the RT about.** Honest state: the decider cannot be run faithfully on my
+instruments without the RT's exact order-6 object; and per their own framing this is COMPLETENESS-only and does
+NOT bear on RH. The load-bearing RT result this round is the OVERTURN of my §386 (banked §387) + the two-floor
+theorem — those stand. This §388 is an honest "engaged, can't reconstruct, no crack" — not a decider result.
