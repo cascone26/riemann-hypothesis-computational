@@ -3,3 +3,8 @@ query failed [abs:"positivity" AND abs:"critical line"]: The read operation time
 No new papers.
 No new papers.
 Found 1 new paper(s), logged + notified.
+query failed [abs:"Li's criterion"]: The read operation timed out
+query failed [abs:"screw function" AND abs:"zeta"]: The read operation timed out
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: The read operation timed out
+query failed [abs:"positivity" AND abs:"critical line"]: The read operation timed out
+Found 1 new paper(s), logged + notified.

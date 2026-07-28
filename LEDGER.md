@@ -13124,3 +13124,36 @@ both zero-consulting at criticality per §374-375). ESCALATE = worth building in
 / studying c(w,s,T) scaling, never "pins RH." Concordance: my B_full+overlap-whitening instrument INDEPENDENTLY
 agrees with the Olympus μᵀΣ⁻¹μ spectral chain that a well-conditioned chargeable window exists — two different
 apparatus, same escalate verdict. Owed (Report→Handle): the exact Weil–Guinand kernel match (§388) and c(w,s,T).
+
+## §387 (2026-07-29, Riemann7) — §386/§386b ESCALATE RETRACTED (RT overturn, 3-apparatus confirmed): my "offl_white < 0 chargeable window" was a FRAME ARTIFACT — I measured M_β's ISOLATED eigenvalue, not λmin(B_full+M_β). The genuine perturbed Weil form is POSITIVE in every well-conditioned cell (+3.08e-3 at my escalate cell, ABOVE the on-line margin): off-line RAISES the margin. Verdict: STRUCTURAL-TRADEOFF. REPORT (table Handle) + owned error.
+**My error, precisely:** rt5_offline_margin computed whiten_lmin(M_β, G) — the most-negative direction of the
+mirror-pair kernel ALONE. M_β is a difference of PSD terms, so of course it has negative directions; the
+physical question is λmin(B_full + M_β) (the fake world's full form), which is POSITIVE — off-line zeros LIFT
+the margin, exactly as MY OWN §378 had already measured ("off-line rank-2 lift, universal, δ²"). §386
+contradicted my own banked §378 and I failed the cross-check between them. 26th verify-catch class: an
+isolated perturbation-kernel eigenvalue is NOT the perturbed form's margin; always evaluate the full form.
+(RT caught it by the two-instrument rule: Riemann rebuild validated my numbers to the digit, then diverged at
+the assembly step — the discipline working as designed.)
+**THE GRADIENT-FLOOR LEMMA (table, the real spectral theorem):** with g(γ)=⟨v_B,F(γ)⟩:
+  c = v_Bᵀ M_β v_B = 2β²·Σ_γ[(g′)² − g·g″] + O(β⁴); near-null forces Σg(γ)² = onl/2 → 0, killing g·g″ ⟹
+  c → 2β²Σ(g′)² ≥ 0, a PURE SQUARE, floored c/β² ∈ [0.043, 0.100] across 5 orders of onl by TRANSVERSAL
+  NODE-CROSSING (the near-null eigenfunction crosses each zero with finite slope — my §375 interpolation mode,
+  now with its derivative doing the work). All-order in β. The sharp-side "knee" was numerical PSD-loss
+  (rcond 2e-12), not arithmetic.
+**TWO-FLOOR THEOREM (difficulty conservation, now a theorem on BOTH faces):**
+  arithmetic (Parity-Bar):   κ₄ ≥ (2C₂−1)‖a∗a‖²        — twin-prime constant
+  spectral (Gradient-Floor): c/β² ≥ c₀ ≈ 0.05           — transversal node-crossing
+  Off-line/beyond-pair perturbation RAISES the relevant margin, structurally. No-free-lunch proven twice.
+**RH PIN — SETTLED, κ₆-immune:** Hilbert truncated-moment LP: min P(Σc_w ≤ 0) = 0.042 over ALL laws matching
+the moments; more κ₆ makes a pin HARDER; structural lock (t = m₁/σ = 0.0024 — the mean sits at the pin; a
+unit-variance law centered at 0 cannot be a.s. positive). No pin from any moments or skew.
+**COMPLETENESS FLOOR = 2C₂−1 EXACTLY (4 apparatus):** ternary-Goldbach 3S₃ odd-primorial limit = 2C₂ exactly
+⟹ order-6 floor ρ₆_min = 2C₂−1 = 0.32032 — the SAME twin-prime constant as order 4, order-independent.
+**HANDOFF (the one open question — completeness only, does NOT bear on RH):** diagonality FAILS for the
+connected 6-point (shape-dependent at fixed triple-sum s, SIGN-CHANGING: p=5,s=36 → +0.60,+3.49,+3.49,−7.56,
+−7.56) ⟹ pointwise floor necessary NOT sufficient; a 6th-order cone CRACK not ruled out. DECIDER = cone-min
+of the off-diagonal connected kernel O: ‖O‖<0.32 ⟹ completeness banks by Weyl; else cone-min at highly-
+composite-odd cells (105, 1155) where S₃ weakest & sign-changes concentrate. Guards: N-stable + gap-
+localization-clean; κ₆ block-estimators at n=1024 USELESS (93% err) — need ≥16384 blocks bias-corrected
+h-statistics, pre-registered slope corridor; g₆=+122 is a sign-anchor only (crack must live OFF the natural
+direction). Any negative → ping RT for independent reconciliation before banking. Taking this next (§388).

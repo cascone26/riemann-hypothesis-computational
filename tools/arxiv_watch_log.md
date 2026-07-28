@@ -452,3 +452,11 @@
   Cats: math.NT
   https://arxiv.org/abs/2503.15832v2
   > Assuming the generalized Riemann hypothesis, we sharpen the error terms in a number of estimates related to the distribution of low-lying zeros of Dirichlet $L$-functions. The refinements, building upon earlier work of Omar, come from the use of the positivity technique, which involves choosing cert
+
+## 2026-07-28 — 1 new paper(s)
+
+- **2607.09797v3** (2026-07-09) [GM/low-signal category] — Explicit formula for the discrete Laplace transform of the Möbius function, related special functions, and a criterion for the Riemann hypothesis
+  Authors: Sergey Liflandsky
+  Cats: math.GM
+  https://arxiv.org/abs/2607.09797v3
+  > In this paper, we assume that all the zeros of the Riemann zeta function are simple. Under this assumption we give an explicit formula for the function $Φ(e^{-t})=\sum_{n=1}^{\infty}μ(n)e^{-nt}$, as a function of the values of $ζ(s)$ and $ζ'(s)$ at the odd integers and as a function of the zeros of 
