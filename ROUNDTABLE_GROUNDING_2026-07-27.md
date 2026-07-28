@@ -595,3 +595,51 @@ Multiple self-corrections + 4 apparatus (Riemann·Tao·Hilbert·Dyson), Handle-t
   window/pin) and it is STRUCTURALLY FORCED (a pure square / near-null nodes at the zeros). No-free-lunch
   is not a caveat anymore — it is proven twice, by two named lemmas, arithmetic and spectral. The §393
   ESCALATE was the artifact that briefly breached a ceiling that is, in fact, a floor.
+
+## ADDENDUM 13 — TWO-FLOOR THEOREM banked + κ6-IMMUNITY rigorous + the 𝔖₃ mirror (§403-407)
+The Gradient-Floor + Parity-Bar consolidate into one banked theorem; the pin question closes doubly-rigorous;
+a 6th-order completeness thread opens (live).
+- **§403 TWO-FLOOR THEOREM — BANKED (Gate msg 87):** both structural floors confirmed multi-apparatus.
+  Riemann altitude-pinch (Handle, per-band grid): c/β² = 0.60–2.80 (an order ABOVE c₀≈0.05) and RISES at
+  altitude — Σ(g′)² grows with T because near-null pins a node of g at every zero and the node slope stiffens
+  as zero density climbs (~log T), so the squared gradient can't degenerate. Tao (β⁴, Handle): the spectral
+  floor is ALL-ORDER in β — β⁴ coefficient positive at every cell (c4/c2=+0.11–0.15), full non-perturbative
+  c(β) monotone-rising β=0.05→1.0 even at the deep-pinch cell → the β⁴ door closes REINFORCING. Dyson
+  cross-check: monotone toward Riemann's numbers, ≥3× c₀ at every reachable cell. THE KNEE DISCHARGES AS
+  NUMERICAL: onl dips negative (−2e-6) ONLY at rcond 2e-12 (machine floor) while c/β² stays large-positive
+  through it — the sharp-side wall is numerical PSD-loss, not arithmetic.
+- **§404 κ6-IMMUNITY — RIGOROUS (Hilbert truncated-moment LP, msg 90+95):** min P(Σc_w≤0) = 0.042 over ALL
+  laws matching the measured moments (m₁=0.0024, m₂=1, m₃=0, m₄=12.36, m₆=277.4); m₆ sweep 277→1000 makes
+  the pin HARDER (0.042→0.056); m₆<152.8 infeasible (= Cauchy–Schwarz m₆≥m₄²/m₂, LP self-check). Hilbert's
+  self-correction (7th of the night): the immunity does NOT rest on skew (releasing m₃ barely moves it;
+  skew≤−5 infeasible — the measured m₄,m₆ forbid the one-sided tail). THE REAL LOCK IS STRUCTURAL:
+  t=m₁/σ=0.0024 puts the mean essentially AT the pin location, and a unit-variance law centered at zero
+  cannot be a.s. positive. So the topic answer (no pin) is DOUBLY RIGOROUS: no pin from any (m₄,m₆) AND no
+  pin from any admissible skew, by exact LP — fully decoupled from the completeness thread below.
+- **§405 THE 6th-ORDER PARITY MIRROR (Riemann msg 88, Tao msg 89 confirmed):** Tao's early "𝔖 vanishes on
+  odd" was the PAIR 𝔖 wrongly imported into a 6-point problem. The correct order-6 kernel is the
+  TERNARY-GOLDBACH singular series 𝔖₃, which has the MIRROR parity: positive-floored on ODD s, VANISHES on
+  EVEN (the p=2 factor 1−1/(2−1)²=0). So the accessible sector flips WITH the order and stays good-sign both
+  times: order-4 a∗a→even where pair 𝔖 floors 2C₂−1; order-6 a∗a∗a→odd where 𝔖₃ floors positive. Same
+  mechanism one rung up — the ladders are parity-matched, not broken. 𝔖₃: even ≡0 (machine zero),
+  max=2.3010 (=∏_p(1+1/(p−1)³)).
+- **§406 COMPLETENESS FLOOR — LIVE/OPEN (do not bank a value yet):** whether the Two-Floor EXTENDS to all
+  orders (COMPLETENESS — "arguably bigger" than the pin, per the chair's item-5 framing) rides on the
+  order-6 connected floor ρ6_min. Two corrections walked back the clean prediction: (a) Tao struck his own
+  ρ6_min≈𝔖₃_min−1≈0.355 — 𝔖₃ does NOT tend to 1 (tends to MAX 2.301; the min sits at highly-composite odd
+  s, the OPPOSITE end from where the pair-𝔖→1 baseline lived), so "subtract 1" has no clean order-6 analog;
+  the connected subtraction is the genuine disconnected-pairing sum (κ2³ three-block + κ2×κ4 two-block on the
+  odd-triple diagonal). (b) Dyson struck Tao's banked 𝔖₃ min 1.3552 — at s=105=3·5·7, 𝔖₃=1.194; the 1.3552
+  was min over single-odd-prime-factor s only; triple-composite odd s erodes lower. GATE CLAUSE: the measured
+  g6=+122 (N-slope +0.250, Handle) is the cross-check anchor — an analytic ρ6<0 on a cone-loadable direction
+  must reconcile with it or one side has a bug (same 3-way architecture that settled item 1). Dyson
+  null-cal: the 𝔖₃ truncation corridor is negligible (P=200 = P=2e5 to 2e-6), so any ρ6 dip >1e-5 is real
+  arithmetic or a bug, never truncation.
+- **§407 EPISTEMIC LEDGER (the discipline that earns the bank):** Riemann CONCEDED his altitude onl~1e-7 was
+  conditioning-collapse wearing the near-null label — over-permissive Gram keep (rcG down to −2e-16,
+  numerically singular); at a sane 1e-8 threshold onl lifts to 5.2e-2, and the deep near-null regime does NOT
+  genuinely exist at altitude (its habitat SHRINKS as T climbs — Dyson's strengthening). Fleet rule adopted:
+  print the keep-threshold on every whitened margin. Dyson's COMfrac=0.00 flag closed as GENUINE zero-gap
+  localization physics (near-null eigenvector finds the largest local zero gap: 198.0→201.3, 279.2→282.5),
+  NOT the truncation-edge artifact — Gate STRUCK Riemann's "grid garbage" diagnosis for Dyson's forensics.
+  Six/seven self- and peer-caught corrections this block; the verdict survived every one — that is why it banks.
