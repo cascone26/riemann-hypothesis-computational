@@ -643,3 +643,47 @@ a 6th-order completeness thread opens (live).
   localization physics (near-null eigenvector finds the largest local zero gap: 198.0→201.3, 279.2→282.5),
   NOT the truncation-edge artifact — Gate STRUCK Riemann's "grid garbage" diagnosis for Dyson's forensics.
   Six/seven self- and peer-caught corrections this block; the verdict survived every one — that is why it banks.
+
+## ADDENDUM 14 — ρ6 floor = 2C₂−1 (order-independent) + DIAGONALITY FAILS → completeness OPEN (§408-411)
+Block-3 close (round 10/10, ~$331). The completeness floor is settled and beautiful; the completeness
+CLAIM is refused (honestly) because the connected form is not a square. The RH pin is untouched throughout.
+- **§408 THE ρ6 FLOOR = 2C₂−1 — SETTLED, four apparatus (Tao's exact identity, msg 99):** the odd-primorial
+  limit of the ternary-Goldbach singular series 𝔖₃ is EXACTLY 2C₂ (twin-prime constant, doubled — the
+  base ∏_p(1+1/(p−1)³) · ∏(1−1/(p−1)²) collapses to 2C₂). So the unit-baseline order-6 floor
+  ρ6_min = 𝔖₃_min − 1 = **2C₂ − 1 = 0.3203237 — IDENTICAL to the order-4 floor, to the digit** (not a
+  sibling — the SAME constant). The twin-prime constant governs BOTH rungs; the parity-matched mechanism
+  (order-4 a∗a→even/pair-𝔖; order-6 a∗a∗a→odd/𝔖₃) is genuinely ORDER-INDEPENDENT. Confirmed on four
+  independent builds (Riemann 𝔖₃(105)=1.3703, Tao identity, Hilbert, Dyson brute-force). NOTE: the floor is
+  Report-tier as the connected-subtraction floor (unit-baseline clause); the LIMIT 2C₂ is Handle (algebraic).
+- **§409 DIAGONALITY FAILS — completeness NOT banked (Riemann msg 108, Handle, exact, corridor-free):** the
+  CONNECTED 6-point local cumulant (exact joint-cumulant Möbius inversion, κ2³/κ2×κ4/κ3² blocks subtracted
+  by construction) is strongly SHAPE-DEPENDENT at fixed triple-sum s: CoV 0.6→3.3 across same-s shapes, and
+  it CHANGES SIGN (p=5,s=36: +0.60,+3.49,+3.49,−7.56,−7.56). Unlike order-4 (where the connected 4-point
+  collapsed to ρ(s), a clean square), Tao's two-shape-DOF-per-triple SURVIVES the connected subtraction:
+  ‖O_connected‖ is comparable to the diagonal itself, ≫ 0.32. **So the pointwise floor 2C₂−1 is NECESSARY
+  BUT NOT SUFFICIENT; Hilbert's "nonneg-weight × square" one-line close is OFF THE TABLE; a negative cone
+  direction is a GENUINELY LIVE POSSIBILITY — a 6th-order crack is NOT ruled out.** GATE forbidden phrasing:
+  "completeness at 2C₂−1" is banned until the cone-min is computed. This is now a real cone-min eigenvalue
+  problem (Hilbert Tier-2/3), load-bearing.
+- **§410 WHAT SURVIVES — the RH pin is UNTOUCHED:** the topic answer stays NO on both faces, doubly rigorous,
+  κ6-IMMUNE (Hilbert LP, §404 — the pin needs the mean; no cumulant of any order reaches it). The completeness
+  question reopens NOTHING that bears on RH. The measured g6=+122 is a SIGN-anchor ONLY (Dyson corridor):
+  natural-comb positive on one direction is fully consistent with a cone-min negative on a different,
+  shape-loaded direction — exactly as item-4's cone-min sat below the natural κ4. Completeness is a STRUCTURAL
+  sub-theorem (does the beyond-pair object have a negative cone direction at 6th order), not the pin.
+- **§411 TWO NEW EPISTEMIC HAZARD SPECIES banked (distinct from frame artifacts):** (a) SHARED-GRID
+  agreement — two apparatus agreed on 𝔖₃ min "1.3552 to four digits" but both mis-scanned (neither hit
+  triple-composite odd s); agreement is not immunity when instruments share a grid. (b) UNANIMOUS
+  MIS-DIAGNOSIS — three apparatus correctly REJECTED Dyson's wrong 𝔖₃ value while all three mis-attributed
+  the cause (they said "dropped p=2 factor"; the real slip was the p|n local factor 1−1/(p²−3p+3) vs true
+  1−1/(p−1)², settled by brute-force mod-p counting, no formulas). Agreement on a DIAGNOSIS is not evidence
+  either; only a formula-free brute count settled it.
+- **LOADED NEXT MOVE (armed, ready to fire — this is where the depth is, NOT wound down):** compute the
+  CONE-MIN EIGENVALUE of the off-diagonal connected 6-point kernel O against the highly-composite-odd cells
+  (where 𝔖₃ is weakest AND the off-diagonal sign-changes concentrate), with Dyson's FULL guard battery
+  (N-stable at ≥16k blocks/comb per his corridor — n=1024 gives 93% κ6 error + 22% bias, useless; AND
+  gap-localization-clean). Tier ladder (Hilbert): ‖O‖<0.32 → completeness banks by Weyl; ‖O‖>0.32 → cone-min
+  decides, generic anti-alignment holds it positive UNLESS O aligns with D's weakest direction; only an
+  aligned, N-stable, gap-clean negative is a real 6th-order crack. Tao's sign-anchor is the cross-check (a
+  cone-min negative must live OFF the natural direction). PAUSED here at the block boundary (cost) — fire on
+  Jacob's word.
