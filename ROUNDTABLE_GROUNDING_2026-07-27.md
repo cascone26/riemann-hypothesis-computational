@@ -707,3 +707,45 @@ confidence signal available (two apparatus, two error-catches, one result, no an
   is corrected on both. The residual order-6 COMPLETENESS crack (completeness-only, does NOT bear on RH)
   remains the single open question — PARKED (RT torn down at Jacob's request), reopenable via start.sh +
   rebuild of the exact κ₆ kernel. This is a clean, cross-validated stopping point for the RH objective.
+
+## ADDENDUM 15 — ORDER-6 COMPLETENESS: FORK A, ARB-CERTIFIED — NO CRACK (§413-416)
+Chair-led crack-hunt (Sam leading, Jacob away). The one open RH-adjacent thread CLOSED with a DIRECT
+Arb-interval certificate — the first result of this run meeting the full trust standard (formally verified,
+two ways, two independent apparatus), not peer-agreed. Completeness-only; the RH pin was already settled.
+- **§413 THE CATEGORY CORRECTION (Hilbert):** hunting positivity in the connected cumulant O was a category
+  error — order>2 cumulants are NEVER sign-definite (Riemann's "no PSD D" was a lost-squaring mislabel:
+  E[δΛ·δΛ·δΛ] sign-changes, but the Gram diagonal E[(δΛ·δΛ·δΛ)²] is a mean of squares ≥0). The correct
+  completeness object is the MOMENT GRAM MATRIX G[t,t′]=E[u_t u_t′], u_t=δΛ_{t1}δΛ_{t2}δΛ_{t3} — PSD by
+  construction. Riemann's singular-series O is only a dimensionless density-ratio PROXY (sign+location, not
+  field-moment scale); the scale comes from Hilbert's physical-unit G.
+- **§414 THE PHYSICAL GRAM (Hilbert + Tao, two apparatus):** on the accessible-odd sector, λmin(R) ≈
+  0.94→0.76 across s=24→48, CHOLESKY-PD at every s (min pivot ≈384). Tao independently reproduced on a fresh
+  sieve to 1–2%, Cholesky-PD every s. The proxy's marginal 0.54→0.19 is SUPERSEDED (it overstated the
+  off-diagonal ~4× by missing the field-moment scale). σ_off ≈ 0.022, flat in s, DECLINING in N — real
+  arithmetic correlation ~10× the sampling floor, bounded, shrinking.
+- **§415 THE MATCHED-NULL (Dyson, +8σ) — kills the tail-claim risk:** the linear 1−2σ√n understates the
+  generic floor; the true null is the Marchenko–Pastur edge (1−√(n/B))², B=1/σ_off²≈2066, tracking the
+  empirical null to ~2%. Measured physical λmin (0.76–0.78) sits ABOVE the calibrated band by MORE THAN
+  EIGHT SIGMA → the λmin decline is PURE √n DIMENSION, zero arithmetic residue; the residue is POSITIVE
+  (arithmetic makes the Gram BETTER-conditioned than chance). This is exactly the check that would have
+  caught a Michalowski-style tail-withdrawal — and it clears it. ("Not extrapolating a limit, reading the
+  benign edge.")
+- **§416 THE DIRECT ARB CERTIFICATE — FORK A CERTIFIED (Hilbert msg 28 + Tao msg 29):** on Riemann's
+  WORST-conditioned mod-105 5×5 principal cell at s=48 — triples (6,15,27)(1,7,40)(5,11,32)(12,15,21)
+  (1,22,25), all admissible mod 3/5/7, maximally shape-mismatched (tightest PD-ness) — physical δΛ Gram,
+  window M=10⁶, Arb 160-bit outward-rounded, certified POSITIVE-DEFINITE TWO INDEPENDENT WAYS:
+  · Interval Cholesky: all 5 radicands rigorously >0 [343.83,343.58,343.62,342.51,341.10], no straddle.
+  · Independent Leibniz/Sylvester leading minors: all 5 >0 [3.438e2,1.181e5,4.059e7,1.390e10,4.743e12] — a
+    DIFFERENT algorithm on the same certified entries; cross-consistent (minor₂/minor₁=343.6=pivot[1]).
+  Tao INDEPENDENTLY certified the same cell — different sieve, different code, 200-bit Arb — pivots
+  [343.826,343.584,343.618,342.510,341.101]±3.4e-6 and Sylvester minors matching TO THE DIGIT. So the
+  load-bearing object is TWO INDEPENDENT ARB APPARATUS on the hardest cell. Files on disk, version-stamped:
+  rt6_hilbert_arb_cert.json, rt6_tao_independent_cert.json, rt6_artifact_ledger.md (7 species caught+struck).
+- **VERDICT: NO 6th-ORDER CRACK. Completeness holds on the accessible-odd sector, Arb-certified.** The
+  bookend to Michalowski: he certified a total-positivity FAILURE at order 5 (negative minor); this certifies
+  NO failure at order 6 (positive minor, his exact two-way method, opposite sign). Scope in ink (honest, per
+  Gate/Riemann/Dyson): the certificate is on pinned highly-composite-odd cells to s=48 with a widening margin
+  (σ_off declines in N); the "all-orders / N→∞ at fixed s" statement is NOT banked — the certified claim is
+  the direct positive minor on the hardest reachable cell, not a global limit (avoiding exactly the tail
+  overreach Michalowski withdrew). Two-Floor stands; completeness confirmed as far as a direct certificate
+  reaches, with no crack anywhere the guards could see.
