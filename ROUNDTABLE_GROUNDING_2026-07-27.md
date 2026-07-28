@@ -687,3 +687,23 @@ CLAIM is refused (honestly) because the connected form is not a square. The RH p
   aligned, N-stable, gap-clean negative is a real 6th-order crack. Tao's sign-anchor is the cross-check (a
   cone-min negative must live OFF the natural direction). PAUSED here at the block boundary (cost) — fire on
   Jacob's word.
+
+## §412 — TWO-TRACK CONVERGENCE (terminal reconciliation, terminal LEDGER §387, commit e85e633)
+The Olympus terminal track independently reached the same landing as the roundtable — the strongest
+confidence signal available (two apparatus, two error-catches, one result, no answer fed across):
+- Terminal INDEPENDENTLY RETRACTED its §386/§386b escalate (its own §387), diagnosing the identical error
+  the RT found: it measured M_β's ISOLATED eigenvalue, not λmin(B_full+M_β); the genuine perturbed form is
+  positive (off-line raises the margin) — and it noted §386 had contradicted its OWN earlier §378. Logged
+  on its side as its "26th verify-catch class." The two-instrument rule caught it on both tracks.
+- Terminal CONFIRMED the banked results: Two-Floor Theorem (Parity-Bar κ₄≥(2C₂−1)‖a∗a‖² + Gradient-Floor
+  c/β²≥c₀≈0.05 — the terminal notes the node-crossing is the derivative of its own §375 interpolation mode),
+  RH pin κ₆-immune (Hilbert LP min P=0.042), completeness floor = 2C₂−1 order-independent.
+- Terminal engaged the §388 completeness handoff HONESTLY and dead-ended CORRECTLY: it could not reconstruct
+  the RT's exact connected-κ₆ object from the single checkpoint (values off ~20×), and its raw cross-check
+  produced only the generic off-diagonal negativity the RT explicitly warned is NOT a crack. It did NOT
+  fabricate a decider result — the faithful decider needs the RT's exact kernel + the bias-corrected
+  ≥16384-block estimator. So: NO aligned/N-stable/gap-clean negative found; nothing to reconcile.
+- NET: the RH pin is SETTLED and DOUBLY-RIGOROUS, cross-confirmed across two independent tracks; the escalate
+  is corrected on both. The residual order-6 COMPLETENESS crack (completeness-only, does NOT bear on RH)
+  remains the single open question — PARKED (RT torn down at Jacob's request), reopenable via start.sh +
+  rebuild of the exact κ₆ kernel. This is a clean, cross-validated stopping point for the RH objective.
