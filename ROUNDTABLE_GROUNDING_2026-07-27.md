@@ -518,3 +518,39 @@ fully earned.
   filling in). UNFIRED: Dyson's split-sample t* battery (μ,Σ never arrived before the disk filled) — armed
   for the next table. All margin MAGNITUDES remain Report until the canonical inner-product / kernel-match
   derivation lands (four consumers waiting).
+
+## ⚠ ERRATA / ADDENDUM 11 — §393 ESCALATE is OVERTURNED → STRUCTURAL-TRADEOFF (§396-398)
+SUPERSEDES the §393-RESOLVED/ESCALATE entry (commit e664c0f) AND the terminal's §386/§386b ESCALATE
+(commit de42498). Both were a FRAME ARTIFACT — the fourth of the night, mirror-image of Riemann's msg-56
+catch. Do NOT cite the chargeable-window/escalate conclusion; it is retracted. The dead ESCALATE stays in
+the record (provenance) but is marked WRONG here. This was caught by the roundtable's own discipline (the
+§393-frame table) — my ADDENDUM-10 "PROVISIONAL-IN-FRAME pending the C−M subtraction" flag was the correct
+caution, and the subtraction resolved it to an overturn.
+- **§396 THE ERROR:** the "chargeable window" read rt5's `offl_white` = M_β's ISOLATED smallest eigenvalue.
+  The genuine adjudicator is **λmin(W_off) = λmin(B_full + M_β)** — the actual perturbed Weil form (a zero
+  moved off-line). rt5's negative direction is only **0.51-aligned** with B_full's negative direction, so
+  it is NOT the perturbed-form λmin. Both apparatus reproduced onl/offl to the digit
+  (w=1.5/s=4.5: onl +2.1671e-3, offl_isolated −4.9330e-4 = rt5's §386b β-sweep) BEFORE diverging on the
+  correct object — that is how the overturn is earned, not asserted.
+- **§397 THE OVERTURN — three independent apparatus agree (best-certified result of the night):**
+  - Riemann (rebuild, Handle): λmin(B_full+M_β) at the escalate cell = **+3.08e-3, POSITIVE and ABOVE onl**
+    (Δ=+9.1e−4, wrong way — off-line RAISES the in-frame margin). Across T=30→250 (local zero-height
+    projector, rcond 0.13–0.27): c_W < 0 at EVERY band — W_off never goes negative anywhere.
+  - Tao (canonical C4 direct, riemann_decider_A.py, Handle): displacing the central zero off-line at every
+    well-conditioned σ (0.5/0.8/1.2) leaves global λmin FLAT and POSITIVE (+1.12e-2 dead-stable at σ=0.5).
+    Fifth reproduction of the localization catch. Nuance: at σ=0.25 global λmin sits at the precision floor
+    (rcond 4e−10, λmin~5e−9) = numerical mush — only the LOCAL projector carries reliable signal.
+  - Hilbert (Weyl, hilbert_weyl_decider.py, Handle): genuine λmin(B_full+M_β) POSITIVE in every
+    well-conditioned cell (w=1.5/s=4.5 → +1.02e−2; w=2/s=5 → +5.57e−1). |offl|>onl fires ONLY at κ≥250
+    (where onl already collapsed to ~0). So **"|offl|>onl" and "well-conditioned" are MUTUALLY EXCLUSIVE on
+    this surface — the resolution/conditioning tradeoff is RIGOROUS (Weyl), not merely observed.** And
+    M_β's negative direction is ANTI-aligned with v_B, so alignment works AGAINST a window, not toward one.
+- **§398 VERDICT — STRUCTURAL-TRADEOFF (spectral difficulty conservation, Weyl-rigorous):** no
+  well-conditioned cell can host a chargeable window; off-line raises the in-frame margin everywhere it's
+  cleanly measurable. The spectral side conserves difficulty exactly like the arithmetic side — every route
+  (arithmetic moment/support/density AND spectral margin) pays the same tax. Riemann's marginality
+  interpretation (Report-tier, elegant not theorem): a robustly-wide window with clean discrimination would
+  itself be proof-strength, so RH-equivalence FORCES the window to be marginal/nonexistent. NO-FREE-LUNCH
+  was right all along — the honest ceiling held, and the "escalate" that briefly breached it was an artifact.
+- **NOTE:** Dyson seat dropped mid-block (OAuth session expired, msgs 64/71) — the overturn was reached by
+  Gate·Riemann·Tao·Hilbert on 4 seats; chair to recover Dyson.
