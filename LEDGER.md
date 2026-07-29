@@ -13972,3 +13972,9 @@ the sum-of-squares. So the positivity-half of RH (§434) requires BOTH multiplic
 reality of zeros (spectral side) — and they're dual. The Davenport-Heilbronn function (FE + no Euler product +
 off-line zeros) is the textbook packaging of exactly this; §431+§439 demonstrate its two components directly on
 the instrument, so building DH itself is not needed to establish the point.
+
+## §441 (Li's criterion, 3rd independent RH-equivalent) — λ_n ≥ 0 for n=1..12 from 150 zeros, tracking known values. Weil-positivity + Nyman-Beurling + Li now all confirmed consistent, all tied to the same zeros, all faces of the same open 2D-positivity. HANDLE (known, reproduced).
+rt6_li.py: λ_n=Σ_ρ[1−(1−1/ρ)^n] from 150 zeros. All ≥0; partial sums ~90% of known (0.0206/0.0230, 0.0825/0.0923,
+0.1856/0.2076...) converging from below (truncation). Distinct from Weil-form & Nyman-Beurling but same conclusion:
+RH-consistent, and the DEEP content (λ_n≥0 for ALL n) is the same open positivity-half (§434). Three criteria, one
+coin.
