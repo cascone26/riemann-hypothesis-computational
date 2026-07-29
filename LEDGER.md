@@ -13402,3 +13402,51 @@ THREE CONCRETE HANDOFFS from the whole superprism (§390-403):
 Superprism verdict: ten angles generated, five instruments + three lit-gates + a four-section lead-chase run;
 no new provable lever, but a correct structural localization of the wall, a corrected error class, and three
 clean named handoffs. The wall stands where §334/§385 put it — now with sharper coordinates on what's missing.
+
+## §407 (2026-07-29, Riemann7) — META-SUPERPRISM: what must we be doing RIGHT, what must we be doing WRONG, and the angles that follow from taking the wrong-list seriously. REPORT (generation).
+
+### WHAT WE ARE ALMOST CERTAINLY DOING RIGHT
+R1. The instrument is honest: analytic=zero residual gate catches fabrication; two-instrument rule + verify
+    caught 27 error-classes including 3 whole sections. The measurements are trustworthy.
+R2. Localizing RH to a SINGLE quadratic-form-positivity (Weil's criterion / B_full PSD) — and confirming
+    (§401) it's the exact analog of the PROVEN F_q Rosati form. We are looking at the right object.
+R3. Difficulty conservation is now a measured LAW on two faces (two-floor theorem §387) — we can predict
+    where effort gets absorbed. We are not fooling ourselves about progress.
+R4. Separating DENSITY (unconditional counting, §391/404) from SIGN (arithmetic) — the corner is codim-1.
+
+### WHAT WE ARE ALMOST CERTAINLY DOING WRONG (the load-bearing self-criticism)
+W1. WE KEEP STAYING ON ONE SIDE OF THE EXPLICIT FORMULA. Every instrument is the zero-side/prime-side of the
+    SAME identity. Weil's criterion is a TAUTOLOGY-generator on its own terms — every reformulation is
+    conservative (§334/§343). The F_q proof did NOT work inside the trace form; it went OUT to the SURFACE
+    C×C and used a DIFFERENT cohomology with its own positivity (Hodge index). WE HAVE NO SECOND SPACE.
+    ⟹ The wrong thing: seeking the certificate INSIDE the 1-D form. The right move: build the missing
+    SECOND dimension (the arithmetic C×C / the "extra variable"), where positivity is geometric not
+    analytic. Every dead angle died because it stayed 1-D.
+W2. WE TREAT THE POLE AS A TERM, NOT AS THE ANCHOR-FROM-ANOTHER-SPACE. In F_q the ample class is a GEOMETRIC
+    object (a curve on the surface), not a summand of the trace. Our pole is the archimedean place — the
+    ONE place we compute analytically. Maybe the pole should be promoted to a COORDINATE (the "diagonal"),
+    and the certificate is an intersection of the prime-cycle against it. (§399 hinted: the 1 negative
+    direction IS archimedean.)
+W3. WE MINIMIZE OVER TEST FUNCTIONS (a sup/inf) BUT THE F_q PROOF IS AN EQUALITY OF INTERSECTION NUMBERS.
+    Sup/inf loses the algebraic identity. We may be discarding the exact relation that makes it provable.
+W4. WE HAVE NEVER USED THE FUNCTIONAL EQUATION AS A GROUP ACTION. rho -> 1-rho is an involution (Z/2). In F_q
+    the FE is Frobenius (the whole Galois/monodromy group). We use FE as a symmetry of h, never as a
+    generator of a bigger structure. The nonabelian content the saints' table wanted (§383) lives in
+    monodromy — which is a SECOND-SPACE object, tying to W1.
+
+### ANGLES FROM THE WRONG-LIST (each attacks a W directly)
+A1 (attacks W1/W4) TWO-VARIABLE EXPLICIT FORMULA: build the DOUBLE sum sum_{gamma,gamma'} on a 2-variable
+   test K(x,y) — the "C×C" analog. Does a 2-variable Weil form have an INDEFINITE signature (Hodge-index
+   shape) where the 1-variable one is just PSD? The diagonal gamma=gamma' = our old form; the OFF-diagonal
+   is the new second dimension. RUN IT.
+A2 (attacks W2) POLE-AS-COORDINATE: recompute the certificate as an INTERSECTION pairing <prime-cycle, pole-
+   cycle> in a signature form, not pole as an additive term. Measure whether <P, pole>^2 vs <P,P><pole,pole>
+   (Castelnuovo-Severi shape) holds and is tight at criticality.
+A3 (attacks W3) EQUALITY NOT INEQUALITY: find the exact algebraic IDENTITY our form satisfies (trace = sum of
+   intersection numbers), not the sup/inf bound. The §335 fluctuation identity (zeroGram-archGram=pole-prime
+   EXACTLY) is one such equality we UNDER-used — build the certificate ON the identity, not the inequality.
+A4 (attacks W4) MONODROMY/GALOIS: the FE involution generates Z/2; embed it in the larger symmetric structure
+   (Weil group / adelic). Is there a form invariant under a NONABELIAN group whose positivity is forced by
+   representation theory (Frobenius-Schur), the thing that WORKS over F_q?
+FIRST META-WAVE: A1 (two-variable form — the direct 'second space' test, most likely to break the tautology)
+   + A3 (build cert on the exact fluctuation identity, not the inequality). A2/A4 = lit-gate + build.

@@ -1,0 +1,20 @@
+NUMBER-FIELD Rosati/Weil form A[r,s]=sum_g rho^r (1-rho)^s, rho=1/2+beta+i*gamma. RH: beta=0.
+(direct analog of proven F_q §401: on-line PSD, off-line indefinite?)
+   beta   M    inertia A        lmin
+  0.000   4    (3, 0, 1)  +8.586e+00
+  0.000   6    (2, 0, 4)  -6.812e+04
+  0.000   8    (2, 0, 6)  +8.888e+00
+  0.020   4    (3, 0, 1)  +8.586e+00
+  0.020   6    (2, 0, 4)  -6.325e+04
+  0.020   8    (2, 0, 6)  +8.888e+00
+  0.050   4    (3, 0, 1)  +8.586e+00
+  0.050   6    (2, 0, 4)  +3.944e+00
+  0.050   8    (2, 0, 6)  -2.525e+11
+  0.100   4    (3, 0, 1)  +8.586e+00
+  0.100   6    (2, 0, 4)  +3.945e+00
+  0.100   8    (2, 0, 6)  -2.898e+12
+
+reading: if beta=0 PSD and beta>0 develops NEGATIVE eigenvalues (like F_q §401), the number-field
+Rosati form IS the certificate and off-line zeros break its PSD-ness DIRECTLY (Weil positivity in
+zero coordinates, not prime coordinates). This is well-posed (unlike §378: we move zeros in the ZERO
+form, not the prime form). The gap to a PROOF = why must this specific form be PSD (=the Hodge index).

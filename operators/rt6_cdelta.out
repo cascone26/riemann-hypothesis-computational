@@ -1,0 +1,8 @@
+transversal frame lower bound c(delta) = inf_f sum|f(gamma+i delta)|^2 / ||f||^2 (SUB-critical fill).
+    s   delta=0      0.05       0.1       0.2 c/delta^2 @0.1
+  5.0 2.830e-04 3.555e-04 5.725e-04 1.435e-03    -2.895e-02
+  4.5 -8.214e-02 -8.207e-02 -8.188e-02 -8.112e-02    -2.529e-02
+  4.0 -1.490e-01 -1.490e-01 -1.490e-01 -1.488e-01    -5.967e-03
+
+reading: (c0 - c(delta))/delta^2 constant => c(delta)=c0(1-k delta^2), a clean quadratic transversal
+bound (provable target). If it blows up/collapses => the open problem is genuinely hard (structural).
