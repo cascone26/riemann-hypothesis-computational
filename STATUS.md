@@ -3947,3 +3947,38 @@ Detail: LEDGER §315, §315b, §316(pending final rows). Tools: lp_race.py, lp_l
 NEXT (loaded, NOT started per Jacob): (1) is ⟨δ_p,δ_q⟩ a coboundary at finite places? (2) OS reflection-positivity of the
 prolate kernel (x→1/x), after Burnol pre-grep. Lit-greps owed: Buium/Burnol/Weil-metaplectic/APS/Segal-Wilson/Borcea-
 Brändén. Full detail: LEDGER §325-332, PROCESS.md (Roundtable #2/#3 arcs), RH_DIFFICULTY_CONSERVATION_MAP.md.
+
+## §411–418 (2026-07-29, Fable) — ATTACK arc: the 1-D instrument has NO shortcut; RH-content is a GEOMETRIC, cancellation-dominated angle bound. Second space FORCED. Consolidated in LEDGER §411-418.
+Directive: "yes attack" → build/press the positivity-bound family (redirected from the §410 signature-hunt, since
+inertia is the wrong invariant for the analytic ℚ problem). Eight findings, SIX verify-catches — the disciplined
+outcome is a sharp negative-knowledge map, not a false breakthrough:
+- §411: sign-survives-to-rank-edge IS special to true Λ (bent Λ(2)×1.05 breaks it early; random 5% jitter safe).
+  The RH-critical perturbation is SYSTEMATIC/coherent, not random.
+- §412: hoped analytic stiffness = arithmetic 2C₂−1 → RULED OUT; per-prime stiffness is an instrument-BANDWIDTH
+  artifact (w-sweep: high primes couple as w sharpens). 28th verify-catch.
+- §413: edge-closing RATE not universal (no collapse across w); only the counting LOCATION (rank≤#zeros, §404) is
+  bandwidth-robust. No universal closing constant.
+- §414: Hodge-index recast (pole=ample anchor dominating a neg primitive) is a LOW-BAND artifact; clean band has no
+  anchor, full≥0 by arch−prime PSD alone. 29th verify-catch. → 4 independent 1-D probes (§405,412,413,414) all
+  dissolve to plain Weil band-positivity ⟹ the "reorganize the explicit formula" class of attacks is ruled out;
+  the second space must be a GENUINE 2-D arithmetic surface, not a 1-D reshuffle.
+- §415: honest RH-content localized. full=archpole−prime; λmin(full)=λmin(archpole)−prime_push. At the rank edge
+  prime_push=archmargin EXACTLY (primes fill the vanishing archimedean density margin exactly, never overshoot);
+  can't overshoot because full=zero-side Gram 2ΣF(γ)²=sum-of-squares iff zeros real. Off-diag is arch not prime
+  (30th verify-catch on a pair-correlation over-read).
+- §416: PNT main term is SAFE (its push is negative — helps); the entire razor-tight balance is the COHERENT
+  arithmetic fluctuation. Random fluctuations safe (=§411).
+- §417 (A/B/C, the sharpest framing): ‖prime‖_op ~ constant while archmargin→0 ⟹ ‖op‖/margin BLOWS to 292× — the
+  primes carry 292× the ENERGY needed to violate; a size/energy bound is DEFINITIVELY hopeless. Yet push/‖op‖→0.003:
+  the critical direction (bottom of archpole, where the density margin vanishes) lands in the prime form's
+  NEAR-KERNEL (the shared counting-edge degeneracy), nearly orthogonal to the strong prime modes, w-ROBUSTLY. NOT
+  Riemann-Lebesgue oscillation. RH-on-this-band ⟺ an ANGLE bound between two RH-independent explicit subspaces
+  (archimedean-critical vs prime-strong), with the razor-thin residual of the right sign.
+- §418: "finite-dim crux" is the §412 bandwidth artifact again (effdim grows 3→12 as w sharpens) — caught before
+  banking. Robust residue = sign cancellation, already in §417.
+STRATEGIC UPSHOT: the analytic 1-D instrument is now FULLY mapped. Every sharp probe recovers Guinand-Weil positivity;
+the wall is real and the proof CANNOT be a size/energy bound (off by ~300×) — it must exploit PHASE/ANGLE (the zeros
+being on the line = a precise alignment fact). This welds to the §325-332 keystone (extend the proven arithmetic Hodge
+signature theorem to the F_1 self-square; signature concentrates at ∞). NEXT (loaded): connect §417's angle/near-kernel
+bound to the large-sieve/Montgomery machinery (where unconditional PARTIAL results live) — lit-gate first per
+rh-roundtable-literature-gate; OR press the genuine second space (δ_p cross-prime pairing, §332).
