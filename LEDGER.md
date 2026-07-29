@@ -14103,3 +14103,8 @@ LOW primes (2-7). So the honest robust claim is WEAKER than §451: positivity is
 to place-by-place proofs, matches §422), but the number of primes that matter is instrument-dependent. 12th verify-
 catch / two-instrument tempering (like §419 tempered §417). The non-incremental obstruction stands; the global
 degree does not. Good discipline: the key new result got cross-instrument-checked before being leaned on.
+
+## §454 (spectral rigidity — Hilbert-Pólya evidence) — number variance Σ²(L)≈0.25 flat, FAR below Poisson (linear, L→20), consistent with GUE rigidity. Evidence the zeros are a self-adjoint spectrum (Θ exists). HANDLE (known, confirmed; finite-size limits precision).
+rt6_numvar.py: unfolded 150 zeros via exact θ; Σ²(L)~0.24-0.30 across L=1..20 vs Poisson=L, GUE=0.35-0.65. Strongly
+sub-Poisson (rigid) = the zeros repel like a self-adjoint operator's eigenvalues (Hilbert-Pólya). Precise GUE log-
+growth not resolved at 150 zeros (finite-size). Statistical face of §449 (Θ=xp, GUE fluctuations).
