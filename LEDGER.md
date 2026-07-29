@@ -13450,3 +13450,29 @@ A4 (attacks W4) MONODROMY/GALOIS: the FE involution generates Z/2; embed it in t
    representation theory (Frobenius-Schur), the thing that WORKS over F_q?
 FIRST META-WAVE: A1 (two-variable form — the direct 'second space' test, most likely to break the tautology)
    + A3 (build cert on the exact fluctuation identity, not the inequality). A2/A4 = lit-gate + build.
+
+## §404 (handoff ii) — CLEAN POSITIVE: the corner splits EXACTLY into free-counting (density) + a codim-1 sign condition. HANDLE.
+rt6_density_uncond.py: rank(B_analytic) tracks probe count until SATURATING at 9 (RvM_eff=9.51) — rank ≤ #zeros
+is unconditional (Gram of N zero-vectors). AND lmin/‖B‖ stays ≥0 (to float: +4.8e-10, +1.6e-15, −1.5e-16,
++1.5e-17) exactly AT and PAST rank saturation. ⟹ **the arithmetic content of RH-on-this-front = "the Weil form
+stays PSD right up to rank saturation" — a codim-1 sign condition; everything else (the rank/density collapse
+at RvM) is FREE unconditional counting.** Confirms handoff (ii): density half unconditional, sign half is the
+whole arithmetic. Clean decomposition.
+
+## §405 (handoff i / meta A1 precursor) — NUMERICALLY BROKEN, but the FAILURE CONFIRMS meta-audit W1: you CANNOT get an indefinite (Hodge-index) certificate from the 1-D trace form alone. REPORT + structural read.
+rt6_hodge_nf.py: A[r,s]=Σ_γ ρ^r(1−ρ)^s, ρ=½+β+iγ — the raw ρ^r BLOWS UP (γ~98, r~7 ⟹ |ρ|^7~10^14),
+eigenvalues numerical garbage (−6.8e4 at β=0 which must be PSD; −2.9e12 off-line). Unusable as built (no
+natural unit-circle normalization — number-field zeros are on a LINE Re=½, not a circle |α|=√q). BUT the
+structural lesson is real and CONFIRMS §407-W1: over F_q the indefiniteness comes from the SURFACE C×C
+(Hodge index), NOT the trace form; the 1-D number-field Rosati form is inherently a Gram (PSD, §378/§401) and
+has NO natural indefinite version — you cannot manufacture the Hodge-index signature without the second space.
+§405's failure is not a bug to fix; it is the structural fact that the certificate's indefiniteness LIVES in
+the unbuilt C×C. (A normalized rebuild would still be a Gram — the well-posed FE-Rosati form IS B_full, PSD.)
+
+## §406 (handoff iii) — c(δ) numerical proxy FLAWED/inconclusive (real-part-of-complex-Gram generalized-eig is not the clean frame bound); confirms §396 that the transversal lower bound is genuinely hard. REPORT.
+rt6_cdelta.py: c(δ) erratic (increases with δ at s=5; c0 negative at s=4.5/4.0 — the real-part construction
+isn't a valid frame lower bound). Inconclusive; the clean c(δ) needs the proper complex-node frame machinery
+(§396's named open problem). No usable quadratic-transversal shape extracted.
+NET of handoffs: (ii) clean — density free, sign codim-1; (i)+(iii) confirm the two hardest pieces are exactly
+where the literature/meta-audit say they are (no 1-D indefinite certificate; c(δ) genuinely open). The forward
+signal is UNAMBIGUOUS: build the SECOND SPACE (meta A1).
