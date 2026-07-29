@@ -13575,3 +13575,25 @@ optional; there is provably no 1-D bypass). NEXT: recast B_analytic = pole + (ar
 inequality — is the rank-1 POLE term the ample-anchor (+1 direction) dominating a primitive part, i.e. does the
 explicit formula already carry the signature-(1,ρ−1) structure Weil's F_q proof uses? (§392/399 found arch−prime
 has inertia (k,1,rest) — test whether the pole+arch reorganizes into anchor+neg-primitive Hodge form.)
+
+## §414 (ATTACK) — Hodge-index recast of B_analytic is an ARTIFACT (pole/empty-low-band region); clean band has NO anchor substructure. 4th convergent confirmation: 1-D instrument has no exploitable shortcut. 29th verify-catch. HANDLE.
+rt6_hodge.py / rt6_hodge2.py / rt6_hodge_verify.py. Hope: recast full=pole+(arch−prime) as Weil's F_q
+Hodge-index inequality (pole=ample anchor, arch−prime=primitive, RH⟺anchor dominates neg primitive).
+- §414 (band[14,44]): FAILED cleanly — the pole (anchor) is numerically ZERO here (F(i/2)~1e-9, band far
+  from s=1); arch−prime is positive-definite; full≥0 carried by arch−prime, no anchor.
+- §414b (WIDE band[2,44], pole now O(1)): LOOKED like a breakthrough — arch−prime gained exactly ONE negative
+  mode, projecting out the anchor removed it (prim⟂ neg-semidef), alignment |⟨neg,anchor⟩|=0.999, pole_λ=0.332
+  ≈|neg_λ|=0.331, full_λmin≈0. Apparent exact 1-D Hodge structure: RH⟺pole dominates the one neg (Ω<0 arch) mode.
+- §414c VERIFY (the catch): the structure is an ARTIFACT. full_λmin≈0's eigenvector lives 100% on the low probes
+  BELOW the first zero γ=14.13 (no zeros there ⟹ degenerate direction), not a real balance. The pole and the
+  negative Ω-mode both merely concentrate in the same low-r region (hence alignment 0.999). On the CLEAN band
+  [11,44] (real zeros, no empty probes): arch−prime is PSD (λmin=+8.5e-3), NO negative primitive mode, pole≈0,
+  full≥0 by arch−prime alone. No Hodge anchor when the band is honest.
+CONVERGENCE (4 independent 1-D probes now all dissolve to plain Weil band-positivity): §405 (trace form broke),
+§412 (per-prime stiffness = bandwidth artifact), §413 (closing rate = bandwidth artifact), §414 (Hodge anchor =
+low-band artifact). **RULES OUT the entire "clever reorganization of the 1-D explicit formula" class of RH
+attacks on this instrument** — there is no magic constant, no anchor, no universal law hiding in B_analytic;
+the ONLY robust content is counting (rank≤N, unconditional) + sign (λmin≥0, = Weil positivity = RH). The second
+space must be a GENUINE 2-D arithmetic surface (Connes-Consani/Arakelov), not a reorganization of the 1-D form.
+NEXT (change the target, not the angle): quantify the UNCONDITIONAL gap — how far below the RH-needed positivity
+is the provable arch-side lower bound (§389's 2-prime/twin crux), i.e. what exactly must the second space supply.
