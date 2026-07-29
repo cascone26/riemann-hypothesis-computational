@@ -13533,3 +13533,28 @@ structure (2C₂−1), but the mean is critically positioned exactly at the boun
 mean stays at/inside the pin," and that IS Weil positivity in the critical direction.
 NEXT: quantify the critical single-prime threshold (how much Λ(2) inflation first breaks positivity at the
 edge) vs the 2C₂−1 two-floor bound — is there an unconditional lower bound on the stiffness matching §385?
+
+## §412 (ATTACK, positivity-bound family) — RULES OUT "analytic stiffness = arithmetic two-floor 2C2-1". The single-prime stiffness is INSTRUMENT-BANDWIDTH-dependent, not RH-intrinsic. 28th verify-catch (instrument-artifact check). HANDLE.
+rt6_stiffness.py + rt6_stiff_grad.py + rt6_wsweep.py. Goal: quantify how much a single prime's power-tower
+can inflate before B_analytic loses PSD at a well-conditioned sub-edge density, and test vs 2C2-1=0.320.
+FIRST a bug caught by verify: build_forms `lam_scale` MULTIPLIES LAMW (weight=LAMW*scale); a first pass
+passed LAMW*eps AS the multiplier (=> LAMW^2, garbage) and showed spurious rigidity. Fixed to a proper
+ones/eps multiplier array. THEN, honest results:
+- **Threshold (s=4.5, rcond 2.3e1):** eps*-1(p=2)=0.235, eps*-1(p=3)=0.335, p>=5 rigid (doubling never breaks).
+  Shrinks to 0 as s->edge (0.235->0.016->0.0007) — margin closes exactly at the RvM counting edge (=§404).
+- **Gradient dλmin/dε_p (s=6.0, deep):** p=2 −0.263 (erodes), p=3 +0.216 (SUPPORTS), p>=5 ~0 (~1e-4, decoupled).
+  Per-power-normalized STILL concentrates on 2,3 (0.038,0.054 vs ~1e-4) — not a #powers artifact; and it's
+  ANTI-correlated with Λ(p)/√p (which rises with p) — not a magnitude effect either.
+- **VERIFY-CATCH (the decider): w-sweep.** The low-prime dominance is an INSTRUMENT-BANDWIDTH artifact. As w
+  sharpens (1/w grows), higher primes couple in on cue: p=5 appears at w≈2 (−0.009→−0.171 by w=1.5), p=7/11/13/17
+  all active by w=1.0. Probe bandwidth ~1/w gates which log p couple to the smooth band. So "governed by p=2,3"
+  is the w=3 Gaussian's filter, NOT an RH fact — and the per-prime stiffness is NOT the 2C2-1 constant, NOT
+  instrument-independent. CONJECTURE (§411 tail: "analytic stiffness = Parity-Bar 2C2-1") is RULED OUT.
+- **w-robust residue:** p=3 inflation SUPPORTS the margin (positive grad across all w: +0.045→+0.509); p=2
+  and p=5,7 erode deep-in. Real per-prime sign structure but no clean (e.g. alternating) pattern — and being
+  per-prime it inherits the instrument-filter caveat, so it is not offered as an invariant.
+NET: the RIGHT invariant is instrument-INDEPENDENT. Only the density-edge closing (rank≤#zeros, margin≥0 to
+the RvM edge, §404/§410) is bandwidth-robust. The per-prime decomposition does NOT yield a clean new invariant;
+it filters through the probe. So the second space must reproduce the DENSITY-EDGE positivity, not a single-prime
+constant. NEXT: find the instrument-independent fingerprint of the edge-closing — is λmin(B)·(rank gap to RvM)
+or the closing RATE bandwidth-robust across w, and does it carry a constant the second space must match?
