@@ -1,0 +1,13 @@
+W2start  fill     lmin1     lmin2     lminJ   J/min rk1+rk2  rkJ     ||X||
+     50   5.0  2.41e-01  7.21e-01  2.34e-01   0.971      14   14  1.17e+00
+     50   4.0  8.64e-05  1.32e-01  8.25e-05   0.954      16   16  4.68e-01
+     50   3.5  1.93e-10  4.33e-02  4.56e-11   0.237      17   17  4.74e-01
+    100   5.0  2.41e-01  6.87e-01  2.41e-01   1.000      14   14  5.47e-38
+    100   4.0  8.64e-05  1.91e-01  8.64e-05   1.000      16   16  1.03e-40
+    100   3.5  1.93e-10  4.58e-02  1.93e-10   1.000      17   17  1.03e-40
+    170   5.0  2.41e-01  9.93e-01  2.41e-01   1.000      14   14 1.40e-191
+    170   4.0  8.64e-05  2.05e-01  8.64e-05   1.000      16   16 1.14e-197
+    170   3.5  1.93e-10  5.35e-02  1.93e-10   1.000      17   17 1.14e-197
+
+reading: J/min<<1 or rkJ<rk1+rk2 at subcritical fill = cross-window entanglement (global
+interpolation rigidity); J/min~1 and additive ranks = windows independent (certificates local).

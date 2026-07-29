@@ -1,0 +1,17 @@
+config s=4.0 n=8 lmin0=8.644e-05. Gradient dlmin/dlog Lambda(n) per prime power:
+total dlmin/dscale (all primes together) approx = -2.0635e-01
+  n=   2: dlmin/dlogLam = -1.0248e-01  (Lam(n)/sqrt(n) weight 4.901e-01)
+  n=   3: dlmin/dlogLam = -9.1631e-02  (Lam(n)/sqrt(n) weight 6.343e-01)
+  n=   4: dlmin/dlogLam = -2.3598e-02  (Lam(n)/sqrt(n) weight 3.466e-01)
+  n=   5: dlmin/dlogLam = +1.1109e-02  (Lam(n)/sqrt(n) weight 7.198e-01)
+  n=   7: dlmin/dlogLam = +2.6747e-04  (Lam(n)/sqrt(n) weight 7.355e-01)
+  n=   8: dlmin/dlogLam = -2.9281e-05  (Lam(n)/sqrt(n) weight 2.451e-01)
+  n=   9: dlmin/dlogLam = +5.4789e-06  (Lam(n)/sqrt(n) weight 3.662e-01)
+  n=  11: dlmin/dlogLam = -9.8690e-07  (Lam(n)/sqrt(n) weight 7.230e-01)
+  n=  13: dlmin/dlogLam = +8.5312e-08  (Lam(n)/sqrt(n) weight 7.114e-01)
+  n=  17: dlmin/dlogLam = -2.0932e-09  (Lam(n)/sqrt(n) weight 6.872e-01)
+  n=  16: dlmin/dlogLam = -1.7521e-09  (Lam(n)/sqrt(n) weight 1.733e-01)
+  n=  19: dlmin/dlogLam = +7.7949e-10  (Lam(n)/sqrt(n) weight 6.755e-01)
+reading: gradient concentrated + structured = extremal/dual object; if it just tracks term
+magnitude (n=2 biggest), it's trivial scaling. Check: is sign uniform (all lower margin) = 
+true Lambda sits where ANY increase hurts = margin-critical (two-floor prediction).

@@ -13243,3 +13243,41 @@ pinging the RT to reconcile before this banks as final.
     structure wrt the zero measure; Verblunsky-like coefficients). Decomposes the one big corner into steps
     with possibly weaker individual arithmetic content. Measure the coefficient law across the grid. Fresh.
 First wave (cheap+decisive): 9, 6, 3, 7, 1. Lit-gates before investment: 4, 5(background), 2, 10.
+
+## §391-395 (2026-07-29, Riemann7) — SUPERPRISM FIRST WAVE: 5 instruments run. STANDOUT: §392+§5-litgate CONCORDANCE — the number-field certificate has the SAME signature shape as the PROVEN F_q Hodge-index certificate. HANDLE (measured) unless noted.
+
+## §392 (angle 6, THE STANDOUT) — HODGE-INDEX SIGNATURE FOUND: arch−prime has inertia (k, 1, rest) — EXACTLY ONE negative eigenvalue — on every low-band config; the POLE (positive, r≈0-weighted) is the single anchor that lifts B_full to PSD. This MATCHES the F_q RH certificate (lit-gate: signature (1,ρ−1), ample diagonal as anchor) with pole ↔ ample class.
+rt6_signature.py, bands [0.5,20/30/40], w=3: K=arch−prime inertia (k,1,rest) at ALL 18 configs — a
+ROBUST one-dimensional negative part. B_full=pole+K is (k',0,rest') (PSD, RH-true). ⟹ **the certificate
+reframes from "B_full PSD" to "arch−prime has ≤1 negative direction AND the pole dominates it"** — a ONE-SIDED
+target (sieves do one-sided!). F_q concordance (lit-gate, verified sources): Weil's proof = Hodge index on
+C×C, signature (1,ρ−1), ample diagonal Δ the positive anchor, Frobenius primitive part forced negative-
+definite ⟹ RH. Our POLE plays Δ's role (the archimedean/completion anchor); our arch−prime plays the
+Frobenius/primitive part. **Same signature architecture, number field ↔ function field, measured on the
+instrument.** ⭐ This is angles 5+6 converging and the sharpest structural lead of the wave. Caveat: the
+"1 negative + pole anchor" is a LOW-BAND phenomenon (pole weight ~e^{−c²/2w²}, §358); on high bands pole≈0
+and arch−prime is directly PSD. Next: is the ONE negative direction of arch−prime the §375 zero-interpolation
+mode? and can "arch−prime has ≤1 neg" be a sieve-provable one-sided statement? (Report on the exact Δ-match.)
+
+## §391 (angle 9) — COLLAPSE FILL is DENSITY-GENERIC: a POISSON 1-point surrogate at the right density collapses at n*≈8-9 (true n*=8, RvM 8.75) — the §373 collapse-at-RvM is a Nyquist/COUNTING phenomenon, not deep-arithmetic. Confirms §335. HANDLE (Poisson) + flag.
+rt6_beurling.py: TRUE Λ n*=8; Poisson 1-point surrogates [9,8,8,9,8,8,8,8] ≈ 8 (reproduces the collapse
+fill from DENSITY alone). IAAFT pair-matched surrogates [12,15,4,4,17,4,4,4] scattered — but that is a
+Λ-RECONSTRUCTION ARTIFACT (max(surr+1,0)/√n makes non-physical weights), flagged inconclusive. NET: the
+DENSITY aspect of the corner (collapse fill = zero count) is generic (Poisson reproduces it) ⟹ partial
+unconditional-upgrade path for that aspect; the SIGN/arithmetic sensitivity (§372b bent-prime) remains the
+special part. Consistent with §335 "discreteness carries it, sign-blind controls show no threshold."
+
+## §393 (angle 3) — RIGIDITY IS LOCAL, not global: distant windows EXACTLY independent (cross-block ‖X‖~1e-40, J/λmin=1.000, additive rank); ADJACENT windows entangle only AT criticality (J/λmin=0.24, ‖X‖~0.5, [14,44]+[50,80]). No global interpolation rigidity on the instrument. HANDLE. Mostly-negative + short-range effect.
+rt6_twowin.py: W2start=100/170 → J/min=1.000, ‖X‖=1e-38..1e-197 (Gaussian-tail decoupling). W2start=50,
+s=3.5 → J/min=0.237. So cross-window rigidity decays exponentially with band separation; the global-
+interpolation hope is not realized (only nearest-neighbor coupling at critical fill).
+
+## §394 (angle 7) — true Λ is NOT cleanly margin-extremal: the gradient ∂λmin/∂logΛ(n) is MIXED-SIGN (n=2,3,4 LOWER the margin, n≥5 RAISE it) — small primes hurt, mid primes help. So true Λ is a structured saddle, not a margin-minimizer; no clean E-L dual object. HANDLE. Partial.
+rt6_eulerlagrange.py, s=4 n=8: grad n=2:−0.102, n=3:−0.092, n=4:−0.024, n=5:+0.011, n=7:+3e-4, total −0.206.
+Sign-structure (− for small, + for n≥5) is a mild new observation but the two-floor "mean-at-pin" is about
+the moment class, not margin-extremality — confirmed: no naive variational-criticality pin.
+
+## §395 (angle 1) — ODD SECTOR is a NON-TRIVIAL parallel channel (NOT self-dual-degenerate): antisymmetric-probe zero-Gram is PSD, O(1) norm (5.7-11), with its OWN collapse at the SAME critical density (lmin +0.24→8.6e-5→~0 as s 5→3). A second sampling channel at the same zeros, same density law — doesn't close, doesn't open a new lever. HANDLE. Modest.
+Wave verdict: §392 (Hodge-index signature / F_q concordance) is the lead — pursue. §391 confirms density-
+genericity of the collapse. §393/§394/§395 mostly-negative/modest (rigidity local; Λ not extremal; odd sector
+parallel). Two lit-gates still pending (Avdonin/Plancherel-Pólya angle 4; derivative-sampling angle 2).

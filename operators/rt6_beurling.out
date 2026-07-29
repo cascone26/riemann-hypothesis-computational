@@ -1,0 +1,5 @@
+TRUE Lambda: 8  (RvM_eff=8.75)
+IAAFT pair-matched surrogates n*: [12, 15, 4, 4, 17, 4, 4, 4]
+Poisson 1-point surrogates n*: [9, 8, 8, 9, 8, 8, 8, 8]
+verdict: surrogate n* == 8 mostly => collapse fill is PAIR-GENERIC (upgrade path);
+n* shifted/absent => prime-special (deep-arithmetic corner).
