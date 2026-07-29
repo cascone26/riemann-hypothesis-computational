@@ -1,0 +1,16 @@
+GENUS-2 F_q=25 ROSATI/Weil form (alpha->q/alpha). RH <=> PSD. off-line b breaks |alpha|=sqrt q.
+     b   M    inertia A        lmin       lmax
+ 0.000   5    (2, 0, 3)  -2.675e-10  +1.60e+06
+ 0.000   7    (2, 0, 5)  -1.173e-08  +1.00e+09
+ 0.020   5    (2, 2, 1)  -1.868e+00  +1.60e+06
+ 0.020   7    (2, 2, 3)  -1.167e+03  +1.00e+09
+ 0.050   5    (2, 2, 1)  -1.171e+01  +1.60e+06
+ 0.050   7    (2, 2, 3)  -7.320e+03  +1.00e+09
+ 0.100   5    (2, 2, 1)  -4.739e+01  +1.60e+06
+ 0.100   7    (2, 2, 3)  -2.962e+04  +1.00e+09
+ 0.200   5    (2, 2, 1)  -1.989e+02  +1.60e+06
+ 0.200   7    (2, 2, 3)  -1.244e+05  +1.00e+09
+
+reading: b=0 (RH) => A PSD (inertia (rank,0,.)). b>0 (off circle) => A develops NEGATIVE eigenvalues
+(indefinite). # negative per displaced pair = the Hodge-index signature deficit. THIS is the genuine
+F_q certificate (Rosati positivity = RH); compare its structure to the number-field pole+arch-prime.

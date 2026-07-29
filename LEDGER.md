@@ -13351,3 +13351,26 @@ PSD-ness. Building it right needs the actual intersection pairing (Δ, fibers, F
 a real algebraic-geometry construction. Angle 5 (genuine F_q transplant) REMAINS OPEN — my quick Gram version
 does not test it. NET: §392's F_q concordance claim is DOWNGRADED to Report-tier (the signature SHAPES rhyme,
 but my F_q instrument didn't validate the match — it built the wrong object). Correct build deferred.
+
+## §401 (angle 5, CORRECTED — the genuine F_q certificate + reconciliation) — the ROSATI/Weil form (α→q/α, functional-equation partner, NOT conjugation) is the RIGHT object: PSD on RH (b=0), INDEFINITE off-line (negative eigenvalues appear). This IS the proven F_q certificate, and it confirms our number-field B_full = pole+arch−prime is its EXACT analog (FE-structured quadratic form, PSD ⟺ RH). HANDLE (measured). Reconciles §378/§386/§387 confusion.
+rt6_fq2.py, genus-2 F_q=25, Rosati form A[r,s]=Σ_i α_i^r (q/α_i)^s symmetrized: **b=0 (RH, |α|=√q): inertia
+(rank,0,·) — PSD** (q/α_i = conj(α_i) ⟹ Hermitian Gram, Weil positivity holds). **b>0 (off circle): inertia
+(2,2,·) — exactly 2 NEGATIVE eigenvalues appear** (q/α_i ≠ conj(α_i) ⟹ Hankel form q^s·p_{r−s}, INDEFINITE);
+|lmin| grows −1.9→−199 with b, negative COUNT fixed at 2 (= the displaced conj-pair). So the genuine F_q
+certificate: RH ⟺ Rosati form PSD; off-line ⟺ negative directions = Castelnuovo-Severi/Hodge-index violation.
+**RECONCILIATION (resolves §378/§386/§387):** the number-field analog of the Rosati form is EXACTLY our Weil
+form B_full = pole+arch−prime (Weil's criterion: B_full PSD for all test fns ⟺ RH). We compute B_full from
+PRIMES = the on-line zero side (explicit formula); it is PSD (RH-consistent). The §378/§386/§387 "move one
+zero off-line" experiments were ILL-POSED — the explicit formula ties primes to zeros, so you CANNOT move a
+single zero while keeping primes fixed (hence the Gram-always-PSD / isolated-eigenvalue / margin-raises
+confusions). §401 shows the CORRECT off-line object is the FE-partner (Rosati) construction, and on the number
+field that object IS B_full itself — already PSD, already what we certify. **The concordance is REAL at the
+architecture level (FE-structured form, PSD ⟺ RH, both fields), and correctly localizes the missing piece:**
+in F_q the PROOF that the Rosati form is PSD comes from the HODGE INDEX THEOREM on the surface C×C — a
+genuinely different tool. The number-field analog needs the arithmetic-surface + its index theorem
+(Connes-Consani/F_1 territory, banked §334 as not-yet-delivering). NET (honest close of the §392 lead): the
+Hodge-index/F_q signature concordance is genuine and now correctly built; it does NOT hand a new lever (it
+recovers Weil's criterion = the banked wall), but it VALIDATES that B_full is the right object and pinpoints
+the missing ingredient as the number-field Hodge-index/arithmetic-surface — the known deep gap, cleanly
+localized on both sides. §392 upgraded from Report back to a correct structural statement; §400 error fully
+resolved by the α→q/α fix.
