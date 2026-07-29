@@ -749,3 +749,43 @@ two ways, two independent apparatus), not peer-agreed. Completeness-only; the RH
   the direct positive minor on the hardest reachable cell, not a global limit (avoiding exactly the tail
   overreach Michalowski withdrew). Two-Floor stands; completeness confirmed as far as a direct certificate
   reaches, with no crack anywhere the guards could see.
+
+## ADDENDUM 16 — the completeness question RESOLVED: Q-qual holds (lemma-proof), Q-quant stretched-exp (§417-419)
+Continuation of ADDENDUM 15 (the certified per-s no-crack). The "does completeness extend to all orders /
+is there a uniform bound" question resolved by splitting it — the original poly(I)/exp(II) fork was a false
+dichotomy the whole table walked into, and dissolving it (not picking a side) was the answer.
+- **§417 THE SPLIT (Riemann, msg 47/52):** the one question was two.
+  · **Q-qual — all-orders completeness of the LIMITING arithmetic object.** σ_off(N) is a correlation
+    coefficient (off-diag numerator / √(diag·diag)); the diagonal variance grows faster than the covariance,
+    so the distinct-triple observables DECORRELATE → σ_off → 0 as N→∞ → R(order s,N) → I at EVERY fixed s.
+    Needs only κ_eff > 0, NOT the value 1.3 and NOT any demand exponent — so it is NOT razor-thin.
+  · **Q-quant — the uniform COMPUTABLE-WINDOW bound.** ceiling s*(N) ~ (log N)^1.3 inverts to
+    N(s) ~ exp(s^0.77): a STRETCHED EXPONENTIAL — super-polynomial (strict Fork I / polynomial window FAILS)
+    but sub-exponential (not Fork II's exponential either). A third regime the fork never named.
+- **§418 Q-qual ELEVATED TO A LEMMA-PROOF ON UNCONDITIONAL INPUTS (Riemann msg 52):** the proof drops the
+  unprovable Hardy–Littlewood pieces. Off-diagonal: replaced the "O(1) HL constant" with the SELBERG UPPER
+  BOUND |C| ≤ Σ_S C_{|S|}𝔖(S) = O(1) — UNCONDITIONAL (the sieve gives the correct order from above; only
+  the matching asymptotic is HL). Diagonal: not (log N)³ (HL) but a clean ≳ ¼ log N LOWER bound from the
+  one-prime-two-composite set, PNT-counted, sieve-cleaned. Ratio O(1)/(¼ log N) → 0 — all Q-qual needs.
+  MECHANISM: the same squared-Λ fact from the coincident-diagonal fix, full circle — the diagonal squares
+  the field and Λ² carries the log-p weight (E[Λ²] ~ log N·E[Λ]) while distinct-site correlations stay O(1);
+  so σ_off → 0 rests on a classical Mertens/PNT-grade inequality, not on the value 1.3 (which IS HL-flavored
+  and unprovable). EMPIRICAL CONFIRM (three-apparatus, N-stability closed two seats/two s-values): λmin(R)
+  climbs 0.872→0.927 (s=30, N=1e5→4e7, 2.6 decades) and 0.783→0.828 (s=42, ×16) — monotone, margin IMPROVES
+  with N, the primorial-decisive collapse signature is ABSENT (Tao: demand is a convergent Euler tail
+  ~1/p², NOT a divergent primorial product). ⚠ ONE LOOSE END: the second-seat independent check of Lemma 1
+  & Lemma 2 (Hilbert) was in progress when his round-10 turn hung — Q-qual is a lemma-proof PENDING that
+  second-seat verification (Gate's theorem-bank standard); until then it is REPORT-solid, not CERTIFIED.
+- **§419 THE 10-ARTIFACT LEDGER (results/rt6_artifact_ledger.md) — the discipline that earned the bank:**
+  from the terminal's subset-sieve miscumulant (species 1) through Hilbert's hollow-trace forced-negative,
+  Riemann's no-PSD-D overbroad and his κ=3 exponent, Tao's localized-flag small-n noise and his
+  auto-verdict-vs-unconverged-reference bug (species 10), to Dyson's OWN estimator-bias corridor AND his
+  slope-magnitude corridor — BOTH self-struck BEFORE they fired. General morals banked: (a) fit the physical
+  ratio directly, never difference component exponents when the components correlate; (b) an alarm string
+  compared against an unconverged reference is not data; (c) block-count N-stability kills variance not bias.
+- **NET (the whole crack-hunt, chair-led, formally-gated):** NO 6th-order crack. Per-s completeness
+  Arb-CERTIFIED at s=48 (§416). All-orders completeness of the limiting object HOLDS by decorrelation, proven
+  to lemma-level on unconditional Selberg+PNT bounds (§418, pending one second-seat lemma check). The uniform
+  computable window is stretched-exponential exp(s^0.77) (§417, structural negative). RH pin untouched
+  throughout (κ6-immune). The one result of this run that met the FULL trust standard — a direct Arb
+  certificate cross-checked two ways and duplicated by two independent apparatus — is §416.
