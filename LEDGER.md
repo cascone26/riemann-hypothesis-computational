@@ -13635,3 +13635,27 @@ the CONTENT is that it closes at exactly 0 not negative = zeros real = RH. Not c
 sharpens localization rather than proving. NET target after §411-416 arc: prove the coherent prime fluctuation
 functional ≤ archmargin unconditionally — the PNT main term and random fluctuations are already safe; only the
 coherent/resonant arithmetic direction is the crux (= the 2nd space / §389 twin-input question).
+
+## §417 (ATTACK, A+B+C) — the crux is GEOMETRIC & cancellation-dominated: energy bound hopeless (292x off); the density-critical direction lands in the prime form's NEAR-KERNEL (the shared counting-edge degeneracy); the RH residual is the SIGN of a razor-thin 0.3% overlap. NOT Riemann-Lebesgue. w-robust. HANDLE.
+Three-probe wave, band[14,44]:
+- §417A (rt6_cancel.py): ||prime||_op stays ~CONSTANT (0.72→0.98) while archmargin→0 at the edge, so
+  ||op||/archmargin BLOWS UP to 292x. The primes carry 292x the energy needed to violate positivity — an
+  energy/size bound is DEFINITIVELY hopeless (off by orders of magnitude, confirms why elementary bounds can't
+  reach RH). Yet push/||op|| → 0.003: the actual push is a razor-thin fraction. Cancellation-dominated, not size.
+- §417B (rt6_align.py): v* = critical dir (bottom eigvec of archpole, where density margin vanishes) has SMALL
+  overlap with the top prime modes and concentrates in WEAK modes; top3-energy → 0 at the edge (0.54→0.006).
+  Near the edge v* is ~1-DIMENSIONAL, aligned to a single weak mode, orthogonal to strong ones. w-ROBUST across
+  w=2,3,4 (NOT the §412 bandwidth artifact). RH ⟺ this angle bound between two RH-INDEPENDENT explicit subspaces
+  (archimedean-critical vs prime-strong) — a GEOMETRIC reformulation, not analytic positivity.
+- §417C (rt6_freq.py): the orthogonality is NOT Riemann-Lebesgue oscillation (v* isn't smoothest; no clean
+  strong=rough pattern). Instead v* aligns most (0.76, 0.89) with the prime mode of NEAR-ZERO eigenvalue
+  (λ≈−0.03,−0.06) — v* lands in the prime form's NEAR-KERNEL. That near-kernel = the shared counting-edge
+  degeneracy (archpole & prime go rank-deficient together at the RvM count, §404). The primes have ~no
+  eigenvalue-strength in the density-critical direction.
+SYNTHESIS: RH-on-this-band ⟺ the archimedean-critical direction lies in the prime form's near-kernel with the
+residual overlap of the RIGHT SIGN. Energy is 292x too big (bounds hopeless); oscillation gives no clean core;
+the whole game is the SIGN of a razor-thin (0.3%) residual overlap in the counting-degenerate direction. This
+is the sharpest localization yet and it's GEOMETRIC (subspace angle), consistent with §415/416 (coherent
+fluctuation, exactly tight) and §404 (counting edge). NEXT: attack the SIGN of the residual — is v*ᵀ·prime·v*
+(the residual push) sign-definite by a computable arithmetic quantity, or is its sign exactly the on-line
+condition (RH-equivalent, no cheaper)?
