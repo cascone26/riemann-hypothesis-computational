@@ -1,0 +1,10 @@
+2-variable Weil form, band [14,44] w=3, s=4.0, n=8 probes (64-dim pair space).
+  [REAL zeros] connected C: (9, 0, 55) | tensor Bt: (63, 0, 1) | C - Bt/Nz: (8, 55, 1)
+  [random #0] connected C: (12, 0, 52) | tensor Bt: (64, 0, 0) | C - Bt/Nz: (10, 54, 0)
+  [random #1] connected C: (10, 0, 54) | tensor Bt: (64, 0, 0) | C - Bt/Nz: (9, 55, 0)
+  [random #2] connected C: (11, 0, 53) | tensor Bt: (64, 0, 0) | C - Bt/Nz: (9, 55, 0)
+  [equispaced] connected C: (12, 0, 52) | tensor Bt: (64, 0, 0) | C - Bt/Nz: (10, 54, 0)
+
+reading: if the connected 2-var form C (or C-Bt/Nz) has a signature for REAL zeros that DIFFERS
+systematically from random/equispaced controls, the second space carries RH-content (the pair
+coupling is the surface). If identical to controls, this second-space construction is trivial too.

@@ -13504,3 +13504,17 @@ no second space/arithmetic surface; the FE used only as a Z/2 involution not a g
 INDEPENDENTLY re-derived, measured, and localized that this exact object is what stands between the instrument
 (which correctly computes the right PSD form) and a proof (which needs the second-space geometric positivity).
 Not a solution; a sharp, multiply-confirmed map of the one remaining gap.
+
+## §410 (ATTACK, 2-variable pair form) — signature random-EQUIVALENT again (trivial), BUT reveals a META-INSIGHT: SIGNATURE is the wrong invariant for the analytic ℚ problem — the certificate is a positivity BOUND, not an inertia count. HANDLE + redirect.
+rt6_twovar.py: connected pair form C is PSD-Gram (9,0,·) real vs (10-12,0,·) controls; C−tensor is indefinite
+(8,55) real vs (9-10,54-55) random/equispaced. Real differs from controls ONLY in RANK (9 vs 10-12 = the §404
+density/RvM collapse), NOT in SIGNATURE. So the 2-var pair-correlation second space is trivial at the signature
+level — same as §408. **META-INSIGHT (why every second-space SIGNATURE hunt comes up random-equivalent):** over
+F_q the SIGNATURE (inertia) IS the certificate — finite-dimensional, exact, topological (Hodge index counts).
+Over ℚ the Weil form is infinite-dimensional and the certificate is a POSITIVITY BOUND (lmin ≥ 0), an ANALYTIC
+statement — the inertia of finite truncations is a DENSITY artifact (rank ≤ RvM), blind to the fine arithmetic.
+⟹ transplanting the F_q *signature* idea to ℚ is the WRONG LEVEL; the RH content is NOT in the signature count,
+it is in "does PSD-ness SURVIVE to the rank edge" (§404). This is the correct discriminator — and it is the
+SIGN half, not the density half. NEXT ATTACK (§411): apply the §404 discriminator to controls — do REAL zeros
+stay PSD at rank saturation while Poisson/GUE surrogates go NEGATIVE? If real is special there, THAT is the
+localized RH-content (sign-survives-to-edge), and its mechanism is the real target — not any signature.
