@@ -13722,3 +13722,23 @@ not a quantitative combination bound. NET: the combination of prime+archimedean 
 genuinely coupled and full-rank on the critical subspace — no cheap low-rank absorption; it needs real new input
 (the §332 second space / δ_p cross-prime pairing, or the §389 twin-prime arithmetic lower bound). Frontier
 precisely located and confirmed hard from the instrument side.
+
+## §422 (SYNTHESIS/meta) — the project's SIZE-based attack lines all hit ONE identical wall (off-line signal → 0 as γ→∞), which provably rules out ALL effective/finite/exponential-domination approaches and FORCES the exact structural (second-space) route. REPORT (cross-line synthesis).
+Searched prior twin-prime/large-sieve machinery (search-before-build). The developed "Circle Lemma" line
+(large_sieve_bound.py, margin_lower_bound.py, exponential_domination.py) is HONEST about its own gap: the
+exponential-domination-at-Dirichlet-resonances argument (λ_n = Σ_zeros F_n, off-line zero → −J·c_max^n negative
+exponential vs online ≤ (6/π)n log n polynomial → contradiction) only fires when N_0 < Platt-Trudgian P, requiring
+ε/γ² > 1.37e-11. For γ > 1.91e5 it fails for ALL ε — yielding a finite zero-free strip WEAKER than computation
+(P=4.83e12). ROOT CAUSE: c_max (off-line growth rate) → 1 as γ→∞, so you'd need n ~ γ² to see the contradiction.
+UNIFICATION (the meta-point): this γ→∞ degradation is the SAME wall as (a) §417/419 cancellation-domination (no
+size bound; off-line signal vanishes vs prime energy), (b) §387 two-floor gradient-floor constant c₀ vanishing at
+high γ, (c) §420 C-C combination of prime places being genuinely coupled/full-rank (§421), (d) §411's coherent-
+perturbation sensitivity. Every SIZE/EFFECTIVE/EXPONENTIAL line in this project degrades identically as γ→∞
+because the off-line vs on-line distinction becomes an exponentially-fine PHASE fact, not a size fact. CONSEQUENCE
+(a real constraint, not a wall): this RULES OUT the entire class of effective/finite/majorant/exponential-
+domination approaches to RH — they provably cannot be uniform in γ. The proof MUST be the exact structural
+argument: the C-C combination of places / the §332 second space (δ_p cross-prime pairing), where positivity is
+STRUCTURAL (Hodge-index-style, holds for ALL γ at once) rather than won by an effective margin. This is why the
+archimedean place is a THEOREM (C-C, structural) while the global/prime combination is open (needs the second
+space, not a bound). FORCED next direction: engage the second space directly (§332 ⟨δ_p,δ_q⟩ / arithmetic
+differentials) — the only route not killed by the γ→∞ degradation.
