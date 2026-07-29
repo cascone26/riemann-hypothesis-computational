@@ -9348,3 +9348,56 @@ proof) replaces ball evaluation AND §341's numerical check → arb ball-equalit
 s=4.5/4.4/4.3 CERTIFIED zero-integration → flat [0,7] floor recognized unnecessary (lemma holds to 0) →
 deepened variant launched. w=1.5 collective arb (n0=3000) launched; s=4.1 certified, s=4.0 in flight at
 this writing.
+
+═══════════════════════════════════════════════════════════════════════════════
+## SESSION 2026-07-28/29 (Riemann7, Fable) — §411-437 decision chain & methodology
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEM FRAMING at session start: prior sessions (§343-410) had localized RH to needing a "second space"
+(number-field arithmetic surface / Hodge index), with the analytic Weil-form instrument mapped. Directive
+"attack" → press the positivity-bound family; then autonomous overnight.
+
+THE DECISION CHAIN (what tried / what broke / what chosen, and WHY):
+
+1. ATTACK the 1-D Weil instrument for exploitable structure (§411-418). Tried: sign-at-edge discriminator,
+   per-prime stiffness, edge-closing rate, Hodge-anchor recast, effective-dimension. EACH found apparent
+   structure that DISSOLVED under a robustness check → SEVEN verify-catches (§412 bandwidth, §413 rate,
+   §414 low-band, §415b off-diagonal, §418 bandwidth, §419 Gaussian-degeneracy, §423 regularization).
+   METHODOLOGY LESSON (the session's spine): every "breakthrough" got a mandatory robustness/second-
+   instrument/residual check BEFORE banking. This is why the map is trustworthy. Chose to TRUST the
+   verify-catches over the exciting findings, every time.
+
+2. CONVERGENCE (§415-417): the honest RH-content = full=archpole−prime, RH ⟺ prime_push ≤ archmargin,
+   cancellation-dominated (not size). WHY chosen: three independent probes reduced to plain Weil positivity.
+
+3. LIT-GATE (§420, discipline from rh-roundtable-literature-gate): before claiming novelty, checked the
+   literature → my whole picture = Connes-Consani 2020 (prolate/cutoff). DECISION: I'm re-deriving state of
+   the art, sitting exactly at the open frontier — NOT novel. This reframed everything: stop hunting 1-D
+   shortcuts (ruled out), the frontier is structural.
+
+4. UNIFICATION (§422): connected my cancellation-domination + the prior Circle-Lemma line + §387 gradient-
+   floor → ALL hit the identical γ→∞ wall. CHOSE to conclude: the effective/size class is provably ruled
+   out; the structural (2D self-square) route is FORCED, not optional.
+
+5. FORWARD GROUNDING (§428-434): rather than keep re-confirming, QUANTIFIED (ρ_edge>1 at all heights, size
+   bounds never suffice — extended instrument to 150 mpmath zeros), REFINED the wall (§431: off-line
+   detectable height-independently ⟹ the difficulty is GLOBAL UNIFORMITY not weak signals), and GROUNDED
+   the C-C route correctly (§434: Arakelov RR on Spec ℤ IS the ζ functional equation ⟹ RH = symmetry-half
+   [have it] + positivity-half [open 2D Hodge]).
+
+6. INDEPENDENT CROSS-CHECK (§433): computed the Nyman-Beurling-Báez-Duarte RH-equivalent EXACTLY (γ_n is a
+   step function), got d_N²logN → 2+γ−log(4π) = Σ1/|ρ|² matching my 150-zero data 3 ways. A second lens,
+   validated, tied to the zeros. Confirmed both faces (Möbius/NB and Weil-positivity) share the same open core.
+
+7. DEAD-END HONESTLY CLOSED (§425-427): the δ_p cross-prime commutator sign-definiteness looked like a novel
+   Kähler-form lead, but self-caught as SHALLOW (generic (x−1)/ln x monotonicity, holds for non-prime reals,
+   no ζ structure). CHOSE to kill my own lead rather than oversell.
+
+NET METHODOLOGY: the session's value is a rigorously-verified NEGATIVE map (no 1-D shortcut, size bounds
+provably insufficient, the reorganization/effective class ruled out) + precise localization of the ONE open
+step (C-C 2D self-square diagonal Hodge positivity, = the positivity-half of RH, the functional-equation
+symmetry-half being the 1D RR we already have). The forced next construction is the F₁ self-square intersection
+theory (Connes-Consani's own decade-open step), which is a proof, not a computation my instruments can reach.
+
+DELIVERABLES: LEDGER §411-437 (full detail), STATUS §411-433 (arc), zeros150.npy, extended-instrument mode,
+Báez-Duarte exact tooling. Verify-catch count: 9. All claims cross-checked before banked.
