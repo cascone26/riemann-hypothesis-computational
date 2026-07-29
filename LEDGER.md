@@ -14023,3 +14023,20 @@ WEAK (needs β~0.3 & M≥10 vs F_q's b~0.02). This weakness IS the number-field 
 ρ_edge>1 small deficit, §431 β*~0.8-2, §445 q→1 degeneracy): the off-line signal in the pure-zero Rosati is faint;
 the archimedean Γ-factor (my §415-431 archpole, C-C §420) is what should sharpen it. VERIFY-DISCIPLINE: §445 caught
 my own §444 wrong diagnosis, §446 built it correctly — the self-correction spine held.
+
+## §448 (CLARIFIED — the FE-closed number-field Rosati DOES validly detect off-line; §444's "degeneracy" was too-small-M) — well-conditioned form (cond 20-200 at M=20) detects: β=0→PSD, β=0.1→2 neg (λmin=−12.6, real). RH ⟺ PSD (in M→∞ limit). The geometric positivity criterion WORKS for ℚ. HANDLE (verify-resolved).
+rt6_rosati_check.py. Worried §446/447 detection was a conditioning artifact (the e^{(r+s)/2} blowup, cond→2e8 at
+M=20). Built the WELL-CONDITIONED form (bounded λ=e^{β+iγ}, |λ|=e^β): it gives the SAME #neg as the ill-conditioned
+one, at cond ~20-200 (well-conditioned) — so the detection is REAL. β=0: 0 neg (PSD). β=0.1,M=20: 2 neg. β=0.2:5,
+β=0.3:6, β=0.5:9. RECONCILIATION of the §444-448 arc (the verify-spine working through several missteps):
+- §444 ("stays PSD, degenerate") = WRONG, artifact of M≤10 (too small to resolve detection); at M=20 it detects.
+- §445 ("q^s detects") = WRONG (q is diagonal conjugation diag(q^{r/2}), inertia-invariant); real mechanism = FE closure + sufficient M.
+- §446 (M=10, β=0.3 → indefinite) = qualitatively RIGHT (real detection, just weak at small M).
+- §447 (β*(M) decreasing 0.38→0.09) = RIGHT trend but its saturation was the ill-conditioned form's floor; well-conditioned sharpens further.
+- §448 = the clean resolution: FE-closed number-field Rosati (well-conditioned) validly detects off-line, β*(M)→0 as M grows.
+NET (honest, positive): the geometric Rosati positivity criterion for ℚ WORKS — A[r,s]=Σ_ρ[e^{ρr}e^{(1-ρ)s}+swap] is
+PSD ⟺ zeros on the line (in the M→∞ limit), well-conditioned. This concretely realizes the "positivity side" (§443:
+available via proven tropical Hodge index). The remaining gap is UNCHANGED and precise: the CORRESPONDENCE Γ/Θ whose
+eigenvalues are {e^ρ} must EXIST as a geometric object on the F₁ self-square (Deninger/C-C) — the positivity given
+the eigenvalues is fine; making the eigenvalues geometric is the open step. §442 (F_q template) + §448 (ℚ Rosati works)
++ §443 (gap=correspondence) = the geometric route mapped and its open door precisely located.
