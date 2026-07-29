@@ -14158,3 +14158,5 @@ rt6_rho500.py (500 zeros, γ<811): ρ_edge = 3.48(γ29),1.22(75),1.34(135),2.02(
 is config-dependent (archmargin=λmin(archpole) shrinks as #edge-probes=N(band) grows with γ; high bands also near
 truncation, resid 1e-8). Robust content = ρ_edge>1 everywhere (size bounds never suffice); the magnitude is not
 physical. Assets: zeros500.npy (500 zeros, γ<811).
+
+## §460 (rigidity with 500 zeros) — Σ²(L)~0.28 sub-Poisson (rigid) confirmed to L=40, but flat vs GUE's log-growth = finite-range estimator bias (overlapping-window variance in a bounded sequence is suppressed), NOT "more rigid than GUE". Qualitative Hilbert-Pólya evidence (rigid spectrum) holds; precise GUE match estimator-limited. HANDLE (caveat).
