@@ -13684,3 +13684,27 @@ at the counting edge — no degeneracy confound. CORRECTED §417 framing: the cr
 (not a size bound), instrument-independent, but MODERATE (~3.4×) not extreme. NEXT: characterize the Fejér
 prime_push-vs-archmargin lock (both O(1)) — is the margin archmargin−prime_push sign-definite by a computable
 arithmetic quantity, now that there's no degeneracy artifact to see through?
+
+## §420 (LIT-GATE, per rh-roundtable-literature-gate) — my §411-419 attack INDEPENDENTLY RE-DERIVED the Connes-Consani 2020 archimedean-place Weil-positivity mechanism. My instrument sits EXACTLY at the known open frontier. Not novel — but a faithful validation + precise orientation. REPORT (lit-based).
+Focused lit-check (WebSearch + WebFetch arXiv:2006.13771 "Weil positivity and Trace formula, the archimedean
+place", Connes-Consani, Selecta Math 2021). Findings, matched to my results:
+- §417's core (critical direction lands in the near-kernel / ORTHOGONAL COMPLEMENT of the cutoff projections;
+  PROLATE spheroidal structure of the archimedean-critical subspace) = EXACTLY the Connes-Consani 2020
+  mechanism: they prove archimedean-place positivity via "the trace of the scaling action compressed onto the
+  orthogonal complement of the range of the cutoff projections" (cutoff param=1), expressing the Weil-distribution
+  minus Sonin-trace difference "in terms of prolate spheroidal wave functions," controlled by hermitian TOEPLITZ
+  matrices. My numerical §417/§419 is a rediscovery of this. (My instrument is FAITHFUL — it sees the real structure.)
+- The phase-space cutoff / Sonin-space positivity = BURNOL (Sonin space = L² functions vanishing on [−λ,λ] with
+  their Fourier transform; the source of the positivity). 
+- The small-support / small-parameter positive-definiteness (my §415 Gershgorin≥0 at low density) = BOMBIERI-YOSHIDA
+  ("Remarks on Weil's quadratic functional I").
+- WHAT'S OPEN (C-C state explicitly): they did ONLY "the simplest case of the single archimedean place." The
+  NON-ARCHIMEDEAN (prime) places and COMBINING ALL PLACES remain the outstanding challenge. Weil positivity ⟹ RH,
+  not proven unconditionally.
+ORIENTATION (precise): the archimedean-place positivity (my archmargin≥0, the prolate/orthogonal-complement
+mechanism) is a 2020 THEOREM (C-C). My "prime_push ≤ archmargin" (§415/419) IS the open frontier — combining the
+prime places against the proven archimedean positivity. My instrument is sitting exactly where the state of the
+art stops. This VALIDATES the STATUS §325-332 keystone (C-C program; signature at ∞; extend to combine places).
+NEXT: attack the SEMI-LOCAL combination directly — add finite places to the instrument and test whether the
+prime (Toeplitz/Hankel) contribution can overcome the archimedean prolate positivity, which is precisely the
+C-C open step. (No novelty claim survives without this; the 1-D archimedean lens is now known/closed.)
