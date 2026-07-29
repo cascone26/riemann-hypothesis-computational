@@ -13978,3 +13978,24 @@ rt6_li.py: λ_n=Σ_ρ[1−(1−1/ρ)^n] from 150 zeros. All ≥0; partial sums ~
 0.1856/0.2076...) converging from below (truncation). Distinct from Weil-form & Nyman-Beurling but same conclusion:
 RH-consistent, and the DEEP content (λ_n≥0 for ALL n) is the same open positivity-half (§434). Three criteria, one
 coin.
+
+## §442 (Hodge-index MECHANISM verified — the port template) — reproduced Weil's F_q RH mechanism: the intersection form on {f₁,f₂,Δ}⊂NS(C×C) has signature (1,0,2) [Hodge index] for g≥1; the primitive part (Δ−f₁−f₂) has self-int −2g<0; Castelnuovo-Severi D²≤2ab ⟹ Frobenius |α|=√q. This is the EXACT structure RH-for-ℤ needs. HANDLE (correct, verified).
+rt6_hodge_template.py. M(g)=[[0,1,1],[1,0,1],[1,1,2−2g]]: eigenvalues g=1→(2,−1,−1) sig(1,0,2); g=10→(1.1,−1,−18.1)
+sig(1,0,2). Hodge index confirmed. Primitive vector Δ−f₁−f₂ has self-int (2−2g)−2−2+2=−2g<0. Castelnuovo-Severi:
+D_prim²=D²−2ab≤0 (a=D·f₂,b=D·f₁) ⟹ D²≤2ab; Frobenius Γ (Γ·f₁=1,Γ·f₂=q,Γ·Δ=N₁=q+1−Σα) ⟹ |Σα|≤2g√q ⟹ |α|=√q.
+PORT TARGET (exact): Spec ℤ×_{F₁}Spec ℤ needs (a) {f₁,f₂,Δ}-lattice with Hodge signature (1,·), (b) scaling/
+Frobenius correspondence Γ with Γ·Δ = explicit-formula trace (Σprimes=Σzeros), (c) Δ²=2−2g regularized. Then
+Γ_prim²≤0 forces Re(zeros)=1/2. THIS is my §411-441 Weil positivity in geometric form.
+
+## §443 (RESEARCH — conventions pinned + the PROVEN substitute + the precise gap) — the tropical/matroid Hodge-Riemann IS PROVEN (Adiprasito-Huh-Katz); the C-C gap is narrowly "does the F₁ self-square inherit it." REPORT.
+Scaling site (C-C arXiv:1603.03191): S=[0,∞)×_{ℕ*}, max-plus (⊕=max,⊗=+), sheaf=piecewise-affine convex fns with
+integer slopes; H⁰(D)={φ∈O_S:φ≤f_D} = lattice points in a tropical polytope (COMPUTABLE); primes = periodic orbits
+of scaling flow t↦pt, period log p. RR (arXiv:2306.00456): χ(D)=⌈deg₂D⌉'+1, scaling site is genus 1 (χ(O)=0).
+SELF-SQUARE: Δ,h,v proposed; Δ·Δ=2−2g, h·v=1, Δ·h=? UNSETTLED; the positive-Hodge signature (1,ρ−1) on (Specℤ)²
+is UNPROVEN — the critical gap (no rigorous intersection multiplicity published). RIGOROUS SUBSTITUTE (PROVEN):
+Adiprasito-Huh-Katz (arXiv:1511.02888) Hodge-Riemann for matroids, signature (1,rank−1) on the Chow ring;
+Allermann-Rau tropical intersection; tropical-curve self-product Hodge index proven. SUBTLETY (why still open):
+scaling site "genus 1" as a tropical curve has only 2-dim H¹ (2 eigenvalues), but ζ has INFINITELY many zeros —
+the zeros live in the ℕ*-equivariant/infinite structure (log p are ℚ-independent ⟹ ℝ/⟨log p⟩ dense ⟹ "infinite
+genus"), NOT the naive genus-1 H¹. Bridging Spec ℤ's F₁ self-square to a matroid/tropical surface (where Hodge-
+Riemann is proven) is the exact open construction. Refs: 1603.03191,1507.05818,2306.00456,1511.02888,Allermann-Rau.

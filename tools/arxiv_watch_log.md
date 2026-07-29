@@ -460,3 +460,11 @@
   Cats: math.GM
   https://arxiv.org/abs/2607.09797v3
   > In this paper, we assume that all the zeros of the Riemann zeta function are simple. Under this assumption we give an explicit formula for the function $Φ(e^{-t})=\sum_{n=1}^{\infty}μ(n)e^{-nt}$, as a function of the values of $ζ(s)$ and $ζ'(s)$ at the odd integers and as a function of the zeros of 
+
+## 2026-07-29 — 1 new paper(s)
+
+- **2607.24830v1** (2026-07-23) [GM/low-signal category] — A Numerical Realization of Suzuki's Weil-Quadratic-Form Operator: The Archimedean Spectral Law, its Universality, and an Operator Form of Weil's Positivity Criterion
+  Authors: Taebong Kim, Youngsik Hong, Minsik Kim, Sunyoung Choi, Jaewon Jang, Junghoon Shin, Minseo Kim
+  Cats: math.GM
+  https://arxiv.org/abs/2607.24830v1
+  > This paper presents the first numerical realization of Suzuki's Weil-Quadratic-Form operator, a candidate for the Hilbert--Pólya program linking spectral positivity to the Riemann Hypothesis (RH). Suzuki's 2026 construction was purely theoretical; here, the operator is instantiated via P1 finite-ele
