@@ -13930,3 +13930,8 @@ BSLR equality conjecture (gap→0) but the known Nyman-Beurling Gram ill-conditi
 reliable N ~100-160 and puts the gap at the noise floor. Can't resolve the decay rate numerically. The ill-
 conditioning itself = the same "irreducible difficulty / near-degeneracy at the resolution edge" theme as the Weil
 instrument's rank-edge collapse (§404) — both instruments become singular exactly where the RH-content concentrates.
+
+## §436 (cross-instrument, honest negative) — the Nyman-Beurling Gram near-null direction is a TRUNCATION-EDGE effect (concentrated on largest n near cutoff), NOT prime/μ-structured. The two instruments' degeneracies have DIFFERENT origins (Weil=Nyquist/zero-density §404; NB=truncation redundancy). The §435 "both singularize at RH-content" is superficial. HANDLE (negative).
+rt6_crossnull.py: smallest-eigvec of NB Gram (N=60): prime weight 0.147 vs composite 0.853; corr(null,μ)=+0.14
+(weak); top components n=58,56,54,57 (cutoff edge). Edge artifact, not arithmetic. Cross-instrument degeneracy
+unification does NOT hold — the singularities are structurally different.
