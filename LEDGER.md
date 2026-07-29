@@ -13621,3 +13621,17 @@ the counting edge. WHAT THE SECOND SPACE MUST SUPPLY: an UNCONDITIONAL proof tha
 (without assuming zeros real). NEXT: attack that inequality directly — best unconditional lower bound on
 λmin(full)=archmargin−prime_push; where is the provable deficit, and does the arithmetic (Λ(n)) side admit a
 term-by-term bound against the archimedean density, or does the gap require the 2-prime/twin input (§389)?
+
+## §416 (ATTACK) — the PNT main term is SAFE; the razor-tight balance is ENTIRELY the arithmetic fluctuation. Sharpens the §415 target: RH-content = coherent prime fluctuation exactly fills (never exceeds) archmargin. HANDLE.
+rt6_pnt.py: split prime_push into PNT-smooth (von Mangoldt measure Λ(n)dn→dx, density-1, no arithmetic) vs
+true. Result: push_smooth is small & NEGATIVE throughout (−0.030→−0.0001) — the generic density-1 term HELPS
+positivity (raises λmin) and →0 at the edge from below, never threatening archmargin. push_true tracks
+archmargin exactly at the edge (true/arch=0.999→1.000). So the arithmetic excess (push_true−push_smooth ≈
+push_true) carries the ENTIRE razor-tight balance; the PNT main term is paid for. RH-on-this-band ⟺ the
+COHERENT arithmetic prime fluctuation exactly fills, never exceeds, the archimedean density margin at the
+counting edge (matches §411: random jitter safe, coherent bend breaks). CAVEAT (honest): the edge exactness is
+the explicit-formula identity closing (numerical full uses true known zeros, so full=zero-side≥0 is guaranteed);
+the CONTENT is that it closes at exactly 0 not negative = zeros real = RH. Not circular-breaking, but this
+sharpens localization rather than proving. NET target after §411-416 arc: prove the coherent prime fluctuation
+functional ≤ archmargin unconditionally — the PNT main term and random fluctuations are already safe; only the
+coherent/resonant arithmetic direction is the crux (= the 2nd space / §389 twin-input question).
