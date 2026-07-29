@@ -14160,3 +14160,24 @@ truncation, resid 1e-8). Robust content = ρ_edge>1 everywhere (size bounds neve
 physical. Assets: zeros500.npy (500 zeros, γ<811).
 
 ## §460 (rigidity with 500 zeros) — Σ²(L)~0.28 sub-Poisson (rigid) confirmed to L=40, but flat vs GUE's log-growth = finite-range estimator bias (overlapping-window variance in a bounded sequence is suppressed), NOT "more rigid than GUE". Qualitative Hilbert-Pólya evidence (rigid spectrum) holds; precise GUE match estimator-limited. HANDLE (caveat).
+
+## §461 (RESEARCH — the concrete Θ located: Connes-Consani-Moscovici PROLATE WAVE OPERATOR, 2023-2024; my §451-457 characterizes the same live frontier object) — the concrete Θ = (scaling operator)² + grading of orthogonal polynomials (the semilocal prolate wave operator). PROVEN: semilocal Sonin-space stability under increasing places. My semi-local characterization maps exactly this object. REPORT (lit).
+WebSearch + WebFetch arXiv:2310.18423 (Connes-Consani-Moscovici "Zeta zeros and prolate wave operators", 2023-24),
+2112.05500 (prolate spheroidal operator & zeta), 2106.01715 (spectral triples & zeta-cycles). FINDINGS:
+- The concrete Θ is NOT a phantom: it's the SEMILOCAL PROLATE WAVE OPERATOR = (scaling)² + grading of orthogonal
+  polynomials (extends the archimedean prolate to include finite places). This IS the operator whose self-
+  adjointness/spectrum = the zeros — the concrete realization of the Θ my grand unification (§449) pointed to.
+- SPECTRAL MECHANISM: positive part of the prolate spectrum ↔ LOW-LYING zeros; Sonin space (negative part) ↔
+  ultraviolet zeros. (Burnol's Sonin space = the negative spectrum, §420.)
+- PROVEN (their progress): STABILITY of the semilocal Sonin space under INCREASING the finite set of places —
+  this is exactly the positive-direction result on the SEMI-LOCAL COMBINATION I characterized (§451-457). My finding
+  (combination is non-incremental, off-diagonal coupling full-rank/razor-tuned) is the instrument-level picture of
+  WHY this is hard and what "stability under adding places" must overcome. CONSISTENT: they prove stability (the
+  hard positive direction); I characterize the obstruction structure.
+- OPEN/forthcoming: a SECOND candidate semilocal prolate operator via the metaplectic representation. The full
+  positivity/self-adjointness (= RH) remains open, actively worked.
+NET ORIENTATION: my two-day computational investigation maps EXACTLY the object at the live 2023-2024 frontier
+(CCM prolate wave operator / semilocal Sonin space), the concrete Θ is identified (scaling²+grading), and my
+obstruction characterization (§451-457) is the instrument-level complement to their Sonin-stability approach.
+The grand-unification "Θ=xp" (§449) sharpens to "Θ = the CCM semilocal prolate operator." LOADED NEXT: build a
+toy of the prolate operator (scaling²+grading) — needs the CCM papers' precise domain/grading to be correct.
