@@ -13558,3 +13558,20 @@ the RvM edge, §404/§410) is bandwidth-robust. The per-prime decomposition does
 it filters through the probe. So the second space must reproduce the DENSITY-EDGE positivity, not a single-prime
 constant. NEXT: find the instrument-independent fingerprint of the edge-closing — is λmin(B)·(rank gap to RvM)
 or the closing RATE bandwidth-robust across w, and does it carry a constant the second space must match?
+
+## §413 (ATTACK) — edge-closing RATE is NOT instrument-independent (no collapse); only the LOCATION (n=#zeros) is robust. Confirms §404 counting identity is the SOLE bandwidth-robust invariant. No 1-D shortcut exists. HANDLE.
+rt6_edgelaw.py: λmin(B_analytic) vs fill ratio n/N across w=(4,3,2,1.5), band[14,44]. Normalized λ/λmax at
+matched n/N does NOT collapse: at the edge (n/N~1.0) normalized λ spans 0.11(w=4)→0.40(w=2)→0.25(w=1.5), and
+at n/N~1.1 spans 3.9e-3→5.6e-6 (~1000x) — the RATE is instrument-filtered. BUT the LOCATION is rock-solid:
+for EVERY w the knee is n=7→8 and λmin floors at n=8-9 (matching RvM_eff≈8.75 actual band zeros, not the naive
+main-term N=7.07). w=2,1.5 show float-noise NEGATIVE λ (−2e-13,−1e-7) exactly at n=9 = the rank edge (=§411,
+true stays ≥0 mod ε). CONCLUSION: the ONLY bandwidth-robust RH-content is §404's counting identity
+rank(B_analytic) ≤ N_zeros WITH λmin≥0 up to that rank (=Weil positivity in the finite band). No universal
+closing-law constant; no per-prime constant (§412). **Three independent 1-D probes now converge (§405 trace
+form broke, §412 stiffness=artifact, §413 rate=artifact): the 1-D instrument offers NO shortcut invariant that
+bypasses Weil band-positivity. Every robust fingerprint IS Weil positivity restricted to the band.** This is
+not a failure — it rigorously FORCES the second space (the arithmetic surface / Hodge-index route is not
+optional; there is provably no 1-D bypass). NEXT: recast B_analytic = pole + (arch−prime) as a Hodge-index
+inequality — is the rank-1 POLE term the ample-anchor (+1 direction) dominating a primitive part, i.e. does the
+explicit formula already carry the signature-(1,ρ−1) structure Weil's F_q proof uses? (§392/399 found arch−prime
+has inertia (k,1,rest) — test whether the pole+arch reorganizes into anchor+neg-primitive Hodge form.)
