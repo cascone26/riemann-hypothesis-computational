@@ -13708,3 +13708,17 @@ art stops. This VALIDATES the STATUS §325-332 keystone (C-C program; signature 
 NEXT: attack the SEMI-LOCAL combination directly — add finite places to the instrument and test whether the
 prime (Toeplitz/Hankel) contribution can overcome the archimedean prolate positivity, which is precisely the
 C-C open step. (No novelty claim survives without this; the 1-D archimedean lens is now known/closed.)
+
+## §421 (ATTACK, C-C combination frontier) — the prime form lives ENTIRELY in the archimedean-critical subspace (full-rank, ||prime|crit||=full ||prime||=1.52) — NOT a low-rank perturbation C-C's Toeplitz method absorbs. The combination is genuinely coupled/hard = consistent with it being the open C-C step. HANDLE (+caveat).
+rt6_combine.py (Fejér, the clean O(1) lens §419). Tested whether prime, restricted to the archimedean-critical
+(small-archpole = C-C cutoff-complement) subspace, is LOW-RANK/bounded (absorbable by C-C's prolate-Toeplitz
+control). Result: rank(prime|crit)=dim_crit EXACTLY (3=3,4=4,5=5,6=6) — FULL rank; ||prime|crit||=1.52 = the
+ENTIRE ||prime||_op (3.4x archmargin). So the prime form's whole norm sits in the archimedean-weak subspace —
+the primes attack precisely where the archimedean margin is weakest, hence NOT a finite-rank crack. Reconciles
+with §417: the primes fill the moderately-weak archimedean directions but DODGE the single weakest one
+(archmargin) — that dodge is the cancellation that keeps full≥0. CAVEAT (honest): block-restriction to crit
+overestimates negativity (the global positivity uses crit↔non-crit coupling), so this shows "genuinely coupled,"
+not a quantitative combination bound. NET: the combination of prime+archimedean places (the C-C open step) is
+genuinely coupled and full-rank on the critical subspace — no cheap low-rank absorption; it needs real new input
+(the §332 second space / δ_p cross-prime pairing, or the §389 twin-prime arithmetic lower bound). Frontier
+precisely located and confirmed hard from the instrument side.
