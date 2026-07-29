@@ -13814,3 +13814,13 @@ nondegenerate arithmetic Kähler form. HONEST: §425's sign-definiteness is genu
 (leading-order) reduction carries no rich structure — consistent with the whole-session pattern that the real
 second space needs the FULL F₁/jet machinery, not a cheap reduction. The δ_p lead remains open but is NOT a quick
 win; developing it = the genuine (hard) Buium arithmetic-jet-space construction toward a Hodge inequality.
+
+## §427 (δ_p DEPTH TEST — honest self-catch) — the §425 commutator positivity is SHALLOW: a generic monotonicity fact ((x−1)/ln x), holds for ALL real orders a<b with NO primality, no ζ/prime-special structure. NOT RH-relevant at leading order. Pivot. HANDLE.
+rt6_delta_depth.py. Test 1: leading-coeff sign = sign(g(q)−g(p)) works for non-prime real orders (a=2.5,b=3.7→+;
+a=1.1,b=1.2→+; a=9,b=10→+) — positivity is generic monotonicity, not prime-arithmetic. Test 2: [δ_2,δ_3](n) =
+1,20,120,450,1295,... — generic factorizations, no ζ/prime structure. CONCLUSION: §425's sign-definiteness, while
+real & proven, does NOT encode the prime/zero arithmetic RH needs — it's a shallow operator fact. The δ_p route's
+RH-content (if any) would live only in the deep jet-space/Frobenius-lift (the genuine hard Buium construction),
+NOT reachable via the leading commutator. Honest self-catch (didn't oversell §425). PIVOT: away from δ_p to
+nailing the precise UNCONDITIONAL-vs-OPEN boundary of the core positivity (Bombieri-Yoshida threshold on the clean
+Fejér instrument) — turning the session's qualitative map into a quantitative frontier.
