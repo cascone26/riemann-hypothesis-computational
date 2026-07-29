@@ -14011,3 +14011,15 @@ Castelnuovo-Severi/Hodge mechanism that works over F_q degenerates in the q→1 
 C-C F₁ construction is genuinely different, not a limit). CORRECTION to §444's premise: cannot demonstrate "Hodge
 positivity given eigenvalues" this way; the real F₁ criterion needs the actual C-C construction. The §442 F_q
 mechanism remains the correct TEMPLATE, but porting it requires the genuine F₁ object, not the naive limit.
+
+## §446 (CORRECT FE-closed Rosati — fixes §444/445, detects off-line weakly) — the number-field Rosati form (eigenvalues e^ρ, FE-partner e^{1-ρ}) DOES detect off-line (β=0.3,M=10 → indefinite (9,0,1)) but WEAKLY (F_q detects at b~0.02, §401). Quantifies ℚ's difficulty. HANDLE + corrects a wrong diagnosis.
+rt6_fe_closed.py. §444/§445 were FLAWED: not FE-closed, and the q-factor is a diagonal conjugation diag(q^{r/2})
+that CANNOT change inertia — so my "q^s is the off-line detector" diagnosis was WRONG (q-sweep §445 correctly showed
+0 negatives for all q, exposing the flaw). CORRECT mechanism (like §401): the eigenvalue set must be CLOSED under the
+FE involution. Built A[r,s]=Σ_ρ [e^{ρr}e^{(1-ρ)s}+e^{(1-ρ)r}e^{ρs}] over K=40 zeros. Results: β=0 PSD (1-ρ=ρ̄ ⟹ real
+Gram); λmin decreases with β (74→72→61→...); β=0.3,M=10 → INDEFINITE (9,0,1), λmin=−49. So the FE-closed number-
+field Rosati genuinely detects off-line — the geometric Hodge/positivity mechanism WORKS for ℚ — but detection is
+WEAK (needs β~0.3 & M≥10 vs F_q's b~0.02). This weakness IS the number-field difficulty (consistent with §430
+ρ_edge>1 small deficit, §431 β*~0.8-2, §445 q→1 degeneracy): the off-line signal in the pure-zero Rosati is faint;
+the archimedean Γ-factor (my §415-431 archpole, C-C §420) is what should sharpen it. VERIFY-DISCIPLINE: §445 caught
+my own §444 wrong diagnosis, §446 built it correctly — the self-correction spine held.
