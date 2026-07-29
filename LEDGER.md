@@ -13870,3 +13870,24 @@ argument). The Circle-Lemma c_max→1 is an artifact of THAT specific exponentia
 physical weakening. Consistent with §430 (cancellation needed at all heights, ρ_edge>1 everywhere). This correctly
 localizes the wall: uniformity-across-scales, which is exactly what the structural second space (holding for all γ
 at once, §422) supplies and no effective/band-by-band argument can.
+
+## §432 (RESEARCH, C-C 2024 Riemann-Roch concrete detail) — the F₁ foundation is COMPUTABLE (tropical/min-plus), but the RH-critical piece (a manifestly-positive Hodge form on the self-square) is genuinely open. Concrete next objects identified. REPORT (lit).
+Deep-dive on Connes-Consani "Riemann-Roch for ℤ" (arXiv:2306.00456, C.R.Math 362 2024) + scaling site + 2026 work:
+- CONSTRUCTION: ℤ = 𝕊[X] (𝕊 = sphere spectrum / absolute base), relation 1+1=X+X²; ℤ becomes a "polynomial ring
+  in one variable over the absolute point" = an arithmetic curve of INFINITE genus. RR (Thm 5.1): dim_𝕊 H⁰(D) −
+  dim_𝕊 H¹(D) = ⌈deg₂ D⌉' + 1 (modified ceiling; deg₂ = log-base-2 degree carrying the archimedean ∞-contribution).
+  Serre duality H¹(D) ≅ H⁰(K−D)* fixes the canonical divisor K.
+- SCALING SITE (arXiv:1507.05818, 1603.03191): Boolean semifield ℍ={0,1} (⊕=max, ⊗=mult) → tropical ℝ₊;
+  S=[0,∞)×ℕ* semidirect. Structure sheaf = piecewise-affine convex functions with integral slopes, MAX-PLUS ops
+  (a⊕b=max, a⊗b=a+b). Points = adele class space; periodic scaling-flow orbits ↔ primes. **COMPUTABLE**: tropical
+  linear algebra / min-plus / polytope computations are finite & implementable.
+- SELF-SQUARE OBSTACLE (THE open step): intersection theory on Spec ℤ ×_{F₁} Spec ℤ. They HAVE the diagonal
+  (Frobenius graph of the scaling action) but LACK (1) a rigorous intersection pairing on the square, (2) a Hodge-
+  Index analog / a manifestly POSITIVE Hodge-type form. Obstacle is algebraic-geometric, NOT computational.
+- MOST RH-RELEVANT 2026: "Zeta Spectral Triples" (Connes-Consani-Moscovici) — aims to relate the DIAGONAL's
+  self-intersection to ζ-zeros via spectral triples. + "Absolute Geometry of Spec ℤ" (arXiv:2606.06604).
+KEY: the F₁/tropical foundation is concrete & computable; the missing piece is the POSITIVE Hodge form on the
+self-square — precisely what my §414/§423 (analytic re-indexings) failed to produce and what §422 proves is
+FORCED. The tropical (min-plus) intersection form is genuinely DIFFERENT from my analytic integrals — a candidate
+worth a careful, correctly-grounded toy (NOT a rushed guess — the exact C-C conventions must be pinned first).
+CROSS-REF: this is the SAME missing piece as STATUS §325-332 keystone (arithmetic Hodge index → F₁ self-square).
