@@ -13850,3 +13850,23 @@ low-γ inflation (band 14-44, pole proximity), ρ_edge DIPS to ~1.17 (γ~85) the
 is irreducibly required at all γ (quantitative backbone of §422: no size/effective bound is uniform in γ). CAVEAT:
 the non-monotonic rise (1.17→2.0) may be probe-configuration/edge-sensitive; the robust content is only "bounded
 away from 1 everywhere," not the precise shape. Instrument now has a 150-zero mode (zeros150.npy) for future high-γ work.
+
+## §431 (core validation + §422 refinement) — validated "zero-side PSD ⟺ zeros real"; off-line displacement breaks LOCAL positivity at β*~0.8-2.0 HEIGHT-INDEPENDENTLY. Refines §422: the difficulty is GLOBAL UNIFORMITY across bands, NOT weak local high-γ signals. HANDLE (+one verify-catch on truncation/rank-deficiency).
+rt6_offline_break.py / rt6_offline_centered.py / rt6_offline_fair.py. Moved one real zero to ρ=1/2+β+iγ (FE
+quadruple), recomputed the zero-side "Gram" with F at complex argument, found β* where λmin<0.
+- MECHANISM VALIDATED: real zeros (β=0) give λmin>0 (PSD) universally; off-line β>0 breaks it. Confirms
+  full=zero-side=sum-of-squares ⟺ zeros real, directly with 150 real zeros.
+- §431 (fixed band 14,44): β* GREW with γ (0.057→2.5) — but this is fixed-band GEOMETRY (high zeros lie outside
+  the band, barely touch its probes, so need huge β; §431 also had β*=∞ for far zeros).
+- §431b: FIRST attempt band-centered was CORRUPTED (truncated to in-band zeros + too many probes ⟹ rank-deficient
+  zero-side ⟹ spurious β*=0). Caught it.
+- §431c (FIXED: all 150 zeros in sum, band-centered, sub-edge probes, λmin(β=0)>0 verified): β* = 1.86,1.99,0.94,
+  1.31,0.94,1.73,0.81,1.41,1.40,1.50,1.60 for γ=30..305 — SCATTERED ~0.8-2.0, NO γ-trend (slope −0.11 on log γ,
+  flat/noisy). ⟹ intrinsic off-line detectability is HEIGHT-INDEPENDENT.
+REFINEMENT OF §422: the off-line signal is NOT intrinsically weak at high γ — a displaced high zero breaks its OWN
+band's positivity just as readily (β*~const) as a low zero. So "high-γ is hard" is NOT about weak local signals;
+it's about GLOBAL UNIFORMITY (verifying local positivity for infinitely many bands at once with a finite/effective
+argument). The Circle-Lemma c_max→1 is an artifact of THAT specific exponential-domination construction, not a
+physical weakening. Consistent with §430 (cancellation needed at all heights, ρ_edge>1 everywhere). This correctly
+localizes the wall: uniformity-across-scales, which is exactly what the structural second space (holding for all γ
+at once, §422) supplies and no effective/band-by-band argument can.
