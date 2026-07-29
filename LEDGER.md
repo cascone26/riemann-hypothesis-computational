@@ -13299,3 +13299,29 @@ finding is valuable: the transversal lower bound the whole exclusion/detector pr
 problem in harmonic analysis, not a gap in our execution — a precise handoff target.
 SUPERPRISM WAVE 1 COMPLETE (bar the derivative-sampling gate, angle 2, still running). Net: §392 Hodge-index/
 F_q signature concordance is the one lead to pursue; angles 1/3/4/7/9 mostly-closed or modest; 2 pending.
+
+## §397 (angle 2 lit-gate) — DERIVATIVE-SAMPLING PREMISE BACKWARDS: values+derivatives does NOT halve the critical density; it INCREASES the density requirement ∝(k+1) (Adcock-Gataric-Hansen 2017: D⁻>(k+1)/e). Angle 2's motivation refuted. REPORT (sourced). Minor.
+Adcock-Gataric-Hansen 2017 (JFAA, arXiv 1411.0300): sampling values + k derivatives needs lower Beurling
+density D⁻ > (k+1)/e — for k=0 recovers Beurling >1; for k=1, >2/e≈0.74 (below 1 but MORE than half, and
+increasing in k). Brekke-Seip multiplicity-2 Fock density: characterized but NOT a simple halving. NO zeta-
+derivative sampling/rigidity work published. ⟹ the "derivative-sampled instrument halves critical density"
+hope is WRONG (density goes UP with multiplicity). The derivative channel is still a valid object (Gradient-
+Floor §387 showed Σg′² carries the off-line signal) but does not buy a density advantage. Angle 2 closes.
+
+## §398 — SUPERPRISM WAVE 1 CLOSED (5 instruments + 3 lit-gates, all resolved). SCORECARD:
+  ⭐ §392 (angle 6) HODGE-INDEX SIGNATURE — THE LEAD: arch−prime has exactly ONE negative direction on low
+     bands, pole=positive anchor → PSD; MATCHES the proven F_q Weil certificate signature (1,ρ−1), pole↔ample
+     diagonal (angle-5 lit-gate verified). Certificate reframes to ONE-SIDED (control 1 direction). PURSUE.
+  §391 (angle 9): collapse fill is DENSITY-GENERIC (Poisson reproduces n*≈RvM) — confirms §335, density
+     aspect has an unconditional-upgrade path; arithmetic sign-sensitivity remains special.
+  §393 (angle 3): rigidity LOCAL (distant windows exactly independent; nearest-neighbor entangle at crit) —
+     no global interpolation rigidity. Mostly negative.
+  §394 (angle 7): Λ NOT margin-extremal (mixed-sign gradient) — no clean variational pin. Partial.
+  §395 (angle 1): odd sector = non-trivial parallel channel, same density law. Modest.
+  §396 (angle 4): Avdonin/Plancherel-Pólya transplant REFUTED (S(T) unbounded; complex-node lower bound OPEN)
+     — but confirms c(δ) is a NAMED open harmonic-analysis problem (clean handoff), not our oversight.
+  §397 (angle 2): derivative-sampling density premise backwards. Closed.
+NEXT (the one lead worth compute): §392 follow-up — (a) is arch−prime's ONE negative eigenvector = the §375
+zero-interpolation mode? (b) can "arch−prime has ≤1 negative direction" be a SIEVE-provable one-sided
+statement (the Hodge-index reframe makes the target one-sided, and sieves do one-sided)? (c) build the
+genuine F_q genus-2 Gram (angle 5) and compare its (1,ρ−1) certificate to §392 directly.
