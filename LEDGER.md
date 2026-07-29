@@ -13999,3 +13999,15 @@ scaling site "genus 1" as a tropical curve has only 2-dim H¹ (2 eigenvalues), b
 the zeros live in the ℕ*-equivariant/infinite structure (log p are ℚ-independent ⟹ ℝ/⟨log p⟩ dense ⟹ "infinite
 genus"), NOT the naive genus-1 H¹. Bridging Spec ℤ's F₁ self-square to a matroid/tropical surface (where Hodge-
 Riemann is proven) is the exact open construction. Refs: 1603.03191,1507.05818,2306.00456,1511.02888,Allermann-Rau.
+
+## §444 (verify-catch — the F₁/q→1 degeneracy is real) — the naive F₁ Rosati form A[r,s]=Σα^r(1/α)^s (α=e^{β+iγ}) on real zeros does NOT detect off-line: it stays PSD for ALL β (unlike the F_q §401 form). The q→1 limit degenerates. HANDLE (negative, informative). ~10th verify-catch of the session.
+rt6_f1_rosati.py: tried to show F₁ Rosati PSD⟺RH on 150 zeros with the bounded |α|=1 normalization (fixing §405's
+ρ^r blowup). Result: inertia stays (M,0,0) for β=0,0.02,0.05,0.1,0.2 — NEVER indefinite. REASON: A[r,s]=Σα_n^{r-s}
+is Toeplitz; (A+A†)/2 = Σ_n e^{iγ_n(r-s)}·cosh(β(r-s)), and cosh>0 keeps it PSD regardless of β. So the F_q
+mechanism (|α|=√q ⟹ off-line creates negative eigenvalues via q/α≠ᾱ, §401) DEGENERATES at q=1: the |α|=1-vs-e^β
+distinction does not create indefiniteness in this form. INSIGHT (real): the F₁ positivity criterion is NOT the
+naive q→1 limit of the F_q Rosati form — this concretely demonstrates WHY F₁ is genuinely harder than F_q (the
+Castelnuovo-Severi/Hodge mechanism that works over F_q degenerates in the q→1 limit), consistent with §443 (the
+C-C F₁ construction is genuinely different, not a limit). CORRECTION to §444's premise: cannot demonstrate "Hodge
+positivity given eigenvalues" this way; the real F₁ criterion needs the actual C-C construction. The §442 F_q
+mechanism remains the correct TEMPLATE, but porting it requires the genuine F₁ object, not the naive limit.
