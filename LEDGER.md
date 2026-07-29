@@ -13757,3 +13757,29 @@ the fibration §329), not a re-indexing of the analytic data. Seven verify-catch
 419/423) kept the map honest. NEXT: the forced route is deliberate structural construction, not numerical
 re-indexing — research the precise arithmetic-Hodge-index fibration obstruction (Faltings-Hriljac/Yuan-Zhang→F_1
 self-square; Deninger; C-C semi-local) to inform a correct construction rather than another artifact-prone probe.
+
+## §424 (RESEARCH, forced-route orientation) — the exact open step is precisely identified: an INTERSECTION THEORY / CHOW THEORY on Spec ℤ ×_{F₁} Spec ℤ (the self-square). The δ_p cross-prime route (§332) is confirmed GENUINELY UNEXPLORED (a real potential opening). REPORT (lit).
+Deep-research (2020-2026 state of the art) on the forced structural route:
+- ARITHMETIC HODGE INDEX (Yuan-Zhang 2016, Math. Ann. 367; arXiv:1304.3538): PROVEN for integrable adelic line
+  bundles / Néron-Tate height positivity. Does NOT give RH — it's a height INEQUALITY, not a spectral/Frobenius
+  statement, and over ℤ there is NO second factor / no fibration. Exact missing ingredient = the second factor.
+- CONNES-CONSANI F₁ (the live program): *Scaling Site* (2017) rigorously built. **2024 breakthrough: "Riemann-Roch
+  for the ring ℤ"** (C.R. Math 362:229-235) — realize ℤ as ℍ[X], ℍ=Boolean semifield (1+1=X+X²); most concrete F₁
+  result. **2026: "On the Absolute Geometry of Spec ℤ"** (arXiv:2606.06604). THE EXACT OPEN STEP (C-C state it
+  explicitly): "an intersection theory and Riemann-Roch on the SQUARE of the scaling site remain to be
+  constructed." Missing bridge = a Chow theory for Spec ℤ as an F₁-scheme (F₁ lacks a functor-of-points, so
+  rational-equivalence intersection theory breaks).
+- DENINGER: Morishita 2024 (arXiv:2410.20758) proved Deninger's determinant formula for TOY 3D foliated dynamics;
+  Morishita 2026 (arXiv:2508.15971) BRIDGES Deninger's foliations to C-C adelic spaces (periodic orbits ↔ closed
+  points). No foliated system for Spec ℤ itself yet — Θ operator still a phantom.
+- BUIUM δ_p: NO recent (2023-26) progress linking Fermat-quotient δ_p to intersection theory / Hodge index; the
+  cross-prime δ_p∘δ_q interaction "remains largely unexplored as an intersection invariant." ⟹ §332's δ_p
+  cross-prime pairing route is genuinely UNEXPLORED territory (not rediscovery) — a real, if speculative, opening.
+- SINGLE MOST CONCRETE OPEN STEP: construct an intersection pairing on Spec ℤ ×_{F₁} Spec ℤ that is (1) rigorously
+  F₁-defined, (2) has Weil-type positivity signature (1,ρ−1), (3) relates to a Frobenius-determinant/zeta. Best
+  current tools: C-C 2024 RR + Morishita 2026 bridge.
+ORIENTATION: my §411-423 mapping + this = the frontier is a decade-old actively-researched hard construction (F₁
+Chow theory on the self-square), NOT a missing lemma I can numerically fill. The one place the PROJECT's own work
+(§332 δ_p) is genuinely novel is the unexplored δ_p∘δ_q-as-intersection-invariant angle. NEXT: extract the precise
+open lemma from C-C 2026 (arXiv:2606.06604) to ground a correct construction; probe whether δ_p∘δ_q can seed the
+missing self-square pairing.
