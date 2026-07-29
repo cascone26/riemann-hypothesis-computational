@@ -13783,3 +13783,24 @@ Chow theory on the self-square), NOT a missing lemma I can numerically fill. The
 (§332 δ_p) is genuinely novel is the unexplored δ_p∘δ_q-as-intersection-invariant angle. NEXT: extract the precise
 open lemma from C-C 2026 (arXiv:2606.06604) to ground a correct construction; probe whether δ_p∘δ_q can seed the
 missing self-square pairing.
+
+## §425 (ATTACK, novel δ_p route) — FIRST genuinely-suggestive second-space structure: the Buium cross-prime commutator [δ_p,δ_q](n) is SIGN-DEFINITE (>0 for all p<q), with a PROVEN positivity mechanism — a candidate arithmetic Kähler/curvature form on the unexplored δ_p route. HANDLE (the invariant + proof); REPORT/speculative (the RH bridge).
+Three steps:
+- §425 (rt6_fermat_cross.py): naive Fermat-quotient VALUES q_p(a) are cross-prime RANDOM (eigenvalue spread &
+  offdiag magnitude indistinguishable from a random-matrix null) — no intersection structure in the values.
+  ⟹ content (if any) is in the NON-COMMUTATIVE δ_p∘δ_q composition, not the values.
+- §425b (rt6_delta_commutator.py): the exact Buium commutator [δ_p,δ_q](n)=δ_pδ_q(n)−δ_qδ_p(n), δ_r(m)=(m^r−m)/r,
+  is STRICTLY POSITIVE for all tested p<q, all n≥2 (signs all +). Growth exponent = pq (leading term n^{pq}, confirmed).
+- §425c VERIFY (robust + proven): [δ_p,δ_q](n)>0 for ALL 1755 cases (primes p<q≤29, n=2..40), ZERO failures. The
+  leading coeff ∝ [1/q^{p-1} − 1/p^{q-1}] = sign(g(q)−g(p)), g(x)=(x−1)/ln x. g is PROVEN monotone increasing
+  (g'=[ln x−1+1/x]/(ln x)²; numerator h(1)=0, h'(x)=(x−1)/x²>0 ⟹ h>0 ⟹ g'>0), so the leading term is positive for
+  EVERY p<q. ⟹ [δ_p,δ_q](n)>0 is a genuine sign-definite antisymmetric cross-prime invariant with a proven mechanism.
+SIGNIFICANCE (calibrated, not oversold): sign-definite + antisymmetric = the shape of an arithmetic KÄHLER/curvature
+2-form (NOT a symmetric intersection form — the Kähler partner of one), matching §332's prediction (normal bundle
+of the diagonal, Hirota/twisted-Leibniz). This is the RIGHT KIND of object for supplying Hodge-index positivity on
+the F₁ self-square, and it lives on the route the literature (§424) confirms is UNEXPLORED. HONEST LIMITS: (a) the
+positivity mechanism is ELEMENTARY ((x−1)/ln x monotonicity) — the finding may be shallow, not deep; (b) the bridge
+from "sign-definite δ_p commutator" to "RH self-square intersection pairing / a zeta positivity" is ENTIRELY
+UNBUILT and speculative — no RH claim. This is a genuine novel LEAD to develop, not a result about RH.
+NEXT: does this positive antisymmetric form induce a Hodge-index inequality (pair it with a symmetric metric to get
+a definite symmetric form), and does its determinant/spectrum relate to ζ? — the first real second-space construction.
