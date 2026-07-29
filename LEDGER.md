@@ -13909,3 +13909,16 @@ Nyman-Beurling analog of the open refinement; RH itself is only d_N→0. Möbius
 are the two faces; both tie to the same zeros. HONEST: this reproduces known theorems (Handle earned by computation,
 result not novel). NEXT idea: compare the "hard direction" of the two instruments (Weil critical dir §417 vs
 Nyman-Beurling near-optimal residual) — do they identify the SAME structure?
+
+## §434 (C-C route, CORRECT grounding) — Arakelov RR on Spec ℤ IS the ζ functional equation. Cleanly decomposes RH: functional-equation SYMMETRY = 1D RR (have it, classical) + POSITIVITY = 2D self-square Hodge index (the open step). HANDLE (correct, verified).
+rt6_arakelov_rr.py. van der Geer-Schoof / Arakelov: h⁰(D)=log θ(e^{-2t}) (t=deg D, θ(y)=Σ_ℤ e^{-πn²y} = arithmetic
+effectivity), h¹(D)=h⁰(−D). VERIFIED numerically: h⁰(D)−h¹(D)=deg(D) EXACTLY (to 1e-9) for all t — and this is
+LITERALLY the theta functional equation θ(1/y)=√y·θ(y) (checked: θ(1/0.3)=√0.3·θ(0.3)=1.000057), which is ζ's
+functional equation ξ(s)=ξ(1−s). So Riemann-Roch on Spec ℤ = the functional equation. CLEAN DECOMPOSITION OF RH
+(in the C-C/Arakelov frame): (a) SYMMETRY half [ξ(s)=ξ(1−s), zeros symmetric about Re=1/2] = 1D Arakelov RR =
+theta functional equation = CLASSICAL/PROVEN; (b) POSITIVITY half [zeros exactly ON Re=1/2] = the 2D self-square
+Spec ℤ×_{F₁}Spec ℤ diagonal Hodge-index positivity = C-C OPEN step. This grounds the whole forced-structural
+conclusion (§422/424/432): everything we HAVE (functional equation, explicit formula = Lefschetz §326) is the 1D
+/ symmetry layer; the missing piece is uniformly the 2D positivity, and it's the same missing piece across ALL the
+project's routes (Weil form, Circle-Lemma, C-C, δ_p). Correct, classical, clarifying — the cleanest one-line
+statement of where RH's difficulty lives.
