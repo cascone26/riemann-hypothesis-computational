@@ -3982,3 +3982,29 @@ being on the line = a precise alignment fact). This welds to the §325-332 keyst
 signature theorem to the F_1 self-square; signature concentrates at ∞). NEXT (loaded): connect §417's angle/near-kernel
 bound to the large-sieve/Montgomery machinery (where unconditional PARTIAL results live) — lit-gate first per
 rh-roundtable-literature-gate; OR press the genuine second space (δ_p cross-prime pairing, §332).
+
+## §419–425 (2026-07-29, Fable, cont.) — frontier LOCATED (Connes-Consani) + a NOVEL verified lead on the unexplored δ_p route. Consolidated in LEDGER §419-425.
+- §419: two-instrument cross-check (Fejér) TEMPERED §417 — cancellation-domination is real & instrument-independent
+  at ~3.4x, but the dramatic "292x/razor-thin" was a Gaussian overlap-degeneracy artifact. Fejér is the clean
+  O(1)-vs-O(1) lens: RH ⟺ prime_push (arithmetic, O(1)) ≤ archmargin (analytic, O(1)), locking at the counting edge.
+- §420 LIT-GATE: my §411-419 mechanism = CONNES-CONSANI 2020 archimedean-place Weil positivity (prolate spheroidal
+  / scaling-action compressed onto the cutoff's orthogonal complement / Toeplitz control). Burnol Sonin space =
+  positivity source; Bombieri-Yoshida = small-support case. My instrument FAITHFULLY re-derived the state of the art
+  and sits EXACTLY at the open frontier (archimedean place = THEOREM; combining prime places = open = prime_push≤archmargin).
+- §421: the prime form lives ENTIRELY in the archimedean-critical subspace (full-rank) — the C-C combination is
+  genuinely coupled, NOT a low-rank crack.
+- §422 SYNTHESIS: ALL size-based lines in the project (my cancellation-domination, §387 gradient-floor, the prior
+  "Circle Lemma" exponential-domination in large_sieve_bound.py) hit the IDENTICAL γ→∞ wall (off-line signal →0,
+  c_max→1). This RULES OUT the entire effective/finite/majorant class and FORCES the exact structural second-space route.
+- §423: place-space archimedean cross-prime form has NO intrinsic Hodge signature (regularization artifact, 32nd
+  verify-catch) — no naive re-indexing (probe-space §414 OR place-space §423) gives the second space; F₁ geometry required.
+- §424 RESEARCH: exact open step = INTERSECTION/CHOW THEORY on Spec ℤ ×_{F₁} Spec ℤ (self-square). Tools: C-C 2024
+  "Riemann-Roch for ℤ" (ℤ=ℍ[X] Boolean semifield), C-C 2026 "Absolute Geometry of Spec ℤ" (arXiv:2606.06604, builds
+  the single curve; self-square still open), Morishita 2026 Deninger↔C-C bridge. Buium δ_p cross-prime = confirmed UNEXPLORED.
+- §425 NOVEL LEAD (HANDLE + speculative): Fermat-quotient VALUES are cross-prime random, but the Buium commutator
+  [δ_p,δ_q](n)>0 is SIGN-DEFINITE for all p<q (proven mechanism: (x−1)/ln x monotone increasing) — a candidate
+  arithmetic KÄHLER/curvature form on the unexplored route, matching §332's normal-bundle-of-diagonal prediction.
+  Honest limits: elementary mechanism (may be shallow); RH bridge entirely unbuilt.
+NEXT (loaded): develop the §425 δ_p form — does it induce a Hodge-index inequality (pair with a symmetric metric),
+and does its spectrum/determinant relate to ζ? = the first real second-space construction, on genuinely novel ground.
+Full detail LEDGER §419-425; verify-catch count this session: 7 (§412/413/414/415b/418/419/423).
