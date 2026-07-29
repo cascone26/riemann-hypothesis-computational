@@ -13518,3 +13518,18 @@ it is in "does PSD-ness SURVIVE to the rank edge" (§404). This is the correct d
 SIGN half, not the density half. NEXT ATTACK (§411): apply the §404 discriminator to controls — do REAL zeros
 stay PSD at rank saturation while Poisson/GUE surrogates go NEGATIVE? If real is special there, THAT is the
 localized RH-content (sign-survives-to-edge), and its mechanism is the real target — not any signature.
+
+## §411 (ATTACK, positivity-bound family) — CLEAN DISCRIMINATOR: the sign-survives-to-rank-edge IS special to true Λ, and it is broken by SYSTEMATIC single-prime inflation (mean/pair-level) but NOT by random noise. Sharpens the RH-content localization. HANDLE.
+rt6_edge.py, band[14,44] w=3, analytic side (primes-only), across the plunge: **TRUE Λ: lmin ≥ 0 all the way
+to the rank edge** (+2.2e-3 → +1.3e-5 → +3.7e-9 → 0 at s=3.0). **BENT Λ(2)×1.05: goes NEGATIVE at s=4.2
+(−4.6e-3), well BEFORE the edge, stays negative.** **RAND (5% random jitter on ALL primes): stays POSITIVE to
+the edge** (+9.9e-5 at s=3.0). ⟹ the RH-critical perturbation is a SPECIFIC DIRECTION — systematic inflation
+of a single (resonant) prime = a MEAN/pair-level shift — NOT random noise (which is mean-zero and averages
+out). This unifies: §374 (tight direction is arithmetic-specific), §385 Parity-Bar (beyond-pair pin barred,
+but the MEAN sits at the pin, t=m₁/σ=0.0024 — a mean shift CAN break it), §387 two-floor. **The localization
+is now sharp: RH-on-this-front = the true Λ's Weil form stays PSD in the ONE critical mean/single-prime
+direction to the rank edge; random (beyond-pair, mean-zero) perturbations are floored safe by the pair
+structure (2C₂−1), but the mean is critically positioned exactly at the boundary.** So the sign half = "the
+mean stays at/inside the pin," and that IS Weil positivity in the critical direction.
+NEXT: quantify the critical single-prime threshold (how much Λ(2) inflation first breaks positivity at the
+edge) vs the 2C₂−1 two-floor bound — is there an unconditional lower bound on the stiffness matching §385?

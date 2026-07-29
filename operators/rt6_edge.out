@@ -1,0 +1,18 @@
+edge margin (lmin at each fill) TRUE vs perturbed prime data. band[14,44] w=3.
+    s   n   TRUE lmin     bent(2)      rand5% || worst-neg ||
+  6.0   6  +8.857e-01  +8.722e-01  +8.819e-01         all>=0
+  5.7   6  +7.844e-01  +7.730e-01  +7.788e-01         all>=0
+  5.4   6  +5.882e-01  +5.793e-01  +5.874e-01         all>=0
+  5.1   6  +3.366e-01  +3.311e-01  +3.460e-01         all>=0
+  4.8   7  +1.394e-01  +1.337e-01  +1.517e-01         all>=0
+  4.5   7  +3.680e-02  +2.950e-02  +4.839e-02         all>=0
+  4.2   8  +2.214e-03  -4.639e-03  +1.250e-02       BENT NEG
+  3.9   8  +1.312e-05  -6.232e-03  +1.044e-02       BENT NEG
+  3.6   9  +3.719e-09  -5.275e-03  +9.164e-03       BENT NEG
+  3.3  10  +1.360e-14  -5.340e-03  +7.608e-04       BENT NEG
+  3.0  11  -1.351e-15  -5.536e-03  +9.878e-05       BENT NEG
+
+reading: if TRUE stays >=0 to the rank edge while BENT (and/or RAND) go NEGATIVE before it, the
+sign-survives-to-edge property is SPECIAL to true Lambda = the localized RH-content. The SCALE of
+perturbation that first breaks it (5% here) vs the two-floor bound (2C2-1 ~ 0.32 relative) is the
+quantitative margin. This is the analytic positivity-bound the second space would have to explain.
