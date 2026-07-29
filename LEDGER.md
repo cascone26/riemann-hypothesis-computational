@@ -13891,3 +13891,21 @@ self-square — precisely what my §414/§423 (analytic re-indexings) failed to 
 FORCED. The tropical (min-plus) intersection form is genuinely DIFFERENT from my analytic integrals — a candidate
 worth a careful, correctly-grounded toy (NOT a rushed guess — the exact C-C conventions must be pinned first).
 CROSS-REF: this is the SAME missing piece as STATUS §325-332 keystone (arithmetic Hodge index → F₁ self-square).
+
+## §433 (NEW independent RH-equivalent — Nyman-Beurling-Báez-Duarte, validated 3-way) — computed EXACTLY (γ_n is a step function); d_N decreasing, optimal c_n≈μ(n), and d_N²·logN → 2+γ−log(4π)=Σ_ρ1/|ρ|² (BSLR theorem reproduced, tied to my 150 zeros). Clean cross-lens validation. HANDLE (known theorem, independently reproduced).
+rt6_baez_duarte.py + rt6_bd_constant.py. RH ⟺ d_N→0, d_N²=min_c||1−Σ_{n≤N}c_n γ_n||², γ_n∈L²([1,∞),dt/t²).
+KEY simplification: γ_n(t)=⌊t/n⌋−⌊t⌋/n is a STEP function = −{j/n} on [j,j+1), so EXACTLY G_{n,m}=Σ_j
+{j/n}{j/m}/(j(j+1)), b_n=−Σ_j{j/n}/(j(j+1)), ⟨1|1⟩=1, d_N²=1−bᵀG⁻¹b. Results (J=4e5):
+- d_N² DECREASES monotonically 0.0363(N=5)→0.00974(N=120) — consistent with RH (d_N→0).
+- optimal c_n TRACK μ(n) cleanly: squarefree n → |c|~0.6-0.95 with μ's sign; n=4,8,9 (non-squarefree) → c≈0.01-0.1
+  (μ=0). Confirms the Báez-Duarte Möbius mechanism Σμ(n)γ_n=1.
+- **3-WAY CROSS-CHECK**: d_N²·logN → 0.0466 (N=120, from above) = the Balazard-Saias constant 2+γ_Euler−log(4π)
+  = 0.046191 = Σ_ρ 1/|ρ|² (on RH ρ(1−ρ)=|ρ|²=1/4+γ²). Independently: Σ over my 150 zeros of 2/(1/4+γ²) + density
+  tail = 0.046199 — MATCHES the constant to 4 digits. So the Nyman-Beurling distance ↔ closed constant ↔ actual
+  zeros all lock together (reproduces BSLR 2005 liminf d_N²logN ≥ Σ1/|ρ|², equality conjectural).
+VALUE: first fully-independent (non-Weil) RH-equivalent this session, computed exactly and cross-validated against
+the zero data — a robust second lens. The equality-conjecture (d_N²logN → exactly the constant, vs just ≥) is the
+Nyman-Beurling analog of the open refinement; RH itself is only d_N→0. Möbius/Nyman-Beurling and Weil-positivity
+are the two faces; both tie to the same zeros. HONEST: this reproduces known theorems (Handle earned by computation,
+result not novel). NEXT idea: compare the "hard direction" of the two instruments (Weil critical dir §417 vs
+Nyman-Beurling near-optimal residual) — do they identify the SAME structure?
