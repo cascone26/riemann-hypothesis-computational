@@ -4008,3 +4008,26 @@ rh-roundtable-literature-gate; OR press the genuine second space (δ_p cross-pri
 NEXT (loaded): develop the §425 δ_p form — does it induce a Hodge-index inequality (pair with a symmetric metric),
 and does its spectrum/determinant relate to ζ? = the first real second-space construction, on genuinely novel ground.
 Full detail LEDGER §419-425; verify-catch count this session: 7 (§412/413/414/415b/418/419/423).
+
+## §428–433 (2026-07-29 overnight, Fable, autonomous) — quantitative frontier + independent cross-validation. LEDGER §428-433.
+- §428-430: mapped the UNCONDITIONAL-positivity frontier ρ=||prime||op/archmargin. EXTENDED the instrument to 150
+  real zeros (mpmath, γ<319, zeros150.npy) with valid residuals to γ~215. Result: ρ_edge stays in [1.2,2.0] at ALL
+  heights — NEVER →1. The unconditional size bound has a PERMANENT irreducible deficit; RH cancellation is needed at
+  every height. Quantitative backbone of §422. (High-band ρ<1 was a zero-truncation artifact, caught by residual gate.)
+- §431: validated "zero-side PSD ⟺ zeros real" directly (moved one zero off-line, β=0→PSD, β>0→breaks). KEY
+  refinement of §422: band-centered, off-line displacement breaks LOCAL positivity at β*~0.8-2.0 HEIGHT-INDEPENDENTLY
+  (the fixed-band β*-growth was geometry). So "high-γ hard" is about GLOBAL UNIFORMITY across bands, NOT weak local
+  signals — exactly what a structural (all-γ-at-once) argument supplies and no effective/band-by-band one can.
+- §432 RESEARCH: C-C 2024 Riemann-Roch concrete detail — ℤ=𝕊[X] (1+1=X+X²), infinite-genus arithmetic curve, RR
+  formula dim H⁰−dim H¹=⌈deg₂D⌉'+1, tropical/min-plus scaling site is COMPUTABLE; the self-square intersection
+  pairing + positive Hodge form is THE open step (algebraic-geometric, not computational). "Zeta Spectral Triples"
+  (C-C-Moscovici 2026) targets diagonal self-intersection ↔ zeros.
+- §433: independent RH-equivalent — Nyman-Beurling-Báez-Duarte, computed EXACTLY (γ_n step function). d_N decreasing,
+  optimal c_n≈μ(n), and d_N²·logN → 2+γ−log(4π)=Σ_ρ1/|ρ|²=0.0462, cross-checked 3 ways (constant ↔ my 150-zero sum
+  ↔ the distance). Reproduces BSLR 2005; robust second lens tied to the zeros.
+- δ_p route (§425-427): sign-definite commutator lead found but honestly self-caught as SHALLOW (generic (x−1)/ln x
+  monotonicity, holds for non-prime real orders, no ζ structure).
+Verify-catch count this session: 9 (§412/413/414/415b/418/419/423/429-trunc/431b). Everything cross-checked before banked.
+Assets: zeros150.npy (150 zeros), extended-instrument mode, Báez-Duarte exact-Gram tooling.
+NEXT (loaded): the C-C tropical self-square toy (needs precise conventions pinned first) OR cross-instrument
+comparison (Weil critical direction §417 vs Nyman-Beurling hardest residual — same structure?).
