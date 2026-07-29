@@ -13922,3 +13922,11 @@ conclusion (§422/424/432): everything we HAVE (functional equation, explicit fo
 / symmetry layer; the missing piece is uniformly the 2D positivity, and it's the same missing piece across ALL the
 project's routes (Weil form, Circle-Lemma, C-C, δ_p). Correct, classical, clarifying — the cleanest one-line
 statement of where RH's difficulty lives.
+
+## §435 (Nyman-Beurling refinement) — BSLR equality-gap d_N²logN−const is small (~1-3%, hovering ~0.001) and consistent with →0, but numerically NOISE/CONDITIONING-limited (cond(G)→6e4 at N=160, γ_n near-dependent). Inconclusive on the decay rate. HANDLE (honest numerical-limit).
+rt6_bd_gap.py (J=1.5e6, N to 160): gap = d_N²logN − 0.046191 = +0.0034,0.0008,0.0008,0.0020,0.0008,0.0004,0.0010,
+0.0013 for N=20..160 — small, non-monotonic (arithmetic fluctuation + conditioning noise), consistent with the
+BSLR equality conjecture (gap→0) but the known Nyman-Beurling Gram ill-conditioning (cond grows 5e2→6e4) caps
+reliable N ~100-160 and puts the gap at the noise floor. Can't resolve the decay rate numerically. The ill-
+conditioning itself = the same "irreducible difficulty / near-degeneracy at the resolution edge" theme as the Weil
+instrument's rank-edge collapse (§404) — both instruments become singular exactly where the RH-content concentrates.
