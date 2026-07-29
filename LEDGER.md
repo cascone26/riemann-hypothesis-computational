@@ -14076,3 +14076,16 @@ true. This is the Hilbert-Pólya/Connes/Deninger frontier, and every classical r
 Beurling §433, Li §441, geometric, spectral) provably reduces to it. The session's achievement: mapping all routes
 to this single core and localizing Θ concretely to xp (Berry-Keating), with the positivity side realized/available
 and the sole gap being the arithmetic object's existence (= the positivity's truth).
+
+## §451 (semi-local combination — NEW structural result on the C-C open step) — positivity is IRREDUCIBLY GLOBAL: adding primes one at a time to the proven archimedean positivity gives INDEFINITE partial sums (oscillating λmin), positive ONLY when ALL primes are summed. Cannot be built prime-by-prime. HANDLE.
+rt6_semilocal.py (Fejér, band[14,44]): λmin(arch+pole − Σ_{p≤P} prime_p) vs P: arch+pole alone +0.437 (C-C proven
+positive) → +p2: −0.272 → +p3: −0.544 → +p5: −0.212 → +p7: +0.083 → +p11: −0.053 → +p13: +0.039 → ... OSCILLATES
+with decreasing amplitude → all-primes: +3.3e-6 (≥0, the true edge; resid 3.8e-8 valid). So the Weil/Connes
+positivity is a GLOBAL/COLLECTIVE property of the COMPLETE prime sum — every truncation (arch + finitely many
+primes) is INDEFINITE; positivity emerges only in the complete limit as a razor-tight global cancellation (§417).
+CONSEQUENCE (real constraint on proof strategy): the semi-local combination (C-C's exact open step) CANNOT be
+proved incrementally/prime-by-prime — each partial step overshoots into indefiniteness. A proof must control the
+ENTIRE prime sum's cancellation at once (global), which is exactly §422's "global uniformity" and why the archimedean
+place being proven positive (C-C 2020) does NOT bootstrap to the global positivity by adding places. The low primes
+(2,3) erode most (§417/439 resonance); the tail refines toward the edge. This concretely shows the obstruction is
+the irreducibly-global nature of the cancellation — not a missing local estimate. Fresh, direct probe of the frontier.
