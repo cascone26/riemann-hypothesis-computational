@@ -13742,3 +13742,18 @@ STRUCTURAL (Hodge-index-style, holds for ALL γ at once) rather than won by an e
 archimedean place is a THEOREM (C-C, structural) while the global/prime combination is open (needs the second
 space, not a bound). FORCED next direction: engage the second space directly (§332 ⟨δ_p,δ_q⟩ / arithmetic
 differentials) — the only route not killed by the γ→∞ degradation.
+
+## §423 (ATTACK, second-space step 1) — the place-indexed archimedean cross-prime form does NOT carry an intrinsic Hodge signature; the (n−1,1) I first saw is a REGULARIZATION ARTIFACT. 32nd verify-catch (robustness check caught a would-be false breakthrough). HANDLE.
+rt6_place_form.py + rt6_place_verify.py. Built M_arch[p,q]=∫Ω(r)cos(log p·r)cos(log q·r)dr (archimedean/Arakelov
+intersection of prime fibers). §423 at W=40 regularization gave signature (9,0,1) — LOOKED like the Hodge-index
+single-anchor structure §414 couldn't find in probe-space (1 isolated-sign anchor + n−1 same-sign Weil-positive
+primitive). §423b ROBUSTNESS (vary W∈{25,40,60}, n∈{6,8,10,12}, cutoff): the #negative eigenvalues is set ENTIRELY
+by the regularization width — W=25→2 neg, W=40→1 neg, W=60→0 neg (fully PSD) — for every n. The Gaussian cutoff
+just trades the low-r region (Ω<0, r<6.6) against high-r (Ω>0); no intrinsic signature. So the naive place-space
+archimedean form is NOT the second-space Hodge form either (consistent with §414 probe-space failure). CONFIRMS
+§422: no NAIVE construction from explicit-formula data (probe-space §414 OR place-space §423) carries intrinsic
+Hodge structure — the real second space genuinely requires the unbuilt F_1 arithmetic geometry (the δ_p input /
+the fibration §329), not a re-indexing of the analytic data. Seven verify-catches this arc (§412/413/414/415b/418/
+419/423) kept the map honest. NEXT: the forced route is deliberate structural construction, not numerical
+re-indexing — research the precise arithmetic-Hodge-index fibration obstruction (Faltings-Hriljac/Yuan-Zhang→F_1
+self-square; Deninger; C-C semi-local) to inform a correct construction rather than another artifact-prone probe.
