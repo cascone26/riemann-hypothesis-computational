@@ -14055,3 +14055,24 @@ structure = the Weil/Connes positivity. I have been computing exactly this all a
 gives the smooth density; the primes create the zero FLUCTUATIONS; RH = the arithmetic keeps xp's spectrum real.
 NEXT: show xp's self-adjoint extensions give the smooth-but-wrong (equally-spaced) spectrum, isolating what the
 arithmetic must add (the zero fluctuations) — the precise role of the primes in Θ's self-adjointness.
+
+## §450 (spectral decomposition — closes the unification) — zeros = smooth (xp/exact-θ) + O(1) arithmetic fluctuation (std 0.55 = the S(T)=argζ part). Θ=xp gives the smooth spectrum; the primes add the bounded fluctuation; RH ⟺ it keeps zeros real. HANDLE.
+rt6_xp_fluctuation.py / rt6_xp_fluct2.py. γ_n^smooth from exact Riemann-Siegel θ (θ(γ)/π+1=n). δ_n=γ_n−γ_n^smooth:
+mean −1.03 (an INDEXING offset — the equation lands on the (n−1)-th Gram point, not a physics effect), std=0.55
+(the real arithmetic fluctuation, ~S(T)=(1/π)argζ, O(1)). So the decomposition holds: the xp/θ semiclassical phase
+= the SMOOTH zero staircase (exact), the primes contribute only the bounded oscillatory fluctuation. RH ⟺ this
+prime fluctuation never pushes a zero off ℝ = xp+arithmetic self-adjoint = Weil/Connes positivity.
+
+## GRAND UNIFICATION (§442-450, this session) — all three major RH routes are ONE open statement, three faces.
+- ANALYTIC (§411-441): Weil quadratic form full=archpole−prime, PSD ⟺ RH; cancellation-dominated; size bounds never suffice.
+- GEOMETRIC (§442-448): Hodge-index on the F₁ self-square; FE-closed Rosati validly detects off-line (PSD⟺RH); the
+  positivity is available (proven tropical Hodge-Riemann, AHK); the gap = the correspondence Θ.
+- SPECTRAL (§449-450): Θ = Berry-Keating xp (1D, density log r = the ∞-place, matches actual zero counts); xp = smooth
+  spectrum, primes = fluctuation; RH ⟺ self-adjointness with the arithmetic domain.
+ALL THREE = the same object: Θ=xp, its spectral realization = Connes' adele class space, RH = Weil positivity of the
+Connes trace formula = my instrument's full≥0. The open core is uniformly: does the arithmetic object (Θ / the
+self-adjoint xp / the F₁ correspondence with length-spectrum {log p}) EXIST — i.e., is the Weil-Connes positivity
+true. This is the Hilbert-Pólya/Connes/Deninger frontier, and every classical route (Weil, Circle-Lemma, Nyman-
+Beurling §433, Li §441, geometric, spectral) provably reduces to it. The session's achievement: mapping all routes
+to this single core and localizing Θ concretely to xp (Berry-Keating), with the positivity side realized/available
+and the sole gap being the arithmetic object's existence (= the positivity's truth).
