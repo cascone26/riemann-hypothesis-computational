@@ -789,3 +789,28 @@ dichotomy the whole table walked into, and dissolving it (not picking a side) wa
   computable window is stretched-exponential exp(s^0.77) (§417, structural negative). RH pin untouched
   throughout (κ6-immune). The one result of this run that met the FULL trust standard — a direct Arb
   certificate cross-checked two ways and duplicated by two independent apparatus — is §416.
+
+## §420 — CORRECTION to §418: Hilbert's second-seat check LANDED (found a gap, supplied Lemma 3)
+The "loose end" from ADDENDUM 16 is resolved sharper than reported: Hilbert's verification (file
+results/rt6_hilbert_verify_lemmas.json, stamped rt6-hilbert-verify-2026-07-28) DID complete — his round-10
+turn wrote it, then hung before posting to the room, so the pulse showed it stuck. It is NOT a rubber-stamp:
+- Lemmas 1 (diagonal ≥¼logN) and 2 (off-diag |C|=O(1)) VERIFIED correct — but Lemma 2 is SCOPED to
+  DISTINCT-6-offset pairs only.
+- GAP FOUND: at fixed s, ~25% of off-diagonal pairs SHARE one offset (s=36: 74/300). For a shared pair the
+  repeated site gives a dΛ² → numerator grows ~logN (rmsC_1shared 16→28 across N=1e5→4e7), UNCOVERED by
+  Lemma 2. Over the proven diagonal ≥¼logN this gives R=O(1) NOT o(1). The naive patch (diagonal to
+  (logN)^{1+ε}) needs a TWO-prime lower bound = Hardy–Littlewood/twin-prime = UNPROVABLE → hits the
+  twin-prime barrier. So the Theorem as written ("R→I entrywise") is NOT established by Lemmas 1–2;
+  empirically those entries →0 (rmsR_1shared 0.057→0.034, κ≈1.2 — they are the (logN)^-1.3 rate-setter),
+  so TRUE but UNPROVEN.
+- LEMMA 3 (shared-offset closure, Hilbert's fix): a fixed-s pair shares ≤1 offset a; factor u_t=dΛ_a·v_t,
+  u_t'=dΛ_a·v_t' with v=product of the 2 non-shared sites; since dΛ_a²≥0 it is a valid weight w=dΛ_a², so
+  R[t,t']=E_w[v_t v_t']/√(E_w[v_t²]E_w[v_t'²]). The 4 non-shared sites are ALL DISTINCT, so the reduced
+  numerator is a 4-distinct-site correlation = O(1) (Lemma-2 machinery one order down; conditioning on n+a
+  prime adds "only a bounded singular-series factor"), while E_w[v_t²]≥c·logN (Lemma-1 machinery one order
+  down) → R=O(1/logN)→0 UNCONDITIONALLY.
+- STATUS: with Lemma 3, Q-qual is unconditional AND full-matrix; without it, unconditional only on the
+  distinct-offset block. LOOSE END is now LEMMA 3 ITSELF — needs independent verification, and the crux to
+  check is whether its "conditioning on n+a prime adds only a bounded singular-series factor" step is
+  genuinely unconditional (Selberg-grade) or smuggles in HL. Handed to the terminal (Riemann7) as the
+  independent re-derivation (a separate session > an in-room peer seat).
