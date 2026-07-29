@@ -13597,3 +13597,27 @@ the ONLY robust content is counting (rank≤N, unconditional) + sign (λmin≥0,
 space must be a GENUINE 2-D arithmetic surface (Connes-Consani/Arakelov), not a reorganization of the 1-D form.
 NEXT (change the target, not the angle): quantify the UNCONDITIONAL gap — how far below the RH-needed positivity
 is the provable arch-side lower bound (§389's 2-prime/twin crux), i.e. what exactly must the second space supply.
+
+## §415 (ATTACK, new target — the honest RH-content localized) — full=archpole−prime; RH ⟺ prime_push ≤ archimedean density margin, EXACTLY tight at the rank edge (primes fill the vanishing arch margin exactly, never overshoot). Corrects a pair-correlation over-read (30th verify-catch). HANDLE.
+Three-step arc, band[14,44] w=3:
+- §415 (rt6_gap.py): Gershgorin/diagonal-dominance bound on λmin(full). Positivity is FREE (diag-dominant,
+  ratio λ/|diag|=3-7) only at low density n≤6; from s=5.5 to the edge Gershgorin goes NEGATIVE and grows to
+  −4.9 while λmin→0. So RH-on-this-band is NEVER free — it relies on off-diagonal cancellation, and the ratio
+  λmin/|diag_margin| falls monotonically to 0 at the edge (razor-tight, no slack).
+- §415b (rt6_offdiag.py) VERIFY: the off-diagonal is ARCH-dominated, NOT prime (prime/arch off-diag mass ≈0.14).
+  So the razor-tight cancellation is NOT prime pair-correlation (my initial read was WRONG — 30th verify-catch);
+  the large off-diagonal is the smooth archimedean overlap. Prime is only a ~14% rider.
+- §415c (rt6_gap2.py) THE RESULT: λmin(full)=λmin(archpole)−prime_push. λmin(archpole) itself vanishes at the
+  edge (overlap/density degeneracy = RvM saturation). push/archmargin: negative at low density (primes HELP,
+  −0.08 to −0.21), grows through 0.36→0.83, and hits EXACTLY 1.000000 at every s≤4.0 (the edge). ⟹ at the edge
+  prime_push = λmin(archpole) exactly, so λmin(full)=0 exactly. The primes fill the vanishing archimedean
+  density margin EXACTLY — never less (would be λmin<0, RH-violating), never more (would leave slack).
+WHY it can't overshoot: full = zero-side Gram 2Σ_γ F(γ)F(γ) = a SUM OF SQUARES (manifestly ≥0) PRECISELY when
+the zeros are real (on-line); an off-line zero makes F(γ) complex and 2Σ F(γ)² is no longer a sum of |·|² and
+CAN go negative. So RH ⟺ zero-side is a real Gram ⟺ full≥0 ⟺ prime_push ≤ archmargin always. This is Weil
+positivity, now cleanly localized as a concrete inequality between an ARITHMETIC quantity (prime_push, a
+functional of Λ(n)) and an ANALYTIC/archimedean quantity (archmargin, the density margin) — exactly tight at
+the counting edge. WHAT THE SECOND SPACE MUST SUPPLY: an UNCONDITIONAL proof that prime_push ≤ archmargin
+(without assuming zeros real). NEXT: attack that inequality directly — best unconditional lower bound on
+λmin(full)=archmargin−prime_push; where is the provable deficit, and does the arithmetic (Λ(n)) side admit a
+term-by-term bound against the archimedean density, or does the gap require the 2-prime/twin input (§389)?
