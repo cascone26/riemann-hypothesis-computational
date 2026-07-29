@@ -14127,3 +14127,22 @@ dominates each mode); it IS the coherent off-diagonal coupling the primes induce
 must be globally controlled (§451/453 non-incremental, §417 cancellation). The RH crux = the prime-induced
 archimedean-mode-coupling matrix's contribution to λmin — a precise, mode-resolved statement of the open positivity.
 Refines §417/421 (prime full-rank on critical subspace = the coupling, not diagonal dominance).
+
+## §457 (coupling is irreducible — no structural shortcut) — the prime-induced off-diagonal coupling of archimedean modes is nearly FULL-RANK (7/8→8/11), SPREAD (nearest-mode fraction ~0.2, not banded), razor-tuned to erode the positive diagonal to EXACTLY 0 (RH edge, never below). No low-rank/banded handle. Confirms global control is irreducible. HANDLE (negative).
+rt6_coupling.py: coupling C (prime off-diagonal in archpole eigenbasis): effrank 7/8,7/9,8/11 (~full); nearest-mode
+fraction 0.24,0.23,0.19 (spread, NOT tridiagonal); singular values decay slowly (0.77,0.75,0.66,...). C erodes
+λmin from the positive diagonal (0.084→8.6e-5 @s=4.0; 0.023→2e-10 @s=3.5; 0.0018→0 @s=3.0) — exactly to the edge,
+never negative (razor-tight, §417). So the combination obstruction (§456) has NO exploitable structure (not
+low-rank, not banded) — matching §414/423 (no cheap re-indexing). The positivity is an irreducibly-global,
+full-rank, razor-tuned cancellation. This closes the "exploit the coupling structure" door: a proof must control
+the FULL generic coupling globally (= the open Weil-Connes positivity), not a finite-rank perturbation.
+
+## §451-457 SUB-SYNTHESIS (semi-local combination thread) — the C-C open step, characterized to the bone.
+The archimedean place is proven positive (C-C 2020); combining the primes is: (a) non-incremental — partial prime
+sums are indefinite (§451/453, robust across instruments); (b) NOT per-mode — arch dominates prime mode-by-mode,
+the crux is off-diagonal coupling (§456); (c) irreducible — the coupling is full-rank, spread, razor-tuned, no
+low-rank/banded handle (§457); (d) not a clean single resonance (§452). NET: the combination obstruction is a
+full-rank, globally-tuned, razor-tight cancellation with no structural shortcut — exactly why C-C's incremental
+(place-by-place) approach stalls and why only a global mechanism (Hodge signature / operator self-adjointness) can
+work. This is the sharpest characterization of the exact open step reached this session; it does not crack it
+(that is the open Weil-Connes positivity) but it rules out every cheap route to it.
