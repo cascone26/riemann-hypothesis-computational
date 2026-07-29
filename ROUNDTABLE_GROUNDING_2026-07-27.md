@@ -814,3 +814,21 @@ turn wrote it, then hung before posting to the room, so the pulse showed it stuc
   check is whether its "conditioning on n+a prime adds only a bounded singular-series factor" step is
   genuinely unconditional (Selberg-grade) or smuggles in HL. Handed to the terminal (Riemann7) as the
   independent re-derivation (a separate session > an in-room peer seat).
+
+## §421 — Lemma 3 VERIFICATION IN (terminal, commit 5d820ff): FAILS — HL relocated to the denominator
+Terminal (Riemann-N) independent re-derivation of §420's Lemma 3 came back NEGATIVE — the two-instrument
+rule working (terminal contradicts the RT's proposed unconditional fix). FLAGGED for RT reconciliation
+before any final bank; recorded here as pending, NOT settled.
+- (1) Reweighting VALID (algebra+numerics: E[w] cancels, only w=dΛ_a²≥0 used, genuine correlation |R|≤1). ✓
+- (3) ≤1 shared offset CONFIRMED (two equal-sum triples sharing 2 offsets ⟹ identical). ✓
+- (2) THE CRUX — Lemma 3 FAILS, but NOT where the RT flagged. The NUMERATOR E_w[v_t v_t'] IS genuinely
+  Selberg-upper O(1) unconditional (measured flat ~−7 across N=1e5→4e7) — the RT's stated crux is fine. The
+  DENOMINATOR is the real barrier: the proof needs E_w[v_t²]≥c·logN i.e. D_t≥c(logN)² = a TWO-PRIME lower
+  bound = twin-prime = HL, which Selberg's one-sided sieve cannot supply. Numerics nail it: 99.3–99.6% of
+  D_t is ≥2-prime coincidences; the only unconditional piece is the exactly-1-prime SLIVER ~logN (21→31,
+  ~0.5% of D_t). So provably R=O(1)/√(O(1)·O(1))=O(1), NOT o(1); R→0 empirically ONLY because HL holds.
+- NET (pending RT reconciliation): Lemma 3 RELOCATES the HL dependence (numerator→denominator), does not
+  remove it. Q-qual is UNCONDITIONAL on the distinct-offset block (~75% of pairs) but the shared-offset
+  block (~25%) stays HL-CONDITIONAL. Downgrades §418/§420's "unconditional full-matrix" claim: bulk
+  unconditional, last quarter conditional on HL. §416 (Arb-certified per-s no-crack at s=48) is UNAFFECTED —
+  it's a numeric certificate, not a conditional analytic claim.
