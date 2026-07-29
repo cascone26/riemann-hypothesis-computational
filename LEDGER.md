@@ -13804,3 +13804,13 @@ from "sign-definite δ_p commutator" to "RH self-square intersection pairing / a
 UNBUILT and speculative — no RH claim. This is a genuine novel LEAD to develop, not a result about RH.
 NEXT: does this positive antisymmetric form induce a Hodge-index inequality (pair it with a symmetric metric to get
 a definite symmetric form), and does its determinant/spectrum relate to ζ? — the first real second-space construction.
+
+## §426 (develop §425, exploratory) — the leading-coefficient reduction of the δ_p cross-prime form is DEGENERATE (rank 8/15, super-fast-decaying, small-prime-dominated) — too crude for a rich Kähler structure. The §425 positivity is real but its easy reduction is insufficient; the genuine structure (if any) needs the full δ_p jet-space. HANDLE (+honest negative).
+rt6_delta_symplectic.py: built A[p,q]=c(p,q)=(1/pq)[1/q^{p-1}−1/p^{q-1}] (leading coeff of [δ_p,δ_q], antisymmetric),
+examined its symplectic spectrum. Result: rank(A)=8/15 — DEGENERATE (nondegenerate would be full even rank);
+symplectic eigenvalues μ_k = 2.2e-2, 3.7e-4, 2.0e-7, 5.6e-12 — decay by ×60→×1875→×35000, dominated by the
+c(2,3),c(2,5) small-prime pair. So the leading-coefficient cross-prime form is nearly rank-1, NOT a rich
+nondegenerate arithmetic Kähler form. HONEST: §425's sign-definiteness is genuine & proven, but the crudest
+(leading-order) reduction carries no rich structure — consistent with the whole-session pattern that the real
+second space needs the FULL F₁/jet machinery, not a cheap reduction. The δ_p lead remains open but is NOT a quick
+win; developing it = the genuine (hard) Buium arithmetic-jet-space construction toward a Hodge inequality.
