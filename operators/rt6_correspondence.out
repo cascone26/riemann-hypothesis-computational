@@ -1,0 +1,10 @@
+25 primes to 60. Zero-sampled correspondence forms:
+  (A) plain U_n vs U_m  [freq diff log n - log m]: signature (25, 0, 0)  lmin +5.618e+00
+  (B) FE-twisted U_n vs U_m(-g) [freq SUM log n+log m]: signature (11, 14, 0)  lmin -3.076e+01
+  (A) weighted (Lambda/sqrt n): signature (25, 0, 0)
+  (B) weighted FE-twisted: signature (11, 14, 0)
+  [U_2,U_3] commutator norm on diagonal rep = 0.000e+00 (0 = abelian = dead per W4; >0 = nonabelian)
+
+reading: if (B) FE-twisted is INDEFINITE (neg eigenvalues) while (A) is PSD, the second-space
+indefinite structure EXISTS in the prime-correspondence/FE-twist. If both PSD or (B) trivially
+degenerate, the naive correspondence collapses too (W1 confirmed deep, needs true arithmetic surface).

@@ -13476,3 +13476,31 @@ isn't a valid frame lower bound). Inconclusive; the clean c(δ) needs the proper
 NET of handoffs: (ii) clean — density free, sign codim-1; (i)+(iii) confirm the two hardest pieces are exactly
 where the literature/meta-audit say they are (no 1-D indefinite certificate; c(δ) genuinely open). The forward
 signal is UNAMBIGUOUS: build the SECOND SPACE (meta A1).
+
+## §408 (meta A1'/A4) — PRIME-CORRESPONDENCE SECOND SPACE: the FE-twist gives the program's FIRST indefinite form, but the control PROVES it trivial (random points give the same signature) and the correspondences are ABELIAN — the naive second space collapses. W1+W4 confirmed DEEP. HANDLE (measured + control).
+rt6_correspondence.py + control: (A) plain prime-correspondence Gram Σ_γ e^{iγ(log n−log m)} = PSD (25,0,0)
+[Gram, expected]. (B) FE-TWISTED (sum-freq, Σ_γ e^{iγ(log n+log m)} = zero-FT at log(nm)) = INDEFINITE
+(11,14,0) — the first non-PSD object in the whole program. BUT control (rt6_corr_control.py): real zeros
+→(11,14); uniform-random →(13,12)/(14,11); rigid-grid+jitter →(12,13)/(11,14); equispaced →(12,13). **ALL
+point sets give the same balanced ~(half,half) signature ⟹ Q_B's indefiniteness is TRIVIAL FT-oscillation
+(Σcos(γ·s) is generically sign-varying), NOT RH-content.** And [U_2,U_3]=0 exactly — the prime correspondences
+(phase multiplications e^{iγ log n}) COMMUTE = abelian = dead per W4. ⟹ the naive prime-correspondence "second
+space" produces only trivial (random-indistinguishable) indefiniteness from commuting phases — it is NOT the
+certificate. **Meta-audit W1/W4 CONFIRMED DEEP: the genuine nonabelian, RH-distinguishing second space cannot
+be cheaply built from prime phase-multiplications; it requires the real arithmetic surface (Connes-Consani/F_1,
+§334).**
+
+## §409 — META-SUPERPRISM WAVE CLOSED (§407 audit + §404-408 constructive attempts). CONCLUSION: the program has now, from ~6 independent directions, converged on the SAME missing piece — a valuable sharp localization, not a breakthrough. Honest state.
+The constructive meta-attempts all landed on W1: (§405) no 1-D indefinite trace form; (§408) naive
+prime-correspondence second space is trivial+abelian; (§400/401) the F_q indefiniteness lives on the SURFACE
+not the trace form. CLEAN POSITIVE from the wave: §404 — the corner splits exactly into unconditional density
+(rank≤RvM counting) + a codim-1 sign condition (PSD-to-the-rank-edge); THAT codim-1 sign statement is the
+entire arithmetic content of RH-on-this-front. WHAT WE'RE DOING RIGHT (confirmed): honest instrument; right
+object (B_full = number-field Rosati/Weil form, §401); difficulty-conservation law (§387); density/sign split
+(§404). WHAT WE'RE DOING WRONG (confirmed by construction failures): stuck 1-D on one explicit formula (W1);
+no second space/arithmetic surface; the FE used only as a Z/2 involution not a group (W4, abelian collapse
+§408). THE ONE THING TO BUILD, now triply-confirmed as the missing piece: the number-field arithmetic surface
+(C×C analog) with its Hodge-index positivity — the Connes-Consani/F_1 frontier. Our contribution: we have
+INDEPENDENTLY re-derived, measured, and localized that this exact object is what stands between the instrument
+(which correctly computes the right PSD form) and a proof (which needs the second-space geometric positivity).
+Not a solution; a sharp, multiply-confirmed map of the one remaining gap.

@@ -1,0 +1,12 @@
+Q_B (FE-twist, sum-freq) signature: REAL zeros vs controls (same count, [14,99] range):
+  real zeta zeros (29):      (11, 14)
+  uniform-random #0:        (13, 12)
+  uniform-random #1:        (14, 11)
+  uniform-random #2:        (13, 12)
+  uniform-random #3:        (13, 12)
+  rigid-grid+jitter #0:     (12, 13)
+  rigid-grid+jitter #1:     (11, 14)
+  perfect equispaced:          (12, 13)
+
+verdict: if real-zeros signature DIFFERS systematically from random (e.g. more balanced / a
+specific split) it's RH-content; if all ~(11,14)-ish it's trivial FT-oscillation (not a certificate).
