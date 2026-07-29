@@ -14115,3 +14115,15 @@ rt6_mertens.py: computed M(n) to 2e6. |M|/√n at n=1e6→0.212, 2e6→0.175; up
 emerged as the Nyman-Beurling optimal coefficients (§433, c_n≈μ(n)·log-taper §437). RH ⟺ Möbius cancellation
 Σμ(k)=O(√n) = the Weil-Connes positivity = one open core. Fourth independent RH-equivalent confirmed consistent
 (Weil §411-441, Nyman-Beurling §433, Li §441, Mertens §455) — all tied to the same open positivity.
+
+## §456 (combination obstruction localized to OFF-DIAGONAL coupling) — in the archimedean eigenbasis, arch DOMINATES prime mode-by-mode (prime-mass/archpole-λ < 1 at every mode incl. the weakest: 0.41,0.07,0.09); the diagonal of full is positive everywhere. The RH crux is ENTIRELY the prime's off-diagonal coupling of archimedean modes, not its per-mode magnitude. HANDLE.
+rt6_prime_dist.py (Gaussian, band[14,44]). Decomposed prime in the archpole eigenbasis: prime-mass(diagonal) at the
+smallest archpole eigenvalue is POSITIVE but SMALLER than the eigenvalue (ratio 0.41 at s=4.5, 0.07 at s=4.0, 0.09
+at s=3.5) — so full's diagonal (archpole λ − prime mass) is positive in every mode. Yet λmin(full)→0 at the edge
+(§404) — so the reduction below the positive diagonal is ENTIRELY the OFF-DIAGONAL coupling of prime across
+archimedean modes (matches §415: diagonal-dominant at low density, off-diagonal is the issue). This LOCALIZES the
+semi-local combination obstruction precisely: it is NOT that any prime overwhelms a weak archimedean mode (arch
+dominates each mode); it IS the coherent off-diagonal coupling the primes induce among the archimedean modes, which
+must be globally controlled (§451/453 non-incremental, §417 cancellation). The RH crux = the prime-induced
+archimedean-mode-coupling matrix's contribution to λmin — a precise, mode-resolved statement of the open positivity.
+Refines §417/421 (prime full-rank on critical subspace = the coupling, not diagonal dominance).
