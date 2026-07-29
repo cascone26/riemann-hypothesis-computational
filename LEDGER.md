@@ -13668,3 +13668,19 @@ artifact as §412 per-prime stiffness (probe bandwidth ~1/w gates coupled primes
 reduction. Robust across w: L1 mass / |net push| = 1.6→12.4 (>1 everywhere) — genuine sign cancellation among
 prime contributions (n=3 vs n=4,5 partly cancel). This re-confirms §417 cancellation-domination but adds nothing
 new. NET: no finite-dim reduction of the crux; the geometric angle bound (§417) remains the sharpest framing.
+
+## §419 (two-instrument cross-check) — TEMPERS §417: cancellation-domination is REAL & instrument-independent at the ~3.4× level, but the dramatic "292×/0.3% razor-thin" numbers were a GAUSSIAN overlap-degeneracy artifact. 31st verify-catch (the two-instrument rule, same discipline that caught §386). HANDLE.
+rt6_fejer_cancel.py: replicated §417A on the independent Fejér/sinc² instrument (l2_fejer). ROBUST across both
+instruments: (a) ||prime||_op ~ constant (Fejér 1.52); (b) ||op||/archmargin > 1 (~3.4 at low density in BOTH)
+⟹ prime energy exceeds the margin, positivity is NEVER free, cancellation is needed; (c) prime_push → archmargin
+EXACTLY at the counting edge (0.43779=0.43779) ⟹ λmin(full)→0, the explicit-formula/RvM identity (§404) is
+instrument-robust. GAUSSIAN-SPECIFIC ARTIFACT (does NOT reproduce on Fejér): archmargin→0 at the edge (Gaussian
+overlap Gram degenerates, probes go linearly dependent), which inflated ||op||/arch to 292× and pushed
+push/||op|| to 0.003. On Fejér archmargin STAYS O(1) (~0.44), ||op||/arch stays ~3.4, push/||op|| stays ~0.28 —
+NO razor-thin residual. So §417's "292×, near-perfect orthogonality" is overstated; the honest core is
+"cancellation-dominated at ~3.4×, prime_push locks to archmargin at the edge." Fejér is the CLEANER lens: RH ⟺
+an O(1) arithmetic quantity (prime_push) never exceeds an O(1) analytic quantity (archmargin), meeting exactly
+at the counting edge — no degeneracy confound. CORRECTED §417 framing: the crux is a genuine angle/cancellation
+(not a size bound), instrument-independent, but MODERATE (~3.4×) not extreme. NEXT: characterize the Fejér
+prime_push-vs-archmargin lock (both O(1)) — is the margin archmargin−prime_push sign-definite by a computable
+arithmetic quantity, now that there's no degeneracy artifact to see through?
