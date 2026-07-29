@@ -13945,3 +13945,16 @@ n=2→0.6931(log2, calib), 3→1.066(log3, 3%), 4→0.722(log2! =Λ(4), 4%), 5�
 recoverable FROM the zero locations (Fourier resolution: resolving prime n needs zeros to γ~n; 150 zeros → primes
 to ~150). Clean validation of the explicit-formula two-way street and of the 150-zero data. (Known duality; the
 Handle is the correct computation, not new math.)
+
+## §439 (Euler-product specificity) — Weil positivity needs the SPECIFIC Λ(p)=log p (Euler product), not just prime density: permuting log-p among primes (same multiset/support) drives λmin sharply NEGATIVE at all densities while TRUE holds to the rank edge. Isolates multiplicativity as the positivity source. HANDLE.
+rt6_euler_specific.py (Fejér). Replaced Λ(p)=log p on the 46 primes ≤ cutoff with a PERMUTED assignment (log p→log
+p', Euler product destroyed, support+multiset preserved). Result: TRUE λmin ≥0 to the edge (+0.69→+8e-7); all 3
+permutations go NEGATIVE immediately and strongly (perm2 = −0.68 already at s=6.0 low density; −2 to −3.5 near edge).
+So positivity is ARITHMETIC-SPECIFIC (the exact log p = the Euler product), NOT density-generic — permuting which
+prime carries which log-weight destroys it completely. Much stronger than §411 (bent Λ(2)×1.05, mild). MECHANISM:
+only the true Λ makes full=zero-side (sum of squares, PSD); any scramble breaks the explicit-formula identity ⟹
+indefinite. This directly demonstrates the positivity-half of RH (§434) requires the Euler product — exactly the
+multiplicative arithmetic input the 2D self-square Hodge form must encode (and what F₁ geometry struggles to
+capture). HONEST: the permutation also breaks the functional equation, so it's a "non-arithmetic scramble breaks
+positivity" result; the CLEANER isolation (FE preserved, Euler product absent, positivity broken) is the
+Davenport-Heilbronn function — the sharper follow-up (loaded, more involved to build correctly).
