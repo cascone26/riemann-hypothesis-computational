@@ -13659,3 +13659,12 @@ is the sharpest localization yet and it's GEOMETRIC (subspace angle), consistent
 fluctuation, exactly tight) and §404 (counting edge). NEXT: attack the SIGN of the residual — is v*ᵀ·prime·v*
 (the residual push) sign-definite by a computable arithmetic quantity, or is its sign exactly the on-line
 condition (RH-equivalent, no cheaper)?
+
+## §418 (ATTACK) — "finite-dimensional crux" is the §412 bandwidth artifact AGAIN (effdim grows 3→12 as w sharpens). Robust residue = sign cancellation (L1/|push|>1 at all w), already known from §417. Caught before banking. (§412-class verify-catch.)
+rt6_effdim.py + rt6_effdim_w.py: residual push (1/π)Σ Λ(n)/√n ĥ²(log n) along critical v* decomposed per prime.
+At w=3 effdim(90% mass)=2-3 primes (n=3,4,5) — LOOKED finite-dim. But w-sweep: effdim = 3,3,4,5,12 for
+w=4,3,2,1.5,1.0 — GROWS as bandwidth sharpens (high primes couple). So finite-dim-ness is the SAME instrument
+artifact as §412 per-prime stiffness (probe bandwidth ~1/w gates coupled primes). NOT an intrinsic finite
+reduction. Robust across w: L1 mass / |net push| = 1.6→12.4 (>1 everywhere) — genuine sign cancellation among
+prime contributions (n=3 vs n=4,5 partly cancel). This re-confirms §417 cancellation-domination but adds nothing
+new. NET: no finite-dim reduction of the crux; the geometric angle bound (§417) remains the sharpest framing.
