@@ -14146,3 +14146,8 @@ full-rank, globally-tuned, razor-tight cancellation with no structural shortcut 
 (place-by-place) approach stalls and why only a global mechanism (Hodge signature / operator self-adjointness) can
 work. This is the sharpest characterization of the exact open step reached this session; it does not crack it
 (that is the open Weil-Connes positivity) but it rules out every cheap route to it.
+
+## §458 (prime-counting face — ψ(x)−x, canonical RH-equivalent) — |ψ(x)−x|/√x bounded (max 0.78 to x=2e7), /(√x log²x)<0.03. Consistent with RH. 5th independent RH-equivalent face confirmed. HANDLE (known).
+rt6_psi.py: ψ(x)=Σ_{p^k≤x}log p to 2e7. |ψ(x)−x|/√x max 0.777. The DUAL of the spectral positivity: ψ(x)−x=−Σ_ρ
+x^ρ/ρ+..., RH(Re ρ=½)⟺O(√x). Ties to §455 (Mertens), §450 (S(T)). Five faces now confirmed consistent (Weil,
+Nyman-Beurling, Li, Mertens, ψ(x)−x) — all the same open core.
