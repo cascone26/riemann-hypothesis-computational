@@ -13325,3 +13325,29 @@ NEXT (the one lead worth compute): §392 follow-up — (a) is arch−prime's ONE
 zero-interpolation mode? (b) can "arch−prime has ≤1 negative direction" be a SIEVE-provable one-sided
 statement (the Hodge-index reframe makes the target one-sided, and sieves do one-sided)? (c) build the
 genuine F_q genus-2 Gram (angle 5) and compare its (1,ρ−1) certificate to §392 directly.
+
+## §399 (§392 follow-up a/b) — the "one negative direction" is REAL & robust (nneg=1 at all 6 configs) but is the ARCHIMEDEAN low-frequency mode (Ω<0 zone, pole-anchored), NOT the §375 zero-interpolant, NOT prime-driven. TEMPERS §392: the Hodge-index signature is at the archimedean place, low-band-specific. HANDLE (measured).
+rt6_signature2.py: negeig −8.6→−12.5 (grows with n); nneg=1 always. (a) phi(zeros)/phi(mid) = 3.8-7.3 > 1 —
+the negative eigenvector does NOT vanish on zeros ⟹ NOT the §375 zero-interpolation mode. (b) ⟨v,arch v⟩=−7.5
+(arch NEGATIVE on this mode), ⟨v,prime v⟩=+1.13 ⟹ the negativity is ARCH-DRIVEN: it is the low-frequency
+direction where Ω(r)=Reψ(¼+ir/2)−logπ < 0 (Ω(0)≈−5.37, region r<6.6). The pole (2Re[F(i/2)²], concentrated at
+r≈0, positive) is exactly the anchor that fills this ONE negative archimedean direction ⟹ B_full PSD. topP
+prime content is n=2 dominant (~0.9-1.0) but SMALL vs the −7.5 arch term. NET (honest temper of §392): the
+"1 negative + pole anchor" Hodge-index signature is genuine but it is an ARCHIMEDEAN-PLACE, LOW-BAND
+phenomenon (Ω<0 near r=0 balanced by the pole), NOT a one-sided PRIME target and NOT universal (high bands:
+Ω>0, arch PSD, pole≈0, no negative direction). Still a clean structural fact — the archimedean certificate has
+Hodge-index shape (pole=anchor, Ω<0-mode=the primitive), matching the edge/completion theme (§334) — but
+narrower than the wave-1 headline. The primes are a bounded perturbation on it, not the crux.
+
+## §400 (angle 5) — F_q INSTRUMENT: my construction was the WRONG OBJECT (PSD Gram, not the indefinite Weil intersection form) — off-circle made Q MORE positive, did NOT reproduce the (1,ρ−1) signature. HANDLE (measured) + owned error (same class as §386/§387).
+rt6_fq.py, genus-2 F_q=25: I built Q = Re[F*F], F[i,j]=(α_i/√q)^j — a GRAM of Frobenius-power evaluation
+vectors, ALWAYS PSD. beta=0 (RH, |α|=√q): inertia (4,0,·) rank 2g=4. beta>0 (off circle): inertia (6,0,0)
+FULL-RANK POSITIVE, lmin RISES +0.036→+0.574. Off-line makes the Gram MORE non-degenerate (powers (α/√q)^j
+grow/decay ⟹ rows independent ⟹ full positive rank), NOT negative. **27th verify-catch (same family as §386
+isolated-eigenvalue, §387): I built the PSD zero-Gram, not the certificate.** The genuine F_q Weil certificate
+is the INDEFINITE intersection form on NS(C×C), signature (1,ρ−1) (Hodge index), where an off-line eigenvalue
+VIOLATES the Castelnuovo-Severi/Hodge-index INEQUALITY (D·E)²≤D²E² — an indefinite-form inequality, not Gram
+PSD-ness. Building it right needs the actual intersection pairing (Δ, fibers, Frobenius graph Γ_F on C×C),
+a real algebraic-geometry construction. Angle 5 (genuine F_q transplant) REMAINS OPEN — my quick Gram version
+does not test it. NET: §392's F_q concordance claim is DOWNGRADED to Report-tier (the signature SHAPES rhyme,
+but my F_q instrument didn't validate the match — it built the wrong object). Correct build deferred.

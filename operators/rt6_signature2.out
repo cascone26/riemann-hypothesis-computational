@@ -1,0 +1,11 @@
+arch-prime NEGATIVE-DIRECTION characterization:
+[0.5,30]: n=8 nneg=1 negeig=-8.644e+00 | phi(zeros)/phi(mid)=5.477 | <v,arch v>=-7.511 <v,prime v>=+1.133 | topP [(2, np.float64(0.928)), (3, np.float64(0.178)), (4, np.float64(0.018)), (5, np.float64(0.008))]
+[0.5,30]: n=12 nneg=1 negeig=-1.075e+01 | phi(zeros)/phi(mid)=4.149 | <v,arch v>=-9.642 <v,prime v>=+1.103 | topP [(2, np.float64(0.97)), (3, np.float64(0.121)), (4, np.float64(0.009)), (5, np.float64(0.003))]
+[0.5,30]: n=15 nneg=1 negeig=-1.247e+01 | phi(zeros)/phi(mid)=3.776 | <v,arch v>=-11.306 <v,prime v>=+1.163 | topP [(2, np.float64(1.045)), (3, np.float64(0.109)), (4, np.float64(0.007)), (5, np.float64(0.002))]
+[0.5,40]: n=8 nneg=1 negeig=-8.104e+00 | phi(zeros)/phi(mid)=7.295 | <v,arch v>=-6.821 <v,prime v>=+1.283 | topP [(2, np.float64(1.009)), (3, np.float64(0.236)), (4, np.float64(0.026)), (5, np.float64(0.012))]
+[0.5,40]: n=12 nneg=1 negeig=-9.220e+00 | phi(zeros)/phi(mid)=5.255 | <v,arch v>=-8.130 <v,prime v>=+1.089 | topP [(2, np.float64(0.92)), (3, np.float64(0.149)), (4, np.float64(0.014)), (5, np.float64(0.006))]
+[0.5,40]: n=15 nneg=1 negeig=-1.044e+01 | phi(zeros)/phi(mid)=4.641 | <v,arch v>=-9.343 <v,prime v>=+1.095 | topP [(2, np.float64(0.957)), (3, np.float64(0.125)), (4, np.float64(0.009)), (5, np.float64(0.004))]
+
+reading: phi(zeros)/phi(mid)<<1 => neg direction IS the §375 zero-interpolation mode (arch-prime
+goes negative exactly along the zero-interpolant). <v,prime v> > <v,arch v> => the negativity is
+prime-DRIVEN (prime overwhelms arch on that one mode) => one-sided target = bound that ONE prime form.

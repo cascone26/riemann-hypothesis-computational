@@ -1,0 +1,16 @@
+GENUS-2 F_q=25 Weil form. on-line (RH) vs radial-off-line displacement beta. M test coeffs.
+  beta   M    inertia Q     lmin(Q)
+  0.00   4    (4, 0, 0)  +2.061e+00
+  0.00   6    (4, 0, 2)  -2.989e-16
+  0.05   4    (4, 0, 0)  +2.109e+00
+  0.05   6    (6, 0, 0)  +3.572e-02
+  0.10   4    (4, 0, 0)  +2.239e+00
+  0.10   6    (6, 0, 0)  +1.301e-01
+  0.20   4    (4, 0, 0)  +2.618e+00
+  0.20   6    (6, 0, 0)  +3.718e-01
+  0.40   4    (4, 0, 0)  +3.235e+00
+  0.40   6    (6, 0, 0)  +5.736e-01
+
+reading: beta=0 (RH) => Q PSD (inertia (r,0,.)). beta>0 (off circle) => Q develops NEGATIVE
+eigenvalues. If exactly ONE per displaced pair (Hodge-index (1,.) signature), this IS the F_q
+analog of §392: the proven certificate = 'off-line => negative direction', pole/ample = anchor.
