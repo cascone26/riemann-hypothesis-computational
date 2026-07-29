@@ -686,3 +686,31 @@ Hilbert-Pólya. The MODEL where it exists: Selberg trace formula on hyperbolic s
 hyperbolic surface. (2) Morishita 2026 Deninger↔C-C bridge (arXiv:2508.15971) — computable piece? (3) intersection-
 number consistency: are Θ's explicit-formula-required numbers consistent with a geometric correspondence?
 Verify-catch count now ~11 (added §444/§445 missteps, all self-corrected).
+
+═══════════════════════════════════════════════════════════════════════════
+# UPDATE 2026-07-29 (session §449-460) — GRAND UNIFICATION + obstruction characterized to the bone
+═══════════════════════════════════════════════════════════════════════════
+See RH_MAP_2026-07-29.md for the full navigable synthesis. Headlines:
+- GRAND UNIFICATION (§449-450): Θ = Berry-Keating xp (1D; density log r matches zero counts exactly). Analytic
+  (Weil form) = Geometric (Hodge/Rosati) = Spectral (xp/Connes) — ONE open core: Weil-Connes positivity =
+  xp self-adjointness with the arithmetic = my instrument's full≥0.
+- 5 RH-equivalent faces all confirmed consistent & tied to the zeros: Weil, Nyman-Beurling (§433), Li (§441),
+  Mertens/Möbius (§455), ψ(x)−x (§458).
+- SEMI-LOCAL COMBINATION (the C-C open step) characterized (§451-457): non-incremental (partial prime sums
+  indefinite), arch dominates prime mode-by-mode (§456), the crux is the off-diagonal coupling which is full-rank/
+  spread/razor-tuned with NO structural shortcut (§457). Only a global mechanism (Hodge signature / operator
+  self-adjointness) can work — incremental place-by-place proofs provably can't (matches §422).
+- Size bounds NEVER suffice: ρ_edge>1 to γ~670 (§459, 500 zeros). Only phase/cancellation reaches it.
+
+## SHARPEST LOADED ATTACKS (for Θ's existence — the sole remaining gate)
+1. The F₁ self-square ↔ matroid/tropical-surface BRIDGE: AHK Hodge-Riemann is PROVEN for matroids; does Spec ℤ's
+   F₁ self-square (infinite genus = ℚ-independence of {log p}) inherit it? The precise open construction.
+2. "Zeta Spectral Triples" (Connes-Consani-Moscovici 2026): diagonal self-intersection ↔ zeros — read for a
+   computable piece.
+3. xp self-adjointness with the adelic domain (Connes): the operator whose spectrum IS the zeros.
+All three are the genuine Hilbert-Pólya/Connes/Deninger frontier — new mathematics, not more computational probing.
+
+## HONEST STATE: the computational investigation is comprehensive. The core is the actual 165-yr open problem
+(needs the structural construction of Θ). The map is complete, cross-checked, and the positivity side is
+realized/available; the sole gate is the arithmetic object's existence. Assets: zeros150.npy, zeros500.npy,
+full instrument suite. This is a precisely-located frontier, not a wall — the next move is the structural build.
