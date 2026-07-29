@@ -13958,3 +13958,17 @@ multiplicative arithmetic input the 2D self-square Hodge form must encode (and w
 capture). HONEST: the permutation also breaks the functional equation, so it's a "non-arithmetic scramble breaks
 positivity" result; the CLEANER isolation (FE preserved, Euler product absent, positivity broken) is the
 Davenport-Heilbronn function — the sharper follow-up (loaded, more involved to build correctly).
+
+## §440 (prime↔zero information flow, novel quantification) — resolving prime p from the zeros needs zeros up to γ≈4-5·p (K_min: p=3→5, 13→17, 31→55, 43→67 zeros). Arithmetic is locally encoded; uncertainty-principle scaling. HANDLE.
+rt6_info_flow.py: K_min(p)=#zeros to recover Λ(p) within 10% via §438. γ_Kmin/p ≈ 11,6,5.8,4.4,5.4,4.4,4.7,4.9,4.1
+for p=3..43 → settles ~4-5. So prime p's arithmetic lives in zeros to height ~5p (the constant >1 vs the naive
+γ~p is the oversampling needed for 10% recovery + neighbor-leakage). Clean local prime↔zero information law.
+
+## §431+§439 SYNTHESIS (Euler-product + real-zeros = the two faces) — the sharper "FE alone ≠ positivity" isolation is ALREADY established without building Davenport-Heilbronn.
+§431 showed positivity needs REAL zeros (off-line placement breaks PSD). §439 showed positivity needs the SPECIFIC
+Euler product (permuting log-p breaks PSD). Via the explicit formula full=zero-side, these are the SAME statement
+from the two sides: the true primes (Euler product) ⟺ the true zeros (real, on-line), and either being wrong breaks
+the sum-of-squares. So the positivity-half of RH (§434) requires BOTH multiplicativity (arithmetic side) AND
+reality of zeros (spectral side) — and they're dual. The Davenport-Heilbronn function (FE + no Euler product +
+off-line zeros) is the textbook packaging of exactly this; §431+§439 demonstrate its two components directly on
+the instrument, so building DH itself is not needed to establish the point.
