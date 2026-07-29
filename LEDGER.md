@@ -14108,3 +14108,10 @@ degree does not. Good discipline: the key new result got cross-instrument-checke
 rt6_numvar.py: unfolded 150 zeros via exact θ; Σ²(L)~0.24-0.30 across L=1..20 vs Poisson=L, GUE=0.35-0.65. Strongly
 sub-Poisson (rigid) = the zeros repel like a self-adjoint operator's eigenvalues (Hilbert-Pólya). Precise GUE log-
 growth not resolved at 150 zeros (finite-size). Statistical face of §449 (Θ=xp, GUE fluctuations).
+
+## §455 (Mertens/Redheffer — Möbius face, fresh RH-equivalent) — M(n)=Σμ(k) growth envelope exponent 0.48 (≈½), |M|/√n~0.2 bounded to N=2e6, consistent with RH (M(n)=O(n^{1/2+ε})). Same open core, Möbius side. HANDLE (known).
+rt6_mertens.py: computed M(n) to 2e6. |M|/√n at n=1e6→0.212, 2e6→0.175; upper-envelope growth exponent 0.4814
+(RH needs ≤0.5+ε). Consistent with RH. det(Redheffer_n)=M(n). This is the MÖBIUS/Mertens face — the SAME μ(n) that
+emerged as the Nyman-Beurling optimal coefficients (§433, c_n≈μ(n)·log-taper §437). RH ⟺ Möbius cancellation
+Σμ(k)=O(√n) = the Weil-Connes positivity = one open core. Fourth independent RH-equivalent confirmed consistent
+(Weil §411-441, Nyman-Beurling §433, Li §441, Mertens §455) — all tied to the same open positivity.
