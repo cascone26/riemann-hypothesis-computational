@@ -13374,3 +13374,31 @@ recovers Weil's criterion = the banked wall), but it VALIDATES that B_full is th
 the missing ingredient as the number-field Hodge-index/arithmetic-surface — the known deep gap, cleanly
 localized on both sides. §392 upgraded from Report back to a correct structural statement; §400 error fully
 resolved by the α→q/α fix.
+
+## §402 (angle 10) — KREIN/SCHUR decomposition: NEGATIVE (no weaker scalar target). The binding Schur complement is HIGH-order (near the last probe, index 8/11 at criticality), NOT a low-order small-block inequality; and bent-prime sign-sensitivity is DISTRIBUTED across steps (index 3-8, not localized). The corner is "death by a plateau of many small Schur complements," not a weak link. HANDLE. Modest observation only.
+rt6_schur.py: TRUE-prime min-s_k argmin migrates to HIGH index as s→critical (2→8), min s_k → −1e-4 at index 8
+(s=3.0). s_k sequence at s=3.6: 2.0, 0.48, 0.245, then a FLAT PLATEAU ~0.04-0.09 for steps 3-8 (the collapse
+is one plateau-member hitting 0 — consistent with §335/§373 rank saturation, not a single binding step).
+Bent primes (Λ(2)×1.05) flip a Schur step negative early (s=4.2, min −3.34) but at VARYING index (3,4,5,8) —
+sign-sensitivity NOT localized to one inequality. ⟹ angle 10 does NOT yield a weaker per-step target; the
+corner does not decompose into a weak scalar link. Verblunsky/OP-recursion structure exists but is uniformly
+critical across the plateau, not concentrated.
+
+## §403 — SUPERPRISM LEAD-CHASE CLOSED (§392→399→400→401 + angles 10/8). The §392 Hodge-index/F_q lead resolved to a CORRECT structural statement with a clean localization, but NOT a new lever. Best outcomes + three concrete handoffs.
+BEST OUTCOME §401: the genuine F_q Rosati/Weil form (α→q/α) is PSD⟺RH, indefinite off-line; our number-field
+B_full = pole+arch−prime is its EXACT analog (Weil's criterion). The concordance is real; it recovers the
+banked wall (Weil positivity) and localizes the missing piece precisely: the number-field analog of the HODGE
+INDEX THEOREM on C×C (arithmetic surface). Also corrected a 3-section error class (§378/386/387 "move one zero"
+is ill-posed — primes determine zeros via the explicit formula). §399: the "1 negative direction" is the
+ARCHIMEDEAN Ω<0 low-frequency mode (pole-anchored), band-specific, arch-driven — not a prime target.
+THREE CONCRETE HANDOFFS from the whole superprism (§390-403):
+  (i) number-field Hodge-index / arithmetic-surface (§401) — the localized missing ingredient (Connes-Consani/
+      F_1 territory, §334).
+  (ii) unconditional-density upgrade (§391): the rank-collapse at RvM is a COUNTING fact (Gram of N zero-
+      vectors has rank ≤ N = RvM count, unconditional); only the SIGN half needs arithmetic — the density
+      half of the corner is unconditional.
+  (iii) the transversal c(δ) lower bound (§396 lit-gate): a NAMED open harmonic-analysis problem (complex-node
+      Plancherel-Pólya lower bound), not our oversight.
+Superprism verdict: ten angles generated, five instruments + three lit-gates + a four-section lead-chase run;
+no new provable lever, but a correct structural localization of the wall, a corrected error class, and three
+clean named handoffs. The wall stands where §334/§385 put it — now with sharper coordinates on what's missing.
