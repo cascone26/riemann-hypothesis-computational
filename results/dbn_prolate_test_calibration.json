@@ -1,0 +1,11 @@
+{"build": "dbn-prolate-stat-calibration-v1-2026-07-28", "seat": "Dyson", "tier": "HANDLE (real MC, pinned seed 20260728, reproducible)",
+ "purpose": "pre-registered corridor for Berry's prolate pair-correlation/number-variance test, calibrated BEFORE the prolate eigenvalues are computed",
+ "statistic": "number variance Sigma^2(L=8) on UNFOLDED spectrum",
+ "calibration": {"GUE": "0.55 +- 0.09..0.18 (n=32..256)", "picket_rigid_integrable": "0.06 +- 0.02", "Poisson": "7.6 +- 2..3"},
+ "discrimination_power_GUE_vs_rigid": {"n=32": "2.6 sigma (MARGINAL)", "n=64": "4.3 sigma", "n=128": "5.4 sigma"},
+ "corridor": [
+   "unfolding must be pre-registered (smooth counting function of the operator, not post-hoc polynomial) - unfolding error manufactures fake verdicts",
+   "n >= 64 unfolded eigenvalues required; below that the test cannot refute at 4 sigma and returns UNDECIDED, not a lean",
+   "Sigma^2(8) <= 0.15 -> integrable-rigid: Berry's refutation stands, bare prolate = fork-(2) skeleton",
+   "Sigma^2(8) in [0.30, 0.80] -> GUE-compatible: UNINFORMATIVE per Skeptic's pre-registered asymmetry (Odlyzko already owns GUE)",
+   "Sigma^2(8) >= 2 -> Poisson read: SUSPECT THE INSTRUMENT (unfolding bug) before any physics claim"]}

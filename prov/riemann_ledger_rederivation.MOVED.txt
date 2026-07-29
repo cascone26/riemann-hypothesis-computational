@@ -1,0 +1,1 @@
+# MOVED: canonical copy is roundtable/room/prov/riemann_ledger_rederivation.py (Gate ruling, one-canonical-name)

@@ -13202,3 +13202,44 @@ two-prime lower bound = HL). Q-qual = **unconditional on the distinct-offset blo
 shared-offset block (~25% of pairs).** Independent finding DISAGREES with Lemma 3 as the unconditional fix, and
 pinpoints the barrier at the denominator (not the numerator the RT flagged). The two-instrument rule applies:
 pinging the RT to reconcile before this banks as final.
+
+## §390 (2026-07-29, Riemann7) — SUPERPRISM: ten fresh angles on the mapped wall (post §373-389 state: corner = zero-interpolation at RvM density; two-floor theorem; pin routes dead; Q-qual shared-block conditional). Each with falsifier + gate-flag. REPORT (generation, nothing run yet).
+1. ODD/COMPLEX-h SECTOR: entire program used even real test functions. Systematically probe the non-even
+   sector of the explicit formula on the instrument (h(γ+iδ)−h(γ−iδ) ~ δh′ odd objects). Falsifier: sector
+   identically degenerate for ζ (self-dual) → close in one run. Gate: low route-to-wall risk, cheap.
+2. DERIVATIVE-SAMPLED INSTRUMENT: Gradient-Floor showed Σg′(γ)² is where off-line detection lives. Build the
+   Gram sampling h′ at zeros (Hermite/derivative probes): what is ITS critical density / collapse law?
+   (values+derivatives = double density? Hermite interpolation of the zero set.) LIT-GATE first (BRS-II).
+3. TWO-WINDOW ENTANGLEMENT: all certificates are single-window. Measure joint Gram on disjoint bands:
+   cross-window rank deficit at sub-critical per-window fill = zeros as GLOBAL interpolation set (long-range
+   rigidity on the instrument). Falsifier: joint λmin = direct-sum λmin (no entanglement). Cheap, new.
+4. UNFOLDED/AVDONIN COORDINATES + PLANCHEREL-PÓLYA: unfold zeros (density exactly 1 = Shannon land). Corner
+   = "unfolded zeros are a complete interpolation set near the integers"; Kadec-¼ fails (S(T) unbounded) but
+   AVDONIN mean-¼ may hold from unconditional inputs. And the missing c(δ) transversality LOWER bound (§364's
+   never-built ingredient) may be exactly PLANCHEREL-PÓLYA for complex perturbations of real sampling sets —
+   classical, quantitative, unconditional. LIT-GATE (Avdonin/PW complex-node theory), then build. ⭐ sharpest
+   theory angle.
+5. F_q INSTRUMENT TRANSPLANT: build the SAME critical-density Gram for a genus-2 curve zeta (Frobenius angles
+   = zeros, point counts = primes; finite explicit formula). In the world where RH is PROVEN, reverse-engineer
+   what the Hodge-index/Castelnuovo certificate IS in Gram/corner language — then seek its ℚ-analog shape.
+   Concrete, never done by us at instrument level. ⭐ deepest structural angle.
+6. HODGE-INDEX SIGNATURE CENSUS: Bombieri-style, RH ⟺ signature-(1,n−1)-type structure with the pole as the
+   positive class. Measure the signature/inertia structure of our form families across (w,s,T) in the
+   pole-anchored frame: does the ℚ-corner show approximate Hodge-index shape? Changes the certificate target
+   from PSD to one-sided-negative-on-complement (sieves CAN do one-sided). Cheap measurement.
+7. VARIATIONAL/EULER-LAGRANGE: two-floor ⟹ true Λ is EXTREMAL (margin-minimal in its moment class; mean-at-
+   pin measured). Compute the E-L residual: is ∂λmin/∂Λ ⊥ M-S-band tangent at the true Λ? If yes: RH-as-
+   variational-criticality, and the LAGRANGE MULTIPLIER of the pair-constraints is a NEW dual arithmetic
+   object to identify — a candidate genuinely-new coordinate. Measurable now.
+8. RANK-BUDGET CENSUS: zero-density theorems = unconditional per-window rank-excess budgets. Analytic-side
+   numerical rank over MANY windows (primes-only) vs RvM integral = a linear-algebra RH-scan. Evidence-tier
+   only. Low priority.
+9. BEURLING ENSEMBLE TEST: is collapse-at-exact-RvM GENERIC among pair-matched (and 4-matched) Λ-like
+   systems, or special to the primes? Generic ⟹ the §373 pin is a pair-statistics consequence (partially
+   unconditional → upgrade path); special ⟹ corner is deep-arithmetic. Either answer structural. ⭐ cheapest
+   decisive — machinery exists (fake-Λ ensembles + corner detector).
+10. KREIN/SCHUR ONE-PROBE-AT-A-TIME: the corner as a one-step-extension problem — RH-in-window ⟺ each
+    successive Schur complement ≥ 0: a RECURSIVE sequence of SCALAR prime inequalities (orthogonal-polynomial
+    structure wrt the zero measure; Verblunsky-like coefficients). Decomposes the one big corner into steps
+    with possibly weaker individual arithmetic content. Measure the coefficient law across the grid. Fresh.
+First wave (cheap+decisive): 9, 6, 3, 7, 1. Lit-gates before investment: 4, 5(background), 2, 10.
