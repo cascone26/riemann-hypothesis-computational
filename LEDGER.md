@@ -13281,3 +13281,21 @@ the moment class, not margin-extremality — confirmed: no naive variational-cri
 Wave verdict: §392 (Hodge-index signature / F_q concordance) is the lead — pursue. §391 confirms density-
 genericity of the collapse. §393/§394/§395 mostly-negative/modest (rigidity local; Λ not extremal; odd sector
 parallel). Two lit-gates still pending (Avdonin/Plancherel-Pólya angle 4; derivative-sampling angle 2).
+
+## §396 (angle 4 lit-gate) — UNFOLDED/PLANCHEREL-PÓLYA TRANSPLANT REFUTED at the literature level: the classical tools do NOT supply the missing transversal c(δ) lower bound. But confirms c(δ) is a genuine OPEN problem, not our oversight. REPORT (sourced).
+Avdonin mean-¼ (1974, unconditional+quantitative): tolerates unbounded individual deviation IF the running-
+mean deviation < 1/4π. FAILS for zeta: S(T)~log log T ⟹ unbounded MEAN deviation too, exceeds the threshold.
+So Avdonin does not certify the unfolded zeros as a complete interpolating sequence. Plancherel-Pólya for
+COMPLEX nodes {t_n+iβ}: NO general quantitative lower bound "Σ|f(ρ+iβ)|² ≥ c(β)Σ|f|²" exists in the
+literature — it is an OPEN technical problem (frame-perturbation bounds are global R-norm type, not node-
+indexed c(β)). ⟹ **the §364 never-built c(δ) transversal lower bound is confirmed genuinely never-built** (not
+a citable classical result; needs new theory bridging zeta-zero statistics + frame-perturbation analysis).
+Also (sourced): BRS-2023 — zeta zeros are Fourier-interpolation nodes only WITH extra data (f(ρ) + F̂(log n)),
+NOT a complete interpolating sequence by themselves, and CONDITIONAL on RH; Kulikov density ↔ RvM is
+structural not a proof; Nyman-Beurling/Corvalán give RH-EQUIVALENT interpolation statements (no breakthrough).
+⟹ "unfolded zeros = complete interpolation set" is RH-conditional/weaker (matches §343 Q5: naming the object
+by the zeros). Angle 4 CLOSES as a tool-transplant (Avdonin fails, complex Plancherel-Pólya absent), but the
+finding is valuable: the transversal lower bound the whole exclusion/detector program needs is a NAMED open
+problem in harmonic analysis, not a gap in our execution — a precise handoff target.
+SUPERPRISM WAVE 1 COMPLETE (bar the derivative-sampling gate, angle 2, still running). Net: §392 Hodge-index/
+F_q signature concordance is the one lead to pursue; angles 1/3/4/7/9 mostly-closed or modest; 2 pending.
