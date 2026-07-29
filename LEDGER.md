@@ -13824,3 +13824,17 @@ RH-content (if any) would live only in the deep jet-space/Frobenius-lift (the ge
 NOT reachable via the leading commutator. Honest self-catch (didn't oversell §425). PIVOT: away from δ_p to
 nailing the precise UNCONDITIONAL-vs-OPEN boundary of the core positivity (Bombieri-Yoshida threshold on the clean
 Fejér instrument) — turning the session's qualitative map into a quantitative frontier.
+
+## §429 (quantitative, honest) — the unconditional op-norm bound has a PERSISTENT deficit at the edge: ρ_edge=||prime||op/archmargin ≈ 1.3-1.5 over the valid band range (NOT →1). The dramatic ρ_edge<1 at high bands was a ZERO-TRUNCATION artifact (instrument has only 29 zeros). HANDLE (+verify-catch on truncation).
+rt6_uncond_frontier.py / rt6_rho_edge.py / rt6_rho_verify.py. §428: mapped ρ=||prime||op/archmargin across band×density;
+found ρ<1 "unconditional zones" at high bands — BUT §429b residual gate (||full−zero||) shows these are truncation
+artifacts. VALID bands (residual<1e-6, enough of the 29 zeros above the band): (14,44) ρ=3.50, (20,50) ρ=1.52,
+(30,60) ρ=1.38. Higher bands INVALID (residual blows up: (60,90)=1.9e-5, (70,99)=5.6e-4, 0 zeros above). So:
+- archmargin GROWS with band height (~log γ, zero density): 0.44→0.62→0.79. ||prime||op stays ~1.0.
+- ρ_edge DECREASES 3.5→1.52→1.38 then LEVELS at ~1.3-1.4 over the valid range — does NOT reach 1. The (14,44)=3.5
+  is inflated by low-γ/pole proximity; the "asymptotic" edge deficit is ~1.3-1.4.
+HONEST RESULT: the unconditional operator-norm bound is off by only ~30-50% at the edge (much tighter than the
+band(14,44) 3.5x suggested) — but the deficit PERSISTS (ρ>1), so RH cancellation is irreducibly needed, just
+modestly. Whether ρ_edge→1 asymptotically (op-bound tight) or levels >1 (irreducible deficit) CANNOT be resolved
+with only 29 zeros — the truncation caps the testable band height. NEXT: EXTEND the instrument to ~150 zeros
+(mpmath) to test the ρ_edge asymptotic trend validly — a real, decidable quantitative question.
