@@ -14151,3 +14151,10 @@ work. This is the sharpest characterization of the exact open step reached this 
 rt6_psi.py: ψ(x)=Σ_{p^k≤x}log p to 2e7. |ψ(x)−x|/√x max 0.777. The DUAL of the spectral positivity: ψ(x)−x=−Σ_ρ
 x^ρ/ρ+..., RH(Re ρ=½)⟺O(√x). Ties to §455 (Mertens), §450 (S(T)). Five faces now confirmed consistent (Weil,
 Nyman-Beurling, Li, Mertens, ψ(x)−x) — all the same open core.
+
+## §459 (strengthen §430 to γ~670 with 500 zeros) — ρ_edge>1 at EVERY height (min 1.22 @γ=75), confirmed to γ~670 (valid residuals). Size/energy bound never reaches the archimedean margin. The high-γ GROWTH (to ~50) is N-dependence (more edge-probes→smaller archmargin) + truncation, NOT physical. HANDLE.
+rt6_rho500.py (500 zeros, γ<811): ρ_edge = 3.48(γ29),1.22(75),1.34(135),2.02(215),3.60(315),3.78(415),7.24(565),
+50.9(670). All >1 ⟹ RH cancellation irreducible at all heights (§422/430 backbone, now to γ~670). CAVEAT: the growth
+is config-dependent (archmargin=λmin(archpole) shrinks as #edge-probes=N(band) grows with γ; high bands also near
+truncation, resid 1e-8). Robust content = ρ_edge>1 everywhere (size bounds never suffice); the magnitude is not
+physical. Assets: zeros500.npy (500 zeros, γ<811).
