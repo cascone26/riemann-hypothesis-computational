@@ -624,3 +624,39 @@ rt_1801/, connes_2602/. Tools: operators/dbn_dynamics/ (validated: g_a_compact, 
 confounded-documented: lp_lc_test, weyl_mfunction). Unpulled: 2310.18423, 1204.1827, 2112.05500.
 Parked: REBOUND Λ-hunt (Olympus); Rick offline (SpaceEngine specimen unchecked).
 Model: Opus for the reads + analytic work; Fable = brainstorm/step-back only.
+
+═══════════════════════════════════════════════════════════════════════════
+# STATE AS OF 2026-07-29 (Riemann7 overnight autonomous, §411-438)
+═══════════════════════════════════════════════════════════════════════════
+
+## THE PICTURE (rock-solid, grounded 4 ways)
+RH decomposes cleanly (§434): **functional-equation SYMMETRY** [= 1D Arakelov RR on Spec ℤ = the θ/ζ functional
+equation = HAVE IT, classical] + **POSITIVITY** [zeros exactly ON Re=½ = the 2D self-square Spec ℤ×_{F₁}Spec ℤ
+diagonal Hodge-index positivity = THE OPEN STEP]. Every route (Weil form, Circle-Lemma, Connes-Consani, δ_p,
+Nyman-Beurling) reduces to this same open positivity-half.
+
+Proven this session:
+- The analytic Weil instrument has NO 1-D shortcut (7 verify-catches killed every apparent one). It faithfully
+  re-derives Connes-Consani 2020 (archimedean place = THEOREM); the prime-place combination is the open frontier.
+- Size/effective bounds provably NEVER suffice: ρ_edge=||prime||op/archmargin ∈[1.2,2.0] at ALL heights (§430,
+  extended to 150 zeros). RH cancellation is irreducible at every γ.
+- The wall is GLOBAL UNIFORMITY across bands, not weak local signals (§431: off-line detectable height-indep).
+- Independent cross-check: Nyman-Beurling d_N²logN→2+γ−log(4π)=Σ1/|ρ|² matches 150-zero data (§433).
+
+## THE OPEN STEP (Connes-Consani's own decade-open problem)
+Construct an intersection pairing + manifestly-positive Hodge form on Spec ℤ×_{F₁}Spec ℤ (self-square). The
+F₁/tropical foundation is COMPUTABLE (min-plus, scaling site); the positive Hodge form is the missing algebraic-
+geometric piece. Latest tools: C-C 2024 "Riemann-Roch for ℤ" (ℤ=𝕊[X], 1+1=X+X²), C-C 2026 "Absolute Geometry of
+Spec ℤ" (arXiv:2606.06604), Morishita 2026 Deninger↔C-C bridge, "Zeta Spectral Triples" (C-C-Moscovici 2026,
+targets diagonal self-intersection ↔ zeros).
+
+## LOADED NEXT ATTACKS (not started — need care/steer)
+1. A CORRECT toy of the C-C tropical self-square (needs the precise min-plus intersection conventions pinned from
+   the papers first — do NOT guess; §423 showed naive re-indexings give regularization artifacts).
+2. Euler-product-specificity of positivity: does a functional-equation-only function (Davenport-Heilbronn) have
+   the Weil form BREAK, isolating multiplicativity ⟹ positivity? (§411 partial: bent primes break it.)
+3. The "Zeta Spectral Triples" diagonal-self-intersection ↔ zeros construction — read the 2026 paper, find a
+   computable piece.
+
+## ASSETS: zeros150.npy (150 zeros, γ<319); extended-instrument mode (l2_fejer with ZEROS override); Báez-Duarte
+exact-Gram tooling (rt6_baez_duarte.py); primes-from-zeros recovery (rt6_primes_v2.py). LEDGER §411-438 full detail.
