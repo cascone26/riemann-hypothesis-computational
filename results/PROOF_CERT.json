@@ -1,6 +1,0 @@
-{
-  "_note": "results/PROOF_CERT.json is a single shared scratch path (engine/verify_gate.py's CERT constant) — whichever track last wrote it wins here after a merge. Not durable evidence; the real proof pointers live in each LEDGER §-entry (e.g. results/weil_p2_cert_a0549.prov.json, results/track_continuum/sos_affine_cert_0.48_0.52.json). Kept the last content below for reference only.",
-  "type": "bound",
-  "script": "../riemann-tracks/continuum/operators/track_continuum/sos_affine_compose.py",
-  "expect": "AFFINE + SOS COMPOSITION WORKS"
-}

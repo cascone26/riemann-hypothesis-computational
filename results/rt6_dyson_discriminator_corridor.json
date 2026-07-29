@@ -1,0 +1,13 @@
+{"build": "rt6-dyson-discriminator-corridor-v1-2026-07-28",
+ "instrument": "pre-registered decision corridor for the sigma_off(N) decay-form fork, set BEFORE the 1e7-1e8 ladder runs",
+ "input": "results/rt6_tao_sigma_decay.json (7 rungs, s=42, null-subtracted)",
+ "fits_on_current_data": {
+   "power":   {"form": "c*N^-alpha",      "alpha": 0.0912, "rms_ln": 0.00854},
+   "gen_log": {"form": "c*(ln N)^-beta",  "beta": 1.2327,  "rms_ln": 0.00601,
+               "note": "fits CURRENT data slightly better than power; Tao's flat-slope test rejected only beta=1, not this family"}},
+ "predicted_local_slopes": {
+   "1e7": {"power": -0.0912, "gen_log": -0.0765, "gap": 0.015},
+   "1e8": {"power": -0.0912, "gen_log": -0.0669, "gap": 0.024},
+   "1e9": {"power": -0.0912, "gen_log": -0.0595, "gap": 0.032}},
+ "corridor": "decision statistic = mean local log-log slope over the LAST THREE OCTAVES of the extended ladder ending at N>=1e8, same sector s=42, null-subtracted. |slope| >= 0.085 -> POWER (fork I live). |slope| <= 0.072 -> LOG-FAMILY (fork II, exponential coupling). Between -> UNDECIDED, extend to 1e9; no fork ruling from an in-between read.",
+ "speculative_target_for_riemann": "measured alpha cluster 0.083/0.089/0.091 brackets 1/12=0.0833; if the singular-series decay computes to an exact rational exponent (1/12 candidate), analytic and empirical jaws close. LABELED SPECULATIVE - a target, not a claim."}

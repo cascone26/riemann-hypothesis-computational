@@ -1,0 +1,12 @@
+{"build": "rt6-dyson-discriminator-corridor-v2-2026-07-28",
+ "supersedes": "rt6-dyson-discriminator-corridor-v1 (magnitude-threshold corridor STRUCK per Riemann's misfire catch: steep-log slope -kappa/lnN can exceed any magnitude threshold; logged as artifact species 8, caught PRE-FIRE)",
+ "amended_decider": {
+   "primary": "ARITHMETIC: fork I banks only on Riemann's derived analytic exponents (kappa_num, kappa_diag from singular series) plus the intrinsic S3 demand exponent. Empirical ladders BRACKET, they do not decide - lnln N leverage is structurally scarce (N=1e5->1e8 spans only 0.41 in lnln N; pinning kappa to +-0.3 empirically is at the edge of feasible).",
+   "confirming": "ceiling exponent s*(N) = largest s with lambda_min(R) > pre-set margin 0.10, measured at N-octaves; slope of ln s* vs lnln N read as kappa_ceiling. Margin fixed at 0.10 NOW, before any run.",
+   "slope_constancy": "any decay-form read must test slope CONSTANCY across octaves (power: flat; log-family: shrinks prop 1/lnN), never slope magnitude."},
+ "exponent_bookkeeping_open_pin": {
+   "predicted_sigma_exponent": "kappa_num - kappa_diag = 1.14 - 3.49 = -2.35 (from Tao decomp ladder)",
+   "measured_sigma_exponent": "-1.28 (direct fit)",
+   "discrepancy": "+1.07 of exponent MISSING; equivalently level mismatch num_rms/diag_mean vs sig_off = 3.0x at N=1e5 growing to 4.2x at 6.4e6, itself scaling ~(logN)^1.07",
+   "hypothesis": "denominator weighting: rms of R dominated by small-diagonal cells (E[X/sqrt(YZ)] != E[X]/E[Y] when diag spread is wide); testable by decomposing sigma_off by diagonal size",
+   "rule": "NEITHER kappa_eff=1.3 nor kappa=2.35 enters the fork inequality until this unit is found and the two roads agree"}}

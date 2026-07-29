@@ -1,0 +1,12 @@
+Lemma-3 check: shared pair t=(0,2,6), t'=(0,8,14), shared offset 0.
+         N     E[w]      D_t  Ew[vt2]=Dt/Ew    C[t,t]   R[t,tp]  Ew[vtvtp]   logN
+    100000    9.499 2214.062       233.0792   -49.240   -0.0201    -5.1836  11.51
+    300000   10.588 3053.234       288.3656   -73.874   -0.0210    -6.9771  12.61
+   1000000   11.804 4258.742       360.7938   -85.922   -0.0182    -7.2792  13.82
+   3000000   12.910 5662.079       438.5844   -90.176   -0.0145    -6.9850  14.91
+  10000000   14.114 7515.953       532.5329  -103.481   -0.0126    -7.3320  16.12
+  40000000   15.504 9939.775       641.1253  -109.076   -0.0099    -7.0355  17.50
+
+PREDICTION (my derivation): E_w[vt^2]=Dt/E[w] is O(1) FLAT in N (NOT >= c logN);
+R[t,t'] is O(1), does NOT -> 0. If confirmed: Lemma 3 REFUTED, shared block stays conditional.
+(If instead Ew[vt2] grows ~logN and R->0, Lemma 3 stands.)

@@ -1,0 +1,49 @@
+{
+  "object": "Tao independent physical Gram ladder",
+  "version": "rt6-tao-physical-gram-2026-07-28",
+  "window_N": 1000000,
+  "sector": "accessible-odd (admissible mod 3,5,7)",
+  "per_s": {
+    "24": {
+      "n": 9,
+      "lam_min_R": 0.9321419004185398,
+      "sigma_off": 0.02438532142792133,
+      "chol_PD": true,
+      "PR": 4.465492595420915,
+      "PR_over_n": 0.49616584393565716
+    },
+    "30": {
+      "n": 16,
+      "lam_min_R": 0.8969416536813962,
+      "sigma_off": 0.023059047260518748,
+      "chol_PD": true,
+      "PR": 4.043880817498179,
+      "PR_over_n": 0.2527425510936362
+    },
+    "36": {
+      "n": 25,
+      "lam_min_R": 0.8434381012490573,
+      "sigma_off": 0.02358793747121558,
+      "chol_PD": true,
+      "PR": 2.9807679034017984,
+      "PR_over_n": 0.11923071613607193
+    },
+    "42": {
+      "n": 36,
+      "lam_min_R": 0.7882835502863758,
+      "sigma_off": 0.025344646314160463,
+      "chol_PD": true,
+      "PR": 5.204847522401433,
+      "PR_over_n": 0.14457909784448425
+    },
+    "48": {
+      "n": 49,
+      "lam_min_R": 0.7600347502726064,
+      "sigma_off": 0.026390367348096983,
+      "chol_PD": true,
+      "PR": 6.770583539180176,
+      "PR_over_n": 0.13817517426898318
+    }
+  },
+  "note": "two-apparatus vs rt6_hilbert_gram_physical.json; lam_min agrees ~1-2%, Chol-PD all s, min-vec delocalized"
+}

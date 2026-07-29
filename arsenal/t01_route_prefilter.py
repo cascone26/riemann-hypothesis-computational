@@ -74,6 +74,17 @@ PRIOR_ART = {
                               "physics dive) = the A+B>=P wall in physics clothing."),
     "zero-density":  ("WALL", "Zero-density bounds off-line zeros via sign-blind counting; never "
                               "forces them on. (LEDGER 180)"),
+    "polya frequency": ("PARTIAL", "de Bruijn-Newman kernel is NOT PF5 (Polya-Frequency order 5): "
+                              "explicit negative 5x5 Toeplitz minor, certified via 80-digit interval "
+                              "arithmetic; PF2-PF4 hold (Michalowski, arXiv:2602.20313, folded in from "
+                              "engine/lit_recheck.py 2026-07-28). A positivity floor real at low order "
+                              "CAN crack at a specific finite higher order in RH-adjacent territory -- "
+                              "makes a 'crack not ruled out' hypothesis elsewhere more plausible, not "
+                              "less. Also the honesty template: v2 withdrew the certified GLOBAL sign/"
+                              "unique-threshold claim (unsound tail/asymptotic enclosure) while the "
+                              "DIRECT interval-certified minor survived -- any crack-hunt result here "
+                              "must clear that same bar (direct enclosed minor/eigenvalue certificate "
+                              "on a specific cell, never a tail-dependent global claim)."),
 }
 
 

@@ -72,3 +72,42 @@ Your phone stays silent unless it's the real thing.
   # on Olympus (always-on, free GPU) — the natural home:
   nohup bash run_forever.sh &          # runs free methods continuously, generates within budget
 Halts ONLY on results/PROOF_FOUND.marker.
+
+## Lit-gate wiring (added 2026-07-28 — closes a real gap, not theoretical)
+The heuristic keyword judge in `classify()` had no idea whether a "LEAD" was already-published
+territory or a known-dead route — arsenal/t01_route_prefilter's prior-art DB existed but nothing
+forced the engine to consult it. `rh_engine.py` now calls `prior_art_override()` after every run:
+a DEAD/WALL prior-art hit force-corrects the class to WALL; a KNOWN hit (published, non-dead —
+e.g. Jensen/GORTTW territory) forces KNOWN_TERRITORY so rediscovering a published result can
+never bump bandit yield as if it were fresh structure. Verified live: an `auto_jensen_ladder`-
+style method now gets caught as KNOWN_TERRITORY instead of feeding the bandit.
+
+`engine/lit_recheck.py` re-queries arXiv per tracked topic (Jensen, de Bruijn-Newman, Connes-
+Consani, arithmetic Hodge index, etc.) every 14 days and stages new hits in `LIT_WATCH.md` —
+the static PRIOR_ART dict is a snapshot, and this is what keeps it from going stale silently over
+an indefinite run. First live run (2026-07-28) already surfaced a Feb-2026 paper ("Certified
+Failure at Order Five", arXiv:2602.20313) not yet folded into PRIOR_ART's de Bruijn-Newman entry
+— staged for review, not auto-merged. Run periodically (cron/loop, e.g. daily) alongside
+`run_forever.sh`; it does not touch methods.json and is safe to run independently.
+
+The sibling fix for the human-run 6-Fable Roundtable (a symmetric peer structure, which the
+escalation-of-commitment literature measures far worse than asymmetric ones) is
+`arsenal/t12_roundtable_gate.py` — a deterministic, non-peer gate any "this is novel" claim must
+pass (t01 prior-art clean + a logged lit-check) before it earns REPORT tier instead of CLAIMED.
+Peer agreement in the roundtable is not itself evidence; this is the checkpoint outside the room.
+
+## The bound-tier hole — CLOSED (2026-07-28)
+Sharper diagnosis from the same design thread, worth keeping verbatim: the entire checking loop
+up to this point was Claude checking Claude — Riemann7's terminal session, this engine's judge,
+the Roundtable, the Claude Code session watching it — same model family, same blind spot,
+correlated failure. Two instances agreeing is not independent evidence. The ONLY genuine outside
+check in the whole pipeline is a formal, non-LLM verifier: Arb interval arithmetic, the Lean proof
+kernel. `verify_gate.py`'s `type=="bound"` branch was a real hole in that: it re-ran the SAME
+script that made the claim and string-matched its own expected output. A script computing the
+WRONG object entirely would reproduce its own wrong answer every time — self-consistency, not
+verification — and it was a live path to PROOF_FOUND. Closed: `bound` now ALWAYS returns
+`handle=False`, no matter what it reproduces. Only `type=PD` (independent Arb re-certification)
+and `type=lean` (independent Lean kernel build) can ever grant HANDLE / trigger PROOF_FOUND /
+page the phone. Verified adversarially: a `bound` cert engineered to trivially "pass" (script
+prints exactly its own `expect` string) is still correctly refused. This is the actual
+precondition for Jacob being able to leave the machine running and trust the halt signal alone.

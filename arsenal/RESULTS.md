@@ -1,6 +1,6 @@
 # RH Arsenal — Verification Results
 
-Full verification pass. Verdict: **ALL GREEN** (42.1s).
+Full verification pass. Verdict: **ALL GREEN** (44.2s).
 
 Every tool below was RUN (not assumed). Status = its selftest result against known-answer cases. HANDLE-tier claims are audited for a real proof-pointer on disk.
 
@@ -19,6 +19,7 @@ Every tool below was RUN (not assumed). Status = its selftest result against kno
 | `t09_debranges` | de Branges / Laguerre positivity instrument | PASS ✅ |
 | `t10_flight_simulator` | tunable-axiom positivity sandbox | PASS ✅ |
 | `t11_disproof_engine` | adversarial disproof engine | PASS ✅ |
+| `t12_roundtable_gate` | non-peer conductor gate for Roundtable claims (prior-art + lit-check enforced) | PASS ✅ |
 
 ## Fabrication audit (HANDLE claims vs real evidence)
 

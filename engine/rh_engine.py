@@ -10,6 +10,18 @@ os.environ.pop("ANTHROPIC_API_KEY",None); os.environ.pop("ANTHROPIC_AUTH_TOKEN",
 # portable ROOT: Mac (Sam) or Olympus (the always-on daemon home)
 ROOT="/Users/scones/projects/riemann" if os.path.exists("/Users/scones") else os.path.expanduser("~/projects/riemann")
 ENG=f"{ROOT}/engine"
+
+# LIT-GATE WIRING (2026-07-28): the heuristic keyword judge below (classify()) has no idea
+# whether a "LEAD" is actually already-published territory or a known-dead route — that lit-gate
+# check existed only as arsenal/t01_route_prefilter, a separate tool nobody was forced to run
+# against engine-generated methods. Wire it in here so a false LEAD from keyword coincidence
+# can never bump bandit yield on rediscovered/dead ground; see arsenal/t12_roundtable_gate.py
+# for the sibling fix on the human-run Roundtable side.
+sys.path.insert(0, f"{ROOT}/arsenal")
+try:
+    from t01_route_prefilter import _prior_art_hits
+except Exception:
+    _prior_art_hits = None
 REG=f"{ENG}/methods.json"
 LOG=f"{ENG}/outcomes.jsonl"
 PROOF=f"{ROOT}/results/PROOF_FOUND.marker"
@@ -71,6 +83,26 @@ def classify(out, err, rc):
     if ws>=2: return "WALL"
     return "NULL"
 
+def prior_art_override(mth):
+    """Cross-check name/family/rationale/novelty text against the arsenal prior-art DB.
+    Returns (override_class, hit) or (None, None). A DEAD/WALL hit forces WALL regardless of
+    the heuristic judge's keyword count (stops re-crediting a known-dead route as a LEAD).
+    A KNOWN hit (published, non-dead — e.g. Jensen/GORTTW territory) forces KNOWN_TERRITORY so
+    rediscovering a published result never bumps bandit yield as if it were fresh structure."""
+    if _prior_art_hits is None:
+        return None, None
+    text=" ".join([mth.get("name",""),mth.get("family",""),
+                    mth.get("rationale",""),mth.get("novelty","")])
+    try:
+        hits=_prior_art_hits("",text)
+    except Exception:
+        return None, None
+    dead_wall=[h for h in hits if h[1] in("DEAD","WALL")]
+    known=[h for h in hits if h[1]=="KNOWN"]
+    if dead_wall: return "WALL", dead_wall[0]
+    if known: return "KNOWN_TERRITORY", known[0]
+    return None, None
+
 def run_method(mth,reg):
     code=f"{ROOT}/{mth['code']}"
     if not os.path.exists(code):
@@ -113,6 +145,13 @@ def cycle():
         generate(reg); save(REG,reg); return "GENERATED"
     mth=pending[0]
     res=run_method(mth,reg)
+    # LIT-GATE: force-correct the heuristic judge against known prior art before LEARN.
+    pa_class,pa_hit=prior_art_override(mth)
+    if pa_class and res.get("class") in("LEAD","PROOF"):
+        logline({"ts":now(),"method":mth["name"],"lit_gate_override":
+                 f"{res['class']} -> {pa_class} (prior-art: {pa_hit[0]} [{pa_hit[1]}] {pa_hit[2][:100]})"})
+        print(f"[{now()}]   LIT-GATE OVERRIDE: {res['class']} -> {pa_class} (matched '{pa_hit[0]}')",flush=True)
+        res["class"]=pa_class
     # LEARN
     if res.get("class")=="PROOF":
         # VERIFICATION GATE: a claim is REPORT until an independent rigorous check makes it HANDLE.

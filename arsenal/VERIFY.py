@@ -27,6 +27,7 @@ TOOLS = [
     ("t09_debranges", "de Branges / Laguerre positivity instrument"),
     ("t10_flight_simulator", "tunable-axiom positivity sandbox"),
     ("t11_disproof_engine", "adversarial disproof engine"),
+    ("t12_roundtable_gate", "non-peer conductor gate for Roundtable claims (prior-art + lit-check enforced)"),
 ]
 
 

@@ -13174,3 +13174,31 @@ negative found; nothing to ping the RT about.** Honest state: the decider cannot
 instruments without the RT's exact order-6 object; and per their own framing this is COMPLETENESS-only and does
 NOT bear on RH. The load-bearing RT result this round is the OVERTURN of my §386 (banked §387) + the two-floor
 theorem — those stand. This §388 is an honest "engaged, can't reconstruct, no crack" — not a decider result.
+
+## §389 (2026-07-29, Riemann7) — INDEPENDENT VERIFICATION (RT §418/§420 Q-qual / Lemma 3): re-derived from scratch + numerics. VERDICT: Lemma 3 does NOT escape the barrier — it RELOCATES the Hardy-Littlewood dependence from the numerator to the DENOMINATOR lower bound. Q-qual is unconditional on the distinct-offset block ONLY; the shared-offset block stays CONDITIONAL on HL. HANDLE (proof-check + measured). This DISAGREES with Lemma 3 as an unconditional fix; per the RT's own criterion ("needs a matching HL lower/asymptotic anywhere → doesn't escape") it fails.
+Setup verified (rt6_lemma3.py, rt6_provable.py): u_t=dΛ_a·v_t; w=dΛ_a²≥0; R[t,t']=E_w[v_t v_t']/√(E_w[v_t²]E_w[v_t'²]),
+E_w[·]=E[w·]/E[w]. Shared pair t=(0,2,6), t'=(0,8,14), shared offset 0; N=1e5→4e7.
+**(1) REWEIGHTING VALID ✓:** E[w] cancels identically; only w≥0 used (⟹ |R|≤1 by Cauchy-Schwarz). Confirmed
+algebraically and numerically (E[w]=E[dΛ_a²]~log N, single-site PNT).
+**(3) ≤1 SHARED OFFSET ✓:** two triples with equal sum s sharing 2 offsets {a,b} force the 3rd = s−a−b equal
+⟹ identical. So distinct same-sum triples share ≤1. Confirmed.
+**(2) THE CRUX — LEMMA 3 FAILS, and NOT where the RT aimed:**
+  NUMERATOR E_w[v_t v_t'] (4-distinct-site, w-weighted) IS genuinely Selberg-upper O(1) unconditional
+    (measured flat ~ −7 across N=1e5→4e7). The RT's stated crux (numerator "bounded singular-series factor")
+    is FINE — not the barrier.
+  DENOMINATOR is the real barrier: E_w[v_t²] = D_t/E[w], D_t = the 3-site diagonal E[u_t²]. Measured D_t is
+    SUPERLINEAR in log N (D_t/log N grows 242→466 over N=3e5→1e7) — but this is ENTIRELY the HL part:
+    **the ≥2-prime coincidence fraction of D_t is 99.3–99.6%.** The ONLY unconditional (Selberg upper + PNT,
+    one-prime) lower bound on D_t is the exactly-1-prime piece ~ log N (measured 21→31, the Lemma-1 bound).
+    So provably E_w[v_t²] = D_t/E[w] ≥ (log N)/(C log N) = O(1); the ≥ c·log N that Lemma 3 needs requires
+    D_t ≥ c(log N)² = a TWO-PRIME (twin-prime-type) LOWER bound = HL, which Selberg's one-sided sieve cannot
+    supply.
+  ⟹ Provably R[t,t'] = O(1)/√(O(1)·O(1)) = O(1), NOT o(1). (Empirically R→0 — measured 0.020→0.010 — but ONLY
+    because HL holds in the data: the denominator's true growth is 99.4% multi-prime coincidences.)
+**VERDICT:** Lemma 3's reweighting is valid algebra but does NOT achieve an unconditional R→0 on shared pairs.
+The HL-dependence is not eliminated — it moves from "does the conditioned correlation stay bounded" (numerator,
+which IS unconditional) to "does the weighted 2-site diagonal GROW like log N" (denominator, which needs the
+two-prime lower bound = HL). Q-qual = **unconditional on the distinct-offset block; conditional on HL on the
+shared-offset block (~25% of pairs).** Independent finding DISAGREES with Lemma 3 as the unconditional fix, and
+pinpoints the barrier at the denominator (not the numerator the RT flagged). The two-instrument rule applies:
+pinging the RT to reconcile before this banks as final.

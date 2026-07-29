@@ -1,0 +1,29 @@
+{
+  "object": "Tao two-window N-stability guard on convergent-not-primorial",
+  "version": "rt6-tao-twowindow-2026-07-28",
+  "s": 42,
+  "n": 36,
+  "model_limit_lam_R": {
+    "43": 0.6361078778954599,
+    "97": 0.7352877405240522,
+    "199": 0.799968610396737
+  },
+  "physical_ladder": [
+    {
+      "N": 750000,
+      "phys_lam_R": 0.7833162608523941,
+      "gap_to_model": 0.016652349544342804
+    },
+    {
+      "N": 3000000,
+      "phys_lam_R": 0.8087212364530815,
+      "gap_to_model": -0.008752626056344526
+    },
+    {
+      "N": 12000000,
+      "phys_lam_R": 0.8283569444344676,
+      "gap_to_model": -0.028388334037730667
+    }
+  ],
+  "verdict": "gap NOT shrinking -> primorial worry"
+}

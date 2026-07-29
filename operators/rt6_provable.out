@@ -1,0 +1,10 @@
+         N  D_t(true)  oneprime_LB  D_t/logN 2prime frac of D_t
+    300000     3053.2        20.88    242.10              0.993
+   1000000     4258.7        24.28    308.26              0.994
+   3000000     5662.1        27.39    379.65              0.995
+  10000000     7516.0        30.83    466.31              0.996
+
+KEY: D_t/logN GROWS => true D_t is superlinear in logN (from >=2-prime coincidences, the HL part).
+The >=2-prime fraction is the bulk of D_t. The ONLY unconditional (one-prime/Selberg) lower
+bound is the exactly-1-prime piece ~ logN; everything above it needs a 2-prime LOWER bound = HL.
+So provably E_w[vt^2]=D_t/E[w] >= (logN)/(logN)=O(1); the >=c*logN Lemma-3 needs the HL part.

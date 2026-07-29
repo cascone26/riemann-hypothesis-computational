@@ -7,8 +7,16 @@ unless it passes this gate. This is what stops the machine fooling itself.
 A method claiming a proof MUST drop a certificate spec at results/PROOF_CERT.json:
   {"type":"PD","c":14,"N":64,"prec":2400}          # positive-definiteness claim -> re-run Arb LDL^T
   {"type":"lean","file":"RiemannLean/.../X.lean"}   # proof claim -> independent `lake build`
-  {"type":"bound","script":"operators/foo.py","expect":"..."}  # a re-runnable numeric certificate
+  {"type":"bound","script":"operators/foo.py","expect":"..."}  # numeric re-run, REPORT ONLY -- see below
 The gate runs the INDEPENDENT check in a fresh process and returns HANDLE only on genuine pass.
+
+ONLY type=PD and type=lean can ever grant HANDLE (closed 2026-07-28). Both route through a real
+outside apparatus -- Arb interval arithmetic, the Lean proof kernel -- that does not share the
+LLM's blind spot. type=bound re-runs the SAME script that made the claim and string-matches its
+own expected output; that is self-consistency, not independent verification, and a script computing
+the wrong object entirely would reproduce its own wrong answer every time. It can never grant HANDLE.
+The whole point of this gate: "done" must be declarable only by the one thing in the pipeline that
+isn't Claude checking Claude.
 """
 import json, os, subprocess
 os.environ.pop("ANTHROPIC_API_KEY",None)  # never bill the key here either
@@ -45,13 +53,22 @@ def verify():
         except Exception as e:
             return False, f"REJECTED: lean gate failed ({e})."
     if t=="bound":
+        # CLOSED 2026-07-28: this re-ran the SAME script and string-matched its own expected output --
+        # not independent verification, just self-consistency. A script computing the WRONG object
+        # entirely reproduces its own wrong answer every time; this could never catch that. The
+        # entire point of this gate is that PROOF_FOUND must be certified by something that does not
+        # share Claude's blind spot -- only PD (independent Arb interval re-certification) and lean
+        # (independent Lean kernel build) are genuine outside apparatus. 'bound' never grants HANDLE.
         try:
             r=subprocess.run([f"{ROOT}/cvs_venv/bin/python",f"{ROOT}/{spec['script']}"],
                              capture_output=True,text=True,timeout=1200,cwd=ROOT)
             ok = spec.get("expect","___") in r.stdout
-            return ok, ("HANDLE: independent re-run reproduced the certificate." if ok else "REJECTED: re-run did not reproduce the claimed signal.")
-        except Exception as e:
-            return False, f"REJECTED: bound gate failed ({e})."
+        except Exception:
+            ok = False
+        return False, ("REJECTED: 'bound' cert type re-runs the same script and cannot grant HANDLE -- "
+                       "not independent apparatus, only self-consistency"
+                       + (" (reproduced anyway)" if ok else " (did not even reproduce)")
+                       + ". A PROOF claim must reduce to type=PD (Arb) or type=lean (Lean kernel).")
     return False, f"REJECTED: unknown cert type {t}."
 
 if __name__=="__main__":
