@@ -660,3 +660,29 @@ targets diagonal self-intersection ↔ zeros).
 
 ## ASSETS: zeros150.npy (150 zeros, γ<319); extended-instrument mode (l2_fejer with ZEROS override); Báez-Duarte
 exact-Gram tooling (rt6_baez_duarte.py); primes-from-zeros recovery (rt6_primes_v2.py). LEDGER §411-438 full detail.
+
+═══════════════════════════════════════════════════════════════════════════
+# UPDATE 2026-07-29 (morning autonomous session §442-448) — GEOMETRIC ROUTE MAPPED
+═══════════════════════════════════════════════════════════════════════════
+Drove the C-C tropical/geometric self-square (the loaded #1 attack). Result: the POSITIVITY side is realized;
+the gap is precisely the CORRESPONDENCE.
+- §442: verified Weil's F_q Hodge-index MECHANISM (intersection form on {f₁,f₂,Δ}, signature (1,2), Castelnuovo-
+  Severi D²≤2ab ⟹ |α|=√q). The exact template.
+- §443 RESEARCH: scaling site conventions pinned; the tropical/matroid Hodge-Riemann IS PROVEN (Adiprasito-Huh-Katz
+  arXiv:1511.02888, signature (1,rank-1)); the C-C gap is narrowly "does the F₁ self-square inherit it." Subtlety:
+  ζ's infinitely-many zeros come from the ℕ*-structure (log p ℚ-independent ⟹ infinite genus), not a naive genus-1 H¹.
+- §444-448: built the number-field Rosati form A[r,s]=Σ_ρ[e^{ρr}e^{(1-ρ)s}+swap] through a verify-driven arc (missteps:
+  too-small-M §444, wrong q-diagnosis §445, conditioning-worry §448 — all resolved). LANDING: the FE-closed Rosati
+  VALIDLY detects off-line (well-conditioned, M=20 sees β=0.1), PSD ⟺ RH in the M→∞ limit. The geometric positivity
+  criterion WORKS for ℚ.
+
+## THE FRONTIER IS NOW A SINGLE OBJECT: the correspondence Θ (Deninger's phantom / C-C scaling correspondence).
+Positivity given the eigenvalues {e^ρ} is fine (§448 Rosati + §443 proven tropical Hodge index). RH ⟺ Θ EXISTS as a
+geometric correspondence on the F₁ self-square with Θ·Δ = explicit-formula trace. This is Deninger's open operator /
+Hilbert-Pólya. The MODEL where it exists: Selberg trace formula on hyperbolic surfaces (Laplacian = Θ, self-adjoint
+⟹ "RH"). ζ's analog = the missing arithmetic dynamical system.
+
+## LOADED NEXT (Θ-attack): (1) Selberg-comparison — what would ζ's "Laplacian/dynamical system" need vs a real
+hyperbolic surface. (2) Morishita 2026 Deninger↔C-C bridge (arXiv:2508.15971) — computable piece? (3) intersection-
+number consistency: are Θ's explicit-formula-required numbers consistent with a geometric correspondence?
+Verify-catch count now ~11 (added §444/§445 missteps, all self-corrected).
