@@ -13935,3 +13935,13 @@ instrument's rank-edge collapse (§404) — both instruments become singular exa
 rt6_crossnull.py: smallest-eigvec of NB Gram (N=60): prime weight 0.147 vs composite 0.853; corr(null,μ)=+0.14
 (weak); top components n=58,56,54,57 (cutoff edge). Edge artifact, not arithmetic. Cross-instrument degeneracy
 unification does NOT hold — the singularities are structurally different.
+
+## §438 (inverse duality, clean validation) — recovered the PRIMES from the 150 zeros via the explicit formula: prime-powers → log p (~3-5% err), composites → ~0. Adaptive-σ resolves the local log-spacing. HANDLE (clean, known duality demonstrated).
+rt6_primes_from_zeros.py / rt6_primes_v2.py. Test fn h(r)=exp(-σ²r²/2)cos(r log n0), explicit formula
+2Σ_{γ>0}h(γ)=arch+pole−2Σ_n Λ(n)/√n g(log n); solve for Λ(n0). FIRST fixed σ=0.35 FAILED (too wide to resolve the
+dense log-n spacing ~1/n; recovered a growing background). FIX: adaptive σ_u=0.40·(local log-gap). Then clean:
+n=2→0.6931(log2, calib), 3→1.066(log3, 3%), 4→0.722(log2! =Λ(4), 4%), 5→1.530(log5, 5%), 7→1.868(log7, 4%),
+9→1.054(log3! =Λ(9), 4%), 11→2.27, 13→2.43; composites 6,10,12,15 → 0.03-0.16 (≈0 =Λ). ⟹ the primes are
+recoverable FROM the zero locations (Fourier resolution: resolving prime n needs zeros to γ~n; 150 zeros → primes
+to ~150). Clean validation of the explicit-formula two-way street and of the 150-zero data. (Known duality; the
+Handle is the correct computation, not new math.)
