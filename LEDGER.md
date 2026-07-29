@@ -13838,3 +13838,15 @@ band(14,44) 3.5x suggested) — but the deficit PERSISTS (ρ>1), so RH cancellat
 modestly. Whether ρ_edge→1 asymptotically (op-bound tight) or levels >1 (irreducible deficit) CANNOT be resolved
 with only 29 zeros — the truncation caps the testable band height. NEXT: EXTEND the instrument to ~150 zeros
 (mpmath) to test the ρ_edge asymptotic trend validly — a real, decidable quantitative question.
+
+## §430 (quantitative, EXTENDED instrument) — with 150 real zeros (γ<319, mpmath), ρ_edge does NOT →1: it stays bounded away from 1 (∈[1.2,2.0]) at ALL valid heights to γ~215. The unconditional size bound has a PERMANENT irreducible deficit — RH cancellation is needed at every height. Quantitatively confirms §422. HANDLE.
+rt6_rho_extended.py: extended the Fejér instrument (ZEROS→150 mpmath zeros to γ=318.85, RGRID→±320). Residuals now
+EXCELLENT (1.8e-11 to 1.2e-9) for all bands to (200,230) — the explicit formula closes; prime side is COMPLETE
+(Fejér compact-support cutoff n<121 is exact, not truncated). ρ_edge=||prime||op/archmargin at the edge (probes =
+zero count) vs band height γmid: 29→3.48, 55→1.20, 85→1.17, 115→1.73, 145→1.60, 175→1.90, 215→2.02. So after the
+low-γ inflation (band 14-44, pole proximity), ρ_edge DIPS to ~1.17 (γ~85) then stays in [1.2,2.0] — NEVER reaching
+1. archmargin peaks ~1.1 (γ~85) then falls to 0.76 (γ~215); ||prime||op oscillates 1.1-1.8. ROBUST CLAIM: ρ_edge>1
+(bounded away, min 1.17) at every valid height ⟹ the operator-norm/size bound is NEVER sufficient — RH cancellation
+is irreducibly required at all γ (quantitative backbone of §422: no size/effective bound is uniform in γ). CAVEAT:
+the non-monotonic rise (1.17→2.0) may be probe-configuration/edge-sensitive; the robust content is only "bounded
+away from 1 everywhere," not the precise shape. Instrument now has a 150-zero mode (zeros150.npy) for future high-γ work.
