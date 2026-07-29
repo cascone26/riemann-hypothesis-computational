@@ -832,3 +832,33 @@ before any final bank; recorded here as pending, NOT settled.
   block (~25%) stays HL-CONDITIONAL. Downgrades §418/§420's "unconditional full-matrix" claim: bulk
   unconditional, last quarter conditional on HL. §416 (Arb-certified per-s no-crack at s=48) is UNAFFECTED —
   it's a numeric certificate, not a conditional analytic claim.
+
+## §422 — DBN-constant table (kept from a restatement session before clearing): 3 real items
+A 17-seat panel (Weil·Deligne·Connes·Berry·Gödel·Ramanujan·Grothendieck·Skeptic·Historian·Pascal·…) mostly
+produced gorgeous but KNOWN restatements (Skeptic's own verdict: five equivalent reformulations, conservation
+of difficulty in prettier coordinates — the philosophical cousin of our OWN theorem-grade Parity-Bar/
+Gradient-Floor difficulty-conservation). Kept the three items that were real:
+- **STRATEGIC FRONT (Report):** the de Bruijn–Newman constant Λ is the one Arb-CERTIFIABLE front that is NOT
+  just RH re-coordinated. Rodgers–Tao 2018 proved Λ≥0 (theorem); RH ⟺ Λ≤0; so RH ⟺ Λ=0 and the only honest
+  checkable question is "how tightly can we certify Λ from ABOVE." Published chain (Gate lit-check): Ki–Kim–Lee
+  Λ<1/2 → Polymath15 Λ≤0.22 → Platt–Trudgian ≈0.2 (RH verified to height 3e12). Lehmer pairs bind the LOWER
+  side (dissolved by Rodgers–Tao); the upper bound is a global barrier-margin condition |A_t+B_t|>|C_t|.
+- **β=2 √t MERGE-SCALING (Handle — file verified: operators/rt_dbn_merge_scaling.py):** the reality-margin at
+  the DBN barrier dies as √t (β=2, β=1 struck). An isolated zero-pair of gap δ goes complex (merges) at
+  Δt = δ²/8 — s*/δ² = 0.12500 to the digit at every δ; in a realistic comb the constant converges to 0.125 as
+  δ→0. Mechanism: the backward-heat zero flow is a Dyson/Calogero–Moser repulsive gas ẋ_j = −Σ_{k≠j}2/(x_j−x_k);
+  two zeros lose identity at t∼δ² when the kernel width √t reaches the gap. Read off the ODE, not assumed
+  (Tao/Hilbert independent, agree).
+- **STRUCTURAL CLOSURE OF THE INTERIOR-CERTIFICATE ROUTE (Report-solid, Gödel/Hilbert/Ramanujan convergence):**
+  Λ≤0 is a Π₁ arithmetic sentence whose ONLY witness is the boundary t=0 — so NO finite interior heat-flow
+  certificate can reach it (same reason no finite n proves a true Π₁ statement). Hilbert's reframe: ξ_t is the
+  flow into/out of the Laguerre–Pólya class; Λ≤0 = "ξ on the LP-class boundary," invisible to interior probes.
+  Ramanujan's object: the Jensen polynomials (Pólya's criterion — RH ⟺ every Jensen polynomial hyperbolic) =
+  that boundary written as a finite-polynomial family. NET: the honest DBN target is a rigorous Arb-certified
+  UPPER bound on Λ (a barrier-margin computation), NOT an interior "certificate that Λ≤0" (structurally barred).
+- **PROLATE-TEST CALIBRATION (Handle — file verified: results/dbn_prolate_test_calibration.json):** number
+  variance Σ²(L=8): unfolded GUE ≈0.55, rigid integrable ladder 0.06, Poisson ~7.6. GUE-vs-rigid separation is
+  2.6σ at 32 eigenvalues (marginal/Rorschach), 4.3σ at 64, 5.4σ at 128 → any prolate-spectrum GUE test needs
+  ≥64–128 eigenvalues to be decisive (guards Berry's proposed test; pre-registered corridor).
+- ⚠ PROVENANCE FLAG: two cited Report files (prov/riemann_dbn_barrier_analysis.md, prov/hilbert_dbn_scaling.py)
+  were claimed "on disk" but are ABSENT — those Report claims are uncorroborated (handle-verify catch).
