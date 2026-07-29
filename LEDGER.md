@@ -14089,3 +14089,17 @@ ENTIRE prime sum's cancellation at once (global), which is exactly §422's "glob
 place being proven positive (C-C 2020) does NOT bootstrap to the global positivity by adding places. The low primes
 (2,3) erode most (§417/439 resonance); the tail refines toward the edge. This concretely shows the obstruction is
 the irreducibly-global nature of the cancellation — not a missing local estimate. Fresh, direct probe of the frontier.
+
+## §452 (semi-local oscillation is NOT a clean single resonance) — per-prime push along the critical direction has only weak corr (0.47 at best-fit ω≈18, near the band low-edge) with cos(ω log p); governed by the full band frequency content + bandwidth suppression (Λ(p)/√p-normalized push decays with p). Richer than single-frequency. HANDLE (mild).
+
+## §453 (two-instrument cross-check of §451) — verifying the semi-local "positivity is global" result on the GAUSSIAN instrument.
+rt6_semilocal_gauss.py: Gaussian (w=3): arch+pole +0.090; +p2 +0.059 (POSITIVE, unlike Fejér −0.27); +p3 −0.011;
++p5 −1.8e-4; +p7 +8.7e-5; +p≥11 stays +8.6e-5 (converged). vs Fejér (§451): extended oscillation to p=113. TWO-
+INSTRUMENT VERDICT (tempers §451): ROBUST/instrument-independent = positivity is NON-INCREMENTAL (a partial prime
+sum IS indefinite on both — p=3 negative on both), so you can't build it archimedean+one-place-at-a-time. But the
+"irreducibly global / needs ALL primes" was FEJÉR-SPECIFIC (its compact-support even weighting spreads weight to
+primes up to the cutoff); on Gaussian the high primes are bandwidth-suppressed and positivity is achieved by the
+LOW primes (2-7). So the honest robust claim is WEAKER than §451: positivity is non-incremental (real obstruction
+to place-by-place proofs, matches §422), but the number of primes that matter is instrument-dependent. 12th verify-
+catch / two-instrument tempering (like §419 tempered §417). The non-incremental obstruction stands; the global
+degree does not. Good discipline: the key new result got cross-instrument-checked before being leaned on.
