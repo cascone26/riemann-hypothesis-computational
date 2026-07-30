@@ -768,3 +768,23 @@ so this is the only route) → get the semilocal spectrum with the correct exten
 This is the concrete path to the spectral realization the delicate extension has been blocking. Intricate (get the
 recessive/Pincherle quantization right — do NOT rush into a §462-style false claim; validate against base 14.1 as
 the hard gate before trusting any semilocal number).
+
+---
+## CORRECTION 2026-07-30 (§469d) — the "recessive-solution shooting" spec above was subtly WRONG
+Recessive/ℓ²(ℕ) = the Friedrichs extension (§469c's converged 17-20), NOT the zeros. And a local index
+boundary self-energy can't move the low delicate states (they have ~0 amplitude at the truncation site) —
+GATE FAILED (§469d, operators/index_extension_scan.py). So the correct (pure-sin) extension does NOT live in
+the matrix/index picture; it's intrinsically an **x-space ODE boundary condition** (which is exactly why the
+§464 ODE shooting reaches the zeros and the matrix never will).
+
+### CORRECTED next attack: the x-space DIFFERENTIAL-DIFFERENCE formulation
+The semilocal operator has no pure ODE because the |L_p(½−is)|² weight = multiplication that becomes finite
+SHIFTS by log p in the dual (Mellin/log) variable. So the semilocal analog of §464's ODE is a
+**differential-difference equation**: the §464 prolate ODE PLUS shift terms at spacing log p (one shift set
+per prime in S). Attack: (1) derive that differential-difference equation for S={p} from W_S=−s²+4π²(4N_S+1)−¼
+with N_S the grading of the semilocal OPs; (2) solve it by a shooting method that imposes the SAME pure-sin
+BC at ∞ that worked in §464 (this is the correct extension, and it IS natural in x-space); (3) HARD GATE: the
+S=∅ (no shift) case must reproduce §464's base zeros (~3%) before trusting any semilocal number; (4) then read
+whether the S={p} spectrum's fluctuation picks up S_p(T)=−(1/π)Σ_k p^{−k/2}sin(kT log p)/k. This is genuinely
+CCM's open program (real new mathematics, not a quick run) — but it is the correctly-characterized route, and
+the bulk imprint is already in hand (§469: the shift coefficients are the p^{−1/2}-weighted Jacobi imprint).
