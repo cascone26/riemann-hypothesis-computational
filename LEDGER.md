@@ -14181,3 +14181,17 @@ NET ORIENTATION: my two-day computational investigation maps EXACTLY the object 
 obstruction characterization (§451-457) is the instrument-level complement to their Sonin-stability approach.
 The grand-unification "Θ=xp" (§449) sharpens to "Θ = the CCM semilocal prolate operator." LOADED NEXT: build a
 toy of the prolate operator (scaling²+grading) — needs the CCM papers' precise domain/grading to be correct.
+
+## §462 (BUILD the CCM prolate operator — exact operator obtained; naive extension does NOT reproduce zeros, the W_sa extension is critical) — W=-d/dx[(1-x²)d/dx]+(2π)²x² built; naive Dirichlet-on-[-L,L] gives WRONG spectrum (√|μ_k|≠γ_k, ratio 0.25; ~5× too many neg eigenvalues; L-dependent). The specific self-adjoint extension (eq 16-18) is essential. HANDLE (honest first-build, verify-caught).
+rt6_prolate.py. Got the EXACT operator from Connes-Moscovici arXiv:2112.05500 (read the PDF): W=-∂_x[(λ²-x²)∂_x]+
+(2πλ)²x² on L²(ℝ), λ=1; singular pts ±1 (coeff flips sign); deficiency (4,4); the self-adjoint W_sa (BCs: eq16
+lim(λ²-x²)∂_xξ=0 at ±1; eq17-18 the sin(2πx)/x, cos(2πx)/x asymptotics at ∞) has NEGATIVE eigenvalues μ_k with
+|μ_k|<E² counting as N(E)~(E/2π)(log(E/2π)-1)=RvM ⟹ μ_k≈−γ_k². BUILT it by finite differences. VERIFY-CATCH: the
+naive extension (Dirichlet on [-L,L], naive singular crossing) gives √|μ_k|=2.6,5.95,8.2,... NOT γ_k=14,21,25
+(ratio~0.25); density ~5× too high (spurious modes from mistreating ±1); L-DEPENDENT (√|μ_1|: 2.6@L=30→4.5@L=40)
+⟹ it's the EXTENSION (topological), not resolution. So the naive build is the WRONG self-adjoint extension — the
+zeros live in the correct W_sa (eq 16-18) which encodes ζ by construction. This is exactly the "needs the exact
+domain" risk I flagged; the verify-check (√|μ| vs γ) caught it — did NOT falsely claim "built Θ, reproduces zeros."
+NEXT: implement the CORRECT extension — a shooting/matching method for the singular Sturm-Liouville problem
+(integrate Wξ=μξ from x=0 regular, cross the regular-singular point x=1 via Frobenius, match the eq17-18 asymptotic
+at ∞); the μ<0 satisfying it should give √|μ|=γ. This is the genuine (hard) numerical task to realize the zeros.
