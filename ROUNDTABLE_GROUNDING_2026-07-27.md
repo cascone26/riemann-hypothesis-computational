@@ -946,3 +946,14 @@ memory `weyl-density-no-factor2`. (Two-instrument architecture: Claude-in-room p
   The real question is no longer "which θ fixes the density" (nothing to fix) but "does the extension reproduce S(T)."
   Riemann-N next: (1) full 4-param U(2) near-solve on the REAL operator with held-out γ6–10 to quantify overfitting;
   (2) directly compare N_op(T)−⟨N⟩(T) against S(T) — since the mean is certified, the fluctuation is the whole game.
+
+## §426 — the "3% floor" is NOT a floor: δ_n is O(1)-bounded and shrinking (Report) → confirms the S(T) picture
+Roundtable lean-3 (vN/Weyl/Arb) result, Report-tier (scipy floats, not Arb — to be certified by Riemann-N).
+- δ_n ≡ (operator eigenvalue) − (true zero), N=27 zeros up to γ≈95: **O(1)-bounded and SHRINKING**, not growing.
+  Slope vs index = −0.021/idx, vs γ = −0.0068/unit-γ (both negative). max|δ|=1.594 at γ=49.77, never exceeded.
+  first-half mean|δ|=0.89 → second-half 0.53. mean %err falls 2.68% (N=12) → **1.63% (N=27)**.
+- **max|δ|≈1.6 is BELOW one mean spacing** (2π/ln(γ/2π)≈2–3 at these heights). So the mismatch sits inside the
+  interlacing scale, and the "3% floor" is an artifact of δ staying O(1) while γ grows ⇒ **%err → 0 asymptotically**,
+  not a real floor. This is exactly the S(T)-fluctuation signature (§425): mean density certified-exact & θ-invariant;
+  residual = an O(1), sub-mean-spacing deviation = S(T)=(1/π)arg ζ(½+iT). Roundtable + Riemann-N independently agree.
+- NEXT (Riemann-N, running): (1) Arb-certify the δ_n O(1) bound; (2) compare N_op(T)−⟨N⟩(T) directly to S(T).
