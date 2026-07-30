@@ -743,3 +743,28 @@ the arithmetic (the constructive counterpart to the §466–468 no-go).
 PREREQ (search-before-build, do NOT skip): re-read CCM 2023 (arXiv:2310.18423) for the EXACT L²(ds) semilocal
 operator definition, the base (S=∅) measure, and what the finite-S spectrum represents — the archimedean
 operator took 2 false starts (§462/463) before reading the full paper; do not repeat that. Then perturb.
+
+---
+## UPDATE 2026-07-30 (cont.) — §469/469b/469c: primes located in the bulk; the SHARP next attack specified
+CONSTRUCTIVE progress past the §466-468 no-go:
+- **§469/469b (Handle, verified):** built the CCM semilocal measure's Jacobi matrix (operators/semilocal_jacobi.py).
+  Base dm_0=|Γ(1/4+is/2)|² reproduces b_n=√((n+½)(n+1)) to 1e-9 (arithmetic-free). Adding prime p imprints
+  PURELY off-diagonal (Δdiag~1e-14), size ~ p^{−1/2} (the arithmetic weight; RMS(Δb)/p^{-1/2}≈const, Δb_1≈−0.5p^{-1/2}),
+  oscillatory in n. Grid-converged to 5e-7. The primes ARE in the bulk, exactly where the no-go said.
+- **§469c (Report, refines §465):** the truncated matrix W=−J²+4π²(4N+1)−¼ (λ=√2, validated J) CONVERGES in K
+  (17.13/27.98/36.78 at K=80/160/240 — §465's "M-dependent" was a setup artifact) BUT to the WRONG (Friedrichs)
+  extension — those γ ≠ zeros (14.13/21.02/25.01). Prime shift K-stable but O(1)-large (not the physical correction).
+
+### THE SHARP NEXT ATTACK (specified, promising, tractable) — index-space recessive-solution shooting
+Diagnosis: the pentadiagonal W DECOUPLES into even/odd index sublattices (±s symmetry) → each is a clean
+**3-term recurrence** in steps of 2:  −[b_{n-1}b_n v_{n-2} + (b_n²+b_{n+1}²)v_n + b_{n+1}b_{n+2}v_{n+2}] + d_n v_n = α v_n,
+d_n=4π²(4n+1)−¼.  Hard truncation (v_K=0, Friedrichs) gives the WRONG extension (γ=17.1). The zero-realizing
+extension = imposing the **RECESSIVE (L²/minimal) solution as n→∞** (the index-space analog of the ODE's
+pure-sin-at-∞ BC that gave §464's ~3%). METHOD: for trial α, shoot the 3-term recurrence outward, quantize α by
+requiring the minimal solution (continued-fraction / Pincherle, or match to the asymptotic recessive form of the
+recurrence). VALIDATE on the BASE first — it MUST reproduce 14.05/20.78/26.11 (§464) from the matrix recurrence,
+not 17.1. If it does → apply the SAME recessive-BC shooting to the SEMILOCAL 3-term recurrence (which has NO ODE,
+so this is the only route) → get the semilocal spectrum with the correct extension → test its fluctuation vs S_p(T).
+This is the concrete path to the spectral realization the delicate extension has been blocking. Intricate (get the
+recessive/Pincherle quantization right — do NOT rush into a §462-style false claim; validate against base 14.1 as
+the hard gate before trusting any semilocal number).
