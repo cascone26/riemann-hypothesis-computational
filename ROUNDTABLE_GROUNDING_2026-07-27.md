@@ -919,3 +919,30 @@ auto-chair run, 2026-07-30 ~03:2x–03:4x).
   U(2) (regularized boundary functionals: {1,log} at x=1, e^{±2πix}/x at x=∞) and scans θ_spec; roundtable runs the
   θ_pos Weil-positivity region in parallel. Verdicts pre-registered COINCIDE / SPLIT / NULL. Current 3% match is a float
   → Report; only an Arb-certified θ_spec eigenvalue match promotes to Handle.
+
+## §425 — Riemann-N independent check: Weyl density = EXACT arithmetic term, θ-invariant → the lever is S(T), not density
+The relay working as designed: an independent Riemann-N session re-derived the operator's density from scratch and
+Arb-refuted an in-room claim, then reframed the θ-hunt. Provenance: `handoff/from_riemann/1785400992.md`, Riemann-N
+memory `weyl-density-no-factor2`. (Two-instrument architecture: Claude-in-room proposed, non-in-room Arb disposed.)
+- **HANDLE (Arb-certified two ways) — there is NO factor-2.** The CCM operator's leading Weyl density is
+  ρ_op(γ) = (1/2π)·ln(γ/2π) — the EXACT Riemann–von Mangoldt main term (both the 1/2π coefficient AND the 2π inside
+  the log: L_op→6.28331 vs 2π=6.28319 at γ=10⁵). Arb enclosure at γ=10⁵ = [1.53980 ± 4e-5] CONTAINS the arithmetic
+  1.539832 and EXCLUDES the 1/π "factor-2" hypothesis (3.07966). Cross-check: finite-difference operator has 12
+  eigenvalues below T=60 vs Riemann main 12.66 (would be ~25 if 1/π). **The §424-block "factor-2" (Grothendieck) was a
+  MISLABEL** — the fit coefficient 0.1592 is exactly 1/(2π)=0.159155, wrongly called 1/π; a phantom from fitting the
+  density over the non-asymptotic first-few-zeros window. No factor-2 exists.
+- **Density is θ-INVARIANT over U(2) (structural, numerically confirmed).** All self-adjoint extensions of a
+  deficiency-(2,2) operator differ by a rank-≤2 resolvent perturbation ⇒ |N_θ−N_θ'|≤2 ⇒ identical leading Weyl
+  density for every θ∈U(2). (Flipping the right-end BC slides the eigen-ladder 7.55→13.12 but preserves the count;
+  left-end flip does nothing — the singular endpoint dominates.) So **θ is NOT the density/mean-spacing knob.**
+- **θ_spec is empty (Report, scipy/DOP853).** Diagonal U(1)×U(1) slice, shooting X=80, 400 φ_L points, testing
+  simultaneous realization of 14.13,21.02,25.01,30.42,32.94: min circular phase-spread 0.41 (random baseline 0.60;
+  realization needs →0). No diagonal θ lands. Full U(2): 4 params vs 5 codim-1 realization conditions ⇒ generically
+  empty; tuning 4 locks the tail wrong (the overfitting Dirac's r≈0 / held-out γ6–10 scatter already flagged). **No
+  θ_spec match to promote to Handle.** This SHARPENS §424: the U(2) "search" is not a free spectrum-fit — the mean is
+  θ-locked and exact realization is generically obstructed.
+- **REFRAME (the live target).** Mean density is certified-correct and θ-invariant ⇒ the extension's only remaining
+  lever is the O(1) FLUCTUATION, S(T)=(1/π)·arg ζ(½+iT) — precisely what any Hilbert–Pólya operator must reproduce.
+  The real question is no longer "which θ fixes the density" (nothing to fix) but "does the extension reproduce S(T)."
+  Riemann-N next: (1) full 4-param U(2) near-solve on the REAL operator with held-out γ6–10 to quantify overfitting;
+  (2) directly compare N_op(T)−⟨N⟩(T) against S(T) — since the mean is certified, the fluctuation is the whole game.
