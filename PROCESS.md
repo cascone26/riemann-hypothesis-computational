@@ -9401,3 +9401,46 @@ theory (Connes-Consani's own decade-open step), which is a proof, not a computat
 
 DELIVERABLES: LEDGER §411-437 (full detail), STATUS §411-433 (arc), zeros150.npy, extended-instrument mode,
 Báez-Duarte exact tooling. Verify-catch count: 9. All claims cross-checked before banked.
+
+═══════════════════════════════════════════════════════════════════════════════
+## SESSION 2026-07-29/30 (Riemann7, Fable) — §438-465 decision chain (cont.)
+═══════════════════════════════════════════════════════════════════════════════
+Continuation of the §411-437 arc. Framing: exhaust the computational approaches, unify them, then BUILD the
+concrete frontier operator.
+
+DECISION CHAIN:
+1. MORE RH-EQUIVALENT FACES (§438,441,455,458): recovered primes-from-zeros via the explicit formula (§438,
+   adaptive-σ), Li coefficients (§441), Mertens/Möbius M(n) (§455), ψ(x)−x prime-counting (§458). ALL consistent
+   with RH, all tied to the same zeros. Chose these to confirm the "one open core" from independent directions.
+2. GRAND UNIFICATION (§442-450): verified the F_q Hodge-index mechanism (§442, template), built the FE-closed
+   number-field Rosati (§448, detects off-line PSD⟺RH), identified Θ=Berry-Keating xp via the log-r density match
+   (§449). CONCLUSION (chosen after the unification held from 3 sides): analytic (Weil form) = geometric (Hodge/
+   Rosati) = spectral (xp/Connes) = ONE open core. HONESTY: this unification is KNOWN (Connes); annotated the map.
+3. SEMI-LOCAL OBSTRUCTION TO THE BONE (§451-457): the C-C open step (combining prime places with the proven
+   archimedean positivity). Found: non-incremental (§451; §453 two-instrument TEMPERED "needs all primes" as
+   Fejér-specific — kept only the robust non-incrementality); arch dominates prime mode-by-mode, crux is off-
+   diagonal coupling (§456); coupling is full-rank/spread/razor-tuned, NO structural shortcut (§457). Chose to
+   conclude: only a GLOBAL mechanism can prove it, not incremental — matching §422.
+4. LOCATED + BUILT THE CONCRETE Θ (§461-465) — the session's climax. Research (§461) located Θ = the Connes-
+   Consani-Moscovici semilocal PROLATE WAVE OPERATOR (2023-24). Then, on Jacob's "go build":
+   - §462 naive ODE W=-d/dx[(1-x²)d/dx]+(2π)²x² → WRONG (verify-caught: √|μ|≠γ, L-dependent). Diagnosed: the self-
+     adjoint EXTENSION is critical.
+   - §463 shooting on |x|>1, λ=1 → still wrong (E~0.4γ, 3× density). VERIFY-CAUGHT.
+   - Read the FULL 2021 paper → found 3 errors: λ=√2 not 1; γ=2√|α| (Dirac 2D factor); frequency 2π√2.
+   - §464 corrected shooting → REALIZES THE ZEROS (γ=14.05,20.78,... vs 14.13,21.02,...). *** OVERSTATEMENT: I
+     reported "first two <1%, sharpening confirming" — WRONG. ***
+   - §464b/d sharpening → did NOT tighten; ~3-4% floor (finite-X 1/x² phase tail, WKB-diagnosed). CORRECTED the
+     overstatement in the ledger the moment the sharpening run showed it. Honest downgrade to semi-quantitative.
+   - §465 clean Jacobi-matrix form (CCM 2023 eq 2, W=-S²+2πλ²(4N+1)-1/4) → ALSO M-dependent/wrong. Confirms the
+     DELICATE SELF-ADJOINT EXTENSION is the universal barrier (the paper itself flags it; CCM's forthcoming-paper problem).
+   METHODOLOGY LESSON: the verify-catch spine held under pressure — caught the wrong λ/factor/freq AND my own
+   <1% overstatement. The one time I over-claimed (§464 <1%), the discipline corrected it within one run. This is
+   the process working, including its failure-and-recovery.
+5. THE GENUINE INSIGHT: the build's barrier (CCM's delicate self-adjoint extension = the semilocal Weil positivity
+   = self-adjointness ⟹ positive trace ⟹ RH) is EXACTLY my §451-457 obstruction (irreducible off-diagonal coupling)
+   seen from the operator side. Instrument-level obstruction ≡ operator-level delicate-extension. Mutual confirmation.
+
+NET: comprehensive computational investigation + a genuine (semi-quantitative, ~3%) BUILD of the concrete frontier
+operator, with the barrier pinned to CCM's own open construction. No Handle claimed for RH. Verify-catches this
+full session: ~14. One overstatement made and corrected. Deliverables: LEDGER §411-465, STATUS, RH_MAP_2026-07-29.md,
+NEXT_SESSION_RH.md, zeros150/500.npy, full instrument + prolate-operator tooling.
