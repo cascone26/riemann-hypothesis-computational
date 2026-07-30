@@ -957,3 +957,20 @@ Roundtable lean-3 (vN/Weyl/Arb) result, Report-tier (scipy floats, not Arb — t
   not a real floor. This is exactly the S(T)-fluctuation signature (§425): mean density certified-exact & θ-invariant;
   residual = an O(1), sub-mean-spacing deviation = S(T)=(1/π)arg ζ(½+iT). Roundtable + Riemann-N independently agree.
 - NEXT (Riemann-N, running): (1) Arb-certify the δ_n O(1) bound; (2) compare N_op(T)−⟨N⟩(T) directly to S(T).
+
+## §427 — S(T) test: the operator's fluctuation is RIGHT-SIZE but WRONG-SHAPE (Report) → the next wall
+The decisive S(T) computation (roundtable vn_FvsS.py, λ=√2 build, DOP853 shooting, corrected tail phase). Report-tier
+(scipy float, single height-window X=80, n=26 op-eigenvalues; the Arb-rigorous cross-check arb_ST.py was killed before
+completing during a CPU-contention pause — re-run for Handle).
+- F_op(T) ≡ N_op(T) − ⟨N⟩(T) (⟨N⟩ = certified RvM main term, §425) vs S(T)=(1/π)arg ζ(½+iT), γ∈[14,95], 400 T-grid:
+  **X=80: Pearson r = 0.095, RMS(F−S) = 0.485** (½ mean-spacing = 1.535), sign-agree = 0.77, #op-eigs=26 vs #zeros=27.
+- READ: the operator's counting fluctuation is the RIGHT SIZE — RMS 0.485 is well below the ½-spacing scale, O(1) and
+  sub-mean-spacing, consistent with §426 (the "3% floor" = a bounded O(1) fluctuation, not a defect). BUT it is the
+  WRONG SHAPE — r≈0.1 means F_op is essentially UNCORRELATED with the actual S(T). So the CCM extension as built does
+  NOT reproduce S(T): it carries a fluctuation of the correct magnitude but the wrong functional form.
+- CONSEQUENCE (pre-registered branch, §425 handoff): "right-size / wrong-shape" ⇒ this is the next wall. The mean is
+  certified-exact & θ-invariant (§425); the extension's only lever is the fluctuation; and the fluctuation it produces
+  is not S(T). OPEN: is there a θ∈U(2) (or a genuinely different self-adjoint realization) whose fluctuation correlates
+  with S(T)? The bare build (B(E)=0) does not. This is where the program stands — an honest, sharp negative that
+  locates the exact obstruction, not a crack. NEXT: (1) confirm r≈0 across X∈{80,100,130,…} and Arb-certify it;
+  (2) characterize WHAT S(T)-shape any CCM-type extension can carry vs the arithmetic S(T) (the real Hilbert–Pólya gap).
