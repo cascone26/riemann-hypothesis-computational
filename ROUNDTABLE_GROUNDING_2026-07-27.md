@@ -974,3 +974,45 @@ completing during a CPU-contention pause — re-run for Handle).
   with S(T)? The bare build (B(E)=0) does not. This is where the program stands — an honest, sharp negative that
   locates the exact obstruction, not a crack. NEXT: (1) confirm r≈0 across X∈{80,100,130,…} and Arb-certify it;
   (2) characterize WHAT S(T)-shape any CCM-type extension can carry vs the arithmetic S(T) (the real Hilbert–Pólya gap).
+
+## §428 — HANDOFF FROM RIEMANN7 (LEDGER §466–§469f): archimedean route mapped; sole open = the delicate extension
+Canonical source = ~/projects/riemann/LEDGER.md §466–§469f + PROCESS.md tail (git clean). Recorded here so the
+roundtable works from it; do NOT re-derive. This PROMOTES roundtable §427 (r=0.095 "wrong-shape") to a rigorous no-go
+and supplies the constructive path underneath it.
+
+A) NO-GO (rigorous) — arithmetic S(T)=(1/π)arg ζ(½+iT) CANNOT come from a self-adjoint EXTENSION of the archimedean
+   prolate operator:
+   - §466: full U(2) extension family scanned, graded by pearsonr(F_θ,S): max|r|=0.146 over 148 extensions
+     (bare 0.118) → NULL. (operators/u2_ST_scan.py) [= the rigorous form of roundtable §427.]
+   - §467: deficiency (2,2) ⇒ ‖F_θ−F_θ'‖∞ ≤ 2 (rank-2 bound); S(T) is UNBOUNDED (Selberg/Montgomery); F_0=O(1)
+     (Prüfer) ⇒ no extension reproduces S(T). Height-robust (r→0 as γ↑). 3 instruments agree. RH_TASK3_rank2_vs_ST.md.
+   - §468: general principle — finite-deficiency extension freedom is a bounded rank-≤n counting perturbation;
+     arithmetic content is a BULK invariant, not a boundary DoF. RH_NOGO_extension_arithmetic.md.
+
+B) CONSTRUCTIVE (built + verified) — the primes ARE in the BULK measure, carrying S(T)'s exact structure:
+   - CCM 2023 (arXiv:2310.18423): base dm_0=|Γ(1/4+is/2)|² (Meixner–Pollaczek λ=1/4); operator 𝒱W_λ𝒱*=−s²+2πλ²(4N+1)−¼
+     on L²(ℝ,dm_S); semilocal dm_S=|∏_{v∈S}L_v(½−is)|²ds, each prime p multiplies the weight by |1−p^{−1/2+is}|^{−2}.
+   - §469/469b: built the semilocal Jacobi matrix (discretized-Lanczos). Gate PASS (base→b_n=√((n+½)(n+1)) to 1e-9,
+     diag~1e-15 arithmetic-free). Prime p imprints purely OFF-diagonal, size ~p^{−1/2}, oscillatory, converged 5e-7.
+   - §469e: imprint = first-order Euler term, δb_n=κ_n p^{−1/2}+O(1/p).
+   - §469f CAPSTONE (analytic, verified 5dp): |L_p(½−is)|² = 1/(1−1/p)[1 + 2Σ_{m≥1} p^{−m/2} cos(m s ln p)]. The
+     measure's Fourier mode at frequency m·ln p carries weight EXACTLY p^{−m/2} — identical to
+     S_p(T)=−(1/π)Σ_k p^{−k/2} sin(kT ln p)/k. Primes enter the bulk with S(T)'s exact Euler weights, mode-for-mode.
+
+SOLE OPEN PROBLEM (the target) — the delicate self-adjoint EXTENSION that converts bulk measure-content into the
+eigenvalue fluctuation. It is intrinsically x-SPACE, NOT a matrix/index boundary term:
+   - §469c: truncated matrix W=−J²+4π²(4N+1)−¼ (λ=√2) converges in K but to the WRONG (Friedrichs) extension
+     (γ=17–20 ≠ zeros). §469d: recessive/ℓ²(ℕ) soln = Friedrichs; boundary self-energy scan FAILED (low delicate
+     states ~0 amplitude at truncation site). The zero-realizing extension = the x-space PURE-SIN BC (why §464 ODE
+     shooting reaches the zeros ~3% and the matrix never will). (operators/index_extension_scan.py)
+
+CONCRETE ATTACK (loaded): derive+solve the semilocal DIFFERENTIAL-DIFFERENCE equation = the §464 prolate ODE
+[W=−∂_x[(2−x²)∂_x]+8π²x², λ=√2, γ=2√|α|, pure-sin BC at ∞, singular pt x=√2] PLUS finite shifts by log p (the |L_p|²
+weight = shifts in the dual/Mellin variable; one shift-set per prime in S), SAME pure-sin-at-∞ BC. Shift coefficients
+known = §469f Euler modes (weight p^{−m/2} at freq m·ln p).
+HARD GATE (pre-register, do NOT skip): S=∅ (no-shift) MUST reproduce §464 base zeros 14.05/20.78/26.11 (~3%) from the
+new formulation BEFORE any semilocal number is trusted; THEN read whether S={p} fluctuation picks up S_p(T). ARB-CERTIFY
+(index-tail sits on the limit-point/limit-circle borderline, turning point n≈4π²≈39 = CCM's "delicate"; float=Report,
+only an Arb-certified base-zero match=Handle). Verdict pre-registered COINCIDE/PARTIAL/NULL. Run ONE heavy job at a time.
+HONESTY: no Handle for RH. This is CCM's own open program. Value: the arithmetic-content side is now fully mapped —
+everything except the delicate extension is done+verified.
