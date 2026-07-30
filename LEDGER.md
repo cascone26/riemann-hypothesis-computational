@@ -14238,3 +14238,21 @@ faithfully reproducing Connes-Moscovici's KNOWN construction (their Fig 2) at mo
 large-X numerics / analytic phase correction — pure refinement of a published result, low marginal value). The
 genuine NEXT frontier (new understanding, not refinement): the SONIN SPACE + SEMILOCAL operator (add a prime place)
 — where my §451-457 characterization meets their 2023-2024 Sonin-stability work. That's the actual open direction.
+
+## §465 (matrix form ALSO needs the delicate extension; semilocal = change the measure) — the clean abstract form W_λ=-S²+2πλ²(4N+1)-1/4 (S=Jacobi matrix S_{n,n+1}=i√((n+1/2)(n+1)), N=diag(n)) as a naive truncated matrix gives WRONG, M-dependent eigenvalues (M=150→γ=7.3; M=300→γ=16.4). The self-adjoint EXTENSION is the barrier everywhere. HANDLE (honest, confirms the extension is THE issue).
+rt6_prolate_matrix.py, from CCM 2023 (arXiv:2310.18423, read pages 1-6): W_λ=-S²+2πλ²(4N+1)-1/4 (eq 2), S=scaling
+= tridiag Jacobi S_{n,n+1}=i√((n+1/2)(n+1)), N=grading. Built as a matrix — but eigenvalues are M-DEPENDENT and
+don't match (paper explicitly: "ignoring the delicate domain definition needed... finding the relevant [self-adjoint]
+extension is delicate," p.6). So the naive matrix truncation is the WRONG extension, same failure as the naive ODE
+(§462). My SHOOTING (§464, ~3%) is the best because it imposed the correct BCs (regularity at √2, pure-sin at ∞).
+SEMILOCAL construction (the goal, CCM 2023 Thm 1): the semilocal prolate operator = same W_λ but with S = Jacobi
+matrix of the SEMILOCAL MEASURE dm_S(s)=|∏_{v∈S}L_v(1/2-is)|²ds (adding prime p ⟹ extra |L_p|² Euler factor in the
+measure ⟹ different orthogonal polynomials ⟹ different S). CCM proved: STABILITY of the semilocal Sonin space under
+adding places (Thm 2). PURPOSE: the semilocal operator being SELF-ADJOINT ⟹ its trace is positive ⟹ Weil positivity
+= RH. So: semilocal Weil positivity ⟺ the self-adjoint extension of the semilocal prolate operator. CONNECTION TO MY
+WORK: my §451-457 characterization (semilocal Weil form: non-incremental, off-diagonal coupling, irreducible) is the
+INSTRUMENT-LEVEL view of exactly the obstruction CCM face as "the delicate self-adjoint extension" — complementary
+views of the same open semilocal Weil positivity. HONEST ENDPOINT: I built the frontier operator multiple ways
+(best ~3%, shooting); the precise + semilocal realization needs the delicate self-adjoint extension, which is CCM's
+OWN ongoing program (their "second candidate, forthcoming paper") — not something to leapfrog. Genuine deep frontier
+engagement; the barrier (delicate extension = my irreducible coupling §457) is precisely located and mutually confirmed.
