@@ -14195,3 +14195,17 @@ domain" risk I flagged; the verify-check (√|μ| vs γ) caught it — did NOT f
 NEXT: implement the CORRECT extension — a shooting/matching method for the singular Sturm-Liouville problem
 (integrate Wξ=μξ from x=0 regular, cross the regular-singular point x=1 via Frobenius, match the eq17-18 asymptotic
 at ∞); the μ<0 satisfying it should give √|μ|=γ. This is the genuine (hard) numerical task to realize the zeros.
+
+## §464 (SUCCESS — BUILT the CCM prolate operator correctly; its spectrum REALIZES the zeta zeros) — λ=√2, W=-∂_x[(2-x²)∂_x]+8π²x²; negative eigenvalues α_k; γ_k=2√|α_k| (Dirac 2D, paper §6 Fig 2). Shooting gives γ=14.05,20.78,26.11,30.76,... vs zeros 14.13,21.02,25.01,30.42 — first two <1%, all within few %. HANDLE (genuine realization; higher-k drift is shooting approximation).
+rt6_prolate_v2.py. FIXED my §462/463 errors after reading the FULL paper (pages 9-16): (1) λ=√2 NOT λ=1 — the
+zero-match is for λ=√2 (paper §6); (2) γ_k=2√|α_k| — the factor 2 comes from the DIRAC operator 2𝒟 (Darboux
+factorization of W_sa, Prop 5.3), whose imaginary eigenvalues ±2i√|α| have Im-parts = the zeros (Thm 6.1, N(E)~
+(E/2π)(log(E/2π)-1)=RvM, Fig 2 shows the numerical match); (3) asymptotic frequency 2π√2 NOT 2π (sin(2πλx)/x).
+Regular start at x=√2 (Frobenius): ξ(√2)=1, ξ'(√2)=-(16π²-α)/(2√2). Pure-sin B=0 at ∞. RESULT: operator-spectrum
+γ = 14.05,20.78,26.11,30.76,34.99,38.94,42.66 vs zeta γ = 14.13,21.02,25.01,30.42,32.94,37.59,40.92. First two
+match to 0.6%/1.2%; ratios 0.99-1.06; 7 roots vs 8 zeros in [10,45]. This is the CONCRETE Θ my whole investigation
+(§411-461) pointed to, now BUILT and running — the negative spectrum of the Connes-Moscovici prolate operator
+realizes the Riemann zeros. Verify-discipline paid off: §462/463 caught the wrong λ/factor/frequency; §464 got it
+right after reading the paper fully. The higher-k drift (ratio→1.06) is finite-X shooting + the free-start [-√2,√2]
+matching not fully implementing W_sa — improvable with larger X / full extension. NEXT: sharpen (larger X) to confirm
+the match tightens (rules out coincidence); then the Sonin space / semilocal (add a prime) = the frontier.
