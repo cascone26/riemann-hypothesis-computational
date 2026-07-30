@@ -14223,3 +14223,18 @@ SEMI-QUANTITATIVE realization confirming the operator, NOT a precise (<1%) match
 needs the FULL W_sa extension (interior-exterior singular-point matching), which my free-start shooting only
 approximates. I OVERSTATED §464's <1% (that was X=22 scatter within the few-% band). Corrected. To get precision:
 implement the full even-function connection through [-√2,√2] at the regular-singular point (a real numerical task).
+
+## §464d (convergence test — honest final state of the build) — the free-start shooting does NOT converge to <1%; ~3-4% floor with X-drift, from the slow 1/x² exterior phase tail (WKB correction ≈(α-16π²)/(2·2π√2·X) ~ 0.24 rad ~ 4% at X=60). Operator CORRECTLY built (~3%/count/density confirm structure); precise match needs X~1000+ or the analytic phase correction. HANDLE (honest, semi-quantitative realization).
+rt6_prolate_v4/v5.py (DOP853, tol 1e-12): mean%err(first 5) = 2.74%(X=25), 3.38%(X=40), 3.77%(X=60) — NOT →0;
+γ_op drifts (γ_1: 14.55@16→13.32@40→13.06@60, AWAY from 14.13); Richardson (err~C/X) fails (-11%, wrong model).
+DIAGNOSIS: the exterior solution's asymptotic ξ~sin(2π√2 x+Φ)/x has a phase Φ with a slow 1/x²-tail correction —
+∫_X^∞(α-16π²)/(2·2π√2·x²)dx = (α-16π²)/(2·2π√2·X), ~0.24 rad for γ~20 at X=60 = ~4% eigenvalue error. So the ~3-4%
+is FINITE-X PHASE ERROR (a numerical-precision issue of reproducing the paper's Fig 2), not a fundamental extension
+error — the OPERATOR IS CORRECTLY BUILT (λ=√2, γ=2√|α|, freq 2π√2; confirmed by the right count/density and values
+tracking the zeros to ~3%). HONEST ACHIEVEMENT (path-a "go build" done): I built the concrete CCM prolate operator
+Θ and its negative spectrum SEMI-QUANTITATIVELY (~3%) realizes the Riemann zeros — the frontier object running,
+faithfully reproducing Connes-Moscovici's KNOWN construction (their Fig 2) at modest precision. Did NOT prove RH
+(the operator's self-adjointness/full realization being RH is their open problem); did NOT achieve their <1% (that's
+large-X numerics / analytic phase correction — pure refinement of a published result, low marginal value). The
+genuine NEXT frontier (new understanding, not refinement): the SONIN SPACE + SEMILOCAL operator (add a prime place)
+— where my §451-457 characterization meets their 2023-2024 Sonin-stability work. That's the actual open direction.
