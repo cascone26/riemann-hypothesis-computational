@@ -714,3 +714,32 @@ All three are the genuine Hilbert-Pólya/Connes/Deninger frontier — new mathem
 (needs the structural construction of Θ). The map is complete, cross-checked, and the positivity side is
 realized/available; the sole gate is the arithmetic object's existence. Assets: zeros150.npy, zeros500.npy,
 full instrument suite. This is a precisely-located frontier, not a wall — the next move is the structural build.
+
+---
+## UPDATE 2026-07-30 — roundtable S(T) handoff discharged + extension no-go generalized (§466–468)
+The CCM archimedean prolate operator was built (§464, ~3% / O(1) residual) and the roundtable then
+Arb-certified: deficiency (2,2)/U(2) extensions (§424), Weyl density = RvM exactly & θ-invariant (§425),
+δ_n=O(1) (§426), bare fluctuation right-size/wrong-shape vs S(T) (§427). THIS SESSION discharged the 3 loaded
+tasks and generalized:
+- **§466 (Task 2, NULL):** scanned the whole U(2) extension family grading by pearsonr(F_θ,S) — max|r|=0.146
+  over 148 extensions (bare 0.118). NO extension carries arithmetic S(T). operators/u2_ST_scan.py.
+- **§467 (Task 3) + §467b/c/d:** the STRUCTURAL reason — deficiency (2,2) ⇒ ‖F_θ−F_θ'‖_∞≤2 (rank-2 bound);
+  S(T) unbounded (Selberg/Montgomery); F_0=O(1) (1-D Sturm–Liouville Prüfer bound) ⇒ no extension reproduces
+  S(T). Height-robust (r=0.075/0.021/0.029 at γ<95/120/150, vanishing). THREE instruments agree
+  (u2_ST_scan, task1_bare_Xrobust, prov/arb_ST.py w/ mpmath arg-ζ = verdict B(SIZE-ONLY)). RH_TASK3_rank2_vs_ST.md.
+- **§468 (generalization):** finite-deficiency self-adjoint-extension freedom is a bounded rank-≤n counting
+  perturbation and CANNOT create the unbounded arithmetic S(T) — arithmetic content is a BULK invariant, not a
+  boundary DoF. Rules out boundary-condition Hilbert–Pólya on arithmetic-free archimedean operators.
+  RH_NOGO_extension_arithmetic.md.
+
+**CONCLUSION / REDIRECT:** the pure-archimedean prolate route is honestly closed as a Hilbert–Pólya
+realization. S(T)'s prime content must enter through the BULK = the CCM SEMILOCAL measure
+dm_S=|∏_v L_v(½−is)|²ds (each prime p adds |L_p|²). This is the live continuation.
+
+**NEXT BUILD (loaded, constructive):** first-order |L_p|² measure-perturbation of the base prolate
+eigenfunctions — does S={p} inject a **log-p-periodic** level modulation = S_p(T)=−(1/π)Σ_k p^{−k/2}sin(kT log p)/k
+that the archimedean operator entirely lacks? If yes → affirmative evidence the semilocal/bulk route supplies
+the arithmetic (the constructive counterpart to the §466–468 no-go).
+PREREQ (search-before-build, do NOT skip): re-read CCM 2023 (arXiv:2310.18423) for the EXACT L²(ds) semilocal
+operator definition, the base (S=∅) measure, and what the finite-S spectrum represents — the archimedean
+operator took 2 false starts (§462/463) before reading the full paper; do not repeat that. Then perturb.
