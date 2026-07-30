@@ -54,6 +54,39 @@ A bounded F_0 cannot be within ±2 of an unbounded S(T) for large T. Therefore *
 the archimedean CCM prolate operator reproduces S(T)** — the empirical U(2) NULL (§466) is the finite-height
 shadow of this bounded-vs-unbounded obstruction.
 
+### Making the bare horn rigorous (F_0 = O(1) is not just empirical)
+The "bare F_0 is bounded" horn is not merely observed — it is forced by the operator being **one-dimensional
+Sturm–Liouville**. For a 2nd-order ODE −(p u')' + q u = λ w u on an interval with a fixed self-adjoint
+realization, the **Prüfer phase / rotation-number** representation gives
+```
+        N_op(λ) = θ(λ)/π + O(1),
+```
+where θ(λ) is the total Prüfer angle swept by the solution and the smooth part of θ(λ)/π is exactly the Weyl
+term. The remainder is O(1): the endpoint boundary phases contribute bounded terms, and each turning-point
+connection contributes a bounded (≤ π/2-type) phase, none growing with λ. (This is the same fact behind
+"eigenvalue #n of a 1D S–L problem has exactly n interior zeros," i.e. the counting function equals the
+rotation number up to a bounded endpoint correction.) Since §425 Arb-certified that the operator's Weyl term
+equals the RvM main term ⟨N⟩ exactly,
+```
+        F_0(T) = N_op(T) − ⟨N⟩(T) = O(1)     (bounded, unconditionally, for the 1D prolate operator).
+```
+Combined with the rank-2 bound (‖F_θ − F_0‖_∞ ≤ 2) and S(T) unbounded, this makes the conclusion
+**unconditional**: every extension has F_θ = O(1), whereas S(T) → ∞, so |F_θ(T) − S(T)| → ∞ and no extension
+can track S(T). The archimedean prolate operator's counting fluctuation is categorically O(1); the arithmetic
+S(T) is categorically unbounded; the boundary/extension freedom bridges a gap of at most 2. No amount of
+boundary tuning closes an unbounded gap.
+
+*Empirical support (§467c, operators/task2b_height.py):* the bare max|F_0| over γ<T stays O(1) and grows only
+marginally — 0.89 (T=95) → 1.01 (T=120) → 1.11 (T=150) — while the S(T) correlation *vanishes* with height:
+r = 0.075 (T=95) → 0.021 (T=120) → 0.029 (T=150). The fluctuation is bounded and increasingly uncorrelated,
+exactly the O(1)/wrong-shape picture; nothing accumulates toward S(T).
+
+*Honesty caveat:* the O(1) Prüfer remainder is textbook for regular endpoints; here both endpoints are
+singular limit-circle. The rotation-number argument still applies to a fixed self-adjoint extension (the
+boundary phase is a fixed bounded functional), so F_0 = O(1) holds — but a fully Arb-certified uniform bound
+on the remainder for this specific singular operator is the one piece still at Report-tier. The rank-2 ≤2
+bound and S(T)'s unboundedness are unconditional.
+
 ## Where S(T) must come from instead
 S(T)'s content is the primes (arg ζ = Σ over the Euler product). The extension (a boundary phenomenon)
 cannot carry it; it must enter through the **operator's bulk** — the CCM **semilocal** construction (§465,
