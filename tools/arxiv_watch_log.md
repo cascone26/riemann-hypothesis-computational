@@ -468,3 +468,23 @@
   Cats: math.GM
   https://arxiv.org/abs/2607.24830v1
   > This paper presents the first numerical realization of Suzuki's Weil-Quadratic-Form operator, a candidate for the Hilbert--Pólya program linking spectral positivity to the Riemann Hypothesis (RH). Suzuki's 2026 construction was purely theoretical; here, the operator is instantiated via P1 finite-ele
+
+## 2026-07-30 — 3 new paper(s)
+
+- **2408.15135v16** (2024-08-27) — Nontrivial Riemann Zeros as Spectrum
+  Authors: Enderalp Yakaboylu
+  Cats: math-ph, quant-ph
+  https://arxiv.org/abs/2408.15135v16
+  > Let $ Λ(s) := Γ(s+1)\, (1-2^{1-s}) \, ζ(s) $, and denote its zero set by $ \mathcal{Z}_Λ:= \mathcal{Z}_ζ\cup \mathcal{Z}_\mathrm{p} $, where $ \mathcal{Z}_ζ$ consists of the nontrivial zeros of the Riemann zeta function $ ζ(s) $ and $ \mathcal{Z}_\mathrm{p} $ of the zeros of the prefactor $ ( 1-2^{1
+
+- **2607.24830v2** (2026-07-23) [GM/low-signal category] — A Numerical Realization of Suzuki's Weil-Quadratic-Form Operator: The Archimedean Spectral Law, its Universality, and an Operator Form of Weil's Positivity Criterion
+  Authors: Taebong Kim, Youngsik Hong, Minsik Kim, Sunyoung Choi, Jaewon Jang, Minseo Kim
+  Cats: math.GM
+  https://arxiv.org/abs/2607.24830v2
+  > This paper presents the first numerical realization of Suzuki's Weil-Quadratic-Form operator, a candidate for the Hilbert--Pólya program linking spectral positivity to the Riemann Hypothesis (RH). Suzuki's 2026 construction was purely theoretical; here, the operator is instantiated via P1 finite-ele
+
+- **2607.27082v1** (2026-07-29) — Extinction and Survival in an Interval-Activation Frog Model on \mathbb{Z} with Random Survival Parameters and Symmetric Random Walks
+  Authors: Gustavo Oshiro de Carvalho, Fábio Prates Machado, José Hermenegildo Ramírez-González
+  Cats: math.PR
+  https://arxiv.org/abs/2607.27082v1
+  > We study an interval-activation frog model on \(\mathbb Z\) with i.i.d.\ initial numbers of frogs \((η_x)_{x\in\mathbb Z}\), satisfying \(0<\mathbb{E}[η_0]<\infty\). Frogs at the origin are initially active and all others are sleeping. Each frog performs a symmetric integer-valued random walk and ha

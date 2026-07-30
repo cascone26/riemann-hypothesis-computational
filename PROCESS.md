@@ -9444,3 +9444,53 @@ NET: comprehensive computational investigation + a genuine (semi-quantitative, ~
 operator, with the barrier pinned to CCM's own open construction. No Handle claimed for RH. Verify-catches this
 full session: ~14. One overstatement made and corrected. Deliverables: LEDGER §411-465, STATUS, RH_MAP_2026-07-29.md,
 NEXT_SESSION_RH.md, zeros150/500.npy, full instrument + prolate-operator tooling.
+
+---
+
+## SESSION 2026-07-30 §466–467 — the roundtable S(T) handoff, discharged (archimedean prolate route honestly closed as a Hilbert–Pólya realization)
+
+**Framing.** Resumed from the roundtable handoff: the CCM archimedean prolate operator (λ=√2 build) has
+deficiency (2,2)/U(2) extensions (§424, Arb), exactly-RvM θ-invariant mean density (§425, Arb), O(1)
+sub-spacing residual δ_n (§426), and a bare fluctuation that is right-size / wrong-shape vs arithmetic S(T)
+(§427, r≈0.095). Three tasks loaded: (1) confirm bare r≈0 across X and Arb-cert; (2) scan the U(2) family
+grading by pearsonr(F_θ,S) not spectrum-match; (3) characterize what S(T)-shape a rank-2 perturbation can inject.
+
+**Decision fork — what was already built vs the real gap.** search-before-build: read the roundtable's
+existing machinery. `weyl_ST_correlation.py` already did the bare F_op-vs-S test (Task 1 core), and
+`vn_u2_betasweep.py` scans U(2) — BUT grades by spectrum-match (phase-spread→0), NOT by pearsonr(F_θ,S). So
+Task 2 — the decisive Hilbert–Pólya-gap experiment — was genuinely unbuilt. That became the priority.
+
+**Task 2 build + the efficiency correction.** Built `u2_ST_scan.py`: precompute asymptotic (A,B) of u=x·ξ
+once per left-end knob β; then extension at right-end phase θ has eigenvalues where A sinθ − B cosθ=0 (θ=0 =
+bare). Grade each (β,θ) by pearsonr(F_θ,S_true). First runs (X=90, rtol 1e-11, dg 0.03) were far too slow
+(~110 oscillations/solve, 23 min, first β not even flushed) and buffered-blind. KEY REALIZATION that fixed
+both cost and fidelity: grading by CORRELATION r is invariant to an additive constant in F, so the
+slowly-varying WKB tail offset (the very thing that made the earlier "~3% floor", §464d) factors OUT — I
+could shoot to a shorter X (60) AND add the tail-corrected phase, and r still isolates the pure fluctuation
+SHAPE. Leaned to X=60, rtol 1e-8, dg 0.2, β∈{0,π/4,π/2,3π/4}×θ(37), unbuffered. Ran in ~9 min.
+
+**Task 2 result (§466) — NULL.** max|pearsonr(F_θ,S)| over all 148 extensions = 0.146; bare = 0.118. Whole
+landscape flat at r≈0.12–0.15. Pre-registered verdict NULL: no CCM self-adjoint extension carries arithmetic
+S(T). Not "wrong point in U(2)" — the fluctuation is structurally not-S(T) across the entire family.
+
+**Task 1 (§467 tail) — X-stable.** `task1_bare_Xrobust.py`: bare r = 0.118/0.103/0.116/0.110 at X=60/80/100/130,
+RMS/spacing≈0.21 throughout. Not an X-artifact; X=80 r=0.103 matches roundtable vn_FvsS.py 0.095 (two independently
+written codes agree — §453 two-instrument discipline).
+
+**Task 3 (§467) — the structural theorem.** Why the NULL is forced: deficiency (2,2) ⇒ rank-≤2 resolvent
+difference (Krein) ⇒ |N_θ−N_θ'|≤2 for all T ⇒ ‖F_θ−F_θ'‖_∞≤2: the entire extension family of fluctuations is
+a uniform sup-norm tube of half-width 2 around the bare F_0. That is ALL a self-adjoint extension can inject —
+a bounded ≤2 additive counting shift. But S(T) is UNBOUNDED (Selberg Var S=(1/2π²)loglog T→∞; Montgomery
+S=Ω_±((log T/loglog T)^{1/3})). So F_θ~S ⟺ F_0~S, and the measured bare F_0 is O(1)/uncorrelated (§426/§427/§466)
+⇒ no extension reproduces S(T). The empirical U(2) NULL is the finite-height shadow of a bounded-vs-unbounded
+obstruction. Writeup: RH_TASK3_rank2_vs_ST.md. Rigorous half = the ≤2 bound + S unbounded; empirical half = which
+horn (scipy). No Handle for RH.
+
+**The banked conclusion.** The arithmetic content of S(T) (the primes, via arg ζ = Σ Euler product) is NOT a
+boundary/extension degree of freedom of the archimedean operator — the extension is provably too weak (bounded)
+to carry an unbounded prime-driven fluctuation. It must enter through the operator's BULK: the CCM SEMILOCAL
+measure dm_S=|∏_v L_v(½−is)|²ds (§465), = the §451–457 irreducible off-diagonal coupling from the analytic side,
+= the delicate self-adjoint extension of the SEMILOCAL operator that is CCM's own live program. The
+pure-archimedean prolate route is honestly closed as a Hilbert–Pólya realization; the live continuation is the
+semilocal operator. Proof pointers: LEDGER §466/§467, operators/u2_ST_scan.py, operators/task1_bare_Xrobust.py,
+RH_TASK3_rank2_vs_ST.md, /tmp/u2_ST_scan.out + /tmp/task1.out (run logs).
