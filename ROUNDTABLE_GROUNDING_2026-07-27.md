@@ -862,3 +862,60 @@ Gradient-Floor difficulty-conservation). Kept the three items that were real:
   ≥64–128 eigenvalues to be decisive (guards Berry's proposed test; pre-registered corridor).
 - ⚠ PROVENANCE FLAG: two cited Report files (prov/riemann_dbn_barrier_analysis.md, prov/hilbert_dbn_scaling.py)
   were claimed "on disk" but are ABSENT — those Report claims are uncorroborated (handle-verify catch).
+
+## §423 — NEW FRONTIER: the CCM prolate operator's self-adjoint extension (handoff from Jacob's Riemann session §411–465)
+The Λ-upper-bound track (§422) is parked. Jacob's terminal Riemann session mapped RH from every computational
+angle and located + built the concrete frontier operator. The live object is now the **Connes–Consani–Moscovici
+(CCM) prolate wave operator** (their 2023–24 paper), the Θ=xp / Berry–Keating realization whose spectrum is the
+Riemann zeros. This section is the banked handoff; the roundtable works FROM it (do NOT re-map, do NOT re-derive).
+
+**BANKED (Report unless flagged), from §411–465 — provenance = Jacob's session ledger:**
+- **Grand unification (§442–450, KNOWN — Connes, not ours):** RH decomposes into a symmetry-half (= ζ functional
+  equation = 1-D Arakelov Riemann–Roch — we HAVE it, §434) + a positivity-half (OPEN). All three routes —
+  analytic Weil form, geometric Hodge/Rosati (§448, detects off-line), spectral Θ=Berry–Keating xp (§449, density
+  log r matches zero counts) — reduce to ONE open core. 5 independent RH-equivalents cross-checked consistent
+  (Weil, Nyman–Beurling, Li, Mertens, ψ(x)−x).
+- **The open core = a self-adjointness/positivity problem.** self-adjointness of the correct extension ⟹ positive
+  Weil trace ⟹ RH. The C–C open step (combining the prime places with the PROVEN archimedean positivity) is
+  irreducibly global: partial sums indefinite, arch dominates prime mode-by-mode, crux is an off-diagonal coupling
+  that is full-rank, spread, razor-tuned — no structural shortcut (§451–457; §453 two-instrument check tempered an
+  overclaim in §451).
+- **THE BUILD (§461–465, the climax — ~3% realization):** naive builds of Θ FAILED (verify-caught → the
+  self-adjoint extension is the critical ingredient). After reading the full CCM paper, three errors were fixed:
+  **λ=√2**, a **factor-2 from their Dirac operator**, **frequency 2π√2**. The corrected operator reproduces the
+  Riemann zeros: γ = **14.05, 20.78, 26.11 …** vs true **14.13, 21.02, 25.01 …** (~3%).
+- **⚠ HONESTY LEDGER (a corrected overstatement — carry it):** the earlier "first two zeros to <1%, sharpening
+  confirming" was WRONG — the <1% was scatter and **sharpening did NOT tighten**; there is a **~3–4% floor,
+  WKB-diagnosed as a 1/x² phase tail**. Corrected in-session the moment the run showed it. **NO Handle claimed for
+  RH. Nothing here proves it.**
+- **THE ONE GENUINE INSIGHT:** the build's barrier — CCM's "delicate self-adjoint extension" (= semilocal Weil
+  positivity = self-adjointness ⟹ positive trace ⟹ RH) — is EXACTLY the instrument-level obstruction independently
+  characterized in §451–457 (the irreducible off-diagonal coupling). Instrument-obstruction ≡ operator-level
+  delicate-extension: the same open problem from two sides. The only real lever left is **the self-adjoint
+  extension itself** — genuinely open, actively researched at IHES (forthcoming paper).
+
+**THE CHECKABLE FRONTIER QUESTION (what the roundtable attacks):** is the ~3% / 1/x² phase-tail floor a property of
+the WRONG self-adjoint extension, or intrinsic to the operator? Concretely: compute the deficiency indices (n₊,n₋)
+of the CCM operator rigorously (Weyl limit-point/limit-circle at each singular endpoint), enumerate the self-adjoint
+extensions (von Neumann: unitaries ker(D*−i)→ker(D*+i)), and test whether the zero-realizing extension is the one
+that kills the 1/x² phase tail. Only an Arb-certified deficiency index / spectrum is Handle; everything else Report.
+
+## §424 — CCM extension: deficiency indices (2,2) ARB-CERTIFIED → the 3% floor is NOT intrinsic (HANDLE)
+First real result on the §423 frontier, earned by the opus roundtable + Riemann-N independent verification (autonomous
+auto-chair run, 2026-07-30 ~03:2x–03:4x).
+- **HANDLE (Arb-certified two ways, Riemann-N):** the CCM prolate operator D has deficiency indices **(2,2)** — BOTH
+  singular endpoints are **limit-circle** (x=1 and x=∞). Certified rigorously by Riemann-N: `prov/deficiency_cert_rigorous.py`
+  @ commit `0827d7d` + an independent numerics path; the in-room certificate (Arb envelope p≈0 on real+complex z, and
+  Weyl's independent ξ-integration after self-correcting a variable-swap bug) had two flaws, both corrected in the
+  rigorous re-run. Provenance: `handoff/from_riemann/1785396595.md`.
+- **CONSEQUENCE (the fork, half 1, settled):** (2,2) ⟹ D is NOT essentially self-adjoint. The self-adjoint extensions
+  form a **4-real-parameter U(2) manifold**. Therefore the ~3% / 1/x² phase-tail floor is **not intrinsic to D** — it is
+  the bare-sinusoid sitting at ONE point of U(2), and killing it is a **search over U(2)**, not a barrier. B(E)=0 (the
+  bare build) is the known starting point in that manifold.
+- **OPEN (the fork, half 2 — now the live work):** does a single extension θ* ∈ U(2) make the three coincide —
+  θ_tail (kills the 1/x² phase), θ_spec (shooting eigenvalues match ζ-zeros 14.13,21.02,25.01,30.42,32.94 to Arb
+  tolerance), θ_pos (Weil pairing ⪰0)? A θ that fits the spectrum earns NOTHING unless it is the same θ where the Weil
+  form is positive (self-adjointness ⟹ positive trace ⟹ RH). Riemann-N builds the boundary-triple parametrization of
+  U(2) (regularized boundary functionals: {1,log} at x=1, e^{±2πix}/x at x=∞) and scans θ_spec; roundtable runs the
+  θ_pos Weil-positivity region in parallel. Verdicts pre-registered COINCIDE / SPLIT / NULL. Current 3% match is a float
+  → Report; only an Arb-certified θ_spec eigenvalue match promotes to Handle.
