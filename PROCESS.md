@@ -9494,3 +9494,42 @@ measure dm_S=|∏_v L_v(½−is)|²ds (§465), = the §451–457 irreducible off
 pure-archimedean prolate route is honestly closed as a Hilbert–Pólya realization; the live continuation is the
 semilocal operator. Proof pointers: LEDGER §466/§467, operators/u2_ST_scan.py, operators/task1_bare_Xrobust.py,
 RH_TASK3_rank2_vs_ST.md, /tmp/u2_ST_scan.out + /tmp/task1.out (run logs).
+
+## SESSION 2026-07-30 (cont.) §469–469f — the constructive side: primes ARE in the bulk, with S(T)'s exact Euler structure
+
+After the §466-468 no-go (arithmetic can't come from a boundary condition), the forward question: where DO the
+primes enter, and can I show it? Read CCM 2023 (arXiv:2310.18423, WebFetch/ar5iv) for the exact object: base
+measure dm_0=|Γ(1/4+is/2)|² (Meixner-Pollaczek λ=1/4), operator −s²+2πλ²(4N+1)−¼, semilocal = multiply the
+measure by |L_p(½−is)|² per prime.
+
+**Decision fork — what's robust vs what's blocked.** The zeros need the delicate self-adjoint extension (§465);
+I refused to overclaim there. But the Jacobi matrix of a finite positive measure is ROBUST (no extension needed).
+So I attacked the measure/operator-imprint layer, not the spectrum.
+
+**§469/469b — built & verified the bulk imprint.** Discretized-Lanczos Jacobi matrix; validation gate PASS
+(base reproduces √((n+½)(n+1)) to 1e-9, diagonal ~1e-15 = arithmetic-free). Prime p imprints purely off-diagonal,
+size ~p^{-1/2}, oscillatory; grid-converged to 5e-7. Handle for mechanism/location.
+
+**§469c/d — probed the spectral realization, two honest gate-protected negatives.** (c) The truncated matrix W
+CONVERGES in K (refuted §465's "M-dependent") but to the WRONG (Friedrichs) extension. (d) Tried the index-space
+route: caught that "recessive/ℓ² solution" = Friedrichs (not the zeros); boundary self-energy scan FAILED the gate
+(low delicate states have ~0 amplitude at the truncation site → no local index-boundary term reaches the zeros).
+DIAGNOSIS: the correct (pure-sin) extension is intrinsically x-space; doesn't transfer to the matrix picture.
+Corrected the NEXT_SESSION spec (recessive→differential-difference in x-space). The index-tail sits right on the
+limit-point/limit-circle borderline (turning point n≈4π²≈39) — exactly CCM's "delicate" — so I did NOT force the
+by-hand asymptotics (that's where §462-style false starts happen).
+
+**§469e/f — pivoted to the arithmetic-content layer, which IS fully tractable & exact.** (e) The imprint is the
+first-order Euler term: δb_n=κ_n·p^{-1/2}+O(1/p) (verified linearity + O(1/p) agreement for p≥5; small-p gap =
+higher prime-power terms). (f) CAPSTONE analytic identity, verified to 5 decimals: |L_p(½−is)|²=1/(1−1/p)[1+2Σ_m
+p^{-m/2}cos(m s ln p)] — the measure's Fourier mode at frequency m·ln p carries weight EXACTLY p^{-m/2}, identical
+to S_p(T)'s prime-power Euler weights. So the bulk measure carries S(T)'s arithmetic mode-for-mode.
+
+**Banked conclusion.** The session closes a clean logical arc: arithmetic S(T) canNOT be a boundary/extension DoF
+of the archimedean operator (rigorous no-go, §466-468), but IS present in the bulk semilocal measure with S(T)'s
+EXACT prime-power Euler structure (§469f) and imprints on the operator at first order with those weights (§469/e).
+The sole remaining gap is the spectral realization — the delicate self-adjoint extension (intrinsically x-space,
+§469d) that converts measure-content into eigenvalue-fluctuation = CCM's own open program. Proof pointers: LEDGER
+§466-469f; operators/{u2_ST_scan,task1_bare_Xrobust,task2b_height,semilocal_jacobi(,_convcheck,_spec_shift),
+index_extension_scan,semilocal_firstorder,semilocal_fourier_euler}.py; prov/arb_ST.py; RH_TASK3_rank2_vs_ST.md;
+RH_NOGO_extension_arithmetic.md.
