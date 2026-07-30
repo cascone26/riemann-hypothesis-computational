@@ -14209,3 +14209,17 @@ realizes the Riemann zeros. Verify-discipline paid off: §462/463 caught the wro
 right after reading the paper fully. The higher-k drift (ratio→1.06) is finite-X shooting + the free-start [-√2,√2]
 matching not fully implementing W_sa — improvable with larger X / full extension. NEXT: sharpen (larger X) to confirm
 the match tightens (rules out coincidence); then the Sonin space / semilocal (add a prime) = the frontier.
+
+## §464b (HONESTY CORRECTION on §464) — the match is SEMI-QUANTITATIVE (~few %, right count/density), NOT the <1% I first reported. Sharpening (X=40) did NOT tighten — it gave γ=13.36,20.14,25.45,... (first two ~5% off), mean|diff|~1.1 over [12,60]. The §464 X=22 "<1%" was SCATTER. HANDLE (honest downgrade).
+rt6_prolate_v3.py (X=40, finer): operator-γ vs zeta over [12,60]: mean|diff|=1.108, 12 roots vs 13 zeros. First
+zeros: 13.36/14.13, 20.14/21.02 (~5% low), higher ones scatter ±2 (ratios 0.95-1.05). So increasing X did NOT
+converge to a tight match — the free-start exterior shooting is a ~few-% APPROXIMATION to the true W_sa spectrum.
+ROOT CAUSE: my shooting starts freely at x=√2⁺ (ξ(√2)=1) — but the correct even eigenfunction's value/flux at √2
+is DETERMINED by the interior [-√2,√2] solution (regular connection through the singular point). I approximate the
+exterior (giving the B=0 quantization ≈ zeros) but not the exact interior→exterior matching, so precision is
+limited to ~few %. HONEST STATE (corrected): I built the CORRECT operator (λ=√2, γ=2√|α|, freq 2π√2 — the right
+structure, confirmed by right COUNT, DENSITY, and values within ~2-5% tracking the zeros); this is a genuine
+SEMI-QUANTITATIVE realization confirming the operator, NOT a precise (<1%) match. The precise match (paper Fig 2)
+needs the FULL W_sa extension (interior-exterior singular-point matching), which my free-start shooting only
+approximates. I OVERSTATED §464's <1% (that was X=22 scatter within the few-% band). Corrected. To get precision:
+implement the full even-function connection through [-√2,√2] at the regular-singular point (a real numerical task).
