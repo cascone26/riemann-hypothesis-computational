@@ -1074,3 +1074,26 @@ RT (vN/Weyl/Arb, 3 rounds) re-planned from the razor edge. Converged, self-corre
   (vN) test e^{−tH_F} positivity-preservation (flipped prior = likely holds); (Weyl) homogeneous-solution L² edge
   test — solve (H₀+κ_crit𝒱∓i)ψ=0 near u→∞, classify L²-ness = the REAL deficiency-index-at-edge (settles ess. s.a.),
   plus the ψ_N form-convergence test (resonance vs eigenvector). No Handle for RH; the tail is the core.
+
+## §431 — RIEMANN7 handoff (LEDGER §476–476e): semilocal support ladder, the log3 rung (2 Handles)
+Lane = Weil positivity of the CCM semilocal form, rung by rung in support length L (which primes enter). CC proved
+arch + [log2,log3) with p=2; first OPEN rung is L≥log3 (p=3 entering). Canonical source = ~/projects/riemann/LEDGER
+§476–476e (repo clean). Recorded for the RT.
+- GATES: both CC-proven rungs reproduced positive on an independent Fejér instrument.
+- RAZOR-TUNING reproduced: p2-weight tolerance collapses >1e-2 → <1e-3 crossing log3. NEW STRUCTURE: **p=3's ENTRY
+  consumes p=2's slack** (a 2↔3 interaction; p3 itself is 17× more tolerant). Margin collapse exponential
+  ~exp(−9.78·4W); margin at 4W=1.32 = **+7.3e-6 assembled from −5.2e-3 + 8.7e-3 − 3.5e-3 (3-orders cancellation)**.
+- **HANDLE 1 (Arb):** the p2-ONLY form (n=3 removed) is RIGOROUSLY INDEFINITE past log3 — Q_no3(v) ∈ [−8.45e-5,−0.8e-5]
+  < 0 (identity route: closed-form prime term + 491-zero sum + rigorous density tail, no integrals). ⇒ **every prime's
+  term is load-bearing; perturbative extension is impossible** (you cannot add p=3 as a small correction).
+- **HANDLE 2 (Arb):** the p2-rung form is CERTIFIED PD — interval-LDLᵀ on the zero-side Gram, min pivot ≥1.26
+  (conditional on PT-certified zeros; the zero-free direct cert is a loaded long job, RC≥1500).
+- THEOREM-LET (§476d, algebra certified): rung positivity FORCES log3-anticorrelation of deep directions —
+  E_3(ψ) ≥ 2w_3‖ψ‖² + |deficit| ⟺ ⟨ψ, ψ(·+log3)⟩ < 0.
+- TEMPERED (honesty): the "anticorrelation = Landau spike" mechanism attribution is WITHDRAWN at this window —
+  anticorrelation present (r_log3=−0.047) but non-prime log2.5 is MORE negative (−0.075); the witness is
+  low-band-localized and does NOT move with band height. So prime-specificity of the mechanism is not yet shown.
+- ASKS → next RT burst: (1) structural mechanism of the 2↔3 slack-consumption; (2) is a restricted-class theorem
+  worth a crew — prove positivity at 4W∈(log3,log4) for the Fejér family, finite prime set {2,3}, all closed forms
+  (needs the log3-anticorrelation of the family's deep directions; Montgomery–Goldston window tools?); (3) how to
+  force witnesses HIGH (density-weighted min-eig) so the Landau prime-specificity question becomes testable.
