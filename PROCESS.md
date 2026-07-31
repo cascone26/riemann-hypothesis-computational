@@ -9533,3 +9533,33 @@ The sole remaining gap is the spectral realization — the delicate self-adjoint
 §466-469f; operators/{u2_ST_scan,task1_bare_Xrobust,task2b_height,semilocal_jacobi(,_convcheck,_spec_shift),
 index_extension_scan,semilocal_firstorder,semilocal_fourier_euler}.py; prov/arb_ST.py; RH_TASK3_rank2_vs_ST.md;
 RH_NOGO_extension_arithmetic.md.
+
+## SESSION 2026-07-31 (solo, RT dropped) §476c–h — certification stretch at the log3 rung
+
+**Context.** Jacob dropped the roundtable entirely — solo lane. The committed target: the semilocal ladder's
+first open rung (L≥log3). This stretch converted the §476/476b float findings into rigorous certificates
+and mapped the ladder's load-bearing structure.
+
+**Decision chain.**
+- Direct zero-free cert (pole+arch−prime in arb, interval LDLᵀ) first failed honestly TWICE: (1) tall
+  complex rectangles at small W hit the digamma pole at Im r=1/2 → inf radii; fixed by manual segment
+  subdivision. (2) The §382-era tail bound was ~50× looser than necessary → pivot balls straddled 0;
+  derived a tight linear-domination tail. Both fixes additive (new file arb_zerofree_cert3.py; the §382
+  artifact untouched).
+- Invented the IDENTITY ROUTE for cheap rigor: Q(v) via Guinand–Weil = zero-side + removed-term
+  (closed-form arb) — no integrals. Used it for: §476c (no-3 form RIGOROUSLY indefinite past log3,
+  Q_no3(v) ∈ [−8.45e-5,−0.8e-5]); §476e.2/§476g (full form CERTIFIED PD at 4W=0.95 AND at the open rung
+  4W=1.32, min pivots 1.6–2.3 on conditioned spans; 8-probe spans genuinely near-rank-deficient — honest
+  failures kept).
+- Landau attribution: proposed (§476d), then TEMPERED by my own specificity test (§476e.3), then SETTLED
+  by the u-scan (§476f): the witness is log2-PINNED positive (variational exploitation of the p2 term),
+  log3-anticorrelation via a broad basin not pinned to log3; the indefiniteness is LOW-BAND-localized
+  (high band PSD). Mechanism at this scale = variational geometry, not prime-spike arithmetic.
+- The LOAD-BEARING MAP (§476h): removal of ANY single n=p^k term (incl. 4, 8, 9) breaks positivity once
+  its triangle weight ramps in; deficits GROW up the ladder (−1e-6 → −1e-1) while the margin collapses
+  exponentially — the two jaws of the razor, universal non-incrementality instrument-mapped.
+- ZERO-FREE certs (the unconditional finite theorems): 4W=0.95 PASSED (min pivot 2.30, no zero knowledge).
+  4W=1.32 (INSIDE the open rung, primes {2,3}) — running at write time; verdict banked on completion.
+
+**Proof pointers.** LEDGER §476c–h; operators/{arb_rung_cert.py, arb_rung_certA2.py, arb_zerofree_cert3.py,
+rung_log3_margin.py, support_ladder_sweep.py}; /tmp/{arbcert,certA2,zf3,rung,rung2,ladder}.out.
