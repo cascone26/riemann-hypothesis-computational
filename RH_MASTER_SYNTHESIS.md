@@ -18,18 +18,20 @@ Report/Handle labels per Charisma. Every "certified" statement points at a proof
   (prior roundtable) → **0.18280 (§483)** → **0.177482 (§489)**.
 - **This is the ladder's ENDPOINT with the inherited barrier** (§488): the binding region-b F_lo goes
   negative just below Λ ≈ 0.176 at the Polymath15 mollifier exponent (0.2).
-- **BUT the floor is a CERTIFICATION artifact, not a hard wall** (§490/§490b/§491): (i) the true mollified
-  point-margin |M(s*)| at N0 stays strongly positive (0.70–0.96) far below the floor, down to Λ≈0.05 — so
-  positivity is NOT the problem at the barrier point; the difficulty is localized to the CONTINUUM/rectangle
-  worst-case. (ii) The region-b mollifier exponent has large numerical slack: re-optimizing it (EXP 0.2→0.03)
-  recovers F_lo>0 at Λ=0.1746 (where the inherited exponent gives −0.076), with a legitimate interior
-  optimum. So a tighter Λ (~0.174 or below) is reachable by continuum-mollifier optimization.
-- **VALIDITY GATE on that improvement:** the region-b bound is "EXACT from arXiv:1904.12438 sec 8.5" at
-  (exponent, fudge)=(0.2, 1.03); the fudge co-occurs with the exponent and likely bounds an exponent-tied
-  Taylor remainder. Certifying a re-optimized exponent needs re-deriving fudge(EXP) from the paper's b-bound
-  lemma — not cleanly fetchable this session (WebFetch/ar5iv weak; crawl4ai needs browser install), and a
-  self-contained direct continuum bound is infeasible (the mollifier exists precisely to avoid tiling the
-  10¹²-scale oscillation). So: characterized completely, honest lead, NOT a claimed theorem past 0.177482.
+- **The floor is REAL** (§492, after getting the paper). Earlier this session I explored tuning the region-b
+  mollifier exponent (§490) and thought the floor might be a certification artifact (§491). Getting the paper
+  (arXiv:1904.12438 p.53) RESOLVED it: the region-b bound is |γ|nʸ ≤ e^{0.02}(N²/n²)^{−y/2} ≤ 1.03(n/N₋)ʸ —
+  the exponent is DERIVED = y₀ (the rectangle's lower-edge y), NOT a free knob, and the 1.03 = e^{0.02} is
+  essentially exponent-independent. So the §490 "improvement" (exp=0.03 ≪ y₀) used the WRONG exponent = an
+  artifact; with the correct exp=y₀, tighter targets don't clear → the ~0.176 floor is genuine.
+- **VERIFY-BEFORE-SHIP catch (§492):** the inherited roundtable code hardcoded exponent 0.2 while using
+  y₀=0.160/0.158 — a real discrepancy (exp=0.2≠y₀ is not the paper's valid bound). Recomputed both fired
+  theorems with the CORRECT exponent = y₀: binding tile clears comfortably (0.166 for the 0.18280 rung, 0.025
+  for 0.177482, both ≫ the 2.15e-3 threshold), and the full 17-tile region-b re-certification at exp=y₀
+  passes with monotone-growing margins. **Both theorems SURVIVE and are valid; the exponent bug did not change
+  the conclusion.** Re-cert artifact: `hilbert_regionb_165_158_correctexp.out`.
+- Lower than 0.177482 needs a higher rigorous RH-verification height (Platt–Trudgian 3×10¹² sets N₀) — the
+  genuine, verification-height-limited frontier.
 - **Honest provenance:** my session contribution = completing gates A/B at the tighter targets + writing
   the verifying assemblies. The barrier construction (regions a/b/c, the large-N lemma, the H_t machinery)
   is INHERITED from a prior roundtable and NOT independently re-derived. Conditional on (i) Platt–Trudgian
