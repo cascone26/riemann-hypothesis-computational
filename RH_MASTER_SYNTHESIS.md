@@ -16,10 +16,20 @@ Report/Handle labels per Charisma. Every "certified" statement points at a proof
 - Hypothesis: zeros of H_{0.165} confined to |Im| ≤ 0.158 at X = 2T, T = 3×10¹² (Platt–Trudgian, published).
 - **Ladder this session:** published record Λ ≤ 0.22 (Polymath15, arXiv:1904.12438) → in-house 0.19862
   (prior roundtable) → **0.18280 (§483)** → **0.177482 (§489)**.
-- **This is the ladder's ENDPOINT** (§488): the binding barrier margin at N0 = √(X/4π) goes negative just
-  below Λ ≈ 0.176. The floor is set by the RH-**verification height** (3×10¹²), not compute or tiling —
-  proved by (a) the binding tile scan (−0.175 at Λ≤0.172) and (b) narrowing the tile converges to the
-  pointwise-negative value at N0. Lower needs a higher rigorous verification or a better barrier.
+- **This is the ladder's ENDPOINT with the inherited barrier** (§488): the binding region-b F_lo goes
+  negative just below Λ ≈ 0.176 at the Polymath15 mollifier exponent (0.2).
+- **BUT the floor is a CERTIFICATION artifact, not a hard wall** (§490/§490b/§491): (i) the true mollified
+  point-margin |M(s*)| at N0 stays strongly positive (0.70–0.96) far below the floor, down to Λ≈0.05 — so
+  positivity is NOT the problem at the barrier point; the difficulty is localized to the CONTINUUM/rectangle
+  worst-case. (ii) The region-b mollifier exponent has large numerical slack: re-optimizing it (EXP 0.2→0.03)
+  recovers F_lo>0 at Λ=0.1746 (where the inherited exponent gives −0.076), with a legitimate interior
+  optimum. So a tighter Λ (~0.174 or below) is reachable by continuum-mollifier optimization.
+- **VALIDITY GATE on that improvement:** the region-b bound is "EXACT from arXiv:1904.12438 sec 8.5" at
+  (exponent, fudge)=(0.2, 1.03); the fudge co-occurs with the exponent and likely bounds an exponent-tied
+  Taylor remainder. Certifying a re-optimized exponent needs re-deriving fudge(EXP) from the paper's b-bound
+  lemma — not cleanly fetchable this session (WebFetch/ar5iv weak; crawl4ai needs browser install), and a
+  self-contained direct continuum bound is infeasible (the mollifier exists precisely to avoid tiling the
+  10¹²-scale oscillation). So: characterized completely, honest lead, NOT a claimed theorem past 0.177482.
 - **Honest provenance:** my session contribution = completing gates A/B at the tighter targets + writing
   the verifying assemblies. The barrier construction (regions a/b/c, the large-N lemma, the H_t machinery)
   is INHERITED from a prior roundtable and NOT independently re-derived. Conditional on (i) Platt–Trudgian
