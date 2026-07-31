@@ -852,3 +852,20 @@ FRONTIER / forward options (none session-scale): (1) higher rigorous RH-verifica
   (Connes-Consani/Deninger, career-scale, the real proof route). No Handle for RH.
 INSTRUMENTS (reusable): nb/ (NB closed-form Gram+d_N), ff/ (function-field Rosetta), operators/ (Weil-form
   symbol/rung Arb certs, CCM prolate). ALL lanes explored & honestly closed at their limits this session.
+
+---
+## CORRECTION 2026-07-31 (§492, autonomous) — got the Polymath15 paper; verify-before-ship catch
+Λ ≤ 0.177482 (§489) and Λ ≤ 0.18280 (§483) are VALID, but the inherited roundtable code had a bug:
+it hardcoded the region-b mollifier exponent at 0.2, while the paper (arXiv:1904.12438 p.53) DERIVES
+the exponent = y0 (the rectangle's lower-edge y-value): |γ|n^y ≤ e^0.02 (N²/n²)^(-y/2) ≤ 1.03(n/N-)^y.
+The 1.03=e^0.02 (exponent-independent); the exponent is y0, NOT free, NOT 0.2.
+- Recomputed both theorems at the CORRECT exp=y0: binding tile clears (0.166 for 0.18280, 0.025 for
+  0.177482, both ≫ 2.15e-3 threshold). Full 17-tile re-cert at exp=y0 passes (monotone, min 0.025).
+  Artifact: ~/cobo/roundtable/room/prov/hilbert_regionb_165_158_correctexp.out. Theorems SURVIVE.
+- This RESOLVES the §490 "better barrier" lead as an ARTIFACT (exp=0.03 ≪ y0 was the wrong exponent),
+  and CORRECTS §491: the Λ≈0.176 floor is REAL (verification-height-limited via N0), not a cert artifact.
+- The roundtable's hardcoded 0.2 should be fixed to y0 in arb_Flo / tao_regionb_mollifier for any future
+  rung (it's slightly optimistic at y0<0.2, though the conclusion survived here). The correct-exp re-cert
+  script is hilbert_regionb_correctexp.py.
+LAMBDA LANE FINAL STATE: Λ≤0.177482 CERTIFIED & re-verified at correct exponent (endpoint at T=3e12).
+The only lever for lower Λ is a higher rigorous RH-verification height. Paper is at /tmp/poly0.pdf.
