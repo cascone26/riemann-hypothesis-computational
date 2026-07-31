@@ -788,3 +788,35 @@ S=∅ (no shift) case must reproduce §464's base zeros (~3%) before trusting an
 whether the S={p} spectrum's fluctuation picks up S_p(T)=−(1/π)Σ_k p^{−k/2}sin(kT log p)/k. This is genuinely
 CCM's open program (real new mathematics, not a quick run) — but it is the correctly-characterized route, and
 the bulk imprint is already in hand (§469: the shift coefficients are the p^{−1/2}-weighted Jacobi imprint).
+
+---
+## UPDATE 2026-07-31 — PIVOT COMPLETE: the log3 rung is the committed lane; first Handle landed (§470–476c)
+The RT loop-2 + pivot-brainstorm arc closed the archimedean/extension line (a=1 razor edge, five encodings,
+= Rodgers–Tao Λ≥0 "barely true" in the Weil encoding — RH_SYNTHESIS_razor_edge.md) and committed to the
+SEMILOCAL SUPPORT LADDER as the primary lane (§475 decision brief; CC proved arch + [log2,log3) w/ p=2;
+L≥log3 = the field's first open structural rung).
+
+RUNG STATE (all banked §476–476c):
+- GATES: both CC-proven rungs reproduced positive in our independent Fejér instrument (§476.1).
+- The obstruction MAPPED: margin collapses exponentially (~exp(−9.78·4W), §476b.3); crossing log3 the
+  p=2-weight tolerance crashes >1e-2 → <1e-3 (CC's razor-tuning reproduced quantitatively, §476.3);
+  p=3's ENTRY consumes p=2's slack (interaction, not p=3's own weight — 17× asymmetry, §476.4);
+  saturator = the zero-node function again (§476.5).
+- **HANDLE (§476c): the p2-only form is RIGOROUSLY INDEFINITE past log3** — Arb-certified
+  Q_no3(v) ∈ [−8.45e-5, −0.8e-5] < 0 via the identity route (closed-form prime term + 491-zero sum +
+  rigorous density tail; arb_rung_certA2.py). Perturbative extension off the p=2 rung is impossible:
+  every prime's term is load-bearing (positivity is exact-identity cancellation, no inequality slack).
+- CERT B (interval-LDLᵀ PD of the full form on the p=2 rung, 36 rigorous arch integrals) — running;
+  bank its verdict when done (arb_rung_cert.py, /tmp/arbcert.out).
+
+NEXT ATTACKS (loaded, in order):
+1. Finish/bank CERT B (gate-2 PD certified → second Handle).
+2. The E_jump structural link: express the load-bearing n=3 restoration in the §473 Dirichlet-jump
+   decomposition — is the rung's cancellation a jump-form identity? (The only structure we own that CC
+   don't use.)
+3. The rung inequality with OUR tools: the certified statement "no-3 form indefinite by −5e-3 (G-scale),
+   restored to +7e-6 by n=3" gives the exact size of the cancellation a proof must produce; try a
+   Fejér-kernel-family-specific proof of positivity at 4W ∈ (log3, log4) (finite prime set {2,3}, closed
+   forms all the way — a THEOREM candidate on a restricted test class, worth an attempt before the RT).
+4. RT next burst: send the §476–476c block; ask specifically for structural ideas on the 2↔3 interaction
+   (the slack-consumption mechanism) and whether the restricted-class theorem (item 3) is worth a crew.
