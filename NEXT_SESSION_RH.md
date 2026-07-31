@@ -820,3 +820,20 @@ NEXT ATTACKS (loaded, in order):
    forms all the way — a THEOREM candidate on a restricted test class, worth an attempt before the RT).
 4. RT next burst: send the §476–476c block; ask specifically for structural ideas on the 2↔3 interaction
    (the slack-consumption mechanism) and whether the restricted-class theorem (item 3) is worth a crew.
+
+---
+## UPDATE 2026-07-31 — NB LANE explored & wrapped (§477-481); RT dropped permanently
+Pivoted off the CC ladder (which was retracing Connes' program) to Nyman-Beurling per honest reassessment.
+DELIVERED: (a) validated closed-form NB-Baez-Duarte Gram G[u,v]=A(u,v)/u + closed-form F_n=(gamma-1-log n)/n
+(no zeta integrals; the scout found NO published d_N numerics, so this route appears new); (b) V<->Bettin-Conrey
+bridge c0(n/m)=-V(n^-1 mod m,m) DERIVED+VERIFIED; (c) STRUCTURAL INVERSION (§477b): NB Gram's smooth part is
+INDEFINITE, arithmetic (Vasyunin) part RESTORES PSD — mirror of the Weil form; (d) THE MECHANISM (§480): Gram =
+D^-1/2 H D^-1/2, H multiplicative-Toeplitz with symbol S(t)=|zeta(1/2+it)|^2/(1/4+t^2)>=0 vanishing at zeros
+=> PSD=Bochner, conditioning=zeros (1.45x near-null confirmation), C_BD=Sigma 1/|rho|^2 = residues; (e) definitive
+d_N numerics (§481): d_N^2*logN oscillates around C_BD=0.04619 (zero-driven corrections), RH-consistent.
+HONEST VERDICT (§480b): connected structurally but to the KNOWN NB-Burnol framework; reciprocity gave no new
+bound (symbol even => reflection trivial); BAILED on the analytic-bound goal per the scope-and-bail guardrail.
+No new theorem. The instrument (nb/nb_gram.py, nb_dist.py, nb_recip.py) is reusable.
+STATE OF ALL LANES: CC ladder (§476, mapped, known-hard extension), Li (§472, Handle lambda_n>0), NB (§477-481,
+instrument+mechanism, known-hard analytic frontier). Every lane reduces to a known-hard core. Open options not yet
+tried: dBN Lambda<=0.20 formalization (real theorem, heavy engineering), Speiser's criterion (untouched).
