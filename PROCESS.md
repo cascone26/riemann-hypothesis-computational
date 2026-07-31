@@ -9563,3 +9563,32 @@ and mapped the ladder's load-bearing structure.
 
 **Proof pointers.** LEDGER §476c–h; operators/{arb_rung_cert.py, arb_rung_certA2.py, arb_zerofree_cert3.py,
 rung_log3_margin.py, support_ladder_sweep.py}; /tmp/{arbcert,certA2,zf3,rung,rung2,ladder}.out.
+
+## SESSION 2026-07-31 (Fable superprism) §482–489 — pivots, a certified theorem, the Rosetta unification
+
+**Framing.** After the NB lane wrapped (instrument + confirmations, no new theorem), Jacob called a Fable
+superprism to step back. The prism's decisive move was orient-before-rank: checking the "untried Λ lane"
+revealed a full in-house de Bruijn–Newman program in the roundtable room that had already certified
+Λ ≤ 0.19862 (past the published record) with the next rung half-fired.
+
+**Decision chain.**
+- Superprism (§482): split the effort into facets P1–P7; positivity re-encodings CLOSED (all = a=1 razor),
+  boundary-vs-bulk BANKED, Speiser KILLED; fired two lanes — the half-fired Λ ladder and the function-field
+  Rosetta.
+- Λ ladder (§483, §486, §488, §489): completed Λ ≤ 0.18280 (built+validated gate B, wrote a verifying
+  assembly after finding the pre-staged one had placeholder ingestion). Then pushed the next rung: found
+  gate C rescued by larger N* (N*=1e8), binding tile viable at 8×, region-a edge held at +0.04077 →
+  Λ ≤ 0.177482 CERTIFIED. Mapped the FLOOR (§488): the binding barrier margin at N0 goes negative just below
+  0.176, verification-height-limited (not compute/tiling — narrowing the tile converges to pointwise-negative
+  at N0). Ladder resolved: 0.22 → 0.19862 → 0.18280 → 0.177482 (endpoint).
+- Rosetta (§484, §487): instrumented the SOLVED case. RH-for-curves = Hodge index on C×C = Castelnuovo-Severi
+  bound forcing |α|=√q = Rosati norm-form positivity = "the discriminant a_p²−4p stays negative." Located the
+  number-field gap precisely (no F₁ surface, no finite endomorphism algebra → the a=1 razor unproven). Honest
+  self-correction along the way (§487: first Rosati build used M₂ not End⁰, came out indefinite, corrected).
+- Wall anatomy (§485/§485b/§485c): symbol sign-change at log3 → band-limit smoothing → prolate-plunge
+  collapse; self-corrected the claim that negative-area drives the collapse (rates differ 5.6×).
+
+**Banked conclusion.** One certified conditional theorem past the record (Λ ≤ 0.177482), the whole positivity
+program unified (a=1 razor = number-field Castelnuovo-Severi bound = missing arithmetic surface), and both
+concrete lanes mapped to their honest limits. Synthesis: RH_MASTER_SYNTHESIS.md. Proof pointers: LEDGER
+§482–489; ~/cobo/roundtable/room/prov/tao_assembly_17748_FIRED.out; ff/*.py; nb/*.py.
