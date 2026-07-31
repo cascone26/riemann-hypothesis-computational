@@ -1042,3 +1042,35 @@ The RT↔Riemann7 loop's first full turn. RT (vN/Weyl/Arb, 2 rounds) produced th
   function that saturates the bound; its structure may pin the margin. (2) borderline self-adjointness AT a=1 (not
   a<1): is L₀+κ𝒱 essentially self-adjoint / what extension theory applies at the critical case? (3) an ANALYTIC
   (not numerical) handle on the SIGN of the margin — that sign IS RH. No Handle for RH.
+
+## §430 — LOOP ITER 2: a=1 re-plan converged → Friedrichs reality + Li-margin computable lane + honest "representation not leverage"
+RT (vN/Weyl/Arb, 3 rounds) re-planned from the razor edge. Converged, self-corrected (vN conceded 2 Weyl catches).
+- **REALITY IS FREE AT a=1 (von Neumann, Friedrichs):** the form ⟨ψ,(L₀+κ𝒱)ψ⟩ ≥ (1−κa)⟨ψ,L₀ψ⟩ = 0 at κa=1 is
+  bounded below (inf exactly 0) ⇒ **Friedrichs extension exists, spectrum REAL** — reality delivered, not obstructed.
+  a=1 does NOT close the extension question; it re-opens a one-param delicate family (critical-Hardy / log-indicial
+  degeneracy), pure-sin BC selects within it. **a≤1 ⟺ form positivity ⟺ real spectrum ⟺ RH.**
+- **a=1 FORCED AS AN IDENTITY (new HP EQUIVALENCE, banked):** a = (prime side)/(archimedean side) of the Weil
+  explicit formula, an identity ⇒ a=1 is the explicit formula written as a form ratio, NOT a numerical coincidence.
+  ⇒ [H_F ess. self-adjoint at κ_crit, spectrum={γ_ρ}] ⟺ Weil positivity ⟺ RH (Weil one way, Bombieri–Connes other).
+  Labeled EQUIVALENCE/reformulation, NOT a margin-sign resolution.
+- **HONEST CEILING (Weyl caught, vN conceded):** the operator picture is REPRESENTATION, not new leverage — "self-
+  adjoint" re-encodes "positive form"; content = prove form ≥0 = byte-for-byte Weil/Bombieri–Connes. Two withdrawn
+  over-steps: (i) "ψ* non-L² ⟹ limit-point ⟹ ess. s.a." is a variational-vs-homogeneous-solution conflation, a
+  theorem to prove not transfer; (ii) "pure-sin BC forced" must be read off the unique domain, not asserted.
+- **THE COMPUTABLE UNCONDITIONAL LANE (Arb, Keiper–Li):** RH ⟺ λ_n=Σ_ρ[1−(1−1/ρ)^n]≥0 ∀n; each λ_n unconditionally
+  computable from ξ-Taylor data (NO zero locations, non-circular); Li-positivity = Weil-positivity = our a≤1, same
+  criterion two encodings; a single certified λ_n<0 disproves RH. Arb computed λ_1..15 (mpmath, Report): all>0, but
+  CAUGHT its own method ceiling (Cauchy-diff drifts n≥5, λ_5 off 2e-5 vs Keiper) → NONE Handle yet. Key structure:
+  λ_n grows ~(n/2)ln n = the archimedean baseline. **DECOMPOSE λ_n = λ_n^triv (archimedean, closed-form, +, ~(n/2)lnn)
+  + λ_n^arith (prime oscillation); RH ⟺ |λ_n^arith| < λ_n^triv ∀n.** This split = L₀-trace + 𝒱-trace, term-for-term
+  (two constructions, canonical). n→∞ tail = the a=1 margin = irreducible core, same object.
+- **THE ONE LEVERAGE CARD (open, cheap to settle):** is e^{−tH_F} positivity-preserving? vN expected NO (signed
+  ±shifts); **Weyl CORRECTED the prior**: kernel is Λ(n)/√n ≥ 0 always (von Mangoldt ≥0; ± is direction not sign) ⇒
+  genuine positive-rate jump kernel = Beurling–Deny/Fukushima Dirichlet form ⇒ **positivity-preserving semigroup
+  LIKELY HOLDS** ⇒ Perron–Frobenius simple-positive ground state ⇒ λ_n≥0 from a GENERAL theorem, not case-by-case =
+  real leverage beyond Weil restatement. Worth running with the flipped prior.
+- **NEXT RIEMANN7 (3 legs):** (Arb) stable Li recursion (Kreminski/Coffey via Stieltjes/η, no Cauchy-diff), two-way
+  Arb-enclose λ_1..N to high N, certify triv/arith split, report margin λ_n^triv−|λ_n^arith| + falsification branch;
+  (vN) test e^{−tH_F} positivity-preservation (flipped prior = likely holds); (Weyl) homogeneous-solution L² edge
+  test — solve (H₀+κ_crit𝒱∓i)ψ=0 near u→∞, classify L²-ness = the REAL deficiency-index-at-edge (settles ess. s.a.),
+  plus the ψ_N form-convergence test (resonance vs eigenvector). No Handle for RH; the tail is the core.
