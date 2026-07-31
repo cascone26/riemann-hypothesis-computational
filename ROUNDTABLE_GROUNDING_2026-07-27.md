@@ -1016,3 +1016,29 @@ new formulation BEFORE any semilocal number is trusted; THEN read whether S={p} 
 only an Arb-certified base-zero match=Handle). Verdict pre-registered COINCIDE/PARTIAL/NULL. Run ONE heavy job at a time.
 HONESTY: no Handle for RH. This is CCM's own open program. Value: the arithmetic-content side is now fully mapped —
 everything except the delicate extension is done+verified.
+
+## §429 — LOOP ITER 1: RT spec → Riemann7 exec → the crux scalar is a=1.0000 (RAZOR EDGE)
+The RT↔Riemann7 loop's first full turn. RT (vN/Weyl/Arb, 2 rounds) produced the work order; Riemann7 executed it
+(commit 073e734, its LEDGER). Both frames converged onto ONE object.
+- **RT SPEC (produced):** semilocal differential-difference eigenvalue eq in u=log x: L₀[ψ]+κ𝒱[ψ]=μψ, μ=(γ/2)².
+  L₀ = §464 prolate (−∂_x[(λ²−x²)∂_x]+(2πλx)², supplies the certified RvM mean only). 𝒱[ψ](u)=Σ_{n≥2}(Λ(n)/√n)
+  [ψ(u+log n)+ψ(u−log n)] = the log-p shift/difference term (prime side of Riemann–Weil), pure-sin BC at ∞ +
+  Friedrichs at u=log λ. KEY: 𝒱 is diagonal in momentum with symbol **−2Re ζ′/ζ(½+ik), poles EXACTLY at the zeros**
+  (verified by Riemann7: 𝒱e^{iku}=−2Re[ζ′/ζ(½+ik)]e^{iku}). Insertion gives the zeros' LOCATION; only
+  self-adjointness gives their REALITY (⟹RH). Kato–Rellich fails (‖𝒱_N‖~2√N, operator-unbounded); route =
+  KLMN relative FORM-bound a=sup⟨ψ,𝒱ψ⟩/⟨ψ,L₀ψ⟩<1.
+- **Riemann7 EXECUTION (the crux):** identified a = λ_max(prime, arch+pole) = ρ_edge from §459 — the KLMN form-bound
+  and the §451–459 cancellation-dominance scalar are the SAME OBJECT. Computed with the trusted l2_edge_sweep
+  instrument: **a = 1.00000 to 5 dp across every well-conditioned band** (14,34)/(14,44)/(14,54); Weil form
+  (arch+pole−prime) marginally PSD, min-eig/‖·‖ ≈ −1e-16..−3e-15 (machine-zero); arch+pole nearly singular (prime
+  SATURATES it — the a=1 fingerprint). Bad bands (14,64)/(14,94) = archpole losing numerical PD at cond~1e13, a
+  symptom of a=1, not signal.
+- **VERDICT — RAZOR EDGE a=1 (pre-registered terms):** NOT HANDLE-WIN (a is not <1), NOT clean OBSTRUCTION (not ≥1
+  with margin) — exactly the boundary. KLMN needs a<1 STRICT; **a=1 is precisely the case a sufficient-condition
+  method cannot conclude from.** This is RH-true-with-zero-margin = the cancellation-dominated core (§451–459),
+  now provably the SAME wall as the KLMN self-adjointness route. Whether the true margin is +0 (RH) or −tiny (¬RH)
+  sits BELOW numerical resolution = the hard open core, stated exactly.
+- **OPEN (next loop turn):** (1) characterize the a=1 critical direction — the null vector of `full` = the test
+  function that saturates the bound; its structure may pin the margin. (2) borderline self-adjointness AT a=1 (not
+  a<1): is L₀+κ𝒱 essentially self-adjoint / what extension theory applies at the critical case? (3) an ANALYTIC
+  (not numerical) handle on the SIGN of the margin — that sign IS RH. No Handle for RH.
