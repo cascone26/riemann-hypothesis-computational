@@ -869,3 +869,18 @@ The 1.03=e^0.02 (exponent-independent); the exponent is y0, NOT free, NOT 0.2.
   script is hilbert_regionb_correctexp.py.
 LAMBDA LANE FINAL STATE: Λ≤0.177482 CERTIFIED & re-verified at correct exponent (endpoint at T=3e12).
 The only lever for lower Λ is a higher rigorous RH-verification height. Paper is at /tmp/poly0.pdf.
+
+---
+## UPDATE 2026-07-31 (Fable superprism, autonomous) — 4th Λ rung FIRED via mollifier lever
+Λ ≤ 0.176168 CERTIFIED (§499), below the prior 0.177482. Ladder: 0.22 → 0.19862 → 0.18280 → 0.177482 → 0.176168.
+Achieved via the VALID mollifier-prime lever: the Euler mollifier primes are free-choice (Polymath15 p.51,
+{2,3,5} was tuned for t=0.2); {2,3,5,7} tightens region-b (§494-497). Binding tile arb-certified (0.0334),
+16 non-binding tiles {2,3,5}, region-a +0.00307. Proof: prov/tao_assembly_17617_FIRED.out.
+NEWLY BINDING CONSTRAINT (§498): region-a is NOT mollified (direct |S1| covering), so the mollifier only
+helps region-b. Region-a worst edge fell +0.041 → +0.003 across this rung — it is now the floor-setter at ~0.176.
+NEXT LEVER (loaded, THE opener for next session): build a region-a mollifier / tighter covering cert (the same
+Euler-mollifier idea applied to region-a's |S1| sum). If it works, both gates descend together and {2,3,5,7,11}
+unlocks Λ~0.1745 (§495 geometric halving). If region-a can't be mollified rigorously, ~0.176 is the true
+both-gates floor at T=3e12, and lower Λ needs a higher rigorous RH-verification height (raises N0, helps both).
+Superprism's other 4 vectors (height-coupling, region-a edge, F1/Rosetta norm-form, independent H_t cross-check)
+remain loaded. The mollifier machinery: hilbert_regionb_164_156.py, /tmp/arb2357.py, /tmp/mollP.py.
