@@ -837,3 +837,18 @@ No new theorem. The instrument (nb/nb_gram.py, nb_dist.py, nb_recip.py) is reusa
 STATE OF ALL LANES: CC ladder (§476, mapped, known-hard extension), Li (§472, Handle lambda_n>0), NB (§477-481,
 instrument+mechanism, known-hard analytic frontier). Every lane reduces to a known-hard core. Open options not yet
 tried: dBN Lambda<=0.20 formalization (real theorem, heavy engineering), Speiser's criterion (untouched).
+
+---
+## STATE 2026-07-31 (end of Fable superprism session) — CONSOLIDATED. Read RH_MASTER_SYNTHESIS.md first.
+CERTIFIED THEOREM (Handle, conditional): **Λ ≤ 0.177482** (§489), the de Bruijn-Newman ladder's ENDPOINT.
+  Proof: ~/cobo/roundtable/room/prov/tao_assembly_17748_FIRED.out. Ladder: 0.22(record)→0.19862→0.18280→0.177482.
+  Floor set by RH-verification height (Platt-Trudgian 3e12), NOT compute (§488). Provenance: completed the
+  gates + verifying assembly; barrier construction inherited from prior roundtable, not independently re-derived.
+UNIFYING RESULT (§482-487): the a=1 razor (5 encodings) = the number-field Castelnuovo-Severi bound = a THEOREM
+  in the function field (Hodge index on C×C / Rosati norm-form positivity = "disc a_p^2-4p stays negative") but
+  unproven in the number field = the missing arithmetic surface Spec Z x_F1 Spec Z. Every lane bottoms out here.
+FRONTIER / forward options (none session-scale): (1) higher rigorous RH-verification height -> lower Λ (big
+  compute, incremental); (2) better barrier (Polymath15 open since 2019); (3) the F1 surface construction
+  (Connes-Consani/Deninger, career-scale, the real proof route). No Handle for RH.
+INSTRUMENTS (reusable): nb/ (NB closed-form Gram+d_N), ff/ (function-field Rosetta), operators/ (Weil-form
+  symbol/rung Arb certs, CCM prolate). ALL lanes explored & honestly closed at their limits this session.
