@@ -142,3 +142,36 @@ research program, not a session. Concrete alternatives:
 No Handle for RH anywhere. What stands: one certified conditional theorem past the published record, a
 complete honest map of the positivity program, and the frontier named as sharply as it can be without new
 mathematics.
+
+---
+
+## AUDIT & HONEST STATE (2026-07-31, §505–510) — what is SOLID vs what got corrected
+
+This was a long, fast-banking session; verify-before-ship (applied retroactively) caught several overclaims.
+Recording the audited state so the durable record is trustworthy.
+
+**SOLID (verified / re-verified independently):**
+- **The four de Bruijn–Newman Λ theorems** — 0.19862, 0.18280, 0.177482, **0.176168** (headline). Arb-certified,
+  the §492 exponent bug (hardcoded 0.2 vs the paper's derived y₀) found and re-certified, all gates re-verify.
+  Conditional on Platt–Trudgian 3e12 + the inherited Polymath15-style construction (not an independent re-proof).
+- **§500 (symbol divergence)** — the Weil symbol W(r) diverges to −∞ with the primes (min ~ −c√P, PNT). Clean
+  numerics + PNT, independent of the corrected claims below. RH is global-cancellation-only. STANDS.
+- **The a=1 razor** — min-eig(full Weil form) ≈ 0, many independent confirmations. Real.
+- **Rosetta (§484–487)** — RH-for-curves = a finite norm-form / discriminant positivity (Hasse). Self-corrected
+  (the M₂→End⁰ error) and verified.
+- **Region-a redundancy (§502–503)** — region-a's bottom edge ⊂ region-b's binding tile; workflow-confirmed.
+
+**CORRECTED (overclaims caught this session):**
+- **§508 "heat flow lifts the razor linearly" → WITHDRAWN (§509).** The exact dBN effect on the Weil form is a
+  CONGRUENCE (heat-amplifies the test function), which PRESERVES the razor by Sylvester's law (verified: min-eig
+  stays machine-zero as probes heat-widen). §508's linear lift was a PSD-boost artifact. Corrected finding: the
+  razor is congruence-INVARIANT (robustness), not flow-lifted.
+- **B-4 "positive submatrix collapses at 4th probe" → FALSE (§510).** Positive-definite principal submatrices
+  persist at ALL sizes (3×3=+2.55 … 6×6=+0.80), margin thinning SMOOTHLY toward the razor; 0/18 4th-probes
+  collapse the best 3-block. The razor is the size→full limit, reached smoothly — NOT a sharp local-vs-global
+  collapse. §505's "probe-space provably exhausted" is downgraded (the razor is real; the "provably exhausted"
+  mechanism was an agent overclaim). §500 does not depend on B-4 and stands.
+
+**Bottom line:** the concrete deliverables (Λ theorems) are solid; the deep structural results (§500, Rosetta,
+the razor) are solid; two interpretive syntheses (§508 lift, B-4 collapse mechanism) were overstated and are
+corrected. The frontier (spectral / trace-formula / missing arithmetic surface) remains the open core.
