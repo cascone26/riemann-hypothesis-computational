@@ -23,7 +23,8 @@ data `operators/zeros2000.npy`, `argzp2000.npy`, `abszp2000.npy` (γ ≤ 2515, m
   string length, no saturation → the infinite string detects any δ>0.
 
 ## The Möbius comb (candidate-novel core; lit gate: NOT FOUND — §521)
-G(u) = N⁻¹ Σ_k w_k e^{iuγ_k} over 500–2000 zeros:
+G(u) = N⁻¹ Σ_k w_k e^{iuγ_k} over 500–10⁴ zeros (§530: at 10⁴ zeros the comb is PERFECT — 40/40
+squarefree vs 0/40 non-squarefree, tol 2.5e-4, n≈90–3000, p<0.001; Gonek→1.0000; gap ≈ 0.009·ln n):
 - Plain (w=1): Landau — top-15 peaks = 15/15 prime powers (sanity).
 - Twisted (w=e^{−2i·argζ′(ρ)}): peaks on SQUAREFREE integers — 18/20 (n<99, p<0.0005) and 19/30
   (n≈90–1000, p<0.001, tol 6e-4); non-squarefree suppressed (1/20, 3/30). G(log n) ≈ const·μ(n)/√n.
@@ -53,8 +54,8 @@ log-strength); A=30 comb "hits" were selection.
    at a zero = regularized arg ζ ↔ arg ζ′(ρ_k)); numerics closed (§523-524), proof-sketch pending.
 2. The A→∞ continuum object (which canonical system ζ's |·|² measure is — the Suzuki-gap).
 3. Hankel/moment positivity tower translation (string-side Weil analogue).
-4. Phase-only Möbius claim: extend zeros (10⁴+), formalize as a statement about
-   Σ e^{−i·argζ′(ρ)} x^{iγ} vs Σ μ(n)-combs, then write up.
+4. Phase-only Möbius claim: 10⁴-zero scale-up DONE (§530, perfect comb). Remaining: formalize +
+   write up; connect to Suzuki screw↔string correspondence (§529).
 
 ## Proposition (ζ-evaluation of Vanlessen's phase; proof-sketch level — §526)
 Let w_A(x) = |ζ(½+iAx)|² on [−1,1], with singularities x_k = γ_k/A (zeros in the window, λ_k = 1,
