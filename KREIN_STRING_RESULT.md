@@ -36,7 +36,7 @@ G(u) = N⁻¹ Σ_k w_k e^{iuγ_k} over 500–2000 zeros:
 
 ## Literature position (§521, agent + spot-verified)
 - Vanlessen math/0212014 (VERIFIED): the RH machinery for generalized Jacobi weights — our §516 phase
-  law is an application; the α=0.6 anomaly is the open delta vs its 1/n order term.
+  law is an application; term-by-term match verified, all constants closed (§523-524).
 - Suzuki arXiv:1204.1827 (VERIFIED): canonical system for ζ from ξ-ratio inner functions (ω>1);
   NOT the |ζ|² spectral measure; zero-readout from string coefficients unaddressed.
 - Phase-only Möbius selection (unit-modulus weight): NOT FOUND in literature — strongest novel claim.
@@ -49,8 +49,8 @@ in |db| at finite A null; positivity-of-string constraint real but weak (active 
 log-strength); A=30 comb "hits" were selection.
 
 ## Open gates
-1. Analytic derivation of the dictionary from Vanlessen-type RH asymptotics for the ζ weight —
-   must produce the arg ζ′ phase and explain α≈0.6 (collective effect?).
+1. Write up the ζ-evaluation of Vanlessen's Φ_ν ⇒ arg ζ′(ρ) as a proposition (conjugate of log|ζ|
+   at a zero = regularized arg ζ ↔ arg ζ′(ρ_k)); numerics closed (§523-524), proof-sketch pending.
 2. The A→∞ continuum object (which canonical system ζ's |·|² measure is — the Suzuki-gap).
 3. Hankel/moment positivity tower translation (string-side Weil analogue).
 4. Phase-only Möbius claim: extend zeros (10⁴+), formalize as a statement about
