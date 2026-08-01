@@ -55,3 +55,22 @@ log-strength); A=30 comb "hits" were selection.
 3. Hankel/moment positivity tower translation (string-side Weil analogue).
 4. Phase-only Möbius claim: extend zeros (10⁴+), formalize as a statement about
    Σ e^{−i·argζ′(ρ)} x^{iγ} vs Σ μ(n)-combs, then write up.
+
+## Proposition (ζ-evaluation of Vanlessen's phase; proof-sketch level — §526)
+Let w_A(x) = |ζ(½+iAx)|² on [−1,1], with singularities x_k = γ_k/A (zeros in the window, λ_k = 1,
+double zeros of the weight) and smooth part h = w_A / Π_k ((x−x_k)(x+x_k))². Vanlessen (1.5)–(1.6)
+[arXiv:math/0212014] gives
+    b_n − A/2 = −(A/n)·Σ_k sinθ_k · cos( (2n+1)θ_k − Φ_k ) + O(1/n²),   θ_k = arccos x_k,
+    Φ_k = (α + 1 + Σ_{j>k} 2λ_j)π − (α + β + 2N_A)θ_k − (sinθ_k/π)·PV∫ log h(t)/√(1−t²)·dt/(t−x_k).
+Claim: Φ_k ≡ −2·arg ζ′(ρ_k) + (window-linear terms c₀(A) + c₁(A)θ_k)  (mod 2π).
+Sketch: (i) for simple zeros λ_j = 1 the counting term Σ_{j>k}2λ_j·π ≡ 0 (mod 2π) — this is exactly
+why the naive π·k phase model fails (§514 refutation, now explained). (ii) the middle term is linear
+in θ_k with slope −(α+β+2N_A) — window-dependent, absorbed in c₁(A) (and the source of the aliased
+slopes in the §514 circular-linear fits). (iii) the PV integral is the interval-Hilbert transform of
+log h; adding back the singular factors' conjugates converts it to the conjugate function of the FULL
+log w minus explicit θ-linear terms; the conjugate of log|ζ(½+it)|² at t = γ_k, regularized as the
+jump midpoint, equals 2·arg ζ′(ρ_k) + π + smooth arch/θ_H terms (near ρ: ζ(½+it) ≈ ζ′(ρ)·i(t−γ), and
+the symmetric regularization of arg ζ across the zero lands at arg ζ′(ρ) + π/2). Numerics: the full-
+weight conjugate ψ matches arg ζ′(ρ_k) at R=0.997, window-spread 0.000 (§516); scale s = −2 (§514).
+Status: REPORT (numerically closed, rigorous bookkeeping of (iii) — Joukowski map + arch factors —
+pending). Rigor path: do (iii) via the outer-function factorization of ξ on the critical line.
