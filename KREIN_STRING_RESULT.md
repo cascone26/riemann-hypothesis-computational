@@ -99,6 +99,9 @@ Chebyshev frame) of log h at the singularity.
    a harmonic function of the Joukowski uniformization — smooth on the open interval, singular
    only at ±1 (endpoint exponents α=β=0 here), hence absorbed into L_A. Out-of-window zeros
    (|γ|>A) contribute to log h a function smooth on [−A,A]; their conjugate is smooth ⇒ into L_A.
+**Update (§541).** The arg-side is now EXACT: arg ζ′(ρ_ν) = πS(γ_ν) − π/2 (classical folklore via
+ζ=e^{−iθ_H}Z, machine-verified 4.4e-14 at 79 zeros; arg arch(½+it)=π+θ_H exactly). The lemma's gap
+is pure smooth-function Hilbert bookkeeping.
 **Status.** Numerically closed: parameter-free phase residuals sd 0.075–0.31 rad across A=30..200,
 mean ≈ 0 (§527, §534). What remains for full rigor: (a) uniformity of the O(t−γ) local-model error
 in the conjugate, (b) explicit form of L_A via θ_H and the Joukowski kernel, (c) the tail-sum
