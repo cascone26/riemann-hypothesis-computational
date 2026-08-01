@@ -76,3 +76,31 @@ weight conjugate ψ matches arg ζ′(ρ_k) at R=0.997, window-spread 0.000 (§5
 Status: REPORT — numerically closed PARAMETER-FREE at 0.1-rad precision (§527: fitted phases match
 (1.6) computed from the weight at R=0.991-0.997 across 45 zeros/3 windows; conventions: off-diagonals
 are a_n, index+1, ±pair folding). Formal proof gap: only the conj_h ↔ arg ζ′ identity bookkeeping.
+
+## Lemma draft (conj ↔ arg ζ′ — the rigor step for the Proposition; §535)
+**Setup.** w_A(x) = |ζ(½+iAx)|² on [−1,1]; h = w_A / Π_k ((x−x_k)(x+x_k))², x_k = γ_k/A. The
+Vanlessen phase needs C[log h](θ_ν) — the conjugate function (interval Hilbert transform in the
+Chebyshev frame) of log h at the singularity.
+**Lemma (claim).** C[log h](θ_ν) = −2·arg ζ′(ρ_ν) + L_A(θ_ν), where L_A is smooth on [0,π]
+(no singular content at the zeros), explicitly: L_A collects (i) the arch/Γ-factor conjugate,
+(ii) the interval-vs-line Hilbert correction, (iii) the ±pair and out-of-window zero tails.
+**Proof sketch, three steps.**
+1. *Zero-free conjugacy.* On any closed subinterval J ⊂ (γ_k, γ_{k+1}) the function
+   log ζ(½+it) is analytic (no zeros, no pole for t>0 windows), so log|ζ| and arg ζ are harmonic
+   conjugates: the LINE Hilbert transform of log|ζ| equals arg ζ + const on J, modulo the
+   harmonic-completion data at ∞ handled by the functional-equation/arch factor (use ξ:
+   log|ξ(½+it)| has line-conjugate arg ξ = −θ_H(t) + π·N-content exactly).
+2. *Local model at a zero.* Near t = γ_ν (simple zero): ζ(½+it) = iζ′(ρ_ν)(t−γ_ν)(1+O(t−γ_ν)).
+   Hence log|ζ| = log|ζ′(ρ_ν)| + log|t−γ_ν| + smooth, and arg ζ jumps by π across γ_ν with
+   regularized (midpoint) value arg ζ′(ρ_ν) + π/2. Removing the singular factor's own conjugate
+   (the sawtooth of log|t−γ_ν|, midpoint-regularized to 0) leaves exactly the smooth part whose
+   value at γ_ν is arg ζ′(ρ_ν) + π/2 + arch terms. The weight is |ζ|², doubling everything: −2 scale.
+3. *Interval vs line.* The Chebyshev conjugate on [−1,1] and the line Hilbert transform differ by
+   a harmonic function of the Joukowski uniformization — smooth on the open interval, singular
+   only at ±1 (endpoint exponents α=β=0 here), hence absorbed into L_A. Out-of-window zeros
+   (|γ|>A) contribute to log h a function smooth on [−A,A]; their conjugate is smooth ⇒ into L_A.
+**Status.** Numerically closed: parameter-free phase residuals sd 0.075–0.31 rad across A=30..200,
+mean ≈ 0 (§527, §534). What remains for full rigor: (a) uniformity of the O(t−γ) local-model error
+in the conjugate, (b) explicit form of L_A via θ_H and the Joukowski kernel, (c) the tail-sum
+convergence for out-of-window zeros (explicit formula grade — standard). None of these touch the
+arg ζ′ identification itself; they bound the smooth remainder.
