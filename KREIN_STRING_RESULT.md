@@ -72,5 +72,6 @@ log w minus explicit θ-linear terms; the conjugate of log|ζ(½+it)|² at t = �
 jump midpoint, equals 2·arg ζ′(ρ_k) + π + smooth arch/θ_H terms (near ρ: ζ(½+it) ≈ ζ′(ρ)·i(t−γ), and
 the symmetric regularization of arg ζ across the zero lands at arg ζ′(ρ) + π/2). Numerics: the full-
 weight conjugate ψ matches arg ζ′(ρ_k) at R=0.997, window-spread 0.000 (§516); scale s = −2 (§514).
-Status: REPORT (numerically closed, rigorous bookkeeping of (iii) — Joukowski map + arch factors —
-pending). Rigor path: do (iii) via the outer-function factorization of ξ on the critical line.
+Status: REPORT — numerically closed PARAMETER-FREE at 0.1-rad precision (§527: fitted phases match
+(1.6) computed from the weight at R=0.991-0.997 across 45 zeros/3 windows; conventions: off-diagonals
+are a_n, index+1, ±pair folding). Formal proof gap: only the conj_h ↔ arg ζ′ identity bookkeeping.
