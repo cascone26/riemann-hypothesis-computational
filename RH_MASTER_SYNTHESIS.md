@@ -7,6 +7,10 @@ Report/Handle labels per Charisma. Every "certified" statement points at a proof
 
 ## 1. The one deliverable that is a genuine theorem: a de Bruijn–Newman bound past the record
 
+> **CURRENT BEST: Λ ≤ 0.176168 (§499), via the {2,3,5,7} mollifier lever — see the AUDIT section for the full
+> ladder 0.22→0.19862→0.18280→0.177482→0.176168 and its solid/verified status. The §489/0.177482 write-up below
+> is the earlier headline, kept for the gate-structure detail; 0.176168 supersedes it by the same machinery.**
+
 **Λ ≤ 0.177482 — CERTIFIED** (Handle, conditional as stated below).
 - Proof artifact: `~/cobo/roundtable/room/prov/tao_assembly_17748_FIRED.out`; assembly
   `tao_assembly_17748_fire.py` parses+verifies all four gates from the flint-Arb artifacts.
