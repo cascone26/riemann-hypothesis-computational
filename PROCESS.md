@@ -9592,3 +9592,46 @@ revealed a full in-house de Bruijn–Newman program in the roundtable room that 
 program unified (a=1 razor = number-field Castelnuovo-Severi bound = missing arithmetic surface), and both
 concrete lanes mapped to their honest limits. Synthesis: RH_MASTER_SYNTHESIS.md. Proof pointers: LEDGER
 §482–489; ~/cobo/roundtable/room/prov/tao_assembly_17748_FIRED.out; ff/*.py; nb/*.py.
+
+===========================================================================
+## SESSION 2026-07-31→08-01 (Riemann7 continuation, Fable, overnight autonomous) — THE KREIN LANE
+LEDGER §511–§546b. Decision chains and forks, cumulative:
+
+FRAMING: post-§510 audit state; Jacob: superprism → "keep goin" → full autonomy overnight.
+FORK 1 (superprism round 2): chose (a) measure Path-A floor exactly + (b) open the |ζ|²-Jacobi
+("Krein string") lane over NB/heat alternatives. (a) closed Path A: 6-prime mollifier clears 0.176168
+but cliffs below (§511) — parked with boundary drawn. (b) became the session.
+DEAD ENDS (kept, they steered): primes at n≈A·log p — chance (§511); πk parity phases — refuted
+(§514); prime comb at (A/2)log p^m + phase-corrected variant — null (§514); finite-A db≈G_t(2n/A) —
+refuted, arccos warping (§521); positivity towers — trivially automatic, parked (§528b); NB γ₁
+phase-lock — null (§536); K-extension of drum — finite-size artifacts (§543b); analytic linear
+response via off-support polys and via derivative recurrence — numerically unstable (§545 context);
+continuum displacement↔weight equivalence — breaks at lattice Nyquist (§546).
+DISCOVERY CHAIN (string): zero-freqs pinned (z→+9.8, §511-513) → multiplicity amplitudes (§513) →
+Szegő phase law s=−2 (§514) → OOS validation p=0.0015 (§515) → INTRINSIC phase = argζ′ ≡ πS R=0.997
+(§516) → Möbius comb via phase-twist (§517, 18/20) → weight ladder: phase carries ~99% (§518) →
+10⁴-zero scale-up PERFECT 40/40 (§530) → gap law 0.009·ln n (§519b).
+THEOREM CLOSURE: Vanlessen math/0212014 pulled; term-by-term match; two of MY convention bugs (a_n vs
+b_n; index+1) found via a θ-linear residual; parameter-free phase closure R=0.992@79 zeros (§523-527,
+§538); envelope/suppression = finite-n resolution (§524); argζ′=πS−π/2 exact identity (§541, own sign
+error caught via arg arch=π+θ_H); Hadamard conj decomposition exact, truncation constant to 4 digits
+(§542-542b). LESSON: every "anomaly" fell to either a convention bug of ours or a finite-size effect —
+none survived as physics.
+LIT GATE (§521): agent + spot-verified. Phase-only Möbius = NOT FOUND (candidate novel). Vanlessen
+theory = known (we're an application). Suzuki 1204.1827 = different construction.
+SUZUKI MERGE (§529-533): memory recall surfaced the prior screw-function HANDLE work → identified the
+two objects as Λ-side/μ-side of ONE Krein correspondence; screw measure verified = unit masses at γ
+(§532); Suzuki [13] extracted: abstract/RH-conditional/multiplicity-blind vs ours explicit/
+unconditional/multiplicity-reading (§533).
+FORK 2 ("what u think, go"): chose the ZERO-DRUM (explicit Hilbert–Pólya finite section) over
+E-function formalism. Arc: build vs Weyl control (§543) → crude filter weak-positive → K-extension
+refuted my n* story, found valid-window rule n≪2N (§543b) → T-scale-ups: p=2,3 decisive (z→10.3, 6.0;
+§544-544b) → FD linear response (linearity 0.987) gives EXACT templates → FULL COMB p=2..7
+(z=17.6/7.1/3.0/3.7/4.3) → 93.1% of drum variance = 12 prime powers (§545-545b).
+METHOD NOTE: the decisive instrument repeatedly = exact/parameter-free tests (pinned frequencies,
+frozen constants, FD responses) + honest controls; every crude-template ceiling was instrument error,
+every "discovery" that died was killed by a control. Proof pointers: LEDGER entries cite scripts +
+outputs; consolidated note KREIN_STRING_RESULT.md; memory rh-krein-string-mobius-lane.
+OPEN AT SESSION END: u·∂ symbol calculus (drum's analytic dictionary, §546b route); E-function/
+m-function duality; formal smooth-remainder write-out of the phase lemma. RUNNING overnight: T=3000
+cross-scale FD template validation.
