@@ -179,3 +179,31 @@ Recording the audited state so the durable record is trustworthy.
 **Bottom line:** the concrete deliverables (Λ theorems) are solid; the deep structural results (§500, Rosetta,
 the razor) are solid; two interpretive syntheses (§508 lift, B-4 collapse mechanism) were overstated and are
 corrected. The frontier (spectral / trace-formula / missing arithmetic surface) remains the open core.
+
+## THE KREIN STRING OF ζ (2026-07-31/08-01, §511–518) — new lane, dictionary complete and validated
+
+The Jacobi matrix ("Krein string") of the spectral measure |ζ(½+it)|²dt on [−A,A] carries the full
+zero data in its coefficient asymptotics, with every entry of the dictionary independently verified:
+
+  db_n ≈ C · Σ_k λ_k · sinθ_k · cos( 2n·arccos(γ_k/A) − 2·arg ζ′(ρ_k) + c(A) ),  C≈0.68 universal
+
+- FREQUENCIES = zero positions (pinned-frequency fits: z=+6.5/+6.9/+7.9/+9.8 at A=30/40/60/100 vs
+  200 random-frequency controls; amplitudes persist as A grows — the infinite string carries all zeros).
+- AMPLITUDES = multiplicities × sinθ (simulated double zero: 1.72× vs ~2 theory; amp≈C·sinθ corr 0.90).
+- PHASES = arg ζ′(ρ_k) ≡ πS(γ_k), identified at R=0.997, window-independent (intrinsic).
+- OUT-OF-SAMPLE: frozen dictionary predicts untouched window A=50 at r=0.742, empirical p=0.0015.
+- OFF-LINE DETECTION: deficit ∝ δ² (same softness as the Weil razor §474b), growing ~K^1.6 with
+  string length, no saturation — the infinite string detects any δ>0 ("global-only", §500's geometry).
+- MÖBIUS COMB (§517-518): the phase field is exactly the twist that converts the Landau prime comb
+  (Λ-side, 15/15 prime-power peaks) into the μ-side: G(u)=Σe^{−2iargζ′(ρ)}e^{iuγ} peaks on squarefree
+  integers 18/20 (p<0.0005), squares suppressed; at u=log n it reads off μ(n)/√n (r=0.936; exact Gonek
+  1/ζ′ weight r=0.9994; PHASE-ONLY e^{−iargζ′} r=0.989 ⇒ Möbius lives almost entirely in the S-phase).
+- POSITIVITY (honest): b_n>0 is free; it forbids phase coherence only past A*≈6×10³ and weakly
+  (log-cancellation). Content sits in the dictionary, not the positivity — same lesson as the razor.
+  Untapped: the full Hankel/moment positivity tower of the measure (string-side Weil analogue).
+
+Corrections en route (verify-before-ship): naive prime comb at n≈A·log p and at (A/2)log p both
+refuted (combined z≈+1.0); πk parity phase model refuted; A=30 comb "hits" were selection.
+Scripts: operators/krein_*.py; data zeros500/argzp500/abszp500 (+zeros2000 etc. being computed).
+Path A note: the mollifier lever is EXHAUSTED — {2,3,5,7,11,13} fails below Λ≈0.176 (cliff measured,
+§511); Λ≤0.176168 is the floor of the current barrier at T=3×10¹².
