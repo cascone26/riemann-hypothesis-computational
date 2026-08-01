@@ -38,8 +38,11 @@ for NMAX in [99, 300, 1000, 3000]:
 from scipy.signal import argrelmax
 rng = np.random.default_rng(53)
 us = np.linspace(4.5, 8.0, 70001)
-E = np.exp(1j * np.outer(us, Z))
-Gt = np.abs((E * np.exp(-2j * ph)[None, :]).sum(axis=1)) / len(Z)
+w2 = np.exp(-2j * ph)
+Gt = np.empty(len(us))
+for i0 in range(0, len(us), 4000):   # chunked: full outer would be ~11 GB
+    blk = us[i0:i0 + 4000]
+    Gt[i0:i0 + 4000] = np.abs(np.exp(1j * np.outer(blk, Z)) @ w2) / len(Z)
 ix = argrelmax(Gt, order=80)[0]
 top = np.sort(ix[np.argsort(Gt[ix])[::-1][:40]])
 sfm = np.log(np.array([n for n in range(90, 3000) if mu(n) != 0], float))
