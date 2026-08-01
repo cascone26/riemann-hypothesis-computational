@@ -884,3 +884,22 @@ unlocks Λ~0.1745 (§495 geometric halving). If region-a can't be mollified rigo
 both-gates floor at T=3e12, and lower Λ needs a higher rigorous RH-verification height (raises N0, helps both).
 Superprism's other 4 vectors (height-coupling, region-a edge, F1/Rosetta norm-form, independent H_t cross-check)
 remain loaded. The mollifier machinery: hilbert_regionb_164_156.py, /tmp/arb2357.py, /tmp/mollP.py.
+
+## UPDATE 2026-07-31b (superprism round 2) — Path A floor MEASURED; new lane: the Krein string of ζ
+- **Mollifier lever exhausted (§511):** {2,3,5,7,11,13} at correct Np=800000 clears at Λ=0.176168
+  (F_lo=0.0695, 2× headroom) but is NEGATIVE at Λ=0.17225 (−0.051) — steep cliff below. Richer prime
+  sets buy headroom AT the rung, not a lower rung. Λ≤0.176168 is the practical floor of the current
+  construction at T=3e12. Path A PARKED (matches §505 workflow verdict). Script: prov/floor6prime_fast.py.
+- **NEW LANE — Krein string of ζ (§511-§512b, operators/krein_*.py):** the Jacobi matrix of
+  |ζ(½+it)|²dt on [−A,A] carries the ZEROS as pinned oscillation frequencies 2·arccos(γ/A) in b_n
+  (R²≈0.67-0.84, z≈+6.5-6.9 vs 200 random-frequency controls, replicated at A=30 and A=40). Off-line
+  zero at ½+δ collapses its amplitude with deficit ∝ δ² (same softness as the Weil razor §474b), and
+  sensitivity grows ~K^1.6 with string length — NO saturation: the infinite string detects any δ>0
+  (§500's "only the global object knows," now in inverse-spectral form). RUNNING at session end:
+  krein_A60.py (A=60, 13 zeros — do amplitudes persist as A→∞? continuum limit toward the de Branges
+  canonical system). NEXT ON THIS LANE: amplitude law vs sinθ_k + weight-exponent (double-zero ⇒
+  amplitude ∝ order — a MULTIPLICITY detector); then the A→∞ scaling of the string = which canonical
+  system ζ is.
+- **Synthesis banked (§512):** FF zeros sit ON |α|=√q — Castelnuovo–Severi is SATURATED; the a=1
+  razor's PSD-with-kernel is the number-field shadow of Hodge index in saturated form. The missing
+  piece is not signature behavior (we have it) but the a-priori mechanism (the surface) that forces it.
