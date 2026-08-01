@@ -39,6 +39,31 @@ Report/Handle labels per Charisma. Every "certified" statement points at a proof
 
 ---
 
+## 1.5. The deepest structural result (§500) — why the number field is hard, quantified
+
+The Weil symbol W(r) = arch(r) − Σ_p (Λ(p)/√p/π)cos(r·log p) is **unboundedly negative** as primes enter:
+min_r W = +0.012 (p=2) → −0.17 → −0.59 → −1.29 (P=50), tracking Σ_p Λ(p)/√p ~ 2√P → ∞ (PNT). Consequence:
+**no pointwise/size/local positivity certificate can exist past a bounded number of primes** — positivity can
+only come from *global cancellation* (the a=1 razor / the exact Guinand–Weil identity full = 2Σ_γ F(γ)²).
+
+This makes the finite-vs-infinite-genus distinction QUANTITATIVE and unifies the session:
+- **Finite genus** (curve/F_q): finitely many Frobenius frequencies → **bounded** symbol → clean pointwise
+  margin = the Hasse discriminant (§487). Easy.
+- **Infinite genus** (Spec ℤ = ℚ-independence of {log p}, §442): Σ diverges → symbol → −∞ → **no pointwise
+  certificate** → RH *must* be the delicate global cancellation (a=1, §470). Hard.
+
+It also explains, in one mechanism: §459 ("size bounds never suffice" — because the symbol is unbounded-neg),
+§485 (the log-3 symbol sign-change is just the first crossing of an unboundedly-descending W), and §476 (the
+support ladder / local method is provably bounded — it works while the symbol is near-positive, small P, and
+cannot extend). **This rules out the entire class of local/pointwise/support-ladder methods for RH, with a
+quantitative reason**, and redirects all weight to the global-cancellation side.
+
+**The reframe this forces on the Λ ladder (§1):** the de Bruijn–Newman heat flow H_t is a *global* object (it
+moves all zeros together) — it is the GLOBAL-cancellation side of RH, the only side §500 leaves viable. So the
+Λ descent is not merely incremental record-beating; it is the tractable, principled, global-side measurement of
+how close the flow's positivity sits to the RH threshold (Λ=0). Continuing it (via the region-a mollifier lever,
+§498) is on-path, not a backstop.
+
 ## 2. The unifying result: what the wall IS (the session's deepest honest statement)
 
 RH ⟺ the Weil quadratic form is positive. This session mapped that positivity **five ways** — KLMN form
