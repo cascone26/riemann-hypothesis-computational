@@ -903,3 +903,13 @@ remain loaded. The mollifier machinery: hilbert_regionb_164_156.py, /tmp/arb2357
 - **Synthesis banked (§512):** FF zeros sit ON |α|=√q — Castelnuovo–Severi is SATURATED; the a=1
   razor's PSD-with-kernel is the number-field shadow of Hodge index in saturated form. The missing
   piece is not signature behavior (we have it) but the a-priori mechanism (the surface) that forces it.
+
+## UPDATE 2026-08-01 — Krein lane consolidated; lit-gated; candidate-novel core named
+Full lane state in KREIN_STRING_RESULT.md (read that first for this lane). Headlines: dictionary
+complete+validated (§511-516, OOS p=0.0015); MÖBIUS COMB — phase field arg ζ′(ρ)≡πS converts Landau
+prime comb to squarefree/μ(n)/√n comb (§517-519, r=0.989 phase-only, lit gate §521: NOT FOUND in
+literature = candidate novel); gap law 0.009·ln n; envelope anomaly α=0.6 vs theory 1; Mertens from
+phases 0.874 (§522). Λ/Path A: mollifier lever EXHAUSTED at 0.176168 (cliff measured §511) — parked.
+NEXT OPENERS: (1) analytic derivation via Vanlessen math/0212014 applied to the ζ weight (must yield
+arg ζ′ phases + explain α=0.6); (2) extend zeros to 10⁴ for the phase-only claim; (3) the A→∞
+canonical system (Suzuki-gap, arXiv:1204.1827 verified different); (4) Hankel tower translation.
