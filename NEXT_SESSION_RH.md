@@ -913,3 +913,11 @@ phases 0.874 (§522). Λ/Path A: mollifier lever EXHAUSTED at 0.176168 (cliff me
 NEXT OPENERS: (1) analytic derivation via Vanlessen math/0212014 applied to the ζ weight (must yield
 arg ζ′ phases + explain α=0.6); (2) extend zeros to 10⁴ for the phase-only claim; (3) the A→∞
 canonical system (Suzuki-gap, arXiv:1204.1827 verified different); (4) Hankel tower translation.
+
+## UPDATE 2026-08-01b — Suzuki merge done; lane positioned; memory deposited
+§529-533: Suzuki's screw and our string = Λ-side/μ-side Krein duals. His [13]: abstract, RH-conditional,
+multiplicity-blind (agent-extracted, spot-verified). OURS: explicit, unconditional, multiplicity-reading,
+dictionary closed vs Vanlessen parameter-free (§527), Möbius comb perfect at 10⁴ zeros (§530). Screw
+spectral measure verified = unit masses at γ_k from prime side (§532). Memory: rh-krein-string-mobius-lane.
+RUNNING at update: A=200 build (79 zeros, full parameter-free verification). OPEN: formal conj↔argζ′;
+m-function duality; simultaneous limit.
