@@ -14,8 +14,9 @@ data `operators/zeros2000.npy`, `argzp2000.npy`, `abszp2000.npy` (γ ≤ 2515, m
   random-frequency controls; amplitudes persist as A grows (infinite string carries all zeros).
 - Amplitudes = C·λ·sinθ, C≈0.68 universal (51 points, corr 0.90); simulated double zero → 1.72×(~2).
 - Phases = arg ζ′(ρ_k) ≡ πS(γ_k): window-independent (spread 0.000), identified at R=0.997.
-- Envelope α ≈ 0.6 (R² peak 0.892) — DEVIATES from single-singularity Riemann–Hilbert value 1
-  (Vanlessen arXiv:math/0212014); open anomaly, likely collective (N(A) singularities).
+- Envelope: exactly 1/n (Vanlessen) — the measured effective α≈0.6 and the ×0.55 amplitude
+  suppression are one finite-n resolution effect, mapped in §523-524: scales converge to the
+  theorem value 1 (control: 0.985 at K=300, R²=1.0000). NO free constants, NO anomalies (§524).
 - Out-of-sample: frozen dictionary predicts untouched A=50 at r=0.742, empirical p=0.0015 (2000 nulls).
 - Parseval closure: variance ratio 1.56→1.23 falling toward 1 with A (asymptotically complete).
 - Off-line zero at ½+δ: amplitude deficit ∝ δ² (softness = Weil-razor §474b), growing ~K^1.6 with
