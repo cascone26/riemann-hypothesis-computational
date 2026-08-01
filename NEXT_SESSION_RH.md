@@ -921,3 +921,16 @@ dictionary closed vs Vanlessen parameter-free (§527), Möbius comb perfect at 1
 spectral measure verified = unit masses at γ_k from prime side (§532). Memory: rh-krein-string-mobius-lane.
 RUNNING at update: A=200 build (79 zeros, full parameter-free verification). OPEN: formal conj↔argζ′;
 m-function duality; simultaneous limit.
+
+## UPDATE 2026-08-01c — all four "do all of them" directions executed (§554-557)
+1. MÖBIUS DERIVATION (§554, MOBIUS_PHASE_RESULT.md): phase-only comb = classical Mertens explicit formula
+   (Titchmarsh/Gonek) with magnitude stripped; e^{-i argζ'}=ρ|ζ'|·Gonek-weight, envelope ~γ^0.22 (1.77×
+   fluct) slowly-varying ⇒ inherits comb+signs+≈½-scaling. Novelty (lit-gated): phase alone suffices.
+2. DRUM KERNEL CLOSED FORM (§556): R_n(x)=C·n·sin((2n+1)θ−φ)/√(T²−x²), C≈1.05 O(1), R²=0.999 center —
+   derived from equilibrium/Szegő OP asymptotics; grounds the §545 prime comb analytically.
+3. E-FUNCTION (§555, efunc_v2.py): |E_K|⁻²∼|ζ|² measure (corr 0.84, de Branges property holds); phase
+   counts equilibrium not Weyl ⇒ our string is a GENUINE de Branges space, DISTINCT from Suzuki's ξ-space,
+   linked by Krein duality not identity. Resolves the m-function-duality question.
+4. SUPERPRISM NEW LANE (§557, SUPERPRISM_NEXT_LANE.md): TOP pick = Weil form Q_W in the string OP basis
+   (computable RH-equivalent). Scout: drum spectral-shift ξ(E) carries primes (log2 exact, partial). SEED.
+OPEN FRONTIER: build Q_W in the string basis; the Krein intertwiner; the σ=½ reality-forcing question.
