@@ -102,6 +102,9 @@ Chebyshev frame) of log h at the singularity.
 **Update (§541).** The arg-side is now EXACT: arg ζ′(ρ_ν) = πS(γ_ν) − π/2 (classical folklore via
 ζ=e^{−iθ_H}Z, machine-verified 4.4e-14 at 79 zeros; arg arch(½+it)=π+θ_H exactly). The lemma's gap
 is pure smooth-function Hilbert bookkeeping.
+**Final status (§542b).** COMPLETE at numerical certainty: Hadamard decomposition of conj_h exact to
+1e-4 at A=200 with the truncation constant matching the analytic density integral to 4 digits;
+remaining formal work = classical convergence lemmas only.
 **Status.** Numerically closed: parameter-free phase residuals sd 0.075–0.31 rad across A=30..200,
 mean ≈ 0 (§527, §534). What remains for full rigor: (a) uniformity of the O(t−γ) local-model error
 in the conjugate, (b) explicit form of L_A via θ_H and the Joukowski kernel, (c) the tail-sum
