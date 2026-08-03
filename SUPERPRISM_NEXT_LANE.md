@@ -40,3 +40,27 @@ The δ²-stiffness grows as τ^1.6 (§525), the Möbius gap as 0.009·ln n (§51
 
 ## Pick: Direction 1 (Weil form in string basis).
 Most concrete, most directly RH-equivalent, reuses the session's two explicit assets. Scout below.
+
+# Superprism round 3 (2026-08-03, post-§584, Fable) — after the crown
+BOARD: the phase-arithmetic principle is complete (full Selberg class, observed+verified+derived, theorem-
+candidate with one analytic gap). Krein dictionary, drum, Weil saturation all closed. Everything δ²-soft;
+§500 metatheorem stands: RH content lives in global/asymptotic structure only.
+
+KEY REALIZATION: the phase field is a FUNCTION of the positions (arg L′(ρ)=πS_L(γ)−π/2, and S = counting
+fluctuation = determined by the zero POSITIONS). So the crown result says: the zero positions, through
+their OWN counting function, encode the inverse-Euler arithmetic that the SAME positions encode via
+Landau/explicit-formula. That is a SELF-CONSISTENCY (bootstrap) constraint on the zero configuration:
+  positions ⟹ S-field ⟹ exp(iπS) twist ⟹ must reproduce Π_p(Euler)⁻¹ ⟸ primes ⟸ positions (Landau).
+RH-adjacent question: is the true (on-line) configuration the unique/stiff solution of this bootstrap?
+
+## Ranked directions
+1. (TOP) BOOTSTRAP STIFFNESS: perturb ONE zero on-line by ε (no pair-symmetry protection!) and measure the
+   degradation of position⟺phase self-consistency (twist-from-primes vs actual-phase agreement, comb
+   quality). If LINEAR in ε — the bootstrap is a stiff variational characterization of the true zero set
+   (contrast: every off-line channel is δ²-soft). Cheap, decisive, genuinely new angle.
+2. COMB-AS-RH-WITNESS: off-line pair (½±δ+iγ) in the readout: predict deficit ∝ δ²log²n (pair-symmetry
+   soft but with growing coefficient) — measure the coefficient, complete the softness map for the new channel.
+3. ENVELOPE BOUND (the theorem gap): analytic, Gonek–Ng discrete moments — the path to a real theorem. Multi-session.
+4. DEGREE-3 (sym²Δ): further universality; incremental; needs careful Γ-factors.
+5. Writeup/consolidation of MOBIUS_PHASE_RESULT toward shareable form (Jacob's call, "no papers" rule).
+PICK: 1 then 2, bank, then 3 as the standing frontier.
