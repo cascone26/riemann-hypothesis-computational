@@ -4041,3 +4041,16 @@ via exact FD templates, full comb p=2..7). Λ/μ Krein duality with Suzuki's scr
 Read KREIN_STRING_RESULT.md + memory rh-krein-string-mobius-lane. Open: u∂ symbol calculus (drum
 analytic dictionary), E-function duality, formal lemma write-out. Overnight job: T=3000 cross-scale
 template validation.
+
+## 2026-08-03 (autonomous, Fable) — ELEMENTARY FORM day: §603–612a
+Crown lane closed at its most elementary statement and universalized:
+- §603 positions alone generate the readout (S from counting; agreement 1.000).
+- §604 universal 5/6 + the identity CAUGHT an incomplete Δ zero list (real data bug: ~16 missing, positions off ~0.06 — old finder class error; χ-lists were fine).
+- §605/605b identity as archimedean DETECTOR (sym³ gamma factor read off exactly; resolution ±0.25 @ 77 zeros).
+- §606 ELEMENTARY FORM: e^{−iargζ′(ρ_k)} = i(−1)^k e^{iθ(γ_k)} exact ⇒ (1/N)Σ(−1)^k e^{iθ(γ_k)}e^{iuγ_k} reads μ. Weight = sgn Z′(γ_k)e^{iθ}.
+- §607 continuous form: square wave sgn Z·e^{iθ} (=e^{2iθ}ζ/|ζ|, bounded) carries the comb in its ordinary Fourier transform.
+- §608 blind capstone: bare χ₄ ordinates → conductor 4.00 exact → character values. 
+- §609/610 exact linkage identity I=±(2i/π)G−(u/π)J (verified); J (plain FT) carries the comb too; split law derived.
+- §611 J-comb universal (χ₃ square wave).
+- §612a smooth Euler phase reproduces signs but not amplitude — the JUMPS carry it.
+Running: Δ complete rebuild v3 (exact incomplete-Γ Λ, adaptive dps, 8-way). Next: 6/6 universality rerun on fixed Δ, then crown-note consolidation.
