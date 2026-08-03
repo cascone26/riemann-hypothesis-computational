@@ -212,3 +212,21 @@ sgn Z′(γ_k)·e^{iθ(γ_k)}. Universal per §604/605: replace θ by θ_L for a
 (all 6 tested families pass position-only at R≈1; the identity even detects the gamma
 factor — §605 read off sym³Δ's Γ_C(s+33/2)Γ_C(s+11/2) at R=1.0000 with wrong candidates
 rejected).
+
+## THE THREE FACES AND THEIR EXACT LINKAGE (§607–614)
+One object, three faces, locked by an exact integration-by-parts identity
+I(u) = ±(2i/π)G(u) − (u/π)J(u) (machine-verified, residual 4×10⁻³ vs signal 0.2):
+- **G** (discrete): (1/N)Σ(−1)^k e^{iθ(γ_k)}e^{iuγ_k} — the elementary zero-sum.
+- **I** (weighted continuous): (1/K)∫ sgn Z·e^{iθ}e^{iut}(θ′/π)dt.
+- **J** (plain continuous): (1/K)∫ sgn Z·e^{iθ}e^{iut}dt — the plain Fourier transform of the
+  square wave of Hardy's Z. All three carry the μ-comb; proving it for any one proves all.
+Facts: the square wave is position-only ((−1)^{N(t)}, §613); the comb is the INTERFERENCE
+of parity and θ — each factor alone is dead (§614), their product = −e^{−iπS(γ_k)} exactly;
+the amplitude lives in the jumps, not the smooth phase drift (smooth Euler-phase model gets
+signs but 10–30× too little amplitude, §612a); universality holds for χ₃'s square wave (§611).
+Split law: a.c. share intercept −½ robust; u-slope = the uJ feedback term (§609/610).
+Data honesty: the Δ zero list in operators/ was caught INCOMPLETE by the identity itself
+(§604); exact incomplete-Γ rebuild in progress (v4, §612b), leading 11 zeros already
+LMFDB-exact. The identity doubles as an archimedean detector (§605: sym³Δ gamma factor
+identified at R=1.0000) and powers blind identification (§608: bare χ₄ ordinates → q=4.00
+→ character values).
