@@ -989,3 +989,10 @@ LEDGER through §614. Crown lane state:
 
 ## Derivation target (from §615c/d): the order-prefactor ladder
 The readout's fine structure is a perturbation series of e^{−iπS} through the finite window, with per-ORDER prefactors: 1st order (prime powers, linear) c₂=−0.377; 2nd order at squarefree pq: +1/3; 2nd order at p² (from §615c fit): +0.098 — pq vs p² 2nd-order prefactors differ ~3.4×, of which ×2 is sideband combinatorics ((x_p/2)(x_q/2)·2 cross vs (x_p/2)² single), leaving ~1.7× unexplained; 3rd order at pqr: ≈2/9. Conjecture ½(2/3)^{ω−1} for pure-order squarefree channels. DERIVE: expand e^{−iπS} with S = −(1/π)Σ Λ(n)/(√n log n)·sin(t log n + phases), track sidebands into G(u) through the N-window, get the rational ladder. This is a self-contained analytic exercise with every constant already measured for checking.
+
+## Lit-gate for the kernel attack (opened 2026-08-03, MUST deep-read before novelty claims)
+Kernel object: Σ_{γ≤T} x^{iγ}·(|ζ′(ρ)|/ζ′(ρ)) — phase-only Gonek sum. Classical adjacents (known, already in lane): Landau–Gonek Σx^ρ; Gonek 1984 Σ|ζ′(ρ)|²; Gonek–Hejhal J_{−1} → Mertens Σx^ρ/(ρζ′(ρ)). NOT found by name: unimodular-weight version. DEEP-READ FIRST:
+- arxiv.org/html/2601.18025 "Generalisations of the Landau–Gonek Theorem and Applications to Mean Values of Zeta" (Jan 2026 — has Σχ(ρ)X^ρ generalizations; closest known relative)
+- arxiv.org/pdf/1811.04530 "On the discrete mean of the derivative of Hardy's Z-function" (adjacent to our sgn Z′(γ_k) weight)
+- arxiv.org/pdf/2310.15918 (2024, discrete moments context)
+Proof shape (from §621): everything reduces to the alternating sum; via §606 the weight = sgn Z′·e^{iθ} — so the kernel is literally a SIGNED discrete mean of the type in 1811.04530's family. The §615 two-order machinery gives every constant for quantitative checking.
