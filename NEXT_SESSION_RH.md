@@ -1006,3 +1006,6 @@ Proof shape (from §621): everything reduces to the alternating sum; via §606 t
 
 ## The derivation stands (2026-08-03 end-state, §629–636)
 Zero-free formula G(u) = Σ Bessel multi-indices × Landau means: converges order-by-order to the full measured comb (94–101% at ≤triples for ω≤2; 82% for ω=3), zero adjustable parameters. RIGOR QUEUE: (1) Bessel tail bound (factorial decay — should be clean); (2) Landau error terms uniform in the multi-index frequency; (3) Selberg off-diagonal for oscillator correlations; (4) X→∞ interchange. Then the crown numerics become a theorem about G(u). Files: MECHANISM_DERIVATION.md is the canonical note.
+
+## Rigor item (4) precise statement (2026-08-04 boundary)
+The zero-free formula (Bessel × [W(v)+Landau]) reproduces all combs at X≈100–200 but drifts as X grows (B(X) suppression uncompensated at finite order), while the true model-at-zeros is X-stable (§632 dip-recovery). FIND: the multi-index classes carrying the (log X)^{1/4} compensation. Tested and excluded: single-frequency Landau errors (§639b), order-2 near-resonant pairs with W-band (§640). Candidates: order ≥3 near-resonances, W-tails |v|>0.6, coherent cross-pair phase sums. Also characterize the natural truncation X(T) (accuracy peaks X~100–200 at T~10⁴ — mollifier-length flavor).
