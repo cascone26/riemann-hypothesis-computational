@@ -6,7 +6,7 @@ from sympy import primerange, factorint
 from itertools import combinations, product
 g = np.load("zeros10k.npy"); N = len(g); T = float(g[-1])
 land_c = T/(2*np.pi*N)
-tg = np.arange(float(g[0]), T, 0.02)
+tg = np.arange(float(g[0]), T, 0.1)
 thp = 0.5*np.log(tg/(2*np.pi))/np.pi
 norm = np.trapezoid(thp, tg)
 vg = np.arange(0, 0.8, 2e-4)
@@ -24,7 +24,7 @@ def landau_scalar(v):
     if abs(x-xr) < 1e-9 and xr > 1 and len(factorint(xr)) == 1:
         return -land_c*np.log(list(factorint(xr))[0])/np.sqrt(xr)
     return 0.0
-X = 1000
+X = 3000
 osc = []
 for p in primerange(2, X):
     m = 1
