@@ -207,3 +207,18 @@ refuted (combined z≈+1.0); πk parity phase model refuted; A=30 comb "hits" we
 Scripts: operators/krein_*.py; data zeros500/argzp500/abszp500 (+zeros2000 etc. being computed).
 Path A note: the mollifier lever is EXHAUSTED — {2,3,5,7,11,13} fails below Λ≈0.176 (cliff measured,
 §511); Λ≤0.176168 is the floor of the current barrier at T=3×10¹².
+
+## WEIL FORM + MÖBIUS EXPONENT — corrected state (2026-08-02, §558–563)
+- WEIL FORM (RH-equivalent, Suzuki screw kernel) is EXACTLY SATURATED: computed correctly in the sine-
+  Galerkin basis (reusing the validated screw machinery after a from-scratch rebuild failed the crosscheck,
+  §558/560); PSD with 0 negative eigenvalues; min-eig → 0 as grid h² (§562: 1.5e-6→3e-8 for M=2k→16k) ⇒
+  the form sits ON the positivity boundary (a=1 razor, zero margin) — the sharpest operator form of "RH
+  barely true." The saturating direction is the smoothest mode (not an interior zero-node in this basis).
+- MÖBIUS EXPONENT — HONEST CORRECTION (§563) of the earlier clean-½ claim (§552): the phase-only readout
+  exponent DRIFTS through ½ (0.490→0.515 as N=1000→10⁴), it does NOT converge to a fixed ½. The EXACT-Gonek
+  (explicit-formula) exponent is stable at ~0.48, →½ from below; their difference = the §519b gap law
+  (~0.009·ln n). So ½ is the asymptotic critical value BRACKETED by both weights; phase-only overshoots by
+  the |ζ′|-stripping drift. The novel phase-only comb (squarefree selection, μ-signs, near-½ scaling) stands;
+  "exponent = ½" is softened to "brackets ½ with log-drift."
+- METHOD: two self-corrections this stretch (the buggy Weil rebuild caught by the Olympus crosscheck; the
+  over-clean §552 exponent caught by finer measurement) — verify-before-ship working as designed.
