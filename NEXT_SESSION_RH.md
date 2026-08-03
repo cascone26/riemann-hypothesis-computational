@@ -970,3 +970,13 @@ spectrum 77/76.6, §591-592). BLIND ID 5/5 (§593) — the phase field is an ari
 The phase-arithmetic principle: observed+verified+derived+robust+complete-validated+operationally demoed,
 degrees 1-3, all characters, modular+elliptic. Standalone: MOBIUS_PHASE_RESULT.md. Frontier: formal
 write-out of supp+signs theorem; Gonek-moment magnitude theory; degree-4+/GL(n).
+
+## UPDATE 2026-08-03c — arc CLOSED at §598 (Phase-Arithmetic Principle, mature)
+Since 08-03b: DEGREE-4 sym³Δ z=4.75 density-gated (§595) — four degrees spanned. Universal per-zero
+information: single corr(N) curve, all 9 spectra, no per-L parameters (§596). Sign-stability: envelope/main
+< 0.89 uniformly (§594) — then DISSOLVED into the deeper structure: the envelope-fluctuation readout ITSELF
+reads the arithmetic (0.955 ζ / 0.594 Δ, 100% signs) — every decomposition piece is a partner (§597-598).
+Proof plan final: identity + Euler algebra + Gonek calculus + alignment (all measured/exact/classical).
+MOBIUS_PHASE_RESULT.md is the complete standalone. OPEN (analytic, multi-session): prove the alignment
+statement (|L′|-fluctuations positively correlated with the Gonek μ-oscillation — Gonek-Ng moments);
+smoothing rigor for the S_L Euler product; GL(n)/Maass extensions.
