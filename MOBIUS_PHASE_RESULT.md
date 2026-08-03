@@ -201,3 +201,14 @@ S=(k−½)−θ_H/π−1) reproduces the weight at agreement 1.000 and the ident
 **a list of zero ordinates, by itself, generates — through its own counting function — the twisted sum
 that reads the Möbius/Dirichlet-inverse coefficients of its L-function.** Positions ⟹ S ⟹ weight ⟹
 arithmetic. Verified end-to-end (ζ, +0.974 both routes); the identity chain is exact at every step.
+
+## ELEMENTARY FORM (§606)
+Pure algebra (§541 identity + midpoint counting) collapses the weight:
+**e^{−i arg ζ′(ρ_k)} = i·(−1)^k e^{iθ(γ_k)}** (machine-exact, agreement 1.000000).
+The crown result in one line, no machinery:
+> (1/N) Σ_k (−1)^k e^{iθ(γ_k)} e^{iu·γ_k}  peaks at u = log n with sign μ(n).
+Zero ordinates, index parity, Riemann–Siegel θ — nothing else. Hardy form: the weight is
+sgn Z′(γ_k)·e^{iθ(γ_k)}. Universal per §604/605: replace θ by θ_L for any Selberg family
+(all 6 tested families pass position-only at R≈1; the identity even detects the gamma
+factor — §605 read off sym³Δ's Γ_C(s+33/2)Γ_C(s+11/2) at R=1.0000 with wrong candidates
+rejected).
