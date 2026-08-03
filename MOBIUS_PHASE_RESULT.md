@@ -230,3 +230,13 @@ Data honesty: the Δ zero list in operators/ was caught INCOMPLETE by the identi
 LMFDB-exact. The identity doubles as an archimedean detector (§605: sym³Δ gamma factor
 identified at R=1.0000) and powers blind identification (§608: bare χ₄ ordinates → q=4.00
 → character values).
+
+## Δ COMPLETE + THE CONSTANT (§616–617)
+Δ's zero list rebuilt COMPLETE via PARI lfunzeros (228 zeros to t=260, θ-count exact,
+LMFDB-25-digit, S-band pass) after the incomplete-Γ route proved intrinsically hopeless
+(the completed Λ is e^{−πt/2}-small; no O(1)-term representation escapes the cancellation).
+Validation on exact data: discrete readout 13/13 and position-only J-comb 13/13 vs b(n),
+rotation anchored at n=2 only. The linkage identity holds at degree 2 exactly.
+The identity constant: arg L′(ρ_k) = πS_L(γ_k) + c_L with c_L = π × (N(T) counting
+constant) — ζ: −π (its "+1"), χ₃/χ₄/sym²Δ/sym³Δ: 0. One family-dependent complex rotation
+in the readout (Δ's ~π/2 vs ζ) — measure or derive per family; everything else universal.
