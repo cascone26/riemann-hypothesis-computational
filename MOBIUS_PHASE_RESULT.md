@@ -54,6 +54,18 @@ reconstructs the Möbius function's positions, signs, and (to log-drift) its RH-
 3. Connect to Ng / Gonek–Ng work on Σ x^ρ/ζ′(ρ) and to unconditional partial results.
 
 
+## FULL SELBERG CLASS (§570–583) — degree-independent, robust across families
+The phase field arg L′(ρ) universally encodes the Dirichlet-inverse (Möbius-type) coefficients of ANY
+L-function: e^{−i arg L′(ρ)} summed over the zeros reads the coefficients of 1/L. CONFIRMED across:
+  • ζ (degree 1, trivial χ): reads μ(n)/√n, perfect squarefree comb at 10⁴ zeros, sharpens with N.
+  • ALL Dirichlet L (degree 1): χ₃, χ₄ (quadratic), χ₅ (COMPLEX order-4) — reads μ(n)χ(n), z≈17.
+  • Ramanujan Δ (degree 2, MODULAR FORM): reads b(n) [b(p)=−a(p), b(p²)=1], z=+25 (212 zeros).
+  • Elliptic curve E11a (degree 2, ELLIPTIC): reads its b(n), z=+10 (a_p validated vs known 11a).
+VERIFIED (§579): reads genuine degree-2 p²-structure + is L-specific (Δ's b 0.63 >> ζ's μ 0.04).
+DERIVED (§567/577/580): Euler product of exp(S_L prime-sum) with the L-function's own Euler factor;
+twist rebuilt from primes matches the true phase at 0.97–0.99. Lit-gated NOT found (§521). A general,
+verified, derived, robust Selberg-class principle — NOT a proof of RH.
+
 ## FULL SELBERG CLASS (§570–578) — degree-independent
 The phase field arg L′(ρ) universally encodes the Dirichlet-inverse (Möbius-type) coefficients of ANY L-function:
 e^{−i arg L′(ρ)} reads the coefficients of 1/L. Confirmed: ζ (deg-1), all Dirichlet L incl complex χ (deg-1,

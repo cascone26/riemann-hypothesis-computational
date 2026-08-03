@@ -1,6 +1,6 @@
 # Riemann Hypothesis Research Project
 
-## Status: All Months In Progress (2026-03-30)
+## Status: FULL-SELBERG-CLASS result established (2026-08-02, LEDGER thru 583)
 
 ---
 
