@@ -118,3 +118,17 @@ CORRECT THEOREM SCOPE: the phase-only readout gives supp(b) EXACTLY and sgn(b) E
 **Status.** Numerically established + mechanistically derived across ζ, all Dirichlet L (incl complex χ),
 degree-2 modular (Δ) and elliptic (E11a). REPORT-tier; the GAP in step 2 (envelope bound) is the main
 obstruction to a full theorem — it is Gonek-conjecture-adjacent. No claim on RH itself.
+
+## Audit & robustness (2026-08-03, §585–589)
+- **Sign-exactness verified non-circularly** (rotation fixed via Gonek, not μ): 100% (305/305, n<500),
+  corr 0.974; worst-case sign margin stable ~0.08 natural units for N≥2000 (§589) — robust, not luck.
+- **Zero-set completeness**: the density formula exposed the Re-sign finder missing ~half the Dirichlet
+  zeros; complete |L|-argmin rebuild (χ₃: 157 = prediction) IMPROVES the comb (0.591→0.663, z=16.7).
+  Incompleteness diluted, never biased. Δ/E11a zeros carry ±0.03–0.05 AFE jitter (z-scores are
+  underestimates).
+- **Softness map complete** (§586–587): the comb readout channel is δ²-soft with ~0 coefficient under
+  off-line perturbations (pair-symmetry protection) — the phase-arithmetic principle is NOT itself an
+  RH-witness; coherent ON-line deformations are the linearly-stiff direction (drum, §545–546).
+- **Variational picture** (§586): the true zero configuration is linearly stiff along coherent on-line
+  deformations and quadratically soft along off-line ones — RH's difficulty in one sentence: the
+  direction that would falsify it is exactly the direction the functional-equation symmetry protects.
