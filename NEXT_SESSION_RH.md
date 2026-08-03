@@ -934,3 +934,20 @@ m-function duality; simultaneous limit.
 4. SUPERPRISM NEW LANE (§557, SUPERPRISM_NEXT_LANE.md): TOP pick = Weil form Q_W in the string OP basis
    (computable RH-equivalent). Scout: drum spectral-shift ξ(E) carries primes (log2 exact, partial). SEED.
 OPEN FRONTIER: build Q_W in the string basis; the Krein intertwiner; the σ=½ reality-forcing question.
+
+## UPDATE 2026-08-02 (full-autonomous run) — §554-567
+CROWN RESULT (complete + honest): the PHASE-ONLY MÖBIUS COMB is now
+  - empirically robust: perfect squarefree comb at 10⁴ zeros (§530), sharpens with N (P/bg 6.6→16, §565),
+    SHARPER than exact-Gonek (which has 11+ non-sf contaminants) — coherence from unit-modulus weight;
+  - mechanistically derived (§567): squarefree SELECTION = Euler-product structure of exp(S prime-sum);
+    prime-only twist gives 0 non-sf contaminants. μ-signs+amplitude = classical Gonek/Perron (§554);
+  - lit-gated NOT found (§521). Standalone writeup: MOBIUS_PHASE_RESULT.md.
+  - HONEST correction (§563): the exponent is ≈½ (brackets it): exact-Gonek →0.49→½, phase-only overshoots
+    to 0.51 by the |ζ′| drift (§519b gap). NOT a clean fixed ½ — §552's clean-½ softened.
+OTHER (§558-566): Weil form done correctly (screw kernel, NOT the buggy Gaussian rebuild §560) — PSD,
+  EXACTLY SATURATED (min-eig→0 as h², §562). Loop closed both ways (primes→zeros to 0.009, §564). Softness
+  law: repulsion margin shrinks with height (§566, DBN-adjacent). E-function: our string ≠ Suzuki space (§555).
+METHOD: 2 self-corrections caught by verify-before-ship (buggy Weil rebuild via Olympus crosscheck; over-clean
+  §552 exponent via finer measurement). NEW RULE saved: "go autonomous" = full continuous til Jacob returns.
+OPEN: μ-sign mechanism in the exp-expansion (currently Gonek-only); high-precision Weil saturation law;
+  drum-basis Weil (needs arch-correct construction, §560 gate); Krein intertwiner (measure↔zero-set, §559).
