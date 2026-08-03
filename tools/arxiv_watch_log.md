@@ -488,3 +488,11 @@
   Cats: math.PR
   https://arxiv.org/abs/2607.27082v1
   > We study an interval-activation frog model on \(\mathbb Z\) with i.i.d.\ initial numbers of frogs \((η_x)_{x\in\mathbb Z}\), satisfying \(0<\mathbb{E}[η_0]<\infty\). Frogs at the origin are initially active and all others are sleeping. Each frog performs a symmetric integer-valued random walk and ha
+
+## 2026-08-03 — 1 new paper(s)
+
+- **2607.28931v1** (2026-07-31) — The Fine-Structure Hierarchy of Prime Biases and the Universal Dominance of $-1 \pmod N$
+  Authors: Shin-ya Koyama
+  Cats: math.NT
+  https://arxiv.org/abs/2607.28931v1
+  > We investigate the deterministic hierarchy of prime distribution biases in arithmetic progressions modulo $N$ using a regularized spectral approach. Classical studies on Chebyshev's bias attribute prime races primarily to the accumulation of prime squares $p^2 \equiv 1 \pmod N$, which creates a syst
