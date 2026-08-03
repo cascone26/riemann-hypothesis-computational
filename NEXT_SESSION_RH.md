@@ -1003,3 +1003,6 @@ Proof shape (from §621): everything reduces to the alternating sum; via §606 t
 3. Twisted first absolute moment ∫|ζ|e^{i(2θ+vt)}dt: characterize numerically (no peak at v=0 per §627 — map where its mass actually sits before re-deriving).
 4. ζ_K lane: refetch missing near-degenerate pairs (lfunzeros finer); more fields (real quadratic, class number >1 — does the principle see the class group?).
 5. R(σ) curvature 2.5: derive from Im(ζ″/ζ′) second moment; N-dependence.
+
+## The derivation stands (2026-08-03 end-state, §629–636)
+Zero-free formula G(u) = Σ Bessel multi-indices × Landau means: converges order-by-order to the full measured comb (94–101% at ≤triples for ω≤2; 82% for ω=3), zero adjustable parameters. RIGOR QUEUE: (1) Bessel tail bound (factorial decay — should be clean); (2) Landau error terms uniform in the multi-index frequency; (3) Selberg off-diagonal for oscillator correlations; (4) X→∞ interchange. Then the crown numerics become a theorem about G(u). Files: MECHANISM_DERIVATION.md is the canonical note.
