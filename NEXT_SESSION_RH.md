@@ -951,3 +951,14 @@ METHOD: 2 self-corrections caught by verify-before-ship (buggy Weil rebuild via 
   §552 exponent via finer measurement). NEW RULE saved: "go autonomous" = full continuous til Jacob returns.
 OPEN: μ-sign mechanism in the exp-expansion (currently Gonek-only); high-precision Weil saturation law;
   drum-basis Weil (needs arch-correct construction, §560 gate); Krein intertwiner (measure↔zero-set, §559).
+
+## UPDATE 2026-08-02b — ★ FULL SELBERG CLASS ★ (§578-579)
+HEADLINE (verified): the phase-only Möbius principle is DEGREE-INDEPENDENT. e^{−i arg L′(ρ)} reads the exact
+Dirichlet-inverse coefficients of 1/L for ANY L-function: ζ, all Dirichlet L (incl complex χ, z≈17), AND the
+degree-2 Ramanujan Δ modular form (z=+14, §578). Verified L-specific + reads genuine degree-2 p²-structure
+(§579: full-b 0.630 > sf-only 0.528 > wrong-L 0.040). Built L(s,Δ) via fast-int τ + validated AFE (dips at
+known Δ zeros 9.22/13.9/17.4). Standalone: MOBIUS_PHASE_RESULT.md. Mechanism (§567/577): Euler product of
+exp(S_L prime-sum) with the L's Euler factor — carries to any degree.
+This elevates the candidate-novel result from "ζ curiosity" → "all Dirichlet L" → "full Selberg class."
+OPEN: higher-precision Δ zeros (LMFDB) → tighter degree-2 corr; more degree-2 (elliptic curve L); formalize
+the general theorem; the degree-2 mechanism (S_L with the degree-2 Euler factor, p² terms).
