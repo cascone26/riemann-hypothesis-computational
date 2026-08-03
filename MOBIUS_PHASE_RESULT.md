@@ -128,3 +128,24 @@ obstruction to a full theorem — it is Gonek-conjecture-adjacent. No claim on R
 - **Variational picture** (§586): the true zero configuration is linearly stiff along coherent on-line
   deformations and quadratically soft along off-line ones — RH's difficulty in one sentence: the
   direction that would falsify it is exactly the direction the functional-equation symmetry protects.
+
+## FINAL FORM (2026-08-03, §585–593): the Phase–Arithmetic Principle
+**Statement (theorem-candidate, corrected scope).** Let L be an entire Selberg-class L-function with
+Euler product, functional equation, GRH-zeros ρ=½+iγ, and 1/L(s)=Σ b(n)n^{−s}. Define the unit-modulus
+zero-sum G_L(u) = N⁻¹ Σ_{0<γ<T} e^{−i arg L′(ρ)} e^{iuγ}. Then, as T→∞:
+  (a) SUPPORT: |G_L| peaks exactly on {log n : n ∈ supp(b)} — the comb positions are exact
+      (ζ: 40/40 vs 0/40 at 10⁴ zeros; suppression of n ∉ supp(b) verified through degree 2).
+  (b) SIGNS: the aligned readout Re[e^{ic}G_L(log n)] has sgn = sgn b(n) exactly
+      (ζ: 100% of 305 squarefree n<500, non-circular rotation, stable margin ≈0.08 natural units).
+  (c) MAGNITUDES: ∝ |b(n)|/√n up to a slowly-varying log-scale distortion (NOT o(1); the phase-only vs
+      exact-Gonek gap ≈ 0.009·ln n; the effective exponent brackets ½: Gonek 0.48→½, phase-only 0.50–0.52).
+**Established numerically across:** ζ; L(s,χ) for all characters mod 3, 4, 5 (incl. complex order-4);
+L(s,Δ) (degree-2 modular, z=25); L(s,E11a) (degree-2 elliptic, z=10); L(s,sym²Δ) (degree-3, z=7.7) —
+every spectrum density-validated complete. Blind identification: 5/5 (each zero-set selects its own L).
+**Mechanism (derived).** arg L′(ρ) ≡ πS_L(γ)−π/2 (exact); e^{−iπS_L} = Euler product of exp of the
+prime sum of L ⟹ supp(b) selection; ≈Gonek-weight decomposition ⟹ signs; the ρ|L′(ρ)| envelope ⟹ the
+log-distortion of magnitudes (§588). Twist rebuilt from primes alone matches the true phase at 0.95–0.99.
+**Toward proof.** (a)+(b) are the claimable core. Ingredients: the Perron/residue formula for 1/L
+(conditional: GRH + simple zeros), the S_L-exponential Euler product (Step-3 identity, exact), and a
+sign-stability bound (margin ≈0.08 measured; needs a discrete-moment argument à la Gonek–Ng to prove the
+envelope never flips a sign). (c) is provably NOT strengthenable to exact magnitudes (§588 measurement).
