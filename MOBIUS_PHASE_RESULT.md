@@ -140,8 +140,8 @@ zero-sum G_L(u) = N⁻¹ Σ_{0<γ<T} e^{−i arg L′(ρ)} e^{iuγ}. Then, as T�
   (c) MAGNITUDES: ∝ |b(n)|/√n up to a slowly-varying log-scale distortion (NOT o(1); the phase-only vs
       exact-Gonek gap ≈ 0.009·ln n; the effective exponent brackets ½: Gonek 0.48→½, phase-only 0.50–0.52).
 **Established numerically across:** ζ; L(s,χ) for all characters mod 3, 4, 5 (incl. complex order-4);
-L(s,Δ) (degree-2 modular, z=25); L(s,E11a) (degree-2 elliptic, z=10); L(s,sym²Δ) (degree-3, z=7.7) —
-every spectrum density-validated complete. Blind identification: 5/5 (each zero-set selects its own L).
+L(s,Δ) (degree-2 modular, z=25); L(s,E11a) (degree-2 elliptic, z=10); L(s,sym²Δ) (degree-3, z=7.7); L(s,sym³Δ) (DEGREE-4, z=4.75, density-gated 58/57.4) —
+every spectrum density-validated complete. Sign-stability lemma (§594): envelope/main < 0.89 uniformly. Blind identification: 5/5 (each zero-set selects its own L).
 **Mechanism (derived).** arg L′(ρ) ≡ πS_L(γ)−π/2 (exact); e^{−iπS_L} = Euler product of exp of the
 prime sum of L ⟹ supp(b) selection; ≈Gonek-weight decomposition ⟹ signs; the ρ|L′(ρ)| envelope ⟹ the
 log-distortion of magnitudes (§588). Twist rebuilt from primes alone matches the true phase at 0.95–0.99.
