@@ -86,3 +86,30 @@ CONFIRMED: the twist rebuilt from PRIMES ALONE (no argζ' data) gives the square
 contaminants (agreement 0.949 with the real twist). This derives WHICH integers appear. The leading terms give
 POSITIVE coeffs (½)^r/√n, so the μ SIGNS are NOT from this expansion — those are the Gonek/Perron piece above.
 The two derivations are complementary: Euler-product => squarefree selection; explicit formula => μ signs + √n.
+## Theorem statement + proof outline (the path to a theorem)
+**Conjecture/Theorem-candidate.** Let L(s)=Σ_{n≥1} a(n)n^{−s} be an entire L-function in the Selberg
+class with Euler product L(s)=Π_p F_p(p^{−s})^{−1}, functional equation, and (assuming GRH for L)
+nontrivial zeros ρ=½+iγ. Write 1/L(s)=Σ_{n≥1} b(n)n^{−s}. Then the unit-modulus twisted zero-sum
+    G_L(u) := lim_{T→∞} (1/N_L(T)) Σ_{0<γ<T} e^{−i arg L′(ρ)} e^{iuγ}
+has |G_L| peaking at u=log n for n∈supp(b), with peak weight asymptotically ∝ b(n)/√n.
+
+**Proof outline (4 steps; gaps flagged).**
+1. *Perron/residues on 1/L.* For x not an integer, Σ_{n≤x} b(n) = Σ_ρ x^ρ/(ρ L′(ρ)) + (arch/pole),
+   conditional on GRH + simple zeros (classical, generalizes the Mertens formula). Since ρ=½+iγ,
+   x^ρ=√x·x^{iγ} — the √x envelope forces the n^{−1/2} normalization. So the **Gonek weight 1/L′(ρ)**
+   reconstructs the b(n). [Numerics: ζ Gonek corr→0.9999, §519/522; σ-knob pins Re ρ=½, §553.]
+2. *Phase-only = Gonek × slow envelope.* e^{−i arg L′(ρ)} = |L′(ρ)|·(1/L′(ρ)) = ρ|L′(ρ)|·[1/(ρL′(ρ))].
+   The envelope ρ|L′(ρ)| is slowly-log-varying [measured |ρζ′|~γ^{0.22}, 1.77× fluct, §554], so it
+   preserves the oscillatory factors e^{iuγ} and the residue-sign pattern (where supp(b) and sgn b(n)
+   live) while only reweighting magnitudes. Hence G_L inherits the b(n) comb. GAP: bound
+   ‖ρ|L′(ρ)| − avg‖ ⇒ o(1) on comb positions/signs (Gonek–Ng moment estimates for |L′(ρ)|).
+3. *Support = Euler product of exp(S_L).* arg L′(ρ) ≡ πS_L(γ)−π/2 (exact for ζ, §541; S_L=π^{−1}arg L).
+   e^{−iπS_L} expands via log L=Σ_p Σ_k c_k(p)p^{−ks}/k (c_k=trace of Satake^k) into Π_p(local Euler
+   factor of 1/L) ⇒ supp(b): squarefree (deg 1), cubefree-with-p² (deg 2), etc. [Confirmed: prime-only
+   twist reproduces the comb at 0.95–0.99 agreement across ζ, χ₃, Δ; §567/577/580.]
+4. *The phase is S_L.* From L(½+it)=|L|e^{i arg L}, arg L′ at a simple zero = arg L′(ρ), tied to the
+   S_L jump — exact identity for ζ (§541, 4×10⁻¹⁴), Vanlessen-Szegő for the string picture.
+
+**Status.** Numerically established + mechanistically derived across ζ, all Dirichlet L (incl complex χ),
+degree-2 modular (Δ) and elliptic (E11a). REPORT-tier; the GAP in step 2 (envelope bound) is the main
+obstruction to a full theorem — it is Gonek-conjecture-adjacent. No claim on RH itself.
