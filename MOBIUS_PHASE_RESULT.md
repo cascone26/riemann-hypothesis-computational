@@ -161,7 +161,12 @@ envelope never flips a sign). (c) is provably NOT strengthenable to exact magnit
    GRH+simplicity (Gonek's method: contour integral of x^s/L(s)); the phase-only sum = the same sum
    reweighted by the positive factor |ρL′(ρ)|. Claim (a): peak positions survive any positive
    reweighting. Claim (b): signs survive iff the fluctuation term is dominated — which is exactly:
-4. **Envelope-domination lemma (the one open inequality).** max over comb points of
+4′. **Alignment (supersedes the domination lemma — §597).** The envelope-fluctuation readout ITSELF
+   reads μ (corr 0.955, 100% sign agreement): |L′(ρ)|-fluctuations are explicit-formula objects sharing
+   the prime source, so EVERY smooth-envelope reweighting of the Gonek weight preserves the sign
+   structure. The proof burden is an ALIGNMENT statement (positive correlation of |L′|-fluctuations
+   with the Gonek μ-oscillation; measured +0.955), not a smallness bound. Superseded text follows:
+4. **Envelope-domination lemma (superseded).** max over comb points of
    |Σ(env−ē)·w_G·e^{iγ log n}| < |Σ ē·w_G·e^{iγ log n}| — measured: ratio ≤ 0.93 for N≥2000, decreasing
    (§594, 12% headroom). Proof route: second-moment/large-sieve bound for Σ env·oscillation using
    discrete moments of |L′(ρ)| (Gonek's conjecture / Ng's theorems give the needed moment growth);
