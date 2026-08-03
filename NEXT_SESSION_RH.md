@@ -962,3 +962,11 @@ exp(S_L prime-sum) with the L's Euler factor — carries to any degree.
 This elevates the candidate-novel result from "ζ curiosity" → "all Dirichlet L" → "full Selberg class."
 OPEN: higher-precision Δ zeros (LMFDB) → tighter degree-2 corr; more degree-2 (elliptic curve L); formalize
 the general theorem; the degree-2 mechanism (S_L with the degree-2 Euler factor, p² terms).
+
+## UPDATE 2026-08-03b — arc COMPLETE through §593
+Audit passed+strengthened (§585/590: complete zero sets, χ₃ z=16.7, χ₄ z=19.2). Theorem honestly scoped:
+supp+signs EXACT (margins §589), magnitudes log-distorted (§588). DEGREE-3 confirmed (sym²Δ z=7.7, complete
+spectrum 77/76.6, §591-592). BLIND ID 5/5 (§593) — the phase field is an arithmetic fingerprint.
+The phase-arithmetic principle: observed+verified+derived+robust+complete-validated+operationally demoed,
+degrees 1-3, all characters, modular+elliptic. Standalone: MOBIUS_PHASE_RESULT.md. Frontier: formal
+write-out of supp+signs theorem; Gonek-moment magnitude theory; degree-4+/GL(n).

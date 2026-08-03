@@ -67,11 +67,6 @@ DERIVED (§567/577/580): Euler product of exp(S_L prime-sum) with the L-function
 twist rebuilt from primes matches the true phase at 0.97–0.99. Lit-gated NOT found (§521). A general,
 verified, derived, robust Selberg-class principle — NOT a proof of RH.
 
-## FULL SELBERG CLASS (§570–578) — degree-independent
-The phase field arg L′(ρ) universally encodes the Dirichlet-inverse (Möbius-type) coefficients of ANY L-function:
-e^{−i arg L′(ρ)} reads the coefficients of 1/L. Confirmed: ζ (deg-1), all Dirichlet L incl complex χ (deg-1,
-z≈17), and the Ramanujan Δ modular form (DEGREE-2, z=+25 at 212 zeros, §578-581). Degree-independent — a general Selberg-class
-principle. Mechanism (§567/577): Euler product of exp(S_L prime-sum) with the L-function’s Euler factor.
 
 ## L-function generalization (§570–577) — universal, derived
 For ζ and every tested Dirichlet L (χ₃, χ₄ quadratic; χ₅ complex order-4): e^{−i arg L′(ρ)} reads
