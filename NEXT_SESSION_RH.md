@@ -996,3 +996,10 @@ Kernel object: Σ_{γ≤T} x^{iγ}·(|ζ′(ρ)|/ζ′(ρ)) — phase-only Gonek
 - arxiv.org/pdf/1811.04530 "On the discrete mean of the derivative of Hardy's Z-function" (adjacent to our sgn Z′(γ_k) weight)
 - arxiv.org/pdf/2310.15918 (2024, discrete moments context)
 Proof shape (from §621): everything reduces to the alternating sum; via §606 the weight = sgn Z′·e^{iθ} — so the kernel is literally a SIGNED discrete mean of the type in 1811.04530's family. The §615 two-order machinery gives every constant for quantitative checking.
+
+## Post-storm attack queue (2026-08-03 late)
+1. LONG-RANGE-ORDER frame (§628): prove ⟨(−1)^k e^{iθ(γ_k)+iuγ_k}⟩ has the μ-mean — ergodic average of the parity-twisted phase; short-range BK corrections secondary. The non-analyticity obstruction (§627) kills contour methods; the mean-statement may yield to explicit-formula + stationary phase on N(t)-parametrized sums instead.
+2. Inverse-map GW-smoothing ladder (§623): correct two-sided Guinand-Weil smoothing, resolution δ(X) law, contraction theory. RH-as-rigidity frame.
+3. Twisted first absolute moment ∫|ζ|e^{i(2θ+vt)}dt: characterize numerically (no peak at v=0 per §627 — map where its mass actually sits before re-deriving).
+4. ζ_K lane: refetch missing near-degenerate pairs (lfunzeros finer); more fields (real quadratic, class number >1 — does the principle see the class group?).
+5. R(σ) curvature 2.5: derive from Im(ζ″/ζ′) second moment; N-dependence.
