@@ -1009,3 +1009,6 @@ Zero-free formula G(u) = Σ Bessel multi-indices × Landau means: converges orde
 
 ## Rigor item (4) precise statement (2026-08-04 boundary)
 The zero-free formula (Bessel × [W(v)+Landau]) reproduces all combs at X≈100–200 but drifts as X grows (B(X) suppression uncompensated at finite order), while the true model-at-zeros is X-stable (§632 dip-recovery). FIND: the multi-index classes carrying the (log X)^{1/4} compensation. Tested and excluded: single-frequency Landau errors (§639b), order-2 near-resonant pairs with W-band (§640). Candidates: order ≥3 near-resonances, W-tails |v|>0.6, coherent cross-pair phase sums. Also characterize the natural truncation X(T) (accuracy peaks X~100–200 at T~10⁴ — mollifier-length flavor).
+
+## Item (4) final localization (2026-08-04): cumulant resummation
+The zero-free expansion is EXACT (1-pt measure verified; Jacobi-Anger exact); its order-truncation converges slowly in the X-recovery regime (order-4 in-band carries ~0.04 at X=3000 via ~2.5e7 near-band quadruples). DO: linked-cluster/cumulant expansion of log G_model against W+Landau — the resummed form should converge fast at all X. Excluded en route: Landau-only (§640), order-2/3 W-band (§640/645-646), boundary/taper effects (§647). The formula IS the theorem-candidate; only the resummation bookkeeping remains.
