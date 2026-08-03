@@ -50,3 +50,13 @@ reconstructs the Möbius function's positions, signs, and (to log-drift) its RH-
    comb positions/signs (moment estimates for |ζ′(ρ)|; Gonek's conjecture territory).
 2. Prove the exponent → ½ exactly as Γ→∞ (the 0.51 → 0.50 drift), quantifying the §519b gap.
 3. Connect to Ng / Gonek–Ng work on Σ x^ρ/ζ′(ρ) and to unconditional partial results.
+
+
+## Mechanism of the squarefree SELECTION (§567) — Euler product of exp(S prime-sum)
+e^{-2iπS(γ)}, S(γ)=-(1/π)Σ_p Σ_k p^{-k/2}/k sin(kγ log p), gives -2iπS = Σ_p p^{-1/2}(p^{iγ}-p^{-iγ})+(k≥2).
+Then exp = Π_p exp[p^{-1/2}(p^{iγ}-p^{-iγ})], first-order = Π_p(1 + p^{-1/2}p^{iγ} - ...): the coefficient of
+n^{iγ} is nonzero only for SQUAREFREE n (distinct primes; a repeated prime needs the suppressed k≥2 terms).
+CONFIRMED: the twist rebuilt from PRIMES ALONE (no argζ' data) gives the squarefree comb with 0/50 non-sf
+contaminants (agreement 0.949 with the real twist). This derives WHICH integers appear. The leading terms give
+POSITIVE coeffs (½)^r/√n, so the μ SIGNS are NOT from this expansion — those are the Gonek/Perron piece above.
+The two derivations are complementary: Euler-product => squarefree selection; explicit formula => μ signs + √n.
