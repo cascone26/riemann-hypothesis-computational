@@ -9635,3 +9635,23 @@ outputs; consolidated note KREIN_STRING_RESULT.md; memory rh-krein-string-mobius
 OPEN AT SESSION END: u·∂ symbol calculus (drum's analytic dictionary, §546b route); E-function/
 m-function duality; formal smooth-remainder write-out of the phase lemma. RUNNING overnight: T=3000
 cross-scale FD template validation.
+
+===========================================================================
+## SESSION 2026-08-03 (Fable, "go" = audit + superprism, then full-autonomous) — AUDIT & SHARPENING
+LEDGER §585-588. The audit-first discipline after the big §554-584 run:
+AUDIT FINDINGS: (1) sign-perfection re-verified NON-circularly (rotation via Gonek, not μ): 100%, PASS.
+(2) Zero-completeness: density formula exposed the Re-sign finder missing HALF the Dirichlet zeros
+(88 vs 157 predicted for χ₃); rebuilt complete sets — result STRENGTHENED (corr 0.591→0.663). Lesson:
+always check zero counts against the density formula; |L|-argmin is the reliable finder.
+(3) Δ zeros: unsmoothed-AFE dip jitter ±0.04 (X-dependence); one §578 zero was a sidelobe mis-pick;
+z-scores are underestimates given jitter-dilution. Caveat recorded.
+SUPERPRISM 3: key realization — phases are FUNCTIONS of positions (argL′=πS−π/2), so the crown result is a
+SELF-CONSISTENCY constraint on the zero set. Probes: single-zero bootstrap NULL by design (1/N dilution +
+unclosed loop — instrument critique in §586); resolved via existing results into the variational picture:
+linearly stiff along coherent on-line deformations (drum §545), δ²-soft off-line (§528b). Comb-witness
+probe: the readout channel is the SOFTEST (coefficient ~0, §587) — softness map complete.
+THEOREM CORRECTION (the big one, §588): attempted to make step-2 (envelope bound) measurable; found the
+envelope term does NOT decay (N^{+0.1}) ⇒ WITHDREW "envelope o(1)" for magnitudes; corrected theorem scope
+to: supp(b) exact + sgn(b) exact (the arithmetic content), magnitudes modulo slow log-distortion. The
+strongest-claim discipline: the audit weakened my own theorem draft before anyone else could.
+Memory: crown result deposited into rh-krein-string-mobius-lane (was missing). All committed.
