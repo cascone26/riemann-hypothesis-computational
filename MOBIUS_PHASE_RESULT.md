@@ -57,7 +57,7 @@ reconstructs the Möbius function's positions, signs, and (to log-drift) its RH-
 ## FULL SELBERG CLASS (§570–578) — degree-independent
 The phase field arg L′(ρ) universally encodes the Dirichlet-inverse (Möbius-type) coefficients of ANY L-function:
 e^{−i arg L′(ρ)} reads the coefficients of 1/L. Confirmed: ζ (deg-1), all Dirichlet L incl complex χ (deg-1,
-z≈17), and the Ramanujan Δ modular form (DEGREE-2, z=+14, §578). Degree-independent — a general Selberg-class
+z≈17), and the Ramanujan Δ modular form (DEGREE-2, z=+25 at 212 zeros, §578-581). Degree-independent — a general Selberg-class
 principle. Mechanism (§567/577): Euler product of exp(S_L prime-sum) with the L-function’s Euler factor.
 
 ## L-function generalization (§570–577) — universal, derived
