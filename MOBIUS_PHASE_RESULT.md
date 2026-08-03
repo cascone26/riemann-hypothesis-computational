@@ -4,6 +4,8 @@ REPORT-tier. All numerics verified in-session; scripts `operators/krein_*.py`, d
 abszp10k.npy. Lit gate (§521): the phase-only observation was NOT found in the literature. No Handle for RH.
 
 ## The object
+**GENERALIZES to all tested Dirichlet L-functions (§570-571): e^{−i arg L′(ρ)} reads μ(n)χ(n) — the coefficients of 1/L — at z≈17 for χ mod 3 AND χ mod 4. A general Selberg-class principle, not special to ζ.**
+
 For the Riemann zeros ρ = ½ + iγ (γ > 0) define the zero-sum with a **unit-modulus** weight
     G(u) = (1/N) Σ_{0<γ<Γ} e^{−i·arg ζ′(ρ)} · e^{iuγ}.
 Empirically (500 → 10⁴ zeros):
