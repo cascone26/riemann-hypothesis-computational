@@ -173,3 +173,19 @@ envelope never flips a sign). (c) is provably NOT strengthenable to exact magnit
    the measured headroom says the required constant is modest.
 Under GRH + simple zeros + the step-4 inequality, (a) and (b) are theorems. (c) is intrinsically
 log-distorted (§588) and NOT claimed beyond slow-variation.
+
+## The closed chain (§600) + BK-alignment derivation sketch
+CHAIN: phases are πS_L exactly (§541); exp(−iπS_L) is the Euler product of the prime sum, giving supp(b)
+(§567); the Gonek weight reads b(n) classically; and the envelope ρ|L′(ρ)| is a local-gap functional
+(Hadamard: log|L′(ρ_k)| = Σ_{j≠k} log|1−ρ_k/ρ_j| − log|arch| + c, §599) whose fluctuations carry the same
+prime content (Bogomolny–Keating: gap fluctuations ↔ primes; measured directly in the zero-drum, §545).
+Hence EVERY piece of the phase-only weight reads the same arithmetic — the alignment (fluc-readout reads
+μ at 0.955/ζ, 0.594/Δ; 100% signs) is the BK mechanism seen through the Hadamard identity.
+DERIVATION SKETCH for the alignment estimate: write env-fluc_k = Σ_{j≠k} [log|1−ρ_k/ρ_j| − expectation]
+(≈50% of variance, §599). Insert into the readout sum and swap orders: the fluc-readout becomes a
+DOUBLE zero-sum Σ_k Σ_j w_G(k) f(γ_k−γ_j) e^{iγ_k log n} — a pair-correlation-weighted Landau sum. By
+Montgomery/BK, the pair-correlation's oscillatory part carries frequencies log p^m ⟹ this double sum
+reproduces prime combs with the SAME sign pattern as the single sum (the BK phase relations), giving
+positive alignment. To prove: the BK secondary-term asymptotics for this specific double sum (conditional
+on Montgomery-type pair-correlation with the arithmetic corrections). Measured targets: 0.955 (ζ, 10⁴),
+0.754 (Δ, 212) for the eventual constants.
