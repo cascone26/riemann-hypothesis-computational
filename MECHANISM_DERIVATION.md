@@ -28,3 +28,11 @@ Claim (numerically established): G(log n) reads μ(n) with full Selberg-class un
 The weight |ζ′|/ζ′ is non-analytic — no contour representation (§627). Phase-only/alternating
 Gonek weights unclaimed (checked: 2601.18025, 1811.04530). The comb is LONG-RANGE ORDER
 (§628: C(d) plateaus) — an ergodic-mean statement, not a pair-correlation statement.
+
+## CAPSTONE (§633–634): the zero-free double expansion
+⟨e^{iγv}⟩ over zeros = Landau's theorem (unconditional; verified 4 decimals). Therefore
+G(u) = Σ_{k} [Π_n J_{k_n}(c_n)] × [1 if u+Σk_nL_n=0; else −(T/2πN)Λ(e^{|·|})/e^{|·|/2}].
+Evaluated with NO zero data (u=log2, X=200, order ≤2): −0.3138 vs true −0.335 (94%).
+The sampling enhancement E(u) = the Landau comb ⊛ Bessel expansion, term-by-term.
+All inputs classical: S-explicit-formula oscillators + Bessel + Landau. Theorem path:
+multi-index tail control (factorial Bessel decay) + Landau error terms + Selberg off-diagonal.
