@@ -149,3 +149,22 @@ log-distortion of magnitudes (§588). Twist rebuilt from primes alone matches th
 (conditional: GRH + simple zeros), the S_L-exponential Euler product (Step-3 identity, exact), and a
 sign-stability bound (margin ≈0.08 measured; needs a discrete-moment argument à la Gonek–Ng to prove the
 envelope never flips a sign). (c) is provably NOT strengthenable to exact magnitudes (§588 measurement).
+
+## Proof plan for (a)+(b) — the rigorous route (2026-08-03)
+1. **Twist identity (exact).** arg L′(ρ) = πS_L(γ) − π/2 at simple zeros (proved via L = e^{−iθ}·(real
+   Hardy-type function); machine-verified 4×10⁻¹⁴ for ζ). So the weight is e^{iπ/2}·e^{−iπS_L(γ)}.
+2. **Support selection (identity + smoothing rigor).** e^{−iπS_L} = Π_p exp[−(local prime sum)] — an
+   exact Euler-product rearrangement of exp(Im log L); its n^{iγ}-coefficient support is supp(b) by the
+   local-factor algebra (degree-d recursion). Gap to close: uniform convergence/smoothing of the S_L
+   prime series on the zero set (Gaussian-smoothed version verified at 0.95–0.99 agreement).
+3. **Zero-sum evaluation (Gonek–Landau calculus).** Σ_{γ<T} x^ρ/L′(ρ) has known asymptotics under
+   GRH+simplicity (Gonek's method: contour integral of x^s/L(s)); the phase-only sum = the same sum
+   reweighted by the positive factor |ρL′(ρ)|. Claim (a): peak positions survive any positive
+   reweighting. Claim (b): signs survive iff the fluctuation term is dominated — which is exactly:
+4. **Envelope-domination lemma (the one open inequality).** max over comb points of
+   |Σ(env−ē)·w_G·e^{iγ log n}| < |Σ ē·w_G·e^{iγ log n}| — measured: ratio ≤ 0.93 for N≥2000, decreasing
+   (§594, 12% headroom). Proof route: second-moment/large-sieve bound for Σ env·oscillation using
+   discrete moments of |L′(ρ)| (Gonek's conjecture / Ng's theorems give the needed moment growth);
+   the measured headroom says the required constant is modest.
+Under GRH + simple zeros + the step-4 inequality, (a) and (b) are theorems. (c) is intrinsically
+log-distorted (§588) and NOT claimed beyond slow-variation.
