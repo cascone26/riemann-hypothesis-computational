@@ -4054,3 +4054,6 @@ Crown lane closed at its most elementary statement and universalized:
 - §611 J-comb universal (χ₃ square wave).
 - §612a smooth Euler phase reproduces signs but not amplitude — the JUMPS carry it.
 Running: Δ complete rebuild v3 (exact incomplete-Γ Λ, adaptive dps, 8-way). Next: 6/6 universality rerun on fixed Δ, then crown-note consolidation.
+
+## 2026-08-03 later — Δ LANE CLOSED (§616–617)
+PARI/GP pivot after three exact-Λ rebuild attempts died on the completed function's intrinsic e^{−πt/2} smallness. lfunzeros: all 228 zeros to t=260 (θ-count exact, S-band PASS, LMFDB 25-digit). Discrete readout 13/13 + position-only J-comb 13/13 vs b(n). Degree-2 linkage identity exact. c_L = π×counting-constant (ζ: −π; others 0). Δ's weight rotated ~π/2 vs ζ — fit the complex rotation per family, always. Fine structure fully parametrized (§615–615f): prime-power channels = two-order perturbation series (rms 9e−4); squarefree ladder per-factor ≈0.625 at matched u, log-drifting in N. Running: PARI L′ at all 228 zeros → measured c_Δ + non-circular Δ R-test → 6/6 measured. 
