@@ -980,3 +980,9 @@ Proof plan final: identity + Euler algebra + Gonek calculus + alignment (all mea
 MOBIUS_PHASE_RESULT.md is the complete standalone. OPEN (analytic, multi-session): prove the alignment
 statement (|L′|-fluctuations positively correlated with the Gonek μ-oscillation — Gonek-Ng moments);
 smoothing rigor for the S_L Euler product; GL(n)/Maass extensions.
+
+## Rest state 2026-08-03 (elementary-form day)
+LEDGER through §614. Crown lane state:
+- ELEMENTARY FORM proven-numerically + algebra-exact: (1/N)Σ(−1)^k e^{iθ(γ_k)}e^{iuγ_k} reads μ(n). Three faces (G zero-sum / I weighted integral / J plain FT of the Hardy square wave) locked by exact by-parts identity. All position-only.
+- OPEN COMPUTE: Δ complete zero rebuild v4 (operators/delta_rebuild_v4.py, pure exact-Λ grid scan, nohup) — if unfinished when resuming, check /tmp/delta_v4.out; on DONE run operators/post_v3_validate.py → bank §615 (6/6 universality on exact data + Δ J-comb).
+- ANALYTIC FRONTIER (next attacks, in order): (1) prove the J-comb by classical Fourier analysis — J = ∫e^{2iθ}(ζ/|ζ|)e^{iut}dt, bounded integrand, no divergent series; the resonance must come through the jump set (§612a) — try writing sgn Z via the jump expansion Σ(−1)^k 1_{[γ_k,γ_{k+1})} and pairing with the explicit formula for the gap distribution; (2) split-law slope c≈0.09 law still open (§609); (3) n=4 prime-power leakage systematic (−0.03..−0.07) deserves a closed form — it's the p² term of the inverse Euler factor leaking through the envelope; (4) GL(n)/Maass extension of the family set.
