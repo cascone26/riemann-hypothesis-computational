@@ -193,3 +193,11 @@ the gap-shuffle ablation (0.998→0.996, no collapse) shows it lives in WINDOW-S
 fine pair-correlations. UNIFIED: every component of the weight (phase = πS pointwise; envelope = smoothed
 S-functional) draws on the ONE source — the S-field explicit formula. The proof needs only the mollified
 version of the step-2 Euler mechanism, not separate BK asymptotics.
+
+
+## ULTIMATE FORM (§603)
+The weight needs NO L-derivative data: computing S(γ_k) purely from the POSITIONS (counting:
+S=(k−½)−θ_H/π−1) reproduces the weight at agreement 1.000 and the identical readout. FINAL STATEMENT:
+**a list of zero ordinates, by itself, generates — through its own counting function — the twisted sum
+that reads the Möbius/Dirichlet-inverse coefficients of its L-function.** Positions ⟹ S ⟹ weight ⟹
+arithmetic. Verified end-to-end (ζ, +0.974 both routes); the identity chain is exact at every step.
