@@ -110,6 +110,11 @@ has |G_L| peaking at u=log n for n∈supp(b), with peak weight asymptotically �
 4. *The phase is S_L.* From L(½+it)=|L|e^{i arg L}, arg L′ at a simple zero = arg L′(ρ), tied to the
    S_L jump — exact identity for ζ (§541, 4×10⁻¹⁴), Vanlessen-Szegő for the string picture.
 
+**Correction (§588).** Step 2's "envelope contributes o(1)" is WITHDRAWN for magnitudes: the envelope
+correction decays only at log-rate (fluc/main 0.35→0.47 growing ~N^0.1; §563 exponent drift; §519b gap).
+CORRECT THEOREM SCOPE: the phase-only readout gives supp(b) EXACTLY and sgn(b) EXACTLY (100% non-circular,
+§584-585); magnitudes only up to slowly-varying log-scale distortion. Support+signs are the theorem-grade content.
+
 **Status.** Numerically established + mechanistically derived across ζ, all Dirichlet L (incl complex χ),
 degree-2 modular (Δ) and elliptic (E11a). REPORT-tier; the GAP in step 2 (envelope bound) is the main
 obstruction to a full theorem — it is Gonek-conjecture-adjacent. No claim on RH itself.
