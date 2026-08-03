@@ -54,6 +54,12 @@ reconstructs the Möbius function's positions, signs, and (to log-drift) its RH-
 3. Connect to Ng / Gonek–Ng work on Σ x^ρ/ζ′(ρ) and to unconditional partial results.
 
 
+## L-function generalization (§570–577) — universal, derived
+For ζ and every tested Dirichlet L (χ₃, χ₄ quadratic; χ₅ complex order-4): e^{−i arg L′(ρ)} reads
+μ(n)χ(n) — the coefficients of 1/L — at z≈17. DERIVED (§577): the twist rebuilt from χ-weighted primes
+reproduces the χ-comb (agreement 0.971), so the Euler-product mechanism carries over with χ(p). A universal
+degree-1 Selberg-class principle, not special to ζ. Next frontier: degree-2 (modular/elliptic L) — §575.
+
 ## Mechanism of the squarefree SELECTION (§567) — Euler product of exp(S prime-sum)
 e^{-2iπS(γ)}, S(γ)=-(1/π)Σ_p Σ_k p^{-k/2}/k sin(kγ log p), gives -2iπS = Σ_p p^{-1/2}(p^{iγ}-p^{-iγ})+(k≥2).
 Then exp = Π_p exp[p^{-1/2}(p^{iγ}-p^{-iγ})], first-order = Π_p(1 + p^{-1/2}p^{iγ} - ...): the coefficient of
