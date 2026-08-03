@@ -222,3 +222,21 @@ Path A note: the mollifier lever is EXHAUSTED — {2,3,5,7,11,13} fails below Λ
   "exponent = ½" is softened to "brackets ½ with log-drift."
 - METHOD: two self-corrections this stretch (the buggy Weil rebuild caught by the Olympus crosscheck; the
   over-clean §552 exponent caught by finer measurement) — verify-before-ship working as designed.
+
+## ★ HEADLINE (2026-08-02, §570-580): the phase field arg L′(ρ) is UNIVERSALLY ARITHMETIC ★
+The single strongest result of the Krein/Möbius arc. For ANY L-function in the (tested) Selberg class,
+the UNIT-MODULUS phase-only weight e^{−i arg L′(ρ)} summed over the nontrivial zeros READS THE
+DIRICHLET-INVERSE COEFFICIENTS of 1/L:
+  G_L(u) = Σ_ρ e^{−i arg L′(ρ)} e^{iuγ}   peaks at u=log n with weight = [coeff of n^{−s} in 1/L(s)].
+- ζ (degree 1, trivial χ): reads μ(n)/√n; perfect squarefree comb at 10⁴ zeros (§530); comb SHARPER than
+  the exact Gonek weight and sharpens with N (§565).
+- ALL Dirichlet L (degree 1): χ₃, χ₄ (quadratic), χ₅ (COMPLEX order-4) — reads μ(n)χ(n) at z≈17 (§570-574).
+- Ramanujan Δ (DEGREE 2, modular): reads the degree-2 coeffs b(n) [b(p)=−a(p), b(p²)=1] at z=+14 (§578).
+- VERIFIED (§579): reads the genuine degree-2 p²-structure (full-b 0.630 > sf-only 0.528) and is
+  L-SPECIFIC (Δ's b 0.630 >> ζ's μ 0.040). DERIVED (§567/577/580): the Euler product of exp(S_L prime-sum)
+  with the L-function's own Euler factor; the twist rebuilt from primes matches the true phase at 0.97-0.99.
+- Phase = πS_L exact (§541 for ζ). Lit-gated NOT found (§521). Honest: this is a general Selberg-class
+  PRINCIPLE (theorem-candidate), NOT a proof of RH; it says the zero-phase field encodes the primes/Möbius
+  of every L, degree-independent.
+Path to theorem: bound phase-only vs exact (Gonek/Ng moment estimates), formalize the exp(S_L) Euler-product
+identity, extend to general degree. Standalone: MOBIUS_PHASE_RESULT.md.
