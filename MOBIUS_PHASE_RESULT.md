@@ -188,6 +188,8 @@ Montgomery/BK, the pair-correlation's oscillatory part carries frequencies log p
 reproduces prime combs with the SAME sign pattern as the single sum (the BK phase relations), giving
 positive alignment. To prove: the BK secondary-term asymptotics for this specific double sum (conditional
 on Montgomery-type pair-correlation with the arithmetic corrections). Measured targets: 0.955 (ζ, 10⁴),
-0.754 (Δ, 212). VALIDATED (§601): the gap-kernel double-sum readout reproduces the alignment at +0.998
-(reconstructing the direct fluc-readout at 0.946) — the BK route is numerically proven; only the
-asymptotic remains.
+0.754 (Δ, 212). VALIDATED (§601) then SHARPENED (§602): the gap-kernel readout reproduces the alignment at +0.998, and
+the gap-shuffle ablation (0.998→0.996, no collapse) shows it lives in WINDOW-SCALE S-fluctuations, not
+fine pair-correlations. UNIFIED: every component of the weight (phase = πS pointwise; envelope = smoothed
+S-functional) draws on the ONE source — the S-field explicit formula. The proof needs only the mollified
+version of the step-2 Euler mechanism, not separate BK asymptotics.
