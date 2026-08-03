@@ -9,7 +9,7 @@ For the Riemann zeros ρ = ½ + iγ (γ > 0) define the zero-sum with a **unit-m
 Empirically (500 → 10⁴ zeros):
 - Peaks of |G(u)| land exactly on u = log n for **squarefree** integers n (40/40 vs 0/40 non-squarefree
   at 10⁴ zeros, p < 0.001; §530); squares are actively suppressed.
-- At u = log n, Re[e^{ic}G(log n)] ∝ **μ(n)/n^{0.51}** — the RH-critical exponent ½, robust to 0.50–0.52
+- At u = log n, Re[e^{ic}G(log n)] ∝ **μ(n)/n^{≈0.5} (phase-only 0.51, drifts; EXACT-Gonek 0.48→½; §563: brackets ½, not clean-fixed)** — the RH-critical exponent ½, robust to 0.50–0.52
   across 3 zero-counts × 3 ranges (§552b). Shuffling the phases collapses the exponent to the trivial 0.42.
 
 ## Derivation (why it is the Möbius function)

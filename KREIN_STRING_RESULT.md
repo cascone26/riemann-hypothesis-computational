@@ -34,7 +34,7 @@ squarefree vs 0/40 non-squarefree, tol 2.5e-4, n≈90–3000, p<0.001; Gonek→1
   blind spot grows logarithmically; |ζ′(ρ)| supplies it.
 - Mertens: M(x) reconstruction (x≤1990): Gonek 0.9933, phase-only 0.8735 (> shuffle-max 0.748),
   mag-only 0.9305, plain 0.776 — cumulative M(x) leans on magnitude; pointwise μ leans on phase.
-- CRITICAL EXPONENT (§552): G_phase(log n) ∝ μ(n)/n^0.51 — the readout scales at the RH-critical ½
+- CRITICAL EXPONENT (§552): G_phase(log n) ∝ μ(n)/n^{≈0.5} (§563: brackets ½, drift) — the readout scales at the RH-critical ½
   (peak corr 0.958 at s=0.51, 10⁴ zeros). Shuffling the ζ′-phases collapses the peak to the trivial
   s=0.42; the arg ζ′≡πS field encodes μ's √n normalization = operator shadow of M(x)=O(x^{½+ε}) ⟺ RH.
 
