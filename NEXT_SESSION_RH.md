@@ -1015,3 +1015,5 @@ The zero-free expansion is EXACT (1-pt measure verified; Jacobi-Anger exact); it
 
 ## OPENING TASK next session: final assembly of box (iii)
 deficit_pred(X) = −i Σ_sidebands [Bessel coefficients of Ψ′e^{iΨ}, prime-side, known] × [Landau comb/(iν) above S_Y resolution]. Targets: −0.0006/−0.0054/−0.0270/−0.0476 at X=300/10³/3·10³/10⁴ (§649 table). If it lands, the crown readout = stationary phase + prime-pair sums + Landau, fully assembled — then write the rigor note with uniformity caveats (Gonek uniform Landau) and the theorem-candidate statement.
+
+## Inverse-map v3 (queued): damped Newton with S' in the Jacobian; plateau law delta* ~ 2/log(T/2pi) derived in §651 — test the law at different T-windows; RH-rigidity lane.
