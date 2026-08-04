@@ -44,3 +44,9 @@ Verified vs measurement at all X to ~0.001. Three boxes: (i) smooth — stationa
 (iii) sawtooth (S − S_smooth)·Ψ′ — zero−prime pair correlation, second-order EF/Montgomery
 (deficit measured: −0.0006/−0.0054/−0.0270/−0.0476 at X=300/10³/3·10³/10⁴). Items (i),(ii)
 classical-unconditional; (iii) is where pair-correlation inputs (and any conditionality) enter.
+
+## CLOSED (§650): assembly complete
+deficit = prime-tail (zero-free) + finite-T remainder; remainder DECAYS in T (half-window
+test: −0.0207→−0.0162 at X=3000). Final ledger: G(u) = stationary-phase + prime-pair
+bilinear + prime-tail + o_T(1)-behaving error. All main terms classical. Remaining work:
+theorem statement + error bounds (uniform Landau). Numerics: assembly_box3.py, §649–650.
