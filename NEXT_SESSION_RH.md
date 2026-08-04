@@ -1012,3 +1012,6 @@ The zero-free formula (Bessel × [W(v)+Landau]) reproduces all combs at X≈100�
 
 ## Item (4) final localization (2026-08-04): cumulant resummation
 The zero-free expansion is EXACT (1-pt measure verified; Jacobi-Anger exact); its order-truncation converges slowly in the X-recovery regime (order-4 in-band carries ~0.04 at X=3000 via ~2.5e7 near-band quadruples). DO: linked-cluster/cumulant expansion of log G_model against W+Landau — the resummed form should converge fast at all X. Excluded en route: Landau-only (§640), order-2/3 W-band (§640/645-646), boundary/taper effects (§647). The formula IS the theorem-candidate; only the resummation bookkeeping remains.
+
+## OPENING TASK next session: final assembly of box (iii)
+deficit_pred(X) = −i Σ_sidebands [Bessel coefficients of Ψ′e^{iΨ}, prime-side, known] × [Landau comb/(iν) above S_Y resolution]. Targets: −0.0006/−0.0054/−0.0270/−0.0476 at X=300/10³/3·10³/10⁴ (§649 table). If it lands, the crown readout = stationary phase + prime-pair sums + Landau, fully assembled — then write the rigor note with uniformity caveats (Gonek uniform Landau) and the theorem-candidate statement.
