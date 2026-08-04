@@ -240,3 +240,14 @@ rotation anchored at n=2 only. The linkage identity holds at degree 2 exactly.
 The identity constant: arg L′(ρ_k) = πS_L(γ_k) + c_L with c_L = π × (N(T) counting
 constant) — ζ: −π (its "+1"), χ₃/χ₄/sym²Δ/sym³Δ: 0. One family-dependent complex rotation
 in the readout (Δ's ~π/2 vs ζ) — measure or derive per family; everything else universal.
+
+## CALIBRATION (§648 fable check — read this first)
+1. R=1.000000 position-only tests = completeness + on-line-simplicity GATES (for self-dual L,
+   argZ′∈{0,π} and alternation are forced; R=1 ⟺ complete list of simple on-line zeros).
+   Superb instruments (caught two real data bugs); not independent arithmetic content.
+2. The honest novel core, calibrated against Landau 1912 (unweighted sums already read the
+   Λ-comb): the phase weight e^{−iπS} = ±i(−1)^k e^{iθ} RESUMS the von Mangoldt comb into the
+   MÖBIUS/Dirichlet-inverse comb (signed squarefree, positive composites, suppressed prime
+   powers), universally (Selberg class + non-abelian S₃), with an exact elementary position-only
+   weight and a zero-parameter derivation (Bessel × Landau). Phase-only weights unclaimed in
+   checked literature. Rigor queue: cumulant resummation + UNIFORM Landau (Gonek) inputs.
