@@ -36,3 +36,11 @@ Evaluated with NO zero data (u=log2, X=200, order ≤2): −0.3138 vs true −0.
 The sampling enhancement E(u) = the Landau comb ⊛ Bessel expansion, term-by-term.
 All inputs classical: S-explicit-formula oscillators + Bessel + Landau. Theorem path:
 multi-index tail control (factorial Bessel decay) + Landau error terms + Selberg off-diagonal.
+
+## RESUMMED FORM (§649 — the final structure)
+A_zeros(u,X) = (1/K)[ ∫e^{iΨ}(θ′/π)dt + [Se^{iΨ}] − i∫S·Ψ′e^{iΨ}dt ],  Ψ = −πS_X + ut  (exact).
+Verified vs measurement at all X to ~0.001. Three boxes: (i) smooth — stationary phase;
+(ii) S_smooth·Ψ′ — convergent prime-pair bilinear (the E(u) enhancement, first-order EF);
+(iii) sawtooth (S − S_smooth)·Ψ′ — zero−prime pair correlation, second-order EF/Montgomery
+(deficit measured: −0.0006/−0.0054/−0.0270/−0.0476 at X=300/10³/3·10³/10⁴). Items (i),(ii)
+classical-unconditional; (iii) is where pair-correlation inputs (and any conditionality) enter.
