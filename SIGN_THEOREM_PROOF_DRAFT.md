@@ -91,3 +91,21 @@ The two available exact handles:
 What's needed: a bound |A_X(n) − μ(n)·c(n,T)| < |c(n,T)| with c(n,T)>0, uniform enough in X.
 This is a Selberg-CLT-at-the-zeros + Landau-error problem — the genuine research frontier.
 Everything reduces here; no easier sub-problem remains. NOT solved. Loaded for analytic attack.
+
+
+## CLEAN FRONTIER STATEMENT (§720-722, consolidated — supersedes scattered notes)
+Write the exact weight as the formal inverse Euler product: e^{−iπS(γ)} = Π_p (local 1/ζ-factor),
+Jacobi-Anger-expanded. Then G(log n) = Σ_{multi-index K} c_K ⟨e^{iγ(log n+Λ(K))}⟩_zeros.
+- At any FINITE truncation X, the DIAGONAL (Λ(K)=−log n) = μ(n)·(positive Bessel product) —
+  the sign is ALGEBRAIC (inverse-Euler multiplicativity), Θ(1) at finite X.
+- The exact weight needs X→∞, where the diagonal → 0 (background Π J₀(1/√q)→0 ~ (log X)^{−1/4}).
+  The Θ(1) μ-signed value of G is then carried by the Landau off-diagonal MAIN TERMS conspiring
+  to compensate (§632). THE THEOREM = the μ-sign SURVIVES this diagonal-vanishing/compensation limit.
+PROOF-PATH pieces:
+  (1) joint equidistribution (fixed primes) — Landau, unconditional [§713, done];
+  (2) uniformity as X→∞ — Gonek uniform Landau (1993) [available];
+  (3) multi-index tail — Bessel factorial decay [summable];
+  (4) THE HARD CORE — the compensation main-term sum converges to a μ(n)-signed limit
+      (= §649 resummation convergence-and-sign). Verified numerically (sub-CLT, §711); OPEN.
+Everything reduces to (4). Pieces (1)-(3) are error-control with existing tools; (4) is the
+genuine analytic heart. This is the irreducible frontier.
