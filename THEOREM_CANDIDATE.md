@@ -74,3 +74,13 @@ deficit that is ~10% RELATIVE and cannot flip the sign (§689). The support stat
 {log n}) is the CLT floor (§677). This is a SIGNS+SUPPORT theorem — the calibration-clean core
 (§648) — and does NOT depend on the amplitude asymptotics (which are ~10%-conjectural). This is
 the recommended primary write-up; the amplitude/rigidity results are companion structure.
+
+## SIGN THEOREM — analytic crux (§691)
+G(log n) = A₁·μ(n)n^{−1/2}(2/3)^{ω−1} [leading] + residual, and MEASURED: residual is SAME-SIGN
+as leading for all 182 squarefree n (ratio 0.76±0.15, always positive). So G(log n) =
+leading × (1 + positive) ⇒ sgn G = μ(n) follows from the leading sign ALONE plus a one-sided
+"residual doesn't cross zero" bound (which holds with large margin — residual REINFORCES).
+The amplitude asymptotics (§689, ~10% wobble on top of a ~1.6× same-sign renormalization) are
+ORTHOGONAL to the sign. Proof reduces to: (a) leading Euler-product sign = μ(n) [§554/567,
+Landau — established]; (b) residual > −leading [one-sided, large margin]. This is the crisp,
+calibration-clean, RH-adjacent theorem statement to write up.
