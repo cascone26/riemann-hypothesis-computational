@@ -4067,3 +4067,6 @@ Basin story closed (§659–660): recovery from 4/8/16-spacing global iid corrup
 
 ## 2026-08-04 later — superprism + bridge cycle (§662–669)
 Rigidity law DERIVED (self-localization, quadratic from two 1/log X scales); §657 corrected (decoupled, not collective). Path verdict: readout+rigidity = consequence-side. Bridge (rigidity↔Weil) proposed, tested at K-converged a≤6, REFUTED with clean diagnosis (null = global mode, not δ*-local). Uniform-Landau benign in active range. Next: softness–Λ, mollifier↔X(T). LEDGER §669, all committed.
+
+## 2026-08-04 night — N=100k Odlyzko run (§674–685)
+Fetched+validated 100k zeros (T~75k, zeros100k.npy). Crown readout 16/16 all mu!=0 down to omega=4; fine structure confirmed at 10x; blind SNR 346 (parity-theta lock is everything, §683). FULL RIGIDITY LAW closed: rms = c(log(T/2pi))^2/(log X)^2 spacings, c~0.03 (§675-680); delta* T-independent; C(T) growth verified to 7.5x height. Off-support = CLT const 0.2 (§677). Amplitude drift law A1(T)=0.268+1.36/log(T/2pi), finite limit, degree-1 universal (predicts chi3 at 2.5%, §681/685). Lehmer record gap 0.022sp@71733 (§678). Self-correction: §684 boost-claim retracted (§684b, sampling SUPPRESSES residual). LEDGER §685. Running: finite-T error decay at high window.
