@@ -52,3 +52,5 @@ MOBIUS_PHASE_RESULT.md (forward direction), MECHANISM_DERIVATION.md, THEOREM_CAN
 - Weil-bridge conjecture (rigidity floor = screw-kernel margin) REFUTED: the screw form's
   near-null is the global smoothest mode (width ∝ 0.36a), its a^{−2} cost is lowest-mode
   geometry — a different object from the rigidity floor. [§665–668]
+- T-drift (§673): C(T) grows 0.70→1.35 over log(T/2π)=5.2→7.2 then plateaus; direction matches
+  the spacing-conversion prediction, precise shape open (low priority).
