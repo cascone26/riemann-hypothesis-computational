@@ -9688,3 +9688,11 @@ overclaim caught and corrected same-session). The season's deposits: SIGN_THEORE
 SIGN_THEOREM_PROOF_DRAFT.md, RIGIDITY_RESULT.md, MECHANISM_DERIVATION.md, all honestly scoped.
 METHODOLOGICAL NOTE for future sessions: search-before-build failure — §703-706 partly rediscovered
 prior-session Suzuki work (μ₁≈0.25); should have read suzuki_screw_lambda_a.py's conclusions first.
+
+## 2026-08-06 — STRATEGIC PIVOT to proof-side (Jacob: "whatever keeps us solving RH")
+DECISION CHAIN: recognized the sign theorem (and all forward/rigidity results) are CONSEQUENCE-SIDE (§725: use zeros-on-line as input; can't even be criterion-ized). To SOLVE RH need an RH-EQUIVALENT (proof-side): Weil positivity, Nyman-Beurling-BD, de Bruijn-Newman.
+- Checked a novel rigidity+functional-equation angle (off-line zero ⟹ double ordinate ⟹ rejected by §655 self-consistency ⟹ RH): FAILS — the prime-field S uses the UNCONDITIONAL Riemann-von Mangoldt counting which already counts off-line zeros, so double ordinates are CONSISTENT not rejected (§655 was on-line merging, different). Rigidity genuinely ordinate-only. Verified-before-banked (didn't ship the false breakthrough).
+- Engaged Suzuki's ACTIVE screw/de Branges framework (arXiv 2301.00421, 2308.11860, 2606.09096, 2023-26): RH ⟺ unconditional Weil-quadratic-form positivity; OBSTRUCTION = CIRCULARITY (positivity follows from RH; proving it independently needs an unconditional kernel bound nobody has). This is RH's fundamental hard core.
+- HONEST ASSESSMENT: no near proof; needs a genuine new analytic idea (not compute). "Keep solving" = keep attacking the unconditional-positivity core + hunt the new idea, never declare impossible.
+- CHOSEN ATTACK: the UNCONDITIONAL Weil-positivity BOUNDARY. Weil positivity is known unconditionally for a specific test-function class (Weil/Bombieri); RH = full class. EXTENDING the unconditional class = real, incremental, NON-CIRCULAR progress. Our screw-kernel machinery + structural findings can probe this (not just confirm). This is the proof-side lane going forward.
+NEXT: characterize the unconditional-positivity class boundary with the screw kernel; look for an extendable structure.
