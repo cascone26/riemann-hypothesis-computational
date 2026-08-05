@@ -29,3 +29,13 @@
   proof pointer weil_cert_15_25_35_45.json). Machinery proven end-to-end.
 - Honest: clear-margin nearly-diagonal case. NEXT = hierarchy toward coupled/saturated bases.
 - ORGAN 1a: mathlib cache re-downloading (slow, background, ~5%). Non-blocking.
+
+## 2026-08-05 — ORGAN 1 OPERATIONAL (the multiplier)
+- 1a: mathlib restored; RiemannLean.TailLemma builds clean (8252 jobs, exit 0) → zero-sorry
+  Handle tail_kernel RE-VERIFIES. Verifier live.
+- 1b/1c: verify_loop.py — propose→verify→mint. Gate VERIFIED (verify-before-ship on the gate):
+  true lemma PASS+recorded, `sorry` REJECTED, FALSE stmt FAIL. First loop-Handle:
+  two_sub_two_cos_nonneg. handles.jsonl live.
+- PLAN CORRECTION: the 4 Robin sorries = full Robin/Lagarias↔RH equivalences (not tractable);
+  organ 1 = many small Handles via the loop + toolkit formalization, not one-shot RH.
+- BOTH organs 1 (live) + 2 (§731/§732) operational. LEDGER §733.
