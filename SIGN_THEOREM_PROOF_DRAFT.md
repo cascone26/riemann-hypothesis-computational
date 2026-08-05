@@ -27,7 +27,17 @@ G_N(log n) = D(n) + O(n), where:
     |O(n)| ≤ C(n) · land_c with C(n) ≤ C_max ≈ 0.61 uniformly (Bessel factorial decay ×
     Landau summability — the tail bound is routine; C(n) in fact decays in n).
 
-## Step 3 — THE CONDITIONAL INPUT (where it stops being unconditional)
+## Step 3 — LARGELY UNCONDITIONAL for fixed n (§713, revised)
+REVISED: the off-diagonal terms are cross-frequency sums Σ_{γ≤T} x^{iγ} at non-prime-power x
+(ratios/products of p|n). By LANDAU (1911, unconditional): O(log T) for fixed non-prime-power x
+(verified: |sum|∼log T not √N). So off-diagonal = O(log T/N) → 0 UNCONDITIONALLY for fixed n.
+The diagonal D(n) is a DETERMINISTIC Bessel product μ(n)·(positive) (net-zero frequency, trivial
+average — no equidistribution needed). Hence for fixed n, sgn G(log n)=μ(n) is UNCONDITIONAL
+(Landau + Bessel positivity) MODULO only the tail convergence of the oscillator product
+(Selberg, high primes/orders) and uniformity for n growing with T. The earlier
+"pair-correlation-deep" framing was partly misplaced.
+
+## Step 3 (old framing) — the joint-equidistribution input
 Steps 2 require the Jacobi–Anger/Euler expansion of e^{−iπS} to be valid WHEN EVALUATED ON THE
 ZERO SET {γ_k} — i.e. that (1/N)Σ_k [Π_p e^{i a_p ...}] n^{iγ_k} equals the product of the
 per-prime Bessel means. This is the statement that the prime oscillators {sin(γ_k log p)}_p are
