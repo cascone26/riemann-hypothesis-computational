@@ -53,3 +53,12 @@ the one real proof gap (higher-order sign-definiteness + Selberg-independence) p
 Companion notes: MOBIUS_PHASE_RESULT.md, MECHANISM_DERIVATION.md, RIGIDITY_RESULT.md,
 THEOREM_CANDIDATE.md. No Handle for RH — this characterizes zero–arithmetic duality; it does
 not bound Λ or prove any RH-equivalent positivity.
+
+
+## Part (b) correction (§695): onset-DOMINANCE, not pure sign-definiteness
+Full multi-index enumeration shows opposite-sign decorations DO exist (Landau-tail terms), so
+part (b) is NOT "the Bessel series is sign-definite" (§694 was too strong). It is: the μ-signed
+content (onset + same-sign decorations) EXCEEDS the opposite-sign Landau-tail — measured margin
+|onset|/|opp| = 4.0→13.2 (GROWING for larger n / higher ω, non-degrading). So part (b) reduces
+to a UNIFORM LANDAU-TAIL BOUND (|opposite| < |μ-content|), a magnitude estimate — the remaining
+genuine analytic work. Part (a) (onset = μ(n)·positive, elementary Bessel positivity) stands.
