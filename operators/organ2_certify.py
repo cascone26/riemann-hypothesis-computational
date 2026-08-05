@@ -26,7 +26,11 @@ def Omega(r_acb):  # analytic archimedean factor = 1/2[psi(1/4+ir/2)+psi(1/4-ir/
 
 def arch_entry(aj, ak):
     R = arb(120)
-    def integrand(x, _):  # x acb; integrand analytic; even, but integrate full range for safety
+    def integrand(x, analytic):  # x acb; psi poles at Im=+/-1/2 -> force subdivision (rigor)
+        if analytic:
+            im = x.imag
+            if float(im.upper()) >= 0.5 or float(im.lower()) <= -0.5:
+                return acb(arb('nan'))
         return phihat_acb(aj, x)*phihat_acb(ak, x)*Omega(x)
     I = acb.integral(integrand, acb(-R), acb(R))
     # tail bound: |phihat_j phihat_k| <= (2pi) e^{-(|r|-amax)^2/2} for |r|>amax; * |Omega|~log|r|
@@ -53,7 +57,7 @@ def g_cross(aj, ak, y):  # arb y; closed form
 
 def prime_entry(aj, ak):
     tot = arb(0)
-    for p in primerange(2, 200000):
+    for p in primerange(2, 2000000):
         lp = arb(p).log(); m = 1
         while True:
             L = m*lp
@@ -62,8 +66,13 @@ def prime_entry(aj, ak):
             tot += w*g_cross(aj, ak, L)
             m += 1
     prime = 2*tot
-    # tail beyond L=30: |g|<=sqrt(pi) e^{-L^2/4}, e^{-225} ~ 1e-98; bound generously
-    return prime + arb(0, 1e-40)
+    # RIGOROUS prime-tail bound beyond p=2e6 (superprism skeptic fix): for L>Lcut,
+    # |g_{jk}(y)| <= (sqrt(pi)/2)(e^{-(aj+ak)^2/4}+e^{-(aj-ak)^2/4}) e^{-y^2/4}, and
+    # sum_{p^m>2e6} Lambda(n)/sqrt(n) e^{-(log n)^2/4} <= e^{1/4} sqrt(pi) erfc((Lcut-1)/2).
+    Lcut = arb(2000000).log()
+    gmax = (PI.sqrt()/2)*((-(aj+ak)**2/4).exp() + (-(aj-ak)**2/4).exp())
+    tailb = 2*gmax*(arb(1)/4).exp()*PI.sqrt()*((Lcut-1)/2).erfc()
+    return prime + arb(0, float(tailb.upper() if hasattr(tailb,"upper") else tailb))
 
 print("Building rigorous Weil-form entries (Arb balls)...")
 Qb = [[None]*nb for _ in range(nb)]

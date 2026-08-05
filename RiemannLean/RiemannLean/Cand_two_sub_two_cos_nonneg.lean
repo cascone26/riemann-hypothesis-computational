@@ -5,3 +5,5 @@ open Real
 theorem two_sub_two_cos_nonneg (x : ℝ) : 0 ≤ 2 - 2 * cos x := by
   have := Real.cos_le_one x
   linarith
+
+#print axioms two_sub_two_cos_nonneg
