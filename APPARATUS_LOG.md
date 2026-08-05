@@ -39,3 +39,16 @@
 - PLAN CORRECTION: the 4 Robin sorries = full Robin/Lagarias↔RH equivalences (not tractable);
   organ 1 = many small Handles via the loop + toolkit formalization, not one-shot RH.
 - BOTH organs 1 (live) + 2 (§731/§732) operational. LEDGER §733.
+
+## 2026-08-05 — superprism + margin law + organ 4 first mint
+- SUPERPRISM (5 Fable lenses): skeptic caught 3 real overclaims (§731 rho overstated 10 orders,
+  §732 formula typo, bypassable gate) — ALL FIXED (§735). Cert now honest rho≤1e-20; gate hardened
+  with #print-axioms (axiom set ⊆ trusted kernel); provenance fields added. Nothing false banked.
+- LIT GATE: Groskin arXiv:2607.02828 (Jul 2026) verified real + certifier reproduced on Sam (§734);
+  subsumes our deep-saturation lane (band-limited = no prime tail). Deposited frontier/groskin2607/.
+- MARGIN LAW (§736/736b, OUR novelty on the frontier): using Groskin's exact τ(c,N), true min-eig
+  (high-prec eigsy, NOT min-pivot) ~10^{−2.4N} exp in band, ~c^{−N} in cutoff, geometric cascade;
+  decelerates (kills naive extrapolation); (c=30,N=24)→10^{−57} matches Groskin's 10^{−59}. Sharp
+  open Q: is min-eig(c,∞)→0 (exact saturation)? needs N≳40, prec≳1e4 bits → Olympus.
+- ORGAN 4 first real mint (§737): one_add_half_sq_le_cosh via the loop, trusted axioms, 3 iters.
+- Handle count: 2 Lean lemmas + 1 rigorous Weil cert (§731). Apparatus: honest, trustworthy, producing.
