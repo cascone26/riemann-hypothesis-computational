@@ -79,3 +79,9 @@ and sgn G(log n) = μ(n) for all squarefree n. FULL STRUCTURE: (a) diagonal sign
 [elementary Bessel positivity] ✓ + (b) off-diagonal vanishes uniformly [this] ✓ + ONE deep gap:
 Selberg quasi-independence (Euler→Bessel; rigorous in distribution, term-by-term heuristic).
 The sign theorem is sketch-complete with a single precisely-named remaining rigor gap.
+
+## Honest depth (§698b): the reduction is real, the remaining gap is not small
+"Sketch-complete" ≠ "almost proven". The Euler→Bessel-at-the-zeros step needs the joint
+prime-oscillator structure sampled ON the zero set = zero–prime pair correlation (Montgomery/GUE),
+itself deep/partially conjectural. The value is the REDUCTION + mechanism clarity, not a
+near-proof. The remaining analytic core is genuinely hard (pair-correlation-level).
