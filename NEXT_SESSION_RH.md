@@ -1033,3 +1033,5 @@ All data gate-clean; canonical notes: MOBIUS_PHASE_RESULT (calibrated §648), ME
 
 ## Day-close 2026-08-04 (LEDGER §670–671)
 Lane 2 opened and honestly positioned: readout X-scan shows crossing ~2.5√(T/2π) (mollifier scale) and dip ~T/2π (Landau edge); lit-gate → Bettin–Gonek θ=∞⟹RH, heavily mined; probably explained-classical. Cheap queued check: dip depth vs measured Landau secondary errors. NEXT SESSION OPENER (fresh context recommended): either (a) the dip-depth check to close lane 2, or (b) softness–Λ with proper scoping (CSV/Lehmer lower-bound framing is classical — only pursue if a genuinely new angle appears), or (c) theorem-candidate error-bound write-up (§669 gives the budget; the most bankable). All notes current: MOBIUS_PHASE (calibrated), MECHANISM+THEOREM_CANDIDATE, RIGIDITY (with §662 derivation).
+
+## NEW INSTRUMENT (2026-08-04 late): zeros100k.npy — 100k Odlyzko zeros to T~75k (validated 3e-9, gate-clean). Run at 7.5x height: rigidity C(T) plateau question (§673), mechanism finite-T error decay (§650), basin/law at high T. More tables exist (zeros2: 100k zeros near #1e6... check ~odlyzko/zeta_tables/ index) if deeper reach needed.
