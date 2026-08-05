@@ -4060,3 +4060,6 @@ PARI/GP pivot after three exact-Λ rebuild attempts died on the completed functi
 
 ## 2026-08-03 night — storm + mechanism derivation (§622–631)
 Storm: ζ_K ideal-Möbius 11/11 + pole law; inverse map 4–5× contraction; GUE control decisive; R(σ) ridge/valley/2-adic; skeleton v0 refuted (non-analyticity obstruction found) → long-range-order frame. Then THE MECHANISM DERIVED: Selberg-oscillator Bessel model (signs=μ exact, support exact, ladder ½/factor, own X-decay) × sampling enhancement E=1+u/θ̄′ (third by-parts identity, T-trend verified) × 0.87 truncation const — the crown readout derived end-to-end at 85%; remaining gaps live in Selberg off-diagonal + BK machinery. LEDGER through §631.
+
+## 2026-08-04 — rigidity program (§651–658)
+Inverse map v3 (full Jacobian + anneal): zeros from primes at rms=(1.04±0.03)/(log X)² spacings, three decades clean (0.6% at X=5×10⁵). Local rigidity: single displaced zero repaired to floor. Exclusion: fine-only Newton gets stuck generically (§656 honest correction of §655's scope) but the MULTISCALE schedule repairs 15/15 defect configurations (pair/triple/block × 5 heights) to floor — no alternative self-consistent configuration found anywhere. Law constant is collective (beats pointwise bound 4.4×; covariance-driven). Mechanism program closed earlier (§650, THEOREM_CANDIDATE.md). LEDGER through §658.
