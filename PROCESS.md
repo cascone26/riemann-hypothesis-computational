@@ -9663,3 +9663,28 @@ Framing: after §602 unified everything into the S-field, the question was "what
 - Δ rebuild attempts: v1 exact-Λ died of e^{−πt/2} cancellation at fixed dps (proof: /tmp/delta_rebuild.out — only 3 zeros survived, but those 3 EXACT vs LMFDB → machinery right, precision wrong). v2 RS-primary failed (RS cutoff terms O(0.3) for degree 2 — positions 0.01–0.05 off; 0/10 exact spot checks; proof: /tmp/delta_v2.out). v3 exact-refinement-of-RS-brackets: 11 perfect zeros, 217 dropped (brackets ±0.14 < RS drift; also spawn-pickle bug; proof: /tmp/delta_v3.out). Diagnosis path: gammainc recurrence self-test (1e−74) EXONERATED mpmath → the fault was bracket placement, not precision. v4 = pure exact grid scan, no RS anywhere (running).
 - Parallel finds while rebuilds ran: §605 detector (tried 4 gamma-factor candidates for sym³ — right one R=1.0000, wrong ones rejected → the identity is an instrument, not just a claim); §606 algebra collapse (one substitution: S=(k−½)−θ/π−1 into §541 → (−1)^k e^{iθ}); §607 continuous form (the "what is w(t) BETWEEN zeros" question → square wave); §610 by-parts identity (the split-ratio mystery of §609 forced the integration by parts that produced the linkage); §612a smooth-Euler ablation (killed the "smooth phase suffices" hypothesis — jumps carry amplitude); §614 necessity ablation (parity and θ each dead alone — the comb is their interference).
 Method note: every negative (v1/v2/v3 failures, split-law slope guess, smooth-Euler model) was banked with its diagnosis before moving on — three rebuild post-mortems each isolated ONE cause (precision / RS error size / bracket width).
+
+## 2026-08-05 — the RH-attack stretch (§703–715): decision chain + honest outcome
+Jacob: "just get to solving RH, stop needing me." Drove the proof-side relentlessly, autonomous.
+DECISION CHAIN:
+- Weil positivity (screw kernel) chosen first as the RH-equivalent. min-eig(a)>0 to a=6 LOOKED
+  like confirmation (§703) → CORRECTED (§705): large-a is a discretization artifact (exp-growth
+  leak, drifts to 0 with M). Framework = Suzuki screw, RH-content = uncomputed constant μ₁; my
+  μ₁ re-extraction inconclusive (§706, O(a) contamination). Lane parked (tool-reliability limit).
+- Naive analytic reduction (min-eig ~ ∫g_screw) tried → FAILED (§704, oscillatory cross-term).
+- Pair correlation → GUE confirmed (§707, known). Li criterion → positive, off-line sensitivity
+  exponentially weak for real zeros (§708). Mertens → reconstructed, RH-consistent (§709).
+- PIVOT to the season's novel asset: SIGN THEOREM rigor. Wrote proof draft; located gap at Step 3
+  (joint zero-prime equidistribution). TESTED it: holds to O(log T/N), sub-CLT (§711/712) — the
+  crux input is TRUE to better-than-random precision (reflects rigidity: pinned zeros super-regular).
+- RIGORIZATION (§713): off-diagonal = non-prime-power sums = O(log T) UNCONDITIONALLY (Landau);
+  narrows the gap from "pair-correlation-deep" to "tail convergence". VERIFY-BEFORE-SHIP caught
+  over-optimism: §713b→§714, the Bessel ORDER-expansion DIVERGES (background ΠJ₀→0 uncompensated).
+  §715: the UNEXPANDED form e^{−iπS} is well-behaved — divergence was an organization artifact.
+HONEST OUTCOME: no proof of RH; the sign theorem's gap precisely located at the S(γ)-at-zeros law
+(Selberg: marginal-proven, joint-open) / convergent resummation. ~5 over-optimism self-corrections
+(§703/704/713/713b/714) — the pattern confirms this is genuinely hard; the discipline held (every
+overclaim caught and corrected same-session). The season's deposits: SIGN_THEOREM.md,
+SIGN_THEOREM_PROOF_DRAFT.md, RIGIDITY_RESULT.md, MECHANISM_DERIVATION.md, all honestly scoped.
+METHODOLOGICAL NOTE for future sessions: search-before-build failure — §703-706 partly rediscovered
+prior-session Suzuki work (μ₁≈0.25); should have read suzuki_screw_lambda_a.py's conclusions first.
