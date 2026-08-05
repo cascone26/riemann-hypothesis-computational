@@ -64,3 +64,13 @@ The resummed-identity deficit (box iii + tail) collapses −0.0269 (T~10⁴) →
 fixed X=3000 — 270× reduction, SETTLED (§689): the deficit is T-STABLE at ~10% of the leading term (matched-edge scan: -0.03 roughly constant in T), NOT o(1) — §688's decay was the edge-crossing confound. This re-confirms the calibrated scope: SIGNS+SUPPORT are the robust asymptotic content (signs never flip), AMPLITUDES carry a stable ~10% slowly-varying correction (the §588/§648 distortion). The theorem is a signs+support theorem; amplitude asymptotics are conjectural to ~10%.. The
 leading main term persists (amplitude law A₁→0.27, §685); the correction vanishes. This is the
 strongest available evidence that the theorem-candidate's architecture closes asymptotically.
+
+## THE SIGN THEOREM (§690 — the robust core, recommended primary statement)
+CLAIM: for every squarefree n, sgn Re[e^{−ic}·(1/N)Σ_k(−1)^k e^{iθ(γ_k)}e^{iγ_k log n}] = μ(n),
+with sign-margin/noise → ∞ as √N. MEASURED: 182/182 squarefree n∈[2,300) at N=100k; tightest
+margin/noise = 13.0 (n=210), scaling √N (4.6/7.9/13.4 at N=10⁴/3·10⁴/10⁵).
+PROOF SHAPE: leading term = A₁(T)·μ(n)/√n·(2/3)^{ω(n)−1} (positive envelope, A₁→0.27, §685) +
+deficit that is ~10% RELATIVE and cannot flip the sign (§689). The support statement (Re→0 off
+{log n}) is the CLT floor (§677). This is a SIGNS+SUPPORT theorem — the calibration-clean core
+(§648) — and does NOT depend on the amplitude asymptotics (which are ~10%-conjectural). This is
+the recommended primary write-up; the amplitude/rigidity results are companion structure.
