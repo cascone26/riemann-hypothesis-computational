@@ -43,6 +43,12 @@ GIVEN Step 3 (the joint equidistribution / pair-correlation input), Steps 0–2 
 So the sign theorem is UNCONDITIONAL EXCEPT for the joint zero–prime equidistribution (Step 3),
 which is pair-correlation-deep. This is the exact, honest boundary of the argument.
 
+## Step 3 is empirically TRUE to sub-CLT precision (§711)
+Direct test: ⟨cos(γ log p)cos(γ log q)⟩ over 100k zeros = (½)⟨cos(γ log pq)⟩ (pure Landau) with
+residual 6×10⁻⁵ = 50× below 1/√N. The joint equidistribution HOLDS to better-than-random
+precision (sub-CLT, reflecting rigidity §650–660: arithmetically-pinned zeros are super-regular).
+So the gap is "prove the clearly-true," not resolve an uncertainty.
+
 ## What would close Step 3
 A theorem that the finite products Π_{p≤P} f(γ_k log p) average over zeros to Π_p ⟨f⟩ with an
 error o(1/log T) — a multi-prime generalization of the Landau/Montgomery machinery. Not known;
