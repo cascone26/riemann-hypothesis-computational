@@ -3,7 +3,7 @@ import numpy as np
 from scipy.special import loggamma as slg
 from sympy import primerange
 z = np.load("zeros100k.npy")
-T0, T1, dt = 60000.0, 74000.0, 0.004
+T0, T1, dt = 68000.0, 72000.0, 0.006
 t = np.arange(T0, T1, dt)
 th = np.imag(slg(0.25+0.5j*t)) - t/2*np.log(np.pi)
 thp = np.gradient(th, dt)
