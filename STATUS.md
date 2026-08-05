@@ -4079,3 +4079,11 @@ Part (b) reduced to diagonal-dominance: sign = DIAGONAL term (v=0, weight 1, mu(
 
 ## 2026-08-05 session close (§699-702) — sign theorem COMPLETELY characterized
 Non-abelian (§699): reads S3 Frobenius classes (cubic +, quadratic 0, principal-split -), effectively 29/29. Range (§702): 100% to n=3000, degrades only near Landau edge T/2pi~11924; range grows with T -> all fixed n asymptotically. Weil-bridge speculation CLOSED (§700: structures genuinely different, stop forcing). dBN lane assessed proxy-limited (§701: record pair consistent with Lambda~0). SIGN THEOREM now complete: statement + structure (Bessel positivity + diagonal dominance) + universality (abelian/GL2/non-abelian) + range. Remaining: rigorous diagonal-dominance (pair-correlation-level, §698b). LEDGER §702. SIGN_THEOREM.md canonical.
+
+## 2026-08-05 overnight (autonomous, §716-719) — superprism + genuine-angle sweep, honest negatives
+Fable superprism (3 lenses): optimist→μ₁/PSLQ; skeptic→consolidate (numerics saturated); connector→dual-cage (deferred). ACTED on all: wrote RH_INVESTIGATION.md (master narrative). Then swept genuine fresh angles overnight, ALL honest negatives/non-levers:
+- μ₁/PSLQ (§717): Suzuki constant b≈−2.17, NO clean closed form (optimist route negative).
+- n=pq rigorous increment (§717): NOT cleaner (same background/resummation gap).
+- Hilbert-Pólya-from-rigidity (§718): DEAD (map is diagonal, no coupling).
+- Báez-Duarte criterion (§719): RH-consistent (d_N²logN≈0.046=2+γ−log4π), coefficients Möbius-structured (links to sign theorem) BUT no lever (signs-vs-sums gap, same as Mertens §709).
+DISCIPLINE HELD: 5 honest negatives banked, no manufacturing, no over-claim (the fatigue-antidote the skeptic flagged). The ONE precise open problem stands (resummation-convergence, RH_INVESTIGATION.md §"single open problem"). Genuine compute-driven exploration is saturated; the honest frontier is analytic (Selberg-CLT-at-zeros + Landau-error). Deposit is clean and coherent: RH_INVESTIGATION.md (narrative), SIGN_THEOREM.md/_PROOF_DRAFT.md, RIGIDITY_RESULT.md, MECHANISM_DERIVATION.md, LEDGER §1-819, PROCESS.md (full provenance incl. all self-corrections).
