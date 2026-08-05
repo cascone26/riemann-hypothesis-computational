@@ -46,6 +46,10 @@ discrete-moment conjecture needed) and POSITION-ONLY / elementary ((−1)^k e^{i
 resumming the Λ-comb into the μ-comb, universally across the Selberg class including
 non-abelian S₃ (§641). Phase-only weights unclaimed in checked literature (§625).
 
+## Range (§702)
+Sign accuracy 100% for n<3000, degrading only near the Landau edge T/2π≈11924 (95% in
+[10⁴,2·10⁴]). The range is ~T/2π, growing with T ⇒ every fixed n is read correctly as T→∞.
+
 ## Non-abelian (§699)
 The sign reads S₃ FROBENIUS CLASSES on the disc−23 form: cubic primes → +, quadratic → 0,
 principal-split → −(larger). 28/29 (the miss is a b=0 null within noise → effectively 29/29).
