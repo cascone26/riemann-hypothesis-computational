@@ -4063,3 +4063,4 @@ Storm: ζ_K ideal-Möbius 11/11 + pole law; inverse map 4–5× contraction; GUE
 
 ## 2026-08-04 — rigidity program (§651–658)
 Inverse map v3 (full Jacobian + anneal): zeros from primes at rms=(1.04±0.03)/(log X)² spacings, three decades clean (0.6% at X=5×10⁵). Local rigidity: single displaced zero repaired to floor. Exclusion: fine-only Newton gets stuck generically (§656 honest correction of §655's scope) but the MULTISCALE schedule repairs 15/15 defect configurations (pair/triple/block × 5 heights) to floor — no alternative self-consistent configuration found anywhere. Law constant is collective (beats pointwise bound 4.4×; covariance-driven). Mechanism program closed earlier (§650, THEOREM_CANDIDATE.md). LEDGER through §658.
+Basin story closed (§659–660): recovery from 4/8/16-spacing global iid corruption to floor (99.7%); frays only at 32 sp via isolated stragglers — one attractor, effectively global. Rigidity program at T~10⁴ complete: §651–660.

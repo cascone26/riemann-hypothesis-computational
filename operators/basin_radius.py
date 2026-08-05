@@ -32,9 +32,9 @@ def solve_anneal(t):
             t = t - np.clip(((th_of(t)/np.pi + 1 + S) - (k-0.5))/Jc, -2.5, 2.5)
     return t
 rng = np.random.default_rng(3)
-for a in (0.5, 1.0, 2.0, 4.0, 8.0):
+for a in (8.0, 16.0, 32.0):
     t0 = g + a*sp*rng.standard_normal(N)
-    t0 = np.sort(t0)
+    t0 = np.sort(np.maximum(t0, 12.0))
     t = solve_anneal(t0.copy())
     e = (t-g)/sp
     rms = np.sqrt(np.mean(e**2)); worst = np.abs(e).max()
