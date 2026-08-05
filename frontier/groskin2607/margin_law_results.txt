@@ -1,0 +1,16 @@
+A) true MIN-EIG vs N (c=30):  is log10(min-eig) linear or quadratic in N?
+  N= 4 dim= 9 log10(min-eig)=-16.08  cascade(lowest5)=['-16.1', '-13.4', '-10.9', '-8.7', '-6.5']
+  N= 6 dim=13 log10(min-eig)=-21.63  cascade(lowest5)=['-21.6', '-18.7', '-16.2', '-14.0', '-11.8']
+  N= 8 dim=17 log10(min-eig)=-26.73  cascade(lowest5)=['-26.7', '-23.9', '-21.4', '-18.9', '-16.6']
+  N=10 dim=21 log10(min-eig)=-31.18  cascade(lowest5)=['-31.2', '-28.2', '-25.6', '-23.3', '-21.0']
+  N=12 dim=25 log10(min-eig)=-35.52  cascade(lowest5)=['-35.5', '-32.7', '-30.1', '-27.5', '-25.0']
+  linear: -2.421N-6.86 (resid 0.37) | quad: +0.0549N^2-3.299N-3.8 (resid 0.061)
+B) true MIN-EIG vs L=log c (N=8):
+  c=   13 L=2.565 log10(min-eig)=-22.11
+  c=   30 L=3.401 log10(min-eig)=-26.73
+  c=  100 L=4.605 log10(min-eig)=-31.36
+  c=  300 L=5.704 log10(min-eig)=-34.62
+  c= 1000 L=6.908 log10(min-eig)=-37.16
+  linear in L: -3.428*L-14.50 (resid 0.92)
+C) cascade geometry (c=30,N=10): consecutive gaps in log10(eig):
+   ['3.0', '2.6', '2.3', '2.3', '2.1', '2.0', '2.1', '2.0', '1.9', '1.8', '1.6', '1.4']
