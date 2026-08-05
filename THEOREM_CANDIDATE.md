@@ -61,6 +61,6 @@ tradeoffs to be checked against the x < T/2π constraint, which our assembly res
 
 ## Error decay VERIFIED at 7× height (§688)
 The resummed-identity deficit (box iii + tail) collapses −0.0269 (T~10⁴) → +0.0001 (T~70k) at
-fixed X=3000 — 270× reduction, confirming the error is ~10^-4 in the theorem's operating regime (X<T/2π) at T~70k — main/error ~3000× (§688b caveats the pure-o(1) reading: partly edge-crossing; matched-edge scan queued). The
+fixed X=3000 — 270× reduction, SETTLED (§689): the deficit is T-STABLE at ~10% of the leading term (matched-edge scan: -0.03 roughly constant in T), NOT o(1) — §688's decay was the edge-crossing confound. This re-confirms the calibrated scope: SIGNS+SUPPORT are the robust asymptotic content (signs never flip), AMPLITUDES carry a stable ~10% slowly-varying correction (the §588/§648 distortion). The theorem is a signs+support theorem; amplitude asymptotics are conjectural to ~10%.. The
 leading main term persists (amplitude law A₁→0.27, §685); the correction vanishes. This is the
 strongest available evidence that the theorem-candidate's architecture closes asymptotically.
