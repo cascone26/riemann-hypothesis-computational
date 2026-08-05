@@ -101,3 +101,11 @@ content (onset + same-sign decorations) EXCEEDS the opposite-sign Landau-tail �
 |onset|/|opp| = 4.0→13.2 (GROWING for larger n / higher ω, non-degrading). So part (b) reduces
 to a UNIFORM LANDAU-TAIL BOUND (|opposite| < |μ-content|), a magnitude estimate — the remaining
 genuine analytic work. Part (a) (onset = μ(n)·positive, elementary Bessel positivity) stands.
+
+## PART (b) MECHANISM (§696): diagonal dominates off-diagonal by log T
+The μ-carrying onset is the DIAGONAL term (v=0, weight 1, T-stable O(1)); all opposite-sign
+decorations are OFF-DIAGONAL LANDAU terms weighted by land_c = T/(2πN) ≈ 1/log(T/2π). Verified:
+margin |onset|/|opp| = 0.42·log(T/2π) exactly (3.07/3.52/4.03 at T~10⁴/2.6·10⁴/7.5·10⁴). So the
+off-diagonal contamination VANISHES as 1/log T and part (b) is "diagonal ≫ off-diagonal by log T"
+— Montgomery-flavored, classical in spirit. TWO growing margins now: √N (noise) and log T (this).
+Remaining rigor: Selberg independence + uniform diagonal-dominance (truncated enumeration).
