@@ -71,3 +71,10 @@ G(log n)=μ(n) with ~6× margin (recon ~85% of true, sign always right). Full ri
 TAIL BOUND (Bessel×Landau product convergence < sign margin) + uniformity in n. The background
 Π J₀(1/√q)→0 is compensated by the Landau comb (§632/634, unconditional). Gap = convergence, not
 pair correlation.
+
+## §714 correction: the tail is a delicate resummation, NOT a simple bound
+The Bessel×Landau expansion does NOT converge order-by-order (background Π J₀→0 uncompensated at
+fixed order; recon worsens as X grows). The Θ(1) magnitude — hence rigorous sign — needs the full
+resummation (§632), analytically delicate. SOLID: off-diagonal is unconditional O(log T/N)
+(Landau); joint equidistribution exact to O(log T/N). NOT SOLID: the resummation convergence.
+The gap is a real hard analytic problem, honestly.
