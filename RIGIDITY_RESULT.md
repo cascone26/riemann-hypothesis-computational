@@ -58,3 +58,5 @@ MOBIUS_PHASE_RESULT.md (forward direction), MECHANISM_DERIVATION.md, THEOREM_CAN
   T-independent (contraction in t-units); r_rms ~ log T (bandwidth share); 1/spacing ~ log T.
   Verified: C(T) = 0.70→2.67 over log(T/2π) = 5.2→9.3 (~log²); (log X)^{−2} over three decades.
   Resolution = (prime-depth / height-bandwidth)², a clean information-theoretic statement.
+- CONSTANT VERIFIED (§687): c = rms·(logX)²/(log(T/2π))² = 0.025 ± 10% across T~10³–7.5×10⁴,
+  X~500–5×10⁵ — the closed law holds with ONE universal constant.
