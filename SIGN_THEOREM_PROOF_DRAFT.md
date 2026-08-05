@@ -78,3 +78,16 @@ fixed order; recon worsens as X grows). The Θ(1) magnitude — hence rigorous s
 resummation (§632), analytically delicate. SOLID: off-diagonal is unconditional O(log T/N)
 (Landau); joint equidistribution exact to O(log T/N). NOT SOLID: the resummation convergence.
 The gap is a real hard analytic problem, honestly.
+## The loaded analytic frontier (2026-08-05, honest)
+The problem reduces to ONE analytic statement, now precisely posed:
+  Let S_X(t) = −(1/π) Σ_{p^m<X} sin(t·m log p)/(m p^{m/2}) (truncated). Prove that
+  A_X(n) := (1/N) Σ_{γ≤T} e^{−iπS_X(γ)} e^{iγ log n}
+  has, for each fixed squarefree n and X = X(T) → ∞ with X < T/2π, sign → μ(n) as T → ∞,
+  with the off-diagonal (non-prime-power) part bounded by O(log T/N) (UNCONDITIONAL, Landau, §713).
+The two available exact handles:
+  (i) the resummed identity A = smooth + [S e^{iΨ}] − i∫S Ψ' e^{iΨ} (§649, converges in X);
+  (ii) the diagonal onset = μ(n)·(positive Bessel product) (§694, elementary), but the naive
+       order-expansion diverges (§714, background ΠJ₀→0) — must use (i)'s resummed form.
+What's needed: a bound |A_X(n) − μ(n)·c(n,T)| < |c(n,T)| with c(n,T)>0, uniform enough in X.
+This is a Selberg-CLT-at-the-zeros + Landau-error problem — the genuine research frontier.
+Everything reduces here; no easier sub-problem remains. NOT solved. Loaded for analytic attack.
