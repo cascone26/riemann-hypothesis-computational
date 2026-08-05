@@ -18,3 +18,14 @@
     (saturation from above) via exact/higher-precision Gram; (b) exact-rational PSD certificate
     on a full-rank sub-basis (first self-certifying Handle); (c) hierarchy: grow basis, track the
     margin decay = shape constraint on any certificate.
+
+## 2026-08-05 — ORGAN 2 FIRST HANDLE (self-certifying, no Lean)
+- Margin basis found: phi_a, a∈{15,25,35,45} → Weil form min-eig=+0.0481032, grid-CONVERGED
+  to 6 digits (stable rmax 60→120, pmax 100k→300k). ("wide 20,40,60,80" min-eig=−0.228 was a
+  grid-TRUNCATION artifact — healed to +1.105 with wider r-grid; internal "RH⇒PSD" check flagged
+  it correctly, NOT an RH violation.)
+- RIGOROUS certificate (Arb enclosure prec=300 → exact-rational LDL^T): all 4 pivots positive
+  rationals, Sylvester minors all +, ρ≤3.45e-24 ≪ 0.048 margin. HANDLE minted (LEDGER §731,
+  proof pointer weil_cert_15_25_35_45.json). Machinery proven end-to-end.
+- Honest: clear-margin nearly-diagonal case. NEXT = hierarchy toward coupled/saturated bases.
+- ORGAN 1a: mathlib cache re-downloading (slow, background, ~5%). Non-blocking.

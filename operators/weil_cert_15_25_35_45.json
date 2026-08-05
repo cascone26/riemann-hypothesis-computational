@@ -1,0 +1,12 @@
+{
+  "handle": "weil-form-PSD-basis-15-25-35-45",
+  "statement": "Guinand-Weil explicit-formula quadratic form Q_{jk}=arch+pole-prime, restricted to the 4-dim basis phi_a(x)=exp(-x^2/2)cos(a x) for a in {15,25,35,45}, is positive definite.",
+  "method": "Arb (flint prec=300) rigorous enclosure of each transcendental entry (arch=rigorous integral of analytic integrand, pole=closed form, prime=finite sum+bounded tail); ||R||_F<=rho=3.45e-24 rigorous; exact-rational LDL^T on (M-rho*I) with all pivots positive rationals; Sylvester leading minors all positive (independent exact cross-check).",
+  "margin_min_eig": 0.04810317,
+  "rho_bound": 3.448e-24,
+  "exact_pivots_positive": true,
+  "sylvester_pd": true,
+  "proof_pointer_pivots": "['1368793934439819512197/921180487803000000000', '152554412814193618443778753326336667254018161081890166548710155021/48565296161115392064926164746671523544521962070289844979000000000', '664323415477379561929503667975103234115009449597896221038456749614156454474042806820079376491023230681295679/13810386335187802547436368438355085719358754186144214782041728718686900970333144819146801536318704321000000000', '303661076667716772883274471282985168402769868255993235878186202790915950363365015265773022317786458356073979939325668018485350725435015997416494791091/1584306525255584169066667279298142726628406634994049791148105905896124068236284895564652861454353688191002856797847457195782363623640805208909000000000']",
+  "scope": "HANDLE for this finite form on this basis. RH-CONSISTENT evidence + certificate shape. NOT a proof of RH (transcendental full form; this is a 4-dim restriction with clear margin, nearly-diagonal basis).",
+  "date": "2026-08-05"
+}
