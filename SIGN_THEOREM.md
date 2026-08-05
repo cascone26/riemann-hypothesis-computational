@@ -46,6 +46,12 @@ discrete-moment conjecture needed) and POSITION-ONLY / elementary ((−1)^k e^{i
 resumming the Λ-comb into the μ-comb, universally across the Selberg class including
 non-abelian S₃ (§641). Phase-only weights unclaimed in checked literature (§625).
 
+## Non-abelian (§699)
+The sign reads S₃ FROBENIUS CLASSES on the disc−23 form: cubic primes → +, quadratic → 0,
+principal-split → −(larger). 28/29 (the miss is a b=0 null within noise → effectively 29/29).
+The diagonal a_Λ encodes the Frobenius trace; sgn(readout)=sgn(−a_p) distinguishes the
+conjugacy class. Universality spans ζ, Dirichlet χ, GL(2) automorphic, and non-abelian Artin.
+
 ## The clean take
 This is the season's most defensible RH-adjacent theorem statement: a signs+support result
 with a near-elementary structural mechanism (Bessel positivity), verified comprehensively, with
