@@ -3,7 +3,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 src = open(os.path.join(HERE, "suzuki_screw_lambda_a.py")).read()
 cut = src.find("if __name__")
 exec(src[:cut] if cut > 0 else src, globals())
-def Qmat(a, M=2400, K=44):
+def Qmat(a, M=2400, K=None):
+    if K is None: K = int(16*a)
     Nmax = int(np.floor(np.exp(2*a))) + 1
     Lam = vonmangoldt_upto(min(Nmax, 30_000_000))
     x = np.linspace(-a, a, M+1); h = x[1]-x[0]
@@ -20,6 +21,8 @@ def Qmat(a, M=2400, K=44):
     return (Q+Q.T)/2/a
 res = []
 for a in (1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0):
+    pass
+for a in (1.5, 2.5, 3.5, 4.5):
     ev = np.linalg.eigvalsh(Qmat(a))
     res.append((a, ev[0], ev[-1]))
     print(f"a={a:.1f} (X~{np.exp(2*a):.0f}): min-eig {ev[0]:+.4e}  min/max {ev[0]/ev[-1]:+.3e}", flush=True)
