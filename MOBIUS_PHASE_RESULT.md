@@ -251,3 +251,13 @@ in the readout (Δ's ~π/2 vs ζ) — measure or derive per family; everything e
    powers), universally (Selberg class + non-abelian S₃), with an exact elementary position-only
    weight and a zero-parameter derivation (Bessel × Landau). Phase-only weights unclaimed in
    checked literature. Rigor queue: cumulant resummation + UNIFORM Landau (Gonek) inputs.
+
+## N=100k VALIDATION + ASYMPTOTIC CONSTANTS (§674–686)
+Odlyzko 100k zeros (T~75k, validated 3e-9): elementary readout 16/16 all μ≠0 channels
+(ω≤4), fine structure confirmed, blind SNR 346 (parity-θ lock carries everything, §683).
+- **Amplitude law** (degree-1 universal): A₁(T) = 0.268 + 1.36/log(T/2π) — finite nonzero
+  limit ≈0.27, clean 1/log T approach; predicts χ₃ at 2.5% (§681/685). Pins §588's
+  slowly-varying distortion to an explicit law with a computed leading constant.
+- **Off-support floor**: |G_off|·√N → const ≈0.2 for the exact position-only weight (sub-CLT,
+  §677/686) — the elementary form is the purest instrument.
+- Companion: RIGIDITY_RESULT.md now carries the closed law rms = c(log(T/2π))²/(log X)².
