@@ -1030,3 +1030,6 @@ OPEN LANES (priority order):
 3. Theorem write-up error bounds (uniform Landau, §669 gives the numerical budget).
 4. Rigidity const T-drift law (§664, factor-2 — derive via §662's r,δ log-corrections).
 All data gate-clean; canonical notes: MOBIUS_PHASE_RESULT (calibrated §648), MECHANISM_DERIVATION+THEOREM_CANDIDATE, RIGIDITY_RESULT (needs §662 derivation + §664–668 appended next pass).
+
+## Day-close 2026-08-04 (LEDGER §670–671)
+Lane 2 opened and honestly positioned: readout X-scan shows crossing ~2.5√(T/2π) (mollifier scale) and dip ~T/2π (Landau edge); lit-gate → Bettin–Gonek θ=∞⟹RH, heavily mined; probably explained-classical. Cheap queued check: dip depth vs measured Landau secondary errors. NEXT SESSION OPENER (fresh context recommended): either (a) the dip-depth check to close lane 2, or (b) softness–Λ with proper scoping (CSV/Lehmer lower-bound framing is classical — only pursue if a genuinely new angle appears), or (c) theorem-candidate error-bound write-up (§669 gives the budget; the most bankable). All notes current: MOBIUS_PHASE (calibrated), MECHANISM+THEOREM_CANDIDATE, RIGIDITY (with §662 derivation).

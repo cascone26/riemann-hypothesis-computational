@@ -40,3 +40,15 @@ configurations, uniformly in T) is the standing analytic target. No Λ bound; No
 operators/inverse_v3.py, inverse_v3_xscan.py, rigidity_probe.py, exclusion_map.py,
 exclusion_anneal.py, basin_radius.py; Δ: inline §661. Companion notes:
 MOBIUS_PHASE_RESULT.md (forward direction), MECHANISM_DERIVATION.md, THEOREM_CANDIDATE.md.
+
+
+## Addendum (§662–668, superprism pass)
+- LAW DERIVED: the solve is DECOUPLED (fixed prime field); midpoint convention removes the
+  half-jump systematic; the remaining accuracy is SELF-LOCALIZATION — the crossing sits on the
+  zero's own smoothed step (ramp slope ~1/δ ≫ θ′), so err ≈ residual × ramp-width. With
+  residual ~ 1/log X and δ* ~ 1/log X (contraction limit): rms ~ (log X)^{−2}, constant O(1).
+  (§657's "collective cancellation" was wrong and is superseded.)
+- T-uniformity: constant drifts 0.74–1.37 across windows (factor 2); shape uniform. [§664]
+- Weil-bridge conjecture (rigidity floor = screw-kernel margin) REFUTED: the screw form's
+  near-null is the global smoothest mode (width ∝ 0.36a), its a^{−2} cost is lowest-mode
+  geometry — a different object from the rigidity floor. [§665–668]
