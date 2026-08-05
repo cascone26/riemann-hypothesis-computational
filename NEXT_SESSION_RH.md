@@ -1021,3 +1021,12 @@ deficit_pred(X) = −i Σ_sidebands [Bessel coefficients of Ψ′e^{iΨ}, prime-
 ## Superprism 2026-08-04 output (path check) — standing orientation
 Verdict: readout+rigidity = consequence-side structure (banked, calibrated §648/663); proof-side lanes = Λ, Weil positivity (screw kernel), softness map. THE BRIDGE (refined, §665): screw-kernel margin ~ h² with h~δ*~1/log X = rigidity floor (log X)^{-2} — same quadratic object? TEST: screw-kernel near-null eigenvectors at h=δ* vs v3 error covariance principal directions. If they match, rigidity = operationalized Weil-saturation structure and the season's machinery fuses with the RH-equivalent lane. Also: §662's law derivation (err ~ r·δ self-localization) is elementary — write it up in RIGIDITY_RESULT.md next pass. Rigidity const drifts 0.74-1.37 across T-windows (§664) — factor-2 uniformity, shape holds.
 Bridge status (§665-667): min/max margin slope −1.6 steepening toward −2 (predicted). DECISIVE RUN: a = 3,4,5,6 with K=20a, M=4000, convergence-checked; then near-null eigenvector width vs delta* and vs v3 error covariance. This is the fusion compute.
+
+## REST STATE 2026-08-04 (post-superprism, LEDGER §662–669)
+Superprism outcome: §657 corrected AND the rigidity law DERIVED (§662: err ≈ residual × ramp-width, self-localization, two 1/log X scales ⇒ quadratic); path verdict banked (§663: twin programs consequence-side); bridge conjecture tested honestly and REFUTED (§665–668: screw-form near-null = global smoothest mode, width ∝ 0.36a — not a δ*-object; the −2 exponent coincidence has a trivial lowest-mode explanation); uniform-Landau measured benign in the active range (§669: max err 0.002 where structure is 0.01+).
+OPEN LANES (priority order):
+1. **Softness–Λ connection** (§668 pointer): the δ²-soft off-line channel map (§587 complete) vs the DBN heat-flow quadratic structure — is the softness coefficient spectrum a Λ-witness? Start from softness_lambda_dbn.py (§566 Calogero proxy, honest-scoped) and the §562 saturation.
+2. **Mollifier-length ↔ X(T)** (§640/668 pointer): the formula's natural truncation X~100–200 at T~10⁴ vs the measured mollifier cliff from the parked Path A — same scale law?
+3. Theorem write-up error bounds (uniform Landau, §669 gives the numerical budget).
+4. Rigidity const T-drift law (§664, factor-2 — derive via §662's r,δ log-corrections).
+All data gate-clean; canonical notes: MOBIUS_PHASE_RESULT (calibrated §648), MECHANISM_DERIVATION+THEOREM_CANDIDATE, RIGIDITY_RESULT (needs §662 derivation + §664–668 appended next pass).
