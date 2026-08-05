@@ -54,3 +54,7 @@ MOBIUS_PHASE_RESULT.md (forward direction), MECHANISM_DERIVATION.md, THEOREM_CAN
   geometry — a different object from the rigidity floor. [§665–668]
 - T-drift (§673): C(T) grows 0.70→1.35 over log(T/2π)=5.2→7.2 then plateaus; direction matches
   the spacing-conversion prediction, precise shape open (low priority).
+- FULL LAW (§675–680, closed): **rms = c·(log(T/2π))²/(log X)² spacings**, c ≈ 0.03 — δ* is
+  T-independent (contraction in t-units); r_rms ~ log T (bandwidth share); 1/spacing ~ log T.
+  Verified: C(T) = 0.70→2.67 over log(T/2π) = 5.2→9.3 (~log²); (log X)^{−2} over three decades.
+  Resolution = (prime-depth / height-bandwidth)², a clean information-theoretic statement.
