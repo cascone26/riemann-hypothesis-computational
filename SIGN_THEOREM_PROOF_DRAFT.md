@@ -63,3 +63,11 @@ So the gap is "prove the clearly-true," not resolve an uncertainty.
 A theorem that the finite products Π_{p≤P} f(γ_k log p) average over zeros to Π_p ⟨f⟩ with an
 error o(1/log T) — a multi-prime generalization of the Landau/Montgomery machinery. Not known;
 this is the frontier. (Everything else above is elementary or routine.)
+
+
+## Verified scope (§713b): unconditional for the SIGN, modulo a uniform tail bound
+The Landau+Bessel reconstruction (unconditional ingredients, finite truncation) captures sgn
+G(log n)=μ(n) with ~6× margin (recon ~85% of true, sign always right). Full rigor needs a UNIFORM
+TAIL BOUND (Bessel×Landau product convergence < sign margin) + uniformity in n. The background
+Π J₀(1/√q)→0 is compensated by the Landau comb (§632/634, unconditional). Gap = convergence, not
+pair correlation.
