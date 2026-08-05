@@ -84,3 +84,12 @@ The amplitude asymptotics (§689, ~10% wobble on top of a ~1.6× same-sign renor
 ORTHOGONAL to the sign. Proof reduces to: (a) leading Euler-product sign = μ(n) [§554/567,
 Landau — established]; (b) residual > −leading [one-sided, large margin]. This is the crisp,
 calibration-clean, RH-adjacent theorem statement to write up.
+
+## Structural sign mechanism (§693 — part (a) made elementary)
+The leading sign = μ(n) follows from ELEMENTARY BESSEL POSITIVITY: coefficient of n^{iγ}
+(squarefree n) = (−1)^{ω(n)} Π_{p|n} J₁(1/√p) Π_{q∤n} J₀(1/√q); since 1/√p ≤ 0.707 < first
+zeros of J₀ (2.405), J₁ (3.832), every factor is strictly positive ⇒ sign = μ(n). The full
+sign = [Bessel: μ(n)·positive] × [sampling E>0] × [residual same-sign, §691] — a chain of
+positive factors. RIGOR: the Euler→Bessel step assumes Selberg oscillator quasi-independence
+(heuristic term-by-term); the positivity is elementary/unconditional. Part (b) (residual bound)
+remains the analytic meat, but part (a) is now near-elementary.
