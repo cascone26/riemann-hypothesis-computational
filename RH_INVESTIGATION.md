@@ -61,3 +61,22 @@ caught and corrected in-session (see PROCESS.md) — is part of the deposit: not
 - The resummation-convergence proof (the reduction above) — the primary frontier.
 - Suzuki's constant μ₁ (Weil positivity margin) — closed form open; high-precision + PSLQ in progress.
 - Rigidity+sign "dual cage" (connector lens) — needs T~10⁷ zeros; likely partly redundant, test deferred.
+
+
+## Overnight completions (2026-08-05→06, §716-725) — folded into the picture
+- FRONTIER FULLY CHARACTERIZED: three independent analytic derivations (Jacobi-Anger/inverse-Euler,
+  diagonal-compensation, delta-function identity) all converge to ONE irreducible target — μ(n) =
+  the sign of the resonance at frequency log n in the plain Fourier transform of the bounded Hardy
+  square wave sgn Z(t)·e^{iθ(t)}. The μ-sign is ALGEBRAIC (inverse Euler product / multiplicativity);
+  the gap is PURELY ANALYTIC CONVERGENCE; error-control uses known machinery (Gonek uniform Landau +
+  Bessel tail); the HARD CORE is the compensation main-term sum's sign (§649 resummation, open).
+- WHY IT IS CONSEQUENCE-SIDE (not a criterion), now understood structurally (§725, Davenport-
+  Heilbronn): the readout's RH-sensitivity cannot be tested by counterexample, because every
+  RH-violating functional-equation series ALSO lacks the Euler product the readout needs (Selberg-
+  class conjecture: Euler product + FE ⟹ RH). Off-line-zeros and Euler-product-loss are inseparable
+  in all available examples — so the off-line effect cannot be isolated. The sign theorem is best
+  read as an UNCONDITIONAL statement about ζ's (verified on-line) zeros and the zero-prime duality,
+  not an RH criterion.
+- SUPERPRISM verdict acted on: optimist (μ₁/PSLQ) → negative (no closed form); skeptic (consolidate)
+  → this document + clean deposit; connector (dual-cage) → deferred (needs T~10⁷). Numerical
+  exploration confirmed SATURATED (5+ honest negatives, ~6 self-corrections, nothing false banked).
