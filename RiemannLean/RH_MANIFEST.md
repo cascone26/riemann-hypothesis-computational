@@ -17,6 +17,7 @@ LEDGER §756). Verified via the propose→verify loop (`verify_loop.py`, gate = 
 - `besselJ0`, `besselJ1` — definitions via power series
 - `besselJ0_series_summable`, `besselJ0_zero` (`J₀(0)=1`)
 - **`besselJ0_pos`** — `J₀(x) > 0` for `|x| < 2` (alternating-series bound `J₀ ≥ 1−(x/2)²`)
+- **`besselJ0_two_term`** — sharp two-term enclosure `|J₀(x)−(1−(x/2)²)| ≤ (x/2)⁴/4` for `|x|<2`
 - **`besselJ1_pos`** — `J₁(x) > 0` for `0<x`, `x²<8`
 - `besselJ0_pos_inv_sqrt`, `besselJ1_pos_inv_sqrt` — `> 0` at `1/√n`, `n ≥ 2`
 - `besselJ0_pos_of_prime`, `besselJ1_pos_of_prime` — stated for primes

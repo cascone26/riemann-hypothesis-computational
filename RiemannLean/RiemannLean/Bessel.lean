@@ -265,6 +265,12 @@ theorem besselJ0_two_term {x : ℝ} (hx : |x| < 2) :
   have : y ^ 2 / 4 = (x / 2) ^ 4 / 4 := by rw [hy]; ring
   rw [this] at hb; exact hb
 
+/-- Explicit sharp upper bound (corollary of `besselJ0_two_term`): `J₀(x) ≤ 1−(x/2)²+(x/2)⁴/4`. -/
+theorem besselJ0_le_two_term {x : ℝ} (hx : |x| < 2) :
+    besselJ0 x ≤ 1 - (x / 2) ^ 2 + (x / 2) ^ 4 / 4 := by
+  have h := besselJ0_two_term hx
+  rw [abs_le] at h; linarith [h.2]
+
 /-- Uniform lower bound over primes: `J₀(1/√n) ≥ 7/8` for `n ≥ 2` (since `(1/√n/2)² = 1/(4n) ≤ 1/8`).
 Makes the sign-theorem Bessel product positivity robust with an explicit margin. -/
 theorem besselJ0_inv_sqrt_ge {n : ℕ} (hn : 2 ≤ n) : (7 : ℝ) / 8 ≤ besselJ0 (1 / Real.sqrt n) := by
