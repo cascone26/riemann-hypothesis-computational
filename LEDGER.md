@@ -15229,3 +15229,31 @@ identity `Q = Vᵀ V` as a HYPOTHESIS — establishing it (V real, from primes+d
 zero locations) IS RH and stays open. This is the honest labeled reduction, same discipline as the sign
 theorem's `hD`. Next candidate: bridge this to the Loeffler–Stoll formal RH statement in mathlib
 (arXiv 2503.00959) — connect `weil_posSemidef_of_gram` to their `RiemannHypothesis` proposition.
+
+## §774 — Saturation edge of finite Weil certification = the Nyquist limit (zero spacing)
+
+Scouted the practical frontier of rigorous finite Weil-positivity certification
+(`operators/weil_saturation_scout.py`, fast build validated to 1e-5 vs Arb). The Weil form Q=VᵀV (§772)
+is non-coercive (min-eig→0⁺ as basis densifies); Arb certification needs min-eig(Q) > ρ (enclosure
+floor ~1e-11, §757). Mapped min-eig vs basis density in three windows:
+  [15,55]: certifiable to N=11 (spacing 4.0, min-eig 3.3e-9); N=12 (sp 3.64) min-eig → 2.7e-15 (cliff).
+  [15,45]: certifiable to N=8  (spacing 4.29, min-eig 3.9e-3); N=9  (sp 3.75) → 3.0e-15.
+  [20,40]: certifiable to N=6  (spacing 4.0, min-eig 7.3e-3); N=7  (sp 3.33) → 2.1e-15.
+The collapse is a CLIFF (1e-3 → 1e-15 in one refinement step), not gradual.
+
+**The edge = the mean zero spacing.** At window center T, mean zero spacing = 2π/log(T/2π):
+  [15,55] T=35: zero-spacing 3.658 — edge in [3.64,4.0] ✓
+  [15,45] T=30: zero-spacing 4.019 — edge in [3.75,4.29] ✓
+  [20,40] T=30: zero-spacing 4.019 — edge in [3.33,4.0] ✓
+All three match. **Finite Weil certification saturates exactly when the basis spacing reaches the
+Nyquist limit set by the zero density.**
+
+**Why (via §772 Gram structure):** basis spacing > zero spacing ⇒ each φ_a resolves DISTINCT zeros ⇒
+V full-rank ⇒ min-eig O(1), certifiable. Basis spacing < zero spacing ⇒ multiple φ_a compete for the
+SAME zeros ⇒ V rank-deficient ⇒ min-eig collapses to the numerical floor. A Nyquist/sampling threshold.
+
+**REPORT:** the practical frontier of finite Weil verification is the zero-density Nyquist scale; the
+"hardest" test-function directions (near-null of Q) are those resolving individual zeros at that scale.
+Any proof of full (all-test-function) Weil positivity must control exactly this critical-resolution
+regime. **No Handle for RH:** this maps the certification frontier and its cause, not a proof. Next:
+rigorously (Arb) certify the densest still-certifiable basis (the edge) to upgrade it to HANDLE-tier.
