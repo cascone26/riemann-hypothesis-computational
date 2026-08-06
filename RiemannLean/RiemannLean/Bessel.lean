@@ -104,3 +104,9 @@ theorem besselJ0_pos_inv_sqrt {n : ℕ} (hn : 2 ≤ n) : 0 < besselJ0 (1 / Real.
   have hpos : (0 : ℝ) < Real.sqrt n := by linarith
   rw [abs_of_pos (by positivity), div_lt_iff₀ hpos]
   nlinarith [hsqrt]
+
+/-- Positivity of a finite Bessel product `∏ p J₀(1/√p)` over any finset of naturals `≥ 2`
+(the `Π_q J₀(1/√q)` factor of the diagonal onset, LEDGER §694). -/
+theorem besselJ0_prod_pos {S : Finset ℕ} (hS : ∀ p ∈ S, 2 ≤ p) :
+    0 < ∏ p ∈ S, besselJ0 (1 / Real.sqrt p) :=
+  Finset.prod_pos (fun p hp => besselJ0_pos_inv_sqrt (hS p hp))
