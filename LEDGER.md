@@ -15147,3 +15147,31 @@ below; RH's hard core is localized to the sub-first-zero regime. The EXACT zero-
 (the Weil-form↔spectral transform for this specific g_cross kernel) is NOT yet pinned — a real TODO,
 not a settled fact. **No Handle for RH.** Self-corrected-error count this session ↑ (this is the
 discipline working: I tested my own interpretive claim and it failed, so I retracted it same-session).
+
+## §771 — CORRECTION to §770: the identity DOES hold — it's QUADRATIC (sum of squares over zeros)
+
+§770 retracted §769's "D(a)=zero-sum" claim after testing D against the LINEAR sum 2Σφ̂_a(γ). That was
+the wrong test. The correct identity is the QUADRATIC one (the Weil form is Q_{jk}=Σ_ρ φ̂_j(γ_ρ)φ̂_k(γ_ρ),
+so the diagonal is a sum of SQUARES):
+
+   **D(a) = arch(a,a)+pole(a,a)−prime(a,a) = Σ_ρ φ̂_a((ρ−½)/i)² = 2 Σ_{γ>0} φ̂_a(γ)²**
+
+Verified (`weil_diagonal_curve.py` + zeros10k) against the rigorous Arb D(a), ratio ≈ 1 to 4 digits:
+  a=8: 1.4208e-16/1.420e-16=1.0006 · a=10: 1.1816e-7/1.180e-7=1.0014 · a=12: 3.2965e-2/3.296e-2=1.0001
+  a=13: 1.0000 · a=14: 1.0000 · a=15: 0.9999 · a=20: 1.0003. (Residuals = finite-10k-zero truncation.)
+So §769's interpretation was RIGHT and §770's retraction was itself the error — corrected here.
+
+**Why this is the clean RH statement.** φ̂_a(r)=√(2π)/2(e^{−(r−a)²/2}+e^{−(r+a)²/2}). D(a) is computed
+from the ARITHMETIC side (digamma integral + pole + von Mangoldt primes) WITHOUT assuming RH, yet it
+equals Σ_ρ φ̂_a((ρ−½)/i)². IF all ρ are on the line (γ real), each term is (real)² ⇒ D(a)≥0 manifestly.
+If some ρ were OFF the line (ρ=β+iγ, β≠½), that term is φ̂_a(γ−i(β−½))² — φ̂_a of a COMPLEX argument,
+whose square can be negative/complex and could drive D(a)<0. Hence **D(a)≥0 is exactly the single-test-
+function Weil positivity, and it grazes 0 below the first zero because φ̂_a(γ)² is exp-small when a sits
+below every γ** (§769's shape, now with the correct closed form).
+
+**Standing rigorous facts:** D(a)≥0 CERTIFIED (Arb) for a≥8 (down to +1.42e-16 at a=8); below that the
+SOS value 2Σφ̂_a(γ)² is genuinely positive but < Arb's ~1e-21 resolution. The scaling reduction +
+non-coercivity (§769) stand. **No Handle for RH:** this is the Weil criterion restated as a verified
+identity on one test-function family; proving D(a)≥0 for ALL a from the arithmetic side alone (no zeros)
+is RH — still open. But the sum-of-squares structure is now the exact, verified target. Net this
+session: several self-caught errors (von-Mangoldt, grid artifact, §770 wrong-sum) — discipline holding.
