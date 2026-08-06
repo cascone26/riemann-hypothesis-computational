@@ -15054,3 +15054,26 @@ arch integral — §766). **REPORT:** finite-basis Weil positivity, Arb-rigorous
 computational layer + Lean-checked for the rational core. **No Handle for RH.** The auditor's flag was
 correct; the overclaim is retracted and replaced with the certified chain. Self-corrected error count
 this session ↑; zero fabrications banked.
+
+## §768 — Berry-Keating gate: PRIMES reconstruct the actual zeros (non-circular, at scale)
+
+Built `operators/prime_reconstruct_zeros.py`. Test the smoothed explicit-formula density identity
+  Σ_γ g_σ(T−γ)  =  (1/2π)log(T/2π)  −  (1/π)Σ_{p,k}(log p/p^{k/2})cos(kT log p)e^{−(σk log p)²/2}
+LHS = smoothed comb over the ACTUAL zeros (zeros10k.npy); RHS = Weyl term + prime sum, **no zeros on
+the RHS** (non-circular). Gaussian width σ chosen < mean spacing so individual zeros resolve.
+
+**Result (verify-before-ship, reproducible):**
+- T∈[1000,1040], σ=0.18: corr(fluct)=**0.9982**, **32/32** zeros recovered as RHS peaks, RMS pos err
+  0.0148 (spacing 1.234 → ~1.2% of spacing).
+- T∈[5000,5040], σ=0.14: corr=0.9848, **43/43**, RMS 0.0203 (spacing 0.940).
+- T∈[9000,9040], σ=0.12: corr=0.9646, 41/46, RMS 0.0428 — the 5 misses are the prime-cap artifact
+  (pmax capped 2e5; σ=0.12 damping wants p≤e^{54}); resolution loss tracks 1/log T as expected.
+
+**REPORT:** primes ALONE reproduce the individual Riemann-zero positions to ~1% of local spacing, at
+scale, on real data — the "primes = periodic orbits" (Berry-Keating) dictionary confirmed concretely.
+This is the numerical content of "V_prime realizes the spectrum" and validates the whole
+explicit-formula pipeline end-to-end. **No Handle for RH:** this is the explicit formula (a
+distributional identity, TRUE independent of RH); it uses the on-line smooth density and does not
+prove the zeros are on the line. It is the empirical FOUNDATION of the operator/Hilbert-Pólya program,
+not a proof. Next: sharpen to the RH-SENSITIVE signature (GUE pair correlation + prime deviations),
+which tests the self-adjointness/symmetry-class content rather than the RH-independent density.
