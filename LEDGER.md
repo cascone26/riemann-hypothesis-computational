@@ -15175,3 +15175,36 @@ non-coercivity (§769) stand. **No Handle for RH:** this is the Weil criterion r
 identity on one test-function family; proving D(a)≥0 for ALL a from the arithmetic side alone (no zeros)
 is RH — still open. But the sum-of-squares structure is now the exact, verified target. Net this
 session: several self-caught errors (von-Mangoldt, grid artifact, §770 wrong-sum) — discipline holding.
+
+## §772 — The organ-2 Weil form IS a GRAM matrix of zero-evaluation vectors (verified, unifying)
+
+Generalized §771's diagonal identity to the full matrix and VERIFIED it to machine precision
+(`operators/weil_gram_identity.py`):
+
+   **Q_{jk} = arch(a_j,a_k)+pole−prime  =  2 Σ_{γ>0} φ̂_{a_j}(γ) φ̂_{a_k}(γ)  =  ⟨v_j, v_k⟩**,
+   v_j := (√2 · φ̂_{a_j}(γ))_{γ>0},  φ̂_a(r)=√(2π)/2(e^{−(r−a)²/2}+e^{−(r+a)²/2}).
+
+Arithmetic side (primes + digamma integral, no zeros) vs Gram side (from zeros10k), max abs diff:
+  close {14,15,16,17}: 2.9e-15,  Gram rank 1/4  (all 4 sample the single zero 14.13 → min-eig 0)
+  dense [20,24]/5:     4.7e-15,  Gram rank 2/5
+  separated {15,25,35,45}: 5.3e-15, Gram rank 4/4 (full) → min-eig +0.04810
+Machine-precision agreement in EVERY case, full-rank and rank-deficient alike.
+
+**This unifies §769 completely.** The scaling behavior is now explained, not just observed:
+- separated a_j ⇒ the vectors v_j sample DISJOINT sets of zeros ⇒ nearly orthogonal ⇒ Q≈diagonal,
+  min-eig = smallest ‖v_j‖² (the smallest diagonal, +0.048).
+- dense/close a_j ⇒ the v_j all sample the SAME few zeros ⇒ nearly linearly dependent ⇒ Q
+  rank-deficient ⇒ min-eig → 0⁺. The non-coercivity (§769) is Gram rank-deficiency.
+
+**The clean RH statement (rigorous, standard Guinand–Weil structure — verified here on the apparatus):**
+Q is computed from the ARITHMETIC side with NO assumption on zero locations, yet equals ⟨v_j,v_k⟩ with
+v_j real IFF every γ is real. So **Q PosSemidef for all bases ⟺ {v_j} are real vectors ⟺ all γ∈ℝ ⟺ RH.**
+An off-line zero ρ=β+iγ (β≠½) injects φ̂_a(γ−i(β−½)) — a COMPLEX coordinate — turning Q into a Gram
+matrix under a bilinear (not positive) form, which can fail PSD. The whole difficulty of RH-via-Weil is
+proving, from primes+digamma alone, that this matrix has the Gram-of-REAL-vectors structure.
+
+**REPORT:** end-to-end verification that our organ-2 Weil apparatus computes exactly the Guinand–Weil
+Gram matrix of the zeros (confirms §731/§757/§767 certificates are the genuine object, and explains
+their min-eig behavior). **No Handle for RH:** this is the criterion restated + verified as an identity,
+not a proof. It sharpens the target: prove the Gram/PSD structure arithmetically. Everything §768–772
+cross-checks (primes↔zeros §768, SOS diagonal §771, Gram off-diagonal §772). Apparatus integrity: solid.
