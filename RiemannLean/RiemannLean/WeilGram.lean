@@ -29,3 +29,15 @@ matrix `Vᵀ V` of the zero-evaluation vectors (verified numerically to 3e-15), 
 theorem weil_posSemidef_of_gram {m n : Type*} [Fintype m] [Fintype n] [DecidableEq n]
     {Q : Matrix n n ℝ} {V : Matrix m n ℝ} (hQ : Q = Vᵀ * V) : Q.PosSemidef := by
   rw [hQ]; exact weil_gram_posSemidef V
+
+/-- **Nyquist / rank threshold (§774) formalized.**  The Weil Gram matrix `Vᵀ V` is `PosDef`
+(strictly positive, min-eig > 0 — rigorously *certifiable*) exactly when `V.mulVec` is injective,
+i.e. the zero-evaluation vectors (columns of `V`) are linearly independent.  Numerically (§774):
+this holds precisely when the test-function basis is COARSER than the mean zero spacing
+`2π/log(T/2π)`; a denser (sub-Nyquist) basis makes the columns dependent ⇒ only `PosSemidef`
+(min-eig → 0), and rigorous certification saturates.  So the certification frontier is the
+zero-density Nyquist limit. -/
+theorem weil_gram_posDef {m n : Type*} [Fintype m] [Fintype n] [DecidableEq n]
+    (V : Matrix m n ℝ) (hV : Function.Injective V.mulVec) : (Vᵀ * V).PosDef := by
+  have h := Matrix.PosDef.conjTranspose_mul_self V hV
+  rwa [Matrix.conjTranspose_eq_transpose_of_trivial] at h

@@ -4129,3 +4129,13 @@ single-Gaussian slice, necessary-not-sufficient but a clean single-variable ineq
 off-diagonal / full-form positivity via the Gram structure; (c) proof-angle Problem 1 (sign theorem hD)
 via Gonek uniform + Selberg CLT (arXiv 2507.04150). PUBLISH items still awaiting Jacob's go: mathlib
 Bessel PR, bridge to Loeffler–Stoll formal RH statement (arXiv 2503.00959).
+
+── continued 2026-08-06 (autonomous, overnight) — §775 HANDLE + Nyquist-tracks-height ──
+§775: rigorous PD certificate at the Nyquist edge, 11×11 basis [15,55] spacing 4.0 (Arb rad 5e-21,
+ρ 1.14e-15, min-eig 3.3e-9, exact LDL^T all pivots>0). Certificate ladder now 4×4→6×6→11×11.
+Nyquist law confirmed: cert saturation edge = mean zero spacing 2π/log(T/2π). Higher-freq window
+[30,70] (T=50, zero-spacing 3.03) certifies DENSER (N=14, spacing 3.08) — the edge tracks zero density
+at height. Launching rigorous 14×14 [30,70] cert (§776) to HANDLE-confirm at higher frequency.
+HONEST: every direct analytic attack on Weil-PD-from-arithmetic is RH-complete (amplitude bound dead:
+primes are correlated-not-free exactly = RH). Producing verified certificate/structure increments;
+analytic proof awaits a genuine new idea (the Gonek-uniform resummation both attacks converge on, §732).

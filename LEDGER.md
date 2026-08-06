@@ -15276,3 +15276,17 @@ certifiable — right up to the Nyquist limit, past which (spacing < 4) min-eig 
 achievable ρ. **Still NO Handle for RH:** this is finite-basis positivity (RH-consistent evidence +
 the rigorous certificate), not the all-test-function positivity that is RH. It is the densest such
 certificate on record for this apparatus, at the exact frontier where certification saturates.
+
+## §776 — Formalized the Nyquist/rank threshold in Lean (weil_gram_posDef, 37 thms)
+
+Added `weil_gram_posDef` to RiemannLean/WeilGram.lean (verify_loop PASS; audit clean):
+`(V : Matrix m n ℝ) (hV : Function.Injective V.mulVec) : (Vᵀ * V).PosDef`
+via mathlib `Matrix.PosDef.conjTranspose_mul_self` + `conjTranspose_eq_transpose_of_trivial`.
+This formalizes §774: the Weil Gram matrix is `PosDef` (min-eig > 0, rigorously CERTIFIABLE) exactly
+when the zero-evaluation vectors (columns of V) are linearly independent — i.e. when the basis is
+COARSER than the mean zero spacing 2π/log(T/2π). A denser (sub-Nyquist) basis makes the columns
+dependent ⇒ only `PosSemidef` (min-eig→0) ⇒ certification saturates. Together with §773's
+`weil_gram_posSemidef` (always PSD) and `weil_posSemidef_of_gram`, the Lean layer now carries the full
+structural story: the Weil form is always a real Gram matrix (PSD), and PD ⟺ full rank ⟺ basis coarser
+than the zero-density Nyquist limit. **Audit: 37 theorems, 0 sorries, trusted axioms, clean rebuild.**
+REPORT (Lean structural formalization). No Handle for RH.

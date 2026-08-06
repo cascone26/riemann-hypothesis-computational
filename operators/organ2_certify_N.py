@@ -6,7 +6,7 @@ import sys
 from flint import arb, acb, ctx
 import sympy as sp
 from sympy import primerange, Rational
-ctx.prec = 250
+ctx.prec = 320
 
 arg = sys.argv[1] if len(sys.argv) > 1 else "15,55,11"
 parts = [float(x) for x in arg.split(",")]
