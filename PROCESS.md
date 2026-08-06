@@ -9741,3 +9741,37 @@ line: understand the organ-2 Weil apparatus's exact structure.
 the scaling/non-coercivity (rank-deficiency) and states RH as "Gram-of-real-vectors." Verified end-to-
 end that the apparatus computes the genuine Guinand–Weil object. Not a proof — criterion restated as a
 verified identity; the sharpened target is proving the Gram/PSD structure from primes+digamma alone.
+
+## Arc — 2026-08-06 cont. (Sam/Opus, §773–776): formalization + Nyquist certification frontier
+
+After §772 (Weil form = Gram matrix), the autonomous continuation ("go auto, keep going" → "good night
+… find another way"):
+
+**Decision:** with the direct arithmetic proof of Weil-PD provably RH-complete (every bound reduces to
+RH — the amplitude bound §(this arc) is dead because Kronecker alignment would give D<0 unless the
+primes are correlated exactly = RH), pursue reliable VERIFIED increments in two lanes: (a) formalize
+the verified structure in Lean, (b) extend the rigorous certificate ladder, keeping the analytic
+frontier loaded for a genuine idea.
+
+**§773** — formalized §772: `weil_gram_posSemidef` + `weil_posSemidef_of_gram` (the Weil form is PSD
+because it's a real Gram matrix VᵀV). Fixed the audit's stale hardcoded theorem count (now dynamic).
+
+**§774** — scouted the certification saturation edge (fast Arb-validated float): min-eig collapses off a
+CLIFF exactly when basis spacing hits the mean zero spacing 2π/log(T/2π). Confirmed across 3 windows.
+Explained by §772 Gram rank-deficiency = Nyquist sampling. Fork tested + rejected: low-frequency
+arch-negativity reduction (r₀=6.29) and kernel-SOS decomposition — both real facts, neither a proof
+lever (positivity challenge is uniform across frequencies via the prime term).
+
+**§775** — HANDLE: rigorously certified the densest edge basis (11×11, [15,55], spacing 4.0) PD via
+Arb + exact-rational LDL^T (ρ 1.1e-15 ≪ min-eig 3.3e-9). Certificate ladder 4×4→6×6→11×11. Optimized
+the certifier (precomputed von-Mangoldt arb data, dropped working precision) for ~4× speedup.
+
+**§776** — formalized the §774 Nyquist threshold: `weil_gram_posDef` (VᵀV PosDef iff V.mulVec injective
+= full rank = basis coarser than zero-density Nyquist). Confirmed the edge tracks zero-spacing AT HEIGHT
+(higher-freq window [30,70] certifies denser, N=14 spacing 3.08, matching predicted 3.03). Lean layer now
+carries the full structural story: always-PSD (Gram) + PD-iff-full-rank (Nyquist).
+
+**Honest state:** structural lane thoroughly mapped + formalized (37 Lean thms); certificate ladder at
+the Nyquist frontier; analytic proof RH-complete from every probed angle (the Gonek-uniform resummation
+both the certificate and sign-theorem attacks converge on, §732, is the loaded frontier awaiting a
+genuine idea). Discipline: ~5 self-caught errors this session, 0 fabrications.
