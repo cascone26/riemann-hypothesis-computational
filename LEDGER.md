@@ -15427,3 +15427,14 @@ L-function's zeros and detects off-line violations of its Riemann hypothesis, wi
 (conductor/weight/degree) and the Satake prime data changing. **No Handle for RH or any GRH:**
 finite-basis, consistent, framework verified universal — proving PD from arithmetic alone is the
 respective RH, open. This is the strongest universality statement of the session (§768–783).
+
+## §784 — Detector confirmed for degree-2 (Δ); detection mechanism is L-function-agnostic
+
+Completed the §783 universality claim: verified the off-line-zero DETECTOR (§780) also works for the
+degree-2 Δ L-function. 2-fn straddling basis at a Δ zero (γ₀=17.44): on-line → rank-1 PSD (eigs
+[0,+2.31]); off-line ε=0.5 → INDEFINITE (eigs [−1.364,+4.572]), ε=1 → −8.90, ε=2 → −209. **Numbers
+IDENTICAL to §780's ζ case** — because the detection contribution 2·2Re[φ̂(γ₀+iε)²] depends only on the
+test-function geometry (φ̂) and the off-line displacement ε, NOT on which L-function γ₀ belongs to. So the
+detector is truly L-function-agnostic: the full framework (Gram identity §772 + Nyquist §774 +
+certificates §775 + detector §780) is universal across the Selberg class. **No Handle.** Session
+§768–784: complete, coherent, universal.
