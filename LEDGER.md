@@ -15312,3 +15312,26 @@ a fixed singularity strip), NOT an RH obstruction and NOT a positivity failure (
 arch representation avoiding the Im=½ strip. **REPORT** (height-tracking, Arb-validated float);
 rigorous HANDLE remains §775's 11×11. No Handle for RH. Not spinning further on the tooling issue —
 the scientific result (edge = zero-density Nyquist, tracking height) is established.
+
+## §779 — Tested (and refuted) a midpoint-factorization reduction; sharpens why diagonal ≠ sufficient
+
+Fresh proof idea, tested before banking. Large-a,b, the Weil kernel approximately FACTORS:
+  K(a,b) = arch+pole−prime ≈ e^{−(a−b)²/4} · D((a+b)/2),
+a Gaussian in (a−b) times the single-Gaussian curve D (§769/§771) at the midpoint (the diagonal
+K(a,a)≈D(a) recovers §769). IF `g(a−b)·h((a+b)/2)` were PD whenever `h≥0`, then 2-variable Weil
+positivity would reduce to the 1-variable D(a)≥0 — a real lever. **Tested the claim numerically
+(`h`-sweep, 25-pt basis): FALSE.** min-eig of the kernel matrix:
+  h=1 (const): +0.126 (PD) · h=smooth bump: +2e-4 (PD) · h=1+cos(m): **−0.052** · h=|sin 2m|: **−0.70**
+  · h=cos²(m): **−0.15** · h=1+0.99cos(3m): **−0.97**.
+So `h≥0` does NOT imply the kernel is PD — fast-oscillating nonneg `h` break it. Reduction refuted;
+no false lever banked (verify-before-ship).
+
+**Sharpening (the value):** this concretely shows WHY single-Gaussian positivity D(a)≥0 is NECESSARY
+but NOT SUFFICIENT for the full Weil form (matching §772's off-diagonals-matter). The full form is PD
+not because D≥0, but because the TRUE D(m)=2Σφ̂_m(γ)² is **PD-compatible** (slowly varying — a smoothed
+zero-density) — and it is slowly-varying/PD-compatible precisely BECAUSE the zeros are real (RH). An
+off-line zero would inject fast/complex oscillation into D, of exactly the kind that breaks kernel PD.
+So RH ⟺ "D is PD-compatible," a strictly stronger condition than D≥0. **No Handle for RH:** another
+angle honestly reduced to RH-completeness (every reduction on this family does — the criterion has no
+hidden shortcut here). Net: the diagonal/off-diagonal split is now understood as ≥0 vs
+PD-compatibility, and the latter is the RH-content.
