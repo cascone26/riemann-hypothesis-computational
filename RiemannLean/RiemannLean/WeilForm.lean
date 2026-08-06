@@ -50,3 +50,20 @@ theorem weilPrimeTerm_add (g h : ℝ → ℝ) (N : ℕ) :
   rw [← Finset.sum_add_distrib]
   refine Finset.sum_congr rfl (fun n _ => ?_)
   ring
+
+
+/-- The assembled (finite-prime-truncated) Weil functional: given the archimedean integral `A`,
+the pole value `P`, and the prime-side test function `g`, `W = A + P − Σ_{n≤N} Λ(n)/√n·g(log n)`.
+RH is equivalent to `0 ≤ W` for all test functions (in the `N→∞` limit) — the criterion this
+module scaffolds toward.  Here `A`, `P`, `g` are the components a test function induces. -/
+noncomputable def weilForm (A P : ℝ) (g : ℝ → ℝ) (N : ℕ) : ℝ := A + P - weilPrimeTerm g N
+
+/-- Weil functional with zero prime data reduces to the archimedean + pole part. -/
+theorem weilForm_zero_prime (A P : ℝ) (N : ℕ) : weilForm A P (fun _ => 0) N = A + P := by
+  unfold weilForm; rw [weilPrimeTerm_zero]; ring
+
+/-- The Weil functional is nonneg iff the archimedean+pole part dominates the prime term
+(the positivity criterion, restated). -/
+theorem weilForm_nonneg_iff (A P : ℝ) (g : ℝ → ℝ) (N : ℕ) :
+    0 ≤ weilForm A P g N ↔ weilPrimeTerm g N ≤ A + P := by
+  unfold weilForm; constructor <;> intro h <;> linarith
