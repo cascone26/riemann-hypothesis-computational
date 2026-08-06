@@ -15257,3 +15257,22 @@ SAME zeros ⇒ V rank-deficient ⇒ min-eig collapses to the numerical floor. A 
 Any proof of full (all-test-function) Weil positivity must control exactly this critical-resolution
 regime. **No Handle for RH:** this maps the certification frontier and its cause, not a proof. Next:
 rigorously (Arb) certify the densest still-certifiable basis (the edge) to upgrade it to HANDLE-tier.
+
+## §775 — HANDLE: rigorous PD certificate at the Nyquist saturation edge (11×11, spacing 4.0)
+
+Certified the densest still-certifiable basis (§774 edge) rigorously (`operators/organ2_certify_N.py`,
+prec 250, precomputed von-Mangoldt data + exact-rational LDL^T). Basis = 11 functions on [15,55],
+spacing 4.0 (= mean zero spacing at T≈35). Result:
+  max Arb entry radius = 5.13e-21;  ρ ≤ 1.140e-15 (rad + denom-10^15 rationalization, all Arb-bounded);
+  float min-eig(M) = 3.318e-09;  margin min-eig − ρ ≈ 3.318e-09 > 0;
+  exact rational LDL^T of (M − ρ·I): ALL 11 pivots > 0 (True) ⇒ M − ρI ≻ 0 ⇒ Weil form ≻ 0 RIGOROUSLY.
+Pivots: [1.486, 0.0527, 0.0551, 2.5e-5, 0.0743, 3.9e-3, 0.0791, 2.822, 1.145, 0.761, 0.435].
+
+**HANDLE (Arb + exact-rational LDL^T): the organ-2 Guinand–Weil form is positive-definite on an
+11-test-function basis at the zero-density Nyquist edge.** Extends the certificate ladder 4×4 (§731) →
+6×6 (§757) → 11×11 (here), pushing rigorous finite Weil verification to the saturation frontier mapped
+in §774. The small margin (3.3e-9) with ρ ~1e-15 five orders below confirms the edge is genuinely
+certifiable — right up to the Nyquist limit, past which (spacing < 4) min-eig collapses below any
+achievable ρ. **Still NO Handle for RH:** this is finite-basis positivity (RH-consistent evidence +
+the rigorous certificate), not the all-test-function positivity that is RH. It is the densest such
+certificate on record for this apparatus, at the exact frontier where certification saturates.
