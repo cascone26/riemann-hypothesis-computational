@@ -15290,3 +15290,25 @@ dependent ⇒ only `PosSemidef` (min-eig→0) ⇒ certification saturates. Toget
 structural story: the Weil form is always a real Gram matrix (PSD), and PD ⟺ full rank ⟺ basis coarser
 than the zero-density Nyquist limit. **Audit: 37 theorems, 0 sorries, trusted axioms, clean rebuild.**
 REPORT (Lean structural formalization). No Handle for RH.
+
+## §777 — Nyquist edge tracks zero-density at HEIGHT (float-confirmed; §775 is the rigorous anchor)
+
+Tested the §774 prediction that the certification edge = mean zero spacing 2π/log(T/2π), which DECREASES
+with height ⇒ higher-frequency windows should certify DENSER bases. Float scout (Arb-validated build,
+`weil_saturation_scout.py`-style), window [30,70] (center T=50, predicted edge spacing 3.03):
+  certifiable to N=14 (spacing 3.077, min-eig 1.26e-4); N=15 (spacing 2.857) collapses to 8.4e-15.
+  Edge in [2.86, 3.08] ⇒ matches predicted 3.03. ✓
+Compared to §775's [15,55] (T=35, edge spacing 4.0, N=11): the higher window certifies a DENSER, LARGER
+basis (14 functions, spacing 3.08) — **the Nyquist edge tracks the zero density at height**, quantitatively.
+
+**Rigorous status (honest):** §775's 11×11 [15,55] PD certificate stands as the rigorous HANDLE anchor.
+The rigorous 14×14 [30,70] cert was attempted 3× (prec 250/320/300, single-call + panel-split arch
+integration) — all built the full matrix but hit a NaN from `acb.integral` instability on the
+high-frequency (a≈70) archimedean integrals: the integrand's ψ-digamma poles at Im=±½ bound the
+analytic strip, so the Bernstein ellipses of wide panels breach the poles and the enclosure fails.
+This is a NUMERICAL-INTEGRATION tooling limitation (rigorous quadrature of high-frequency integrands near
+a fixed singularity strip), NOT an RH obstruction and NOT a positivity failure (float min-eig is safely
++1.26e-4 > 0). A future rigorous high-freq cert needs sub-½-width panels (≫ slower) or a contour-shifted
+arch representation avoiding the Im=½ strip. **REPORT** (height-tracking, Arb-validated float);
+rigorous HANDLE remains §775's 11×11. No Handle for RH. Not spinning further on the tooling issue —
+the scientific result (edge = zero-density Nyquist, tracking height) is established.

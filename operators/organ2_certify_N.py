@@ -6,7 +6,7 @@ import sys
 from flint import arb, acb, ctx
 import sympy as sp
 from sympy import primerange, Rational
-ctx.prec = 320
+ctx.prec = 300
 
 arg = sys.argv[1] if len(sys.argv) > 1 else "15,55,11"
 parts = [float(x) for x in arg.split(",")]
@@ -24,13 +24,20 @@ def Omega(r):
     z1=acb(arb(1)/4)+acb(0,1)*r/2; z2=acb(arb(1)/4)-acb(0,1)*r/2
     return (z1.digamma()+z2.digamma())/2-acb(LOGPI)
 def arch_entry(aj,ak):
-    R=arb(240)
+    R=240.0
     def integrand(x,analytic):
         if analytic:
             im=x.imag
             if float(im.upper())>=0.5 or float(im.lower())<=-0.5: return acb(arb('nan'))
         return phihat_acb(aj,x)*phihat_acb(ak,x)*Omega(x)
-    return acb.integral(integrand, acb(-R), acb(R)).real/(2*PI)
+    # split into panels (width 12) so each has bounded oscillation → robust vs acb.integral NaN on
+    # high-frequency integrands; sum of rigorous panel integrals is still rigorous.
+    tot=acb(0); step=12.0; x=-R
+    while x < R-1e-9:
+        b=min(x+step, R)
+        tot += acb.integral(integrand, acb(arb(str(x))), acb(arb(str(b))))
+        x=b
+    return tot.real/(2*PI)
 def pole_entry(aj,ak):
     r=acb(0,arb(1)/2); return 2*(phihat_acb(aj,r)*phihat_acb(ak,r)).real
 # --- precompute von Mangoldt prime-power data ONCE (log n, Λ(n)/√n) as arb ---
