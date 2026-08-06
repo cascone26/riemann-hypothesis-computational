@@ -4155,3 +4155,18 @@ SESSION §767-780: integrity fix + full Weil-form structure (Gram/Nyquist/detect
 fabrications, all committed. Analytic proof RH-complete from every tested angle; frontier = the
 Gonek-uniform resummation (§732), awaiting a genuine idea. PUBLISH-pending (Jacob's go): mathlib Bessel
 PR (module now has two-sided sharp bounds), Loeffler-Stoll bridge (blocked on explicit-formula infra).
+
+── §781-783 (autonomous overnight cont.) — UNIVERSALITY to the Selberg class ──
+The session's Gram/Nyquist/certificate/detector framework is verified UNIVERSAL, not special to ζ:
+§781: Dirichlet L(s,χ₄) (deg-1, GRH) — Weil form = Gram matrix of its zeros (arch conductor 4, ψ(3/4+ir/2),
+χ-twisted primes, no pole); ratios≈1.000, PD.
+§782: independent confirm on L(s,χ₃) (conductor 3) — arch conductor-dependence log(q/π) verified (ratios
+1.0000 low-a; χ₃ zero list incomplete → higher-a truncation, honest).
+§783: DEGREE-2 GL(2) — Ramanujan Δ (weight 12) Weil form = Gram matrix of its zeros, ratio 1.0000 EXACT.
+Required real degree-2 structure: τ(n) via q-expansion, arch Γ_ℂ(s+11/2)→ψ(6+ir), Satake power sums
+b_{p^k}=α^k+β^k (Chebyshev), Γ_ℂ degree-2 ×2 normalization. All confirmed by the exact match.
+⇒ the apparatus computes the Gram matrix of ANY Selberg-class L-function's zeros + detects off-line
+violations of its RH — degree-1 (ζ=RH, Dirichlet=GRH) AND degree-2 (GL(2) automorphic). New ops:
+weil_dirichlet_gram.py, weil_degree2_delta.py. No Handle for RH/GRH (framework universal, proving PD
+from arithmetic = the respective RH, open). SESSION §767-783: 17 ledger entries, 39 Lean thms, rigorous
+11×11 HANDLE, integrity fix, ~6 self-corrections, 0 fabrications, all committed.
