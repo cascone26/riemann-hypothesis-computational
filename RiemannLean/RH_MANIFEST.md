@@ -51,6 +51,9 @@ the single unproven analytic input is an **explicit labeled hypothesis**, not hi
   `operators/weil_gram_identity.py`), so this is the STRUCTURAL reason the certificate is PSD.
 - **`weil_posSemidef_of_gram`** — if the Weil form `Q = Vᵀ V` with `V` real (⟺ zeros real ⟺ RH),
   then `Q.PosSemidef`. The RH-conditional structural certificate.
+- **`weil_gram_posDef`** — `Vᵀ V` is `PosDef` (min-eig > 0, rigorously *certifiable*) iff `V.mulVec`
+  is injective (columns independent). Formalizes the §774 Nyquist threshold: certifiable ⟺ basis
+  coarser than the mean zero spacing `2π/log(T/2π)`; sub-Nyquist ⟹ rank-deficient ⟹ only PSD.
 
 ### `RiemannLean/WeilForm.lean` — start of the RH positivity criterion
 - `archWeight` — the archimedean density `Re[½(ψ(¼+ir/2)+ψ(¼−ir/2))]−log π` (on `Complex.digamma`)
