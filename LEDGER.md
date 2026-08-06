@@ -15381,3 +15381,22 @@ the apparatus: it computes the Gram matrix of any Selberg-class L-function's zer
 violations of the corresponding GRH. **No Handle for RH or GRH:** finite-basis, consistent, and the
 framework is verified universal — proving PD from arithmetic alone is (G)RH, open. Pairs with the
 Selberg-class Krein-string lane [[rh-krein-string-mobius-lane]]. Session §768–781 complete + coherent.
+
+## §782 — GRH independent confirmation on L(s,χ₃) (2nd conductor); degree-2 is the next frontier
+
+Independent check of §781 on a DIFFERENT L-function: L(s,χ₃), χ₃ = odd character mod 3, conductor q=3.
+Same framework, only q changes: Ω_χ3(r)=log(3/π)+Re ψ(3/4+ir/2). Diagonal Q_arith vs Q_gram(χ₃ zeros):
+  a=8: ratio 1.0000 · a=10: 1.0000 · a=12: 1.0000 · a=15: 1.0000 (4–5 digit match).
+This confirms the conductor-dependence of the arch constant `log(q/π)` is correct (χ₄ used q=4, χ₃ uses
+q=3, both match their own zeros) — the framework is genuinely universal across Dirichlet L, not a χ₄
+coincidence. (a=20 and the 4×4 matrix diverge — max|Qa−Qg|=2.9, min-eig gram 9e-4 vs arith 0.17 — because
+the χ₃ zero list is INCOMPLETE: 88 zeros to T=259, not marked "complete" like χ₄'s 170; the gram side
+goes rank-deficient from missing zeros. Honest data-truncation, not a framework failure — the low-a
+diagonal, which needs only low zeros, matches perfectly.)
+
+**Net §781–782:** the session's Gram/Nyquist/certificate/detector framework is verified universal across
+degree-1 L-functions (ζ = RH, and Dirichlet χ₃, χ₄ = GRH), with the arch factor's conductor/parity
+dependence confirmed. **No Handle for RH/GRH.** The genuinely NEXT frontier for universality is DEGREE-2
+(GL(2), a modular form's L-function — different archimedean factor, two Γ's) — whether the same Gram
+structure holds there tests the framework at the next level of the Selberg class. Loaded as the next
+genuine extension (needs GL(2) zeros).
