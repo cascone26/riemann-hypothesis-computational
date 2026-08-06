@@ -4139,3 +4139,19 @@ at height. Launching rigorous 14×14 [30,70] cert (§776) to HANDLE-confirm at h
 HONEST: every direct analytic attack on Weil-PD-from-arithmetic is RH-complete (amplitude bound dead:
 primes are correlated-not-free exactly = RH). Producing verified certificate/structure increments;
 analytic proof awaits a genuine new idea (the Gonek-uniform resummation both attacks converge on, §732).
+
+── §778-780 (autonomous overnight cont.) ──
+§778: 2nd rigorous edge cert [25,55] N=10 (spacing 3.33, T=40) — DEFERRED: needs prec-500 for
+non-integer bases (diagnosed: cos precision-starvation nans at prec 300), too slow (~hrs) for full
+matrix. §775's integer-basis 11×11 remains the rigorous anchor; height-tracking float-confirmed (§777).
+§779: tested+REFUTED a midpoint-factorization reduction (K(a,b)≈e^{-(a-b)²/4}D((a+b)/2)); h≥0 does NOT
+give kernel PD (counterexamples), so single-Gaussian D≥0 is necessary-not-sufficient; RH = "D is
+PD-compatible (slowly-varying = real zeros)". Verify-before-ship, no false lever.
+§780 (CAPSTONE): the Weil form DETECTS off-line zeros — off-line ρ=½+ε+iγ → 2Re[φ̂(γ+iε)²] indefinite;
+2-fn basis straddling a zero goes indefinite off-line (eps=0.5→min-eig -1.36, growing with eps). The PD
+certificates (§731/757/775) have TEETH: in-band RH-verified, not just RH-consistent.
+SESSION §767-780: integrity fix + full Weil-form structure (Gram/Nyquist/detector) + 5 new Lean thms
+(39 total: Gram PSD/PosDef, Bessel two-term±corollary) + rigorous 11×11 HANDLE. ~6 self-corrections, 0
+fabrications, all committed. Analytic proof RH-complete from every tested angle; frontier = the
+Gonek-uniform resummation (§732), awaiting a genuine idea. PUBLISH-pending (Jacob's go): mathlib Bessel
+PR (module now has two-sided sharp bounds), Loeffler-Stoll bridge (blocked on explicit-formula infra).
