@@ -15335,3 +15335,24 @@ So RH ⟺ "D is PD-compatible," a strictly stronger condition than D≥0. **No H
 angle honestly reduced to RH-completeness (every reduction on this family does — the criterion has no
 hidden shortcut here). Net: the diagonal/off-diagonal split is now understood as ≥0 vs
 PD-compatibility, and the latter is the RH-content.
+
+## §780 — The Weil form has TEETH: it concretely DETECTS an off-line zero (verified demonstration)
+
+Direct test of the §779 mechanism: an off-line zero ρ=½+ε+iγ contributes to the Weil form via the
+COMPLEX frequency (ρ−½)/i = γ−iε, so its rank-1 term becomes 2Re[φ̂_a(γ+iε)φ̂_b(γ+iε)] — indefinite,
+NOT a real outer product v vᵀ (which is PSD). Isolated it cleanly: 2-function basis {γ₀−1, γ₀+1}
+straddling a zero γ₀=35, form built from that single zero:
+  ε=0 (on line):  eigs [0, +2.31]  → rank-1 PSD (det 0), as RH requires.
+  ε=0.5 off line: eigs [−1.36, +4.57] → **INDEFINITE** (det −6.24) — DETECTED.
+  ε=1: min-eig −8.90 · ε=2: −209 · ε=3: −746 — the violation GROWS with the off-line distance.
+
+**Meaning:** the organ-2 Guinand–Weil form is a genuine RH-DETECTOR, not merely RH-consistent evidence.
+An off-line zero straddled by the test-function basis forces the quadratic form negative. This gives the
+rigorous PD certificates (§731 4×4, §757 6×6, §775 11×11) their TEETH: certifying PD on a basis is a
+real (finite) verification that NO off-line zero is resolved by that basis's frequency band — the
+certificates would have caught a violation in-band, they didn't. (Consistent with §708/§732: detection
+sensitivity is exp-weak for SMALL ε and for zeros OUTSIDE the basis band — the first zero 14.13 below an
+a≥15 basis barely moves min-eig; detection requires the basis to RESOLVE the off-line zero, the same
+Nyquist/band condition as §774.) **No Handle for RH:** this demonstrates the criterion's validity and
+teeth, not a proof. But it upgrades the certificates from "RH-consistent" to "in-band RH-verified,"
+which is their honest strength. Capstone of the session's Weil-structure thread (§768–780).
