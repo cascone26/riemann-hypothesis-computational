@@ -1,10 +1,15 @@
 # RiemannLean — verified formalization manifest
 
 Machine-checked Lean 4 formalization of the Riemann sign theorem's skeleton and the start of the
-Weil positivity criterion. **All theorems below build clean (`lake build RiemannLean`) and depend
-only on the trusted kernel axioms `{propext, Classical.choice, Quot.sound}` — 0 sorries.**
-Verified via the propose→verify loop (`verify_loop.py`), whose gate enforces the axiom set via
-`#print axioms` (LEDGER §733/§735). Provenance: `handles.jsonl`, LEDGER §743–751.
+Weil positivity criterion. **24 theorems, 0 sorries, all depend only on the trusted kernel axioms
+`{propext, Classical.choice, Quot.sound}`.** Integrity is enforced by `./audit_modules.sh`
+(force-clean-rebuild + `#print axioms` on every theorem — prevents stale-olean false-success,
+LEDGER §756). Verified via the propose→verify loop (`verify_loop.py`, gate = `#print axioms`,
+§733/§735). Provenance: `handles.jsonl`, LEDGER §743–757.
+
+> **Run `./audit_modules.sh` to re-verify all 24 theorems from a clean build.**
+> The `Bessel.lean` module (J₀/J₁ definitions + positivity + two-sided bounds) is a self-contained,
+> mathlib-contribution-quality development — mathlib currently has no Bessel functions.
 
 ## Modules
 
