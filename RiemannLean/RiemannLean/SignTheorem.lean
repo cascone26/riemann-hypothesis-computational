@@ -47,3 +47,25 @@ theorem sign_theorem_conditional {n : ℕ} (hn : Squarefree n)
     Real.sign D = (moebius n : ℝ) := by
   rw [hD]
   exact onset_sign_eq_moebius hn (besselJ0_prod_pos hS)
+
+
+/-- Positivity of the ratio product `∏_{p∣n} [J₁/J₀](1/√p)` (the ω(n) onset factors, §694):
+each `J₁(1/√p)/J₀(1/√p) > 0` since numerator and denominator are both positive. -/
+theorem bessel_ratio_prod_pos {T : Finset ℕ} (hT : ∀ p ∈ T, 2 ≤ p) :
+    0 < ∏ p ∈ T, besselJ1 (1 / Real.sqrt p) / besselJ0 (1 / Real.sqrt p) :=
+  Finset.prod_pos fun p hp =>
+    div_pos (besselJ1_pos_inv_sqrt (hT p hp)) (besselJ0_pos_inv_sqrt (hT p hp))
+
+/-- **Sign Theorem — full onset form (conditional).**  For squarefree `n`, if the diagonal onset
+`D` equals `μ(n)` times the true Bessel onset `[∏_{p∣n} J₁/J₀(1/√p)] · [∏_q J₀(1/√q)]` (the
+analytic input `hD`, Jacobi–Anger onset at order `ω(n)`, §694/§722 — resummation still open),
+then `sgn D = μ(n)`.  Both Bessel products are proven strictly positive; only `hD` is assumed. -/
+theorem sign_theorem_onset {n : ℕ} (hn : Squarefree n) {T S : Finset ℕ}
+    (hT : ∀ p ∈ T, 2 ≤ p) (hS : ∀ q ∈ S, 2 ≤ q) {D : ℝ}
+    (hD : D = (moebius n : ℝ) *
+      ((∏ p ∈ T, besselJ1 (1 / Real.sqrt p) / besselJ0 (1 / Real.sqrt p))
+        * ∏ q ∈ S, besselJ0 (1 / Real.sqrt q))) :
+    Real.sign D = (moebius n : ℝ) := by
+  rw [hD]
+  exact onset_sign_eq_moebius hn
+    (mul_pos (bessel_ratio_prod_pos hT) (besselJ0_prod_pos hS))
