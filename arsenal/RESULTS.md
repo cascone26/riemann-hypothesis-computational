@@ -1,6 +1,6 @@
 # RH Arsenal — Verification Results
 
-Full verification pass. Verdict: **ALL GREEN** (44.2s).
+Full verification pass. Verdict: **ALL GREEN** (44.4s).
 
 Every tool below was RUN (not assumed). Status = its selftest result against known-answer cases. HANDLE-tier claims are audited for a real proof-pointer on disk.
 
