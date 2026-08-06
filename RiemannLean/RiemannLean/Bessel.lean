@@ -236,6 +236,14 @@ theorem besselJ0_inv_sqrt_ge {n : ℕ} (hn : 2 ≤ n) : (7 : ℝ) / 8 ≤ bessel
   have hval : (1 / Real.sqrt n / 2) ^ 2 = 1 / (4 * n) := by
     rw [div_pow, div_pow, one_pow, hsq]; ring
   rw [hval] at hlb
-  have : (1 : ℝ) / (4 * n) ≤ 1 / 8 := by
-    rw [div_le_div_iff (by positivity) (by norm_num)]; nlinarith [hn2]
+  have : (1 : ℝ) / (4 * n) ≤ 1 / 8 :=
+    one_div_le_one_div_of_le (by norm_num) (by linarith [hn2])
   linarith [hlb, this]
+
+/-- Quantitative product margin: `∏ J₀(1/√p) ≥ (7/8)^|S|` over any finset of naturals `≥ 2`.
+Gives the sign-theorem Bessel product an explicit uniform positivity margin. -/
+theorem besselJ0_prod_ge {S : Finset ℕ} (hS : ∀ p ∈ S, 2 ≤ p) :
+    (7 / 8 : ℝ) ^ S.card ≤ ∏ p ∈ S, besselJ0 (1 / Real.sqrt p) := by
+  calc (7 / 8 : ℝ) ^ S.card = ∏ _p ∈ S, (7 / 8 : ℝ) := by rw [Finset.prod_const]
+    _ ≤ ∏ p ∈ S, besselJ0 (1 / Real.sqrt p) :=
+        Finset.prod_le_prod (fun p _ => by norm_num) (fun p hp => besselJ0_inv_sqrt_ge (hS p hp))
