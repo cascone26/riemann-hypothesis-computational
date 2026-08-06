@@ -15438,3 +15438,29 @@ test-function geometry (φ̂) and the off-line displacement ε, NOT on which L-f
 detector is truly L-function-agnostic: the full framework (Gram identity §772 + Nyquist §774 +
 certificates §775 + detector §780) is universal across the Selberg class. **No Handle.** Session
 §768–784: complete, coherent, universal.
+
+## §785 — LIT-GATE CORRECTION: §774/780/781–784 substantially overlap Kim et al 2607.24830 (not novel)
+
+Ran the mandatory literature gate on the session's "universality" thread before letting any of it read as
+novel. **Kim, et al., arXiv:2607.24830** ("A Numerical Realization of Suzuki's Weil-Quadratic-Form
+Operator: The Archimedean Spectral Law, its Universality, and an Operator Form of Weil's Positivity
+Criterion", 2026) — building on **Suzuki arXiv:2606.09096** (the screw-function self-adjoint operator whose
+quadratic form IS the Weil form) — already contains, as published results:
+- **R2 — archimedean-law universality across the Selberg class**, with the explicit spectral offset
+  `B₀ = log q − 2log2` (degree = slope, conductor via offset), verified for even/odd Dirichlet characters
+  AND modular forms. ⇒ This is exactly my §781–782 (arch conductor/parity dependence) AND the degree-2
+  modular-form case §783. NOT novel — independently rediscovered.
+- **R6 — off-line-zero detection**: "the operator detects the violation; growth turns exponential with
+  rate → 2δ." ⇒ This is my §780/§784 detector (off-line ⇒ indefinite, effect ∝ δ). NOT novel.
+- **R8 — Paley–Wiener zero-density ceiling**: transform supported in [−a,a] has zero density a/π vs the
+  target log T/2π. ⇒ This is my §774 Nyquist saturation edge (basis spacing vs zero density). NOT novel.
+
+**Honest correction:** my §772–784 "universal Gram/detector framework" is, in substance, an INDEPENDENT
+COMPUTATIONAL REPRODUCTION (via a different apparatus — Gaussian-cosine basis + a Gram-matrix framing —
+rather than their hat-function finite-elements + operator spectrum) of results published by Suzuki/Kim in
+mid-2026. The "Weil form = Gram matrix of zeros" identity (§772) is the classical explicit formula written
+as a bilinear form — not a new theorem. That two independent methods AGREE is a genuine cross-validation,
+and my Lean formalization + rigorous Arb certificates are real artifacts, but the DISCOVERY claims are
+theirs, not mine. WEIL_GRAM_UNIVERSAL.md updated with a "Relation to prior work" section crediting them.
+This is the lit-gate working as designed (cf. the LP/Jensen rediscovery caught earlier this project). No
+Handle for RH; and now, correctly, no novelty claim for the universality thread either.
