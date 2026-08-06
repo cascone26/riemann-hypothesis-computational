@@ -6,13 +6,15 @@ import sys
 from flint import arb, acb, ctx
 import sympy as sp
 from sympy import primerange, Rational
-ctx.prec = 300
+ctx.prec = 500
 
 arg = sys.argv[1] if len(sys.argv) > 1 else "15,55,11"
 parts = [float(x) for x in arg.split(",")]
 if len(parts) == 3 and parts[2] == int(parts[2]) and parts[2] <= 40:
-    lo, hi, N = parts[0], parts[1], int(parts[2])
-    AV = [arb(str(lo + (hi-lo)*k/(N-1))) for k in range(N)]
+    lo, hi, N = int(parts[0]), int(parts[1]), int(parts[2])
+    # EXACT arb-rational basis (avoids arb() parsing non-terminating decimal strings → NaN in downstream
+    # exp/erfc; the decimal-string route only worked for integer bases like §775's {15,19,...,55}).
+    AV = [arb(lo) + arb(hi-lo)*arb(k)/arb(N-1) for k in range(N)]
 else:
     AV = [arb(str(x)) for x in parts]
 nb = len(AV)
@@ -30,14 +32,9 @@ def arch_entry(aj,ak):
             im=x.imag
             if float(im.upper())>=0.5 or float(im.lower())<=-0.5: return acb(arb('nan'))
         return phihat_acb(aj,x)*phihat_acb(ak,x)*Omega(x)
-    # split into panels (width 12) so each has bounded oscillation → robust vs acb.integral NaN on
-    # high-frequency integrands; sum of rigorous panel integrals is still rigorous.
-    tot=acb(0); step=12.0; x=-R
-    while x < R-1e-9:
-        b=min(x+step, R)
-        tot += acb.integral(integrand, acb(arb(str(x))), acb(arb(str(b))))
-        x=b
-    return tot.real/(2*PI)
+    # single adaptive call (acb.integral subdivides to respect the ψ-pole strip |Im|<½); this is what
+    # worked for §775 (a≤55). Panel-split was WORSE: wide panels' Bernstein ellipses breach the poles.
+    return acb.integral(integrand, acb(arb(str(-R))), acb(arb(str(R)))).real/(2*PI)
 def pole_entry(aj,ak):
     r=acb(0,arb(1)/2); return 2*(phihat_acb(aj,r)*phihat_acb(ak,r)).real
 # --- precompute von Mangoldt prime-power data ONCE (log n, Λ(n)/√n) as arb ---
