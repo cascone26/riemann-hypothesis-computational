@@ -3,7 +3,22 @@
 **Status:** verified numerical result + machine-checked structural formalization. **No proof of RH or any
 GRH.** This document records what was established (an identity, its consequences, and finite rigorous
 certificates) and states honestly what remains open (the positivity from arithmetic alone, which *is* the
-respective Riemann hypothesis). Session LEDGER §767–784 (2026-08-06). All claims have a code/proof pointer.
+respective Riemann hypothesis). Session LEDGER §767–785 (2026-08-06). All claims have a code/proof pointer.
+
+> **Relation to prior work — this is not a novelty claim (LEDGER §785).** After completing the below, a
+> literature check found that the substantive findings here are **already published**, independently, by
+> **Suzuki (arXiv:2606.09096)** — the screw-function self-adjoint operator whose quadratic form *is* the
+> Weil form — and **Kim et al (arXiv:2607.24830)**, whose results include: the **archimedean-law
+> universality across the Selberg class** with offset `B₀ = log q − 2log2` (their R2, verified for
+> Dirichlet characters and modular forms — covering §3's χ₃/χ₄ and Δ cases); **off-line-zero detection**
+> with residual blow-up rate `→2δ` (their R6 — §3's detector); and the **Paley–Wiener zero-density
+> ceiling** (their R8 — the Nyquist edge). The "Weil form = Gram matrix of zeros" identity below is the
+> classical explicit formula written as a bilinear form. So this document is an **independent
+> computational reproduction** — via a different apparatus (Gaussian-cosine test functions + a Gram-matrix
+> framing, vs their finite-element / operator-spectrum route) — plus a Lean formalization of the abstract
+> structure. That two independent methods agree is a real cross-validation; the **discoveries are theirs,
+> not ours.** The genuinely local artifacts are the machine-checked Lean development (Bessel functions —
+> absent from mathlib — and the abstract Gram theorems) and the rigorous Arb certificates.
 
 ---
 
