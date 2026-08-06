@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Data.Real.StarOrdered
 
 /-!
 # The Lean–Arb certificate bridge (concept)
@@ -31,3 +32,14 @@ theorem rat_matrix_posSemidef :
     simp only [dotProduct, Matrix.mulVec, Matrix.of_apply, Fin.sum_univ_two,
       Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, star_trivial]
     nlinarith [sq_nonneg (x 0 + x 1), sq_nonneg (x 0), sq_nonneg (x 1)]
+
+
+/-- **General LDL^T certificate** (the reusable Arb→Lean lifting): any matrix `L · diag(d) · Lᴴ`
+with `d ≥ 0` is `PosSemidef`.  An organ-2 rigorous Weil certificate is an exact-rational LDL^T
+factorization `M = L·diag(d)·Lᴴ` with nonneg rational pivots `d`; this theorem turns ANY such
+certificate into a machine-checked Lean proof of positive-semidefiniteness — the only step left
+outside Lean is the Arb interval enclosure `M ⪯ (true Weil matrix)` (§755, transcendental). -/
+theorem ldlt_posSemidef {n : Type*} [Fintype n] [DecidableEq n]
+    {d : n → ℝ} (hd : 0 ≤ d) (L : Matrix n n ℝ) :
+    (L * Matrix.diagonal d * Lᴴ).PosSemidef :=
+  (Matrix.PosSemidef.diagonal hd).mul_mul_conjTranspose_same L
