@@ -10,9 +10,9 @@ for m in $MODS; do rm -f .lake/build/lib/lean/RiemannLean/$m.olean; done
 echo "[audit] clean rebuild..."
 lake build $(for m in $MODS; do echo RiemannLean.$m; done) 2>&1 | grep -iE "error|Built RiemannLean|completed|failed" | tail -5
 echo "[audit] axiom check on all theorems..."
-{ echo "import RiemannLean.Bessel"; echo "import RiemannLean.SignTheorem"; echo "import RiemannLean.WeilForm";
-  echo "open ArithmeticFunction";
-  grep -hE "^theorem" RiemannLean/{Bessel,SignTheorem,WeilForm,Certificate}.lean | sed -E 's/theorem ([A-Za-z0-9_]+).*/#print axioms \1/'; } > RiemannLean/_Audit.lean
+{ for m in $MODS; do echo "import RiemannLean.$m"; done;
+  echo "open ArithmeticFunction Matrix";
+  for m in $MODS; do grep -hE "^theorem" RiemannLean/$m.lean; done | sed -E 's/theorem ([A-Za-z0-9_]+).*/#print axioms \1/'; } > RiemannLean/_Audit.lean
 BAD=$(lake env lean RiemannLean/_Audit.lean 2>&1 | grep -iE "sorry|error" | grep -viE "propext|Classical.choice|Quot.sound" || true)
 rm -f RiemannLean/_Audit.lean
 if [ -n "$BAD" ]; then echo "[audit] FAIL — untrusted axioms / errors:"; echo "$BAD"; exit 1; fi
