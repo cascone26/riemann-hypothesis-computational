@@ -4,7 +4,7 @@
 set -e
 export PATH="$HOME/.elan/bin:$PATH"
 cd "$(dirname "$0")"
-MODS="Bessel SignTheorem WeilForm Certificate"
+MODS="Bessel SignTheorem WeilForm Certificate IntervalBounds"
 echo "[audit] removing oleans to force genuine recompilation..."
 for m in $MODS; do rm -f .lake/build/lib/lean/RiemannLean/$m.olean; done
 echo "[audit] clean rebuild..."
@@ -16,5 +16,5 @@ echo "[audit] axiom check on all theorems..."
 BAD=$(lake env lean RiemannLean/_Audit.lean 2>&1 | grep -iE "sorry|error" | grep -viE "propext|Classical.choice|Quot.sound" || true)
 rm -f RiemannLean/_Audit.lean
 if [ -n "$BAD" ]; then echo "[audit] FAIL — untrusted axioms / errors:"; echo "$BAD"; exit 1; fi
-N=$(grep -hcE "^theorem" RiemannLean/{Bessel,SignTheorem,WeilForm,Certificate}.lean | paste -sd+ - | bc)
+N=$(grep -hcE "^theorem" RiemannLean/{Bessel,SignTheorem,WeilForm,Certificate,IntervalBounds}.lean | paste -sd+ - | bc)
 echo "[audit] PASS — $N theorems, all trusted axioms {propext, Classical.choice, Quot.sound}, 0 sorries."
