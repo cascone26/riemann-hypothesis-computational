@@ -67,3 +67,13 @@ theorem weilForm_zero_prime (A P : ℝ) (N : ℕ) : weilForm A P (fun _ => 0) N 
 theorem weilForm_nonneg_iff (A P : ℝ) (g : ℝ → ℝ) (N : ℕ) :
     0 ≤ weilForm A P g N ↔ weilPrimeTerm g N ≤ A + P := by
   unfold weilForm; constructor <;> intro h <;> linarith
+
+
+/-- The Weil prime term is homogeneous (scalar-linear) in the test function; with
+`weilPrimeTerm_add` this gives full linearity — the basis for the Weil form's quadratic structure. -/
+theorem weilPrimeTerm_smul (c : ℝ) (g : ℝ → ℝ) (N : ℕ) :
+    weilPrimeTerm (fun x => c * g x) N = c * weilPrimeTerm g N := by
+  unfold weilPrimeTerm
+  rw [Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun n _ => ?_)
+  ring
