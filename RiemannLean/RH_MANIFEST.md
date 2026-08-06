@@ -1,13 +1,13 @@
 # RiemannLean — verified formalization manifest
 
 Machine-checked Lean 4 formalization of the Riemann sign theorem's skeleton and the start of the
-Weil positivity criterion. **30 theorems, 0 sorries, all depend only on the trusted kernel axioms
+Weil positivity criterion. **34 theorems, 0 sorries, all depend only on the trusted kernel axioms
 `{propext, Classical.choice, Quot.sound}`.** Integrity is enforced by `./audit_modules.sh`
 (force-clean-rebuild + `#print axioms` on every theorem — prevents stale-olean false-success,
 LEDGER §756). Verified via the propose→verify loop (`verify_loop.py`, gate = `#print axioms`,
 §733/§735). Provenance: `handles.jsonl`, LEDGER §743–757.
 
-> **Run `./audit_modules.sh` to re-verify all 30 theorems from a clean build.**
+> **Run `./audit_modules.sh` to re-verify all 34 theorems from a clean build.**
 > The `Bessel.lean` module (J₀/J₁ definitions + positivity + two-sided bounds) is a self-contained,
 > mathlib-contribution-quality development — mathlib currently has no Bessel functions.
 
@@ -36,10 +36,14 @@ the single unproven analytic input is an **explicit labeled hypothesis**, not hi
 - `ldlt_posSemidef` — **general lifting**: any `L·diag(d)·Lᴴ` with `d ≥ 0` is `PosSemidef` (lifts
   any organ-2 exact-rational LDL^T Weil certificate to a Lean proof)
 - `rat_matrix_posSemidef`, `weil_style_cert_3x3` — concept + concrete SOS certificates
-- **`organ2_weil_cert_posSemidef`** — the ACTUAL organ-2 Guinand–Weil form (basis a∈{15,25,35,45},
-  min-eig≈0.048) machine-checked `PosSemidef` via its exact LDL^T sum-of-squares. The real RH
-  *criterion*, verified for a finite test-function basis. (Remaining gap §755: the Arb interval
-  enclosure `M ⪯ true-Weil-matrix` stays outside Lean.)
+- **`organ2_weil_certM_posSemidef`** — the organ-2 Guinand–Weil form matrix `M` (basis a∈{15,25,35,45},
+  min-eig≈0.048), machine-checked `PosSemidef` via its exact LDL^T sum-of-squares. `M`'s entries are
+  the rationalized **Arb-certified** midpoints (radius ≤ 5e-21, `operators/gen_lean_weil_cert_rigorous.py`);
+  with `weil_posSemidef_of_dominates` + the Arb bound ‖Q−M‖₂ ≤ 6.2e-11 ≪ min-eig, the true Weil form
+  is PD. Remaining gap §766: the `(Q−M)⪰0` enclosure stays outside Lean (mathlib has no verified
+  interval evaluator for the digamma arch integral).
+- `organ2_weil_cert_posSemidef` — earlier float-provenance version (denom 10⁴, superseded by the
+  Arb one above; kept + docstring-corrected per §767 auditor finding).
 
 ### `RiemannLean/WeilForm.lean` — start of the RH positivity criterion
 - `archWeight` — the archimedean density `Re[½(ψ(¼+ir/2)+ψ(¼−ir/2))]−log π` (on `Complex.digamma`)

@@ -61,10 +61,12 @@ theorem weil_style_cert_3x3 :
                mul_nonneg (by norm_num : (0:ℝ) ≤ 346/177) (sq_nonneg (x 2)),
                sq_nonneg (x 0), sq_nonneg (x 1), sq_nonneg (x 2)]
 
-/-- **Machine-checked organ-2 Weil-positivity certificate**, basis φ_a(x)=e^{-x²/2}cos(ax),
-a∈{15,25,35,45}.  The rigorous Guinand–Weil form Q=arch+pole−prime (operators/organ2_certify.py,
-min-eig≈0.048), rationalized (rounding ≪ margin), is `PosSemidef` — verified by its exact LDL^T
-sum-of-squares.  The Lean end of the Arb → exact-rational Weil certificate (§731/§761/§762). -/
+/-- **Machine-checked organ-2 Weil-positivity certificate (float-provenance, superseded)**, basis
+φ_a(x)=e^{-x²/2}cos(ax), a∈{15,25,35,45}.  This `M` was rationalized (denom 10⁴) from a
+FLOAT numpy-trapezoid evaluation of the Weil form (operators/gen_lean_weil_cert.py) — so its
+entries are NOT rigorously certified; only the `PosSemidef` *of this rational M* is machine-checked.
+For the genuinely Arb-certified version (Arb-ball midpoints, radius ≤ 5e-21) see
+`organ2_weil_certM_posSemidef` below (§767 provenance correction). -/
 theorem organ2_weil_cert_posSemidef :
     (Matrix.of ![![(14859/10000 : ℝ), (0 : ℝ), (0 : ℝ), (0 : ℝ)], ![(0 : ℝ), (7853/2500 : ℝ), (0 : ℝ), (0 : ℝ)], ![(0 : ℝ), (0 : ℝ), (481/10000 : ℝ), (0 : ℝ)], ![(0 : ℝ), (0 : ℝ), (0 : ℝ), (1917/10000 : ℝ)]]).PosSemidef := by
   rw [posSemidef_iff_dotProduct_mulVec]
@@ -78,6 +80,28 @@ theorem organ2_weil_cert_posSemidef :
                mul_nonneg (by norm_num : (0:ℝ) ≤ (7853/2500 : ℝ)) (sq_nonneg (x 1)),
                mul_nonneg (by norm_num : (0:ℝ) ≤ (481/10000 : ℝ)) (sq_nonneg (x 2)),
                mul_nonneg (by norm_num : (0:ℝ) ≤ (1917/10000 : ℝ)) (sq_nonneg (x 3))]
+
+/-- **Machine-checked organ-2 Weil certificate matrix M (Arb-provenance, canonical, §767).**
+Basis a∈{15,25,35,45}.  `M` is the rational matrix obtained by rationalizing the ARB-CERTIFIED
+midpoints of the rigorous Guinand–Weil form entries (operators/organ2_certify.py: each diagonal
+entry an Arb ball of radius ≤ 5e-21).  This theorem proves `M.PosSemidef` via its exact LDL^T
+sum-of-squares.  Combined with `weil_posSemidef_of_dominates` and the ARB-certified operator-norm
+bound ‖Q−M‖₂ ≤ ρ ≈ 6.20e-11 ≪ min-eig(M) ≈ 0.0481, the true Weil form Q=arch+pole−prime is
+positive-definite — the remaining `(Q−M)⪰0` step being the Arb interval enclosure (§764/§766).
+This replaces the float-provenance `organ2_weil_cert_posSemidef` above (§767 auditor correction). -/
+theorem organ2_weil_certM_posSemidef :
+    (Matrix.of ![![(1221196/821849 : ℝ), (0 : ℝ), (0 : ℝ), (0 : ℝ)], ![(0 : ℝ), (2161912/688239 : ℝ), (0 : ℝ), (0 : ℝ)], ![(0 : ℝ), (0 : ℝ), (14289/297049 : ℝ), (0 : ℝ)], ![(0 : ℝ), (0 : ℝ), (0 : ℝ), (169601/884868 : ℝ)]]).PosSemidef := by
+  rw [posSemidef_iff_dotProduct_mulVec]
+  refine ⟨?_, ?_⟩
+  · ext i j; fin_cases i <;> fin_cases j <;> norm_num [Matrix.conjTranspose_apply, Matrix.of_apply]
+  · intro x
+    simp only [dotProduct, Matrix.mulVec, Matrix.of_apply, Fin.sum_univ_four,
+      Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.cons_val_two,
+      Matrix.cons_val_three, Matrix.tail_cons, star_trivial]
+    nlinarith [mul_nonneg (by norm_num : (0:ℝ) ≤ (1221196/821849 : ℝ)) (sq_nonneg (x 0)),
+               mul_nonneg (by norm_num : (0:ℝ) ≤ (2161912/688239 : ℝ)) (sq_nonneg (x 1)),
+               mul_nonneg (by norm_num : (0:ℝ) ≤ (14289/297049 : ℝ)) (sq_nonneg (x 2)),
+               mul_nonneg (by norm_num : (0:ℝ) ≤ (169601/884868 : ℝ)) (sq_nonneg (x 3))]
 
 /-- **Weil-certificate reduction** (isolates the one transcendental step): if the rationalized
 lower-bound matrix `M` is PosSemidef (proven by the exact-rational LDL^T certificate,

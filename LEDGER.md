@@ -15023,3 +15023,34 @@ Audit verdict: data layer solid (LMFDB/PARI cross-checks); numerics reproducible
 ## §764 (Weil-certificate LOGICAL STRUCTURE complete in Lean — criterion reduced to the single interval-bound hypothesis) — Minted weil_posSemidef_of_dominates: for the true (transcendental) Weil matrix Q and the rationalized lower-bound M, IF M.PosSemidef (proven, §763) AND (Q−M).PosSemidef (the rigorous Arb interval enclosure, §755) THEN Q.PosSemidef [proof: Q=M+(Q−M), PosSemidef.add]. So the Weil positivity criterion for basis {15,25,35,45} is now a COMPLETE modular Lean structure: Q⪰0 ⟸ [organ2_weil_cert_posSemidef: M⪰0, machine-checked LDL^T SOS] + [hQM: (Q−M)⪰0, the ONE transcendental interval step, explicit labeled hypothesis]. This EXACTLY mirrors the sign theorem's honest style (§744: everything provable proven, the one hard step = a labeled hypothesis hD) — now applied to the RH CRITERION side. The single remaining gap is cleanly isolated: a Lean-verified interval bound on Q−M (digamma-integral arch + elementary prime/pole terms). 31 verified Lean theorems, audit-clean, trusted axioms, 0 sorries. The machine-checked Weil-criterion formalization is now logically complete modulo the interval-lifting — the honest frontier of the certificate lane. HANDLE (reduction lemma). No Handle for RH. File: RiemannLean/Certificate.lean.
 
 ## §766 (INTERVAL-LIFTING gap MAPPED precisely — prime/pole = Lean-doable, arch digamma-integral = the blocker) — Analyzed the exact structure of the one remaining gap in the machine-checked Weil certificate (discharging (Q−M).PosSemidef, §764). Q_{ij}=arch_{ij}+pole_{ij}−prime_{ij}: (1) PRIME term = finite Σ Λ(n)/√n g_{ij}(log n), g elementary (exp/cos with rational coeffs) — Lean-boundable per-term (bricks §765: exp_neg_quarter_le, gaussian_le_exp_neg_quarter) + a Lean-formalizable tail bound; TRACTABLE. (2) POLE term = 2Re[φ̂(i/2)²], closed-form Gaussian at i/2 — elementary, Lean-boundable; TRACTABLE. (3) ARCH term = (1/2π)∫ φ̂_jφ̂_k Ω(r)dr, Ω=Re ψ(¼+ir/2)−log π — needs rigorous Lean bounds on Complex.digamma (mathlib has it meromorphic + functional eq, but NO rigorous numerical/interval bounds) AND rigorous quadrature (mathlib has no verified numerical integration) — the FUNDAMENTAL BLOCKER, a real mathlib infrastructure gap requiring major development (a Lean verified-interval-arithmetic + integration library). So the full machine-checked Weil positivity for a basis is blocked at the digamma archimedean integral in Lean; the prime+pole parts are Lean-doable with effort. HONEST FRONTIER of the certificate lane precisely located. This maps exactly what a Lean-verified-interval-arithmetic layer (agent-2's LeanCert-style idea) would need to supply: digamma interval bounds + rigorous quadrature. REPORT (gap structure). No Handle for RH.
+
+## §767 — Auditor correction: Weil cert provenance float → genuinely Arb (integrity fix)
+
+**Fable "where we are" run flagged a real overclaim.** The auditor lens found that
+`gen_lean_weil_cert.py` (which fed §763's Lean matrix `organ2_weil_cert_posSemidef`) computed the
+Weil-form entries by **FLOAT numpy trapezoid**, not Arb — so §763's docstring/ledger claim that Arb
+"rigorously encloses" that matrix was **not backed**. Only the `PosSemidef` of the rational matrix
+was ever machine-checked; its *provenance* to the true transcendental Weil form was float, not
+certified.
+
+**Fix (done, verified):**
+- New `operators/gen_lean_weil_cert_rigorous.py` recomputes the {15,25,35,45} diagonal Weil entries
+  with genuine Arb rigor (ctx.prec=300, analytic-flag arch integral over the ψ poles, rigorous prime
+  tail 2·gmax·e^{1/4}·√π·erfc((Lcut−1)/2)). Each entry an Arb ball, **max radius ≤ 5.13e-21**.
+- Rationalized the Arb-certified midpoints (denom 10⁶) → matrix `M`; certified
+  **‖Q−M‖₂ ≤ ρ ≤ 6.198e-11** (rad + rationalization error, ALL Arb-bounded). M exact-LDL^T pivots
+  min = 0.04810 > 0, so **min-eig(M) − ρ ≈ 0.0481 > 0 ⇒ Q PD rigorously**.
+- New Lean theorem `organ2_weil_certM_posSemidef` (Certificate.lean) proves `M.PosSemidef` for the
+  Arb-midpoint M; verified through `verify_loop.py` (PASS) and `audit_modules.sh`
+  (**34 theorems, trusted axioms {propext, Classical.choice, Quot.sound}, 0 sorries, clean rebuild**).
+- Old float theorem kept but docstring corrected to admit float provenance + point at the Arb one.
+  RH_MANIFEST count 30→34.
+
+**What this does and does NOT do.** It repairs the honesty of the *provenance* claim: the Lean-checked
+matrix M now genuinely descends from an Arb-certified enclosure, and the Q⪰M gap is a *single* Arb
+operator-norm bound, itself Arb-certified in Python. It does NOT close RH: the `(Q−M)⪰0` domination
+is certified in Arb/Python, not inside Lean (no mathlib verified interval evaluator for the digamma
+arch integral — §766). **REPORT:** finite-basis Weil positivity, Arb-rigorous end-to-end in the
+computational layer + Lean-checked for the rational core. **No Handle for RH.** The auditor's flag was
+correct; the overclaim is retracted and replaced with the certified chain. Self-corrected error count
+this session ↑; zero fabrications banked.
