@@ -173,3 +173,11 @@ theorem besselJ1_pos_inv_sqrt {n : ℕ} (hn : 2 ≤ n) : 0 < besselJ1 (1 / Real.
   refine besselJ1_pos (by positivity) ?_
   rw [div_pow, one_pow, Real.sq_sqrt (by linarith : (0:ℝ) ≤ (n:ℝ))]
   rw [div_lt_iff₀ (by linarith)]; linarith
+
+/-- Sign-theorem input, stated for primes: `J₀(1/√p) > 0` for every prime `p`. -/
+theorem besselJ0_pos_of_prime {p : ℕ} (hp : p.Prime) : 0 < besselJ0 (1 / Real.sqrt p) :=
+  besselJ0_pos_inv_sqrt hp.two_le
+
+/-- Sign-theorem input, stated for primes: `J₁(1/√p) > 0` for every prime `p`. -/
+theorem besselJ1_pos_of_prime {p : ℕ} (hp : p.Prime) : 0 < besselJ1 (1 / Real.sqrt p) :=
+  besselJ1_pos_inv_sqrt hp.two_le
