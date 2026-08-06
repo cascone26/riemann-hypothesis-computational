@@ -15117,3 +15117,33 @@ grazing regime is where any positivity PROOF must do its work. **No Handle for R
 necessary condition on one test-function family, and the razor-thin regime (a<8) is not yet
 sign-certified. Next: push precision (prec 600–800, tighter integration) to certify D(a)≥0 down to
 a→0 — a clean rigorous verification of single-Gaussian Weil positivity for the whole family.
+
+## §770 — CORRECTION to §769: retract the "D(a)=Σ_γ h_a(γ)" identity claim (unverified, contradicted)
+
+Verify-before-ship caught an over-claim I banked in §769. I asserted D(a)=arch+pole−prime equals the
+explicit-formula zero-sum Σ_γ h_a(γ) ("the explicit formula showing itself"). I then actually TESTED
+it: computed S(a)=2Σ_{γ>0} φ̂_a(γ) from zeros10k and compared to the rigorous Arb D(a):
+  a=8:  S=1.69e-8  vs D=1.42e-16   (×1e8 off)
+  a=10: S=4.86e-4  vs D=1.18e-7    (×4000 off)
+  a=12: S=0.257    vs D=0.033      (×8)
+  a=15: S=1.724    vs D=1.486      (0.86 ratio)
+  a=20: S=1.487    vs D=1.105      (0.74 ratio)
+Same order only for a≳15; D decays MUCH faster than S below the zeros (ratio→0). So **D(a) ≠ Σ_γ φ̂_a(γ)**
+— the specific identity is FALSE. (Nor is it Σφ̂², which is ~1e-36 at a=5.) I did not have the
+Weil-form↔zero-side transform convention pinned, and hand-waved it. Retracted.
+
+**What still STANDS from §769 (rigorously verified, unaffected):**
+- Scaling: Weil form ≈ diagonal on a separated basis (min-eig=min diagonal, +0.048 stable); NON-coercive
+  (min-eig→0⁺) on a dense basis. Von-Mangoldt float bug + grid artifact caught & fixed; float diagonal
+  matches rigorous Arb to 1e-5.
+- Reduction: on the separated family, positivity ⟺ every diagonal D(a)=W-form(φ_a,φ_a) > 0 (a genuine
+  positive quantity, the organ-2 Guinand–Weil autocorrelation form on one basis function).
+- Rigorous grazing: D(a) ≥ 0 **CERTIFIED (Arb prec 300)** for a∈{8,10,12,13,14,15,20}, D(8)=+1.42e-16;
+  |D|<1e-20 sub-resolution for a=3,5. D grows fast (not identically the zero-sum, but monotone-ish)
+  toward/through the first zero — qualitatively "razor-thin below, O(1) at the zeros."
+
+**Corrected takeaway:** single-Gaussian Weil positivity is rigorously certified for a≥8 and razor-thin
+below; RH's hard core is localized to the sub-first-zero regime. The EXACT zero-side identity for D(a)
+(the Weil-form↔spectral transform for this specific g_cross kernel) is NOT yet pinned — a real TODO,
+not a settled fact. **No Handle for RH.** Self-corrected-error count this session ↑ (this is the
+discipline working: I tested my own interpretive claim and it failed, so I retracted it same-session).
