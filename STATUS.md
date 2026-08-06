@@ -4095,3 +4095,37 @@ HONEST RESULTS:
 - GENUINE ANALYTIC PROGRESS (§720-724): fully characterized the sign theorem's frontier and reduced it to ONE irreducible target, reached from THREE independent derivations (Jacobi-Anger/inverse-Euler, diagonal-compensation, delta-function identity) that all AGREE: μ(n) = the sign of the resonance at frequency log n in the plain Fourier transform of the bounded Hardy square wave sgn Z(t)·e^{iθ(t)}. The μ-SIGN is algebraic (inverse Euler product); the GAP is pure analytic convergence; the error-control pieces are known machinery (Gonek uniform Landau + Bessel tail); the HARD CORE is the compensation main-term sum's sign (the §649 resummation, verified numerically sub-CLT, open).
 HONEST BOTTOM LINE: no proof of RH; numerical exploration is saturated (confirmed by 5 negatives); the genuine frontier is a hard analytic-NT convergence theorem now stated in its cleanest classical-Fourier form. Discipline held all night: ~6 self-corrections, nothing false banked. Deposit clean+coherent: RH_INVESTIGATION.md, SIGN_THEOREM.md/_PROOF_DRAFT.md (clean frontier statement), RIGIDITY_RESULT.md, MECHANISM_DERIVATION.md, LEDGER §1-824, PROCESS.md.
 FRONTIER LOADED (next): the compensation-sum-sign proof (§722 piece 4) via the bounded square-wave FT (§724) — classical Fourier analysis of a bounded function, the most tractable form. Awaiting a genuine analytic idea; will attempt on any new angle.
+
+═══════════════════════════════════════════════════════════════════════════════
+SESSION 2026-08-06 (Sam / Opus 4.8) — auditor fix + Weil-form Gram structure verified
+═══════════════════════════════════════════════════════════════════════════════
+LEDGER §767–772. Whole session: verify-before-ship held; ~4 self-caught errors, 0 fabrications.
+
+INTEGRITY FIX (§767): Fable auditor flagged §763's Lean cert matrix came from FLOAT numpy trapezoid,
+not Arb — "Arb rigorously encloses" was unbacked. Fixed: operators/gen_lean_weil_cert_rigorous.py
+(genuine Arb, radius ≤5e-21, certified ||Q−M||₂≤6.2e-11 ≪ min-eig 0.048). New Lean theorem
+organ2_weil_certM_posSemidef; old float one docstring-corrected. audit_modules.sh: 34 theorems, 0
+sorries, trusted axioms, clean rebuild. Committed.
+
+CORE RESULT (§768–772): mapped the organ-2 Weil form's exact structure, all VERIFIED numerically:
+- §768: primes ALONE reconstruct the actual zeros (Berry-Keating), 32/32 peaks @ T~1000, corr 0.998
+  (non-circular explicit-formula test; RH-independent, the empirical foundation).
+- §771: diagonal identity D(a)=arch+pole−prime = 2Σ_{γ>0}φ̂_a(γ)² (sum of squares over zeros),
+  verified to 4 digits vs rigorous Arb. D(a)≥0 CERTIFIED (Arb) for a≥8 (razor-thin +1.4e-16 at a=8),
+  sub-resolution below. (§769 first stated this, §770 wrongly retracted testing the LINEAR sum, §771
+  re-confirmed the QUADRATIC one — a self-correction of a self-correction, all in-ledger.)
+- §772: FULL identity Q_{jk}=2Σ_{γ>0}φ̂_j(γ)φ̂_k(γ)=⟨v_j,v_k⟩ — the Weil form IS a GRAM matrix of
+  zero-evaluation vectors, verified to 3e-15 (separated/dense/close bases). Explains ALL scaling:
+  separated a→disjoint zeros→full rank→min-eig=min diagonal; dense a→same zeros→rank-deficient→
+  min-eig→0⁺ (non-coercivity = Gram rank-deficiency). Clean RH statement: Q PSD ⟺ Gram-of-REAL-vectors
+  ⟺ γ real ⟺ RH.
+
+WHAT THIS IS / ISN'T: verified end-to-end that the apparatus computes exactly the Guinand–Weil Gram
+matrix (confirms §731/§757/§767 certs are the genuine object). NOT a proof — the criterion restated +
+verified as an identity. Sharpened target: prove the Gram/PSD structure from primes+digamma ALONE.
+
+FRONTIER LOADED (next): (a) prove D(a)≥0 for all a from the ARITHMETIC side (arch+pole ≥ prime) — the
+single-Gaussian slice, necessary-not-sufficient but a clean single-variable inequality; (b) attack the
+off-diagonal / full-form positivity via the Gram structure; (c) proof-angle Problem 1 (sign theorem hD)
+via Gonek uniform + Selberg CLT (arXiv 2507.04150). PUBLISH items still awaiting Jacob's go: mathlib
+Bessel PR, bridge to Loeffler–Stoll formal RH statement (arXiv 2503.00959).

@@ -9713,3 +9713,31 @@ NEXT: characterize the unconditional-positivity class boundary with the screw ke
 5. **Pivoted to the genuine EDGE — the Lean loop — and formalized the SIGN THEOREM skeleton (§743-745).** Since the analytic frontier is ahead of us on structure but no one has an automated verified-formalization loop, aimed it at what mathlib LACKS (grep-confirmed: no Bessel/digamma/explicit-formula). Built RiemannLean/Bessel.lean (besselJ0, besselJ1, full positivity chains — the "elementary Bessel positivity" §722 we asserted for months, now machine-verified) + SignTheorem.lean (sign algebra sgn(μ(n)·P)=μ(n) + CAPSTONE sign_theorem_onset matching the true §694 onset D=μ(n)·[∏J₁/J₀]·[∏J₀]). 11 theorems, 0 sorries, trusted kernel axioms, builds clean. HONEST STRUCTURE: everything provable is proven; the one open analytic step (onset factorization hD = Jacobi-Anger resummation, §714/§720) is an EXPLICIT labeled hypothesis, not hidden.
 
 **Net honest position:** Converted our most-defensible result (sign theorem) from "asserted+numerically-verified" to "machine-verified skeleton with the gap made explicit" — the strongest honest form short of closing hD. NO Handle for RH: hD is the consequence-side open problem; RH proper sits beyond it. The frontier (Connes/Suzuki/Groskin) leads on the Weil/prolate analytic structure. Genuine edge = the verified-formalization loop (novel, compounding). Live conceptual thread = the prime-side localization (§741-742) for an opening on hD/RH.
+
+## Arc — 2026-08-06 (Sam/Opus): auditor fix + Weil Gram structure (§767–772)
+
+**Fork:** After the Fable "where we are" run, the auditor lens found a real integrity flaw — §763's
+Lean certificate matrix descended from a FLOAT trapezoid, not Arb, so the "rigorously encloses" claim
+was unbacked. **Decision:** fix provenance before any new work (integrity first). Built a genuinely-Arb
+generator, re-derived the matrix (radius ≤5e-21, certified ||Q−M||≤6.2e-11≪min-eig), added a new Lean
+theorem, corrected the old docstring, re-audited (34 thms clean). Then Jacob: "get to work."
+
+**Decision fork — what's "closest to solving it":** rejected (a) re-attempting the prolate self-adjoint
+extension (paper-level, the naive-FD failure is real and I shouldn't fake the (4,4)-deficiency
+extension), and (b) the circular V_prime construction (S_p uses the zeros). Chose the non-circular
+line: understand the organ-2 Weil apparatus's exact structure.
+
+**What broke and got fixed (the methodology working):**
+1. Fast float Weil builder omitted PRIME POWERS (von Mangoldt) → diagonal off 0.03–0.5, spurious
+   negative min-eig → contradicted the rigorous §767 PD cert. The CONTRADICTION is what flagged it.
+   Fixed → float matches Arb diagonal to 1e-5.
+2. Grid cutoff R=120<a=125 faked a −0.79 min-eig. Fixed R=240 → +0.048.
+3. §770: retracted §769's zero-sum identity after testing the LINEAR sum Σφ̂ — but the identity is
+   QUADRATIC (Σφ̂²). §771 re-confirmed it (4-digit match). A self-correction of a self-correction,
+   all banked honestly — the discipline is "test the interpretation, not just the number."
+
+**Convergent result:** three cross-checking identities — primes reconstruct zeros (§768), diagonal =
+Σφ̂² SOS (§771), full form = Gram matrix ⟨v_j,v_k⟩ (§772, verified 3e-15). The Gram structure EXPLAINS
+the scaling/non-coercivity (rank-deficiency) and states RH as "Gram-of-real-vectors." Verified end-to-
+end that the apparatus computes the genuine Guinand–Weil object. Not a proof — criterion restated as a
+verified identity; the sharpened target is proving the Gram/PSD structure from primes+digamma alone.

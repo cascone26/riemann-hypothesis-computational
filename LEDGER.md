@@ -15208,3 +15208,24 @@ Gram matrix of the zeros (confirms §731/§757/§767 certificates are the genuin
 their min-eig behavior). **No Handle for RH:** this is the criterion restated + verified as an identity,
 not a proof. It sharpens the target: prove the Gram/PSD structure arithmetically. Everything §768–772
 cross-checks (primes↔zeros §768, SOS diagonal §771, Gram off-diagonal §772). Apparatus integrity: solid.
+
+## §773 — Formalized §772: the Weil form is PSD because it is a real Gram matrix (Lean, 36 thms)
+
+Deposited `RiemannLean/WeilGram.lean` (verified via verify_loop.py PASS ×2; audit_modules.sh clean):
+- `weil_gram_posSemidef (V : Matrix m n ℝ) : (Vᵀ * V).PosSemidef` — any real Gram matrix is PosSemidef
+  (via mathlib `posSemidef_conjTranspose_mul_self` + `conjTranspose_eq_transpose_of_trivial`; needed
+  `import Mathlib.Data.Real.StarOrdered` for the `StarOrderedRing ℝ` instance).
+- `weil_posSemidef_of_gram (hQ : Q = Vᵀ * V) : Q.PosSemidef` — if the Weil form equals the real Gram
+  matrix of zero-evaluation vectors (the §772 identity, numerically 3e-15), it is PosSemidef.
+This formalizes the STRUCTURAL reason the organ-2 certificate holds: `Q_{jk}=Σ_ρ φ̂_j(γ_ρ)φ̂_k(γ_ρ)` is a
+Gram matrix, real iff the zeros are real (RH). Also fixed audit_modules.sh's hardcoded theorem count
+(was pinned to 5 modules → now dynamic over $MODS, so it can't go stale). **Audit: 36 theorems, 0
+sorries, trusted axioms {propext, Classical.choice, Quot.sound}, clean rebuild.**
+
+**REPORT:** the Lean formalization now carries both the certificate (a concrete rational Weil matrix is
+PSD, §767) AND the structural theorem (WHY any Weil form is PSD — the real-Gram identity, §773),
+matching the §772 numerical result. **No Handle for RH:** `weil_posSemidef_of_gram` takes the real-Gram
+identity `Q = Vᵀ V` as a HYPOTHESIS — establishing it (V real, from primes+digamma, without assuming
+zero locations) IS RH and stays open. This is the honest labeled reduction, same discipline as the sign
+theorem's `hD`. Next candidate: bridge this to the Loeffler–Stoll formal RH statement in mathlib
+(arXiv 2503.00959) — connect `weil_posSemidef_of_gram` to their `RiemannHypothesis` proposition.

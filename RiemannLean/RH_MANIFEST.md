@@ -1,13 +1,13 @@
 # RiemannLean — verified formalization manifest
 
 Machine-checked Lean 4 formalization of the Riemann sign theorem's skeleton and the start of the
-Weil positivity criterion. **34 theorems, 0 sorries, all depend only on the trusted kernel axioms
+Weil positivity criterion. **36 theorems, 0 sorries, all depend only on the trusted kernel axioms
 `{propext, Classical.choice, Quot.sound}`.** Integrity is enforced by `./audit_modules.sh`
 (force-clean-rebuild + `#print axioms` on every theorem — prevents stale-olean false-success,
 LEDGER §756). Verified via the propose→verify loop (`verify_loop.py`, gate = `#print axioms`,
 §733/§735). Provenance: `handles.jsonl`, LEDGER §743–757.
 
-> **Run `./audit_modules.sh` to re-verify all 34 theorems from a clean build.**
+> **Run `./audit_modules.sh` to re-verify all 36 theorems from a clean build.**
 > The `Bessel.lean` module (J₀/J₁ definitions + positivity + two-sided bounds) is a self-contained,
 > mathlib-contribution-quality development — mathlib currently has no Bessel functions.
 
@@ -44,6 +44,13 @@ the single unproven analytic input is an **explicit labeled hypothesis**, not hi
   interval evaluator for the digamma arch integral).
 - `organ2_weil_cert_posSemidef` — earlier float-provenance version (denom 10⁴, superseded by the
   Arb one above; kept + docstring-corrected per §767 auditor finding).
+
+### `RiemannLean/WeilGram.lean` — the Weil form as a Gram matrix (§772, structural reason for PSD)
+- **`weil_gram_posSemidef`** — any real Gram matrix `Vᵀ V` is `PosSemidef`. The organ-2 Weil form
+  equals `Q_{jk}=Σ_ρ φ̂_j(γ_ρ)φ̂_k(γ_ρ)=(Vᵀ V)_{jk}` (verified numerically 3e-15,
+  `operators/weil_gram_identity.py`), so this is the STRUCTURAL reason the certificate is PSD.
+- **`weil_posSemidef_of_gram`** — if the Weil form `Q = Vᵀ V` with `V` real (⟺ zeros real ⟺ RH),
+  then `Q.PosSemidef`. The RH-conditional structural certificate.
 
 ### `RiemannLean/WeilForm.lean` — start of the RH positivity criterion
 - `archWeight` — the archimedean density `Re[½(ψ(¼+ir/2)+ψ(¼−ir/2))]−log π` (on `Complex.digamma`)
