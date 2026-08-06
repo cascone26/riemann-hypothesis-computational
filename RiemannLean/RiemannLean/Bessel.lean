@@ -90,3 +90,17 @@ theorem besselJ0_pos {x : ℝ} (hx : |x| < 2) : 0 < besselJ0 x := by
   have hf1 : f 1 = y := by simp [hf]
   rw [hs1, hf1, abs_le] at hb
   nlinarith [hb.1, hy1]
+
+/-- The sign-theorem input: `J₀(1/√n) > 0` for every `n ≥ 2` (in particular every prime),
+since `1/√n ≤ 1/√2 < 2`.  This is the per-prime factor whose product gives the diagonal
+onset `μ(n)·(positive)` (LEDGER §694/§722). -/
+theorem besselJ0_pos_inv_sqrt {n : ℕ} (hn : 2 ≤ n) : 0 < besselJ0 (1 / Real.sqrt n) := by
+  apply besselJ0_pos
+  have hn2 : (2 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+  have hsqrt : (1 : ℝ) < Real.sqrt n := by
+    have h1n : (1 : ℝ) < n := by linarith
+    calc (1 : ℝ) = Real.sqrt 1 := by rw [Real.sqrt_one]
+      _ < Real.sqrt n := Real.sqrt_lt_sqrt (by norm_num) h1n
+  have hpos : (0 : ℝ) < Real.sqrt n := by linarith
+  rw [abs_of_pos (by positivity), div_lt_iff₀ hpos]
+  nlinarith [hsqrt]
