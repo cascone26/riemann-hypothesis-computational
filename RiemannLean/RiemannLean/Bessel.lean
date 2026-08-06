@@ -336,3 +336,9 @@ theorem besselJ1_le_half {x : ℝ} (hx0 : 0 < x) (hx : x ^ 2 < 8) : besselJ1 x �
   calc (x / 2) * ∑' k, (-1 : ℝ) ^ k * f k ≤ (x / 2) * 1 :=
         mul_le_mul_of_nonneg_left hS (le_of_lt hxhalf)
     _ = x / 2 := mul_one _
+
+/-- `J₀` is even: `J₀(-x) = J₀(x)` (each series term depends on `x` only through `(x/2)^{2k}`). -/
+theorem besselJ0_even (x : ℝ) : besselJ0 (-x) = besselJ0 x := by
+  unfold besselJ0
+  congr 1; ext k
+  rw [show (-x) / 2 = -(x / 2) by ring, (even_two_mul k).neg_pow]
