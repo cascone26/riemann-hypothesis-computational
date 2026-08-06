@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Gamma.Digamma
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
 /-!
 # The Weil explicit-formula quadratic form — toward the RH positivity criterion
@@ -29,3 +30,23 @@ theorem archWeight_even (r : ℝ) : archWeight (-r) = archWeight r := by
   congr 2
   rw [Complex.ofReal_neg]
   ring_nf
+
+
+open ArithmeticFunction in
+/-- The (finite) prime term of the Weil explicit formula:
+`primeₙ(g) = Σ_{n≤N} Λ(n)/√n · g(log n)` — the arithmetic component (LEDGER §749: the RH-hard
+prime fluctuation lives here).  `g` is the test-function autocorrelation evaluated at `log n`. -/
+noncomputable def weilPrimeTerm (g : ℝ → ℝ) (N : ℕ) : ℝ :=
+  ∑ n ∈ Finset.Icc 1 N, (vonMangoldt n / Real.sqrt n) * g (Real.log n)
+
+/-- The prime term vanishes on the zero test function. -/
+theorem weilPrimeTerm_zero (N : ℕ) : weilPrimeTerm (fun _ => 0) N = 0 := by
+  unfold weilPrimeTerm; simp
+
+/-- The prime term is additive (linear) in the test function. -/
+theorem weilPrimeTerm_add (g h : ℝ → ℝ) (N : ℕ) :
+    weilPrimeTerm (fun x => g x + h x) N = weilPrimeTerm g N + weilPrimeTerm h N := by
+  unfold weilPrimeTerm
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl (fun n _ => ?_)
+  ring
