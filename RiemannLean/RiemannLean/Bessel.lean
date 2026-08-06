@@ -181,3 +181,61 @@ theorem besselJ0_pos_of_prime {p : ℕ} (hp : p.Prime) : 0 < besselJ0 (1 / Real.
 /-- Sign-theorem input, stated for primes: `J₁(1/√p) > 0` for every prime `p`. -/
 theorem besselJ1_pos_of_prime {p : ℕ} (hp : p.Prime) : 0 < besselJ1 (1 / Real.sqrt p) :=
   besselJ1_pos_inv_sqrt hp.two_le
+
+/-- Quantitative Bessel lower bound: `1 − (x/2)² ≤ J₀(x)` for `|x| < 2` (alternating series). -/
+theorem besselJ0_ge_one_sub {x : ℝ} (hx : |x| < 2) : 1 - (x / 2) ^ 2 ≤ besselJ0 x := by
+  set y : ℝ := (x / 2) ^ 2 with hy
+  have hy0 : 0 ≤ y := by rw [hy]; positivity
+  have hy1 : y < 1 := by rw [hy]; rw [abs_lt] at hx; nlinarith [hx.1, hx.2]
+  set f : ℕ → ℝ := fun k => y ^ k / (k ! : ℝ) ^ 2 with hf
+  have hfnn : ∀ k, 0 ≤ f k := fun k => by rw [hf]; positivity
+  have hrw : besselJ0 x = ∑' k, (-1 : ℝ) ^ k * f k := by
+    unfold besselJ0; congr 1; ext k; rw [hf, hy, pow_mul]; ring
+  have hfa : Antitone f := by
+    apply antitone_nat_of_succ_le; intro k
+    have hfac : ((k + 1)! : ℝ) = ((k : ℝ) + 1) * (k ! : ℝ) := by
+      rw [Nat.factorial_succ]; push_cast; ring
+    have hkne : (k ! : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (Nat.factorial_ne_zero k)
+    have hk1ne : ((k : ℝ) + 1) ≠ 0 := by positivity
+    have hstep : f (k + 1) = (y / ((k : ℝ) + 1) ^ 2) * f k := by
+      show y ^ (k + 1) / ((k + 1)! : ℝ) ^ 2 = (y / ((k : ℝ) + 1) ^ 2) * (y ^ k / (k ! : ℝ) ^ 2)
+      rw [hfac, pow_succ]; field_simp
+    rw [hstep]
+    have hc : y / ((k : ℝ) + 1) ^ 2 ≤ 1 := by
+      rw [div_le_one (by positivity)]; nlinarith [Nat.cast_nonneg (α := ℝ) k, hy1]
+    calc (y / ((k : ℝ) + 1) ^ 2) * f k ≤ 1 * f k :=
+          mul_le_mul_of_nonneg_right hc (hfnn k)
+      _ = f k := one_mul _
+  have hfs : Summable f := by
+    have hcomp := Real.summable_pow_div_factorial y
+    apply hcomp.of_nonneg_of_le hfnn
+    intro k
+    have hk1 : (1 : ℝ) ≤ (k ! : ℝ) := by
+      exact_mod_cast Nat.one_le_iff_ne_zero.mpr (Nat.factorial_ne_zero k)
+    show y ^ k / (k ! : ℝ) ^ 2 ≤ y ^ k / (k ! : ℝ)
+    gcongr; nlinarith [hk1]
+  have hb := alternating_series_error_bound f hfa hfs 1
+  rw [← hrw] at hb
+  have hs1 : (∑ i ∈ Finset.range 1, (-1 : ℝ) ^ i * f i) = 1 := by
+    rw [Finset.sum_range_one]; simp [hf]
+  have hf1 : f 1 = y := by simp [hf]
+  rw [hs1, hf1, abs_le] at hb
+  linarith [hb.1]
+
+/-- Uniform lower bound over primes: `J₀(1/√n) ≥ 7/8` for `n ≥ 2` (since `(1/√n/2)² = 1/(4n) ≤ 1/8`).
+Makes the sign-theorem Bessel product positivity robust with an explicit margin. -/
+theorem besselJ0_inv_sqrt_ge {n : ℕ} (hn : 2 ≤ n) : (7 : ℝ) / 8 ≤ besselJ0 (1 / Real.sqrt n) := by
+  have hn2 : (2 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+  have hsqrtpos : (0 : ℝ) < Real.sqrt n := Real.sqrt_pos.mpr (by linarith)
+  have hsq : (Real.sqrt n) ^ 2 = (n : ℝ) := Real.sq_sqrt (by linarith)
+  have habs : |1 / Real.sqrt n| < 2 := by
+    rw [abs_of_pos (by positivity), div_lt_iff₀ hsqrtpos]
+    have : (1 : ℝ) < Real.sqrt n := by nlinarith [Real.sq_sqrt (by linarith : (0:ℝ) ≤ (n:ℝ)), hsqrtpos]
+    linarith
+  have hlb := besselJ0_ge_one_sub habs
+  have hval : (1 / Real.sqrt n / 2) ^ 2 = 1 / (4 * n) := by
+    rw [div_pow, div_pow, one_pow, hsq]; ring
+  rw [hval] at hlb
+  have : (1 : ℝ) / (4 * n) ≤ 1 / 8 := by
+    rw [div_le_div_iff (by positivity) (by norm_num)]; nlinarith [hn2]
+  linarith [hlb, this]
