@@ -16536,3 +16536,26 @@ REPORT; Q_min>0 at high W is barely-positive + K/nprobes scale there (conditioni
 misalignment claim needs the certified + W-stability confirmation. But the arch-floor-stable /
 prime-ceiling-growing / misalignment picture is clean and decisive. No Handle for RH — but the target
 is now a specific, named, geometric statement about two explicit quadratic forms.
+
+## §815 (§814 MECHANISM CORRECTION — the "extremal-eigenvector misalignment saves Q" story is REFUTED; the arch-weak/prime-strong angle INCREASES (cos→0) while Q→0) — operators (float angle measurement)
+
+Tested §814's proposed mechanism (Q>0 past crossover survives by arch-weakest vs prime-strongest
+eigenvector MISALIGNMENT). Measured the G-metric cos(angle) between those two directions across W:
+  4W:    1.30   1.42   1.54   1.62   1.75   1.90   2.05   2.20
+  cos:   0.353  0.253  0.652  0.644  0.390  0.042  0.063  0.004
+  Q_min: 0.093  0.073  0.042  0.038  0.007  0.001  0.000  0.000
+REFUTED: cos(angle) does NOT →1 (align) as Q→0 — it →0 (the extremal directions become MORE
+ORTHOGONAL) while Q_min still collapses. If misalignment saved positivity, Q would stay HIGH as they
+separate; instead Q crashes regardless. So the arch-weak/prime-strong two-vector angle does NOT govern
+Q_min. §814's "saved by misalignment" NARRATIVE is WITHDRAWN. WHAT STANDS (the §814 FACTS, unaffected):
+arch_floor W-stable ~0.15, prime_ceil grows 0.09→0.24, Q>0 at every W but →0 (RH-consistent razor).
+The real Q_min mechanism is the FULL arch−prime spectral balance (a many-mode interaction), NOT a
+single-vector-pair geometry — the margin is min-eig(arch−prime), a genuinely multi-dimensional object
+that resists a two-quantity summary. META-LESSON (recurring this session, now explicit): I keep
+reaching for a clean single-number mechanism (m_E·D const, saturation, peak, misalignment) and the
+data keeps saying the positivity structure is irreducibly multi-dimensional. The HONEST characterization
+is the spectral one: arch (PD floor) vs prime (growing indefinite), Q=arch−prime>0 by a full-spectrum
+cancellation thinning to 0 — which IS the Weil razor, and its proof needs the full form's structure
+(the intersection-form/Hodge-index object), not a scalar bound. That reframing (§813b+§814 facts, §815
+correction) is the durable result; the scalar mechanisms were over-reaches, каждый caught by test.
+REPORT. No Handle for RH.
