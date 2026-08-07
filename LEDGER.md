@@ -15820,3 +15820,20 @@ This is precisely the F(W)-bounded-below input Grothendieck's uniform dévissage
 2 — the frame side does NOT collapse; only the corner grows (by the deficiency integral,
 §794-add). The razor's entire weight is confirmed to sit in the corner + cross-terms. HANDLE
 (four certified constants). No Handle for RH.
+
+## §798 (LIT-GATE: the prolate residual lemma R is CITATION + ARITHMETIC — explicit non-asymptotic bounds exist) — agent sweep, arXiv IDs as cited (verify constants against PDFs before use)
+
+Riemann's round-3 piece R (residual mass outside the capacity slice, bounded by the spectral
+plunge) has published explicit machinery: **Karnik–Romberg–Davenport arXiv:2006.00427** (ACHA 2021)
+— fully explicit non-asymptotic bounds, plateau λ_k ≥ 1−C₁e^{−c₂m} below capacity and TAIL
+λ_k ≤ C₃e^{−c₄m} for k ≥ Shannon+m, uniform in c, with the Landau–Widom 2/π² plunge count made
+explicit. Backup: Osipov arXiv:1206.4541 (first explicit upper bounds, constructive but complex);
+Bonami–Karoui 1405.3676 + ACHA 2015 (elliptic-integral plunge formula); 2306.12430 (2023,
+Bargmann/circle-packing lower bound to the plunge edge, δ(ε) non-constructive). FEJÉR TRANSFER:
+no specialized literature for triangular-weight limiting; standard majorization/interlacing
+transfers sharp-cutoff bounds conservatively (quantified tightness loss unknown — acceptable, the
+bound direction is safe). VERDICT: R = KRD tail bound + interlacing transfer + our capacity
+arithmetic (§796-add/Gauss). REMAINING DETAIL: extract KRD's exact constant expressions from the
+PDF (agent got the form, not all constants) — queued. §485c's e^{−9.78·4W} measured collapse is
+the empirical face of exactly this tail. REPORT (leads verified as cited, constants pending
+PDF-read). No Handle for RH.
