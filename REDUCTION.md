@@ -1,5 +1,13 @@
 # REDUCTION.md — the height-localized rung theorem architecture (Riemann8, drafted after §788-§794)
 
+**Preamble (Grothendieck, §799): the enemy of this project is not arithmetic. It is the Beurling
+deficiency of the low zeros — an archimedean, geometric object — and the primes are on the
+resource side of the ledger.** (§795: certified margins RISE as primes enter; the collapse is
+edge-pinned and arithmetic-independent.) The corner dimension is the elementary function
+D(4W) = e^{4W} − (t₀/2π)(4W − ln(t₀/2π) + 1); only two quantities in the whole composition are
+measured curves (m(W), c(W)) — the rest is formula or citation. The uniform theorem's crux:
+exhibit the structure that keeps m(W) bounded below while dim K_W ~ e^{4W}.
+
 **Scope, stated first (Red's §788 constraint, honored in the first paragraph):** this architecture
 targets Weil positivity on a **height-localized** restricted class — Fejér probes (quartic decay,
 NOT Gaussian; s = center spacing, Gauss's §791-addendum correction), centers ≤ C_max, Fourier

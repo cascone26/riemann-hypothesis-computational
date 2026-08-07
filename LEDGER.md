@@ -15837,3 +15837,26 @@ arithmetic (§796-add/Gauss). REMAINING DETAIL: extract KRD's exact constant exp
 PDF (agent got the form, not all constants) — queued. §485c's e^{−9.78·4W} measured collapse is
 the empirical face of exactly this tail. REPORT (leads verified as cited, constants pending
 PDF-read). No Handle for RH.
+
+## §799 (GROTHENDIECK ROUND 3 — the corner dimension is an ELEMENTARY FUNCTION; the §794 coincidence explained; the reduction theorem becomes a PRESENTED OBJECT) — his derivation, independently verified this session
+
+**D(4W) = e^{4W} − (t₀/2π)·(4W − ln(t₀/2π) + 1)** (t₀ = window floor 14) — closed form of the
+§794-addendum deficiency integral. VERIFIED independently: matches all 7 banked numeric values
+(0.047/0.203/0.359/0.589/0.972/1.596/2.490) to <0.01. Derivative e^{4W} − t₀/2π = the rate the
+corner acquires dimensions. THE §794 COINCIDENCE EXPLAINED QUANTITATIVELY: corner-dim jump loci
+(+½ reading) at 4W ≈ 1.404/1.774/2.002 vs prime entries log4=1.386/log5=1.609/log7=1.946 — the
+first pair collide within 0.018; that near-collision is why the prime staircase seduced in exactly
+the tested range. Asymptotically the ladders diverge by the factor 4W (corner ~ e^{4W}, prime
+rungs ~ e^{4W}/4W). QUANTIZER DISCRIMINATOR (run tonight on existing data): NO simple reading
+(ceil/round/round+½) fits all 11 measured dims — best 8/11, failures clustered at threshold
+crossings (D barely above integer) — consistent with a soft numerical threshold + the smooth-Weyl
+density lacking the Landau–Widom edge correction, which is now the located open detail (lit-gate
+queued). THE REFRAMING (into REDUCTION preamble): **the enemy is not arithmetic — it is the
+Beurling deficiency of the low zeros, an archimedean geometric object; the primes are on the
+RESOURCE side of the ledger** (§795: margins RISE as primes enter; collapse is edge-pinned,
+arithmetic-independent). PRESENTED OBJECT: in the composed theorem only TWO quantities are
+measured curves (m(W), c(W)) — everything else is formula (D, t*, S) or citation (R, §798).
+§484's missing global mechanism, most concrete form yet: exhibit the structure keeping m(W)
+bounded below while dim K_W grows as e^{4W} (in the function-field Rosetta, K_W = the
+fiber-classes block; the structure there = the Hodge index). REPORT (formula verified; readings
+open). No Handle for RH.
