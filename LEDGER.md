@@ -15464,3 +15464,39 @@ and my Lean formalization + rigorous Arb certificates are real artifacts, but th
 theirs, not mine. WEIL_GRAM_UNIVERSAL.md updated with a "Relation to prior work" section crediting them.
 This is the lit-gate working as designed (cf. the LP/Jensen rediscovery caught earlier this project). No
 Handle for RH; and now, correctly, no novelty claim for the universality thread either.
+
+## §786 — Operator-lane frontier map (deep-read: Suzuki 2606.09096 + Kim 2607.24830)
+
+Deep-read of the two current papers, to map exactly where the Weil-positivity/operator approach to RH
+stands (Aug 2026) and what the wall is.
+
+**Suzuki 2606.09096 — PROVEN:** operator A_a = Friedrichs extension of B_a = D*G_a D, with G_a the integral
+operator whose kernel is the SCREW FUNCTION g(t) (explicitly containing the prime sum Σ_{n≤e^|t|}
+Λ(n)/√n(|t|−log n)). Thm 1.1: A_a self-adjoint. Eq 1.1: its quadratic form EQUALS the Weil form,
+Q_W^a(v)=⟨A_a v,v⟩. Thm 1.5: zeros of W(a,θ;z) are real. All WITHOUT assuming RH.
+**Suzuki — OPEN (the gap to RH):** Corollary 1.6 — IF one can choose θ=θ(a) and φ(a,z) with
+lim_{a→∞} e^{φ(a,z)} W(a,θ;z) = z²ξ(½−iz)/ξ'(½−iz) uniformly on compacts, THEN RH. Proving this limit
+(eq 1.12) "as an identity of complex functions" gives RH; Suzuki: it is "expected to require a detailed
+analysis of the arithmetic contribution coming from the PRIME terms."
+
+**Kim et al 2607.24830 — numerically realized it + found the wall.** Archimedean law (R1)
+λ_k(a)=log(1/a)+log(k−½)+B₀+O(a), B₀=log q−2log2, universal (R2, Dirichlet + modular forms), 30-digit;
+off-line detection (R6, rate 2δ); zero-sum reconstruction corr 0.9915. **R4d KEY: "primes act DIAGONALLY
+on the archimedean basis" — median diagonal 1.55 vs off-diagonal 1.3e-14** (= my §769/§772 "Weil form ≈
+diagonal on separated basis", also a rediscovery). **R8 THE WALL (they call it fundamental, not a
+discretization artifact):** W is a Paley–Wiener transform of exp-type a ⇒ zero density a/π (→∞); the target
+z²ξ/ξ' has density log T/2π. Corollary 1.6's θ(a) must cancel a density-a/π zero set down to log T/2π —
+"we did not find such a θ(a)." The zeros live in the SYMBOL-LEVEL ERROR TERM, not the eigenvalues (R4d:
+"direct spectral GUE detection is impossible at finite a"). Their verdict: "the converse — bounded ⇒
+on-line, i.e. proving boundedness unconditionally — is RH itself and is closed to us. No finite
+computation and no easy argument can cross that wall."
+
+**Synthesis / what this means for us.** (1) My independent apparatus converged on the SAME crux they and
+Suzuki name — the prime/arithmetic contribution's resummation (§732/§749) — which is real cross-validation
+that the crux is correctly located. (2) Essentially all of my §769–784 (arch universality, primes-diagonal,
+off-line detection, Nyquist/Paley–Wiener density) is in Kim (§785). (3) The precise OPEN problem of the
+lane is now: **Suzuki's Corollary 1.6 — construct/characterize θ(a) making W(a,θ;z)→z²ξ/ξ' uniformly,
+i.e. thin the exp-type-a zero set (density a/π) to the target (density log T/2π) as a→∞.** This is the
+loaded frontier; it is genuinely hard analytic NT (prime-term control), and the best current work reaches
+it and stops. Not a wall for the endeavor — a precisely stated open problem, now understood at the level
+of the state of the art. No Handle for RH.
