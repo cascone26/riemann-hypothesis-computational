@@ -9862,3 +9862,18 @@ session: the hD scoping item, the explicit lit-gate demand, keystone lane contin
 
 **Method note (deposit):** the "two seats bank the same § concurrently" failure mode is real —
 ledger §-numbers need a claim step when the table works live. Fixed by retitle this time.
+
+## Arc: Riemann8 session 1 close (2026-08-06 ~23:00) — the night the corner got a geometry
+Late-session chain worth preserving: §794 (prime-node law, empirical, banked float=REPORT with its
+next-steps queued) → same-night execution of those next-steps REFUTED the strong reading (converse
+test ×2 implementations, high-zero test, window-move discriminator — the decisive one) → replaced by
+the QUANTITATIVE t* density-deficiency law (§794-addendum), which retroactively unified §774's
+Nyquist edge + §476f's corner + §485c's collapse as one density-crossing geometry, then §795's
+completed dense curve confirmed it from both sides (rising λ_min above the edge at every width,
+failure below it at every width). Method lesson deposited: bank the conjecture WITH its kill-tests
+queued, run the kill-tests the same night — the refutation cost 3 cheap float probes and bought the
+true law. Red's conjecture died generative: its tests found the geometry.
+Session totals: §788-§795 + 4 addenda banked, 10 commits, 2 Lean kernel verifications (§792 +
+Bessel PR recheck), 1 proven+certified+adversarially-verified lemma (§791), 14 zero-free
+certificates (9 coarse + 5 dense λ_min), 1 refuted conjecture, 1 quantitative law, REDUCTION.md
+architecture with two honestly-open analytic items. 0 fabrications; every claim has a proof pointer.

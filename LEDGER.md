@@ -15767,3 +15767,23 @@ Red's conjecture honorably dead (it generated the tests that found the true law)
 question sharpens: what the corner needs is not prime-node data per se but the below-t* completion.
 FLOAT=REPORT. NEXT: certify 2-3 dims (interval); the deficiency integral as the corner-dimension
 formula in REDUCTION.md; does the +½-ish offset match the edge-correction of Beurling density?
+
+## §795 (THE DENSE λ_min CURVE COMPLETE — coarse-density margin RISES monotonically with support; sub-Nyquist density FAILS at every width; the collapse is fully edge-pinned, zero-free) — operators/rung_ladder_scan_dense.py/.out
+
+Companion to §790, run with certify_lambda (certified λ_min lower bounds, Red's margin discipline —
+pivots certify sign, not margin). Window [14,44] fixed, RC=400, zero-free route, both densities at
+five widths 4W ∈ {1.32, 1.45, 1.60, 1.80, 2.00}:
+- **N6 (spacing 6.0, super-Nyquist): CERTIFIED at ALL five widths, λ_min lb MONOTONE RISING:
+  0.661 → 0.912 → 1.132 → 1.333 → 1.483.** Adding prime/prime-power terms (log3→log7 all enter)
+  STRENGTHENS the coarse-density form — every added arithmetic term is net-positive here.
+- **N9 (spacing 3.75, sub-Nyquist for this window's zero density ≈ 4.1): NOT CERTIFIED at ANY
+  width** — the certification boundary is INVARIANT in W, pinned to the window's zero density.
+COHERENT PICTURE (three phenomena, one geometry): §774's Nyquist edge (spacing = mean zero
+spacing), §794-addendum's corner = density-deficiency integral below t\*=2πe^{4W}, and §485c's
+collapse — all the SAME object: the class capacity vs zero density crossing. Support width moves
+NONE of it on a fixed window; arithmetic entries move none of it; it is the zeros' density that
+decides. The razor lives at the edge and only at the edge — now measured zero-free-rigorously
+from both sides (λ_min ≥ 0.66-1.48 above; certification failure below, all ten points).
+HONEST CAVEAT: "NOT CERTIFIED" at RC=400 conflates genuinely-indefinite/near-singular with
+margin-below-radii; splitting those needs a radius-tightened rerun at one N9 point (queued, cheap).
+HANDLE (five certified λ_min lbs + five failure coordinates, proof pointer .out). No Handle for RH.
