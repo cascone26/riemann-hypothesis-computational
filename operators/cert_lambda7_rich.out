@@ -1,0 +1,24 @@
+A (17x17, split integ)...
+  A row 0
+  A row 1
+  A row 2
+  A row 3
+  A row 4
+  A row 5
+  A row 6
+  A row 7
+  A row 8
+  A row 9
+  A row 10
+  A row 11
+  A row 12
+  A row 13
+  A row 14
+  A row 15
+  A row 16
+float top-6 concentration eigenvalues: ['718.7448', '2.3861', '1.0000', '0.9999', '0.9995', '0.9983']
+  VᵀGV pivots min 1.000e+00
+
+certified Σ₆ (compression on float top-6 subspace, ≤ Σ_top6) = 725.12796 ± 6.7e+05
+===== certified λ₇ ≤ tr A − Σ₆ ≤ 671203.39513 =====
+EXIT:0

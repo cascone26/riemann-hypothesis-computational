@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from flint import arb, acb, ctx
 import arb_fejer_cert2 as ac
 ctx.prec = 220
-ac.W = arb('1.32')/4; Wa = ac.W
+ac.W = arb('1.32')/4; ac.TW = 2*ac.W; ac.c_tri = arb.pi()/ac.W; Wa = ac.W  # ALL module state (Red's §788 landmine: gpair reads TW/c_tri)
 CEN = [14,20,26,32,38,44]; n = len(CEN)
 trA_op = arb('6.3102004477213357703121798388447592044423984186896')
 

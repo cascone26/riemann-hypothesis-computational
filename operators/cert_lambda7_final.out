@@ -1,0 +1,8 @@
+A (8-probe, split integ) centers [14.0, 18.286, 22.571, 26.857, 31.143, 35.429, 39.714, 44.0]...
+float concentration eigenvalues (8-probe): ['0.9999', '0.9999', '0.9990', '0.9972', '0.9388', '0.7737', '0.1589', '0.0460']
+  VᵀGV pivot min 1.000e+00
+
+certified Σ₆ (top-6 projection, ≤ Σ_top6) = 5.70864 ± 5.4e-03
+===== certified λ₇ ≤ 0.60696 =====
+→ ‖f‖² ≤ 2.5443·T  (k=6, CERTIFIED, feeds §806 assembly)
+EXIT:0

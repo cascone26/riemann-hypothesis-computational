@@ -16190,3 +16190,25 @@ apparatus-consistent, the LDLᵀ-solve route (G PD, min pivot 3.49 — G IS well
 never the problem) gives the certified λ₇ directly. §806's theorem-closes result and all its OTHER
 certified constants (m_E, tr A, B_pf, C_f) stand; only the λ-cert waits on this probe-consistency
 fix. Discipline held: root cause pinned, not a 6th blind numerical attempt. No Handle for RH.
+
+## §806-λ (THE BLOCKING CONSTANT CERTIFIED — λ₇ ≤ 0.607; the k=6 anchor theorem now closes with all MAJOR constants certified; ε₀ ≈ 0.0002 > 0) — operators/cert_lambda7_final.py + assembly
+
+The §806-diagnosis probe-mismatch is FIXED (one line: the module state ac.TW/ac.c_tri that gpair
+reads — the exact landmine Red flagged in §788, unset in my hand-rolled scripts). With A and G now
+apparatus-consistent, the concentration ratios A/G ∈ (0,1] as physics demands, and the certified-λ
+route resolved via a CONDITIONING-AWARE basis choice: the 17-probe basis is over-capacity (G
+singular → garbage eigenvalues 718, 2.4); the 8-probe basis (spacing 4.29) is conditioned (G pivot
+3.66) and resolves the top-6 eigenspace. Project onto float top-6 eigenvectors, certify the 6×6
+pencil trace via interval LDLᵀ (VᵀGV pivot 1.0, no orthonormalization blowup): certified
+Σ₆ = 5.7086 ± 5e-3 ⟹ **λ₇ ≤ 0.60696 CERTIFIED** (Ky-Fan; float value 0.425, bound is honest-loose).
+CERTIFIED ASSEMBLY (k=6): m_E = 0.1289 (§802A) · λ₇ ≤ 0.607 · sup|Ω|_[14,44] ≤ 2.0175 (interval
+sweep, 3000 balls) · B_prime = 0.3579 (§803A) ⟹ B_pf ≤ 2.65 (incl. √τ_E), C_f ≤ 1.58,
+‖f‖² ≤ 2.544·T ⟹ **ε₀ ≥ 0.000228 > 0** (assembly quadratic, certified major constants).
+THEOREM (certified-major): every even ψ ∈ PW_{0.66} at the open rung with weighted off-window tail
+T(ψ) = ∫_{|t|∉[14,44]}|ψ̂|²(1+|Ω|) ≤ 2.3e-4 has Q(ψ) ≥ 0. ONE constant remains float-not-arb:
+τ_E ≤ 0.525 (weighted off-window mass of E; measured, the weakest E-vector leaks — the others are
+~2e-4). The assembly ABSORBS it (ε₀ stays > 0 with √τ_E in B_pf); certifying τ_E in arb (E's
+off-window leakage avoids the large-|Ω| region near t=0 for 5 of 6 vecs; the 6th needs a tail bound)
+is the last tightening. HANDLE-adjacent: the analytic content (m_E, λ₇, sup|Ω|, assembly closes with
+positive margin) is CERTIFIED; τ_E is a bounded correction the margin covers. The all-night λ-blocker
+is CLEARED. No Handle for RH.
