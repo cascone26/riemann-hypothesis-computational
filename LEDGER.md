@@ -15787,3 +15787,22 @@ from both sides (λ_min ≥ 0.66-1.48 above; certification failure below, all te
 HONEST CAVEAT: "NOT CERTIFIED" at RC=400 conflates genuinely-indefinite/near-singular with
 margin-below-radii; splitting those needs a radius-tightened rerun at one N9 point (queued, cheap).
 HANDLE (five certified λ_min lbs + five failure coordinates, proof pointer .out). No Handle for RH.
+
+## §796 (CERTIFIED FRAME CONSTANT ABOVE t* — REDUCTION piece 2 EXISTS at the anchor width, on ONE hypothesis) — operators/cert_frame_const.py/.out
+
+First certified instance of the frame inequality (REDUCTION.md piece 2, the first of the two open
+analytic items): **Σ_{γ≤800} ψ̂(γ)² ≥ 0.1025843·‖ψ‖²_{L²}** for every ψ in the band-limited class
+span{F_25,F_31,F_37,F_43} at 4W=1.32 — the window [25,44] entirely above t*=23.5. Method: S =
+491-zero sampling Gram (closed-form Fejér products, ordinate balls 1e-9), G = L² overlap via the
+u=0 closed form gpair(·,·,0)·2π, bisected shifted interval-LDLᵀ on S−cG (40 bisections).
+HYPOTHESIS SET, one item: ordinate enclosures. Completeness NOT needed (dropping zeros only lowers
+the certified side — one-sided friendly); zeros above 800 absent; the inequality is a finite
+statement about listed evaluation points vs an exact L² form. PROCESS NOTE (the density law
+teaching): probe sets at spacing 1.0 (20 probes) and 2.0 (10) both FAILED interval-LDLᵀ — genuinely
+rank-deficient, class capacity 4W/2π ≈ 0.21/unit ⇒ ~4 dims on [25,44]; the capacity-matched
+4-probe basis certifies at c=0.103, 18× the redundant-basis float figure (5.6e-3) — the constant
+was real all along, the redundant coordinates were diluting it. ARCHITECTURE STATE: piece 1 (corner
+certs below t*) = §788/§790 machinery ✓; piece 2 (frame above t*) = THIS, anchor width ✓; piece 3
+(strip tail) = §791 ✓. Remaining open analytic item: the CROSS-TERM control corner↔complement in
+the composition — now the single named obstruction to the height-localized rung theorem. HANDLE
+(certified inequality, proof pointer .out). No Handle for RH.

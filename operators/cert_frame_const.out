@@ -1,0 +1,9 @@
+S: zeros-only sampling Gram, 4 probes 25..43, 4W=1.32...
+  491 zeros summed (closed form, ordinate balls 1e-9)
+G: L2 overlap Gram via u=0 closed form...
+
+===== CERTIFIED FRAME CONSTANT (§796) =====
+sum_(gamma<=800) psi_hat(gamma)^2 >= 1.025843e-01 * ||psi||^2   on the above-t* class
+(4W=1.32, centers 25..43, 491 zeros; hypothesis: ordinate balls only)
+float scout predicted ~5.6e-3 on the s=1.0 sub-probing — certified value refines it.
+EXIT:0
