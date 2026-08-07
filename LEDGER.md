@@ -16212,3 +16212,23 @@ off-window leakage avoids the large-|Ω| region near t=0 for 5 of 6 vecs; the 6t
 is the last tightening. HANDLE-adjacent: the analytic content (m_E, λ₇, sup|Ω|, assembly closes with
 positive margin) is CERTIFIED; τ_E is a bounded correction the margin covers. The all-night λ-blocker
 is CLEARED. No Handle for RH.
+
+## §807 (m(W) CURVE v1 — reveals the INSTRUMENT HORIZON, not a true collapse; two confounds caught → redesign) — operators/cert_mW_curve.py/.out
+
+Attempted the B16-knife-edge measurement: certified zero-free pencil λ_min(Q,G) at capacity-matched
+spans across 4W. RESULTS: 4W=1.32 → m=0.128882 (reproduces §802A exactly ✓) · 4W=1.60 → m=0.094858
+· 4W=2.00 (9-probe capacity span, G PD pivot 5.98) → certified λ_min < 0 = "Q NOT PD". CRITICAL
+INTERPRETATION (do NOT misread as a true collapse): arch+pole−prime = 2Σ_γ φ̂(γ)² by the explicit
+formula (§789-verified) = a sum of squares = PSD ALWAYS. So "Q not PD" is NOT true indefiniteness —
+it is the interval RADII (from arch integration + prime truncation) growing large enough to swallow
+the thin margin on the dense span ⟹ INSTRUMENT-UNDECIDABLE (Gödel §806 horizon), exactly where he
+predicted strict certification can't resolve the razor. TWO CONFOUNDS in v1 (both real): (1) probe
+count varied with W (6→7→9) — uncontrolled family (Euler §800 lesson AGAIN); (2) capacity density
+rides the Nyquist edge where §795 already showed the margin collapses — so v1 measured the zero-free
+route's PRECISION HORIZON, not the true-form knife-edge. REDESIGN (§807b, next): the TRUE m(W) is
+λ_min of the true Weil form (= zero side, always PSD) per unit ‖ψ‖²_G — measure via the IDENTITY
+(zero-side) pencil 2Σ_{γ≤G}φ̂φ̂ + tail (conditional on zeros, but the TRUE margin), on a CONTROLLED
+fixed-Nyquist-fraction family, higher arch precision. The knife-edge is a statement about the true
+form's margin; the zero-free route's horizon is a different (weaker) curve. HONEST: v1's two clean
+points (0.129, 0.095) are real but confounded; the trend question is REOPENED with the correct
+instrument. No Handle for RH.
