@@ -16319,3 +16319,14 @@ NET: no 2024 paper hands us the Hodge-index-for-Spec-Z object; B18 remains the t
 (§484/§799 K_W-family formulation stands as the sharpest local form). CAVEAT: abstract-only (the PDF
 was corrupted) — Report-tier; re-verify against full text before relying. Prevents chasing a false
 lead. No Handle for RH.
+
+### §808-note (ε₀(W) replication attempt CONFOUNDED — caught, not banked) — cert_anchor_paramW.py
+Hasty attempt to measure ε₀(W) at 4W=1.6/2.0 by replicating §808. TWO bugs caught before banking:
+(1) tr A_op hardcoded to the 1.32 value (6.3102) — the concentration trace is W-DEPENDENT, so
+λ = trA − Σ₆ compared mismatched quantities ⟹ 1.60 returned λ = −0.50 (impossible, [0,1]). (2)
+probe count + K varied across W — the uncontrolled-family confound §807/§800 warned about, a third
+time. m_E(W) values (1.32→0.092, 1.60→0.047 at K=7) are NOT apples-to-apples (different K) and the
+9-probe basis may be over-capacity. NOT BANKED. The reliable uniform-margin evidence remains §807b
+(controlled fixed-span m(W) RISING 0.13→0.24). A clean ε₀(W) needs: W-specific trA (even-op trace =
+window·2W/π + tail), FIXED K and capacity-matched nprobes per W, controlled family — a careful setup,
+deferred. Discipline: confound caught (λ<0 is the tell), garbage refused. No Handle for RH.

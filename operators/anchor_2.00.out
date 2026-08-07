@@ -1,6 +1,4 @@
-Traceback (most recent call last):
-  File "/Users/scones/projects/riemann/operators/cert_anchor_paramW.py", line 13, in <module>
-    ac.W = arb(FOURW)/4; ac.TW = 2*ac.W; ac.c_tri = arb.pi()/ac.W; Wa = ac.W
-               ^^^^^
-NameError: name 'FOURW' is not defined
-EXIT:1
+Q (zero-free), G (pencil), A (concentration) on 8-probe basis...
+  row 0
+  row 1
+  row 2

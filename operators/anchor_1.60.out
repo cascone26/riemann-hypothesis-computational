@@ -1,1 +1,16 @@
 Q (zero-free), G (pencil), A (concentration) on 8-probe basis...
+  row 0
+  row 1
+  row 2
+  row 3
+  row 4
+  row 5
+  row 6
+  row 7
+  row 8
+concentration eigenvalues: ['1.0000', '1.0000', '0.9997', '0.9996', '0.9980', '0.9614', '0.8579', '0.2147', '0.0880']
+
+certified m_E (Q-pencil-λmin on TRUE E) = 0.047103
+certified Σ₆ = 6.81649, λ₇ ≤ -0.50180
+saved E-vectors for τ_E cert
+EXIT:0
