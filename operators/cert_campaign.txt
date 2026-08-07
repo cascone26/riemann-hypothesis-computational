@@ -1,0 +1,2 @@
+# CERT CAMPAIGN §824 — arch_floor / frame_c(above t*) / Qpos, all arb-certified
+## (A) arch_floor(W) certified:

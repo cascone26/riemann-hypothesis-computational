@@ -1,0 +1,4 @@
+4W=1.9 span [16, 22, 28, 34, 40] (maxrad 2.2e-06): CERTIFIED Q_pencil_min ≥ 0.115521 (sub-t* Weil positivity CERTIFIED)
+4W=1.9 span [15, 20, 25, 30, 35, 40] (maxrad 2.2e-06): CERTIFIED Q_pencil_min ≥ 0.145422 (sub-t* Weil positivity CERTIFIED)
+4W=2.0 span [16, 22, 28, 34, 40] (maxrad 1.8e-06): CERTIFIED Q_pencil_min ≥ 0.109814 (sub-t* Weil positivity CERTIFIED)
+EXIT:0

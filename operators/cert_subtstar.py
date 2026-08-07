@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from flint import arb, ctx
 import arb_fejer_cert2 as ac
 import arb_zerofree_cert3 as zc
-ctx.prec=300
+ctx.prec=250
 def certQ(fourW, CEN, rc=400):
     ac.W=arb(fourW)/4; ac.TW=2*ac.W; ac.c_tri=arb.pi()/ac.W
     cs=[arb(c) for c in CEN]; n=len(cs)

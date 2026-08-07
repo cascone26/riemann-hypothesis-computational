@@ -16750,3 +16750,15 @@ correct framing + certified sub-pieces, and PREVENTS chasing a non-existent scal
 the §817 "stop scalar-hunting" decision: not just OUR scalars failed — NO scalar bound exists, it's
 RH). The remaining work needs a genuinely NEW positivity mechanism (the arithmetic-surface/Hodge-
 index object, or a new idea), not a technique the field already has. No Handle for RH.
+
+## §823 (sub-t* Weil positivity CERTIFIED on coarse spans, healthy margin — the razor is ONLY the dense boundary modes) — operators/cert_subtstar.py/.out
+Certified Q_pencil_min (Weil positivity, arb prec 250) deep in the sub-t* regime (past crossover
+t*≈42): 4W=1.90 span {16,22,28,34,40}: **≥0.11552**; {15,20,25,30,35,40}: **≥0.14542**; 4W=2.00
+{16,22,28,34,40}: **≥0.10981** (maxrad ~2e-6). HEALTHY margins (~0.11-0.15), NOT razor-thin —
+because these are WELL-SEPARATED spans (spacing 6). Extends §790's certified ladder into the sub-t*
+regime and SHARPENS the localization: even deep past t*, the Weil form is robustly + certifiably PD
+on coarse spans; the razor-thin ~0.0008 margin exists ONLY on the DENSE capacity-matched spans (the
+boundary modes, §812). So the difficulty is confined to the dense boundary shell, confirmed by
+certification. HONEST: this used coarse spans → did NOT test the razor-thin dense-corner (the
+instrument-horizon question stays open — dense-span sub-t* cert would need it). HANDLE (coarse sub-t*
+positivity). No Handle for RH.
