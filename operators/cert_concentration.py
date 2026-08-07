@@ -16,18 +16,16 @@ cs = [arb(c) for c in CENTERS]; n = len(cs)
 TWO_W = 2*Wa
 
 def sinc_sq(y):
-    """(sin y / y)^2, robust at y ~ 0: series 1 - y^2/3 + 2y^4/45 with certified remainder
-    (|next terms| <= |y|^6/100 for |y| <= 0.6, generous) when the ball can touch 0."""
-    try:
-        near0 = bool(abs(y) < 0.6) or y.contains(acb(0))
-    except Exception:
-        near0 = True
-    if near0:
+    """(sin y / y)^2. Series 1 - y^2/3 + 2y^4/45 + R, |R| <= |y|^6/45 (alternating, next term
+    2|y|^6/945 < |y|^6/45), used ONLY when the WHOLE ball satisfies |y| < 0.5 (mid+rad bound);
+    otherwise the closed form (safe, ball provably excludes 0)."""
+    ay = abs(y)                      # arb (acb.abs -> arb)
+    ymax = float(ay.mid()) + float(ay.rad())
+    if ymax < 0.5:
         y2 = y*y
         val = acb(1) - y2/3 + 2*y2*y2/45
-        m = float(abs(y2*y2*y2).real.mid()) + float(abs(y2*y2*y2).imag.mid())
-        e = m/100 + 1e-30
-        return val + acb(arb(0, e), arb(0, e))
+        r6 = ymax**6/45 + 1e-30
+        return val + acb(arb(0, r6), arb(0, r6))
     return (y.sin()/y)**2
 
 print(f"A-matrix: 2*int_[14,44] F_jF_k, {n} probes...", flush=True)

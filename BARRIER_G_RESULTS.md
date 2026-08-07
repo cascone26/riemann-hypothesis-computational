@@ -24,7 +24,19 @@ the width scan.
 Tier: REPORT (continuous zero configurations; discretization to genuine g-prime systems = BDR
 arXiv:2309.01567 Thm 1.2, cited not executed).
 
-## G3 — matched-local-data pair: SKETCH (load-bearing step verified)
+## G3 — matched-local-data pair: BUILT at finite truncation + sketch for the full theorem
+
+**Built (same night, second pass):** `operators/barrier_g3_matched_pair.py` — two systems
+discretized by the same deterministic greedy rule, targets identical below Xs=1000, system B's
+target adds the zero-at-ρ term (ρ=0.75+2i) only above Xs. **Output:** 168 g-primes below the split,
+**bit-identical** (max |p_A−p_B| = 0); above it ψ_B−x carries the prescribed x^{0.75} oscillation
+(residual ≤ 8.1 after removing it) while ψ_A−x stays within O(log X) (≤ 9.7). A certificate reading
+local data below Xs provably returns the same verdict on both. Also
+`operators/barrier_g2b_discretize.py`: the witness system alone at X=10⁶ (77,941 g-primes,
+oscillation amplitude 10,188 vs residual ≤ 12.2 < log X = 13.8, flat control system as null).
+The discretization machinery is **handled on our instrument**, not just cited.
+
+Original sketch (full-theorem form):
 
 **Claim:** for every X there exist two Beurling systems with identical g-primes on [1,X] and
 opposite RH-analogue verdicts. Hence no certificate reading local prime data to ANY finite height
@@ -61,7 +73,36 @@ the zero-density theorems succeed WITHOUT any functional equation (the Selberg-c
 needs one) — reinforcing that counting/density machinery is FE-blind, which is why it walks into
 witness territory.
 
-## G4 — FE + EP ⟹ RH-analogue (narrow Beurling class): OPEN, stated precisely
+## G4 — CLOSED for the integrality class (Hamburger assembly, 2026-08-07 second pass); general class open
+
+**Theorem (assembled; candidate-novel as an observation — lit-gate found no published Beurling
+application of Hamburger).** Let (P,N) be a Beurling system whose g-integers lie in ℕ (the
+Pintz–Révész integrality condition — the same class their zero-density theorem lives in), with
+counting multiplicities G(ν), such that ζ_P(s) = Σ G(ν)ν^{−s} converges absolutely for Re s > 1,
+(s−1)^m ζ_P is entire of finite order, and ζ_P satisfies Riemann's exact functional equation
+π^{−s/2}Γ(s/2)ζ_P(s) = π^{−(1−s)/2}Γ((1−s)/2)ζ_P(1−s). Then ζ_P = c·ζ **(Hamburger 1921, Math. Z.
+10, 240–254; hypotheses verified against source 2026-08-07)**; a Beurling system has G(1)=1 (empty
+product), forcing c=1, so ζ_P = ζ and, by uniqueness of Dirichlet coefficients and of the Euler
+product, P = the rational primes.
+
+**Consequence for the map:** in the integrality class, the property-set {Euler product, Riemann FE}
+admits NO RH-violating witness unless RH itself is false — the empty witness column of surviving-row
+1 is a THEOREM there, not an observation. The rigidity is total: the only object in the class is ζ.
+
+**Honest scope:** (i) this is for the EXACT Riemann FE — Knopp (Invent. Math. 117 (1994) 361–372)
+shows other functional equations can have infinite-dimensional solution spaces, so the barrier
+statement does not transfer to arbitrary FEs by this route (though those solutions generically lack
+Euler products — the EP hypothesis does separate work there, unexplored); (ii) g-integers ⊂ ℕ is a
+real restriction — the general Beurling class (real g-integers) remains OPEN, and is genuinely
+harder because no FE is even defined/known there (Révész: "we lack a functional equation");
+(iii) assembly of two classical theorems — the value is the placement in the barrier lattice, and
+the observation is easy once stated (likely folklore-adjacent; claim it as organization, not depth).
+
+**The residual open target (the real G4):** formulate + prove an FE-rigidity statement for general
+Beurling systems (real g-integers) — or construct the first Beurling system with any genuine FE.
+Either result would be new mathematics; the map points all remaining weight here and at B18.
+
+Original open statement (kept for provenance):
 
 **Statement to attack:** let (P,N) be a Beurling system whose ζ_P (i) has EP over g-primes (automatic),
 (ii) continues meromorphically to ℂ with finite order, (iii) satisfies a Riemann-type FE

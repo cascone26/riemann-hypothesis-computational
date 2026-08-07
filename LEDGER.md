@@ -16029,3 +16029,34 @@ split (evaluate the series only on a subinterval provably inside |y|<0.6, the cl
 NOT A HANDLE tonight — verify-before-ship + Charisma: the float landscape is REPORT, the certified
 λ₁₀ awaits the robustness fix. The careful lemma flagged in QPR_LEMMA/ANCHOR_THEOREM stays open by
 design, not forced. No Handle for RH.
+
+## §804 (BARRIER SESSION FULL-DEPTH PASS: G2b/G3 witnesses BUILT as real g-prime systems; G4 CLOSED for the integrality class via Hamburger 1921; full-ledger kill sweep adds B13-B18; property LATTICE assembled; citations verified) — 2026-08-07
+Continuation of §802-803 ("don't stop until the barrier session has done everything it can"). Five results:
+1. **G2b BUILT-DISCRETE** (`operators/barrier_g2b_discretize.py`): greedy deterministic discretization
+   (error ≤ log x, sharper than BDR Thm 1.2's random ≤2) of the σ₀=0.75, t₀=2 witness target →
+   **77,941 actual g-primes** whose ψ_P carries the prescribed off-line-zero oscillation: amplitude 10,188
+   at X=10⁶ vs residual ≤12.2 < log X=13.8; flat control system (78,618 primes) shows same-order error, NO
+   oscillation. The witness machinery is HANDLED at finite truncation on our instrument.
+2. **G3 BUILT-DISCRETE** (`operators/barrier_g3_matched_pair.py`): matched pair, targets split at Xs=1000:
+   168 g-primes below split BIT-IDENTICAL (max diff 0.0e0), ψ_B oscillation above (resid ≤8.1), ψ_A flat
+   (≤9.7). No finite-local-data certificate decides RH-analogues — realized, not just sketched.
+3. **G4 CLOSED (integrality class) — the Hamburger assembly.** Hamburger 1921 (Math. Z. 10, 240-254;
+   statement+hypotheses VERIFIED against source: D abs-conv Re s>1, (s-1)^m D entire finite order, exact
+   Riemann FE ⟹ D=cζ) + G(1)=1 for any Beurling system ⟹ c=1 ⟹ **a Beurling system with g-integers ⊂ ℕ
+   satisfying Riemann's FE IS the rational system**. So {EP, FE, integrality} admits no RH-violator unless
+   RH is false — surviving-row 1 is a THEOREM in the Pintz-Révész class. Lit-gate: NO published Beurling
+   application of Hamburger found — candidate-novel as observation/organization (easy once stated; claim
+   placement, not depth). Scope limits stated in BARRIER_G_RESULTS.md (exact-FE only per Knopp Invent. 117
+   (1994) infinite-dim solution spaces for other FEs; general real-g-integer class open).
+4. **Full-ledger kill sweep (2 agents, §1-§800)**: 34 candidate kills consolidated into 6 new style-level
+   rows B13-B18: extremal/dual-certificate (§229 23-dim degeneracy), generic Hilbert-Pólya machinery
+   (§221/§213/§146/§72), trace-formula identities (§56c/§122), prime-induction knife-edge (§84/§14/§187),
+   Jensen/TP ladder (§289/§305), arithmetic-surface port = the CONSTRUCTIVE frontier (§295/§398/§409/§234,
+   arXiv:2410.20758). Map now B1-B18, W1-W7.
+5. **PROPERTY LATTICE added to BARRIER_MAP** (the systematic candidate-novel deliverable): 7 property-set
+   rows from FE-only to EP∧FE; every strictly-weaker-than-EP∧FE row witness-saturated; EP∧FE∧ℕ row = NO
+   by Hamburger rigidity; EP∧FE general = the empty locus = the characteristic locus of RH.
+CITATIONS FIXED (verified): Bombieri-Hejhal Duke 80(3) 1995 821-862 ✓ (1976 was spurious);
+Balanzario-Sánchez-Ortiz Math. Comp. 76(260) 2007 2045-2049 ✓ — computational, NO proportion claim (B7 row
+rewritten: infinitely-many on-line + off-line real-parts dense in (0,1); dropped the unverified
+"positive proportion" phrasing). REPORT throughout; every build has its .py + output inline above.

@@ -9908,3 +9908,23 @@ Where the program landed: every weaker property-set is now witness-barred or int
 frontier is exactly FE ∧ EP (G4) — same target the conservation map reaches as "correspondence." Next
 lever loaded: G4's narrow-class statement, and G3's sketch is one coupled-discretization writeup from a
 theorem.
+
+## Arc: Barrier session part 3 (2026-08-07, same night) — full depth
+Jacob: "u dont stop until this barrier build session has done everything it can." Executed: (a) G2b+G3
+upgraded from continuous/sketch to ACTUAL g-prime systems via a greedy deterministic discretizer built
+tonight (error ≤ log x; witness oscillation carried at 10,188 vs residual 12; matched pair bit-identical
+below split); (b) G4's narrow class CLOSED by spotting that Hamburger 1921 rigidity applies verbatim to
+integrality-class Beurling systems — verified the theorem's exact hypotheses first, lit-gated the
+application (unpublished), scoped the claim honestly (exact-FE only, Knopp caveat); (c) two-agent sweep of
+the ENTIRE ledger for unmapped kills → B13-B18 (the §400-series convergence "missing arithmetic surface"
+now sits in the map as the constructive frontier B18, agreeing with the conservation map); (d) property
+lattice assembled — the one-table form of the whole program; (e) both ⚠ citations resolved by verification
+agent (one date corrected, one overclaim removed from B7 — the lit-gate agent's "positive proportion"
+claim did not survive verification; wrote what IS verified).
+Method deposits: (i) greedy deterministic discretization beats citing BDR's random Thm 1.2 for our
+purposes (sharper error, reproducible coupling for G3); (ii) agent-sourced citations get a verification
+pass before entering the map — one of three needed correction; (iii) style-level consolidation (34 raw
+kills → 6 rows) keeps the map readable — raw list preserved in agent outputs, § pointers inline.
+State: map complete at B1-B18/W1-W7/lattice; open frontier = G4-general (FE for Beurling) + B18 (the
+arithmetic surface) — both now precisely aimed. Next lever: G3 full-theorem writeup (coupling argument
+formalized) and the G4-general FE-rigidity question.
