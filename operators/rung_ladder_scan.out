@@ -40,3 +40,5 @@
   == ladder point 4W=1.5: CERTIFIED ==
 
 4W=1.6 (primes in support: [2, 3, 4]), centers [14, 22, 30, 38], RC=400:
+  row 0 done (diag rad 4.40e-06)
+  row 1 done (diag rad 4.40e-06)
