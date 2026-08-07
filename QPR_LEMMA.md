@@ -37,7 +37,11 @@ certifying; the shape is B_pole = C(W)·e^{2W} with C explicit. At 4W=1.32 expec
     at T₊=88 it is ~1e-4, negligible.
   So **B_arch ≈ 1.03 + tails** at the anchor — dominated by the in-window digamma sup.
 
-**Total at 4W=1.32, C_max=44: B ≲ 1.4 + B_pole(TBD convention).** Against λ_min = 0.1289 (§802)
+**CERTIFIED (mechanical pieces, 2026-08-07 ~01:15): B_prime ≤ 0.357912 (exact) · sup|Ω|_{[0,88]}
+≤ 6.4773 (fine interval sweep [0,10] gives 5.404; the [10,88] ln t+2 asymptotic dominates) ⇒
+B_arch(inside) ≤ 1.0309 · B_pole envelope per-probe at i/2 ≤ 0.0943 (→ ~1e-3 class-level).
+Total B ≤ 1.399 + certified tails.** Remaining for §803 full: the class-envelope lemma (bounds
+|r̂(t)| outside the window for unit-L² class members — the one careful piece), then the tails. Against λ_min = 0.1289 (§802)
 the assembly needs ‖r‖/‖p‖ ≲ 0.1289/(2B) ≈ 0.04-0.05 — i.e. ε_R ≲ 2e-3 in eigenvalue terms.
 The prolate plunge at capacity+2 is orders below that (measured §794 spectra: 4th eigenvalue
 already ≥ 6e-2 vs kernel-tier 1e-6 — the gap is wide). The assembly CLOSES comfortably if ε_R is

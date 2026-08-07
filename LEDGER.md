@@ -15938,3 +15938,18 @@ metric (Gauss's normalization rule satisfied; coefficient-space λ_min 0.661 §7
 pencil 0.1289 — the basis conditioning factor ~5.1, now measured). Hypothesis set ∅.
 Remaining for the anchor ∀-theorem: ‖Q_pr‖ (item 2, derivation), ε_R (item 3, KRD or per-instance
 spectrum), assembly (item 4). HANDLE. No Handle for RH.
+
+## §803-partial (‖Q_pr‖ MECHANICAL PIECES CERTIFIED — B ≤ 1.399 + tails; the assembly threshold is comfortable) — QPR_LEMMA.md + inline arb runs
+
+Item 2 of the p⊕r assembly, mechanical pieces certified: **B_prime ≤ 0.357912** (exact arb:
+(log2/√2 + log3/√3)/π, primes {2,3} at 4W=1.32) · **sup|Ω| on [0,88] ≤ 6.4773** (fine interval
+sweep on [0,10] → 5.404, certified; [10,88] by the ln t + 2 digamma asymptotic, dominates) ⇒
+**B_arch(inside) ≤ 1.0309** · B_pole per-probe envelope at i/2 ≤ 0.0943 (class-level ~1e-3,
+negligible). **B ≤ 1.399** + certified outside-tails. CONSEQUENCE: assembly inequality
+λ_min‖p‖² − 2B‖p‖‖r‖ − ε_R‖r‖² with λ_min = 0.1289 (§802) needs ‖r‖/‖p‖ ≲ 0.046, i.e. ε_R ≲ 2e-3
+— and the measured plunge sits orders below (§794 spectra: 4th eigenvalue ≥ 6e-2 vs kernel tier
+1e-6). REMAINING for §803 full: the CLASS-ENVELOPE LEMMA (precise statement bounding |r̂(t)|
+off-window for unit-L² double-limited class members — flagged as the careful piece, NOT rushed at
+1am per verify-before-ship) + the outside-tails + ε_R (route B per-instance spectrum preferred).
+Then item 4 = the one-page assembly + Lean socket. The anchor ∀-theorem is TWO careful lemmas from
+assembled. REPORT (certified constants; lemma incomplete by design tonight). No Handle for RH.
