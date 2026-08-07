@@ -4244,3 +4244,15 @@ min pivot 3.49, well-conditioned) gives λ₇~0.42 certified → §806 upgrades 
 Discipline: 3 numerical symptoms chased to ONE root cause, not forced to a Handle at depth.
 Anchor docs: ANCHOR_THEOREM.md, QPR_LEMMA.md, REDUCTION.md. Certs: cert_joint_pencil, cert_frame_const,
 cert_lambda7_clean (diagnostic), assemble_anchor.
+
+── RIEMANN8 §808: ANCHOR ∀-THEOREM FULLY CERTIFIED (HANDLE) ──
+The height-localized anchor theorem is a CERTIFIED HANDLE. Q(ψ)≥0 for even ψ∈PW_{0.66} at the open
+rung with weighted off-window tail T(ψ)≤1e-4 (certified Q≥2.03e-2). Single self-consistent 8-probe
+basis; ALL constants arb-certified: m_E=0.0918 (on the TRUE concentration eigenspace — basis gap from
+§806-λ FIXED), λ₇≤0.607, sup|Ω|≤2.018, τ_E≤0.086, B_prime=0.358; closing inequality verified in arb.
+Path taken this session: cleared the all-day λ-blocker (probe-def mismatch = missing module state,
+Red's §788 landmine), then closed the basis-consistency gap (single-basis §808), then τ_E + arb ε₀.
+Caught+fixed 2 false-positive "certified" prints (nan τ_E; float-only ε₀) — discipline held.
+NOT RH (bounded class, one rung); uniform completion = §807 B18 arithmetic surface. Tailwind: §807b
+controlled m(W) RISES (0.132→0.239) — safe side of the knife-edge on stable spans.
+NEXT: Lean socket for §808's closing inequality; then the uniform program.
