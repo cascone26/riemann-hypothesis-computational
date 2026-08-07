@@ -276,3 +276,16 @@ its own PROOF_CERT.json admits verify_gate.py was never run. **Q1 (tail lemma) a
 cert) are REOPENED, unclaimed.** Q2 (continuum) stands — independently re-verified via engine/verify_gate.py,
 genuine PASS. Q3-piece-4 (screw/CvS interior re-check) stands as its own honest REPORT-tier finding, not
 disputed. Q4/Q5/Q6 below remain valid (they don't depend on the false Q1/Q3-piece-3 claims).
+
+## Queued 2026-08-07 (Jacob's prism table, cross-referenced against the live §788-§800 thread)
+- **Beurling constraint ladder** (his #5, "best"): lit-read the 2023-24 dialable density-parameter
+  families; target = the MINIMAL density hypothesis on low zeros that keeps the §796/§800 frame
+  floor positive (the "minimal hypothesis search" nobody has framed). Direct continuation of the
+  corner-deficiency law §794-add/§799 + Euler's Kadec question (E4). HIGH synergy with live work.
+- **Connes-truncation interlacing wedge** (his #4): concrete checkable — do the CC/Connes truncated
+  matrices (frontier/connes_prolate/, Groskin certs) form an interlacing family? One script with
+  existing interval eigen machinery; 2 papers to read first (Ono 2019 group + Connes 2020-26
+  truncations). Cheap probe.
+- (His #3 formulation-space search → engine-lane candidate, low priority; #2 skip = Deninger;
+  #1 barrier theorem parked — no step 1, but note Gödel's §799-era instrument-horizon argument is
+  a micro-instance of that genre.)
