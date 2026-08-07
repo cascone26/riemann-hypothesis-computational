@@ -9928,3 +9928,48 @@ kills → 6 rows) keeps the map readable — raw list preserved in agent outputs
 State: map complete at B1-B18/W1-W7/lattice; open frontier = G4-general (FE for Beurling) + B18 (the
 arithmetic surface) — both now precisely aimed. Next lever: G3 full-theorem writeup (coupling argument
 formalized) and the G4-general FE-rigidity question.
+
+## Arc: Riemann8 §808-817 — the anchor theorem + the uniform characterization (2026-08-07)
+
+**Framing:** After §807b (m(W) rises on fixed spans), pursued two things: (1) finish/certify the
+anchor ∀-theorem, (2) map the uniform difficulty. Both delivered, with a hard-won meta-lesson.
+
+**§808 — THE ANCHOR ∀-THEOREM (CERTIFIED + LEAN-VERIFIED).** The durable deliverable. Weil positivity
+Q(ψ)≥0 for every even ψ∈PW_{0.66} at the open rung with weighted off-window tail T(ψ)≤1e-4 (certified
+Q≥0.02). Single self-consistent 8-probe basis; ALL constants arb-certified (m_E=0.0918 on the true
+concentration eigenspace, λ₇≤0.607, sup|Ω|≤2.018, τ_E≤0.086, B_prime=0.358); closing inequality
+verified in arb AND Lean-kernel-checked (§808-lean, trusted axioms). Path: cleared the all-day
+λ-blocker (probe-def mismatch = missing module state, Red's §788 landmine), closed the
+basis-consistency gap (m_E on the true eigenspace), certified τ_E + ε₀. Caught+fixed TWO false-positive
+"certified" prints (nan τ_E→0; float-only ε₀) before banking — discipline held. First fully-certified
+∀-positivity theorem for the Weil form.
+
+**§812-816 — MAPPING THE UNIFORM DIFFICULTY (a clean chain).** §812: the difficulty is localized — vary
+subspace dim K at fixed W, m_E·K is W-stable for the concentrated CORE (K≤5), margin CRASHES at the
+BOUNDARY modes. §813: the crash is CROSS-COUPLING, not single-mode failure — Q is positive on every
+mode individually (arch-dominated). §813b: the coupling is ARITHMETIC — arch is a PD floor, the PRIME
+form is INDEFINITE, its positive eigenvalues eat the arch floor on boundary-coupled directions. §814:
+the facts — arch floor W-stable ~0.15, prime ceiling grows 0.09→0.24, crossover 4W~1.65, Q>0 everywhere
+but →0. §816 (DURABLE): the arch floor is W-INVARIANT (0.153±5% over 10 widths), EXPLAINED by the fixed
+concentration window (Ω over [14,44] is W-independent). NET: the uniform difficulty = a FIXED
+archimedean budget vs a GROWING prime obstruction; Q=arch−prime>0 is a race the fixed budget eventually
+loses to accumulating primes, surviving by full-spectrum cancellation. Matches Connes-Consani/Weil, now
+MEASURED.
+
+**THE META-LESSON (the session's hardest-won discipline).** I proposed SIX clean scalar mechanisms —
+m_E·D=const (§810b), saturation (§811), peak+decline (§811-corr), eigenvector-misalignment (§814/§815),
+prime∝prime-sum (§817) — and measurement REFUTED every one. Each was banked provisionally, tested, and
+walked back loudly (§811↔§811-corr↔§811-final whipsaw; §815 refutes §814; §817). The refusals ARE the
+finding: **Weil positivity is irreducibly multi-dimensional; it does not reduce to a scalar bound.** The
+durable outputs are the STRUCTURAL facts that survived testing (§808 certified theorem; §816 fixed-vs-
+growing characterization, tested+explained), NOT the scalar stories. Also caught 3 measurement confounds
+(uncontrolled probe family: frame-const, m(W)-v1, nprobes-steps) — each flagged by an impossible/
+discontinuous number, each refused. Decision at §817: stop scalar-hunting; the next real work is the
+intersection-form/Hodge-index structure (theory + Connes-Consani), a different KIND of work than float
+scans. The frontier is now precisely mapped: bound the growing prime obstruction against the fixed
+archimedean budget for all W — that bound is what the missing arithmetic-surface object must supply.
+
+**Decision-chain value:** the over-reach-and-correct cycles are kept in the ledger deliberately (process
+provenance) — they show the methodology (propose→test→refute→correct) and prevent a future session from
+re-proposing the same refuted scalar laws. The whipsaws were the noise floor (±0.001) being read as
+signal; the fix each time was respecting it and isolating the confound-free measurement.
