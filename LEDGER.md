@@ -16411,3 +16411,23 @@ caught it but I called "saturation" too confidently. The peak location 4W≈1.42
 first prime-POWER entry) is a lead worth a look (coincidence per §799's ladder-separation, or real?).
 REPORT. No Handle for RH. NEXT: 1.58/1.62 (1.62 may under-resolve, cap 8.2>8); then a K-scaled scan
 (K growing with capacity) to test the TRUE margin-per-class question §810b/§811 conflated.
+
+## §811-FINAL (9-point clean curve RECONCILES the whipsaw: m_E·D SATURATES to a flat plateau ≈0.038, CV 2.4%; §811 saturation RESTORED, §811-correction's "peak+decline" RETRACTED as noise) — mE_fixed8.txt complete
+
+Full clean fixed-8 scan, all 9 points well-conditioned (Gpiv 0.13→1.05):
+  4W:    1.30   1.34   1.38   1.42   1.46   1.50   1.54   1.58   1.62
+  m_E·D: .0308  .0351  .0382  .0394  .0389  .0376  .0368  .0371  .0377
+RISE (1.30-1.38): 0.031→0.038. PLATEAU (1.38-1.62, 7 pts): mean 0.03796, std 0.00090, **CV 2.4%**,
+range [0.0368,0.0394]. VERDICT: m_E·D rises then is FLAT at ≈0.038 to within 2.4% — SATURATION is
+REAL (§811 restored). The §811-correction "peak at 1.42 + monotone decline" is RETRACTED: it read the
+±0.0013 point-to-point NOISE (float eigenvectors → pencil) as fine structure; the plateau is flat, the
+"peak" and "recovery" are both within noise. META-LESSON (the night's sharpest discipline point): the
+m_E computation's noise floor is ~±0.001; I read it as signal TWICE (premature saturation call, then
+premature peak call), whipsawing the ledger. The robust result was stable all along — rise-then-flat
+~0.038 — and needed only the noise floor respected. To resolve any TRUE fine structure needs
+exact-interval m_E (not float eigenvectors) — deferred. STILL-STANDING CAVEAT (from §811-corr, real):
+m_E is on FIXED K=6 while D GROWS, so m_E·D is not rigorously "margin per class"; the m_E→0.038/D
+reading (Hodge-index-shape B18 spec) is SUGGESTIVE, not established — the clean K-scaled test (K
+growing with capacity) is the right next probe. NET honest finding of the overnight: m_E·D saturates
+to ≈0.038 over the clean window (solid); its interpretation as a 1/D law needs the K-scaled follow-up.
+REPORT. No Handle for RH.
