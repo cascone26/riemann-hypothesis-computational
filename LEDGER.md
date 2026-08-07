@@ -15500,3 +15500,20 @@ i.e. thin the exp-type-a zero set (density a/π) to the target (density log T/2�
 loaded frontier; it is genuinely hard analytic NT (prime-term control), and the best current work reaches
 it and stops. Not a wall for the endeavor — a precisely stated open problem, now understood at the level
 of the state of the art. No Handle for RH.
+
+## §787 — Generalized the Bessel contribution to arbitrary integer order (besselJ_pos), for mathlib
+
+Acting on the §786 conclusion (stop grinding the walled proof lane, work the genuine Lean edge). Kim/Suzuki
+own the proof frontier; our genuine asymmetric asset is the verified-formalization loop. mathlib has NO
+Bessel functions at all — so strengthened the extracted contribution (`mathlib_contribution/BesselJ01.lean`)
+from J₀/J₁-specific to GENERAL integer order:
+- `besselJ (n : ℕ) (x) = ∑ₖ (-1)^k/(k!(k+n)!)(x/2)^{2k+n}`.
+- **`besselJ_pos`**: `0 < J_n(x)` for `0<x`, `x² < 4(n+1)` — via the alternating-series bound
+  `J_n(x) ≥ (x/2)ⁿ/n!·(1−(x/2)²/(n+1))`. **Unifies** the two hand-proved cases (J₀ on x²<4, J₁ on x²<8)
+  into one theorem over all orders. Verified through verify_loop (PASS, trusted axioms only).
+- `besselJ0_eq`, `besselJ1_eq`: the specific defs ARE `besselJ 0`, `besselJ 1` (subsumption).
+Full file compiles clean against pinned mathlib (trusted kernel axioms only). This is the genuinely novel,
+non-reproduction output of the day: a general-order Bessel positivity theorem in Lean, exploiting the
+verification edge rather than competing on analytic NT where the field is walled. Contribution is now
+materially stronger for a mathlib PR (general J_n, the design a reviewer would want). Submission still
+gated on Jacob's Zulip/CLA (§ prior). No Handle for RH.

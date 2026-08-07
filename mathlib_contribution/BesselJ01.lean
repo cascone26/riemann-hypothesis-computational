@@ -11,19 +11,21 @@ import Mathlib.Analysis.SpecialFunctions.Exponential
 # Bessel functions `J₀` and `J₁` (power-series definition) and their elementary bounds
 
 mathlib currently has no Bessel functions.  This file introduces the Bessel functions of the first
-kind of orders `0` and `1` via their power series and proves elementary two-sided bounds valid below
-their first positive zero:
+kind via their power series and proves elementary positivity/bounds valid below the first positive
+zero.
 
-* `besselJ0 x = ∑ₖ (-1)^k /(k!)² (x/2)^{2k}`,  `besselJ1 x = ∑ₖ (-1)^k /(k!(k+1)!) (x/2)^{2k+1}`.
+* `besselJ n x = ∑ₖ (-1)^k /(k!(k+n)!) (x/2)^{2k+n}` — general integer order `n`.
+* `besselJ0 x = ∑ₖ (-1)^k /(k!)² (x/2)^{2k}`,  `besselJ1 x = ∑ₖ (-1)^k /(k!(k+1)!) (x/2)^{2k+1}`
+  (`besselJ0_eq`, `besselJ1_eq`: these are `besselJ 0`, `besselJ 1`).
 
 ## Main results
 
-* `besselJ0_series_summable`, `besselJ0_zero` (`J₀ 0 = 1`), `besselJ0_even`.
-* `besselJ0_pos`: `0 < J₀ x` for `|x| < 2` (i.e. below the first zero `j₀,₁ ≈ 2.405`).
-* `besselJ0_ge_one_sub`, `besselJ0_le_one`, and the sharp two-term enclosure `besselJ0_two_term`
-  (`|J₀ x − (1 − (x/2)²)| ≤ (x/2)⁴/4`) with corollary `besselJ0_le_two_term`.
-* `besselJ1_pos`: `0 < J₁ x` for `0 < x`, `x² < 8` (below the first zero `j₁,₁ ≈ 3.832`).
-* `besselJ1_le_half`: `J₁ x ≤ x/2` on the same range.
+* **`besselJ_pos`**: `0 < J_n x` for `0 < x`, `x² < 4(n+1)` (below the first positive zero of `J_n`).
+  Specializes to `J₀ > 0` on `|x|<2` and `J₁ > 0` on `x²<8`.
+* `besselJ0_series_summable`, `besselJ0_zero` (`J₀ 0 = 1`), `besselJ0_even`, `besselJ0_pos`.
+* Sharp `J₀` bounds: `besselJ0_ge_one_sub`, `besselJ0_le_one`, the two-term enclosure
+  `besselJ0_two_term` (`|J₀ x − (1 − (x/2)²)| ≤ (x/2)⁴/4`) and `besselJ0_le_two_term`.
+* `besselJ1_pos`, `besselJ1_le_half` (`J₁ x ≤ x/2` on `0<x`, `x²<8`).
 
 All bounds follow from the Leibniz alternating-series error estimate
 (`alternating_series_error_bound`), the series being alternating with decreasing terms on the stated
@@ -31,17 +33,96 @@ ranges.
 
 ## TODO
 
-Generalize to `J_ν` of arbitrary order, relate to Bessel's differential equation, and add the
-integral representation.  The order-`0,1` results here are self-contained and require none of that
-infrastructure.
+Relate `J_n` to Bessel's differential equation, extend to real/complex order `J_ν`, and add the
+integral representation.  The results here are self-contained and require none of that infrastructure.
 -/
 
 open scoped Nat
+
+/-- Bessel function of the first kind, integer order `n`, via its power series
+`J_n(x) = ∑ₖ (-1)^k / (k!(k+n)!) (x/2)^{2k+n}`. -/
+noncomputable def besselJ (n : ℕ) (x : ℝ) : ℝ :=
+  ∑' k : ℕ, (-1 : ℝ) ^ k / ((k ! : ℝ) * ((k + n)! : ℝ)) * (x / 2) ^ (2 * k + n)
+
+/-- **General Bessel positivity.**  `J_n(x) > 0` for `0 < x` and `x² < 4(n+1)` (below the first
+positive zero of `J_n`).  Via the alternating-series bound
+`J_n(x) ≥ (x/2)ⁿ/n! · (1 − (x/2)²/(n+1))`.  Specializes to `J₀ > 0` on `|x|<2` (`n=0`) and
+`J₁ > 0` on `x²<8` (`n=1`). -/
+theorem besselJ_pos {n : ℕ} {x : ℝ} (hx0 : 0 < x) (hx : x ^ 2 < 4 * (n + 1)) :
+    0 < besselJ n x := by
+  set y : ℝ := (x / 2) ^ 2 with hy
+  have hy0 : 0 ≤ y := by rw [hy]; positivity
+  have hyn : y < (n : ℝ) + 1 := by rw [hy]; nlinarith [hx]
+  set f : ℕ → ℝ := fun k => y ^ k / ((k ! : ℝ) * ((k + n)! : ℝ)) with hf
+  have hfnn : ∀ k, 0 ≤ f k := fun k => by rw [hf]; positivity
+  have hxhalf : (0 : ℝ) < (x / 2) ^ n := by positivity
+  have hfactor : besselJ n x = (x / 2) ^ n * ∑' k, (-1 : ℝ) ^ k * f k := by
+    unfold besselJ
+    rw [← tsum_mul_left]
+    congr 1; ext k
+    rw [hf, hy, pow_add, pow_mul]; ring
+  have hfa : Antitone f := by
+    apply antitone_nat_of_succ_le; intro k
+    have hfac1 : ((k + 1)! : ℝ) = ((k : ℝ) + 1) * (k ! : ℝ) := by
+      rw [Nat.factorial_succ]; push_cast; ring
+    have hfac2 : ((k + 1 + n)! : ℝ) = ((k : ℝ) + 1 + n) * ((k + n)! : ℝ) := by
+      rw [show k + 1 + n = (k + n) + 1 by ring, Nat.factorial_succ]; push_cast; ring
+    have hkne : (k ! : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (Nat.factorial_ne_zero k)
+    have hknne : ((k + n)! : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (Nat.factorial_ne_zero (k + n))
+    have hstep : f (k + 1) = (y / (((k : ℝ) + 1) * ((k : ℝ) + 1 + n))) * f k := by
+      show y ^ (k + 1) / (((k + 1)! : ℝ) * ((k + 1 + n)! : ℝ))
+        = (y / (((k : ℝ) + 1) * ((k : ℝ) + 1 + n))) * (y ^ k / ((k ! : ℝ) * ((k + n)! : ℝ)))
+      rw [hfac1, hfac2, pow_succ]; field_simp
+    rw [hstep]
+    have hc : y / (((k : ℝ) + 1) * ((k : ℝ) + 1 + n)) ≤ 1 := by
+      rw [div_le_one (by positivity)]
+      nlinarith [Nat.cast_nonneg (α := ℝ) k, Nat.cast_nonneg (α := ℝ) n, hyn]
+    calc (y / (((k : ℝ) + 1) * ((k : ℝ) + 1 + n))) * f k ≤ 1 * f k :=
+          mul_le_mul_of_nonneg_right hc (hfnn k)
+      _ = f k := one_mul _
+  have hfs : Summable f := by
+    have hcomp := Real.summable_pow_div_factorial y
+    apply hcomp.of_nonneg_of_le hfnn
+    intro k
+    have hkn1 : (1 : ℝ) ≤ ((k + n)! : ℝ) := by
+      exact_mod_cast Nat.one_le_iff_ne_zero.mpr (Nat.factorial_ne_zero (k + n))
+    have hkpos : (0 : ℝ) < (k ! : ℝ) := by positivity
+    show y ^ k / ((k ! : ℝ) * ((k + n)! : ℝ)) ≤ y ^ k / (k ! : ℝ)
+    gcongr; nlinarith [hkn1, hkpos]
+  have hb := alternating_series_error_bound f hfa hfs 1
+  have hs1 : (∑ i ∈ Finset.range 1, (-1 : ℝ) ^ i * f i) = 1 / (n ! : ℝ) := by
+    rw [Finset.sum_range_one]; simp [hf]
+  rw [hs1] at hb
+  have hnfac : (0 : ℝ) < (n ! : ℝ) := by positivity
+  have hn1fac : (0 : ℝ) < ((n + 1)! : ℝ) := by positivity
+  have hSpos : 0 < ∑' k, (-1 : ℝ) ^ k * f k := by
+    rw [abs_le] at hb
+    have hlow := hb.1
+    have hf1val : f 1 = y / ((n + 1)! : ℝ) := by
+      show y ^ 1 / ((1 ! : ℝ) * ((1 + n)! : ℝ)) = y / ((n + 1)! : ℝ)
+      rw [Nat.factorial_one, show 1 + n = n + 1 from by ring, pow_one]
+      norm_num
+    have hfacrel : ((n + 1)! : ℝ) = ((n : ℝ) + 1) * (n ! : ℝ) := by
+      rw [Nat.factorial_succ]; push_cast; ring
+    have hpos : 0 < (1 : ℝ) / (n ! : ℝ) - f 1 := by
+      rw [hf1val, hfacrel]
+      rw [div_sub_div _ _ (ne_of_gt hnfac) (by positivity), div_pos_iff]
+      left
+      constructor
+      · nlinarith [hyn, hnfac]
+      · positivity
+    linarith
+  rw [hfactor]
+  positivity
 
 /-- The Bessel function of the first kind, order `0`, via its power series
 `J₀(x) = ∑ₖ (-1)^k /(k!)² (x/2)^{2k}`. -/
 noncomputable def besselJ0 (x : ℝ) : ℝ :=
   ∑' k : ℕ, (-1 : ℝ) ^ k / (k ! : ℝ) ^ 2 * (x / 2) ^ (2 * k)
+
+/-- `besselJ0` is the general `besselJ` at order `0`. -/
+theorem besselJ0_eq (x : ℝ) : besselJ0 x = besselJ 0 x := by
+  unfold besselJ besselJ0; congr 1; ext k; simp only [Nat.add_zero, sq]
 
 /-- The `J₀` power series is (absolutely) summable, by comparison with `(x²/4)^k/k!`. -/
 theorem besselJ0_series_summable (x : ℝ) :
@@ -252,6 +333,9 @@ theorem besselJ0_le_two_term {x : ℝ} (hx : |x| < 2) :
 /-- Bessel `J₁` via its power series `J₁(x)=∑ₖ(-1)^k/(k!(k+1)!)(x/2)^{2k+1}`. -/
 noncomputable def besselJ1 (x : ℝ) : ℝ :=
   ∑' k : ℕ, (-1 : ℝ) ^ k / ((k ! : ℝ) * ((k + 1)! : ℝ)) * (x / 2) ^ (2 * k + 1)
+
+/-- `besselJ1` is the general `besselJ` at order `1`. -/
+theorem besselJ1_eq (x : ℝ) : besselJ1 x = besselJ 1 x := rfl
 
 /-- **Bessel `J₁` positivity**: `J₁(x) > 0` for `0 < x`, `x² < 8` (below the first positive zero of
 `J₁`, `j₁,₁ ≈ 3.832`). -/
