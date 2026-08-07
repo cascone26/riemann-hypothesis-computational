@@ -16729,3 +16729,24 @@ structure), NOT a scalar over-reach: the archimedean positivity budget is now a 
 complementing the §808 anchor theorem + §796 frame constant in the certified apparatus. The
 structural picture (fixed arch budget vs growing prime obstruction, §816/§821) now has its
 arch-budget side CERTIFIED. HANDLE. No Handle for RH.
+
+## §825 (LIT-GATE on the open core — CONFIRMED: NO known unconditional bound on the prime form vs the archimedean floor; that bound IS RH; our §814-816 framing matches the field's frontier exactly) — agent lit-search (arXiv IDs cited, verify before relying)
+
+Searched for any known bound on the Weil explicit-formula PRIME quadratic form vs the archimedean
+part. DEFINITIVE VERDICT: NONE exists unconditionally — bounding the prime form's positive part
+against the archimedean floor IS the Riemann Hypothesis, not a subordinate lemma. The literature
+REFORMULATES but does not escape it: Li's criterion (λ_n≥0 ⟺ Weil positivity, Bombieri-Lagarias,
+1304.7895), de Branges/Sonine spectral realization (Burnol math/9809119, Conrey math/9812166 —
+reformulate, don't solve), Suzuki/Kim operator (2607.24830 — confirms the ARCHIMEDEAN spectral law
+[cross-validates our §816-CERT!], prime term is THE open challenge), pair correlation (Goldston-
+Montgomery — equivalences UNDER RH), Fourier optimization (Carneiro-Milinovich-Soundararajan
+1708.04122 etc. — ASSUME RH to extract prime-gap/residue bounds). Every quantitative prime-form
+result assumes RH. The trivial triangle bound (prime ≤ S(W)=ΣΛ/√n) grows uncontrolled; a bound
+keeping it below the arch floor would prove RH. CONSEQUENCE (honest + orienting): our §814-816
+measured structure (arch PD floor ~0.15 CERTIFIED §816-CERT vs growing indefinite prime obstruction)
+is EXACTLY the field's open core, independently reached by measurement, and CONFIRMED to have no
+known handle. This is not discouraging — it precisely LOCATES us at the genuine RH frontier with the
+correct framing + certified sub-pieces, and PREVENTS chasing a non-existent scalar bound (reinforces
+the §817 "stop scalar-hunting" decision: not just OUR scalars failed — NO scalar bound exists, it's
+RH). The remaining work needs a genuinely NEW positivity mechanism (the arithmetic-surface/Hodge-
+index object, or a new idea), not a technique the field already has. No Handle for RH.
