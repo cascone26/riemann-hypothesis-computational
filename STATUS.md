@@ -4227,3 +4227,20 @@ Gödel's hypothesis-locus labels. Instrument vocabulary now standard: "genuinely
 "instrument-undecidable". QUEUED: Beurling-ladder minimal-hypothesis lit-read + Connes interlacing
 wedge (Jacob's prism table, high-synergy rows); interval-Newton ordinate hardening (2 customers);
 N9 radius-tightened rerun; KRD constants extraction.
+
+── RIEMANN8 SESSION 2 cont. (anchor thread) — §802A-§806: THE ANCHOR ∀-THEOREM CLOSES ──
+Concurrent with a BARRIER session (§802-805, G3 theorem — I ran its queued independent skeptic pass,
+§805-skeptic: CONFIRMED, one fixable error-bound imprecision). Ledger collision resolved: my thread
+= §802A/803A/804A/806, barrier's §802-805 canonical/untouched.
+MILESTONE (§806): the height-localized anchor ∀-theorem ASSEMBLES with strictly positive ε₀ at every
+k (float REPORT): k6 ε₀≈0.0009 → k9 ε₀≈0.017. Statement: even ψ∈PW_{0.66} at the open rung with
+weighted off-window tail T(ψ)≤ε₀ ⟹ Q(ψ)≥0. p⊕r form (Red §801); the plunge suppresses the cross
+term (√λ_{k+1}). CERTIFIED: m_E=0.1289 (§802A), tr A_even=6.3102, B_prime=0.3579, sup|Ω|_[14,44]=1.946.
+ONE REMAINING for full Handle: certified λ_{k+1} bound. Root cause of its resistance PINNED
+(§806-diagnosis): probe-definition mismatch — the concentration A-matrix used a hand-rolled
+sinc_sq±probe, not the apparatus's own gpair-consistent φ (ratio A/G=3.6>1 impossible). FIX (next
+session): compute A[j,k]=∫_window φ_{c_j}φ_{c_k} with the APPARATUS probe; then LDLᵀ-solve (G PD,
+min pivot 3.49, well-conditioned) gives λ₇~0.42 certified → §806 upgrades to Handle → Lean socket.
+Discipline: 3 numerical symptoms chased to ONE root cause, not forced to a Handle at depth.
+Anchor docs: ANCHOR_THEOREM.md, QPR_LEMMA.md, REDUCTION.md. Certs: cert_joint_pencil, cert_frame_const,
+cert_lambda7_clean (diagnostic), assemble_anchor.
