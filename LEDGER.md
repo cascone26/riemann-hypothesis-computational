@@ -16303,3 +16303,19 @@ with x²≥s₀(1−s₀) incl. large x → false; fixed to the Real.sqrt-upper-
 FAIL, fixed.) The organ-1 (Lean) × organ-2 (Arb) fusion on the project's first ∀-positivity theorem.
 The arb enclosure of the CONSTANTS themselves (m_E etc.) remains the Arb-side boundary, as with §792.
 No Handle for RH.
+
+## §809 (B18 LIT-GATE — the flagged "2024 arithmetic-surface analogue" is Deninger-dynamical, CONDITIONAL, orthogonal to the gap; the B18 door stays genuinely open) — agent read (abstract-only, PDF corrupted → Report, re-verify if pursued)
+
+The barrier map's B18 (missing number-field arithmetic surface / Hodge-index positivity for Spec Z)
+was flagged with arXiv:2410.20758 as a "proven 2024 geometric analogue on the Hilbert-Pólya route."
+LIT-GATE VERDICT: MISFLAGGED. The paper (Álvarez López–Kim–Morishita, "Regularized determinant
+formulas for zeta functions of 3-dim Riemannian foliated dynamical systems") proves a determinant
+formula in DENINGER'S foliated-dynamical-system category via the distributional Lefschetz trace
+formula — (1) CONDITIONAL (assumes Deninger's conjectured system EXISTS, unproven), (2) a DYNAMICS
+category, NOT Arakelov/Hodge-index over Spec Z, (3) no Connes-Consani / Weil-positivity / intersection
+-form content, (4) does NOT supply the "structure keeping the Weil margin bounded below uniformly."
+It is a legitimate but ORTHOGONAL RH route (Deninger's), not a step toward our arithmetic-surface gap.
+NET: no 2024 paper hands us the Hodge-index-for-Spec-Z object; B18 remains the true open frontier
+(§484/§799 K_W-family formulation stands as the sharpest local form). CAVEAT: abstract-only (the PDF
+was corrupted) — Report-tier; re-verify against full text before relying. Prevents chasing a false
+lead. No Handle for RH.
