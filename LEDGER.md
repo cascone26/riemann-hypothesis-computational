@@ -16559,3 +16559,29 @@ cancellation thinning to 0 — which IS the Weil razor, and its proof needs the 
 (the intersection-form/Hodge-index object), not a scalar bound. That reframing (§813b+§814 facts, §815
 correction) is the durable result; the scalar mechanisms were over-reaches, each caught by test.
 REPORT. No Handle for RH.
+
+## §816 (★ THE DURABLE RESULT — archimedean floor is W-INVARIANT (fixed budget 0.153±5%, 10 widths), EXPLAINED by the fixed window; the uniform difficulty = FIXED arch budget vs GROWING prime obstruction ★) — operators (float, tested across 4W=1.15-2.60)
+
+Tested (not asserted) the arch-floor W-invariance across 10 widths, 4W=1.15→2.60 (2.3× range, K=5→12):
+  4W:         1.15  1.30  1.45  1.60  1.75  1.90  2.05  2.20  2.40  2.60
+  arch_floor: .170  .156  .142  .161  .152  .149  .155  .150  .152  .147   → mean 0.153, CV 5.0%
+  arch_ceil:  ~0.29-0.30 (even flatter)
+RESULT: the archimedean quadratic form's spectrum on the concentration eigenspace is W-INVARIANT — a
+FIXED positivity budget (floor 0.153, ceiling 0.30), independent of support width AND mode count K.
+EXPLANATION (why it's invariant, not luck): the concentration WINDOW [14,44] is FIXED, so the arch
+weight Ω(t)=Re ψ(¼+it/2)−lnπ sampled over it is W-INDEPENDENT; the eigenspace gains modes as W grows
+but they all live in the same window seeing the same Ω → arch spectrum ~fixed. The PRIME term grows
+because widening 4W pulls in more primes (the sum extends). SO THE UNIFORM DIFFICULTY, cleanly and
+durably: **a FIXED archimedean positivity budget (~0.15, window-determined) versus a GROWING prime
+obstruction (~0.09→0.24+, support-determined); Weil positivity Q=arch−prime>0 is a race the fixed
+budget eventually loses to the accumulating primes, surviving only by full-spectrum cancellation
+(§815) that thins to 0.** This is the durable, TESTED, EXPLAINED endpoint of the §812-816 chain —
+NOT a scalar mechanism (those were over-reaches, §810b/§811/§814 all refuted), but a structural
+characterization: fixed-budget-vs-growing-obstruction, each side mechanistically understood. It
+matches Connes-Consani (archimedean positivity + prime obstruction) and the Weil-criterion picture,
+now MEASURED. The uniform theorem's real content: bound the growing prime obstruction against the
+fixed archimedean budget for all W — the intersection-form/Hodge-index object is what would supply
+that bound. HONEST: float REPORT; the arch-invariance is clean+explained; certifying it (arb) + the
+prime-growth law is the concrete next durable step (not another scalar mechanism). No Handle for RH.
+CHAIN §812(localize)→813(cross-coupling)→813b(arithmetic)→814(facts)→815(scalar refuted)→816(durable
+fixed-vs-growing characterization, tested+explained).
