@@ -15953,3 +15953,31 @@ off-window for unit-L² double-limited class members — flagged as the careful 
 1am per verify-before-ship) + the outside-tails + ε_R (route B per-instance spectrum preferred).
 Then item 4 = the one-page assembly + Lean socket. The anchor ∀-theorem is TWO careful lemmas from
 assembled. REPORT (certified constants; lemma incomplete by design tonight). No Handle for RH.
+
+## §802 (BARRIER_MAP.md built — every kill recast as proof-style + properties-used + witness-object; two agent lit-scans; 4 witness-gaps promoted to attemptable theorems) — 2026-08-07 barrier session
+Deliverable: `BARRIER_MAP.md` (new, witness-side dual of OBSTRUCTION_MAP + RH_DIFFICULTY_CONSERVATION_MAP).
+Kill-type taxonomy K1 (witness) / K2 (premise-false) / K3 (circularity) / K4 (logic-ceiling) / K5 (identity).
+12 barrier rows B1–B12 covering OBSTRUCTION_MAP routes 1–7 + the 2026-07-20 metatheorem kills (§37/A14/§62)
++ DBN (§34c, §47d-e) — each with the exact property set used and the witness or internal kill, proof pointers
+to in-repo artifacts (§725 D-H Handle, §431/§439, A14, §37, §62).
+Witness inventory W1–W6: D-H (Handle, in-repo §725), Epstein h>1, Diamond–Montgomery–Vorhauer 2006,
+Broucke–Debruyne–Vindas 2020 (RH-analogue + huge N-oscillation, converse control), Diamond–Zhang 2007
+(tunable pair), Broucke–Debruyne–Révész 2309.01567 (the [α,β] witness FACTORY: prescribed zero set,
+dialable ψ/N error exponents, max{α,β}≥1/2 constraint). NOTE: paste that seeded this session miscited
+2309.01567 as "Vindas" — third author is Révész.
+LOAD-BEARING (surviving rows): the ONLY property-pair with an empty witness column is Euler product + FE
+together (= Selberg-class-conjecture hypothesis; independently hit in-repo at §725). Plus: counting
+precision carries zero RH-information by itself (W5/W6 realize every quality on both verdicts); positivity
+must be global (metatheorem); structure must be individual-isolating (§62); methods must be EP-preserving
+(B11: heat flow kills EP for λ≠0 ⟹ DBN-style deformation is EP-blind).
+GAPS→THEOREMS (the generative output): G1 zero-density-strength + prescribed off-line zero via the BDR
+factory (buildable: Beurling Carlson-type machinery exists, arXiv:2209.01689/2407.12746); G2 explicit
+averaging-wall witness family (upgrades §62 logic-ceiling to hard barrier); G3 matched-local-data pair with
+opposite verdicts (Diamond–Zhang is 80% there); G4 FE+EP⟹RH-analogue for a narrow Beurling class (converse
+of the surviving row).
+LIT-GATE (rule 13, 2 parallel agents): individual barriers all well-known (D-H 1936, Bombieri–Hejhal,
+Kaczorowski–Perelli 1999, Conrey 2003 "we do not know which properties of ζ are essential"); the
+systematic axiom-lattice framework + K-taxonomy + G-program NOT found published — candidate-novel as
+organization only. ⚠ two agent-sourced dates flagged unverified in the doc (Bombieri–Hejhal 1976-vs-1995,
+Balanzario–Sánchez-Ortiz 2001-vs-2007) — verify before any external use. REPORT (map is organization +
+cited literature; in-repo pointers are the Handles they always were).

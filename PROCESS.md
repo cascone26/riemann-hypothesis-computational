@@ -9877,3 +9877,18 @@ Session totals: §788-§795 + 4 addenda banked, 10 commits, 2 Lean kernel verifi
 Bessel PR recheck), 1 proven+certified+adversarially-verified lemma (§791), 14 zero-free
 certificates (9 coarse + 5 dense λ_min), 1 refuted conjecture, 1 quantitative law, REDUCTION.md
 architecture with two honestly-open analytic items. 0 fabrications; every claim has a proof pointer.
+
+## Arc: Barrier session (2026-08-07, late) — BARRIER_MAP.md
+Seeded by a prompt from another session (verified before executing: memories, files, ledger sections all
+real; one citation error found — arXiv:2309.01567 is Broucke–Debruyne–RÉVÉSZ, not Vindas). Scope held:
+barrier/obstruction map only, no drift into proving RH.
+Process: (1) orient — rh-working-rules + metatheorem memory + OBSTRUCTION_MAP + §37/§62 + PROCESS tail;
+search-before-build found D-H already BUILT in-repo (§725) and the FE-alone kill already isolated
+(§431+§439) — so the map cites our Handles instead of re-deriving. Also found RH_DIFFICULTY_CONSERVATION_MAP
+overlaps at framework level → positioned BARRIER_MAP as its witness-side dual, not a rival. (2) two lean
+parallel agents (rule 13): BDR-paper deep-read + barrier lit-gate. (3) wrote BARRIER_MAP.md: K1–K5 kill
+taxonomy, W1–W6 witness inventory, B1–B12 barrier table, 5 surviving-row requirements, G1–G4 witness-gap
+theorems. (4) this append + LEDGER §802 (same numbering, no fork).
+Key decision: kills split into witness-barred (K1) vs internally-killed (K2/K3/K5) vs logic-ceiling (K4) —
+only K1/K4 rows need witnesses, which is what makes the gap list finite and attackable. The generative
+output is G1–G4; G1 (BDR factory + zero-density) looks buildable first.
