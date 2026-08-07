@@ -46,9 +46,25 @@ contribute ψ̂(t−iσ)-terms per §791.
    (§791-add-3). Adversaries only — this piece can never supply positive mass (Red's constraint;
    using unverified zeros as friends re-imports the RH-fragment §788 excised).
 
-**Composition:** Q(ψ) ≥ [corner cert margin on ψ_corner] + [frame constant on ψ_above]
-− [cross-terms] − [strip tail S(W,T₀)] — with the cross-term control between the corner projection
-and its complement the second open analytic item (the §476g 8-probe near-singularity lives here).
+**Composition — p ⊕ r form (Red, §801; supersedes every scalar block sketch this round):**
+The §797 pilot killed the scalar corner×complement form at the anchor (m·c = 1.72 < ‖X‖₂² = 2.26;
+only lossless matrix Schur survives — which is just the joint certificate re-derived, so the t*
+split buys NOTHING on the finite part). The honest assembly: ψ = p + r,
+  p = component in the explicit joint probe span (corner+complement TOGETHER, one §788/§790-style
+      pencil-normalized matrix certificate — no split, no X),
+  r = residual (prolate-plunge mass outside the span).
+Inequality: λ_min·‖p‖² − 2‖Q_pr‖·‖p‖‖r‖ − ε_R‖r‖² ≥ 0 — a 2×2 scalar test that is legitimate
+HERE because ε_R is plunge-tiny (the §485c collapse working for us), unlike the order-1 corner
+coupling that killed the scalar form at t*. The two open constants: **ε_R** (residual worst-case
+Q-contribution: KRD tail §798 + quartic envelope + the window-capped Ω bound) and **‖Q_pr‖**
+(operator norm of Q on the class — finite by Gödel's window-cap argument; needs the explicit
+derivation). The frame constant c is NOT on the anchor theorem's critical path — its customers are
+the residual's zero-side control and the UNIFORM program (past the horizon where direct joint
+certificates die; the quantifier's purchase happens there, relocated per §801).
+Factor-2 bookkeeping, stated once (Red): the G–W identity as implemented credits the zero side
+2·S (±γ mirrors); §796's S sums positive ordinates once — the assembly writes "2S ⪰ 2c·G"
+explicitly. Ball disjointness (491 balls pairwise disjoint, each a distinct zero): a CERTIFIED
+LINE from the list (min gap ≫ 2e-9), not a hypothesis.
 
 ## Hypothesis-set discipline (the §791 pattern, mandatory)
 
@@ -93,11 +109,13 @@ only adds a positive square). Do not quote §796's one-item set for any composed
   (c(W) ∈ [0.068, 0.129] uniform across 4W=1.00→2.00, no decay).
 - ~~X — the cross-term block~~ — RESOLVED §797: the product bound m·c > ‖X‖² FAILS at the t*
   split (exact ‖X‖₂² = 2.26 > 1.72) but the SCHUR route certifies losslessly (λ_min(A−XC⁻¹Xᵀ) ≥
-  1.019, hypothesis-free). **The composition is stated Schur-form from now on**; X is bookkeeping,
-  not an obstruction. Carry c as c_unif(L_N) = inf-over-phase of the §800 band (Euler: c is
-  W-uniform, a statistic of the unfolded zero sequence; erosion polynomial in Nyquist window
-  length, floor ≈ 0.055-0.065 at the composed theorem's L_N ≈ 4.3; S sits 4 orders below).
-  m(W) is the dévissage's sole remaining measured unknown.
+  1.019, hypothesis-free) — and §801 then showed lossless Schur = the joint certificate, so the
+  anchor assembly drops the split entirely (p ⊕ r form above). Carry c per-instance-certified
+  ONLY (Red's E3 objection: a measured 10-phase band is float-tier; an inf over continuum phases
+  needs the Kadec-flavored phase-uniform lemma or per-instance pencils — no non-certified constant
+  enters this document). Euler's §800 structure stands as MEASUREMENT: c is W-uniform, phase-
+  fluctuating, polynomial-in-L_N erosion; floor ≈ 0.055-0.065 observed. m(W) remains the
+  dévissage's sole measured unknown.
 - **R — the prolate residual lemma** (named by Riemann, round 3): every ψ in the full band-limited
   window class = (capacity-matched component) + residual, with the residual bounded by the prolate
   spectral plunge — i.e. §485c's measured e^{−9.78·4W} collapse, the season's enemy, is the SAME

@@ -15909,3 +15909,22 @@ complement's margin against R (S a spectator at 4 orders below, §800). Pencil-n
 (Gauss): these are coefficient-space numbers — the pilot measures the split's SHAPE; the composed
 class inequality restates everything against the L² pencil. HANDLE (certified pilot, hypothesis-
 free). No Handle for RH.
+
+## §801 (RED ROUND 3 — G closed form verified; the anchor assembly REROUTED to p⊕r form; c relocated off the critical path; E3's empirical floor refused) — his audit + this session's absorption
+
+(1) §796's G = 2π·gpair(·,·,0) closed form BRUTE-CHECKED numerically at 3 entries (~1e-6 rel,
+quadrature-limited) — the silent-rescaling factor-error class is dead; queue an arb-tier recheck of
+the same pattern. (2) §796 header blur fixed conceptually: standalone (1 hypothesis, zero-ness
+irrelevant) vs composed (3 hypotheses) — the header defended one with the other's argument. Ball
+disjointness = certified line, not hypothesis; factor-2 (2S ⪰ 2c·G) stated explicitly in REDUCTION.
+(3) THE REROUTING: the pilot's FAILS line refutes the scalar corner×complement composition all
+three seats sketched (Riemann 1a scalar form, Grothendieck G3 line, Euler E2) at the anchor;
+lossless Schur = the joint certificate re-derived ⇒ the t* split buys nothing finite. Honest
+anchor assembly = **p ⊕ r**: one joint pencil-normalized matrix certificate + residual block,
+scalar 2×2 test legitimate there (ε_R plunge-tiny). Open constants reduce to ε_R (KRD §798 +
+envelope + window-capped Ω) and ‖Q_pr‖ (finite by Gödel's cap; explicit derivation = session 2's
+first analytic item). Frame constant c relocated to the uniform program — the quantifier's
+purchase happens past the matrix horizon, per Riemann's own round-3 answer. (4) Euler's E3 refused
+as stated: measured 10-phase band ≠ inf over continuum phase; c enters per-instance-certified or
+via a proven phase-uniform (Kadec-flavored) lemma — no non-certified constants in REDUCTION.md.
+ROUND 3 COMPLETE (6/6 seats). REPORT+absorbed. No Handle for RH.
