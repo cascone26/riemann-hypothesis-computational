@@ -15806,3 +15806,17 @@ certs below t*) = §788/§790 machinery ✓; piece 2 (frame above t*) = THIS, an
 (strip tail) = §791 ✓. Remaining open analytic item: the CROSS-TERM control corner↔complement in
 the composition — now the single named obstruction to the height-localized rung theorem. HANDLE
 (certified inequality, proof pointer .out). No Handle for RH.
+
+### §796-addendum (THE CERTIFIED FRAME CURVE — c(W) is UNIFORM across the tested ladder, no decay) — operators/frame_const_curve.py/.out
+Four more certified frame constants, capacity-matched probes, windows tracking t*(W) upward:
+4W=1.00 (window [20,44], 4 probes): **c = 0.0676** · 4W=1.32 ([26,44]): **c = 0.0903** (§796's
+independent [25,43] basis gave 0.1026 — consistent scale) · 4W=1.61 ([34,58], 7 probes):
+**c = 0.0783** · 4W=2.00 ([49,69], 6 probes): **c = 0.1289**. Same one-item hypothesis set
+(ordinate balls; 491 zeros ≤ 800). STRUCTURAL FACT: c(W) ∈ [0.068, 0.129] with NO decay across
+the ladder — above the density crossing, the verified zeros give an essentially UNIFORM frame
+bound along the natural anchor family (windows moving up with t*). Honest scope: "uniform" =
+no degradation along this family (window/probe sets move with W; not a single fixed class).
+This is precisely the F(W)-bounded-below input Grothendieck's uniform dévissage wants from piece
+2 — the frame side does NOT collapse; only the corner grows (by the deficiency integral,
+§794-add). The razor's entire weight is confirmed to sit in the corner + cross-terms. HANDLE
+(four certified constants). No Handle for RH.
