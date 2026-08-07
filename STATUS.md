@@ -4170,3 +4170,21 @@ violations of its RH — degree-1 (ζ=RH, Dirichlet=GRH) AND degree-2 (GL(2) aut
 weil_dirichlet_gram.py, weil_degree2_delta.py. No Handle for RH/GRH (framework universal, proving PD
 from arithmetic = the respective RH, open). SESSION §767-783: 17 ledger entries, 39 Lean thms, rigorous
 11×11 HANDLE, integrity fix, ~6 self-corrections, 0 fabrications, all committed.
+
+── §785-787 (autonomous cont.) — LIT-GATE CORRECTION + operator-frontier map + Lean edge ──
+§785 LIT-GATE (important): §774/780/781-784 substantially OVERLAP Kim et al arXiv:2607.24830 (July 2026,
+building on Suzuki 2606.09096) — arch universality (their R2, B₀=log q-2log2), off-line detection (R6,
+rate 2δ), Paley-Wiener/Nyquist density ceiling (R8), primes-diagonal (R4d). My §772-784 is an INDEPENDENT
+REPRODUCTION via a different apparatus, NOT novel. Corrected the record + WEIL_GRAM_UNIVERSAL.md prior-work
+section. (Cross-validation is real; discoveries are theirs.)
+§786 FRONTIER MAP (deep-read): Suzuki PROVED operator self-adjoint + quad-form = Weil form + W-zeros real;
+OPEN = Cor 1.6 (θ(a) making W→z²ξ/ξ' uniformly, thinning zero-density a/π → log T/2π). Kim built it 30-digit,
+hit R8 as a FUNDAMENTAL wall ("no easy argument can cross"); zeros hide in symbol error term. My apparatus
+converged on the SAME crux (prime resummation §732/749) = validation the crux is right. The RH-proof lane is
+where the field is walled.
+§787 LEAN EDGE (the genuine novel output): generalized the mathlib Bessel contribution to arbitrary integer
+order — besselJ n + besselJ_pos (J_n>0 on x²<4(n+1), unifying J0/J1) + summability + value-at-0 + subsumption
+lemmas + sharp J0/J1 bounds = 15-theorem PR-quality module (mathlib has NO Bessel). Compiles clean, trusted
+axioms. In mathlib_contribution/. Submission gated on Jacob's Zulip/CLA.
+NET: RH-proof frontier honestly mapped + walled (not ours to crack now); genuine durable value = the Lean
+formalization edge (Bessel general-order + sign theorem + Gram thms) + the integrity discipline. No Handle.
