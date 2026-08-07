@@ -4283,3 +4283,21 @@ well-conditioned window. Refutes §810b GLOBAL const; tests whether m_E·D SATUR
 1/D, approached from below) or keeps rising. Third confound-class caught+corrected this session
 (uncontrolled family: frame consts, m(W) v1, now nprobes steps). Old scan A data (mE_overnight.txt,
 8 points, varying nprobes) kept but flagged cross-nprobes-unreliable.
+
+── RIEMANN8 §818-825: SAMPLING PICTURE + FRONTIER CONFIRMED + CERTIFICATION CAMPAIGN ──
+§818/§821: the Weil form is a SAMPLING form (Q=2Σφ̂(γ)²); t*=2πe^{4W} Beurling threshold; margin
+collapses EXACTLY as the window falls below t* (zeros oversample above, undersample below). §821-CAVEAT:
+the "unconditional proof reduction" was overclaimed+withdrawn (frame-above-t* is zero-side/conditional);
+the confirmed margin-tracks-t* prediction stands as understanding. §820: CCM 2511.22755 (leading program)
+doesn't close positivity either — same prolate basis as ours, our Q_floor→0⁺ supports their μ_λ→0.
+§816-CERT: arch floor CERTIFIED (Handle, arb ≥0.147-0.179 across 4W=1.32-1.90) — the fixed-arch-budget
+side now rigorous. §825 (lit-gate, DEFINITIVE): NO known unconditional bound on prime-form vs arch-floor
+— that bound IS RH; field reformulates (Li/de Branges/Suzuki/pair-corr/Fourier-opt) but doesn't escape;
+Suzuki operator cross-validates our arch law. Our framing = the field's genuine open core, reached by
+measurement, with certified sub-pieces. RUNNING (full-auto): §823 sub-t* Q-positivity cert (prec 300);
+§824 cert campaign (arch_floor curve + frame_c above t* + Qpos across crossover, all arb → Handles).
+SYNTHESIS: RH_UNIFORM_FRONTIER.md (read first). SESSION VERDICT: certified+Lean anchor ∀-theorem (§808)
++ certified arch floor (§816-CERT) + the frontier precisely MAPPED and CONFIRMED (§812-825) as the
+field's open core needing a NEW positivity mechanism (arithmetic surface / Hodge index), not a known
+technique. 8 scalar/reduction over-reaches proposed+refuted (kept in-ledger for provenance). No RH proof
+— genuine ground mapped + certified pieces banked.
