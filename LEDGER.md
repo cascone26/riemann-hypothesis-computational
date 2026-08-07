@@ -15928,3 +15928,13 @@ purchase happens past the matrix horizon, per Riemann's own round-3 answer. (4) 
 as stated: measured 10-phase band ≠ inf over continuum phase; c enters per-instance-certified or
 via a proven phase-uniform (Kadec-flavored) lemma — no non-certified constants in REDUCTION.md.
 ROUND 3 COMPLETE (6/6 seats). REPORT+absorbed. No Handle for RH.
+
+## §802 (p-BLOCK PENCIL CERT — the joint span's class-metric margin, hypothesis-free) — operators/cert_joint_pencil.py/.out
+
+p⊕r assembly item (1) per §801: the §788-addendum joint span {14,20,26,32,38,44} at 4W=1.32,
+zero-free Q vs the L² overlap pencil G (closed form, §801-verified): bisected interval pencil ⇒
+**Q(ψ) ≥ 0.1288823·‖ψ‖²_{L²} for ALL ψ in the span** — the p-block margin in the class's own
+metric (Gauss's normalization rule satisfied; coefficient-space λ_min 0.661 §795 converts to
+pencil 0.1289 — the basis conditioning factor ~5.1, now measured). Hypothesis set ∅.
+Remaining for the anchor ∀-theorem: ‖Q_pr‖ (item 2, derivation), ε_R (item 3, KRD or per-instance
+spectrum), assembly (item 4). HANDLE. No Handle for RH.

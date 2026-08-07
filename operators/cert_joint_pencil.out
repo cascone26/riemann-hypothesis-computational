@@ -1,0 +1,12 @@
+joint pencil cert: Q and G on [14, 20, 26, 32, 38, 44], 4W=1.32...
+  Q row 0 done
+  Q row 1 done
+  Q row 2 done
+  Q row 3 done
+  Q row 4 done
+  Q row 5 done
+
+===== JOINT PENCIL CERT (§802) =====
+Q(ψ) ≥ 1.288823e-01 · ‖ψ‖²_L2   for ALL ψ in span{F_14..F_44} at the open rung  [hypothesis: ∅]
+(this is the p-block margin of the p⊕r anchor assembly, class-metric, per §801)
+EXIT:0
