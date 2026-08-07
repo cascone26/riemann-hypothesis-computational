@@ -151,3 +151,36 @@ arithmetic ones (rescaled rational primes / Dirichlet-type). Either result conve
 is the rare property. This is a Selberg-class-conjecture fragment; no known Beurling system has a
 proven FE (fractal-membrane duality is conjectural — Hilberdink–Lapidus 2006). Deepest of the four;
 stays open with this precise target on the queue.
+
+## G3 — ADVERSARIAL SKEPTIC PASS (2026-08-07, anchor-thread session, independent of the barrier session that proved it)
+
+VERDICT: **CONFIRMED — the theorem is correct**, with ONE fixable imprecision in the written error
+bound. Checked all three flagged points + hunted for a fatal hole:
+
+1. **Greedy error bound |E(x)| ≤ log(2x) — OVERSTATED near x₀, conclusion survives (the one real fix).**
+   E(x) = Ψ(p_n) − Ψ(x) on [p_n,p_{n+1}), so |E| ≤ log p_{n+1}, and log p_{n+1} ≤ log(2x) ⟺
+   p_{n+1} ≤ 2p_n (gap-doubling). For system A (density ≡1) and the TAIL of B (density→1) this holds
+   (gaps ~ log x ≪ x). BUT for system B near x₀=16 the density Ψ_B' = 1 − 2x^{−1/4}cos(2 log x) DIPS
+   TO 0, so Ψ_B rises slowly and a greedy gap there can have p_{n+1} ≫ 2p_n — the stated ∀-x bound
+   FAILS on a compact initial region. FIX (standard, non-fatal): split E = E·1_{[16,X₁]} + E·1_{tail};
+   the compact piece contributes an ENTIRE function to ∫x^{−s}dE (bounded integrand, finite interval),
+   the tail obeys |E|≤log2x. Analyticity of the error integral in Re s>1/2 — the only thing the proof
+   actually needs — is preserved. The written "|E|≤log(2x) for all x" should read "for x≥X₁, plus a
+   bounded compact piece." Imprecision in the writeup, not a hole in the result.
+2. **Prime-power analyticity in Re s>1/2 — CORRECT.** g-primes have ~linear density ⟹ Σp^{−2σ}<∞ for
+   σ>1/2 ⟹ Σ_p Σ_{k≥2} log p·p^{−ks} absolutely convergent/analytic there. ✓.
+3. **Residue sign audit — CORRECT, re-derived independently.** ∫_X^∞ x^{−s}dΨ_B picks up
+   −2Re∫x^{ρ−1−s}dx = −X^{ρ−s}/(s−ρ) − X^{ρ̄−s}/(s−ρ̄) = −1/(s−ρ) − 1/(s−ρ̄) + entire (the X^{·−s}−1
+   parts are removable at the poles). Residue −1 of −ζ'_B/ζ_B ⟺ residue +1 of ζ'_B/ζ_B ⟺ SIMPLE ZERO
+   (m=1). Matches the classical −ζ'/ζ = 1/(s−1) − Σ_ρ 1/(s−ρ) + … sign. ✓.
+4. **"Zeros EXACTLY at ρ,ρ̄" — CORRECT.** In Re s>1/2, −ζ'_B/ζ_B has poles only at s=1 (from 1/(s−1)),
+   ρ, ρ̄; all other pieces (prime-powers, error integral) analytic there ⟹ no other zeros. ✓.
+5. **Both members are legitimate Beurling systems.** Ψ_B'≥0 for x≥16 (⟹ greedy primes exist,
+   increasing); identical targets on [x₀,X] ⟹ identical primes below X (determinism). ✓.
+6. **Corollary sound:** a matched pair with opposite verdicts for every X ⟹ no finite-local-prime-data
+   certificate decides the RH-analogue. ✓.
+
+NET: G3 stands as a proven theorem. Required edit: restate the error bound with the compact/tail split
+(one paragraph). Skeptic found no witness-, premise-, circularity-, or sign-error killing the result —
+the independent pass the §791/§805 discipline demanded. (Reviewer: anchor-thread session, not the
+barrier session that authored it.)

@@ -16076,3 +16076,18 @@ STATUS: own-math-unreviewed (§791 discipline) — queued for independent advers
 Barrier session terminal state: B1-B18 + W1-W7 + lattice + G1 known/G2 built-discrete/G3 PROVEN/G4 closed-
 narrow (Hamburger) — remaining open mass sits exactly at G4-general (FE for Beurling) and B18 (arithmetic
 surface), the two constructive targets the whole map now aims at.
+
+## §805-skeptic (G3 THEOREM — INDEPENDENT ADVERSARIAL PASS: CONFIRMED, one fixable imprecision) — BARRIER_G_RESULTS.md, anchor-thread session
+
+The queued skeptic pass on the barrier session's §805 G3 theorem, run by the concurrent anchor-thread
+session (genuinely independent reviewer, §791 discipline). VERDICT: **theorem CORRECT.** Checked all
+three flagged points: (1) greedy error bound |E|≤log2x is OVERSTATED near x₀=16 where Ψ_B' dips to 0
+(greedy gaps can exceed 2× there) — but the fix is standard (compact-part-is-entire + tail bound) and
+the only thing the proof needs, analyticity of the error integral in Re s>1/2, SURVIVES; writeup edit,
+not a hole. (2) prime-power analyticity Re s>1/2 CORRECT (linear density ⟹ Σp^{−2σ}<∞). (3) residue
+sign CORRECT, re-derived independently (−1/(s−ρ) ⟹ simple zero, matches classical −ζ'/ζ). Also
+verified: no other poles in Re s>1/2 ⟹ zeros exactly at ρ,ρ̄; both members legitimate Beurling
+systems; the finite-local-data corollary sound. No witness/premise/circularity/sign kill found. G3
+stands; required edit = restate the error bound with the compact/tail split (logged in
+BARRIER_G_RESULTS.md). HANDLE-adjacent (independent verification of an own-math theorem; the theorem
+itself is elementary and now peer-checked). No Handle for RH.
