@@ -9775,3 +9775,53 @@ carries the full structural story: always-PSD (Gram) + PD-iff-full-rank (Nyquist
 the Nyquist frontier; analytic proof RH-complete from every probed angle (the Gonek-uniform resummation
 both the certificate and sign-theorem attacks converge on, §732, is the loaded frontier awaiting a
 genuine idea). Discipline: ~5 self-caught errors this session, 0 fabrications.
+
+## Arc — 2026-08-06 close (Sam/Opus, §777–787): certs, lit-gate, frontier map, Lean-edge pivot — riemann7 DONE
+
+**§777–778 (certificates, height-tracking).** Confirmed the Nyquist edge tracks zero-density at height
+(higher-freq window certifies denser). Attempted a 2nd rigorous edge cert; hit an acb.integral NaN.
+DEBUGGED it honestly (didn't blindly retry): arch/pole clean (0/45), isolated to the prime summation for
+NON-INTEGER a at prec 300 — a cos precision-starvation quirk, cleared at prec 500 (too slow for a full
+matrix, deferred). Panel-split was a WRONG "fix" (made it worse — wide Bernstein ellipses breach the ψ
+poles); single-call adaptive integration is right. §775's integer-basis 11×11 stands as the rigorous anchor.
+
+**§779–780 (fresh proof angles, tested).** Refuted a midpoint-factorization reduction BEFORE banking
+(h≥0 does NOT make e^{-(a-b)²/4}h((a+b)/2) PD — counterexamples) → single-Gaussian D≥0 is
+necessary-not-sufficient. Then the capstone §780: the Weil form DETECTS off-line zeros (2-fn straddling
+basis goes indefinite off-line, growing with ε) — the certs have TEETH.
+
+**§781–784 (universality push).** Extended the framework to Dirichlet L(s,χ₃/χ₄) (GRH) and — the real
+frontier — degree-2 GL(2) Ramanujan Δ (τ(n) via q-expansion, arch Γ_ℂ(s+11/2)→ψ(6+ir), Satake power
+sums, ratio 1.0000 exact). Wrote WEIL_GRAM_UNIVERSAL.md.
+
+**§785 THE PIVOTAL CORRECTION (lit-gate).** Ran the mandatory literature gate before letting the
+universality thread read as novel. Found **Kim et al 2607.24830** (July 2026, on **Suzuki 2606.09096**)
+already published essentially all of §772–784: arch universality (R2, B₀=log q−2log2, Dirichlet+modular),
+off-line detection (R6, rate 2δ), Paley–Wiener density ceiling (R8 = my Nyquist), primes-diagonal (R4d =
+my §769). **My §772–784 is an INDEPENDENT REPRODUCTION, not a discovery.** Corrected LEDGER +
+WEIL_GRAM_UNIVERSAL.md prior-work section. The lit-gate did exactly its job (cf. the LP/Jensen rediscovery
+caught earlier this project). Discipline > ego.
+
+**§786 (frontier map, deep-read Suzuki+Kim).** Suzuki PROVED: operator self-adjoint, quadratic form =
+Weil form, W-zeros real. OPEN (=RH): Corollary 1.6 — construct θ(a) making W(a,θ;z)→z²ξ(½−iz)/ξ'(½−iz)
+uniformly, thinning zero-density a/π → log T/2π. Kim: this is a FUNDAMENTAL wall ("no easy argument can
+cross"); zeros hide in the symbol-level error term. My apparatus converged on the SAME crux (prime
+resummation, §732/749) — validation the crux is right, and confirmation the proof lane is the FIELD's
+wall (Connes/Suzuki/Kim), not ours to crack now.
+
+**§787 (the genuine Lean edge — the real output).** Decision: stop grinding the walled proof lane; work
+the one genuine asymmetric asset (the verified-formalization loop). Generalized the mathlib Bessel
+contribution from J₀/J₁-specific to arbitrary integer order: `besselJ n` + `besselJ_pos` (J_n>0 on
+x²<4(n+1), unifying J₀/J₁) + summability + value-at-0 + subsumption + sharp J₀/J₁ bounds = 15-theorem
+PR-quality module (mathlib has NO Bessel). Compiles clean, trusted axioms. In `mathlib_contribution/`.
+Submission gated on Jacob's Zulip design post + CLA (did NOT cold-PR under his identity).
+
+**riemann7 verdict (honest).** No Handle for RH — and the proof frontier is precisely mapped as the
+field's current wall (Suzuki's Cor 1.6 / prime-resummation), where independent methods (Kim's and ours)
+agree and stop. Much of the session's mid-portion reproduced published 2026 work (lit-gate caught it).
+The genuinely durable, novel outputs of the whole riemann7 era: the **Lean formalization** (Bessel
+general-order + the sign-theorem skeleton with labeled hD + the Gram/certificate theorems), the
+**integrity discipline** (auditor fix §767, ~7 self-corrections, the lit-gate catch, zero fabrications),
+and an apparatus that independently agrees with the state of the art. Loaded for a next era: (a) submit
+the Bessel PR (Jacob-gated); (b) if returning to the proof, the target is Suzuki Cor 1.6 / the θ(a)
+density-thinning — needs a genuine analytic idea, not compute.
