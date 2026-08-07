@@ -15665,3 +15665,22 @@ objection. Also same-session: BESSEL PR COMPILE RE-VERIFIED (mathlib_contributio
 lake env lean EXIT:0, zero errors) — the PR is compile-clean TODAY, Zulip draft updated to the
 general-order module; submission still Jacob-gated (Zulip/CLA). HANDLE (validation, proof pointers
 on disk). No Handle for RH.
+
+### §791-addendum (ADVERSARIAL PASS — Gauss verdict: §791 STANDS; two corrections absorbed; BRS gift honestly downgraded; G-raise ordered and RUNNING)
+Gauss (roundtable, adversarial): envelope identity |sin(x+iy)|²=sin²x+sinh²y CONFIRMED exact; pair
+bookkeeping CONFIRMED (quadruple structure verified, no orphan configurations; density counts both
+pair members; each counted zero costed at ±2·cosh⁴·envelope covers pairs and on-line zeros both);
+enclosure CONFIRMED by full independent hand recomputation (endpoints [−1.64863e-4, −3.989e-6] ✓).
+CORRECTIONS ABSORBED: (i) hypothesis line must read "the 491-zero list is COMPLETE to height 800,
+and all on-line" — completeness is load-bearing and distinct (a strip zero below 800 missing from
+the list evades both the finite sum and the tail); Gauss verified N(800)≈490.7→491 by the counting
+formula. (ii) FLEET-WIDE MISNOMER: the restricted class is NOT "Gaussian-windowed" — s=2.0 is the
+CENTER SPACING (probes(band,s)=arange); the probes are pure Fejér, height-decay QUARTIC
+|ψ̂(t)|²≤|v|₁²·4/(W⁴(t−C_max)⁴). Any REDUCTION.md truncation constant must use the quartic envelope.
+(iii) MARGIN DISCIPLINE: nothing builds on the thin −3.99e-6 figure until the G-raise lands.
+G-RAISE RUNNING (strip_tail_g2000.py): G=2000, 1517 zeros from data/zeros_100k.txt (33-digit,
+completeness N(2000)≈1517.0 ✓ checked); predicted tail shrink ×0.06 → margin ≈ −8e-5 restored.
+BRS DOWNGRADE (deep-read agent, honest): arXiv:2005.02996 is an INTERPOLATION formula (exact
+recovery, biorthogonal basis, existence-grade constants), NOT a frame/sampling inequality — the
+frame constants the continuum theorem needs are NOT off the shelf; BRS's Dirichlet-kernel estimates
+are scaffolding for building them, substantial new work. §793(2)'s "gift" language corrected here.

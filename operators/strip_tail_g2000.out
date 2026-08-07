@@ -1,0 +1,20 @@
+float: n=16 probes (s=2.0), min eig(no-3) = -8.5246e-05
+prime-3 term (closed form): [-0.000201996101698322574198416296198604861252722930838598520 +/- 9.44e-58]
+zero side (gamma<=800, 491 zeros): [0.000117570 +/- 5.34e-10]
+|v|_1 = 3.1920280859415833332737300054304796503856778144836425781250
+rigorous zero-tail bound (gamma>800): +/- [7.6192862982981805043838417493880895342416156147033501283119e-5 +/- 4.70e-64]
+
+RIGOROUS Q_no3(v) = [+/- 8.45e-5]
+CERT A v2 PASSED: Q_no3(v) < 0 RIGOROUSLY => the p2-only Weil form is INDEFINITE past log3.
+(Provenance: Guinand-Weil identity [theorem]; cached zeros gamma<=800 [mpmath, ball r=1e-9,
+ on-line certified by Platt-Trudgian 3e12]; closed-form arb prime term; rigorous density tail.)
+explicit bounds: Q in [-8.443e-05, -8.233e-06]
+
+G-raise: 1517 zeros <= 2000 loaded (expect 1517)
+zero side (gamma<=2000, 1517 zeros): [0.00011758612590547418 +/- 4.54e-21]
+
+===== §791 G-RAISE (G=2000) =====
+strip tail bound (two-sided): +/- 5.2365e-06   (was +/- 8.04e-5 at G=800)
+Q_no3(v), arbitrary strip configs above 2000: explicit [-8.9647e-05, -7.9173e-05]
+CERTIFIED: Q_no3(v) < 0. Hypothesis set: {zero list complete to 2000 + on-line (PT), counting bound}.
+EXIT:0

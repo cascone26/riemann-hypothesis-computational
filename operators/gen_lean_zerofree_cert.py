@@ -44,9 +44,15 @@ print(f"  ARB max entry radius: {float(maxrad):.2e}")
 print(f"  certified ||Q-M||_2 <= rho <= {rho_up:.3e}")
 L, D = M.LDLdecomposition(); d = [D[i, i] for i in range(nb)]
 print(f"  M pivots (exact): min = {min(float(x) for x in d):.5f}  all>0: {all(x > 0 for x in d)}")
-mineigM = min(float(x) for x in sp.Matrix(M).eigenvals().keys())
-print(f"  min-eig(M) ~ {mineigM:.5f};  min-eig(M) - rho ~ {mineigM - rho_up:.5f} > 0 => Q PD RIGOROUSLY")
-assert all(x > 0 for x in d) and mineigM - rho_up > 0
+# rigorous min-eig(M) > rho: exact LDL^T of (M - rho_Q*I) over Q — all pivots > 0 proves it,
+# no float eigensolver anywhere (stronger than the §767 generator's float min-eig print).
+rho_Q = Rational(rho_up).limit_denominator(10**12)
+if float(rho_Q) < rho_up: rho_Q = rho_Q + Rational(1, 10**9)
+Ms = M - rho_Q * sp.eye(nb)
+Ls, Ds = Ms.LDLdecomposition(); ds = [Ds[i, i] for i in range(nb)]
+assert all(x > 0 for x in d) and all(x > 0 for x in ds)
+mineigM = min(float(x) for x in d)   # display only; the rigorous statement is the (M - rho I) LDL^T
+print(f"  (M - rho*I) exact pivots all > 0: {all(x > 0 for x in ds)} => min-eig(M) > rho => Q PD RIGOROUSLY")
 
 LT = L.T
 def lr(x):
@@ -65,8 +71,9 @@ support 4W=1.32 > log 3 — the first open rung, primes {{2,3}} in support).
 `M` rationalizes the ARB-CERTIFIED midpoints of the zero-free route entries pole+arch−prime
 (operators/arb_zerofree_cert3.py, §788: NO zero knowledge anywhere — no verified-zero list, no
 on-line-ness hypothesis, no strip lemma). This theorem proves `M.PosSemidef` via its exact LDLᵀ
-sum-of-squares. With the certified bound ‖Q−M‖₂ ≤ ρ ≈ {rho_up:.2e} ≪ min-eig(M) ≈ {mineigM:.4f},
-the TRUE zero-free Weil form is positive-definite on this span UNCONDITIONALLY (§788/§792). -/
+sum-of-squares. With the certified bound ‖Q−M‖₂ ≤ ρ ≈ {rho_up:.2e} and min-eig(M) > ρ (proven by
+exact LDLᵀ of M − ρI over ℚ, all pivots positive; min LDLᵀ pivot of M = {mineigM:.4f}), the TRUE
+zero-free Weil form is positive-definite on this span UNCONDITIONALLY (§788/§792). -/
 theorem zerofree_rung_certM_posSemidef :
     (Matrix.of ![{row(0)}, {row(1)}, {row(2)}, {row(3)}]).PosSemidef := by
   rw [posSemidef_iff_dotProduct_mulVec]

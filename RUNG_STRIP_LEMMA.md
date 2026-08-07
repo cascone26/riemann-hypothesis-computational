@@ -57,4 +57,12 @@ the RH-fragment). The continuum rung theorem's positivity must come from the hei
 class + verified zeros; this lemma only guards the boundary. Both halves of the open-rung pair now
 carry fully enumerated hypotheses:
 - **PD half:** none (zero-free direct route, §788).
-- **Indefiniteness half:** zeros ≤ 800 on-line (PT), + the classical counting bound. (§791)
+- **Indefiniteness half:** the 491-zero list is **complete** to height 800 and all on-line (both
+  supplied by Platt–Trudgian; completeness is load-bearing and distinct — Gauss, §791-addendum),
+  + the classical counting bound. (§791)
+
+**Adversarial status:** verified by Gauss (roundtable, §791-addendum) — envelope, pair bookkeeping,
+and enclosure independently recomputed; STANDS. Class-descriptor correction absorbed: the probe
+class is pure Fejér with center spacing s=2.0 (quartic height decay), NOT Gaussian-windowed.
+Margin discipline: build nothing on the thin G=800 margin −3.99e-6; the G=2000 raise
+(strip_tail_g2000.py) restores ~−8e-5.
