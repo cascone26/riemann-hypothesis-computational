@@ -15929,7 +15929,8 @@ as stated: measured 10-phase band ≠ inf over continuum phase; c enters per-ins
 via a proven phase-uniform (Kadec-flavored) lemma — no non-certified constants in REDUCTION.md.
 ROUND 3 COMPLETE (6/6 seats). REPORT+absorbed. No Handle for RH.
 
-## §802 (p-BLOCK PENCIL CERT — the joint span's class-metric margin, hypothesis-free) — operators/cert_joint_pencil.py/.out
+## §802A (p-BLOCK PENCIL CERT — the joint span's class-metric margin, hypothesis-free) — operators/cert_joint_pencil.py/.out
+*(Numbering: the ANCHOR-ASSEMBLY thread (§802A/§803A/§804A/§806) ran concurrently with the BARRIER session (§802-§805). Both are legitimate; git interleaved the commits cleanly. My anchor entries carry the 'A' suffix to deconflict; the barrier session's §802-§805 are canonical and untouched. Anchor continues at §806.)*
 
 p⊕r assembly item (1) per §801: the §788-addendum joint span {14,20,26,32,38,44} at 4W=1.32,
 zero-free Q vs the L² overlap pencil G (closed form, §801-verified): bisected interval pencil ⇒
@@ -15939,7 +15940,7 @@ pencil 0.1289 — the basis conditioning factor ~5.1, now measured). Hypothesis 
 Remaining for the anchor ∀-theorem: ‖Q_pr‖ (item 2, derivation), ε_R (item 3, KRD or per-instance
 spectrum), assembly (item 4). HANDLE. No Handle for RH.
 
-## §803-partial (‖Q_pr‖ MECHANICAL PIECES CERTIFIED — B ≤ 1.399 + tails; the assembly threshold is comfortable) — QPR_LEMMA.md + inline arb runs
+## §803A-partial (‖Q_pr‖ MECHANICAL PIECES CERTIFIED — B ≤ 1.399 + tails; the assembly threshold is comfortable) — QPR_LEMMA.md + inline arb runs
 
 Item 2 of the p⊕r assembly, mechanical pieces certified: **B_prime ≤ 0.357912** (exact arb:
 (log2/√2 + log3/√3)/π, primes {2,3} at 4W=1.32) · **sup|Ω| on [0,88] ≤ 6.4773** (fine interval
@@ -16009,7 +16010,7 @@ gaps closed same-night (1 known, 1 built, 1 sketched), 1 open target precisely a
 which is the same core the conservation map calls "correspondence." The barrier map and the difficulty-
 conservation law now agree from opposite directions. REPORT throughout; proof pointers inline.
 
-## §804 (CONCENTRATION-OPERATOR ε_R ROUTE — float landscape solid; certification framework sound with ONE identified robustness bug; NOT yet a Handle) — operators/cert_concentration.py, ANCHOR_THEOREM.md
+## §804A (CONCENTRATION-OPERATOR ε_R ROUTE — float landscape solid; certification framework sound with ONE identified robustness bug; NOT yet a Handle) — operators/cert_concentration.py, ANCHOR_THEOREM.md
 
 The ε_R lemma of the anchor assembly (bound ‖f‖ = residual outside the top-k concentration
 eigenspace). APPROACH (sound, verified conceptually): the even concentration operator

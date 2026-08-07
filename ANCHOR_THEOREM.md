@@ -1,4 +1,4 @@
-# The Anchor ∀-Theorem — final form (assembles §802/§803/§804; drafts §805)
+# The Anchor ∀-Theorem — final form (assembles §802A/§803A/§804A; drafts §806 — barrier session holds §805)
 
 ## Statement (target)
 
@@ -38,8 +38,8 @@ operator A = P_PW 1_{±[14,44]} P_PW), f = rest.
    - off-window: |arch_off(p,f)| ≤ √(∫_off |p̂|²(1+|Ω|)) · √T(ψ) — needs the certified weighted
      off-window mass of the eigenspace E (explicit finite computation on the section vectors:
      E is 96%+ in-window, its weighted off-mass is small — call it τ_E, certify).
-   - prime: ≤ B_prime·‖p‖‖f‖ = 0.3579·‖p‖‖f‖ (§803, certified).
-   - pole: ≤ negligible certified constant (§803 envelope).
+   - prime: ≤ B_prime·‖p‖‖f‖ = 0.3579·‖p‖‖f‖ (§803A, certified).
+   - pole: ≤ negligible certified constant (§803A envelope).
    **B_pf := 0.3579 + sup|Ω|_{[14,44]}·√λ_{k+1} + √τ_E + pole** — every piece certified.
 
 4. **Q on f.** |Q(f)| ≤ [arch_in: λ_{k+1}·sup|Ω|_{in}·‖f‖²] + [arch_off: T-weighted, ≤ T(ψ)
@@ -55,7 +55,7 @@ operator A = P_PW 1_{±[14,44]} P_PW), f = rest.
 - arb certification of the concentration section (traces + matrix + eigen bounds): NEXT SCRIPT.
 - τ_E, sup|Ω|_{[14,44]}, C_f: small certified computations after the section lands.
 - m_E: pencil on E once both land.
-- Assembly + §805 bank + Lean socket (hypothesis loci: everything ∅ except the identity-route
+- Assembly + §806 bank + Lean socket (hypothesis loci: everything ∅ except the identity-route
   pieces — NOTE: this theorem's Q-side constants are ALL zero-free/analytic; the ONLY hypothesis
   entering is via nothing at all — the statement is UNCONDITIONAL. The frame constant c and the
   verified zeros appear nowhere in this assembly. Check that claim twice at bank time.)
