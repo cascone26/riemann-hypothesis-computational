@@ -62,3 +62,27 @@ operator A = P_PW 1_{±[14,44]} P_PW), f = rest.
 
 *Drafted while gram14 computes (session 2 cont.). Everything here is Report until each constant's
 arb line exists; the float landscape informing k=9 is §804-scout tier.*
+
+## Cross-check from the barrier map (BARRIER_GATEKEEPER.md §811, concurrent barrier session)
+
+The barrier session ran this route through its completed obstruction map. Verdict: **BARRIER-CLEAN
+for the stated (height-localized) scope.** Two flags folded in here:
+
+- **m(W) → 0 is the B16 knife-edge crossing, not a technical lemma.** If the p-block margin m_E(W)
+  degenerates to 0 as W grows, the whole route collapses into a mapped dead pattern. So keeping
+  m_E(W) bounded below along the ladder is THE load-bearing structural fact (agrees with
+  Grothendieck §799: "exhibit the structure keeping m(W) alive while dim K_W ~ e^{4W}"). The
+  certified curve so far (§790/§795/§802A: pencil m_E = 0.1289 at the anchor, coarse λ_min rising)
+  is on the safe side; watch it explicitly as W extends.
+- **The strip-tail adversary-only role is INDEPENDENTLY required by the map** (B1: FE/growth-only
+  components can never supply positive mass) — a second derivation of Red's §788 constraint. Good.
+- **The unbounded-T₀ completion (full-class, all heights) cannot come from more envelope (B1),
+  more sampling/zero-density (B5, now dead-proven via a published Beurling witness), or averaging
+  (B10).** The lattice forces it to be genuinely NEW joint Euler-product ∧ functional-equation
+  input. This bounds what "the next idea" must be — and it's exactly the B18 arithmetic-surface
+  door the whole map points at. The anchor theorem does NOT claim to cross it; it's the honest
+  floor the uniform program builds up from.
+- **Guardrail (§813):** never substitute an approximate/Riemann-Siegel-grade FE for the exact FE
+  anywhere in the completion — Turán's partial-sum criterion died on Haselgrove's witness; the
+  Γ-factor's exact shape is load-bearing (K-P Annals 2011). If a future step reaches for AFE input,
+  it's on a dead rung.
