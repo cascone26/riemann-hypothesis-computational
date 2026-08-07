@@ -16476,3 +16476,30 @@ not "make boundary modes positive" (already are) but "control the boundary↔cor
 Weil form" — a coupling statement, the honest form of the missing structure. NEXT (§813b, running):
 find the low-eig direction of the pencil, decompose IT into arch/prime to see if the dangerous coupling
 is arch-suppression or prime-amplification. REPORT (float). No Handle for RH.
+
+## §813b (★ THE OBSTRUCTION MECHANISM IS ARITHMETIC — arch is PD, the PRIME form is INDEFINITE, and its positive eigenvalues eat the archimedean floor on the boundary-coupled direction ★) — operators (float cross-coupling analysis, l2_fejer.build)
+
+Found the low-eig (dangerous) direction of the pencil (Q,G) on the top-6 concentration eigenspace at
+4W=1.46, and decomposed it. RESULTS (float, REPORT — decisive):
+- DANGEROUS DIRECTION = coupling of modes m4/m5/m6 (coeffs +0.42/−0.73/−0.51) — the boundary-region
+  modes (conc 0.98-0.91). Confirms §813: the crash is CROSS-COUPLING among boundary-adjacent modes.
+- ON that direction: arch=+0.1675 (vs core per-mode ~+0.23 — somewhat suppressed), prime=+0.1038 (vs
+  core per-mode ±0.02-0.04 — AMPLIFIED ~3-5×) ⟹ Q=+0.064 (the §812 m_E, exactly).
+- PENCIL EIGENVALUES BY TERM (the clincher):
+    arch pencil eigs top-6: [0.163, 0.199, 0.229, 0.254, 0.276, 0.295] — POSITIVE-DEFINITE (floor 0.163)
+    prime pencil eigs top-6: [−0.139, −0.059, −0.046, +0.042, +0.077, +0.117] — **INDEFINITE**
+    Q = arch−prime pencil eigs: [0.064, 0.149, 0.222, 0.255, 0.345, 0.392]
+MECHANISM (clean): the ARCHIMEDEAN term is a robust POSITIVE-DEFINITE floor. The PRIME (arithmetic)
+term is INDEFINITE; its POSITIVE eigenvalues (up to +0.117) SUBTRACT from the archimedean floor
+(min 0.163), and where prime is largest-positive (the boundary-coupled direction, prime≈+0.104), Q
+collapses to its minimum 0.064. **THE OBSTRUCTION IS ARITHMETIC, NOT ARCHIMEDEAN** — it is the prime
+form's positive part eating the archimedean positivity on the boundary-coupled directions. This
+CONFIRMS the barrier map's arithmetic-surface localization with a direct measurement, ties to §476c
+(removing the right primes → indefinite) and the Connes/Weil "primes are the hard part" picture.
+B18 TARGET, now MECHANISTIC: the missing structure must control the PRIME quadratic form's positive
+eigenvalues against the archimedean floor (arch min-eig 0.163 vs prime max-eig 0.117 — the margin is
+0.163−0.117≈0.05, exactly the collapse scale). CHAIN: §812 (localize to boundary) → §813 (it's
+cross-coupling, Q positive per-mode) → §813b (the coupling is prime-driven, arch is the floor).
+NEXT: W-stability of arch-PD/prime-indefinite; certify (arb) the arch-floor vs prime-max gap; is the
+prime max-eig bounded by a NAMED arithmetic quantity (the real B18 handle)? REPORT (float). No Handle
+for RH.
