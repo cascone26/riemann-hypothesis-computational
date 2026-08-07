@@ -16503,3 +16503,36 @@ cross-coupling, Q positive per-mode) → §813b (the coupling is prime-driven, a
 NEXT: W-stability of arch-PD/prime-indefinite; certify (arb) the arch-floor vs prime-max gap; is the
 prime max-eig bounded by a NAMED arithmetic quantity (the real B18 handle)? REPORT (float). No Handle
 for RH.
+
+## §814 (★★ THE UNIFORM RAZOR IN CLEAN FORM: arch floor W-STABLE ~0.15, prime ceiling GROWS 0.09→0.23, crossover 4W~1.65; Q>0 everywhere but →0, saved only by arch-prime EIGENVECTOR MISALIGNMENT ★★) — operators (float, l2_fejer.build) 
+
+The decisive uniform measurement, in the §813b arch/prime mechanism. On the concentration eigenspace
+(K = in-window modes, conc>0.5), across W:
+  4W   K  arch_floor  prime_ceil  gap     Q_min
+  1.30 6  0.1558      0.0945      +0.0613 0.0930
+  1.42 7  0.1397      0.1370      +0.0027 0.0730
+  1.54 7  0.1622      0.1429      +0.0193 0.0416
+  1.62 7  0.1605      0.1462      +0.0143 0.0379
+  1.75 8  0.1516      0.1883      −0.0367 0.0070
+  1.90 9  0.1491      0.2208      −0.0717 0.0008
+  2.05 9  0.1554      0.2319      −0.0765 0.0001
+THREE CLEAN FACTS: (1) **arch_floor is W-STABLE ≈0.15** (archimedean positivity = a FIXED budget,
+independent of support width — a clean structural invariant, unlike the noisy m_E·D). (2) **prime_ceil
+GROWS** 0.09→0.23 (arithmetic accumulation as primes enter). (3) **Q_min > 0 at EVERY W** (Weil
+positivity holds, RH-CONSISTENT — matches certified §790 to 4W=2.0) **but →0** as W grows.
+THE RAZOR, MECHANISTIC: the crude sufficient condition arch_floor>prime_ceil HOLDS only to 4W≈1.65,
+then FAILS — yet Q stays POSITIVE past it. So Q>0 is maintained NOT by the floor beating the ceiling
+(it doesn't, past 1.65) but by arch and prime's extremal EIGENVECTORS being MISALIGNED — the prime
+form's large positive eigenvalue does not sit on the archimedean-weak direction. This misalignment is
+the saving grace, and it THINS as W grows (Q_min→0). ⟹ THE UNIFORM THEOREM = "prove the arch-prime
+eigenvector misalignment keeps Q>0 for all W despite prime_ceil>arch_floor." THAT is the B18 target,
+now fully explicit: a statement about the relative geometry (alignment) of the archimedean and prime
+quadratic forms — EXACTLY the intersection-form / Hodge-index signature (the surface controls how the
+two forms sit relative to each other). CHAIN COMPLETE: §812 (localize→boundary) → §813 (cross-coupling,
+not single-mode) → §813b (coupling is arithmetic: prime indefinite eats arch floor) → §814 (arch floor
+fixed, prime ceiling grows, crossover 1.65, Q>0 by misalignment → 0). This is the cleanest, most
+mechanistic characterization of the RH-uniform difficulty the project has ever produced. HONEST: float
+REPORT; Q_min>0 at high W is barely-positive + K/nprobes scale there (conditioning caveat); the
+misalignment claim needs the certified + W-stability confirmation. But the arch-floor-stable /
+prime-ceiling-growing / misalignment picture is clean and decisive. No Handle for RH — but the target
+is now a specific, named, geometric statement about two explicit quadratic forms.
