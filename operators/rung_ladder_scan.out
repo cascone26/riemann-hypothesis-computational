@@ -26,3 +26,10 @@
 4W=1.45 (primes in support: [2, 3, 4]), centers [14, 22, 30, 38], RC=400:
   row 0 done (diag rad 6.53e-06)
   row 1 done (diag rad 6.53e-06)
+  row 2 done (diag rad 6.53e-06)
+  row 3 done (diag rad 6.53e-06)
+  ALL 4 PIVOTS POSITIVE (min pivot lower bound 2.024e+00) -> ZERO-FREE CERTIFIED PD
+  == ladder point 4W=1.45: CERTIFIED ==
+
+4W=1.5 (primes in support: [2, 3, 4]), centers [14, 22, 30, 38], RC=400:
+  row 0 done (diag rad 5.70e-06)

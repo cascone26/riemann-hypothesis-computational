@@ -15684,3 +15684,18 @@ BRS DOWNGRADE (deep-read agent, honest): arXiv:2005.02996 is an INTERPOLATION fo
 recovery, biorthogonal basis, existence-grade constants), NOT a frame/sampling inequality — the
 frame constants the continuum theorem needs are NOT off the shelf; BRS's Dirichlet-kernel estimates
 are scaffolding for building them, substantial new work. §793(2)'s "gift" language corrected here.
+
+## §792 (LEAN KERNEL REPLAY of the zero-free open-rung certificate — VERIFIED; organ-1×organ-2 fusion on the §788 result) — RiemannLean/RiemannLean/Cand_zerofree_rung_certM.lean + operators/gen_lean_zerofree_cert.py
+
+Lane (e) executed per §788-addendum's directive ("the Lean replay should replay THESE unconditional
+certificates"). Chain: zero-free Arb Gram at 4W=1.32, span {14,22,30,38}, RC=400 (pole+arch−prime,
+max entry radius 9.51e-6) → rationalized midpoints M (denom ≤1e6) → certified ‖Q−M‖₂ ≤ ρ ≤ 3.803e-5
+→ exact LDLᵀ over ℚ: M pivots all>0 (min 2.02368) AND (M−ρI) pivots all>0 — the min-eig(M)>ρ step
+is itself exact rational now (STRONGER than the §767 generator, which used a float eigensolver for
+that comparison; float appears nowhere in the PD logic). Lean theorem zerofree_rung_certM_posSemidef
+proved via sum-of-squares nlinarith hints; verify_loop.py gate PASSED: axioms exactly
+{propext, Classical.choice, Quot.sound}, no banned tokens, build 36.6s, provenance banked in
+handles.jsonl. The kernel-checked object carries the HONEST hypothesis set — none: no zero list,
+no on-line-ness, no strip lemma anywhere in the certified matrix's provenance. HANDLE (kernel-checked
+finite certificate; the ‖Q−M‖₂≤ρ enclosure step remains Arb-side, stated in the theorem docstring
+per the §767 pattern). No Handle for RH.
