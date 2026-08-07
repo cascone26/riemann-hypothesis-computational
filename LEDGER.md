@@ -16456,3 +16456,23 @@ the design fix (vary K at fixed W, compare at fixed K) removed the confounds tha
 CAVEATS: 3 widths, K≤8 (core is K≤5), float=REPORT; the W-stability (CV<4% across 3 widths) is the solid
 part. NEXT: certify the core K^{-0.32} law; characterize the boundary-mode positivity gap directly (that
 IS the B18 target). No Handle for RH.
+
+## §813 (ATTACK on the boundary shell — KEY DISCOVERY: Q is POSITIVE per-mode; the §812 crash is CROSS-COUPLING, not single-mode failure; arch dominates positivity, prime is a small correction) — operators/attack_boundary_mode.py
+
+Went straight at §812's localized boundary shell: decomposed Q=pole+arch−prime on EACH concentration
+eigenvector (4W=1.46, unit ‖v‖_G). RESULT (unexpected + important):
+  mode  conc    Q        pole    arch     prime
+  1-5   >0.97   +0.19..+0.26  ~0   +0.21..+0.26  ±0.02..0.04   (CORE)
+  6     0.908   +0.2702       0.001  +0.2296  −0.0396          (BOUNDARY)
+  7     0.276   +0.1895       0.001  +0.2024  +0.0137          (BOUNDARY)
+**Q is POSITIVE on EVERY mode (0.15-0.27), boundary modes INCLUDED.** So the §812 m_E crash is NOT a
+single-mode positivity failure — it is CROSS-COUPLING: some linear combination of core+boundary modes
+has small Weil-value even though each mode alone is comfortably positive. This is Red's cross-term X
+(§797/§801) re-emerging as the TRUE obstruction, now localized to the boundary↔core coupling.
+STRUCTURE: the ARCH term (~+0.23) dominates positivity UNIFORMLY across all modes; the PRIME term is a
+small ±0.02-0.04 correction (per-mode). The pole is ~0. So per-mode, Q ≈ arch − small-prime > 0
+everywhere. The difficulty is entirely in the OFF-DIAGONAL (cross-mode) structure. SHARPENED B18 TARGET:
+not "make boundary modes positive" (already are) but "control the boundary↔core CROSS-COUPLING of the
+Weil form" — a coupling statement, the honest form of the missing structure. NEXT (§813b, running):
+find the low-eig direction of the pencil, decompose IT into arch/prime to see if the dangerous coupling
+is arch-suppression or prime-amplification. REPORT (float). No Handle for RH.

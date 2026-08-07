@@ -1,0 +1,13 @@
+4W=1.46: decompose Q=pole+arch-prime on each concentration eigenvector (unit ‖v‖_G)
+ mode  conc     Q        pole     arch     prime    | in-window? crash?
+  1   1.000  +0.2204  +0.0000  +0.2421  +0.0217  | CORE
+  2   1.000  +0.2632  +0.0000  +0.2432  -0.0200  | CORE
+  3   0.999  +0.2496  +0.0000  +0.2646  +0.0150  | CORE
+  4   0.999  +0.2369  +0.0001  +0.2066  -0.0301  | CORE
+  5   0.977  +0.1862  +0.0000  +0.2308  +0.0447  | CORE
+  6   0.908  +0.2702  +0.0010  +0.2296  -0.0396  | BOUNDARY
+  7   0.276  +0.1895  +0.0008  +0.2024  +0.0137  | BOUNDARY
+  8   0.125  +0.1533  +0.0023  +0.2195  +0.0685  | out
+
+READ: compare CORE vs BOUNDARY rows — which term (arch or prime) collapses Q on the boundary?
+EXIT:0
