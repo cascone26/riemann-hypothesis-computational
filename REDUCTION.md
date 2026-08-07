@@ -53,10 +53,47 @@ Every certified statement carries its complete enumerated hypothesis set:
 Zero-free-route statements (§788/§790/§792 pattern) carry NONE of these — prefer that route
 wherever it reaches.
 
-## What is honestly missing (the two open analytic items)
+## Notation & normalization (Gauss, round 3 — MANDATORY before any composed inequality)
 
-- The frame constant c(W,T₀) above t\* with explicit constants (piece 2).
-- Cross-term control corner↔complement in the composition.
+Every constant entering the composition inequality goes in the **L² pencil normalization**:
+corner margin = generalized λ_min(A, G_corner); frame constant = §796's pencil form (already is);
+cross block whitened by the overlap Gram; strip tail and prolate residual per unit ‖ψ‖²_{L²}.
+Probe-coefficient-space λ_min and pencil λ_min are related by the basis conditioning and are NOT
+interchangeable — a mixed inequality is incommensurable (the pivots-vs-margins error one level up).
+Pilot scripts may work self-consistently in coefficient space to measure the split's SHAPE; their
+raw numbers never paste into the mixed inequality.
+
+**The ∀-class is DEFINED as the time-frequency double-limited class** (band-limit 4W ∘ window
+limit), NOT "the span of all Fejér probes" — the former gives Landau–Widom spectral control and
+makes the capacity-matched probe spans its core; the latter has no coefficient-to-norm control and
+re-imports the razor. Capacity arithmetic (verified, Gauss): corner [14,23.5] ≈ 2.0 · complement
+[23.5,44] ≈ 4.3 · full [14,44] ≈ 6.3 — every empirically-chosen certified span sits exactly at its
+capacity, which is why they condition well and the 8-probe span did not.
+
+## Hypothesis ledger for the COMPOSED theorem (Riemann, round 3 — pre-empting the overclaim)
+
+§796's frame inequality alone needs ONE hypothesis (ordinate balls). **The composition does not
+inherit that.** Composing through the identity full(ψ) = Σ_zeros ψ̂(γ)² + strip re-imports
+on-line-ness below T₀ (off-line pairs contribute indefinite 2Re[ψ̂²] — the §788 finding, at low
+height this time). Composed-theorem hypothesis set: (1) ordinate balls, (2) on-line-ness ≤ T₀
+(Platt–Trudgian), (3) the counting bound. Completeness stays unnecessary (a missing on-line zero
+only adds a positive square). Do not quote §796's one-item set for any composed statement.
+
+## What is honestly missing (now TWO named, bounded obstructions — pieces 4 and 5)
+
+- ~~The frame constant c(W,T₀)~~ — DONE certified: §796 (c=0.1026 anchor) + §796-addendum
+  (c(W) ∈ [0.068, 0.129] uniform across 4W=1.00→2.00, no decay).
+- **X — the cross-term block** corner↔complement in the split basis (certifiable with existing
+  interval machinery; the composition inequality is the 2×2 block bound m·c > ‖X‖² + corrections).
+- **R — the prolate residual lemma** (named by Riemann, round 3): every ψ in the full band-limited
+  window class = (capacity-matched component) + residual, with the residual bounded by the prolate
+  spectral plunge — i.e. §485c's measured e^{−9.78·4W} collapse, the season's enemy, is the SAME
+  OBJECT that guarantees the coarse class has no hidden mass outside the certified slice. Leads
+  (UNVERIFIED, lit-gate before use): Landau–Widom asymptotics, Bonami–Karoui explicit
+  non-asymptotic prolate eigenvalue bounds.
+The assembled deliverable is the project's first ∀-statement: Weil positivity for ALL ψ in the
+band-limited window class at the open rung — the quantifier is what the composition buys
+(direct span-certs, however many, never produce it).
 Neither is RH-complete on its face (both are statements about verified zeros and finite geometry);
 that is exactly what makes this the right next theorem-shaped target. The full-class,
 all-heights statement remains walled behind the field's density crux (Suzuki Cor 1.6 / Kim R8) —
