@@ -15727,3 +15727,20 @@ zeros-only sampling Gram on the height-localized class is SPANNED by the in-band
 directions. Cheap probe queued: build the zeros-only sampling Gram at 4W=1.32, certified near-kernel
 dimension vs count of in-band prime-power nodes. Gate questions for the BRS deep-read logged
 (unconditionality of the basis; any zeros-only sub-result; Schwartz→Fejér-quartic restriction).
+
+## §790 (THE MEASURED COARSE m(W) CURVE — nine rungs certified zero-free 1.32→2.00, margin FLAT; the collapse is confirmed dense-direction-only) — operators/rung_ladder_scan.py/.out
+
+Euler's instrument (§788 roundtable), run with the §788-audit guards in. Fixed span {14,22,30,38},
+RC=400, zero-free direct route. ALL NINE POINTS CERTIFIED PD: 4W=1.32→2.024 · 1.35→2.016 ·
+1.40→2.016 (log4 crossed, first prime-power rung) · 1.45→2.024 · 1.50→2.033 · 1.60→2.032 ·
+1.70→2.010 (log5 crossed) · 1.85→2.003 · 2.00→2.016 (log7 in; support {2,3,4,5,7}).
+TWO RESULTS: (i) UNCONDITIONAL CERTIFIED TERRITORY now extends continuously across FOUR prime/
+prime-power entries (log3, log4, log5, log7) on this span — each rung's PD half zero-free, no zero
+hypothesis anywhere. (ii) the margin curve is FLAT (2.00-2.03 throughout, no dip even at entries
+where §476h certifies the entering term is load-bearing) — CONFIRMS Red's prediction and the honest
+reading: a fixed well-separated span is blind to the §485c e^{−9.78·4W} collapse; the collapse (and
+the razor cancellation §476b) live ENTIRELY in the dense/Nyquist direction. The m(W) that enters
+any composition inequality is the DENSE-span λ_min — measured next (rung_ladder_scan_dense.py,
+auto-fired, certify_lambda per Red's margin demand, running now). Caveat honestly: min-pivot ≠
+λ_min even here; the flat coarse curve is pivot-flat (λ_min lb per-point available on demand via
+certify_lambda). HANDLE (nine certificates, proof pointer .out). No Handle for RH.

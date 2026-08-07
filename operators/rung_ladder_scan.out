@@ -42,3 +42,45 @@
 4W=1.6 (primes in support: [2, 3, 4]), centers [14, 22, 30, 38], RC=400:
   row 0 done (diag rad 4.40e-06)
   row 1 done (diag rad 4.40e-06)
+  row 2 done (diag rad 4.40e-06)
+  row 3 done (diag rad 4.40e-06)
+  ALL 4 PIVOTS POSITIVE (min pivot lower bound 2.032e+00) -> ZERO-FREE CERTIFIED PD
+  == ladder point 4W=1.6: CERTIFIED ==
+
+4W=1.7 (primes in support: [2, 3, 4, 5]), centers [14, 22, 30, 38], RC=400:
+  row 0 done (diag rad 3.46e-06)
+  row 1 done (diag rad 3.46e-06)
+  row 2 done (diag rad 3.46e-06)
+  row 3 done (diag rad 3.46e-06)
+  ALL 4 PIVOTS POSITIVE (min pivot lower bound 2.010e+00) -> ZERO-FREE CERTIFIED PD
+  == ladder point 4W=1.7: CERTIFIED ==
+
+4W=1.85 (primes in support: [2, 3, 4, 5]), centers [14, 22, 30, 38], RC=400:
+  row 0 done (diag rad 2.46e-06)
+  row 1 done (diag rad 2.46e-06)
+  row 2 done (diag rad 2.46e-06)
+  row 3 done (diag rad 2.46e-06)
+  ALL 4 PIVOTS POSITIVE (min pivot lower bound 2.003e+00) -> ZERO-FREE CERTIFIED PD
+  == ladder point 4W=1.85: CERTIFIED ==
+
+4W=2.0 (primes in support: [2, 3, 4, 5, 7]), centers [14, 22, 30, 38], RC=400:
+  row 0 done (diag rad 1.80e-06)
+  row 1 done (diag rad 1.80e-06)
+  row 2 done (diag rad 1.80e-06)
+  row 3 done (diag rad 1.80e-06)
+  ALL 4 PIVOTS POSITIVE (min pivot lower bound 2.016e+00) -> ZERO-FREE CERTIFIED PD
+  == ladder point 4W=2.0: CERTIFIED ==
+
+===== MARGIN CURVE m(4W), span {14,22,30,38}, RC=400, zero-free =====
+(read min-pivot lower bounds from the per-run lines above; log-slope vs the
+ §485c collapse rate e^(-9.78*4W) is the comparison that matters)
+  4W=1.32  PASS   [p3 in]
+  4W=1.35  PASS   [p3 in]
+  4W=1.40  PASS   [p3 in, 4=2^2 in]
+  4W=1.45  PASS   [p3 in, 4=2^2 in]
+  4W=1.50  PASS   [p3 in, 4=2^2 in]
+  4W=1.60  PASS   [p3 in, 4=2^2 in]
+  4W=1.70  PASS   [p3 in, 4=2^2 in, p5 in]
+  4W=1.85  PASS   [p3 in, 4=2^2 in, p5 in]
+  4W=2.00  PASS   [p3 in, 4=2^2 in, p5 in, p7 in]
+EXIT:0
