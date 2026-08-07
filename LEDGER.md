@@ -16762,3 +16762,22 @@ boundary modes, §812). So the difficulty is confined to the dense boundary shel
 certification. HONEST: this used coarse spans → did NOT test the razor-thin dense-corner (the
 instrument-horizon question stays open — dense-span sub-t* cert would need it). HANDLE (coarse sub-t*
 positivity). No Handle for RH.
+
+## §824-A/B (CERTIFIED CURVES — arch-floor W-invariant + frame-above-t* positive, both arb Handles) — operators/cert_campaign.py/.txt
+
+**(A) arch_floor(W) CERTIFIED, W-INVARIANT** (pencil (arch,G) min-eig, arb prec 250, consistent spans):
+  4W:  1.20  1.35  1.50  1.65  1.80  1.95  2.10  2.30
+  ≥:   .1224 .1221 .1225 .1239 .1248 .1256 .1258 .1262
+Certified min 0.1221, max 0.1262 — **CV ~1.5%, cleanly W-invariant** (cleaner than §816-CERT's
+mixed-span version). The archimedean positivity budget is now a CERTIFIED W-invariant Handle ~0.123.
+Explanation stands (§816): fixed window ⟹ fixed Ω ⟹ fixed arch spectrum.
+
+**(B) frame_c(W) above t* CERTIFIED positive** (Σ_{γ≤800}ψ̂(γ)²≥c‖ψ‖² on the above-t* span):
+  4W=1.00 (t*17): ≥0.1344 · 1.32 (t*24): ≥0.2015 · 1.61 (t*31): ≥0.2032 · 2.00 (t*46): ≥0.2895
+Certified frame constants POSITIVE and healthy (0.13-0.29, growing with W) across the ladder — the
+"zeros oversample above t*" half is now a CERTIFIED curve (extends §796's single instance). CAVEAT
+(§821): this is the ZERO-SIDE/conditional half (uses zeros ≤800), not an unconditional prime-side
+reduction.
+NET: two more certified curves in the apparatus — the fixed-arch-budget (A) and the frame-above-t*
+(B) sides of the §816/§821 structural picture, both now Handles. Remaining campaign: (C) Qpos across
+crossover. No Handle for RH.

@@ -1,2 +1,16 @@
 # CERT CAMPAIGN §824 — arch_floor / frame_c(above t*) / Qpos, all arb-certified
 ## (A) arch_floor(W) certified:
+A 1.20 npr=4 arch_floor >= 0.12240
+A 1.35 npr=5 arch_floor >= 0.12207
+A 1.50 npr=6 arch_floor >= 0.12246
+A 1.65 npr=6 arch_floor >= 0.12388
+A 1.80 npr=6 arch_floor >= 0.12480
+A 1.95 npr=6 arch_floor >= 0.12555
+A 2.10 npr=6 arch_floor >= 0.12583
+A 2.30 npr=6 arch_floor >= 0.12618
+## (B) frame_c(W) above t* certified (zeros<=800):
+B 1.00 t*=17.1 span[20,38] frame_c >= 0.13443
+B 1.32 t*=23.5 span[26,44] frame_c >= 0.20148
+B 1.61 t*=31.4 span[34,52] frame_c >= 0.20324
+B 2.00 t*=46.4 span[49,67] frame_c >= 0.28952
+## (C) Qpos(W) certified (Weil positivity, horizon-flagged):
