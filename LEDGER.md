@@ -16557,5 +16557,5 @@ data keeps saying the positivity structure is irreducibly multi-dimensional. The
 is the spectral one: arch (PD floor) vs prime (growing indefinite), Q=arch−prime>0 by a full-spectrum
 cancellation thinning to 0 — which IS the Weil razor, and its proof needs the full form's structure
 (the intersection-form/Hodge-index object), not a scalar bound. That reframing (§813b+§814 facts, §815
-correction) is the durable result; the scalar mechanisms were over-reaches, каждый caught by test.
+correction) is the durable result; the scalar mechanisms were over-reaches, each caught by test.
 REPORT. No Handle for RH.
