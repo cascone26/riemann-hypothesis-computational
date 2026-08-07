@@ -16431,3 +16431,28 @@ reading (Hodge-index-shape B18 spec) is SUGGESTIVE, not established — the clea
 growing with capacity) is the right next probe. NET honest finding of the overnight: m_E·D saturates
 to ≈0.038 over the clean window (solid); its interpretation as a 1/D law needs the K-scaled follow-up.
 REPORT. No Handle for RH.
+
+## §812 (★ THE MARGIN-PER-CLASS LAW, W-STABLE — m_E·K is invariant across widths for the concentrated CORE; the margin CRASHES at the BOUNDARY modes, localizing the uniform difficulty ★) — operators/cert_mE_vs_K.py
+
+The correctly-designed test that fixes §811's K=6-vs-D conflation: at FIXED W (no W-confound, no
+nprobes steps), vary the eigenspace dimension K=2..8; m_E(K)=λ_min(Q,G) on top-K concentration
+eigenspace. Run at 3 widths (1.30/1.46/1.62). CLEAN RESULT — m_E·K by K, across widths:
+  K=2: 0.364/0.340/0.355 (CV 2.8%)   K=3: 0.538/0.493/0.526 (3.7%)
+  K=4: 0.581/0.594/0.605 (1.7%)       K=5: 0.609/0.640/0.661 (3.4%)   ← CORE, W-STABLE
+  K=6: 0.560/0.383/0.226 (CV 35%)     K=7: 0.507/0.359/0.238 (30%)    ← BOUNDARY, crashes+W-varies
+TWO CLEAN FINDINGS: (1) **m_E·K is W-INVARIANT for the strongly-concentrated CORE** (K≤5, all
+concentration eigs >0.95): at each fixed K the value is the same across all 3 widths to CV≤3.7%. The
+core margin declines as **m_E ~ K^{-0.32}** (weak power, W-stable — NOT 1/K; the core is ROBUST, margin
+falls only as a weak power of the subspace dimension). (2) **The margin CRASHES at the BOUNDARY modes**
+(K=6,7 where concentration drops from ~1 to ~0.3-0.9): m_E·K falls off AND becomes W-dependent (CV 35%).
+LOCALIZATION (the real payoff): the uniform difficulty lives ENTIRELY in the BOUNDARY (partially-
+concentrated, corner-adjacent) modes — the well-concentrated core is already fine (W-stable, weak-power).
+This UNIFIES §795 (edge collapse), §810 (margin declines on growing E — because growing E adds boundary
+modes), §794-add (corner = boundary deficiency): the K-sweep pins the difficulty to the boundary shell.
+B18 SPEC, SHARPENED + honest: the missing arithmetic-surface structure must supply positivity for the
+BOUNDARY modes (the corner-adjacent partially-concentrated directions) — NOT the core, which is handled.
+This is the CLEAN, correctly-measured result the m_E·D thread (§810b/§811/whipsaw) was groping toward;
+the design fix (vary K at fixed W, compare at fixed K) removed the confounds that made m_E·D noise-limited.
+CAVEATS: 3 widths, K≤8 (core is K≤5), float=REPORT; the W-stability (CV<4% across 3 widths) is the solid
+part. NEXT: certify the core K^{-0.32} law; characterize the boundary-mode positivity gap directly (that
+IS the B18 target). No Handle for RH.
