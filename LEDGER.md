@@ -16585,3 +16585,13 @@ that bound. HONEST: float REPORT; the arch-invariance is clean+explained; certif
 prime-growth law is the concrete next durable step (not another scalar mechanism). No Handle for RH.
 CHAIN §812(localize)→813(cross-coupling)→813b(arithmetic)→814(facts)→815(scalar refuted)→816(durable
 fixed-vs-growing characterization, tested+explained).
+
+## §817 (prime_ceil ∝ prime-sum? — TESTED, sub-linear, NOT a clean law; 6th scalar refusal → stop scalar-hunting) — operators (float)
+Tested whether prime_ceil(W) ∝ S(W)=Σ_{log n<4W}Λ(n)/√n (explicit prime sum). Ratio DECLINES
+0.084→0.055 (CV 19%) — prime_ceil grows SUB-LINEARLY in the prime sum (more primes don't pile on one
+eigenvector). NOT a clean proportion. This is the 6th scalar-law refusal of the session (m_E·D-const,
+saturation, peak, misalignment §815, now prime∝S §817). DECISION: stop scalar-hunting — the repeated
+refusals ARE the finding: Weil positivity's quantities are irreducibly multi-dimensional; the durable
+result is the STRUCTURAL characterization §816 (fixed arch budget vs growing prime obstruction), not a
+formula. The productive next work is a DIFFERENT KIND (the intersection-form structure / Connes-Consani
+theory), not more float scans. REPORT. No Handle for RH.
