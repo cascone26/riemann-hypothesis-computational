@@ -16352,3 +16352,19 @@ whether m_E(W) plateaus at a positive floor or →0 is the open uniform question
 instrument-limited (higher W needs more probes → over-capacity pencil, the §807 tension). The
 anchor Handle §808 stands (it's at 1.32); this is about its UNIFORM extension. Sharpest frontier
 statement the project has for why B18 is the true remaining work. No Handle for RH.
+
+### §810b (SUGGESTIVE structural law + corrected spec for the missing structure — m_E·D ≈ const, 2 points, REPORT) — derived from §810 + §799
+Correcting an initial sloppy asymptotic (D≁e^{4W} in this range — the −t₀/2π linear term dominates
+the small-D regime; D actually grows ~e^{3.4·4W} locally, 0.359→0.945). The clean observation from
+the 2 CERTIFIED resolved points: **m_E(W)·D(4W) ≈ constant** — 1.32: 0.0918·0.359 = 0.0330; 1.60:
+0.0396·0.945 = 0.0374 (roughly flat, slightly rising). If this law holds, m_E ≈ 0.035/D(4W): the
+margin scales as 1/(corner dimension) — a FIXED "total margin budget" spread over the growing corner
+(exactly an equidistribution / Hodge-index signature: a fixed intersection-positivity divided among
+a growing number of classes). CORRECTED SPEC for the B18 missing structure: it must supply a corner-
+block positivity scaling ~LINEARLY with the corner dimension D(4W) (an intersection-form bound
+proportional to the number of classes K_W) to keep the NET margin bounded below — precisely the
+Hodge-index shape, not an exponential miracle. HONEST: 2 points = SUGGESTIVE only, not established;
+m_E·D const vs slowly-varying is undetermined; more points instrument-limited (§810). But it turns
+"we need B18" into a testable quantitative target: is the corner's Q-positivity ∝ dim K_W? That's a
+concrete next probe (measure Q's corner-block spectrum vs D at 1.32/1.45/1.60, all resolved). REPORT.
+No Handle for RH.
