@@ -4188,3 +4188,22 @@ lemmas + sharp J0/J1 bounds = 15-theorem PR-quality module (mathlib has NO Besse
 axioms. In mathlib_contribution/. Submission gated on Jacob's Zulip/CLA.
 NET: RH-proof frontier honestly mapped + walled (not ours to crack now); genuine durable value = the Lean
 formalization edge (Bessel general-order + sign theorem + Gram thms) + the integrity discipline. No Handle.
+
+── RIEMANN8 SESSION 1 (2026-08-06 evening) — §788-§794: the open-rung pair goes hypothesis-minimal ──
+Protocol: 6-Fable roundtable round + INDEPENDENT blind prism (main session, written before reading
+the table), then compare — converged on the same lane ranking; each side caught what the other missed.
+BANKED (all committed): §788.1/.2 orphaned zero-free cert found+run+PASSED (both §476g spans PD with
+NO zero knowledge; Gödel's hidden-axiom excision) · §789 cross-route validation 21/21 (bookkeeping
+validated as implemented; Red's objection withdrawn) · §790 coarse m(W): NINE rungs zero-free
+certified 4W=1.32→2.00 across log3/log4/log5/log7 entries, margin FLAT (collapse is dense-direction
+only) · §791+addenda strip-envelope lemma (cosh⁴ closed-form envelope; adversarially verified by
+Gauss AND Red, STANDS; 4-item hypothesis set; G=2000 raise → margin −7.9e-5 thick) · §792 Lean
+KERNEL-VERIFIED zero-free cert (trusted axioms; exact-rational min-eig>ρ) · §793 lit-gate (ladder
+APPARENTLY OPEN; BRS 2005.02996 = interpolation not frames, honestly downgraded) · §794 THE
+PRIME-NODE DEFECT LAW (empirical, 11 widths incl. null case): dim ker(zeros-only sampling) =
+#effective in-band prime nodes − 1 — the §476f corner has a candidate IDENTITY (Red's conjecture,
+three-way convergence with Gödel's t* segment + BRS nodes; −1 offset OPEN).
+RUNNING: dense Nyquist-matched λ_min scan (certify_lambda, Red's margin discipline).
+QUEUED: theory of the −1 · converse kernel⊂prime-span test · interval-Newton ordinate hardening ·
+REDUCTION.md with quartic (NOT Gaussian) class + height-localized scope per Red's continuum repair.
+JACOB-GATED: mathlib Bessel PR (compile re-verified tonight, Zulip draft updated to general-order).
