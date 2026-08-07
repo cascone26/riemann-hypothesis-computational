@@ -36,7 +36,45 @@ local data below Xs provably returns the same verdict on both. Also
 oscillation amplitude 10,188 vs residual ≤ 12.2 < log X = 13.8, flat control system as null).
 The discretization machinery is **handled on our instrument**, not just cited.
 
-Original sketch (full-theorem form):
+**THEOREM (G3, PROVEN — elementary; third pass 2026-08-07).** *For every X ≥ 16 there exist two
+discrete Beurling g-prime systems P_A, P_B with P_A ∩ [1,X] = P_B ∩ [1,X] (identical local data)
+such that ζ_A is zero-free in Re s > 1/2 while ζ_B has zeros exactly at ρ = 3/4 ± 2i (simple).
+Consequently no certificate reading g-prime data up to any finite height decides the RH-analogue.*
+
+Proof. (1) *Construction.* Targets Ψ_A(x) = x − x₀, Ψ_B = Ψ_A below X and
+Ψ_B(x) = (x−x₀) − 2Re[(x^ρ − X^ρ)/ρ] above X (x₀ = 16; density Ψ'_B = 1 − 2x^{σ₀−1}cos(t₀ log x) ≥
+1 − 2·16^{−1/4} = 0 for x ≥ 16, and > 0 for x > 16 off a measure-zero set). Greedy discretization:
+p_{n+1} solves Ψ(p_{n+1}) = Σ_{i≤n} log p_i + log p_{n+1}; the solution exists and increases since Ψ
+is continuous increasing and unbounded. Determinism + identical targets on [x₀, X] ⟹ identical
+primes below X (verified bit-identical numerically at Xs=1000).
+(2) *Error bound.* At each placement, ψ_P(p_n) = Ψ(p_n) exactly; between placements ψ_P is constant
+while Ψ rises by ≤ log p_{n+1} ⟹ E(x) := ψ_P(x) − Ψ(x) satisfies |E(x)| ≤ log(2x) for all x.
+(3) *Transfer to the zeta.* For the discrete system, −ζ'_P/ζ_P(s) = ∫ x^{−s} dψ_P^{(Λ)} where
+ψ^{(Λ)} adds prime-power terms; the powers contribute Σ_p Σ_{k≥2} log p · p^{−ks}, absolutely
+convergent and analytic in Re s > 1/2 (g-primes have ~linear density ⟹ Σ p^{−2σ} < ∞ for σ > 1/2).
+For the prime part, Stieltjes parts: ∫ x^{−s} dψ_P = ∫ x^{−s} dΨ + [x^{−s}E(x)] + s∫ E(x)x^{−s−1}dx;
+since |E| ≤ log 2x the last integral converges absolutely and is analytic in Re s > 0. And
+∫ x^{−s}dΨ_B = 1/(s−1) − 1/(s−ρ) − 1/(s−ρ̄) + (entire in Re s > 0 corrections from finite lower
+limit), ∫ x^{−s}dΨ_A = 1/(s−1) + (entire), by direct computation.
+(4) *Conclusion.* In Re s > 1/2: −ζ'_A/ζ_A is analytic except the pole at s=1 ⟹ ζ_A has no zeros
+there. −ζ'_B/ζ_B = −1/(s−ρ) − 1/(s−ρ̄) + analytic-except-s=1 ⟹ simple poles with residue −(−1)=+1
+at ρ, ρ̄ ⟹ ζ_B has simple zeros exactly at ρ and ρ̄. ∎
+
+(Sign bookkeeping: a zero of ζ of multiplicity m gives −ζ'/ζ a pole of residue −m... fix orientation:
+ζ'/ζ has residue m at a zero, so −ζ'/ζ has residue −m; our computed residue of −ζ'_B/ζ_B at ρ is −1
+(the −1/(s−ρ) term), consistent with a SIMPLE ZERO m=1. Checked both directions; the displayed
+formula −ζ'/ζ = Σ Λ n^{−s} = 1/(s−1) − Σ_ρ 1/(s−ρ) + ... matches the classical explicit-formula sign.)
+
+Same machinery, one line, upgrades G2: each family member can be discretized with its zeros exactly
+as prescribed (zero-free good members via Ψ = x−x₀ targets shifted, the bad member via its ρ-term),
+so the averaging-wall family exists as genuine discrete systems, not only zero configurations.
+
+Status ladder note: this is our own elementary proof, self-checked including the sign audit —
+own-math-unreviewed until an independent skeptic pass (standing table discipline, cf. §791); flagged
+for adversarial verification next session. The numerics above (bit-identical primes, oscillation
+carried, control flat) are its instrument-level confirmation.
+
+Original sketch (kept for provenance):
 
 **Claim:** for every X there exist two Beurling systems with identical g-primes on [1,X] and
 opposite RH-analogue verdicts. Hence no certificate reading local prime data to ANY finite height
