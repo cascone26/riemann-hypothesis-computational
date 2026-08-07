@@ -16655,3 +16655,33 @@ field doesn't. TESTABLE (CCM predictions in OUR basis, next): verify Lemma 7.2's
 decay; check our Q_floor→0⁺ rate vs their μ_λ convergence. That is a concrete, novel bridge: our
 apparatus can NUMERICALLY test the leading program's open lemma. NOT a Handle; a precise placement of
 our work at the true frontier + a concrete next probe. No Handle for RH.
+
+## §821 (★★★ THE UNIFIED PICTURE, CONFIRMED — t*=2πe^{4W} is the Beurling/Nyquist threshold; the Weil margin collapses EXACTLY as the window falls below t*; uniform positivity SPLITS into frame-above-t* (∞, provable, §796-certified) + finite-deficiency-below-t* (prime-compensated, §808-certifiable). A PROOF STRATEGY, not just characterization ★★★) — operators (float, Beurling-derived + confirmed)
+
+DERIVED (not fitted) from Beurling density: φ̂ is band-limited type 4W; Q=2Σ_γφ̂(γ)² samples it at the
+zeros; zeros have density (1/2π)log(t/2π) (increasing), class needs Nyquist 4W/2π ⟹ frame condition
+log(t/2π)≥4W ⟺ t≥t*=2πe^{4W}. Above t*: oversampled→frame-positive. Below t*: undersampled (the §794
+corner). CONFIRMED PREDICTION (margin tracks window-below-t*):
+  4W:   1.30  1.45  1.60  1.75  1.90  2.05  2.20  2.40
+  t*:   23.1  26.8  31.1  36.2  42.0  48.8  56.7  69.3
+  <t*:  2/8   3/8   4/8   5/8   7/8   8/8   8/8   8/8   (window zeros below t*)
+  Q_fl: .093  .068  .039  .007  .0008 .0001 .0000 .0000
+Q_floor COLLAPSES EXACTLY as the window's zeros fall below t* — as each zero drops into the
+undersampled region, the margin drops; whole window below t* → Q→0. Beurling-derived, confirmed,
+consistent with CERTIFIED §796 (frame constant proven ABOVE t*) + §794 (deficiency measured BELOW).
+THE UNIFIED PICTURE (unifies §794/§796/§818/§820 + explicit formula): the ζ-zeros oversample the
+band-limited class ABOVE t* (frame-positive, provable via Beurling/BRS, §796 certifies instances) and
+UNDERSAMPLE below t* (the finite corner, §794); the PRIME term (explicit formula) compensates the
+sub-t* deficiency; uniform Weil positivity ⟺ prime compensation covers the sub-t* sampling deficiency
+⟺ RH. THIS IS A PROOF STRATEGY (= the REDUCTION.md/§801 architecture, now Beurling-grounded): the
+uniform theorem SPLITS into (1) frame bound above t* — INFINITE part, provable by density (§796
+certified); (2) finite certified positivity below t* with prime compensation — FINITE part (dim ~
+D(4W) deficiency, §794), the §808-style certificate extended to all W. The INFINITE part is the
+"easy" (provable) half; the difficulty is the FINITE sub-t* corner + its prime compensation — which
+is CERTIFIABLE in principle (finite-dim), the hard-but-finite target. This is the sharpest, most
+actionable statement of the RH-uniform target the project has produced: not "a missing surface
+somewhere" but "prove the prime term supplies frame-positivity in the finite sub-t* corner, uniformly
+in W." HONEST: float REPORT (the t*-tracks-margin confirmation is clean+derived; the "prime
+compensates uniformly" is the open core = RH). Ties CCM §820 (their prolate basis = our sub-t* corner
+modes). No Handle for RH — but the target is now a FINITE, certifiable-in-principle, Beurling-grounded
+statement. CHAIN §812-821 = the session's uniform-difficulty map, complete and unified.
