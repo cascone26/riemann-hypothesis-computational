@@ -16232,3 +16232,23 @@ fixed-Nyquist-fraction family, higher arch precision. The knife-edge is a statem
 form's margin; the zero-free route's horizon is a different (weaker) curve. HONEST: v1's two clean
 points (0.129, 0.095) are real but confounded; the trend question is REOPENED with the correct
 instrument. No Handle for RH.
+
+## §807b (CONTROLLED m(W) CURVE — the margin RISES, certified: 0.132→0.239 across 4W=1.32→3.0; SAFE SIDE of the B16 knife-edge on stable spans) — operators/cert_mW_controlled.py/.out
+
+The corrected measurement (fixed span {20,26,32,38}, off the Nyquist edge, prec 300, radii 1e-6→1e-7
+— horizon pushed far back). Certified zero-free pencil λ_min(Q,G) = the TRUE Weil-form margin per
+‖ψ‖²_G on a controlled span, across support width:
+  4W=1.32: m=0.131986 · 1.60: 0.160690 · 2.00: 0.196051 · 2.50: 0.209065 · 3.00: 0.239448.
+**MONOTONE INCREASING** through every prime entry (log3/4/5/7 all in by 2.0). RESULT: on a stable
+well-separated span the true-form margin does NOT collapse — it STRENGTHENS as W grows (0.13→0.24 as
+W more than doubles). This (a) CONFIRMS §807 v1's decline (0.129→0.095) was the density+edge confound,
+not a trend; (b) quantitatively confirms §790 + Grothendieck's reframing (primes on the RESOURCE
+side); (c) is certified evidence the B16 knife-edge crossing (m(W)→0) does NOT occur on stable spans
+through 4W=3.0 — the route is on the SAFE side there. HONEST CAVEAT (necessary-not-sufficient): this
+is a FIXED 4-probe span, not the growing family the full uniform theorem needs (which must cover the
+whole class as W grows, where the Nyquist-edge instrument horizon §807 still limits certification).
+So this RULES OUT the "margin collapses on stable spans" failure mode and shows the true margin is
+healthy; the growing-family uniform bound remains the open analytic target (the "what keeps m alive"
+theorem = B18 arithmetic surface). Directly strengthens the anchor route: m_E (the anchor's p-block
+margin, §802A/§806-λ) IS this m(W) at 1.32, and it's healthy + growing. HANDLE (5 certified points).
+No Handle for RH.
