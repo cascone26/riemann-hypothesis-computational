@@ -4272,3 +4272,14 @@ BANKED THIS SESSION: §808 anchor ∀-theorem CERTIFIED+LEAN-VERIFIED Handle · 
 relevant margin DECLINES on growing eigenspace (Grothendieck crux quantified) · §810b m_E·D≈const
 (2pts, suggestive) → B18 spec. NEXT AFTER SCANS: if law holds, the corner-block-spectrum-vs-D direct
 test; Δ/Selberg universality (needs careful adaptation); synthesis write-up.
+
+── OVERNIGHT PIVOT (nprobes-step confound caught) ──
+Scan A revealed the m_E·D curve is confounded by nprobes STEPS: as W grows, probe count steps
+8→9→10 (each step changes eigenspace resolution → m_E discontinuity; tell = Gpiv drop + m_E·D jump
+at 1.52 where 8→9). The clean fixed-8-probe segment (1.25-1.45) gave m_E·D = 0.0255/0.0330/0.0382/
+0.0392 (rise then flatten ~0.039). PIVOTED to a definitive FIXED-8-probe fine scan (mE_fixed8_scan.py
+→ mE_fixed8.txt, 9 widths 1.30-1.62, no nprobes steps) = the clean m_E·D law over the
+well-conditioned window. Refutes §810b GLOBAL const; tests whether m_E·D SATURATES ~0.039 (asymptotic
+1/D, approached from below) or keeps rising. Third confound-class caught+corrected this session
+(uncontrolled family: frame consts, m(W) v1, now nprobes steps). Old scan A data (mE_overnight.txt,
+8 points, varying nprobes) kept but flagged cross-nprobes-unreliable.
