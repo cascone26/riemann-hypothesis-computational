@@ -4256,3 +4256,19 @@ Caught+fixed 2 false-positive "certified" prints (nan τ_E; float-only ε₀) �
 NOT RH (bounded class, one rung); uniform completion = §807 B18 arithmetic surface. Tailwind: §807b
 controlled m(W) RISES (0.132→0.239) — safe side of the knife-edge on stable spans.
 NEXT: Lean socket for §808's closing inequality; then the uniform program.
+
+── RIEMANN8 OVERNIGHT PLAN (2026-08-07, autonomous) ──
+GOAL: nail the §810b m_E·D structural-law question (is the Weil margin × corner dimension a conserved
+invariant → Hodge-index-shape spec for B18?). RUNNING:
+- Scan A (mE_overnight_scan.py → mE_overnight.txt): certified m_E(W) at 17 widths 1.10-3.00, window
+  [14,44], capacity-scaled probes, logs m_E·D. Tests the law vs W.
+- Scan B (mE_overnight_win24_scan.py, auto-chained after A): same on window [24,54], t0=24. Tests
+  window-robustness of the law.
+ANALYZE as points land: is m_E·D const (or slowly-varying) across W AND window? Const ⟹ real invariant
+⟹ B18 spec = corner positivity linear in dim K_W (§810b). Resolution caveat: 8<capacity points are
+under-resolved (flag via nprobes<capacity), Gpivmin flags pencil degradation.
+BANKED THIS SESSION: §808 anchor ∀-theorem CERTIFIED+LEAN-VERIFIED Handle · §807b controlled m(W) rises
+(fixed span) · §809 B18 lit-gate (2410.20758 = Deninger-dynamical, not the surface) · §810 uniform-
+relevant margin DECLINES on growing eigenspace (Grothendieck crux quantified) · §810b m_E·D≈const
+(2pts, suggestive) → B18 spec. NEXT AFTER SCANS: if law holds, the corner-block-spectrum-vs-D direct
+test; Δ/Selberg universality (needs careful adaptation); synthesis write-up.
