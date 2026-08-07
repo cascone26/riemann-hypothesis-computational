@@ -4,12 +4,15 @@
 `Bessel.lean` (all RH-specific lemmas removed). It **compiles clean against our pinned mathlib**
 (Lean v4.29.0) with only the trusted kernel axioms `{propext, Classical.choice, Quot.sound}`.
 
-## What it contains
-- `besselJ0`, `besselJ1` — power-series definitions.
-- `besselJ0_series_summable`, `besselJ0_zero`, `besselJ0_even`.
-- `besselJ0_pos` (`0<J₀` on `|x|<2`); two-sided bounds `besselJ0_ge_one_sub`, `besselJ0_le_one`,
-  the sharp `besselJ0_two_term` (`|J₀−(1−(x/2)²)|≤(x/2)⁴/4`) + corollary `besselJ0_le_two_term`.
-- `besselJ1_pos` (`0<J₁` on `0<x`, `x²<8`), `besselJ1_le_half`.
+## What it contains (15 theorems, general order + sharp J₀/J₁)
+- **`besselJ n`** — general integer-order power-series definition, with `besselJ_series_summable`,
+  `besselJ_zero_of_pos` (`J_n(0)=0`, `n≥1`), and **`besselJ_pos`** (`0<J_n(x)` for `0<x`, `x²<4(n+1)` —
+  unifying J₀'s `x²<4` and J₁'s `x²<8`).
+- `besselJ0`, `besselJ1` power-series defs with `besselJ0_eq`/`besselJ1_eq` (they are `besselJ 0`/`besselJ 1`).
+- `besselJ0_series_summable`, `besselJ0_zero`, `besselJ0_even`, `besselJ0_pos`; sharp two-sided bounds
+  `besselJ0_ge_one_sub`, `besselJ0_le_one`, `besselJ0_two_term` (`|J₀−(1−(x/2)²)|≤(x/2)⁴/4`),
+  `besselJ0_le_two_term`.
+- `besselJ1_pos`, `besselJ1_le_half`.
 
 ## Status / honest process notes
 mathlib currently has **no Bessel functions** — this is a genuine gap. But mathlib strongly prefers a
