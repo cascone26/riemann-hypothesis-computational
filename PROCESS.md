@@ -9892,3 +9892,19 @@ theorems. (4) this append + LEDGER §802 (same numbering, no fork).
 Key decision: kills split into witness-barred (K1) vs internally-killed (K2/K3/K5) vs logic-ceiling (K4) —
 only K1/K4 rows need witnesses, which is what makes the gap list finite and attackable. The generative
 output is G1–G4; G1 (BDR factory + zero-density) looks buildable first.
+
+## Arc: Barrier session part 2 (2026-08-07, same night) — gaps executed to completion
+Jacob: "get everything done to completion, dont stop for me." Ran G1–G4 immediately:
+(1) Third agent pass on the zero-density papers (2209.01689, 2407.12746) + BDR Thm 3.2 zero-placement.
+Decisive find: G1's conclusion is PUBLISHED (Broucke–Debruyne 2023 witness, Révész best-possible remark)
+— lit-gate caught the rediscovery pre-build, B5 gap→DEAD-proven (W7). (2) G2 built numerically; first
+geometry failed (off-line ordinate above the member's first on-line zero → term can never dominate);
+reordered geometry → clean witness, mean>0/bad<0/0.61σ outlier. Deposit: the failure mode + fix are in
+the script header and §803. (3) G3 reduced to one analytic hinge (singularity survives tail-restriction)
+— verified, sketch banked. (4) G4 stated precisely; FE-absence for Beurling classes confirmed from the
+papers themselves. Files: BARRIER_G_RESULTS.md (new), BARRIER_MAP.md (W7 added, B5/B10 rows + gap section
+updated), operators/barrier_g2_averaging_witness.py (new), LEDGER §803.
+Where the program landed: every weaker property-set is now witness-barred or internally killed; the open
+frontier is exactly FE ∧ EP (G4) — same target the conservation map reaches as "correspondence." Next
+lever loaded: G4's narrow-class statement, and G3's sketch is one coupled-discretization writeup from a
+theorem.

@@ -15981,3 +15981,30 @@ systematic axiom-lattice framework + K-taxonomy + G-program NOT found published 
 organization only. ⚠ two agent-sourced dates flagged unverified in the doc (Bombieri–Hejhal 1976-vs-1995,
 Balanzario–Sánchez-Ortiz 2001-vs-2007) — verify before any external use. REPORT (map is organization +
 cited literature; in-repo pointers are the Handles they always were).
+
+## §803 (BARRIER GAPS G1–G4 executed same-night: G1 already-published (lit-gate catch, B5 now DEAD-proven via W7), G2 witness family BUILT, G3 sketched with load-bearing step verified, G4 stated + FE-absence confirmed) — 2026-08-07
+Full detail: `BARRIER_G_RESULTS.md`. Third agent pass extracted the exact zero-density theorems.
+- **G1 RESOLVED-KNOWN.** The planned assembly (BDR 2309.01567 Thm 3.2 prescribed zero + Révész 2209.01689
+  Thm 1 Carlson bound under Axiom A alone, N(σ,T) ≤ 1000(A+κ)⁴(1−θ)⁻³(1−σ)⁻⁴ T^{12(1−σ)/(1−θ)} log⁵T) is
+  valid — but Broucke–Debruyne (Acta Arith. 207 (2023), arXiv:2211.08716) already built the STRONGER witness:
+  Ω(T^{c(1−σ)}) zeros, σ arbitrarily close to 1, under Axiom A; Révész §1.2 calls Carlson-type estimates
+  best-possible. Added as W7; B5 upgraded gap→DEAD-proven. Exactly the rediscovery the
+  rh-roundtable-literature-gate discipline exists to catch — caught BEFORE building this time.
+- **G2 BUILT (continuous level, REPORT).** `operators/barrier_g2_averaging_witness.py`: K=12 zero
+  configurations, bad member ρ=0.95±2.0i (DMV territory) with own on-line zeros from 10.9; Gaussian h.
+  Output: W_bad<0 AND mean>0 across w=0.42–1.06+, outlier at 0.61σ (Chebyshev 2.69 vs 1/K=0.083) ⟹ no
+  variance-strength bound excludes the violator. §62's averaging wall realized as explicit family.
+  Geometry deposit: off-line term dominates only when its ordinate sits BELOW the member's first on-line
+  ordinate (first attempt t₀=30>γ₁≈14 found NO admissible width; fix was ordering, not scanning).
+- **G3 SKETCH (REPORT).** Identical-g-primes-below-X pairs with opposite verdicts: zero at ρ survives
+  restricting li(x^ρ) to x>X (log-singularity from the ∞ tail — the analytic hinge, verified); coupled
+  discretization via BDR Thm 1.2; density positivity needs X ≥ 2^{1/(1−σ₀)}. ⟹ no finite-local-data
+  certificate decides the RH-analogue (upgrades B4/B8 kill-type toward witness-barred).
+- **G4 OPEN (stated).** FE+EP ⟹ RH-analogue for a narrow Beurling class. Density papers CONFIRM no FE
+  exists/is-known for any Beurling class (Révész: density theorems succeed despite "we lack a functional
+  equation"; Pintz–Révész: no zero-count asymptotic without FE). FE ∧ EP stays the unique empty-witness
+  pair — the map's arrow points here.
+SESSION VERDICT (barrier program complete): 12 barriers, 7 witnesses (1 in-repo Handle, 6 Report), 3 of 4
+gaps closed same-night (1 known, 1 built, 1 sketched), 1 open target precisely aimed at the FE∧EP core —
+which is the same core the conservation map calls "correspondence." The barrier map and the difficulty-
+conservation law now agree from opposite directions. REPORT throughout; proof pointers inline.

@@ -90,21 +90,29 @@ framework leaves hard).
 
 ---
 
-## Gaps = theorems to attempt (one per missing witness)
+## Gaps → execution status (2026-08-07 same-night pass; detail in BARRIER_G_RESULTS.md)
 
-- **G1 (large-sieve witness, feeds B5).** Build, via the W6 factory (prescribe the zero set ρ in
-  ζ_P=E·e^Z), a Beurling system with Carlson/zero-density-strength estimates AND a zero at prescribed
-  σ₀>1/2. Would prove: zero-density-strength information can never force RH. Beurling zero-density
-  machinery already exists (arXiv:2209.01689, 2407.12746) — this looks buildable.
-- **G2 (averaging-wall witness, feeds B10).** Construct a finite family of Beurling systems with mean
-  Weil-positivity + large-sieve-strength variance bound, where one member violates its RH-analogue.
-  Would upgrade §62's logic-ceiling to a hard witness barrier.
-- **G3 (local-data witness, feeds B4/B8).** Two Beurling systems with identical per-prime local data
-  (same g-prime multiset up to height X, X→∞ scaling) with opposite RH-analogue verdicts — W5 (Diamond–
-  Zhang's tunable pair) is 80% of the way there; pin whether their local data can be matched.
-- **G4 (the surviving-row converse).** Prove for a natural class of Beurling-type systems: FE + EP ⟹ no
-  off-line zeros (a Selberg-class-conjecture fragment in the Beurling setting, where FE is the rare
-  property). Even a narrow class would convert surviving-row 1 from empty-witness-column to theorem.
+- **G1 (large-sieve witness, fed B5) — RESOLVED: ALREADY PUBLISHED, stronger form.** Broucke–Debruyne
+  (Acta Arith. 207 (2023), arXiv:2211.08716) built exactly this witness with Ω(T^{c(1−σ)}) zeros, σ→1,
+  under Axiom A; Révész (2209.01689 §1.2) states Carlson-type estimates are best-possible. B5 row
+  upgraded to DEAD-proven with witness W7. Lit-gate catch, not a loss — the barrier is now theorem-backed.
+- **G2 (averaging-wall witness, feeds B10) — BUILT (continuous level).**
+  `operators/barrier_g2_averaging_witness.py`: K=12 family, mean form positive, one member with off-line
+  pair 0.95±2i negative, outlier at 0.61σ — below any variance-bound exclusion threshold, across widths
+  w=0.42–1.06+. Discretization to genuine g-prime systems = W6 factory Thm 1.2 (cited). §62's
+  logic-ceiling now has an explicit family realization.
+- **G3 (local-data witness, feeds B4/B8) — SKETCHED, load-bearing step verified.** For every X: two
+  systems with identical g-primes on [1,X], opposite verdicts — the prescribed zero survives restricting
+  its li(x^ρ) term to x>X because the log-singularity at s=ρ comes from the tail at ∞ (verified);
+  discretize both targets with a coupled random draw on [1,X] (W6 Thm 1.2). Consequence: no certificate
+  reading finitely much local prime data decides the RH-analogue.
+- **G4 (the surviving-row converse) — OPEN, precisely stated.** FE + EP ⟹ no off-line zeros for a
+  narrow Beurling class. Confirmed from the density papers: NO functional equation is known for any
+  Beurling class (Révész: "we lack a functional equation essential in the treatment of the Selberg
+  class"; Pintz–Révész: no zero-counting asymptotic without FE) — FE+EP remains the exact
+  empty-witness-column pair. The deepest of the four; the statement to attack is in
+  BARRIER_G_RESULTS.md. This is where the barrier program points: **the RH-relevant structure lives
+  precisely in FE ∧ EP, and nowhere weaker.**
 
 ## Lit-gate verdict (rule 13, run 2026-08-07)
 
