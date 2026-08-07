@@ -16685,3 +16685,20 @@ in W." HONEST: float REPORT (the t*-tracks-margin confirmation is clean+derived;
 compensates uniformly" is the open core = RH). Ties CCM §820 (their prolate basis = our sub-t* corner
 modes). No Handle for RH — but the target is now a FINITE, certifiable-in-principle, Beurling-grounded
 statement. CHAIN §812-821 = the session's uniform-difficulty map, complete and unified.
+
+## §821-CAVEAT (self-check: the "proof strategy" framing OVERCLAIMED — the frame-above-t* half is ZERO-SIDE/conditional, NOT an unconditional reduction; §821's CONFIRMED prediction stands, the reduction claim is tempered)
+On reflection: §821 called the split a "proof strategy reducing RH to the finite corner." CHECK: the
+"provable infinite half" = frame bound above t* = the ZERO SIDE Σ_γφ̂(γ)² (§796's certified bound is
+literally Σ_{γ≤800}ψ̂(γ)²≥c‖ψ‖²). That uses the zeros and is ≥0 only if they are REAL — CONDITIONAL on
+RH (to the height used). It is NOT an unconditional prime-side positivity. A PROOF needs the PRIME side
+(arch+pole−prime≥0, no zero assumption), which does NOT split cleanly at t* — it stays monolithic. So
+"unconditionally reduce RH to the finite corner" is WITHDRAWN — the above-t* half is conditional, and
+the unconditional target remains the full prime-side positivity. WHAT STANDS (solid): §821's CONFIRMED
+PREDICTION — the Weil margin collapses exactly as the window falls below t*=2πe^{4W} (Beurling-derived,
+measured, consistent with certified §796/§794). That is a real mechanistic UNDERSTANDING of the margin
+behavior — why it collapses (undersampling), where (below t*), how much (the deficiency). The DURABLE
+value of §821 is this understanding, NOT a proof reduction. (Discipline: got excited at the high point,
+checked the logic, tempered the claim — same pattern as the §811/§814 scalar over-reaches, caught by
+self-check this time BEFORE external refutation.) The honest frontier: prove arch+pole−prime≥0
+uniformly (prime side, monolithic) — the margin→0 sub-t* corner (§818/§821) is WHERE it's razor-thin,
+Beurling explains WHY, but the proof doesn't get to assume the zeros. No Handle for RH.
