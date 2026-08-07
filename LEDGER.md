@@ -15860,3 +15860,52 @@ measured curves (m(W), c(W)) — everything else is formula (D, t*, S) or citati
 bounded below while dim K_W grows as e^{4W} (in the function-field Rosetta, K_W = the
 fiber-classes block; the structure there = the Hodge index). REPORT (formula verified; readings
 open). No Handle for RH.
+
+## §800 (EULER ROUND 3 — the c(W) SCALING LAW measured on a CONTROLLED family: c is W-UNIFORM and excess-independent; fluctuation is zero-grid PHASE; erosion is POLYNOMIAL in Nyquist window length, never exponential) — operators/frame_const_controlled.py/.out + frame_const_LN.py/.out
+
+CONFOUND FOUND in §796-addendum's 4-anchor curve before extraction: sp = max(4.0, 2π/4W) puts the
+4W=2.00 anchor at fill 0.785 of Nyquist (sub-capacity ⇒ inflated c) while 1.00/1.32 sit at exactly
+1.000, and ceil(t*+2) adds varying floor phase — two confounded variables on four points. Controlled
+rerun (n=4 probes always, sp=2π/4W exact, floor=t*+2 exact, same certified pencil, hypothesis set:
+ordinate balls only):
+
+PASS A (ten widths 4W=0.95→2.25): c = 7.04/6.80/6.47/7.96/8.76/7.22/10.4/8.86/12.3/8.96 ×10⁻²
+while mean density excess falls 0.510→0.098 (5.2×). **H1 (c ~ excess) DEAD — registered before the
+run, killed by it. c has NO W-trend and NO excess-trend**; scatter band ±30%.
+PASS B (floor shifted +sp/2 at three widths): c moves +21%/−1%/+19% — same order as the inter-width
+scatter ⇒ **the fluctuation is zero-grid phase, not W**. The frame constant above t* is a statistic
+of the UNFOLDED zero sequence — in Nyquist units the zeros look alike at every W; that is WHY the
+curve is flat (scale-covariance made visible).
+PASS C (L_N scan, 4W=1.32 fixed, n=4→12 probes at exact Nyquist): c = 8.76/7.55/6.99/6.89/5.61
+×10⁻², a SLOW slide ≈ L_N^(−0.4) (or approach to a floor — undetermined at 12; the weakest
+sub-window is the first few Nyquist units near t*, and local oversampling GROWS up the window, so
+a positive floor is the structural expectation). n=16: S NOT PD within current radii — record as
+INSTRUMENT-UNDECIDABLE (Gödel's vocabulary), not indefinite; discriminator = tighter ordinate balls
+/ higher prec, queued.
+
+CONSEQUENCE FOR THE COMPOSITION (the answer to Jacob's c(W) question): of Grothendieck's two
+measured curves, **c(W) empirically holds a floor ≈ 0.055–0.065 (min over measured phase) at
+L_N ≈ 4, eroding only polynomially in L_N — the exponential §485c collapse does NOT live on the
+frame side; it is confined to the corner/edge where m is certified directly.** c dwarfs the
+G-raised strip tail (±5.24e-6) by four orders; the composed inequality's battle is m·c > X²
+(cross-block, pilot computing) + R. Uniform-statement form: c_unif(L_N) = inf-over-phase of the
+measured band — the honest uniform lower bound, since the zeros' phase is not ours to choose.
+FLOAT=REPORT for the law; each quoted c individually CERTIFIED (bisected pencil). No Handle for RH.
+
+## §797 (THE COMPOSITION PILOT — product form FAILS, SCHUR form CERTIFIES: the cross-term is losslessly controllable; the split works) — operators/cert_cross_block.py/.out
+
+Riemann's 1a executed with Gauss's interpretive guard pre-loaded (the target span is §788-certified
+PD directly, so any FAIL = split price, not sign). Joint 6×6 zero-free Gram at 4W=1.32, split at
+t*≈23.5: corner A={14,20}, complement C={26,32,38,44}, X the 2×4 cross block. RESULTS (all interval,
+hypothesis set ∅): λ_min(A) ≥ 1.432 · λ_min(C) ≥ 1.201 · ‖X‖_F ≤ 1.506, EXACT ‖X‖₂² = λ_max(XXᵀ)
+≤ 2.2596 (closed-form 2×2 eigenformula). **Product inequality m·c = 1.720 < ‖X‖₂² = 2.260 — FAILS
+even with the exact spectral norm** (the split at t* cuts strong 20↔26 nearest-neighbor coupling).
+**SCHUR ROUTE (lossless, PD(C) ∧ PD(A−XC⁻¹Xᵀ) ⟺ PD(joint)): λ_min(A − XC⁻¹Xᵀ) ≥ 1.0188 —
+JOINT PD CERTIFIED THROUGH THE SPLIT, healthy margin.** CONSEQUENCE for the architecture: the
+composition inequality must be STATED SCHUR-FORM, not product-form — X is not an obstruction when
+handled losslessly; the "cross-term problem" was an artifact of the eigenvalue-product bound.
+Riemann's horizon computation and Euler's E2 inherit this: the live front reduces to the Schur
+complement's margin against R (S a spectator at 4 orders below, §800). Pencil-normalization note
+(Gauss): these are coefficient-space numbers — the pilot measures the split's SHAPE; the composed
+class inequality restates everything against the L² pencil. HANDLE (certified pilot, hypothesis-
+free). No Handle for RH.

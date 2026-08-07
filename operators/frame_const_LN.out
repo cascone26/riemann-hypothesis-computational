@@ -1,0 +1,8 @@
+4W=1.32, floor=25.52, Nyquist sp=4.76; c vs n probes (L_N = n):
+  n= 4  window [23.1,42.2]  c = 8.755797e-02
+  n= 6  window [23.1,51.7]  c = 7.546119e-02
+  n= 8  window [23.1,61.2]  c = 6.985086e-02
+  n=10  window [23.1,70.7]  c = 6.891465e-02
+  n=12  window [23.1,80.3]  c = 5.607184e-02
+  n=16  window [23.1,99.3]  S NOT PD
+EXIT:0

@@ -1,3 +1,16 @@
 joint 6x6 zero-free Gram at 4W=1.32 (split at t*~23.5: corner [14, 20] | compl [26, 32, 38, 44])...
   row 0 done
   row 1 done
+  row 2 done
+  row 3 done
+  row 4 done
+  row 5 done
+
+===== CROSS-TERM BLOCK CERT (§797) =====
+corner  A [14, 20]: certified λ_min(A) ≥ 1.432139e+00
+compl   C [26, 32, 38, 44]: certified λ_min(C) ≥ 1.200885e+00
+cross   X: ‖X‖_F ≤ 1.505600e+00 (lossy) | EXACT ‖X‖₂² = λmax(XXᵀ) ≤ 2.259582e+00
+product inequality: m·c = 1.719835e+00  vs  ‖X‖₂² = 2.259582e+00  → FAILS (product test lossy — see Schur)
+SCHUR (lossless): λ_min(A − XC⁻¹Xᵀ) ≥ 1.018775e+00 > 0 ∧ C PD → JOINT PD CERTIFIED via the split
+(the composition works losslessly; the m·c > ‖X‖² product form is what loses it)
+EXIT:0

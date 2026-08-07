@@ -91,8 +91,13 @@ only adds a positive square). Do not quote §796's one-item set for any composed
 
 - ~~The frame constant c(W,T₀)~~ — DONE certified: §796 (c=0.1026 anchor) + §796-addendum
   (c(W) ∈ [0.068, 0.129] uniform across 4W=1.00→2.00, no decay).
-- **X — the cross-term block** corner↔complement in the split basis (certifiable with existing
-  interval machinery; the composition inequality is the 2×2 block bound m·c > ‖X‖² + corrections).
+- ~~X — the cross-term block~~ — RESOLVED §797: the product bound m·c > ‖X‖² FAILS at the t*
+  split (exact ‖X‖₂² = 2.26 > 1.72) but the SCHUR route certifies losslessly (λ_min(A−XC⁻¹Xᵀ) ≥
+  1.019, hypothesis-free). **The composition is stated Schur-form from now on**; X is bookkeeping,
+  not an obstruction. Carry c as c_unif(L_N) = inf-over-phase of the §800 band (Euler: c is
+  W-uniform, a statistic of the unfolded zero sequence; erosion polynomial in Nyquist window
+  length, floor ≈ 0.055-0.065 at the composed theorem's L_N ≈ 4.3; S sits 4 orders below).
+  m(W) is the dévissage's sole remaining measured unknown.
 - **R — the prolate residual lemma** (named by Riemann, round 3): every ψ in the full band-limited
   window class = (capacity-matched component) + residual, with the residual bounded by the prolate
   spectral plunge — i.e. §485c's measured e^{−9.78·4W} collapse, the season's enemy, is the SAME
