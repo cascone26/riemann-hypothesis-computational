@@ -16060,3 +16060,18 @@ CITATIONS FIXED (verified): Bombieri-Hejhal Duke 80(3) 1995 821-862 ✓ (1976 wa
 Balanzario-Sánchez-Ortiz Math. Comp. 76(260) 2007 2045-2049 ✓ — computational, NO proportion claim (B7 row
 rewritten: infinitely-many on-line + off-line real-parts dense in (0,1); dropped the unverified
 "positive proportion" phrasing). REPORT throughout; every build has its .py + output inline above.
+
+## §805 (G3 UPGRADED TO PROVEN THEOREM — elementary, own-math, sign-audited; flagged for skeptic pass) — 2026-08-07
+Full statement+proof in BARRIER_G_RESULTS.md. **Theorem: for every X ≥ 16 there exist two discrete Beurling
+g-prime systems identical below X, one zero-free in Re s > 1/2, the other with SIMPLE ZEROS EXACTLY at
+3/4 ± 2i.** Proof is elementary: greedy discretization hits its target exactly at placements ⟹ |ψ_P − Ψ| ≤
+log 2x; Stieltjes parts transfers the O(log x) error to a function analytic in Re s > 0; prime-power terms
+analytic Re s > 1/2; the target's −2Re[x^ρ/ρ] term Mellins to −1/(s−ρ)−1/(s−ρ̄) ⟹ residue −1 of −ζ'/ζ = a
+simple zero at ρ exactly (sign audited both directions against the classical explicit formula). Corollary:
+no certificate reading finite local prime data decides RH-analogues (B4/B8 witness-barred by THEOREM). The
+same machinery makes the G2 averaging family genuine discrete systems with exactly-prescribed zeros.
+STATUS: own-math-unreviewed (§791 discipline) — queued for independent adversarial verification; numerics
+(§804: bit-identical primes, oscillation carried, flat control) are the instrument-level confirmation.
+Barrier session terminal state: B1-B18 + W1-W7 + lattice + G1 known/G2 built-discrete/G3 PROVEN/G4 closed-
+narrow (Hamburger) — remaining open mass sits exactly at G4-general (FE for Beurling) and B18 (arithmetic
+surface), the two constructive targets the whole map now aims at.
