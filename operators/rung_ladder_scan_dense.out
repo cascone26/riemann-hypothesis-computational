@@ -2,3 +2,97 @@
 ===== 4W=1.32  span N6 (sp 6.0) =====
 
 4W=1.32 (primes in support: [2, 3]), centers [14, 20, 26, 32, 38, 44], RC=400:
+  row 0 done (diag rad 9.51e-06)
+  row 1 done (diag rad 9.51e-06)
+  row 2 done (diag rad 9.51e-06)
+  row 3 done (diag rad 9.51e-06)
+  row 4 done (diag rad 9.51e-06)
+  row 5 done (diag rad 9.51e-06)
+  ZERO-FREE CERTIFIED PD, certified lambda_min lower bound 6.613254e-01
+  == dense point 4W=1.32 N6 (sp 6.0): CERTIFIED lambda_min_lb=6.613254e-01 ==
+
+===== 4W=1.32  span N9 (sp 3.75) =====
+
+4W=1.32 (primes in support: [2, 3]), centers [14, 17.75, 21.5, 25.25, 29, 32.75, 36.5, 40.25, 44], RC=400:
+  row 0 done (diag rad 9.51e-06)
+  row 1 done (diag rad 9.51e-06)
+  row 2 done (diag rad 9.51e-06)
+  row 3 done (diag rad 9.51e-06)
+  row 4 done (diag rad 9.51e-06)
+  row 5 done (diag rad 9.51e-06)
+  row 6 done (diag rad 9.51e-06)
+  row 7 done (diag rad 9.51e-06)
+  row 8 done (diag rad 9.51e-06)
+  NOT CERTIFIED PD (shift 0 fails)
+  == dense point 4W=1.32 N9 (sp 3.75): NOT CERTIFIED (collapse coordinate) ==
+
+===== 4W=1.45  span N6 (sp 6.0) =====
+
+4W=1.45 (primes in support: [2, 3, 4]), centers [14, 20, 26, 32, 38, 44], RC=400:
+  row 0 done (diag rad 6.53e-06)
+  row 1 done (diag rad 6.53e-06)
+  row 2 done (diag rad 6.53e-06)
+  row 3 done (diag rad 6.53e-06)
+  row 4 done (diag rad 6.53e-06)
+  row 5 done (diag rad 6.53e-06)
+  ZERO-FREE CERTIFIED PD, certified lambda_min lower bound 9.121290e-01
+  == dense point 4W=1.45 N6 (sp 6.0): CERTIFIED lambda_min_lb=9.121290e-01 ==
+
+===== 4W=1.45  span N9 (sp 3.75) =====
+
+4W=1.45 (primes in support: [2, 3, 4]), centers [14, 17.75, 21.5, 25.25, 29, 32.75, 36.5, 40.25, 44], RC=400:
+  row 0 done (diag rad 6.53e-06)
+  row 1 done (diag rad 6.53e-06)
+  row 2 done (diag rad 6.53e-06)
+  row 3 done (diag rad 6.53e-06)
+  row 4 done (diag rad 6.53e-06)
+  row 5 done (diag rad 6.53e-06)
+  row 6 done (diag rad 6.53e-06)
+  row 7 done (diag rad 6.53e-06)
+  row 8 done (diag rad 6.53e-06)
+  NOT CERTIFIED PD (shift 0 fails)
+  == dense point 4W=1.45 N9 (sp 3.75): NOT CERTIFIED (collapse coordinate) ==
+
+===== 4W=1.6  span N6 (sp 6.0) =====
+
+4W=1.6 (primes in support: [2, 3, 4]), centers [14, 20, 26, 32, 38, 44], RC=400:
+  row 0 done (diag rad 4.40e-06)
+  row 1 done (diag rad 4.40e-06)
+  row 2 done (diag rad 4.40e-06)
+  row 3 done (diag rad 4.40e-06)
+  row 4 done (diag rad 4.40e-06)
+  row 5 done (diag rad 4.40e-06)
+  ZERO-FREE CERTIFIED PD, certified lambda_min lower bound 1.131505e+00
+  == dense point 4W=1.6 N6 (sp 6.0): CERTIFIED lambda_min_lb=1.131505e+00 ==
+
+===== 4W=1.6  span N9 (sp 3.75) =====
+
+4W=1.6 (primes in support: [2, 3, 4]), centers [14, 17.75, 21.5, 25.25, 29, 32.75, 36.5, 40.25, 44], RC=400:
+  row 0 done (diag rad 4.40e-06)
+  row 1 done (diag rad 4.40e-06)
+  row 2 done (diag rad 4.40e-06)
+  row 3 done (diag rad 4.40e-06)
+  row 4 done (diag rad 4.40e-06)
+  row 5 done (diag rad 4.40e-06)
+  row 6 done (diag rad 4.40e-06)
+  row 7 done (diag rad 4.40e-06)
+  row 8 done (diag rad 4.40e-06)
+  NOT CERTIFIED PD (shift 0 fails)
+  == dense point 4W=1.6 N9 (sp 3.75): NOT CERTIFIED (collapse coordinate) ==
+
+===== 4W=1.8  span N6 (sp 6.0) =====
+
+4W=1.8 (primes in support: [2, 3, 4, 5]), centers [14, 20, 26, 32, 38, 44], RC=400:
+  row 0 done (diag rad 2.75e-06)
+  row 1 done (diag rad 2.75e-06)
+  row 2 done (diag rad 2.75e-06)
+  row 3 done (diag rad 2.75e-06)
+  row 4 done (diag rad 2.75e-06)
+  row 5 done (diag rad 2.75e-06)
+  ZERO-FREE CERTIFIED PD, certified lambda_min lower bound 1.333031e+00
+  == dense point 4W=1.8 N6 (sp 6.0): CERTIFIED lambda_min_lb=1.333031e+00 ==
+
+===== 4W=1.8  span N9 (sp 3.75) =====
+
+4W=1.8 (primes in support: [2, 3, 4, 5]), centers [14, 17.75, 21.5, 25.25, 29, 32.75, 36.5, 40.25, 44], RC=400:
+  row 0 done (diag rad 2.75e-06)

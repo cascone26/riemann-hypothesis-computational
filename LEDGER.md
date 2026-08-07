@@ -15744,3 +15744,26 @@ any composition inequality is the DENSE-span λ_min — measured next (rung_ladd
 auto-fired, certify_lambda per Red's margin demand, running now). Caveat honestly: min-pivot ≠
 λ_min even here; the flat coarse curve is pivot-flat (λ_min lb per-point available on demand via
 certify_lambda). HANDLE (nine certificates, proof pointer .out). No Handle for RH.
+
+### §794-addendum (SAME-NIGHT CORRECTION — prime-node identity REFUTED by three discriminating tests; replaced by the QUANTITATIVE t* DENSITY-DEFICIENCY LAW, which fits everything) — inline probes off zeros_only_kernel_probe.py machinery
+
+Ran §794's queued next-steps immediately; the strong conjecture DIED and a better law replaced it:
+(1) CONVERSE TEST (class-coordinates, v2 after a pinv(G) artifact in v1): near-kernel is NOT in the
+prime dual span — residuals 0.56-1.00; the DEEPEST kernel direction is fully orthogonal to the
+in-band prime functionals (the §794 forward pairing was carried by mid-tier directions, not the
+true kernel). (2) HIGH-ZERO TEST: kernel directions carry ~1000× LESS mass at zeros 800-2000 than
+at low zeros — they dodge the ENTIRE zero axis, refuting "invisible only by truncation."
+(3) WINDOW-MOVE DISCRIMINATOR (decisive): windows [50,80] and [100,130] (denser zeros) have dim 0
+at EVERY 4W (1.00-2.00) — prime-node functionals are window-independent, so the prime-node law is
+FALSIFIED; the kernel is a LOW-WINDOW phenomenon. REPLACEMENT LAW (quantitative): kernel dim ≈
+deficiency integral ∫_window (4W/2π − (1/2π)ln(t/2π))₊ dt below t* = 2πe^{4W} — the density
+crossing IS Gödel's corner boundary (capacity = zero density ⟺ t = t*, exactly his §788 formula).
+Fit: predicted 0.05/0.20/0.36/0.59/0.97/1.60/2.48 vs measured 0/1/1/1/2/2/3 (monotone, right
+slope, constants within ~½). [50,80] entirely above t* for all tested W → dim 0 ✓✓.
+NET: the §476f corner is a GEOMETRIC/DENSITY object (Beurling deficiency of the low zeros against
+the class capacity), NOT an arithmetic prime-node object; the §794 staircase's prime-entry
+alignment was coincidence in the tested range. Gödel's t* architecture is quantitatively CONFIRMED;
+Red's conjecture honorably dead (it generated the tests that found the true law). The BRS-import
+question sharpens: what the corner needs is not prime-node data per se but the below-t* completion.
+FLOAT=REPORT. NEXT: certify 2-3 dims (interval); the deficiency integral as the corner-dimension
+formula in REDUCTION.md; does the +½-ish offset match the edge-correction of Beurling density?
