@@ -15517,3 +15517,112 @@ non-reproduction output of the day: a general-order Bessel positivity theorem in
 verification edge rather than competing on analytic NT where the field is walled. Contribution is now
 materially stronger for a mathlib PR (general J_n, the design a reviewer would want). Submission still
 gated on Jacob's Zulip/CLA (§ prior). No Handle for RH.
+
+## §788.1 — RIEMANN8 OPENING RESULT: the orphaned zero-free certificate located, run, and PASSED — the PD half of the open-rung pair is now UNCONDITIONAL on the 4-probe span (no zero knowledge anywhere)
+
+*(Ledger hygiene 2026-08-06: two roundtable seats banked "§788" concurrently; retitled §788.1/§788.2. Content is complementary — .1 carries the hypothesis-audit detail, .2 the consolidated results + item-1a certified ratios. §788-addendum attaches to .2. Also: operators/arb_zerofree_cert3b.out is a same-code DUPLICATE of arb_zerofree_cert3_6probe.out (two seats launched the same 6-probe run); identical verdict, zero independent evidentiary value — canonical = _6probe.out.)*
+
+Gauss's item 0 (roundtable 2026-08-06): §476g left "arb_zerofree_cert3.py running" with no banked
+result for 311 sections. AUDIT: script exists (operators/arb_zerofree_cert3.py), NO output artifact
+anywhere — the run apparently died silently (default python3 lacks flint; resolved via
+`uv run --no-project --with python-flint`). RUN THIS SESSION, output banked: **operators/arb_zerofree_cert3.out**.
+RESULT — BOTH CERTIFY:
+- 4W=0.95 (p=2 rung), centers {14,22,30,38}, RC=400: ALL 4 PIVOTS POSITIVE, min pivot lb **2.297** → zero-free PD.
+- 4W=1.32 (PAST log3, primes {2,3} in support), centers {14,22,30,38}, RC=400: ALL 4 PIVOTS POSITIVE,
+  min pivot lb **2.024** → zero-free PD. Diag radii 9.5e-6 (v3's tightened arch tail fixed §476e(1)'s
+  RC=400 inconclusiveness; the v1 failure was tail-bound slack, not a real obstruction).
+SIGNIFICANCE: direct route (pole + arch − prime, interval LDLᵀ, NO zeros used) ⇒ an UNCONDITIONAL
+finite certified positivity instance INSIDE the open rung. Combined with §476c (no-3 form rigorously
+indefinite at the same 4W): the load-bearing pair at the first open rung no longer rests on any
+zero hypothesis on this span. SCOPE (honest): 4-probe span {14,22,30,38} only — the 6-probe span
+{14,20,26,32,38,44} (conditional min pivot 1.63, §476g) is NOT yet covered zero-free; extend next.
+
+HYPOTHESIS AUDIT banked same-session (Gödel, roundtable):
+(1) §476g/§476e.2's stated condition "conditional on the 491 PT-certified zeros" UNDERSTATES the
+    hypothesis. The identity-route domination Z_∞ ⪰ Z_G requires every omitted zero to contribute a
+    PSD term; only on-line zeros contribute squares — off-line zeros contribute indefinite rank-2
+    terms 2Re[ψ̂(γ)ψ̂(γ̄)*]. Honest statement: conditional on on-line-ness of ALL zeros (theorem to
+    3e12 via Platt–Trudgian; assumption above). Repair loaded: strip-envelope tail lemma (arbitrary
+    zero configurations |σ|≤1/2 above T₀, analytic-continuation factor e^{4W|σ|} ≤ e^{0.66} at
+    4W=1.32, Fejér 1/y² envelope + Backlund counting; ~1e-11 at T₀=3e12 vs pivots ~2). Same lemma
+    also needed by §476c's tail (its [0,+7.62e-5] is one-sided/on-line; margin −0.8e-5 would NOT
+    survive a naive 2× strip boost from T₀=800 — but T₀=3e12 makes it trivial; cite PT explicitly).
+(2) §476d's closing prediction "log2 ratio ≈ 1 exactly at saturation" is WITHDRAWN — tacit premise
+    full_no2(v) ≈ 0 is false: full_no2(v) = full(v) + 2w₂‖v‖²·r_log2 ≈ +0.84·w₂‖v‖² > 0 (the witness
+    EXPLOITS p=2, r_log2=+0.42 its global max, §476f). Expected E₂-ratio = 1 − r_log2 = 0.58,
+    consistent with banked data; no normalization ambiguity. Expected E₃-ratio = 1 − r_log3 ≈ 1.047.
+(3) Theorem architecture proposed for the probes→continuum passage (lit-gate before novelty claim):
+    sampling/frame inequality (Ingham 1936 / Beurling density) — zeros undersample the type-2W
+    Paley–Wiener class exactly below t* = 2π·e^{4W} ≈ 23.5 at 4W=1.32 (matches §476f's compact
+    low-band enemy γ∈[14,30]) — + finite corner certificate below t* (existing LDLᵀ machinery)
+    + strip tail above T₀. Corner dimension grows ~e^{4W}(4W−1) along the ladder (geometry of the
+    hardening; NOT the §476b rate 9.78 — flagged per §485c discipline). No covering argument anywhere.
+Proof pointers: operators/arb_zerofree_cert3.out (this run), operators/arb_zerofree_cert3.py (tail
+derivation in header). No Handle for RH — a Handle for the rung pair, now unconditional on its span.
+
+## §788.2 (RIEMANN8 OPEN — the open rung's PD half goes UNCONDITIONAL on the 4-probe span: zero-free cert PASSED at 4W=1.32; item-1a ratios certified; §476d prediction withdrawn; §476g hypothesis restated) — operators/arb_zerofree_cert3.out + rung_ratio_1a.py
+
+**(1) ZERO-FREE CERT BANKED (was "running" since §476g).** arb_zerofree_cert3.py completed 2026-08-06
+20:09 (env: uv + python-flint, resolved this session after the original launch died silently).
+RESULTS (operators/arb_zerofree_cert3.out): 4W=0.95, centers {14,22,30,38}, RC=400: ALL 4 PIVOTS
+POSITIVE, min pivot lb 2.297 → ZERO-FREE CERTIFIED PD. **4W=1.32 (PAST log3, primes {2,3}), same
+centers, RC=400: ALL 4 PIVOTS POSITIVE, min pivot lb 2.024 → ZERO-FREE CERTIFIED PD.** Pole + arch −
+prime directly; NO zero knowledge anywhere — no 491 zeros, no on-line-ness assumption, no strip lemma.
+The §476g PD half on the 4-probe span is now an UNCONDITIONAL finite theorem inside the open rung.
+The 6-probe span {14,20,26,32,38,44} remains conditional — zero-free run on it LAUNCHED this session
+(arb_zerofree_cert3b.py → .out; bank verdict either way). HANDLE (4-probe pair now unconditional:
+no-3 indefinite §476c ∧ full PD zero-free). No Handle for RH.
+
+**(2) LEDGER HYGIENE (per Gödel's audit).** (i) §476g's PD certificates as originally stated
+("conditional on the 491 PT-certified zeros") had an INCOMPLETE hypothesis: the identity-route
+domination Z_∞ ⪰ Z_G needs all OMITTED zeros on-line (off-line pairs contribute indefinite rank-2
+terms) — i.e. verified to 3e12, ASSUMED above. Superseded for the 4-probe span by (1), which needs no
+zero hypothesis at all; the 6-probe span carries the honest conditional statement until 3b lands or
+the strip-envelope tail lemma (arbitrary configurations |σ|≤1/2 above T₀, factor e^{4W|σ|} ≤ e^{0.66},
+Fejér envelope + Backlund counting) is written. (ii) §476d's closing prediction "log2 ratio ≈ 1
+exactly at saturation" is WITHDRAWN — its tacit premise full_no2(v) ≈ 0 is false: the witness EXPLOITS
+p=2 (r_log2 = witness global max, §476f), so the expected ratio is 1 − r_log2 ≈ 0.586, which is what
+the data gives. No contradiction between ledger entries; the prediction's premise was wrong.
+
+**(3) ITEM 1a EXECUTED — jump-energy ratios of the §476c witness, CERTIFIED BALLS**
+(operators/rung_ratio_1a.py, closed-form gpair_closed_arb, no integrals, no zeros; witness
+reconstruction identical to certA2, float min-eig −8.5246e-5 ✓):
+  ĝ_vv(0) = 0.00340980394266989... (±5e-57) · ĝ_vv(log2) = 0.00141217250764389... (±5e-58) ·
+  ĝ_vv(log3) = −0.00015923156635017... (±7e-58)
+  r_log2 = +0.4141506466... (±5e-55) [banked float 0.413 ✓] · r_log3 = −0.0466981589... (±2e-55)
+  [banked float −0.0467 ✓]
+  **E₂-ratio = 0.5858493534 (±5e-55)** [confirms (2)(ii): 0.586, not ≈1] ·
+  **E₃-ratio = 1.0466981589 (±2e-55)** vs REQUIRED = 1 + |Q_no3(v)|/(2w₃‖v‖²) ∈ [1.0011, 1.0202]
+  (from banked §476c enclosure Q_no3 ∈ [−8.45e-5, −0.8e-5]) → **SLACK ∈ [0.027, 0.046]. RAZOR BRANCH
+  confirmed with certified numbers** (ε ≈ 0.03–0.05, not 0.5). Dominant slack uncertainty is the
+  WIDTH of the banked Q_no3 enclosure (its tail term [0, +7.62e-5]), not the ratio balls (1e-55) —
+  tightening Q_no3 (larger G / more zeros) pins the slack to ~3 digits if wanted. HANDLE (ratios;
+  closed-form certified). No Handle for RH.
+
+### §788-addendum (6-probe span ALSO zero-free CERTIFIED — the §476g conditional pair is now FULLY superseded by unconditional certificates)
+Same-session extension: certify(1.32, {14,20,26,32,38,44}) via the direct route — ALL 6 PIVOTS
+POSITIVE, min pivot lb **1.631** (matches the conditional §476g value 1.63, as it must — same form,
+different logical route), diag radii 9.5e-6. Proof: operators/arb_zerofree_cert3_6probe.out.
+STATUS: BOTH §476g PD spans ({14,22,30,38} lb 2.024; {14,20,26,32,38,44} lb 1.631) now certified
+zero-free at 4W=1.32 — no zero hypothesis anywhere on the PD half. The open-rung load-bearing pair
+(full PD ∧ no-3 indefinite) stands with the ONLY remaining zero-dependence in the §476c
+indefiniteness half (uses 491 verified zeros + one-sided tail; honest fix = cite PT-3e12 + strip
+envelope, per §788(1)). Lane (e) note: the Lean LDLᵀ rational replay should replay THESE
+unconditional certificates. No Handle for RH — the rung pair's PD half is now hypothesis-free.
+
+## §791 (STRIP-ENVELOPE TAIL LEMMA proven + CERTIFIED — the indefiniteness half of the open-rung pair now holds for ARBITRARY zero configurations above 800; the pair's hypothesis set is fully enumerated and minimal) — RUNG_STRIP_LEMMA.md + operators/strip_tail_cert.py
+
+The lemma the §788 roundtable loaded (Gödel's repair item), proven with a SHARPER envelope than
+estimated at the table: for the Fejér probes the analytic-continuation cost across the strip is
+cosh⁴(Wσ) from the closed form |sin(x+iy)|²=sin²x+sinh²y ≤ cosh²y — at 4W=1.32, σ=1/2 that is
+cosh⁴(0.165) = 1.0557 (a 5.6% cost), NOT the e^{4W|σ|} ≈ 1.93 L¹-route estimate. Consequence,
+Arb-CERTIFIED (operators/strip_tail_cert.out): §476c's Q_no3(v) with the tail two-sided over
+ARBITRARY strip configurations above G=800: **Q_strip ∈ [−1.6486e-4, −3.9887e-6] — entirely
+negative.** (Table prediction was that a naive strip boost kills the −0.8e-5 margin; the cosh⁴
+sharpening saves it, upper bound −3.99e-6.) STATE OF THE PAIR: PD half zero-free/hypothesis-free
+(§788); indefiniteness half now needs ONLY {zeros ≤ 800 on-line (Platt–Trudgian), the classical
+counting bound N(t+1)−N(t) ≤ 2 ln t}. Nothing about zeros above 800 anywhere in the pair. Red's
+constraint honored in the doc: this lemma bounds strip zeros as adversaries only — it cannot supply
+the frame inequality's positive mass (that would re-import the RH-fragment); the continuum theorem's
+positivity must come from the height-localized class. HANDLE (lemma + certified application).
+No Handle for RH.

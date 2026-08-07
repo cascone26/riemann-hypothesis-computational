@@ -1,0 +1,11 @@
+
+4W=1.32 (primes in support: [2, 3]), centers [14, 20, 26, 32, 38, 44], RC=400:
+  row 0 done (diag rad 9.51e-06)
+  row 1 done (diag rad 9.51e-06)
+  row 2 done (diag rad 9.51e-06)
+  row 3 done (diag rad 9.51e-06)
+  row 4 done (diag rad 9.51e-06)
+  row 5 done (diag rad 9.51e-06)
+  ALL 6 PIVOTS POSITIVE (min pivot lower bound 1.631e+00) -> ZERO-FREE CERTIFIED PD
+
+*** SECOND SPAN ZERO-FREE: both §476g PD spans now unconditional by the direct route. ***

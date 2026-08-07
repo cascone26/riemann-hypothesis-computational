@@ -44,6 +44,13 @@ def arch_entry_v3(cj, ck, RC):
     return val + arb(0).union(tail.union(-tail))
 
 def certify(fourW, centers, RC=400):
+    # GUARDS (§788 Red audit): the tail derivation in the header is only valid under these —
+    # violating any of them would print CERTIFIED on an invalid certificate.
+    assert max(centers) <= float(ac.BAND1), \
+        f"centers must be <= BAND1={float(ac.BAND1)} (mirror-domination tail needs r-B1 > 0 margin); got {max(centers)}"
+    assert RC > 2 * float(ac.BAND1), f"tail bound needs RC > 2*BAND1; got RC={RC}, BAND1={float(ac.BAND1)}"
+    assert fourW < float(arb(ac.NM + 1).log()), \
+        f"prime sum truncates at NM={ac.NM}: need 4W < log(NM+1)={float(arb(ac.NM+1).log()):.3f}; got {fourW}"
     ac.W = arb(fourW)/4; ac.TW = 2*ac.W; ac.c_tri = arb.pi()/ac.W
     RCa = arb(RC)
     cs = [arb(c) for c in centers]; n = len(cs)

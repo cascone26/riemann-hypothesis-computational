@@ -1,0 +1,21 @@
+float: n=16 probes (s=2.0), min eig(no-3) = -8.5246e-05
+prime-3 term (closed form): [-0.000201996101698322574198416296198604861252722930838598520 +/- 9.44e-58]
+zero side (gamma<=800, 491 zeros): [0.000117570 +/- 5.34e-10]
+|v|_1 = 3.1920280859415833332737300054304796503856778144836425781250
+rigorous zero-tail bound (gamma>800): +/- [7.6192862982981805043838417493880895342416156147033501283119e-5 +/- 4.70e-64]
+
+RIGOROUS Q_no3(v) = [+/- 8.45e-5]
+CERT A v2 PASSED: Q_no3(v) < 0 RIGOROUSLY => the p2-only Weil form is INDEFINITE past log3.
+(Provenance: Guinand-Weil identity [theorem]; cached zeros gamma<=800 [mpmath, ball r=1e-9,
+ on-line certified by Platt-Trudgian 3e12]; closed-form arb prime term; rigorous density tail.)
+explicit bounds: Q in [-8.443e-05, -8.233e-06]
+
+===== STRIP-ENVELOPE TAIL CERT (§791) =====
+cosh^4(W/2) strip factor: [1.0557006947797847867704893240311903027059684547863320857892 +/- 2.94e-59]
+on-line tail bound (one-sided, §476c): +[3.8096431491490902521919208746940447671208078073516750641559e-5 +/- 5.22e-64]
+strip tail bound (two-sided): +/- [4.0218429194197418594385246877956907951687553865532453574105e-5 +/- 5.46e-64]
+Q_no3(v) with ARBITRARY strip configurations above G=800: [+/- 1.65e-4]
+explicit bounds: Q_strip in [-1.6486e-04, -3.9887e-06]
+CERTIFIED: Q_no3(v) < 0 with NO on-line hypothesis above 800.
+Hypothesis set, complete: zeros<=800 on-line (Platt-Trudgian), N(t+1)-N(t)<=2 ln t. Nothing else.
+EXIT:0
