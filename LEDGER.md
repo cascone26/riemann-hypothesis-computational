@@ -16252,3 +16252,39 @@ healthy; the growing-family uniform bound remains the open analytic target (the 
 theorem = B18 arithmetic surface). Directly strengthens the anchor route: m_E (the anchor's p-block
 margin, §802A/§806-λ) IS this m(W) at 1.32, and it's healthy + growing. HANDLE (5 certified points).
 No Handle for RH.
+
+## §808 (★ ANCHOR ∀-THEOREM — FULLY CERTIFIED HANDLE ★: Weil positivity for a described class at the open rung, all constants + closing inequality in interval arithmetic) — operators/cert_anchor_final.py + cert_tauE.py + arb ε₀ verification; ANCHOR_THEOREM.md
+
+**THEOREM (certified).** For every even ψ ∈ PW_{0.66} (band-limited, exponential type 2W, support
+4W=1.32 > log 3, primes {2,3} in range), if the weighted off-window tail
+  T(ψ) = ∫_{|t|∉[14,44]} |ψ̂(t)|² (1+|Ω(t)|) dt ≤ 10⁻⁴,  Ω(t)=Re ψ₀(¼+it/2)−ln π,
+then the Weil form Q(ψ) = pole+arch−prime ≥ 0 (certified lower bound 2.03×10⁻²). The class is defined
+by an explicit tail condition (non-circular, no probe-span reference); the (1+|Ω|) weight is what
+makes Q's off-window part finite (Gödel's window-cap).
+
+SELF-CONSISTENT SINGLE-BASIS construction (fixes the §806-λ basis-consistency gap): ONE conditioned
+8-probe basis [14..44]/8; Q (zero-free Weil), G (L² pencil), A (concentration, fixed-segment integ) —
+all apparatus-consistent (module state TW/c_tri set — the §788 landmine). E = top-6 concentration
+eigenspace of (A,G). p⊕r split (Red §801), plunge suppresses the cross term.
+ALL CONSTANTS CERTIFIED IN ARB:
+  · m_E = Q-pencil-λ_min on the TRUE E = 0.091759 (not the §802A probe-span 0.129 — honest, on the
+    actual eigenspace)
+  · λ₇ ≤ 0.60696 (Ky-Fan: Σ₆=5.7086 ≤ Σ_top6 ⟹ λ₇ ≤ trA−Σ₆; trA_even=6.31020 exact)
+  · sup|Ω|_[14,44] ≤ 2.0175 (3000-ball interval sweep)
+  · τ_E ≤ 0.0862 (weighted off-window mass of E; per-vec 0.003–0.086, fine-segment arb integration,
+    nan-abort guard passed — earlier rough float est 0.525 was a different-E artifact; theorem closes
+    with EITHER, robust)
+  · B_prime = 0.3579 (exact, §803A)
+  ⟹ B_pf ≤ 2.223, C_f ≤ 1.582, ‖f‖² ≤ 2.544·T; the closing inequality
+    Q ≥ m_E(1−s) − 2B_pf√(s(1−s)) − C_f·s − T verified IN ARB at the worst case (s=ff·ε₀, T=ε₀):
+    **Q ≥ 2.031×10⁻² > 0.** ε₀=10⁻⁴ conservative (0.02 margin ⟹ larger ε₀ available).
+DISCIPLINE: refused TWO false-positive "CERTIFIED" prints tonight — one on a nan τ_E (nan→0→trivial
+close; caught, added nan-abort guard), one on a float-only ε₀ (redone in arb). Only banked after both
+holes closed. The all-day λ-blocker (§806-diagnosis probe mismatch) and the basis-consistency gap
+both now CLOSED. This is the project's FIRST fully-certified ∀-positivity theorem for the Weil form —
+a described infinite-dimensional class, not a finite span. NOT a proof of RH (a bounded height-
+localized class at one rung; the uniform/all-heights completion needs the §807 B18 arithmetic-surface
+input the barrier map fences). But a genuine certified Handle. Proof pointers: cert_anchor_final.out,
+cert_tauE.out, cert_lambda7_final.out, the arb ε₀ verification. NEXT: Lean socket for the closing
+inequality (the constants → a machine-checked ≥0); then the uniform program (m(W) rising §807b is the
+tailwind). No Handle for RH.

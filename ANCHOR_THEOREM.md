@@ -1,4 +1,7 @@
-# The Anchor ∀-Theorem — final form (assembles §802A/§803A/§804A; drafts §806 — barrier session holds §805)
+# The Anchor ∀-Theorem — ★ FULLY CERTIFIED (§808) ★
+
+**STATUS: CERTIFIED HANDLE.** All constants + closing inequality in interval arithmetic. Q(ψ)≥0 for even ψ∈PW_{0.66} at the open rung with weighted off-window tail T(ψ)≤1e-4 (certified Q≥2.03e-2). Single self-consistent 8-probe basis; m_E=0.0918 on the true concentration eigenspace, λ₇≤0.607, sup|Ω|≤2.018, τ_E≤0.086, all arb. See LEDGER §808. Two false-positive 'certified' prints (nan τ_E, float-only ε₀) were caught and fixed before banking.
+
 
 ## Statement (target)
 
