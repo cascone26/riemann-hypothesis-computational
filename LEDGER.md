@@ -16008,3 +16008,24 @@ SESSION VERDICT (barrier program complete): 12 barriers, 7 witnesses (1 in-repo 
 gaps closed same-night (1 known, 1 built, 1 sketched), 1 open target precisely aimed at the FE∧EP core —
 which is the same core the conservation map calls "correspondence." The barrier map and the difficulty-
 conservation law now agree from opposite directions. REPORT throughout; proof pointers inline.
+
+## §804 (CONCENTRATION-OPERATOR ε_R ROUTE — float landscape solid; certification framework sound with ONE identified robustness bug; NOT yet a Handle) — operators/cert_concentration.py, ANCHOR_THEOREM.md
+
+The ε_R lemma of the anchor assembly (bound ‖f‖ = residual outside the top-k concentration
+eigenspace). APPROACH (sound, verified conceptually): the even concentration operator
+A = P_PW·1_{±[14,44]}·P_PW on PW_{0.66}; tr A = capacity = 6.31 (Shannon number, exact); certify
+λ_{k+1} ≤ tr A − Σ_top-k via Ky-Fan (compression trace over any k-dim subspace ≤ Σ top-k), giving
+a rigorous UPPER bound on the residual tail. FLOAT LANDSCAPE (REPORT, stable, cross-checked): even
+subspace, section on 17 probes [12,44]/2 — top eigenvalues 1,1,1.00,0.998,0.970,0.799,0.425,0.067,
+0.014,... ; **λ₁₀ ≈ 0.037, wide gap**; ‖f‖² ≤ T(ψ)/(1−λ₁₀) ≈ 1.04·T(ψ) at k=9. This is exactly
+the plunge working FOR the assembly (Riemann's reframing). CERTIFICATION STATE (honest): the arb
+framework is built and two components verified — G-orthonormalization certified (‖U^TGU−I‖_F =
+2.2e-8), A-matrix entries certified correct (arb=float to 4 digits where they resolve),
+Neumann-series trace-lower-bound derived. ONE ROBUSTNESS BUG blocks the clean number: sinc_sq's
+near-0 series branch (`abs(y)<0.6` bool on an indeterminate interval throws→caught→series
+mis-applied to large y), corrupting some off-diagonal entries → tr(M₁)=7.027 > tr A (impossible) +
+a nan. FIX IDENTIFIED (next item): replace the try/except bool guard with an explicit interval
+split (evaluate the series only on a subinterval provably inside |y|<0.6, the closed form outside).
+NOT A HANDLE tonight — verify-before-ship + Charisma: the float landscape is REPORT, the certified
+λ₁₀ awaits the robustness fix. The careful lemma flagged in QPR_LEMMA/ANCHOR_THEOREM stays open by
+design, not forced. No Handle for RH.

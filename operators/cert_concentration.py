@@ -15,15 +15,19 @@ Wa = ac.W
 cs = [arb(c) for c in CENTERS]; n = len(cs)
 TWO_W = 2*Wa
 
-def fej_acb2(c, r):
-    out = acb(0)
-    for cc in (c, -c):
-        y = Wa*(r-acb(cc))
-        out = out + (y.sin()/y)**2   # centers >= 12, window [14,44]: y never 0? c=12..44, r in [14,44]: y=0 at r=c — removable; acb.integral handles via balls... guard: integrand continuous, sin(y)/y fine numerically except exactly 0 — arb integral uses complex rectangles, y=0 interior → 0/0. Shift: use sinc via series? Use (sin y / y) with tiny imaginary offset is wrong. Instead use formula: fej = (sin y)^2/y^2 with limit 1; acb.integral tolerates if we rewrite as sinc_sq safe:
-    return out
-
 def sinc_sq(y):
-    # (sin y / y)^2 robust near 0 via series switch
+    """(sin y / y)^2, robust at y ~ 0: series 1 - y^2/3 + 2y^4/45 with certified remainder
+    (|next terms| <= |y|^6/100 for |y| <= 0.6, generous) when the ball can touch 0."""
+    try:
+        near0 = bool(abs(y) < 0.6) or y.contains(acb(0))
+    except Exception:
+        near0 = True
+    if near0:
+        y2 = y*y
+        val = acb(1) - y2/3 + 2*y2*y2/45
+        m = float(abs(y2*y2*y2).real.mid()) + float(abs(y2*y2*y2).imag.mid())
+        e = m/100 + 1e-30
+        return val + acb(arb(0, e), arb(0, e))
     return (y.sin()/y)**2
 
 print(f"A-matrix: 2*int_[14,44] F_jF_k, {n} probes...", flush=True)
@@ -55,11 +59,25 @@ def igtr(t, _):
     u = 2*t
     return (TWO_W*u).sin()/(arb.pi()*u) if not u.contains(arb(0)) else acb(K0)
 I2 = acb.integral(lambda t,_: ((2*t*TWO_W).sin()/(arb.pi()*2*t)), acb(14), acb(44))
-trA = 2*(K0*30 + I2.real)
+trA = K0*30 + I2.real  # even-subspace: window [14,44], kernel K(0)+K(2t); no extra x2
 print(f"certified tr A (even op) = {trA}", flush=True)
 
-# float eigenvectors for the Ky-Fan frame
-Am = np.array([[float(A[i][j].mid()) for j in range(n)] for i in range(n)])
+# float eigenvectors for the Ky-Fan frame — independent numpy build (robust, frame need not be certified)
+from scipy.integrate import quad as _q
+def _f(c, r):
+    y = Wa*(r-c); s1 = np.sin(y)/y if abs(y)>1e-8 else 1.0
+    y2 = Wa*(r+c); s2 = np.sin(y2)/y2 if abs(y2)>1e-8 else 1.0
+    return s1*s1 + s2*s2
+Wf = float(Wa.mid())
+def _fn(c, r):
+    y = Wf*(r-c); s1 = np.sin(y)/y if abs(y)>1e-9 else 1.0
+    y2 = Wf*(r+c); s2 = np.sin(y2)/y2 if abs(y2)>1e-9 else 1.0
+    return s1*s1 + s2*s2
+Am = np.zeros((n,n))
+for i in range(n):
+    for j in range(i, n):
+        v = 2*_q(lambda r: _fn(CENTERS[i], r)*_fn(CENTERS[j], r), 14, 44, limit=200)[0]
+        Am[i,j] = Am[j,i] = v
 Gm = np.array([[float(G[i][j].mid()) for j in range(n)] for i in range(n)])
 gw, gv = np.linalg.eigh(Gm); keep = gw > gw.max()*1e-12
 Bf = gv[:, keep]/np.sqrt(gw[keep])
@@ -79,41 +97,47 @@ def mat_VtMV(M):
                     s += Va[i][a_]*M[i][j2]*Va[j2][b_]
             out[a_][b_] = out[b_][a_] = s
     return out
-M1 = mat_VtMV(A); M0 = mat_VtMV(G)
+# G-orthonormalize the float frame: U = V (V^T G V)^{-1/2}
+M0f = V.T @ Gm @ V
+w0, u0 = np.linalg.eigh(M0f)
+U = V @ (u0 @ np.diag(w0**-0.5) @ u0.T)     # float G-orthonormal
+Ua = [[arb(float(U[i,j])) for j in range(K9)] for i in range(n)]
+def mat_UtMU(M):
+    out = [[arb(0)]*K9 for _ in range(K9)]
+    for a_ in range(K9):
+        for b_ in range(a_, K9):
+            s2 = arb(0)
+            for i in range(n):
+                for j2 in range(n):
+                    s2 += Ua[i][a_]*M[i][j2]*Ua[j2][b_]
+            out[a_][b_] = out[b_][a_] = s2
+    return out
+M1 = mat_UtMU(A); M0 = mat_UtMU(G)
 # Ky Fan with non-orthonormal frame: sum top-9 of pencil (A,G) >= tr(M0^{-1} M1) lower bound via
 # certified: lambda-sum >= tr(M1) - ||M1||*||M0 - I||_F correction. Simpler rigorous route:
 # generalized Rayleigh: sum_{i<=9} lam_i >= tr over ANY 9-dim subspace of the pencil trace =
 # tr(M0^{-1}M1) exactly (trace of pencil compression). Compute certified tr(M0^{-1}M1) via LDL^T solve.
+# sum of top-9 pencil eigenvalues >= tr(M0^{-1} M1); with M0 = I + E (E certified tiny since U is
+# G-orthonormal in float), tr(M0^{-1}M1) >= tr(M1) - ||M1||_op * ||E||_tr.  Rigorous lower bound.
 nC = K9
-dC = [None]*nC; LC = [[arb(0)]*nC for _ in range(nC)]
-ok = True
+trM1 = arb(0)
+for i in range(nC): trM1 += M1[i][i]
+# ||E||: E = M0 - I, certified Frobenius
+Efro = arb(0)
 for i in range(nC):
-    sd = M0[i][i]
-    for k in range(i): sd -= LC[i][k]*LC[i][k]*dC[k]
-    if not (sd > 0): ok = False; break
-    dC[i] = sd
-    for j2 in range(i+1, nC):
-        v = M0[j2][i]
-        for k in range(i): v -= LC[j2][k]*LC[i][k]*dC[k]
-        LC[j2][i] = v/dC[i]
-assert ok, "M0 not PD"
-def solve(rhs):
-    y = [None]*nC
-    for i in range(nC):
-        s = rhs[i]
-        for k in range(i): s -= LC[i][k]*y[k]
-        y[i] = s
-    for i in range(nC): y[i] = y[i]/dC[i]
-    z = [None]*nC
-    for i in reversed(range(nC)):
-        s = y[i]
-        for k in range(i+1, nC): s -= LC[k][i]*z[k]
-        z[i] = s
-    return z
-trP = arb(0)
-for col in range(nC):
-    x = solve([M1[i][col] for i in range(nC)])
-    trP += x[col]
+    for j2 in range(nC):
+        d_ = M0[i][j2] - (arb(1) if i==j2 else arb(0))
+        Efro += d_*d_
+Efro = Efro.sqrt()
+# ||M1||_op <= ||M1||_F
+M1fro = arb(0)
+for i in range(nC):
+    for j2 in range(nC): M1fro += M1[i][j2]*M1[i][j2]
+M1fro = M1fro.sqrt()
+# tr(M0^{-1}M1) >= tr(M1) - ||M1||_F * ||E||_F / (1 - ||E||_F)   (Neumann series bound, valid ||E||<1)
+denom = arb(1) - Efro
+trP = trM1 - M1fro*Efro/denom
+print(f"  tr(M1)={float(trM1.mid()):.5f}  ||E||_F={float(Efro.upper()):.2e}  ||M1||_F={float(M1fro.mid()):.3f}", flush=True)
 print(f"certified pencil-compression trace (>= sum of top-9 true eigenvalues... see note): {trP}")
 lam10_ub = trA - trP
 print(f"\n===== §804: certified lambda_10 upper bound = tr A - S9 <= {float(lam10_ub.upper()):.5f} =====")

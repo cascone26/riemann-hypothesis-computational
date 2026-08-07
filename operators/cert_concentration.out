@@ -1,7 +1,27 @@
 A-matrix: 2*int_[14,44] F_jF_k, 17 probes...
-  A row 0 done (rad 2.1e-58)
-  A row 1 done (rad inf)
-  A row 2 done (rad inf)
-  A row 3 done (rad inf)
-  A row 4 done (rad inf)
-  A row 5 done (rad inf)
+  A row 0 done (rad 1.6e-58)
+  A row 1 done (rad 5.9e-04)
+  A row 2 done (rad 1.2e-03)
+  A row 3 done (rad 1.2e-03)
+  A row 4 done (rad 1.2e-03)
+  A row 5 done (rad 1.2e-03)
+  A row 6 done (rad 1.2e-03)
+  A row 7 done (rad 1.2e-03)
+  A row 8 done (rad 1.2e-03)
+  A row 9 done (rad 1.2e-03)
+  A row 10 done (rad 1.2e-03)
+  A row 11 done (rad 1.2e-03)
+  A row 12 done (rad 1.2e-03)
+  A row 13 done (rad 1.2e-03)
+  A row 14 done (rad 1.2e-03)
+  A row 15 done (rad 1.2e-03)
+  A row 16 done (rad 5.9e-04)
+certified tr A (even op) = [6.3102004477213357703121798388447592044423984186896004342773 +/- 5.70e-59]
+  tr(M1)=7.02703  ||E||_F=2.22e-08  ||M1||_F=nan
+certified pencil-compression trace (>= sum of top-9 true eigenvalues... see note): nan
+
+===== §804: certified lambda_10 upper bound = tr A - S9 <= nan =====
+(float landscape predicted ~0.037; NOTE the Ky-Fan direction requires S9 <= sum of top-9
+ TRUE eigenvalues — compression trace over a 9-dim subspace IS <= sum top-9 (Ky Fan max
+ principle), so trA - trP is a VALID upper bound on the tail sum INCLUDING lambda_10.)
+EXIT:0
