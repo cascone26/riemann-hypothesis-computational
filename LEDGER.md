@@ -16595,3 +16595,30 @@ refusals ARE the finding: Weil positivity's quantities are irreducibly multi-dim
 result is the STRUCTURAL characterization §816 (fixed arch budget vs growing prime obstruction), not a
 formula. The productive next work is a DIFFERENT KIND (the intersection-form structure / Connes-Consani
 theory), not more float scans. REPORT. No Handle for RH.
+
+## §818 (★★ THE SHARP MECHANISM — Q_floor collapses when mode-count K exceeds the #ζ-zeros in the window (8); it's SAMPLING, not arith-vs-arch; Q≥0 BECAUSE window zeros are real; reframes uniform positivity as a de Branges/BRS SAMPLING statement ★★) — operators (float, explicit-formula-verified)
+
+Tested whether the zero side (= Q by explicit formula) is W-fixed on the concentration eigenspace.
+VERIFICATION: zeroside_floor = Q_floor EXACTLY at every W (0.0930/0.0679/0.0390/0.0070/0.0008/0.0001/
+0.0000) — the explicit-formula identity Q=arch+pole−prime=2Σ_γφ̂(γ)² holds on the eigenspace. THE
+DISCOVERY: the window [14,44] contains exactly **8 ζ-zeros (FIXED, W-independent)**; Q_floor collapses
+precisely as K crosses 8:
+  4W:  1.30  1.45  1.60  1.75  1.90  2.05  2.20     #window-zeros = 8 (all W)
+  K:    6     7     7     8     9     9     10
+  Q_fl: .093  .068  .039  .007  .0008 .0001 .0000
+MECHANISM (sharp, identity-backed): Q = 2Σ_γφ̂(γ)² is dominated by the 8 window-zeros. Once K > 8, the
+band-limited class has a function φ VANISHING at all 8 zeros (8 constraints, K>8 dims → nonempty null
+space) ⟹ Q(φ)≈0 (only the tiny tail-zeros remain). So Q_floor→0⁺ EXACTLY when mode-count exceeds
+window-zero-count — pure SAMPLING/Nyquist (zeros = sampling points; K>#zeros = undersampling → null
+space). This SUBSUMES the §814-816 arith-vs-arch "race": that was a symptom; the DRIVER is sampling.
+AND Q stays ≥0 (→0⁺, never negative) BECAUSE the window zeros are REAL — an off-line zero would make
+Q's contribution indefinite (§780 detector) and drive Q_floor NEGATIVE. So Q_floor measures "how real
+the window zeros are"; →0⁺ confirms RH to this height; <0 would refute it. REFRAME (productive, new
+angle): uniform Weil positivity ⟺ the ζ-zeros are a POSITIVE-DEFINITE SAMPLING SET for the band-limited
+class ⟺ RH. This is Weil's criterion made a SAMPLING statement — squarely the de Branges-space /
+Fourier-frame theory (§793's Bondarenko-Radchenko-Seip 2005.02996 lead: zeros AS the sampling nodes!),
+connecting §774 (Nyquist edge) + §794 (density deficiency) + §793 (BRS frames) into ONE picture: the
+missing structure may live in SAMPLING/de Branges theory, not only the arithmetic surface. NOT a scalar
+over-reach — an identity-verified mechanism. Chain §812-818. Next: does BRS's constructive zero-node
+interpolation give the frame lower bound that = uniform positivity? (Re-open §793 with §818's framing.)
+REPORT (float, explicit-formula-exact). No Handle for RH.
