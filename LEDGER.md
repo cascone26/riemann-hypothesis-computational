@@ -16368,3 +16368,25 @@ m_E·D const vs slowly-varying is undetermined; more points instrument-limited (
 "we need B18" into a testable quantitative target: is the corner's Q-positivity ∝ dim K_W? That's a
 concrete next probe (measure Q's corner-block spectrum vs D at 1.32/1.45/1.60, all resolved). REPORT.
 No Handle for RH.
+
+## §811 (m_E·D SATURATES — clean fixed-8-probe scan: the margin×corner-dimension plateaus at ≈0.039, confirming the 1/D law ASYMPTOTICALLY; §810b's global const REFINED, not refuted) — operators/mE_fixed8_scan.py + mE_analyze.py
+
+CONFOUND CAUGHT FIRST (3rd of the session): the varying-nprobes overnight scan (mE_overnight.txt)
+had probe-count STEPS (8→9→10 as capacity grew) creating m_E discontinuities — cross-nprobes m_E·D
+unreliable (tell: Gpiv drop + m_E·D jump at the 8→9 step). PIVOTED to a clean FIXED-8-probe fine scan
+over the well-conditioned window. RESULT (5 well-conditioned points, all Gpiv≥0.12, no nprobes steps):
+  4W:    1.30    1.34    1.38    1.42    1.46
+  m_E:   0.0933  0.0898  0.0835  0.0744  0.0639
+  D:     0.330   0.390   0.457   0.530   0.610
+  m_E·D: 0.0308  0.0351  0.0382  0.0394  0.0389
+m_E·D RISES with DECELERATING increments (+0.0043,+0.0031,+0.0013,−0.0005) and SATURATES — last-3
+plateau = 0.0389 ± 0.0006. VERDICT: §810b's "m_E·D≈const" is REFINED — not a GLOBAL constant (it
+rises from 0.031 at low W) but an ASYMPTOTIC SATURATION to ≈0.039, approached from below. Equivalently
+**m_E → 0.039/D as W grows** — the 1/D law (Hodge-index shape) holds in the limit with a FIXED constant
+≈ 0.039. B18 SPEC, now quantitative: the missing arithmetic-surface structure must supply a corner
+positivity ≈ 0.039·dim K_W (a fixed intersection-number-like constant × the number of classes) — NOT
+an exponential miracle, NOT global-const, but a saturating 1/D with a specific measured constant. This
+is the sharpest, cleanest structural signature the project has for what the B18 object must deliver.
+HONEST CAVEATS: well-conditioned fixed-8 window is NARROW (4W 1.30-1.46; beyond it 8 probes under/over-
+resolve, instrument-limited §807/§810); 5 points, plateau is last-3; remaining fixed-8 points
+(1.50-1.62) pending to confirm the plateau extends. REPORT (float, clean). No Handle for RH.
