@@ -57,23 +57,61 @@ def lam_min_lb(M, m):
 
 A = [[Q[i][j] for j in range(nA)] for i in range(nA)]
 C = [[Q[i][j] for j in range(nA, n)] for i in range(nA, n)]
+X = [[Q[i][j] for j in range(nA, n)] for i in range(nA)]      # 2 x 4
 m_lb = lam_min_lb(A, nA)
 c_lb = lam_min_lb(C, n - nA)
 xf2 = arb(0)
 for i in range(nA):
-    for j in range(nA, n):
-        xf2 += Q[i][j]**2
+    for j in range(n - nA):
+        xf2 += X[i][j]**2
 xF = float(xf2.sqrt().upper())
+# EXACT ||X||_2: X is 2x4 -> XX^T is 2x2 symmetric; lam_max closed form (interval-rigorous)
+XXt = [[sum((X[i][k]*X[j][k] for k in range(n - nA)), arb(0)) for j in range(nA)] for i in range(nA)]
+a_, b_, c_ = XXt[0][0], XXt[0][1], XXt[1][1]
+lam_max_XXt = (a_+c_)/2 + (((a_-c_)/2)**2 + b_**2).sqrt()
+x2 = float(lam_max_XXt.upper())               # = ||X||_2^2, exact up to interval radii
 
 print(f"\n===== CROSS-TERM BLOCK CERT (§797) =====")
 print(f"corner  A {CORNER}: certified λ_min(A) ≥ {m_lb:.6e}" if m_lb else "corner A NOT PD")
 print(f"compl   C {COMPL}: certified λ_min(C) ≥ {c_lb:.6e}" if c_lb else "compl C NOT PD")
-print(f"cross   X: certified ‖X‖_2 ≤ ‖X‖_F ≤ {xF:.6e}")
+print(f"cross   X: ‖X‖_F ≤ {xF:.6e} (lossy) | EXACT ‖X‖₂² = λmax(XXᵀ) ≤ {x2:.6e}")
 if m_lb and c_lb:
-    lhs = m_lb * c_lb; rhs = xF*xF
-    print(f"composition inequality: m·c = {lhs:.6e}  vs  ‖X‖² = {rhs:.6e}  → "
-          f"{'HOLDS — split-route PD certified' if lhs > rhs else 'FAILS — cross-terms dominate at this split'}")
-    if lhs > rhs:
-        import math
-        lam_joint = 0.5*((m_lb+c_lb) - math.sqrt((m_lb-c_lb)**2 + 4*rhs))
-        print(f"implied joint λ_min ≥ {lam_joint:.6e}  (direct §795 measured 0.661 — gap = the split's price)")
+    lhs = m_lb * c_lb
+    print(f"product inequality: m·c = {lhs:.6e}  vs  ‖X‖₂² = {x2:.6e}  → "
+          f"{'HOLDS' if lhs > x2 else 'FAILS (product test lossy — see Schur)'}")
+# LOSSLESS: Schur complement A - X C^{-1} X^T, interval route:
+# solve C Y = X^T column-wise via interval LDL^T solve, then Schur = A - X Y; PD(C) ∧ PD(Schur) ⟺ PD(joint)
+nC = n - nA
+dC = [None]*nC; LC = [[arb(0)]*nC for _ in range(nC)]
+okC = True
+for i in range(nC):
+    sd = C[i][i]
+    for k in range(i): sd -= LC[i][k]*LC[i][k]*dC[k]
+    if not (sd > 0): okC = False; break
+    dC[i] = sd
+    for j2 in range(i+1, nC):
+        v = C[j2][i]
+        for k in range(i): v -= LC[j2][k]*LC[i][k]*dC[k]
+        LC[j2][i] = v/dC[i]
+if okC:
+    def solveC(rhs):
+        y = [None]*nC
+        for i in range(nC):
+            s = rhs[i]
+            for k in range(i): s -= LC[i][k]*y[k]
+            y[i] = s
+        for i in range(nC): y[i] = y[i]/dC[i]
+        z = [None]*nC
+        for i in reversed(range(nC)):
+            s = y[i]
+            for k in range(i+1, nC): s -= LC[k][i]*z[k]
+            z[i] = s
+        return z
+    Y = [solveC([X[i][j] for j in range(nC)]) for i in range(nA)]   # rows: C^{-1} X^T columns
+    Schur = [[A[i][j] - sum((X[i][k]*Y[j][k] for k in range(nC)), arb(0)) for j in range(nA)] for i in range(nA)]
+    s_lb = lam_min_lb(Schur, nA)
+    if s_lb:
+        print(f"SCHUR (lossless): λ_min(A − XC⁻¹Xᵀ) ≥ {s_lb:.6e} > 0 ∧ C PD → JOINT PD CERTIFIED via the split")
+        print(f"(the composition works losslessly; the m·c > ‖X‖² product form is what loses it)")
+    else:
+        print("SCHUR complement not certified PD — split genuinely fails beyond product-form loss")

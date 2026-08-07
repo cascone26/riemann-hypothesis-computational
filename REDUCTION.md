@@ -94,6 +94,35 @@ only adds a positive square). Do not quote §796's one-item set for any composed
 The assembled deliverable is the project's first ∀-statement: Weil positivity for ALL ψ in the
 band-limited window class at the open rung — the quantifier is what the composition buys
 (direct span-certs, however many, never produce it).
+
+## Why this architecture is FORCED (Gödel, round 3) — and the instrument horizon
+
+- **The hybrid shape is the only hypothesis-honest one at fixed G:** pure direct-route class
+  theorems fail on the unbounded archimedean multiplier Ω(r) ~ ln r (no operator bound without the
+  window cap — the localization is what makes ‖Q‖ finite and the composition well-formed); pure
+  identity-route class theorems fail on unverified zeros. The composition deploys each route
+  exactly where its weakness is absent: corner=direct (finite, zero-free) · complement=identity
+  (verified zeros as friends) · tail=adversarial (counting only). Do not search for a cleverer
+  architecture at fixed G.
+- **Instrument horizon:** strict-PD certification (interval LDLᵀ, pencils — everything we run) can
+  NEVER certify a form that is ≥0 with genuine kernel; the edge statement is outside the
+  instrument's output language. Ledger vocabulary from now on: "genuinely indefinite" vs
+  "**instrument-undecidable**" — the N9 radius-tightened rerun decides only which of these each
+  edge point is. Allocation principle: computation where margins rise (capacity ladder), analysis
+  where margins vanish (the edge); never computation against a vanishing margin.
+- **"Maximal" has a precise meaning:** the localized theorem is the exact projection of the
+  hypothesis budget onto theorem-space — maximal among theorems derivable from the enumerated
+  hypotheses; the window cap is a function of G and rises only with G.
+
+## Hypothesis loci (Gödel — each constant carries its address; the Lean socket adopts this)
+
+```
+m  (corner, direct route)      : ∅
+X  (cross block, direct route) : ∅
+c  (frame, identity route)     : {ordinate balls} standalone; +{on-line ≤ G} when inside G–W
+S  (strip tail)                : {counting bound}
+R  (prolate residual)          : ∅  (pure analysis; §798 citations, constants verified vs PDFs)
+```
 Neither is RH-complete on its face (both are statements about verified zeros and finite geometry);
 that is exactly what makes this the right next theorem-shaped target. The full-class,
 all-heights statement remains walled behind the field's density crux (Suzuki Cor 1.6 / Kim R8) —
