@@ -1,0 +1,12 @@
+A-matrix (split integration)...
+  A row 0 done (diag rad 2.8e-04)
+  A row 1 done (diag rad 5.7e-04)
+  A row 2 done (diag rad 5.7e-04)
+  A row 3 done (diag rad 5.7e-04)
+  A row 4 done (diag rad 5.7e-04)
+  A row 5 done (diag rad 2.8e-04)
+
+certified compression₆ (≥ S₆) = 17.77364 ± 8.2e-04
+===== certified λ₇ ≤ tr A − S₆ ≤ -11.46261 =====
+→ ||f||² ≤ T/(1−λ₇) ≤ 0.0802·T  (k=6 assembly input, CERTIFIED)
+EXIT:0

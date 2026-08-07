@@ -16133,3 +16133,22 @@ this entire map); relaxed-regularity exact-Γ FE → infinite-dim solution space
 Thm 1 — regularity hypotheses are load-bearing); wrong-degree Selberg FE (d∈(0,1)∪(1,2)) → class EMPTY
 (Conrey-Ghosh; Kaczorowski-Perelli Annals 173 (2011)); exact FE+regularity → Hamburger/G4 rigidity. A proof
 cannot substitute approximate for exact FE, and the Γ-factor's shape is load-bearing. REPORT.
+
+## §814 (LEAN KERNEL CORE — the §812 surgery-factor zero-location lemma machine-checked, first compile) — RiemannLean/Cand_surgery_factor_zero.lean, 2026-08-08
+Two theorems kernel-verified on trusted axioms only ({propext, Classical.choice, Quot.sound}, 0 sorries):
+`surgery_factor_zero_re_eq_zero` (for real n ≥ 2: 1 − n^(−s) = 0 ⟹ Re s = 0) and contrapositive
+`surgery_factor_ne_zero_of_re_ne`. This is the load-bearing step of §812's rigidity (surgery factors
+cannot create strip zeros); the remaining steps (Euler-product factorization, absolute-convergence
+rearrangement) stay own-math on the skeptic queue. Mathlib cache refetched (packages had been re-cloned);
+`Complex.norm_cpow_eq_rpow_re_of_pos` + rpow monotonicity did the work. HANDLE for the lemma itself
+(kernel = the independent verifier); REPORT for the proposition as a whole.
+
+## §815 (BARRIER EXTENSION SLATE COMPLETE — wrap) — 2026-08-08
+All five items landed: §810 B19 statistics kill · §811 gatekeeper protocol + first audit (route
+barrier-clean) · §812 surgery rigidity (row flipped from open-witness to structurally-protected) ·
+§813 FE-strength ladder (no useful middle setting on the FE dial) · §814 Lean kernel core. Map state:
+B1-B19, W1-W7, lattice + FE-ladder + gatekeeper, 3 own-math items on the skeptic queue (G3 theorem
+[other session's pass: holds, one bound repair], §812 proposition, §805 writeup edit). The map's
+convergent verdict after tonight's extensions is unchanged and sharper: proof-relevant structure =
+exact FE ∧ EP, jointly, globally, individually — and the two constructive doors are G4-general
+(FE for Beurling) and B18 (the arithmetic surface).

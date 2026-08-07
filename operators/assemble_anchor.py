@@ -68,7 +68,7 @@ for _ in range(40):
     else: hi = mid
 m_E = lo
 # assembly banks as §806 (anchor thread; barrier took §805)
-    print(f"m_E (pencil λ_min of Q on the top-9 concentration eigenspace E) ≥ {m_E:.6e}")
+print(f"m_E (pencil λ_min of Q on the top-9 concentration eigenspace E) ≥ {m_E:.6e}")
 
 # assembly quadratic: with lam10 (cert pending §804-fix), B=1.399, using ||f||^2 <= T/(1-lam10),
 # ||p||^2 >= 1 - ||f||^2, Q >= m_E||p||^2 - 2B||p||||f|| - C_f||f||^2 - T.

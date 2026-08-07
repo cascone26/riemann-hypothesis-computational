@@ -226,3 +226,9 @@ Honest scope: "reachable" = surgery constructions (delete/add/multiplicity on in
 A non-surgery integer-supported system is one whose g-prime multiset differs infinitely from the
 primes with only Σ n^{−1} < ∞ control — the proposition's σ₀-gap; no construction principle for a
 witness there is known, and none is claimed impossible. REPORT.
+
+**§814 Lean upgrade:** the proposition's zero-location step is now KERNEL-CHECKED —
+`RiemannLean/RiemannLean/Cand_surgery_factor_zero.lean`: `surgery_factor_zero_re_eq_zero`
+(1 − n^(−s) = 0 ⟹ Re s = 0, real n ≥ 2) and its contrapositive, both passing `#print axioms` on
+{propext, Classical.choice, Quot.sound} only, first compile. The factorization/absolute-convergence
+step of the proposition remains own-math (skeptic-pass queue with G3).
