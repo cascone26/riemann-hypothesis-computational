@@ -1,0 +1,5 @@
+4W   span            certified arch_floor (min-eig of pencil (arch,G))
+1.32  [20, 26, 32, 38]  CERTIFIED arch_floor ≥ 0.17935
+1.6  [18, 24, 30, 36, 42]  CERTIFIED arch_floor ≥ 0.16477
+1.9  [16, 22, 28, 34, 40]  CERTIFIED arch_floor ≥ 0.14687
+EXIT:0

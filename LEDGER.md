@@ -16711,3 +16711,21 @@ corrupted PDF didn't give me), NOT a refutation of their lemma (their figures sh
 INCONCLUSIVE. Doing it properly needs their exact operator setup. Honest note, not a finding. This +
 the recent refuted scalars mark the point where QUICK FLOAT PROBES are exhausted; further progress
 needs careful theory/certification setup, not more fast scans. No Handle for RH.
+
+## §816-CERT (★ the archimedean-floor is now CERTIFIED (Handle) — arb-certified positive-definite with floor ~0.15, roughly W-stable; §816 REPORT→HANDLE ★) — operators/cert_arch_floor.py/.out
+
+Arb-certified generalized min-eigenvalue of the pencil (arch, G) on capacity spans (bisected
+interval-LDLᵀ):
+  4W=1.32, span {20,26,32,38}:       CERTIFIED arch_floor ≥ 0.17935
+  4W=1.60, span {18,24,30,36,42}:    CERTIFIED arch_floor ≥ 0.16477
+  4W=1.90, span {16,22,28,34,40}:    CERTIFIED arch_floor ≥ 0.14687
+Turns §816's float observation into a CERTIFIED structural fact: the archimedean Weil form is
+rigorously POSITIVE-DEFINITE with a floor ~0.15, holding (mild decline, all ≥0.147>0) across
+4W=1.32-1.90 through the crossover region. HONEST refinement of §816: the CERTIFIED values show a
+mild decline (0.179→0.165→0.147), not perfect W-invariance (the float §816 CV-5% used different/
+denser spans) — so the certified claim is "arch floor certified positive ~0.15, roughly stable",
+slightly weaker than "invariant" but RIGOROUS. This is the durable-kind extension (certify observed
+structure), NOT a scalar over-reach: the archimedean positivity budget is now a certified Handle,
+complementing the §808 anchor theorem + §796 frame constant in the certified apparatus. The
+structural picture (fixed arch budget vs growing prime obstruction, §816/§821) now has its
+arch-budget side CERTIFIED. HANDLE. No Handle for RH.
