@@ -1,0 +1,16 @@
+trA_op(4W=1.32) = 6.31020
+Q (zero-free), G (pencil), A (concentration) on 8-probe basis...
+  row 0
+  row 1
+  row 2
+  row 3
+  row 4
+  row 5
+  row 6
+  row 7
+concentration eigenvalues: ['0.9999', '0.9999', '0.9990', '0.9972', '0.9388', '0.7737', '0.1589', '0.0460']
+
+certified m_E (Q-pencil-λmin on TRUE E) = 0.091759
+certified Σ₆ = 5.70864, λ₇ ≤ 0.60696
+saved E-vectors for τ_E cert
+EXIT:0 (1.32)

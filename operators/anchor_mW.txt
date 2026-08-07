@@ -1,1 +1,3 @@
-1.60 nprobes=9 K=7 m_E=0.047103 lam_next=-0.501795
+1.32 nprobes=8 K=6 m_E=0.091759 lam_next=0.606957
+1.60 nprobes=8 K=6 m_E=0.039598 lam_next=1.674317
+2.00 nprobes=8 K=6 m_E=0.004562 lam_next=3.548766

@@ -11,11 +11,16 @@ import arb_fejer_cert2 as ac
 import arb_zerofree_cert3 as zc
 import os
 FOURW = os.environ.get('FOURW','1.32')
-NPROBE = int(os.environ.get('NPROBE','8'))
+NPROBE = 8
 ctx.prec = 200
 ac.W = arb(FOURW)/4; ac.TW = 2*ac.W; ac.c_tri = arb.pi()/ac.W; Wa = ac.W
 CEN = [round(14+30*i/(NPROBE-1),3) for i in range(NPROBE)]; n = len(CEN)
-trA_op = arb('6.3102004477213357703121798388447592044423984186896')
+# W-specific even-op concentration trace: 30·(band/π) + ∫_[14,44] sin(band·2t)/(π·2t) dt, band=4W/2
+_band = arb(FOURW)/2
+_K0 = _band/arb.pi()
+_I2 = acb.integral(lambda t,_: ((_band*2*t).sin()/(arb.pi()*2*t)), acb(14), acb(44)).real
+trA_op = _K0*30 + _I2
+print(f"trA_op(4W={FOURW}) = {float(trA_op.mid()):.5f}", flush=True)
 
 def sinc_sq(y):
     ay=abs(y); ymax=float(ay.mid())+float(ay.rad())
@@ -49,7 +54,7 @@ Gm=np.array([[float(G[j][k].mid()) for k in range(n)] for j in range(n)])
 gw,gv=np.linalg.eigh(Gm); Bf=gv/np.sqrt(gw)
 ew,ev=np.linalg.eigh(Bf.T@Am@Bf); order=np.argsort(ew)[::-1]
 print(f"concentration eigenvalues: {[f'{ew[order[i]]:.4f}' for i in range(n)]}", flush=True)
-K = max(4, NPROBE-2); V=Bf@ev[:,order[:K]]
+K = 6; V=Bf@ev[:,order[:K]]
 Va=[[arb(float(V[i][j])) for j in range(K)] for i in range(n)]
 def VtMV(M):
     out=[[arb(0)]*K for _ in range(K)]

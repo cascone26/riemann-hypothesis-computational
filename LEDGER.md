@@ -16330,3 +16330,25 @@ time. m_E(W) values (1.32→0.092, 1.60→0.047 at K=7) are NOT apples-to-apples
 (controlled fixed-span m(W) RISING 0.13→0.24). A clean ε₀(W) needs: W-specific trA (even-op trace =
 window·2W/π + tail), FIXED K and capacity-matched nprobes per W, controlled family — a careful setup,
 deferred. Discipline: confound caught (λ<0 is the tell), garbage refused. No Handle for RH.
+
+## §810 (THE UNIFORM-RELEVANT MARGIN DECLINES — m_E on the GROWING concentration eigenspace drops 0.092→0.040; quantifies Grothendieck's crux, shows B18 is REQUIRED not optional) — operators/cert_anchor_paramW.py, controlled (fixed 8-probe, K=6, W-specific trA)
+
+Controlled ε₀(W) replication, done right (W-specific trA, fixed span/K/window). SANITY: 4W=1.32 gives
+m_E=0.091759 EXACTLY reproducing §808 ✓. THE FINDING (resolution-checked against capacity=trA=Shannon#):
+  4W=1.32 (cap 6.31, 8 probes ≥ cap → RESOLVED): m_E = 0.09176
+  4W=1.60 (cap 7.63, 8 ≥ cap → RESOLVED):        m_E = 0.03960
+  4W=2.00 (cap 9.54, 8 < cap → UNDER-RESOLVED, flagged): m_E = 0.00456 (unreliable)
+On the two ADEQUATELY-RESOLVED points, m_E (= Q-pencil-λ_min on the top-6 CONCENTRATION eigenspace)
+DROPS by half, 0.092→0.040. KEY INTERPRETATION — this is NOT the same object as §807b and does NOT
+contradict it: §807b's rising m(W) is on a FIXED small span; §810's declining m_E is on the GROWING
+concentration eigenspace — and the GROWING one is what the uniform theorem must cover. So the
+uniform-RELEVANT margin DECLINES as W grows. This is GROTHENDIECK'S CRUX (§799) made quantitative:
+as dim K_W ~ e^{4W} grows, the margin on it drops — the route genuinely faces the B16 knife-edge on
+the growing family. CONSEQUENCE: the uniform completion CANNOT be brute-forced by more certified
+pencils (the margin on the space you must cover is declining); it REQUIRES the analytic "structure
+that keeps m alive" = the B18 arithmetic-surface / Hodge-index input. §809 confirmed no 2024 paper
+supplies that. HONEST SCOPE: 2 resolved points = a decline, NOT a determined collapse-to-zero;
+whether m_E(W) plateaus at a positive floor or →0 is the open uniform question, and it's
+instrument-limited (higher W needs more probes → over-capacity pencil, the §807 tension). The
+anchor Handle §808 stands (it's at 1.32); this is about its UNIFORM extension. Sharpest frontier
+statement the project has for why B18 is the true remaining work. No Handle for RH.
