@@ -16622,3 +16622,36 @@ missing structure may live in SAMPLING/de Branges theory, not only the arithmeti
 over-reach — an identity-verified mechanism. Chain §812-818. Next: does BRS's constructive zero-node
 interpolation give the frame lower bound that = uniform positivity? (Re-open §793 with §818's framing.)
 REPORT (float, explicit-formula-exact). No Handle for RH.
+
+## §819 (sampling COUNT test — inconclusive: wide-window conditioning-suspect; §818 narrow crossing stands; count≠clean predictor, distribution matters) — operators (float)
+Tested Q>0 iff #window-zeros≥#modes by growing the window. NARROW [14,44]: clean (Q collapses as K→8
+=#zeros, §818). WIDER windows [14,74/104/134]: Q_floor small (~0.001) even with zeros≫modes — BUT
+these use huge probe bases (npr up to 47), over-capacity/ill-conditioned, so INCONCLUSIVE (conditioning
+artifact suspected, not a clean refutation). HONEST: the crude COUNT (zeros vs modes) is not the clean
+predictor — sampling adequacy is DISTRIBUTIONAL (zero spacing/gaps, per Red §788 Beurling-separation),
+not a count. §818's conceptual reframe (Q=zero-side, positivity=zeros sample the class) STANDS; the
+count-law refinement needs a conditioning-clean test. REPORT.
+
+## §820 (★ FRONTIER SYNTHESIS — the field's LEADING program (Connes-Consani-Moscovici 2511.22755) does NOT close positivity either; it moves it to an unproven PROLATE-wave lemma — the SAME prolate basis our apparatus uses; our Q_floor→0⁺ supports their conjecture ★) — agent deep-read (verify vs full text before relying)
+
+Deep-read CCM 2511.22755 "Zeta Spectral Triples" (2025), positioned against our §814-818 structure.
+FINDINGS: (1) They build a spectral triple / self-adjoint operator whose spectrum approximates ζ-zeros
+to 1e-55. (2) CRUCIAL — they do NOT prove uniform Weil positivity: Cor 3.8 explicitly "cannot assert
+μ_λ ≥ 0"; their strategy is spectral CONVERGENCE (det→Ξ, Hurwitz), NOT a positivity bound. (3) Main
+remaining obstacle (their words): Lemma 7.2 — the prolate spheroidal eigenfunctions approximate Hermite
+functions with O(λ⁻²) error — UNPROVEN. "A rigorous proof of this convergence would establish RH." (4)
+They do NOT construct the arithmetic surface / Hodge index (spectral realization instead), and do NOT
+bound prime-vs-arch. THE CONNECTION (genuinely useful): CCM's key object is the PROLATE SPHEROIDAL wave
+basis — which is EXACTLY our concentration eigenspace (A=P_PW·1_window·P_PW; its eigenfunctions ARE the
+prolate functions). So our §812-818 apparatus computes in the SAME basis as CCM's open Lemma 7.2. AND
+their conjectured μ_λ→0 (min Weil eigenvalue → 0) IS our measured Q_floor→0 (§814-818) — our apparatus
+measures Q_floor→0⁺ (from ABOVE, staying ≥0), numerical support for their convergence conjecture,
+slightly stronger (≥0) than they prove. HONEST SYNTHESIS OF THE WHOLE FRONTIER: BOTH leading approaches
+— arithmetic-surface/Hodge (barrier-map B18) AND spectral-realization (CCM) — leave the SAME core open:
+the uniform positivity ⟺ μ_λ→0 convergence. Our §808-818 work characterizes it precisely (localized to
+boundary modes §812, arithmetic §813b, sampling §818, prolate basis §820) and provides certified pieces
+(§808 anchor theorem) + numerical support for CCM's conjecture, but does NOT close it — because the
+field doesn't. TESTABLE (CCM predictions in OUR basis, next): verify Lemma 7.2's O(λ⁻²) prolate→Hermite
+decay; check our Q_floor→0⁺ rate vs their μ_λ convergence. That is a concrete, novel bridge: our
+apparatus can NUMERICALLY test the leading program's open lemma. NOT a Handle; a precise placement of
+our work at the true frontier + a concrete next probe. No Handle for RH.
