@@ -13,7 +13,7 @@ FAIL/near-singular here is the MEASUREMENT (the §485c collapse made zero-free-r
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from arb_zerofree_cert3 import certify
+from arb_zerofree_cert3 import certify_lambda
 
 SPANS = {
     "N6 (sp 6.0)":  [14, 20, 26, 32, 38, 44],
@@ -25,7 +25,8 @@ for fourW in LADDER:
     for label, span in SPANS.items():
         print(f"\n===== 4W={fourW}  span {label} =====", flush=True)
         try:
-            ok = certify(fourW, span)
-            print(f"  == dense point 4W={fourW} {label}: {'CERTIFIED' if ok else 'NOT CERTIFIED (collapse coordinate)'} ==", flush=True)
+            ok, lam = certify_lambda(fourW, span)
+            print(f"  == dense point 4W={fourW} {label}: "
+                  f"{f'CERTIFIED lambda_min_lb={lam:.6e}' if ok else 'NOT CERTIFIED (collapse coordinate)'} ==", flush=True)
         except AssertionError as e:
             print(f"  == dense point 4W={fourW} {label}: GUARD REFUSED ({e}) ==", flush=True)

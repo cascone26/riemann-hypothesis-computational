@@ -57,9 +57,12 @@ the RH-fragment). The continuum rung theorem's positivity must come from the hei
 class + verified zeros; this lemma only guards the boundary. Both halves of the open-rung pair now
 carry fully enumerated hypotheses:
 - **PD half:** none (zero-free direct route, §788).
-- **Indefiniteness half:** the 491-zero list is **complete** to height 800 and all on-line (both
-  supplied by Platt–Trudgian; completeness is load-bearing and distinct — Gauss, §791-addendum),
-  + the classical counting bound. (§791)
+- **Indefiniteness half — FOUR hypotheses (Gauss + Red, §791-addenda):** (1) the zero list is
+  **complete** to height G (Gauss: N(800)≈490.7→491 ✓; N(2000)≈1517 ✓), (2) all on-line
+  (Platt–Trudgian), (3) the counting bound N(t+1)−N(t) ≤ 2 ln t, (4) **ordinate enclosures** —
+  mpmath dps-30 values correct within the declared 1e-9 balls (Red: a distinct trust point; PT does
+  not supply ordinates. Hardening path: interval-Newton re-enclosure on ξ). (§791, G=2000 margin
+  −7.9e-5 per addendum-2.)
 
 **Adversarial status:** verified by Gauss (roundtable, §791-addendum) — envelope, pair bookkeeping,
 and enclosure independently recomputed; STANDS. Class-descriptor correction absorbed: the probe

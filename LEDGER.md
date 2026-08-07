@@ -15699,3 +15699,31 @@ handles.jsonl. The kernel-checked object carries the HONEST hypothesis set — n
 no on-line-ness, no strip lemma anywhere in the certified matrix's provenance. HANDLE (kernel-checked
 finite certificate; the ‖Q−M‖₂≤ρ enclosure step remains Arb-side, stated in the theorem docstring
 per the §767 pattern). No Handle for RH.
+
+### §791-addendum-2 (G-RAISE CERTIFIED — the strip-unconditional margin is THICK again) — operators/strip_tail_g2000.py/.out
+G=2000 (1517 zeros from data/zeros_100k.txt, 33-digit, completeness = N(2000) ✓, ball 1e-20):
+strip tail two-sided ±5.2365e-6 (was ±8.04e-5 at G=800); **Q_no3(v) ∈ [−8.9647e-5, −7.9173e-5]
+CERTIFIED < 0** for arbitrary zero configurations above 2000. Gauss's margin-discipline demand met:
+the indefiniteness half now stands at margin −7.9e-5 (≈20× the G=800 figure) on hypothesis set
+{zero list complete to 2000 + on-line (Platt–Trudgian), counting bound}. Downstream work may cite
+THIS enclosure. HANDLE. No Handle for RH.
+
+### §791-addendum-3 (ADVERSARIAL PASS, Red half — STANDS; hypothesis set corrected to FOUR items; the BRS reframe: "the corner is the prime-node defect")
+Red (roundtable): ordinate provenance audited — the 1e-9 balls on mpmath dps-30 zeros are HONEST
+(float-rounding ~2e-13 ≪ declared radius) but constitute a DISTINCT trust point: Platt–Trudgian
+certifies completeness+on-line-ness, NOT ordinates to 1e-9. §791's hypothesis line is FOUR items:
+(1) list complete to G, (2) all on-line (PT), (3) counting bound ≤ 2 ln t, (4) ordinate enclosures
+(mpmath dps-30 within 1e-9). Optional hardening queued: interval-Newton re-enclosure of the
+ordinates on ξ via Arb → trust point becomes certificate (behind the G-raise, which is DONE,
+addendum-2). cosh⁴ identity independently confirmed; 2 ln t cover is ~4× generous — paper-time needs
+the exact Backlund/Trudgian citation. Cross-route: Red's single-derivation objection WITHDRAWN
+(§789). Flat-coarse-scan prediction CONFIRMED by machine (2.024→2.016→2.016 across log4); dense
+scan PATCHED per his margin demand BEFORE first run: certify_lambda() added (bisected interval-LDLᵀ
+shift ⇒ certified λ_min lower bound — pivots certify sign, not margin).
+BRS REFRAME (the generative negative): BRS nodes are zeros AND log n JOINTLY ⇒ zeros alone do not
+determine ψ — the defect data lives at the prime nodes. CONJECTURE (three-way convergence: §476f
+empirical corner ↔ Gödel's undersampled t* segment ↔ BRS prime nodes): the near-kernel of the
+zeros-only sampling Gram on the height-localized class is SPANNED by the in-band prime-power
+directions. Cheap probe queued: build the zeros-only sampling Gram at 4W=1.32, certified near-kernel
+dimension vs count of in-band prime-power nodes. Gate questions for the BRS deep-read logged
+(unconditionality of the basis; any zeros-only sub-result; Schwartz→Fejér-quartic restriction).

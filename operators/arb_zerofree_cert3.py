@@ -77,6 +77,48 @@ def certify(fourW, centers, RC=400):
     print(f"  ALL {n} PIVOTS POSITIVE (min pivot lower bound {mn:.3e}) -> ZERO-FREE CERTIFIED PD", flush=True)
     return True
 
+def _ldlt_all_pos(M, n, shift):
+    d = [None]*n; L = [[arb(0)]*n for _ in range(n)]
+    for i in range(n):
+        sd = M[i][i] - shift
+        for k in range(i): sd -= L[i][k]*L[i][k]*d[k]
+        if not (sd > 0): return False
+        d[i] = sd
+        for j2 in range(i+1, n):
+            v = M[j2][i]
+            for k in range(i): v -= L[j2][k]*L[i][k]*d[k]
+            L[j2][i] = v/d[i]
+    return True
+
+def certify_lambda(fourW, centers, RC=400):
+    """Like certify() but returns (ok, certified λ_min lower bound) — Red's §788/§791 demand:
+    pivots certify sign, not margin; the m(W) that enters any composition inequality must be λ_min.
+    Bisection on shift: largest λ with interval-LDLᵀ(M−λI) all pivots > 0 is a CERTIFIED λ_min lb
+    (if M−λI is PD then λ_min(M) > λ, rigorous in interval arithmetic)."""
+    assert max(centers) <= float(ac.BAND1), f"centers must be <= BAND1={float(ac.BAND1)}"
+    assert RC > 2 * float(ac.BAND1), f"need RC > 2*BAND1"
+    assert fourW < float(arb(ac.NM + 1).log()), f"prime sum truncates at NM={ac.NM}"
+    ac.W = arb(fourW)/4; ac.TW = 2*ac.W; ac.c_tri = arb.pi()/ac.W
+    RCa = arb(RC)
+    cs = [arb(c) for c in centers]; n = len(cs)
+    prims = [nn for nn in range(2, 20) if ac.LAM[nn] is not None and float(arb(nn).log()) < fourW]
+    print(f"\n4W={fourW} (primes in support: {prims}), centers {centers}, RC={RC}:", flush=True)
+    M = [[None]*n for _ in range(n)]
+    for j in range(n):
+        for k in range(j, n):
+            e = ac.pole_entry(cs[j], cs[k]) + arch_entry_v3(cs[j], cs[k], RCa) - ac.prime_entry(cs[j], cs[k])
+            M[j][k] = M[k][j] = e
+        print(f"  row {j} done (diag rad {float(M[j][j].rad()):.2e})", flush=True)
+    if not _ldlt_all_pos(M, n, arb(0)):
+        print("  NOT CERTIFIED PD (shift 0 fails)"); return False, None
+    lo, hi = 0.0, min(float(M[i][i].mid()) for i in range(n))
+    for _ in range(40):
+        mid = (lo + hi)/2
+        if _ldlt_all_pos(M, n, arb(mid)): lo = mid
+        else: hi = mid
+    print(f"  ZERO-FREE CERTIFIED PD, certified lambda_min lower bound {lo:.6e}", flush=True)
+    return True, lo
+
 if __name__ == "__main__":
     ok1 = certify(0.95, [14, 22, 30, 38])
     ok2 = certify(1.32, [14, 22, 30, 38])
