@@ -4207,3 +4207,23 @@ RUNNING: dense Nyquist-matched λ_min scan (certify_lambda, Red's margin discipl
 QUEUED: theory of the −1 · converse kernel⊂prime-span test · interval-Newton ordinate hardening ·
 REDUCTION.md with quartic (NOT Gaussian) class + height-localized scope per Red's continuum repair.
 JACOB-GATED: mathlib Bessel PR (compile re-verified tonight, Zulip draft updated to general-order).
+
+── RIEMANN8 SESSION 2 (2026-08-06 night → 08-07 small hours) — §796-§801: the theorem finds its true shape ──
+Round 3 (all 6 seats) + parallel execution. BANKED: §796+add certified frame constants (anchor
+c=0.1026, ONE hypothesis; curve W-uniform) · §797 composition pilot (product form FAILS at t*
+split, exact ‖X‖₂²; lossless Schur certifies 1.019 — X was never the obstruction) · §798 prolate
+residual lit-gate (KRD 2006.00427 explicit tail bounds — R is citation+arithmetic, constants
+pending PDF) · §799 corner dimension CLOSED FORM D(4W)=e^{4W}−(t₀/2π)(4W−ln(t₀/2π)+1), verified
+7/7; §794-coincidence explained (jump loci collide with log4 within 0.018); THE REFRAMING: enemy =
+Beurling deficiency of low zeros (archimedean/geometric), primes are on the RESOURCE side ·
+§800 (Euler, self-run): controlled c-scan — c is W-UNIFORM, a statistic of the unfolded zero
+sequence; polynomial L_N erosion; my 4-anchor script's confounds caught · §801 (Red): G closed
+form verified; anchor assembly REROUTED to p⊕r (joint cert + plunge-tiny residual; t* split buys
+nothing finite; c relocated to the uniform program); E3's empirical floor refused.
+SESSION-2 CONCRETE PATH TO THE ANCHOR ∀-THEOREM (p⊕r): (1) joint §788 cert in PENCIL normalization
+(script exists in pieces), (2) ‖Q_pr‖ bound via window-capped Ω (first analytic derivation item),
+(3) ε_R from KRD constants (PDF-read + arithmetic), (4) assembly inequality + Lean socket with
+Gödel's hypothesis-locus labels. Instrument vocabulary now standard: "genuinely indefinite" vs
+"instrument-undecidable". QUEUED: Beurling-ladder minimal-hypothesis lit-read + Connes interlacing
+wedge (Jacob's prism table, high-synergy rows); interval-Newton ordinate hardening (2 customers);
+N9 radius-tightened rerun; KRD constants extraction.
