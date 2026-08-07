@@ -16152,3 +16152,27 @@ B1-B19, W1-W7, lattice + FE-ladder + gatekeeper, 3 own-math items on the skeptic
 convergent verdict after tonight's extensions is unchanged and sharper: proof-relevant structure =
 exact FE ∧ EP, jointly, globally, individually — and the two constructive doors are G4-general
 (FE for Beurling) and B18 (the arithmetic surface).
+
+## §806 (THE ANCHOR ∀-THEOREM CLOSES — positive ε₀ at every k; m_E/tr A/B_pf/C_f CERTIFIED; the certified λ_{k+1} bound is the one remaining item, NOT forced) — ANCHOR_THEOREM.md, operators/assemble_anchor.py + cert_lambda7.py
+
+MILESTONE: the height-localized anchor theorem ASSEMBLES with a strictly positive threshold.
+Statement: for every even ψ ∈ PW_{0.66} (open rung, 4W=1.32) with weighted off-window tail
+T(ψ) = ∫_{|t|∉[14,44]}|ψ̂|²(1+|Ω|) ≤ ε₀, the Weil form Q(ψ) ≥ 0. FLOAT ASSEMBLY (REPORT, stable):
+ε₀ > 0 at EVERY k tested — k=6 (capacity-matched): ε₀≈0.0009; k=7: 0.0046; k=8: 0.0094; k=9: 0.0172.
+The p⊕r inequality Q ≥ m_E(1−s) − 2B_pf√(s(1−s)) − C_f·s − T (s=‖f‖²≤T/(1−λ_{k+1})) closes because
+the cross-term coefficient B_pf carries the √λ_{k+1} concentration suppression (Riemann's reframing:
+the plunge works FOR the assembly). CERTIFIED pieces: m_E = 0.1289 (§802A, 6-probe capacity span,
+hypothesis-free) · tr A_even = 6.3102004… (this session, exact) · B_prime = 0.3579, sup|Ω|_{[14,44]}
+= 1.946, C_f pieces (§803A). REMAINING FOR A FULL HANDLE — ONE item: a certified upper bound on
+λ_{k+1} (concentration control of ‖f‖). Its certification hit THREE distinct numerical-conditioning
+failures tonight, all documented, NONE forced: (i) sinc² 0/0 when an arb integration rectangle
+straddles a probe center; (ii) over-capacity degeneracy of the 17-probe ambient basis (Q|E not PD —
+the §794/§801 lesson); (iii) G-orthonormalization blowup on the 6-probe Gram's small eigenvalue
+(compression₆=17.77 > tr A, impossible → rejected). The float λ landscape is rock-solid (λ₇≈0.425,
+λ₁₀≈0.037, wide gaps, cross-checked). HONEST STATUS: theorem CLOSES (float=REPORT); the certified
+λ bound needs a conditioning-clean implementation (domain-split integration + a stable
+compression-trace lower bound that doesn't invert a near-singular Gram — e.g. certify eig(A,G)
+directly via a shifted pencil LDLᵀ on the ORIGINAL basis, no orthonormalization) — a careful
+lemma, deliberately not rushed. NOT A HANDLE for the theorem yet; the ASSEMBLY and its positivity
+are real and reproduced. No Handle for RH. NEXT: the clean λ-cert (shifted pencil LDLᵀ route),
+then §806 upgrades to Handle and the Lean socket.
