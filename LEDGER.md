@@ -16288,3 +16288,18 @@ input the barrier map fences). But a genuine certified Handle. Proof pointers: c
 cert_tauE.out, cert_lambda7_final.out, the arb ε₀ verification. NEXT: Lean socket for the closing
 inequality (the constants → a machine-checked ≥0); then the uniform program (m(W) rising §807b is the
 tailwind). No Handle for RH.
+
+## §808-lean (ANCHOR CLOSING INEQUALITY KERNEL-CHECKED — the certified Handle is now Lean-verified) — RiemannLean/RiemannLean/Cand_anchor_eps0.lean
+
+The §808 closing inequality is now machine-checked: theorem `anchor_eps0_positive` verified via
+verify_loop.py, axioms exactly {propext, Classical.choice, Quot.sound} (trusted kernel), build 98.6s.
+Statement (kernel-checked): with the arb-certified constants (m_E ≥ 0.09176, λ₇ ≤ 0.60696,
+sup|Ω| ≤ 2.0175, τ_E ≤ 0.0862, B_prime = 0.3579) and ε₀ = 1e-4,
+  m_E(1−s₀) − 2·B_pf·√(s₀(1−s₀)) − C_f·s₀ − ε₀ ≥ 0  (s₀ = ff·ε₀),
+proved by bounding Real.sqrt(s₀(1−s₀)) ≤ x₀ (rational, x₀² ≥ s₀(1−s₀)) then nlinarith — genuine
+Real.sqrt, not a rational stand-in. So the anchor theorem's positivity CONCLUSION is now
+kernel-verified, not interval-arithmetic-only. (Self-caught: first Lean draft quantified over all x
+with x²≥s₀(1−s₀) incl. large x → false; fixed to the Real.sqrt-upper-bound form. Then a stale import
+FAIL, fixed.) The organ-1 (Lean) × organ-2 (Arb) fusion on the project's first ∀-positivity theorem.
+The arb enclosure of the CONSTANTS themselves (m_E etc.) remains the Arb-side boundary, as with §792.
+No Handle for RH.
