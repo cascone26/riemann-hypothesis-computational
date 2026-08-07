@@ -16176,3 +16176,17 @@ directly via a shifted pencil LDLᵀ on the ORIGINAL basis, no orthonormalizatio
 lemma, deliberately not rushed. NOT A HANDLE for the theorem yet; the ASSEMBLY and its positivity
 are real and reproduced. No Handle for RH. NEXT: the clean λ-cert (shifted pencil LDLᵀ route),
 then §806 upgrades to Handle and the Lean socket.
+
+### §806-diagnosis (ROOT CAUSE of the certified-λ resistance: probe-definition mismatch — one bug, three symptoms) — operators/cert_lambda7_clean.py diagnostic
+The concentration A-matrix (my hand-rolled Fev = sinc_sq(W(r−c))+sinc_sq(W(r+c)), ×2 for the even
+window) does NOT match the apparatus's L² Gram G = 2π·gpair_closed_arb(·,·,0). Diagnostic ratio
+A[j][j]/G[j][j] ≈ 3.6 — IMPOSSIBLE (windowed ∫F² ≤ full-line ∫F² ⟹ ratio ≤ 1). So A and G are
+computing norms of DIFFERENT probe functions. This single mismatch is the root of all three prior
+symptoms (nan / over-capacity Q|E / compression 17.77 > tr A). THE FIX (clean, next session, NOT
+rushed): compute A[j][k] = ∫_{window} φ_{c_j}φ_{c_k} using the APPARATUS'S OWN probe φ (the fej the
+Weil form + gpair use), not a hand-rolled sinc_sq — then A and G are commensurable, compression₆ ≤
+tr A holds, and λ₇ = tr A − compression₆ ∈ (0,1) as the float landscape gives (~0.42). Once A is
+apparatus-consistent, the LDLᵀ-solve route (G PD, min pivot 3.49 — G IS well-conditioned, that was
+never the problem) gives the certified λ₇ directly. §806's theorem-closes result and all its OTHER
+certified constants (m_E, tr A, B_pf, C_f) stand; only the λ-cert waits on this probe-consistency
+fix. Discipline held: root cause pinned, not a 6th blind numerical attempt. No Handle for RH.

@@ -1,0 +1,19 @@
+A (windowed, split integ)...
+  A row 0
+  A row 1
+  A row 2
+  A row 3
+  A row 4
+  A row 5
+  A[00]=6.410  G[00]=3.495  ratio 1.834
+  A[11]=12.705  G[11]=3.493  ratio 3.637
+  A[22]=12.736  G[22]=3.492  ratio 3.647
+  A[33]=12.715  G[33]=3.492  ratio 3.642
+  A[44]=12.641  G[44]=3.491  ratio 3.621
+  A[55]=6.353  G[55]=3.491  ratio 1.820
+  G pivots: min 3.4883e+00 (G well-conditioned if >0)
+
+compression₆ = tr(G⁻¹A) = 17.77364 ± 8.2e-04  (= Σ of 6 concentration λ, must be ≤ 6.310)
+===== certified λ₇ ≤ tr A − Σ₆ ≤ -11.46261 =====
+→ ‖f‖² ≤ 0.0802·T  — k=6 assembly input CERTIFIED
+EXIT:0
