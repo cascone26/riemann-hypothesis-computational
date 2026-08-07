@@ -16096,3 +16096,40 @@ itself is elementary and now peer-checked). No Handle for RH.
 Barrier extension slate: §810 GUE/statistics barrier row · §811 route-gatekeeper pass · §812 missing-witness
 build (EP+ℕ, no FE) · §813 approximate-FE quantitative barriers · §814 Lean G3 core · §815 wrap. Anchor/main
 thread continues its own numbering (§806+/A-series). Claim step per the §788/§802 double-bank lesson.
+
+## §810 (STATISTICS BARRIER B19 — GUE/pair-correlation/quantum-chaos evidence is a triple-killed proof input) — lit-gate agent, 2026-08-08
+New BARRIER_MAP row B19. Three independent kills, all literature-backed: (K3) Montgomery 1973 pair
+correlation is proven UNDER RH — statistics conditioned on RH cannot prove it; (K1) the ALTERNATIVE
+HYPOTHESIS (half-integer-multiple spacings, radically non-GUE) is consistent with ALL known pair-correlation
+data (Goldston-Lee-Schettler-Suriajaya arXiv:2507.06823 + Baluyot et al. — agent-sourced arXiv IDs, spot-
+check before external use) — known statistics can't even fix the spacing law; (K1) GUE is a universal
+attractor with zero arithmetic content (Wigner universality, Tao-Vu/Erdős-Yau; Katz-Sarnak symmetry classes
+independent of RH status); and pair correlation is too weak to even imply bounded prime gaps. Odlyzko-grade
+numerics = evidence, never input. REPORT.
+
+## §811 (GATEKEEPER PROTOCOL + FIRST AUDIT — the Riemann8 rung architecture is BARRIER-CLEAN for its stated scope) — BARRIER_GATEKEEPER.md, 2026-08-08
+New file BARRIER_GATEKEEPER.md: 4-step audit protocol (properties consumed → lattice check → B8-B12 check →
+name the completion points). AUDIT 1 (REDUCTION.md route): PASSES the fatal test (consumes EP∧FE jointly via
+Guinand-Weil); passes B4/B8/B9/B10/B13; the strip tail's FE-only role is correctly DEFENSIVE (map agrees
+with Red's §788 constraint independently); the m(W) lower bound identified as the B16 barrier crossing
+itself (not a technical lemma); the two completion points (uniform-W, unbounded-T₀) sit on B16 + B12/#6 and
+the lattice constrains any crossing to NEW joint EP∧FE input — more envelope/sampling/averaging provably
+cannot do it. First use of the map as a gate, not a museum. REPORT.
+
+## §812 (SURGERY RIGIDITY — the EP+ℕ lattice row is structurally protected: every Axiom-A-compatible surgery on ℕ inherits ζ's strip-zeros verbatim) — BARRIER_G_RESULTS.md §812, 2026-08-08
+Attempted the missing-witness build (EP + integers ⊂ ℕ + Axiom A, no FE, off-line zero); the attempt proved
+the OPPOSITE — Proposition (own-math, elementary, flagged for skeptic pass): sparse surgery (delete D, add A,
+Σ n^{-σ₀} < ∞) gives ζ_P = ζ·Π_D(1−p^{-s})·Π_A(1−n^{-s})^{-1} with surgery factors zero/pole-free off
+Re s = 0 ⟹ identical strip-zeros to ζ. Axiom A's a>0 forces deletion sparseness (Σ1/p<∞); dense surgery
+breaks the counting. So a witness in this class is AT LEAST as hard as finding ζ's own off-line zero.
+Combined with G4/Hamburger: integrality is rigid WITH or WITHOUT the FE — ℕ itself carries RH-hardness;
+leaving ℕ (as every literature witness W3-W7 does) is the only door. Lattice row rewritten. REPORT.
+
+## §813 (FE-STRENGTH LADDER — the FE dial has no useful middle setting) — lit-gate agent + BARRIER_MAP section, 2026-08-08
+Four rungs, weakest→strongest, all verified: AFE-only → witnesses flood (partial sums ζ_N have zeros in
+σ>1; Montgomery 1983 sup = 1+(4/π−1)loglogN/logN best-possible; TURÁN'S 1948 criterion was a genuine
+sufficient condition and Haselgrove's ~1956 witness computation killed it — the historical prototype of
+this entire map); relaxed-regularity exact-Γ FE → infinite-dim solution space (Knopp Invent. 117 (1994)
+Thm 1 — regularity hypotheses are load-bearing); wrong-degree Selberg FE (d∈(0,1)∪(1,2)) → class EMPTY
+(Conrey-Ghosh; Kaczorowski-Perelli Annals 173 (2011)); exact FE+regularity → Hamburger/G4 rigidity. A proof
+cannot substitute approximate for exact FE, and the Γ-factor's shape is load-bearing. REPORT.

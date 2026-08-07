@@ -70,6 +70,7 @@ placement breaks PSD; permuting log p breaks PSD) — duals through the explicit
 | B16 | **Prime-induction / finite-core reduction** (§84, §14, §187) | per-prime or finite-prime pieces of P | **K4**: the knife-edge margin (~1e-4 at p=2) defeats every effective per-prime bound; collapse not self-similar (6.6e69× variance §14) | **Barred** (knife-edge ceiling) |
 | B17 | **Jensen/hyperbolicity/total-positivity ladder** (§289, §305; GORTTW 2019 territory) | Jensen polynomials, TP2/log-convexity of ζ data | **K4**: TP2/hyperbolicity certify almost-all/asymptotic regimes, cannot certify the uniform Weil positivity; published frontier (GORTTW) proves hyperbolicity for large n only | **Barred as full-RH route** (real partial axis) |
 | B18 | **Arithmetic-surface / Hodge-index port** (§295, §398, §409, §234; F₁-geometry) | a number-field analogue of C×C with its intersection form | **K4 (constructive)**: not a wrong idea — the surface does not yet EXIST; ~6 independent §400-series attempts converge on the same missing object; the proven 2024 geometric analogue (arXiv:2410.20758) runs on Hilbert–Pólya skew-adjointness, needing the metric/flow the arithmetic side lacks | **The open frontier** (the map's constructive dual: what must be BUILT) |
+| B19 | **Zero-statistics evidence** (GUE pair correlation, moments, Odlyzko numerics, quantum-chaos spectra) | statistical distribution of the zeros | **K1+K3+K4 triple kill** (lit-gate 2026-08-08): (K3) Montgomery's pair correlation is proven ASSUMING RH — statistics conditioned on RH can't prove it; (K1) the **Alternative Hypothesis** — spacings at half-integer multiples, wildly non-GUE — is CONSISTENT with all known pair-correlation data (Goldston et al. arXiv:2507.06823; Baluyot et al.), so known statistics can't even fix the distribution, let alone RH; (K1) GUE is a **universal attractor** — Wigner matrices with no arithmetic content have identical local statistics (Tao–Vu/Erdős–Yau universality; Katz–Sarnak: same symmetry class across families regardless of RH status); pair correlation isn't even strong enough to imply bounded prime gaps | **DEAD as a proof input** (evidence-grade only) |
 
 ---
 
@@ -121,6 +122,24 @@ framework leaves hard).
   g-integer) class stays open — no FE is even known for any Beurling system (Révész, Pintz–Révész,
   confirmed) — and is, with B18's missing arithmetic surface, where the map points all remaining
   weight: **the RH-relevant structure lives precisely in FE ∧ EP, and nowhere weaker.**
+
+## The FE-strength ladder (quantitative refinement, added §813 2026-08-08)
+
+The lattice's FE toggle refined into a dial — how much functional equation does a proof input need
+before the witnesses die? Ordered weakest → strongest (lit-gated; all levels verified in literature):
+
+| FE strength | Witness with off-line zeros? | Rigidity |
+|---|---|---|
+| **AFE only** (approximate FE, no exact one) | **YES** — partial sums ζ_N(x): zeros even in Re s > 1; sup of real parts = 1 + (4/π−1−o(1))·loglogN/logN (Montgomery 1983, best possible) | none — **Turán's program is the historical proof**: his 1948 criterion (ζ_N zero-free in σ>1 ⟹ RH) was a real sufficient condition, and Haselgrove killed its hypothesis by witness computation (~1956). A barrier-map row avant la lettre |
+| **FE, relaxed regularity** (exact Riemann Γ-factor, weakened growth/order hypotheses) | **YES** — solution space becomes INFINITE-dimensional (Knopp, Invent. Math. 117 (1994) 361–372, Thm 1) | none — regularity hypotheses are load-bearing, not technical |
+| **Selberg-type FE, wrong degree** (Γ-factor with d ∈ (0,1) ∪ (1,2)) | **NO OBJECTS AT ALL** — the class is empty (Conrey–Ghosh d∈(0,1); Kaczorowski–Perelli, Annals 173 (2011) 1397–1441, 1<d<2) | **total** — wrong-shape FE admits nothing, a rigidity stronger than needed |
+| **Exact Riemann FE + regularity** | only via dropping EP (W1 D-H) | **Hamburger**: with integer support, only ζ (and multiples). With EP too: only ζ — see G4 |
+
+Reading: the FE dial has NO useful middle setting. Below "exact + regular" the witnesses flood in
+(even σ>1 zeros!); at "exact + regular + integers" the space collapses to ζ alone. A proof cannot
+substitute an approximate FE for the real one (Turán tried; the witness computation won), and the
+Γ-factor's exact shape is load-bearing (K-P degree gaps). Together with the lattice: the proof-
+relevant FE input is a knife-edge object — exactly ζ's own, no approximation, no relaxation.
 
 ## The property lattice (the systematic deliverable)
 

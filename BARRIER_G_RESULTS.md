@@ -184,3 +184,45 @@ NET: G3 stands as a proven theorem. Required edit: restate the error bound with 
 (one paragraph). Skeptic found no witness-, premise-, circularity-, or sign-error killing the result —
 the independent pass the §791/§805 discipline demanded. (Reviewer: anchor-thread session, not the
 barrier session that authored it.)
+
+## §812 — the missing lattice witness (EP + ℕ, no FE): the row is STRUCTURALLY PROTECTED, and here is the proof
+
+Target was: build an RH-violating witness with Euler product + g-integers ⊂ ℕ + Axiom A counting but
+no functional equation (the lattice's one "OPEN-leaning-yes" row). The build attempt produced the
+opposite — a rigidity proposition showing why every reachable construction FAILS, which flips the
+row's meaning: integrality alone (without FE) already pins strip-zeros to ζ's own.
+
+**Proposition (surgery rigidity; own-math, elementary — flagged for skeptic pass).** Let the
+g-prime multiset P be obtained from the rational primes by deleting a set D and adding a multiset A
+of integers ≥ 2, with Σ_{n∈D∪A} n^{−σ₀} < ∞ for some σ₀ < 1 (sparse surgery; σ₀ < 1/2 for
+strip-wide conclusions). Then
+  ζ_P(s) = ζ(s) · Π_{p∈D}(1−p^{−s}) · Π_{n∈A}(1−n^{−s})^{−1},
+and the two products converge absolutely and are analytic in Re s > σ₀ with zeros and poles ONLY on
+the line Re s = 0 (each factor 1−n^{−s} vanishes exactly at s = 2πik/log n). Hence **in the strip
+Re s > max(σ₀, 0), ζ_P and ζ have IDENTICAL zero sets.** In particular no sparse surgery on ℕ can
+create an off-line zero — the system violates the RH-analogue iff ζ violates RH.
+
+Proof. The factorization is immediate from the Euler product (absolute convergence rearrangement in
+Re s > 1, then analytic continuation of the finite-or-absolutely-convergent products to Re s > σ₀).
+An absolutely convergent product Π(1−a_n(s)) with Σ|a_n(s)| < ∞ vanishes only where a factor
+vanishes; 1−n^{−s} = 0 ⟺ n^{−s} = 1 ⟺ s = 2πik/log n, Re s = 0. ∎
+
+**Why dense surgery can't rescue a witness:** Axiom A with positive density a > 0 forces
+Σ_{p∈D} 1/p < ∞ (else the g-integer density a = lim N(x)/x picks up the factor Π_D(1−1/p) → 0),
+i.e. deletions must be summable-sparse; additions with Σ 1/n = ∞ inflate N(x) beyond ax + O(x^θ).
+So the Axiom-A-compatible surgeries are exactly the sparse ones the proposition covers (the gap
+between "Σ1/n < ∞" and "Σ n^{−σ₀} < ∞ for σ₀ < 1/2" is real and stated honestly — surgeries in
+that gap have products analytic only in a smaller half-plane, protecting a correspondingly smaller
+strip region).
+
+**Lattice consequence (row rewritten):** EP + ℕ + A (no FE) has NO reachable witness: every
+multiplicative surgery on ℕ inherits ζ's strip-zeros verbatim, so producing a witness in this class
+is AT LEAST as hard as exhibiting an off-line zero of ζ itself. Combined with Hamburger (EP+FE+ℕ ⟹
+exactly ζ): **integrality is rigid with or without the FE — the natural numbers themselves carry
+the RH-hardness.** This also explains, structurally, why every literature witness (W3–W7) uses real
+g-primes: leaving ℕ is not a convenience, it is the only door.
+
+Honest scope: "reachable" = surgery constructions (delete/add/multiplicity on integer support).
+A non-surgery integer-supported system is one whose g-prime multiset differs infinitely from the
+primes with only Σ n^{−1} < ∞ control — the proposition's σ₀-gap; no construction principle for a
+witness there is known, and none is claimed impossible. REPORT.
