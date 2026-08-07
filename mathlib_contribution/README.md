@@ -32,12 +32,15 @@ and the design conversation should be his. The file is ready; the submission is 
 
 ## Zulip proposal draft
 
-> **Proposing: Bessel functions J₀, J₁ (elementary bounds).** mathlib has no Bessel functions. I have a
-> self-contained file defining `J₀`/`J₁` by their power series and proving elementary results below the
-> first zero: `J₀(0)=1`, evenness, `J₀>0` on `|x|<2`, the two-sided bounds `1−(x/2)² ≤ J₀ ≤ 1` and the
-> sharp `|J₀−(1−(x/2)²)| ≤ (x/2)⁴/4`, and `0<J₁≤x/2` on `0<x, x²<8` — all via
-> `alternating_series_error_bound`. Before a PR I'd like design input: is the preferred entry point
-> order-`0,1` power series (as here), or should this be `Jᵥ` for general order from the start (with these
-> as instances)? And is `Mathlib/Analysis/SpecialFunctions/Bessel.lean` the right home? Happy to
-> generalize; the order-`0,1` proofs are self-contained and need no new infrastructure. File compiles
-> clean (trusted axioms only) and I can push a branch immediately.
+> **Proposing: Bessel functions of the first kind, integer order (power series + elementary bounds).**
+> mathlib currently has no Bessel functions. I have a self-contained file (15 theorems) defining
+> `besselJ n x = ∑ₖ (-1)^k/(k!(k+n)!) (x/2)^{2k+n}` for integer order, with `besselJ_series_summable`,
+> `besselJ_zero_of_pos` (`Jₙ(0)=0` for `n≥1`), and the unified positivity theorem **`besselJ_pos`:
+> `0 < Jₙ(x)` for `0 < x`, `x² < 4(n+1)`** (below the first positive zero, all orders at once), plus
+> sharp order-0/1 corollaries: `J₀(0)=1`, evenness, `1−(x/2)² ≤ J₀ ≤ 1`, the two-term enclosure
+> `|J₀−(1−(x/2)²)| ≤ (x/2)⁴/4`, and `0 < J₁ ≤ x/2` on `0<x, x²<8` — all via the Leibniz
+> alternating-series error estimate, no new infrastructure needed. Before a PR I'd like design input:
+> (1) is integer-order `besselJ : ℕ → ℝ → ℝ` by power series an acceptable entry point, with real/complex
+> order `Jᵥ` (Gamma-function coefficients) as a later generalization, or should `Jᵥ` come first?
+> (2) is `Mathlib/Analysis/SpecialFunctions/Bessel.lean` the right home? File compiles clean against
+> current mathlib (trusted axioms only, checked with `#print axioms`) and I can push a branch immediately.

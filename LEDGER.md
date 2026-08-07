@@ -15626,3 +15626,42 @@ constraint honored in the doc: this lemma bounds strip zeros as adversaries only
 the frame inequality's positive mass (that would re-import the RH-fragment); the continuum theorem's
 positivity must come from the height-localized class. HANDLE (lemma + certified application).
 No Handle for RH.
+
+## §793 (LIT-GATE on the Riemann8 lanes — ladder APPARENTLY OPEN; a frame-theory gift found; strip technique is standard) — web sweep, agent-sourced, arXiv IDs verified as cited
+
+Three claims gated (per the §785 discipline — gate BEFORE novelty language):
+(1) SUPPORT-LADDERING with certified load-bearing pairs (§476-§788): **APPARENTLY OPEN.** Closest:
+Groskin 2607.02828 + 2605.20224 (truncated Weil forms with prime cutoff c, multiple cutoffs) — but no
+rung-by-rung support laddering, no single-prime-removal indefiniteness, no load-bearing-pair
+structure. The ladder remains ours to walk (Report-tier: absence-after-search, not proof of novelty).
+(2) SAMPLING/FRAMES with zeta zeros for Weil positivity: **PARTIAL OVERLAP — and a GIFT.**
+Bondarenko–Radchenko–Seip arXiv:2005.02996 (Constr. Approx. 2023, w/ Ortega-Cerdà) construct EXPLICIT
+Fourier interpolation bases with the nontrivial zeta zeros as sampling set (recovering even functions
+from values at ρ and at log n — zeros AND primes as the node sets). NOT applied to Weil-positivity
+proving in the literature. This directly addresses Red's §788 objection that Ortega-Cerdà–Seip is "a
+characterization, not an explicit-constants machine" — BRS is constructive. NEXT-LEVEL LEAD for the
+height-localized continuum rung theorem: read BRS for the explicit frame constants + their treatment
+of the zeros' non-separation. (Their kernel lives on Dirichlet series with functional equations —
+the same duality our apparatus computes.)
+(3) Strip-envelope tails for arbitrary configurations: **PUBLISHED/standard** (Platt–Trudgian school,
+Carneiro–Chandee–Chirre–Milinovich Fourier optimization 1710.10362). §791's value is therefore ONLY
+the certified application + the sharp cosh⁴(Wσ) constant for our specific Fejér probes — the lemma
+is NOT claimed as a new technique (noted here per the gate; RUNG_STRIP_LEMMA.md stands as applied).
+Also confirmed current: Suzuki 2606.09096 / Kim 2607.24830 unchanged; NEW Connes–Consani–Moscovici
+arXiv:2511.22755 surfaced in the sweep — queue for lit_recheck read (not yet opened). REPORT.
+
+## §789 (CROSS-ROUTE VALIDATION PASSED — the explicit-formula bookkeeping is validated as implemented; Red's §788 demand banked) — operators/cross_route_validate.py/.out
+
+The SAME 6×6 Weil Gram (4W=1.32, span {14,20,26,32,38,44}) computed via two logically independent
+routes sharing no transcendental code path: route P (pole+arch−prime, the §788 zero-free machinery)
+vs route Z (2Σ_γ F_j(γ)F_k(γ) over the 491 zeros ≤ 800 + rigorous entry-wise tail, Guinand–Weil).
+RESULT: **all 21 independent entries agree within their rigorous enclosures** — max mid-discrepancy
+8.359e-7, tightest slack 1.619e-5. This is the one validation interval arithmetic cannot provide
+(a wrong integrand/normalization certifies to 55 digits just as happily); the 3-digit pivot
+agreement noted in §788-addendum is now an entry-level validated statement, not a parenthesis.
+Scope: route Z's tail uses on-line-ness above 800 (fine for a VALIDATION of implementation; route P
+remains the unconditional certificate). Retires Red's "one script, one author, same night"
+objection. Also same-session: BESSEL PR COMPILE RE-VERIFIED (mathlib_contribution/BesselJ01.lean,
+lake env lean EXIT:0, zero errors) — the PR is compile-clean TODAY, Zulip draft updated to the
+general-order module; submission still Jacob-gated (Zulip/CLA). HANDLE (validation, proof pointers
+on disk). No Handle for RH.

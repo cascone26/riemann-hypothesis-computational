@@ -2,3 +2,37 @@ Installed 2 packages in 47ms
 route P (pole side): 6x6 Gram at 4W=1.32, RC=400 ...
   P row 0 done (diag rad 9.51e-06)
   P row 1 done (diag rad 9.51e-06)
+  P row 2 done (diag rad 9.51e-06)
+  P row 3 done (diag rad 9.51e-06)
+  P row 4 done (diag rad 9.51e-06)
+  P row 5 done (diag rad 9.51e-06)
+route Z (zero side): 491 zeros <= 800 + rigorous tail ...
+  Z done (491 zeros; entry tail bound +/- 7.478e-06)
+
+entry-by-entry comparison (PASS = intervals intersect):
+  [14,14] P=+2.023685e+00 Z=+2.023685e+00 |dP-dZ|=7.97e-07 budget=1.71e-05 OK
+  [14,20] P=+6.984735e-01 Z=+6.984738e-01 |dP-dZ|=3.26e-07 budget=1.70e-05 OK
+  [14,26] P=+2.036918e-01 Z=+2.036924e-01 |dP-dZ|=5.74e-07 budget=1.70e-05 OK
+  [14,32] P=+7.257847e-02 Z=+7.257918e-02 |dP-dZ|=7.15e-07 budget=1.70e-05 OK
+  [14,38] P=+9.322439e-02 Z=+9.322467e-02 |dP-dZ|=2.79e-07 budget=1.70e-05 OK
+  [14,44] P=+3.872301e-02 Z=+3.872376e-02 |dP-dZ|=7.45e-07 budget=1.70e-05 OK
+  [20,20] P=+2.256942e+00 Z=+2.256942e+00 |dP-dZ|=7.20e-07 budget=1.70e-05 OK
+  [20,26] P=+1.458562e+00 Z=+1.458562e+00 |dP-dZ|=5.18e-07 budget=1.70e-05 OK
+  [20,32] P=+2.310175e-01 Z=+2.310179e-01 |dP-dZ|=4.05e-07 budget=1.70e-05 OK
+  [20,38] P=+1.443431e-01 Z=+1.443439e-01 |dP-dZ|=7.72e-07 budget=1.70e-05 OK
+  [20,44] P=+9.073737e-02 Z=+9.073776e-02 |dP-dZ|=3.91e-07 budget=1.70e-05 OK
+  [26,26] P=+2.607615e+00 Z=+2.607615e+00 |dP-dZ|=5.54e-07 budget=1.70e-05 OK
+  [26,32] P=+1.292918e+00 Z=+1.292919e+00 |dP-dZ|=5.66e-07 budget=1.70e-05 OK
+  [26,38] P=+3.568904e-01 Z=+3.568909e-01 |dP-dZ|=5.20e-07 budget=1.70e-05 OK
+  [26,44] P=+1.711281e-01 Z=+1.711287e-01 |dP-dZ|=5.83e-07 budget=1.70e-05 OK
+  [32,32] P=+3.731140e+00 Z=+3.731141e+00 |dP-dZ|=6.64e-07 budget=1.70e-05 OK
+  [32,38] P=+1.376097e+00 Z=+1.376098e+00 |dP-dZ|=3.75e-07 budget=1.70e-05 OK
+  [32,44] P=+2.998870e-01 Z=+2.998876e-01 |dP-dZ|=6.81e-07 budget=1.70e-05 OK
+  [38,38] P=+3.503112e+00 Z=+3.503112e+00 |dP-dZ|=8.36e-07 budget=1.70e-05 OK
+  [38,44] P=+2.000709e+00 Z=+2.000709e+00 |dP-dZ|=3.60e-07 budget=1.70e-05 OK
+  [44,44] P=+3.683702e+00 Z=+3.683703e+00 |dP-dZ|=7.14e-07 budget=1.70e-05 OK
+
+max mid-discrepancy: 8.359e-07   tightest slack (budget - discrepancy): 1.619e-05
+CROSS-ROUTE VALIDATION PASSED: all 21 independent entries agree within rigorous enclosures.
+The explicit-formula bookkeeping (pole/arch/prime vs zero side) is validated as implemented.
+EXIT:0

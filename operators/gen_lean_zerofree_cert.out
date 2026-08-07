@@ -1,0 +1,6 @@
+Downloading sympy (6.0MiB)
+ Downloaded sympy
+Installed 3 packages in 25ms
+computing zero-free Arb Gram (4W=1.32, span [14, 22, 30, 38], RC=400)...
+  row 0 done (diag rad 9.51e-06)
+  row 1 done (diag rad 9.51e-06)

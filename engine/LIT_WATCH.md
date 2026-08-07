@@ -52,3 +52,4 @@
 - [2014-03-23] On a choice of the mollified function in the Levinson-Conrey method -- http://arxiv.org/abs/1403.5786v3
 - [2009-03-24] Large gaps between consecutive zeros of the Riemann zeta-function -- http://arxiv.org/abs/0903.4007v3
 - [2005-09-21] Applications of the L-functions ratios conjectures -- http://arxiv.org/abs/math/0509480v2
+- 2026-08-06 (Riemann8 lit-gate §793): arXiv:2511.22755 Connes-Consani-Moscovici — surfaced in ladder lit-gate sweep, NOT yet read; queue for next lit_recheck pass.

@@ -9825,3 +9825,40 @@ general-order + the sign-theorem skeleton with labeled hD + the Gram/certificate
 and an apparatus that independently agrees with the state of the art. Loaded for a next era: (a) submit
 the Bessel PR (Jacob-gated); (b) if returning to the proof, the target is Suzuki Cor 1.6 / the θ(a)
 density-thinning — needs a genuine analytic idea, not compute.
+
+## Arc: Riemann8 opening (2026-08-06 evening) — blind-prism protocol + the table executes
+
+**Framing:** Jacob opened Riemann8 as (a) RH work, (b) a discipline test: full positive attitude,
+zero wind-down language; negative result → next angle in the same breath. New protocol tried this
+session: Jacob asked for BOTH a 6-Fable roundtable round AND an independent blind prism from the
+main session (written before reading any table output), then a comparison. VERDICT on the protocol:
+worked well — the two prisms converged on the ranking (lane (a) attack / (c) instrument / (e) vessel
+/ (d) gated / (b) parked), which independent convergence made trustworthy, and each side surfaced
+things the other missed (table: the orphaned cert, the hidden axiom, the continuum hole; blind
+session: the hD scoping item, the explicit lit-gate demand, keystone lane continuity).
+
+**Decision chain:**
+1. July-30 frame (log3 rung 3-asks) judged STALE vs §787 close → new frame grounded in the §785-787
+   state, banked-results-do-not-re-derive rules, Report/Handle discipline. Old frame backed up.
+2. Table round (Riemann/Gauss/Gödel/Grothendieck/Euler/Red, fable, research+memory) went EXECUTIVE,
+   not advisory: Gauss's ledger audit → found §476g's cert left "running" 311 sections; Gödel fixed
+   env (uv+flint), ran it → BOTH spans zero-free PD (§788, .1/.2 retitle hygiene after two seats
+   banked concurrently). Gödel's hypothesis audit found the PD half's stated condition understated
+   (on-line-ness of ALL zeros, not "491 zeros") — deleted by the zero-free route rather than repaired.
+3. Euler measured item-1a with certified balls (razor branch confirmed, slack 0.027-0.046);
+   §476d's log2≈1 prediction withdrawn (premise false, measured 0.586).
+4. Red's attacks became work items: cross-route validation demand (zero-side vs pole-side Gram
+   agreement = the validation interval arithmetic can't give); BAND1=44 hardcode trap (guards added
+   to certify()); the continuum architecture hole (frame ineq false on infinite-dim class over
+   finitely many verified zeros; height-localized class is the honest repair).
+5. Session executed the merged order: §788 hygiene; guards; cross_route_validate.py (6×6, running);
+   rung_ladder_scan.py (m(W) curve across log4, running); RUNG_STRIP_LEMMA.md + strip_tail_cert.py
+   → §791 CERTIFIED (cosh⁴ closed-form envelope beat the table's e^{0.66} estimate — the sharper
+   constant SAVED the T₀=800 unconditionality Gödel predicted would fail); lit-gate agent → §793
+   (ladder apparently open; BRS 2005.02996 frame-basis gift; strip technique standard — no novelty
+   claimed); Lean zero-free replay generator (running); Bessel PR Zulip draft updated to
+   general-order module. §791 sent back to the table for Gauss/Red adversarial verification —
+   own-math-unreviewed does not stand without a skeptic pass.
+
+**Method note (deposit):** the "two seats bank the same § concurrently" failure mode is real —
+ledger §-numbers need a claim step when the table works live. Fixed by retitle this time.
