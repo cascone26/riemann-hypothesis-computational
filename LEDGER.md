@@ -16390,3 +16390,24 @@ is the sharpest, cleanest structural signature the project has for what the B18 
 HONEST CAVEATS: well-conditioned fixed-8 window is NARROW (4W 1.30-1.46; beyond it 8 probes under/over-
 resolve, instrument-limited §807/§810); 5 points, plateau is last-3; remaining fixed-8 points
 (1.50-1.62) pending to confirm the plateau extends. REPORT (float, clean). No Handle for RH.
+
+## §811-CORRECTION (m_E·D is a PEAK, not a plateau — §811's "saturation" was banked one point too early; the clean curve turns over) — mE_fixed8.txt, 7 resolved points
+
+HONEST CORRECTION: §811 banked "m_E·D saturates at ≈0.039" on 5 points (rise + apparent plateau).
+The next 2 clean resolved points (all Gpiv healthy 0.55→0.70, NOT under-resolution) show it TURNS OVER:
+  4W:    1.30    1.34    1.38    1.42    1.46    1.50    1.54
+  m_E·D: 0.0308  0.0351  0.0382  0.0394  0.0389  0.0376  0.0368
+m_E·D is a PEAKED function — MAXIMUM ≈0.0394 at 4W≈1.42, DECLINING after (3 straight drops post-peak,
+all resolved). So m_E·D does NOT saturate; it decreases beyond 1.42 ⟹ m_E decays FASTER than 1/D in
+the tail. TWO consequences: (1) §811's "1/D law asymptotic / Hodge-index spec with fixed constant
+0.039" is WITHDRAWN — the margin loses ground to the growing corner beyond the peak, so the missing
+structure must supply MORE than a fixed intersection constant (a harder requirement, less rosy).
+(2) INTERPRETIVE CAUTION now flagged: m_E is on a FIXED K=6 eigenspace while D GROWS — so m_E·D was
+never a clean "margin-per-class" (K≠D); §810b/§811 over-read it. What IS solid + certified-adjacent:
+m_E (the Weil margin on the concentration eigenspace) DECLINES with W, and faster than 1/D past 1.42
+(confirms §810's decline; complicates the optimistic §810b/§811 reading). LESSON (discipline):
+banked §811 on the peak before the turnover — should have waited for 1.50/1.54; the provisional flag
+caught it but I called "saturation" too confidently. The peak location 4W≈1.42 ≈ log(4)=1.386 (the
+first prime-POWER entry) is a lead worth a look (coincidence per §799's ladder-separation, or real?).
+REPORT. No Handle for RH. NEXT: 1.58/1.62 (1.62 may under-resolve, cap 8.2>8); then a K-scaled scan
+(K growing with capacity) to test the TRUE margin-per-class question §810b/§811 conflated.
