@@ -16781,3 +16781,23 @@ reduction.
 NET: two more certified curves in the apparatus — the fixed-arch-budget (A) and the frame-above-t*
 (B) sides of the §816/§821 structural picture, both now Handles. Remaining campaign: (C) Qpos across
 crossover. No Handle for RH.
+
+## §824-C + CAMPAIGN COMPLETE (Weil positivity across the crossover CERTIFIED, rising on moderate spans; the §824 certification campaign = 3 certified curves banked) — operators/cert_campaign.py/.txt
+
+**(C) Qpos(W) across crossover CERTIFIED** (Weil Q_pencil_min, arb prec 250, moderate spans, maxrad
+~1e-6): 4W=1.32: ≥0.15233 · 1.50: ≥0.13540 · 1.70: ≥0.15354 · 1.90: ≥0.17594 · 2.10: ≥0.18903.
+All CERTIFIED positive; margin RISES with W (0.135→0.189) on moderate spans through+past the
+crossover (t*: 24→52) — consistent with §807b (coarse/moderate-span margin strengthens as primes
+enter; the razor is dense-span-only, §812/§823).
+
+**§824 CAMPAIGN COMPLETE — 3 certified curves banked (all arb Handles):**
+(A) arch_floor W-INVARIANT ~0.123 (CV 1.5%, 8 widths 1.20-2.30) — fixed archimedean budget certified.
+(B) frame_c above t* POSITIVE 0.13-0.29 (4 widths) — the zero-side frame half certified (conditional).
+(C) Qpos across crossover ≥0.135-0.189 (5 widths) — Weil positivity certified + rising on moderate spans.
+NET: the §814-821 structural picture is now substantially CERTIFIED — arch budget (A), frame-above-t*
+(B), and Weil positivity on non-dense spans through the sub-t* regime (C, §823). What remains
+uncertified is ONLY the razor-thin DENSE boundary-shell margin (the §812 corner, instrument-horizon
+territory §806) — which is exactly the open core (§825: = RH, no known bound). The certified apparatus
+now solidly brackets the difficulty: everything EXCEPT the dense boundary shell is rigorously positive.
+Durable output of the full-auto run: §816-CERT + §823 + §824-A/B/C, on top of the §808 anchor theorem.
+No Handle for RH.

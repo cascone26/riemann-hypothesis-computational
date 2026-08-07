@@ -14,3 +14,9 @@ B 1.32 t*=23.5 span[26,44] frame_c >= 0.20148
 B 1.61 t*=31.4 span[34,52] frame_c >= 0.20324
 B 2.00 t*=46.4 span[49,67] frame_c >= 0.28952
 ## (C) Qpos(W) certified (Weil positivity, horizon-flagged):
+C 1.32 npr=5 maxrad=9.5e-06 Qpos >= 0.152331 CERTIFIED
+C 1.50 npr=6 maxrad=5.7e-06 Qpos >= 0.135403 CERTIFIED
+C 1.70 npr=6 maxrad=3.5e-06 Qpos >= 0.153537 CERTIFIED
+C 1.90 npr=6 maxrad=2.2e-06 Qpos >= 0.175936 CERTIFIED
+C 2.10 npr=6 maxrad=1.5e-06 Qpos >= 0.189032 CERTIFIED
+# CAMPAIGN COMPLETE
