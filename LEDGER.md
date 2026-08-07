@@ -16091,3 +16091,8 @@ systems; the finite-local-data corollary sound. No witness/premise/circularity/s
 stands; required edit = restate the error bound with the compact/tail split (logged in
 BARRIER_G_RESULTS.md). HANDLE-adjacent (independent verification of an own-math theorem; the theorem
 itself is elementary and now peer-checked). No Handle for RH.
+
+## §810-§815 CLAIMED by barrier session (2026-08-07, second run) — reserved block, do not bank into these numbers from other seats
+Barrier extension slate: §810 GUE/statistics barrier row · §811 route-gatekeeper pass · §812 missing-witness
+build (EP+ℕ, no FE) · §813 approximate-FE quantitative barriers · §814 Lean G3 core · §815 wrap. Anchor/main
+thread continues its own numbering (§806+/A-series). Claim step per the §788/§802 double-bank lesson.
