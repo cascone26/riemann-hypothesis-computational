@@ -16702,3 +16702,12 @@ checked the logic, tempered the claim — same pattern as the §811/§814 scalar
 self-check this time BEFORE external refutation.) The honest frontier: prove arch+pole−prime≥0
 uniformly (prime side, monolithic) — the margin→0 sub-t* corner (§818/§821) is WHERE it's razor-thin,
 Beurling explains WHY, but the proof doesn't get to assume the zeros. No Handle for RH.
+
+## §822 (CCM Lemma 7.2 probe — BOTCHED SETUP, inconclusive, NOT banked as a finding) — operators
+Attempted to numerically probe CCM's open Lemma 7.2 (prolate→Hermite O(λ⁻²)) in our apparatus. My
+quick test showed error GROWING not shrinking — but this is a SETUP MISMATCH on my end (wrong prolate
+operator discretization / Hermite scaling / normalization vs CCM's exact definitions, which the
+corrupted PDF didn't give me), NOT a refutation of their lemma (their figures show it holds for μ≤36).
+INCONCLUSIVE. Doing it properly needs their exact operator setup. Honest note, not a finding. This +
+the recent refuted scalars mark the point where QUICK FLOAT PROBES are exhausted; further progress
+needs careful theory/certification setup, not more fast scans. No Handle for RH.
