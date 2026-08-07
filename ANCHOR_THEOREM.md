@@ -86,3 +86,15 @@ for the stated (height-localized) scope.** Two flags folded in here:
   anywhere in the completion — Turán's partial-sum criterion died on Haselgrove's witness; the
   Γ-factor's exact shape is load-bearing (K-P Annals 2011). If a future step reaches for AFE input,
   it's on a dead rung.
+
+## Open careful-lemma items (documented for a clean pass, NOT rushed)
+1. **τ_E in arb** — E's weighted off-window mass ≤ 0.525 (measured; 5 of 6 E-vectors ~2e-4, the
+   weakest-concentration 6th leaks). Cert route: for each E-vector (float coeffs c_j), arb-integrate
+   ∫_off|Σc_j Fev(c_j,t)|²(1+|Ω|): near [0,14] direct interval, far [44,∞) via quartic envelope +
+   ln-tail (§791 family). Assembly ALREADY closes with the measured value (ε₀=2.3e-4>0).
+2. **m_E basis-consistency** — the assembly needs m_E = Q-pencil-λmin on the CONCENTRATION eigenspace
+   E (so ⟨Af,f⟩≤λ₇‖f‖² holds for f⊥E), but §802A certified Q on the capacity PROBE SPAN. These are
+   close (both ~capacity-6 subspaces of the same window) but not identical. Clean fix: compute Q, G, A
+   on ONE conditioned 8-probe basis, take E = its top-6 concentration eigenspace, certify m_E = Q on
+   THAT E — self-consistent single-basis theorem. ~1 script; deferred to a fresh careful pass.
+Both are tightenings of an already-closing theorem, not sign-flipping gaps.
