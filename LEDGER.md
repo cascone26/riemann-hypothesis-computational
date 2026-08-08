@@ -17069,3 +17069,25 @@ the arch floor (§834), positivity past it carried by prime⊥arch eigenvector g
 geometry governed by a floor-growth-vs-alignment-decay balance that currently FAVORS positivity as height
 grows (§836). The RH-hard object is concrete and geometric. NEXT: the fixed-capacity-fraction cos ladder
 (de-confound §836), and arb-certify the sufficient side (pnorm<floor ⟹ margin>0).
+
+## §837 (de-confounds §836 — at FIXED capacity-fraction the prime⊥arch orthogonality PERSISTS across height; §835 VINDICATED, §836 climb was the confound) — operators/cert_misalign_fixedN.py
+Measured cos(v_p,v_a) at FIXED N (=fixed N/N_cap, all windows length-30 at 4W=2.8 → identical N_cap≈13.4)
+across the height ladder, resolving §836's honest caveat.
+  N=8  (0.60 cap): cos 0.0002/0.0035/0.0020/0.0090 across h=29/45/65/83 — FLAT, angle ~89.5–90°
+  N=10 (0.75 cap): cos 0.0030/0.0008/0.0026/0.0032 — FLAT, all <0.004
+  N=12 (0.90 cap): cos 0.0022/0.0018/0.0037/0.0152 — near-flat (slight tick at h83, still angle 89.1°)
+RESOLUTION: at fixed capacity-fraction cos does NOT climb with height — it stays tiny (~0.002–0.01,
+angle ~90°). So §836's cos-climb (0.0002→0.078) was the razorN→capacity confound (razorN 8→11→13 drifting
+toward N_cap=13.4), NOT a real height effect — exactly the caveat §836 flagged. The prime-top ⊥ arch-bottom
+ORTHOGONALITY PERSISTS across height. §835's "orthogonality is the protective structure" is VINDICATED;
+it does NOT degrade with height. And it holds AT the razor at every height (wherever margin→0⁺, cos stays
+tiny — e.g. N=8 [14,44] margin 3.3e-6 with cos 0.0002; N=12 [30,60] margin 6e-5 with cos 0.0018).
+Also visible: at fixed N the LOWER window hits its razor first (smaller floor: [14,44] floor 0.126 vs
+[68,98] floor 0.379), higher windows stay healthy — the floor grows ~ln t, so a fixed mode count is
+"more below razor" at higher windows. Margin 0⁺, never negative, throughout → RH-consistent.
+NET (de-confounded, robust): the RH-protective structure = prime⊥arch eigenvector orthogonality is
+height-STABLE (cos ~90° uniformly at fixed capacity-fraction), and the arch floor grows with height, so
+positivity is uniformly maintained and gets more robust higher up. This is the cleanest structural
+statement of the run: RH-consistent uniform positivity carried by a height-stable orthogonal joint
+arch⊕prime geometry. The hard side remains: certify the orthogonality (cos bounded from 1) UNIFORMLY —
+now a well-posed target (height-stable, not degrading), the concrete form of the intersection/signature route.
