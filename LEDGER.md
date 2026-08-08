@@ -16991,3 +16991,29 @@ artifact. What's withdrawn is only the strict "onset = #zeros" combinatorial law
 NEXT: recast the knife-edge as arch-floor-vs-prime directly — certify the margin lower bound as a function
 of the arch floor min over the window (Ω_min(window)) minus the prime operator norm; §816-CERT already
 certified the arch floor, §803A the prime bound — assemble m(window) ≥ f(Ω_min, B_prime) as a Handle.
+
+## §834 (★ THE QUANTITATIVE RAZOR — collapse ⟺ prime-top-eigenvalue crosses the arch floor; but margin stays 0⁺ even past the crossing → misalignment-protected positivity = where RH lives ★) — operators/cert_floor_vs_prime.py
+Decomposed the knife-edge margin (§832/833) into its two operators in the G-metric:
+  floor  = λ_min(pole+arch, G)  — archimedean PD floor
+  pnorm  = λ_max(prime, G)      — prime form top (positive) eigenvalue
+  margin = λ_min(pole+arch−prime, G) — full Weil margin
+[14,44], 4W=2.2, sweep N: floor ~CONSTANT 0.125–0.126 (W-invariant, §816 ✓); pnorm RISES 0.065→0.035→
+0.098→0.183→0.165 (N=5→9); margin 0.181→0.193→0.098→1.5e-4→7.5e-6. SAME at 4W=1.9.
+RAZOR (quantitative, clean): the collapse at N=8 coincides EXACTLY with pnorm CROSSING the floor —
+N=7 pnorm 0.098 < floor 0.125 → margin 0.098 healthy; N=8 pnorm 0.183 > floor 0.125 → margin 1.5e-4.
+So the finite Weil razor is precisely "margin healthy ⟺ prime top-eigenvalue < arch floor" — the §813b
+"indefinite prime form eats the PD arch floor" mechanism made EXACT and quantitative. pnorm↑ crossing
+the (constant) floor as N grows IS the collapse.
+THE DEEP PART (why RH is hard, now pinpointed): the crude scalar bound margin ≈ floor − pnorm is FALSE.
+At N=8 floor−pnorm = 0.125−0.183 = −0.058 (NEGATIVE) yet the true margin is +1.5e-4 (POSITIVE). The Weil
+form stays positive even when the prime top-eigenvalue EXCEEDS the floor — because the prime's top
+eigenVECTOR and the arch's bottom eigenVECTOR are NOT aligned. This misalignment-protected residual
+positivity is exactly where RH lives: it is IRREDUCIBLY non-scalar (re-confirms the §810b–§821 refuted-
+scalar lesson, and PINPOINTS where the irreducibility bites — the pnorm>floor regime, where only the
+joint eigenstructure, not any scalar floor−norm bound, keeps margin ≥ 0). Margin → 0⁺ NEVER negative
+throughout = RH-consistent (an off-line zero would break the protective alignment → negative).
+CERTIFIABLE HANDLE (next): floor ≥ 0.125 is §816-CERT; pnorm ≤ B_prime-type bound is §803A-adjacent. The
+EASY certified statement is the SUFFICIENT side: while pnorm < floor (N < crossing), margin > 0 —
+certify m ≥ 0 on the pnorm<floor regime (a genuine Handle, the robust below-razor zone). The HARD side
+(margin ≥ 0 when pnorm > floor, via misalignment) is the RH-hard core — NOT scalar-certifiable, needs the
+joint arch⊕prime eigenstructure bound (the arithmetic/intersection-form object the whole map points at).
