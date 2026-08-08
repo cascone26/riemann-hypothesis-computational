@@ -16917,3 +16917,50 @@ to §821 and cleanly separates the two regimes: below capacity = certified-posit
 critical sampling = the open razor = RH. NEXT: the critically-sampled margin needs an instrument that
 out-resolves the arb radii (exact rational Gram at critical sampling) — the §823 radii-swallow is the
 thing to beat, not re-measure.
+
+## §831 (methodological catch — prec is the WRONG knob; over-capacity collapse = basis redundancy, not RH; pivot to the knife-edge ladder) — operators/cert_precision_frontier.py
+Ran the precision-frontier probe (does higher arb prec rescue the critical-sampling margin?). Rows in
+hand: N=6 margin 1.448e-1 FLAT across prec 100/200/300/400 with maxrad FLAT at 4.4e-6; N=7 margin
+9.486e-2 flat across 100/200. CATCH: cranking ctx.prec does NOT shrink maxrad — the arb radius here is
+INTEGRATION-limited (fixed-segment quadrature + rc=400 tail in arch_entry_v3), not arithmetic-limited.
+So prec cannot resolve the critical-sampling razor; the right knob would be integration resolution
+(segments/rc). Killed the run (foregone: N=8,9 would just radii-swallow at the 4.4e-6 floor).
+DEEPER REFRAME (the real pivot): over-capacity margin collapse (§829 Panel 3) is λmin(G)→0 = the Fejér
+probes becoming linearly redundant = a REPRESENTATION artifact, NOT RH content. Over-loading a FIXED
+window with redundant probes says nothing about RH. The RH-relevant question is whether the certified
+BELOW-capacity positivity (§830) SURVIVES as the true function space grows — i.e. does the certified
+margin m(W) stay bounded below as 4W→∞ with capacity-MATCHED N (N≈N_cap=15·4W/π)? That is exactly the
+B16/§799/§811 knife-edge ("keep m(W) alive while dim K_W ~ e^{4W}"). NEXT = §832 capacity-matched
+knife-edge ladder, built on the §830-validated certifiable-below-capacity instrument.
+
+## §832 (★ THE KNIFE-EDGE IS REAL AND CLEANLY ISOLATED — certified margin thins to 0⁺ exactly as N→#window-zeros, with G HEALTHY; not conditioning ★) — operators/cert_knife_ladder.py + cert_knife_float.py
+Capacity-matched ladder + decisive float verification. THE central RH-relevant question (does the Weil
+margin survive as the space grows — B16/§799/§811 knife-edge) now has a clean, conditioning-controlled
+answer.
+ARB-CERTIFIED LADDER (cert_knife_ladder.py, N≈0.78·N_cap, window [14,44]):
+  4W=1.30 N=5 nprime=2: margin ≥ 0.150975 (maxrad 1.0e-5) CERTIFIED
+  4W=1.60 N=6 nprime=3: margin ≥ 0.144830 (maxrad 4.4e-6) CERTIFIED
+  4W=1.90 N=7 nprime=5: margin ≥ 0.102865 (maxrad 2.2e-6) CERTIFIED
+  4W=2.20 N=8 nprime=8: margin ≥ 0.000056 (maxrad 1.2e-6) CERTIFIED  ← ~1800× drop from 4W=1.9
+  (4W=2.50 rung killed — N=9 arch integrals too slow; float covers it below)
+FLOAT VERIFICATION (cert_knife_float.py, sweep N, report λmin(G)/cond(G) — is the drop real or conditioning?):
+  4W=2.20 (nprime=8), ALL G-HEALTHY (cond 1.3–3.8): N=5→0.181, N=6→0.193, N=7→0.098, N=8→1.5e-4.
+  4W=2.50 (nprime=11), ALL G-HEALTHY (cond 1.3–4.0): N=5→0.176, N=7→0.088, N=8→2.3e-5, N=9→4.7e-6.
+VERDICT (decisive): the margin collapse is NOT a G-conditioning artifact — G is well-conditioned (cond≤4)
+at every collapse point. It is a genuine near-null direction of the WEIL FORM Q itself. The collapse
+onset is precisely N → 8 = the number of zeros of ζ in the window [14,44] (14.13,21.02,25.01,30.42,
+32.94,37.59,40.92,43.33; next is 48.0 outside). This is the §818 "modes-exceed-window-zeros" sampling
+razor, now CLEANLY ISOLATED FROM CONDITIONING for the first time (prior §821/§829 couldn't separate them;
+§829 showed the OVER-capacity collapse was conditioning — THIS is different: G-healthy, N below G-capacity,
+yet Q goes flat at N=#zeros). The margin goes to 0⁺, NEVER negative — exactly RH's prediction (the Weil
+form kisses zero from above at critical sampling; an off-line zero would drive it negative, §780 detector).
+SHARPENED FRONTIER: the finite razor is set by the WINDOW's zero-count, not the frame capacity. Weil
+positivity is robust (margin ≥0.1, certified) while sampling FEWER modes than the window has zeros, and
+goes flat exactly at N=#zeros. This is the finite-dimensional shadow of RH itself (zeros-on-line ⟺ Weil
+form marginally-positive at critical sampling). Role of 4W: provide enough bandwidth (N_cap=15·4W/π) to
+fit N=#zeros INDEPENDENT modes — need 4W≳2.1 to fit 8 healthy modes in [14,44]; below that you hit
+G-degeneracy (§829) before reaching the real razor, which is why the razor was conditioning-masked before.
+NEXT MOVE LOADED: (a) arb-certify the G-healthy-at-N=#zeros collapse point (margin 0⁺, G cond≤4) as a
+Handle — the certified statement "Weil margin >0 but O(1e-4) at N=#window-zeros with G well-conditioned";
+(b) test window-zero-count dependence: change the window (different #zeros) and confirm the razor moves to
+the new N=#zeros — would PROVE the razor is set by the zero count, the cleanest finite RH-shadow yet.

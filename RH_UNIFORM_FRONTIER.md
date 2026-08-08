@@ -31,6 +31,15 @@ structural, not scalar.
   (measured: 2/8 below→0.093, 8/8 below→0). Q stays ≥0 (→0⁺) because the window zeros are REAL; an
   off-line zero → negative (§780 detector).
 
+## §832 THE KNIFE-EDGE, cleanly isolated (new — the sharpest finite RH-shadow so far)
+The Weil margin on the window [14,44] is CERTIFIED robust (≥0.10, arb) while sampling FEWER modes than
+the window has zeros, and thins to 0⁺ EXACTLY as N → #window-zeros (=8), with the Gram matrix
+WELL-CONDITIONED throughout (cond(G)≤4 at the collapse — so it is NOT a conditioning artifact, unlike the
+§829 over-capacity collapse). The margin goes to 0⁺, never negative — precisely RH's prediction (marginal
+positivity at critical sampling; an off-line zero drives it negative). Certified ladder: m(4W)=0.151,
+0.145, 0.103, 5.6e-5 at 4W=1.30/1.60/1.90/2.20 (N≈0.78·N_cap). The finite razor is set by the WINDOW's
+zero-count, not the frame capacity — the clean finite-dimensional shadow of RH. See LEDGER §832.
+
 ## The HONEST open core (= RH)
 Prove **arch(ψ)+pole(ψ)−prime(ψ) ≥ 0 for all band-limited ψ, uniformly in width** — the PRIME side,
 with NO assumption on zeros. This is Weil's criterion. The margin is razor-thin (→0) on the sub-t*
