@@ -17044,3 +17044,28 @@ WHERE THIS PUTS THE PROGRAM: the RH-hard object is now concrete and geometric �
 zone); (b) track cos(v_p,v_a) up a height ladder — does the orthogonality persist (RH-consistent) or
 degrade? a certified uniform lower bound on the misalignment (cos bounded away from 1) would be a genuine
 structural step toward the hard side.
+
+## §836 (orthogonality-persistence ladder — REFINES §835: not constant orthogonality but a floor-vs-alignment BALANCE; margin grows with height, RH-consistent) — operators/cert_misalign_ladder.py
+Tested whether the §835 v_p⟂v_a orthogonality persists as window height grows (length 30, 4W=2.8 fixed).
+At the razor (floor−pnorm first <0) per height:
+  [14,44] h29 8z razorN8:  floor 0.127 pnorm 0.209 margin 3.3e-6 cos 0.0002 (89.99°)
+  [30,60] h45 10z razorN11: floor 0.248 pnorm 0.293 margin 5.2e-5 cos 0.0136 (89.22°)
+  [50,80] h65 11z razorN13: floor 0.329 pnorm 0.349 margin 5.4e-3 cos 0.0776 (85.55°)
+  [68,98] h83 12z: NO razor reached within capacity 13.4 (margin stayed positive through N=13)
+TWO TRENDS IN TENSION: (1) orthogonality DEGRADES slowly with height — cos climbs 0.0002→0.0136→0.0776,
+angle 90°→85.5°; (2) the arch floor GROWS faster (~ln t: 0.127→0.248→0.329), so the margin at the razor
+GROWS (3.3e-6→5.4e-3) and the highest window has NO collapse within capacity. NET: Weil positivity is MORE
+robust at higher windows; margin 0⁺, never negative, everywhere → RH-consistent.
+REFINES §835: the clean "RH ⟺ v_p⟂v_a orthogonality holds uniformly" is too strong — the orthogonality is
+NOT constant, it degrades with height. The correct uniform statement is a BALANCE: margin ≥ 0 ⟺ the arch
+floor's ln t growth OUTPACES the alignment growth (cos↑). RH ⟺ that balance holds uniformly. The
+protective structure is real but dynamic (floor growth vs misalignment decay), not a fixed orthogonality.
+CAVEAT (honest): the cos-climb is CONFOUNDED — razorN approaches G-capacity (13.4) at higher windows
+(8→11→13), where eigenvectors tangle; part of the cos rise may be capacity-proximity, not pure height. A
+clean version measures cos at a FIXED N/capacity fraction across heights (deferred; would separate the
+two). What's robust regardless: margin grows with height, stays 0⁺, positivity more robust higher up.
+LANDING STATE of the §832–836 thread: the finite Weil razor is fully characterized — prime-top crossing
+the arch floor (§834), positivity past it carried by prime⊥arch eigenvector geometry (§835), and that
+geometry governed by a floor-growth-vs-alignment-decay balance that currently FAVORS positivity as height
+grows (§836). The RH-hard object is concrete and geometric. NEXT: the fixed-capacity-fraction cos ladder
+(de-confound §836), and arb-certify the sufficient side (pnorm<floor ⟹ margin>0).
