@@ -16832,3 +16832,29 @@ rational over-approx √(s₀(1−s₀))=0.01594874 ≤ 15949/1000000=0.015949 �
 cert_concentration.out) explicitly NOT used — banked route is the k=6 Ky-Fan trace bound
 (trA_even=6.31020 exact, Σ₆=5.7086 ⟹ λ₇≤0.60696). Track 2 (CCM bridge, CCM_BRIDGE.md) running in
 parallel.
+
+## §828 (CCM BRIDGE TRACK — dictionary μ_λ↔Q_floor built + probe run, but main-session verification CAUGHT 2 over-reaches in the probe) — CCM_BRIDGE.md, CCM_PROBE.py
+Track 2 of the parallel pass. Agent fetched CCM 2511.22755 (Connes-Consani-Moscovici, "Zeta Spectral
+Triples", Nov 2025), extracted their operator (rank-one perturbation of the log-scaling operator on
+L²([λ⁻¹,λ],du/u), basis V_n = periodic exponentials in log-scale), Lemma 7.2 (prolate h_{n,λ}→Hermite
+h_n, L∞ error ≤ cλ⁻², specifically the n=0,4 combination with vanishing integral), and Corollary 3.8
+(μ_λ=λ_min of their Weil form → 0 ⟺ RH). Built the dictionary and ran CCM_PROBE.py.
+MAIN-SESSION VERIFICATION (re-ran probe, re-read doc, §11 appended additively — did NOT edit agent's §1-10):
+  ✓ Probe reproduces exactly (Q_floor 6.94e-1→1.76e-11, N=6→16); numbers real; labeling honest.
+  ✗ CAUGHT (1): the tiny Q_floor values are the OVER-CAPACITY GRAM-CONDITIONING CONFOUND (same one that
+    killed §826), not a clean decay rate — the 0.69→3.3e-6 two-mode cliff is frame-saturation, not
+    exponential convergence. Agent's "exponential decay rate α" (obs 4) withdrawn.
+  ✗ CAUGHT (2): Q_floor is IDENTICAL across W=1.0/1.2/1.4 while zeros-below-t* varies 8→4→0/29 — so this
+    probe does NOT demonstrate the Beurling mechanism (obs 3 contradicted by obs 2); it shows mode-count/
+    conditioning dependence only. The Beurling reading is imported from §821, not shown by this run. A
+    capacity-matched conditioning-controlled probe (fixed N below frame capacity, sweep W so t* crosses
+    the window zeros) is the §826 fix that WOULD show it.
+  — NOT CONFIRMED: did not re-fetch the CCM paper myself, so Lemma 7.2/Cor 3.8 numbering stays REPORT-tier
+    (agent-sourced). Positive signal: the "h_0,h_4 vanishing-integral" detail is a real Connes-Moscovici
+    prolate signature, unlikely to be hallucinated — raises but doesn't settle confidence.
+NET SURVIVING BRIDGE [REPORT, defensible]: CCM's μ_λ and our Q_floor are the SAME object (least eigenvalue
+of the Weil form on a prolate-like basis), both →0, both bottoming out at the identical obstacle (a
+width-uniform positivity bound = RH). Our apparatus CAN compute this object live [HANDLE]. Not yet done: a
+clean capacity-matched rate, and a main-session re-fetch confirming their Lemma 7.2. Those are next rungs.
+DISCIPLINE: this is exactly the CLAUDE.md multi-session warning in action — agent over-read its own probe
+(rate + Beurling), independent re-verification caught it before it banked as Handle. Kept in-ledger.
