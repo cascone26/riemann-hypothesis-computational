@@ -16801,3 +16801,14 @@ territory §806) — which is exactly the open core (§825: = RH, no known bound
 now solidly brackets the difficulty: everything EXCEPT the dense boundary shell is rigorously positive.
 Durable output of the full-auto run: §816-CERT + §823 + §824-A/B/C, on top of the §808 anchor theorem.
 No Handle for RH.
+
+## §826 (instrument-horizon test — INCONCLUSIVE, over-capacity confound; killed) — operators/cert_dense_horizon.py
+Attempted to certify Q on the DENSE capacity span at 4W=1.9 (razor-thin margin) at escalating prec.
+prec=300, npr=11: returned "not PD" — BUT the Q entry radii were 2.2e-6 ≪ the ~8e-4 float margin, so
+this is NOT the radii swallowing the margin; it's the OVER-CAPACITY G (11 probes ≫ capacity ~9) making
+the pencil ill-conditioned/non-PD — the same over-capacity confound seen all session, NOT a clean
+instrument-horizon result. Escalating prec won't fix a conditioning problem, so KILLED. INCONCLUSIVE:
+a clean dense-boundary-shell horizon test needs a capacity-MATCHED (not over) dense span + the
+concentration-eigenspace pencil (§812 machinery), deferred. The §806 instrument-horizon claim (strict
+cert can't resolve the vanishing margin) stands as REPORT from §795/§810, not freshly certified here.
+No Handle for RH.
