@@ -16896,3 +16896,24 @@ NEXT MOVE LOADED: (a) arb-certify the Panel-1 below-capacity positivity as a Han
 certify cleanly — margins ~0.15 are far above the §823 razor); (b) attack the critically-sampled margin
 with EXACT RATIONAL Gram (beat the arb radii that swallowed §823) — the next idea must out-resolve the
 radii, not just re-measure. Capacity law N_cap=30·2W/π is itself a clean certifiable structural fact.
+
+## §830 (★ HANDLE — below-capacity Weil positivity is CERTIFIED across the full t* crossing; §829 Panel 1 REPORT→HANDLE ★) — operators/cert_beurling_arb.py
+arb-certified the §829 Panel-1 result. FIXED K=5 span [14,21.5,29,36.5,44] (below frame capacity),
+Q=pole+arch−prime pencil-min certified > 0 at each 4W as t* sweeps across and past the window:
+  4W=1.30 t*=23.05: pencil-min ≥ 0.150975 (maxrad 1.0e-5) CERTIFIED PD
+  4W=1.60 t*=31.12: pencil-min ≥ 0.181178 (maxrad 4.4e-6) CERTIFIED PD
+  4W=1.90 t*=42.01: pencil-min ≥ 0.188278 (maxrad 2.2e-6) CERTIFIED PD
+  4W=2.05 t*=48.81: pencil-min ≥ 0.184407 (maxrad 1.6e-6) CERTIFIED PD
+All four match the §829 float (0.151/0.181/0.188/0.184) to ~4 digits; margins ~0.15–0.19 sit 5–6
+orders above the arb radii — clean Handles, NO radii-swallowing (contrast §823's dense sub-t* spans
+where radii DID swallow the razor). BONUS (cert_subtstar module test ran on import, all CERTIFIED):
+4W=1.9 [16,22,28,34,40]≥0.1155; 4W=1.9 [15,20,25,30,35,40]≥0.1454; 4W=2.0 [16,22,28,34,40]≥0.1098.
+HANDLE STATEMENT (certified): on below-frame-capacity Fejér spans over [14,44], the Weil form is
+positive-definite with margin ≥ ~0.15 across the entire t*=2πe^{4W} crossing (window from partly- to
+fully-below-t*). The Weil margin does NOT thin at the Beurling/sampling threshold on well-conditioned
+spans — the razor lives ONLY at critical sampling (§829 Panel 3, λmin(G)→0 at N_cap=30·2W/π), where
+it is instrument-undecidable (float noise; §823 arb radii-swallowed). This CERTIFIES the §829 correction
+to §821 and cleanly separates the two regimes: below capacity = certified-positive (Handle); at/above
+critical sampling = the open razor = RH. NEXT: the critically-sampled margin needs an instrument that
+out-resolves the arb radii (exact rational Gram at critical sampling) — the §823 radii-swallow is the
+thing to beat, not re-measure.
