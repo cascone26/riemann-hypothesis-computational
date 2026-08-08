@@ -58,6 +58,13 @@ A multi-agent adversarial workflow re-verified the core and CORRECTED my recent 
 - CCM: Cor 3.8 is one-direction (μ_λ→0 ⟹ RH, not ⟺); Lemma 7.2 is Slepian–Pollak; floor∝Ω(t) is height-dependent.
 See LEDGER §838.
 
+**§839 CLOSES the orthogonality thread (§835–837 = wrong emphasis, a detour).** Move 1 (fixed large N, sweep
+height): the cos→0.997 resonances PERSIST at fixed large N, and at those resonances (v_p≈v_a, aligned) the
+margin is still comfortably POSITIVE (0.286) because floor 0.55 ≫ pnorm 0.264. ⟹ positivity is governed by the
+eigenVALUE gap (floor vs pnorm), NOT eigenVECTOR orthogonality. The correct object is §834+§816: floor(t) ≈
+0.155·ln(t/2π) (grows), prime pnorm bounded ⟹ margin grows with height, RH-consistent. The real target is the
+arch-floor-vs-prime eigenvalue race (§816/§817), which the §835–837 detour obscured. See LEDGER §839.
+
 ## The HONEST open core (= RH)
 Prove **arch(ψ)+pole(ψ)−prime(ψ) ≥ 0 for all band-limited ψ, uniformly in width** — the PRIME side,
 with NO assumption on zeros. This is Weil's criterion. The margin is razor-thin (→0) on the sub-t*
