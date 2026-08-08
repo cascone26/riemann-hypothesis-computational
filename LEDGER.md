@@ -17167,3 +17167,22 @@ pnorm ≤ B uniformly ⟹ floor−pnorm > 0 for t above a threshold — but this
 side; the hard side (margin ≥0 AT/past the crossing, small windows) remains RH. And the growth is only ~ln t
 vs prime pnorm that ALSO grows slowly with 4W — the race is real (this is exactly §816's "fixed budget vs
 growing obstruction", now with the floor's ln t growth quantified).
+
+## §840 (VERIFICATION before next workflow — CONFIRMS the arch-floor-vs-prime race premises; the RH-hard corner is LOW-HEIGHT + HIGH-SUPPORT, sharp) — operators/verify_race_premises.py
+Verified the §839-corrected object before building the next workflow on it. Grid: length 30, N=0.75·N_cap,
+heights {29,115,415} × 4W {2,3,4}. Float.
+P1 CONFIRMED — floor(t) ≈ c·ln(t/2π), c→~0.158: floor/Ω ratio depends ONLY on height (4W-independent, floor
+is the pure arch operator §816): 0.082 (h29) → 0.151 (h115) → 0.158 (h415), plateauing. floor itself:
+0.125 (h29), 0.440 (h115), 0.661 (h415) — same across 4W=2/3/4.
+P2 CONFIRMED + SHARPENED — margin ≥0 EVERYWHERE (worst +1.2e-9, RH-consistent), and the WORST CORNER is
+LOW-HEIGHT + HIGH-4W: at [14,44] (floor stuck ~0.125) the margin CRASHES 0.103 → 3.3e-7 → 1.2e-9 as 4W=2→3→4,
+because pnorm GROWS with 4W (0.113→0.269→0.293 at h29) toward the fixed low floor. At higher windows the bigger
+floor (0.44, 0.66) absorbs the growing prime side → margins stay 0.3–0.5. So:
+  THE RH-HARD CORNER (now sharp, verified): does the margin stay ≥0 at FIXED LOW HEIGHT as support 4W→∞?
+  floor≈0.125 fixed, pnorm(4W) growing. At 4W=4 margin=1.2e-9 (float floor — needs arb to resolve sign).
+This is the §832 thinning EXPLAINED: it's the low-height corner where the arch floor is smallest. The escape at
+higher height (floor grows ~ln t) is the §839 finding. NET picture (correct object): Weil positivity = arch
+floor (grows ~0.158·ln(t/2π) with height, fixed in 4W) vs prime pnorm (grows with 4W-support, ~bounded in
+height). Positivity safe when floor ≥ pnorm; the razor is the low-height/high-support corner. RH ⟺ the margin
+stays ≥0 there for all 4W. NEXT WORKFLOW targets exactly this corner (pnorm(4W) growth law, does it stay below
+the low floor; the height(4W) safe-boundary; arb-cert the corner sign; literature on this corner as the crux).
