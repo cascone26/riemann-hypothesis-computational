@@ -17135,3 +17135,35 @@ stability test across [14,44]→[300,400] to resolve the PATH A/B resonance-vs-s
 even at fixed large N, the orthogonality reduction fails and we know it. (Move 2) fit floor(t)=c₀·Ω(t)+c₁/log t
 across ≥10 heights × 2 widths and cross-check the explicit formula — a rigorous floor↔zero-density link.
 Artifacts: PATH_A_FINAL_REPORT.md, PATH_F_REPORT.md, operators/path_d_*.py (blow-up artifact — flagged, keep for record).
+
+## §839 (★ DECISIVE CORRECTION — Move 1 CLOSES the §835-837 orthogonality thread: positivity is governed by the eigenVALUE gap (arch floor grows ~ln t vs bounded prime), NOT eigenVECTOR orthogonality ★) — operators/cert_move1_fixedlargeN.py
+Workflow Move 1: tested whether the cos(v_p,v_a) resonances (§838 PATH A) are a low-N artifact (synthesis
+hypothesis: fixed large N is stable). Fixed length 48, 4W=3.0 (N_cap≈23), fixed N∈{12,16,20}, swept window
+height far (bottoms 14→400; cos needs no zeros — v_p,v_a are zero-independent, §838).
+RESULT — hypothesis REFUTED, resonances PERSIST at fixed large N:
+  N=12: cos hits 0.99731 (angle 4.2°, near-ALIGNED) at height 224 — yet margin = +0.286 (healthy POSITIVE).
+  N=16: cos hits 0.93224 (angle 21°) at height 224, 0.240 at height 424.
+  N=20: mostly cos<0.065 but still varies 80×.
+THE DECISIVE TELL: at the height-224 resonance (v_p≈v_a, cos 0.997) the margin is COMFORTABLY POSITIVE
+(0.286) because floor 0.551 ≫ pnorm 0.264 (floor−pnorm=+0.29). ⟹ the eigenVALUE gap keeps the margin
+positive REGARDLESS of eigenVECTOR alignment. The orthogonality (§835-837) is NOT the protective mechanism.
+CLOSES/CORRECTS §835-837: the eigenvector-orthogonality framing was real measurement but WRONG EMPHASIS — a
+detour. Positivity is governed by §834 (eigenVALUE crossing) + §816 (arch floor grows ~ln t while prime
+pnorm bounded). At every height tested margin stays 0⁺ and GROWS with height (floor grows, pnorm bounded).
+BONUS — the floor-growth law emerges from the Move 1 data itself (this is the RIGHT object, ~ Move 2):
+  height:   38     74     124    224    424
+  floor:    0.126  0.330  0.440  0.551  0.661
+  Ω~ln(t/2π):1.79  2.46   2.98   3.57   4.21
+  floor/Ω:  0.070  0.134  0.148  0.154  0.157   → RISES then PLATEAUS ~0.155
+  pnorm:    ~0.26–0.36 (BOUNDED across all heights)
+⟹ floor(t) ≈ 0.155·ln(t/2π) asymptotically, pnorm bounded ⟹ floor−pnorm → ∞ ⟹ margin → ∞ as t→∞.
+Strongly RH-consistent, and it is the CORRECT explicit-formula object (arch density/zero density vs prime
+sum), i.e. the §816/§817 frontier — NOT the eigenvector geometry I detoured into.
+HONEST NET of the §827-839 run: durable = §808 anchor (certified), §830 (certified below-capacity), and a
+CLARIFIED (corrected) picture — the margin is protected by the eigenvalue gap floor(t)~0.155·ln(t/2π) vs
+bounded prime pnorm, growing with height. §835-837 orthogonality thread CLOSED as wrong-emphasis. No proof
+progress; real understanding-correction. NEXT (the right target): certify floor(t) ≥ c·ln(t/2π) − O(1) and
+pnorm ≤ B uniformly ⟹ floor−pnorm > 0 for t above a threshold — but this is the SUFFICIENT (below-crossing)
+side; the hard side (margin ≥0 AT/past the crossing, small windows) remains RH. And the growth is only ~ln t
+vs prime pnorm that ALSO grows slowly with 4W — the race is real (this is exactly §816's "fixed budget vs
+growing obstruction", now with the floor's ln t growth quantified).
