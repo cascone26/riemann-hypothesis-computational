@@ -340,3 +340,17 @@ basis — both conjectured/observed → 0, both bottoming out at the identical o
 positivity bound = RH). That dictionary is real and defensible [REPORT]. Our apparatus *can* compute
 this object live [HANDLE]. What it has NOT yet done: a clean, capacity-matched rate measurement, or a
 main-session-confirmed reading of their Lemma 7.2. Those are the concrete next rungs.
+
+---
+
+## §838 main-session re-fetch corrections (PATH C, verified — supersedes §1–10 where noted)
+
+A fresh WebFetch of arXiv 2511.22755 (still REPORT-tier — paper reading) corrected three claims above:
+1. **Corollary 3.8 is ONE-DIRECTIONAL**, not an equivalence: it proves **μ_λ → 0 ⟹ RH**, NOT μ_λ→0 ⟺ RH.
+   (§3, §6 above stated it as ⟺ — corrected.)
+2. **Lemma 7.2 (prolate→Hermite) is CITED from Slepian–Pollak**, not proven inside CCM. It is a known prolate-
+   spheroidal fact they invoke, not their contribution.
+3. **CCM Section 6 shows individual-eigenvalue convergence**, not the evolution of μ_λ itself as λ→∞. The
+   μ_λ→0 question remains their open conjecture; the numerical μ_λ evolution is OUR apparatus's contribution.
+Net: the μ_λ ↔ Q_floor dictionary stands, but "μ_λ→0 ⟺ RH" must be written as the one-directional implication,
+and the prolate→Hermite lemma is external (Slepian–Pollak), not a CCM result to bridge to as if it were theirs.

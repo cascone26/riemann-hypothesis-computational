@@ -17091,3 +17091,47 @@ positivity is uniformly maintained and gets more robust higher up. This is the c
 statement of the run: RH-consistent uniform positivity carried by a height-stable orthogonal joint
 arch⊕prime geometry. The hard side remains: certify the orthogonality (cos bounded from 1) UNIFORMLY —
 now a well-posed target (height-stable, not degrading), the concrete form of the intersection/signature route.
+
+## §838 (6-PATH VERIFIED WORKFLOW — re-verifies the core but CORRECTS my §835 causal over-reach + reveals orthogonality is NOT uniform; honest tempering, not an advance) — workflow wf_8b79b88b, 13 agents (6 attack→6 adversarial verify→synthesis)
+Jacob greenlit a full multi-path attack. 6 independent paths, each adversarially verified. Net: the CORE
+structural facts hold, but the workflow CAUGHT real over-reaches in my recent §835–837 framing. Honest.
+WHAT SURVIVED VERIFICATION (kept):
+- PATH E (CONFIRMED, HANDLE): the v_p⊥v_a orthogonality is REAL and reproducible (re-ran cert_misalignment.py
+  + cert_misalign_fixedN.py live); height-stable AT FIXED N (cos~0.005–0.015, no trend). It DOES help protect
+  the margin at critical sampling. Single sharpest result. Novelty = a diagnostic LENS, NOT new spectral theory
+  (PATH E lit-gate: zero prior papers use this v_p/v_a angle diagnostic, but it re-expresses canonical machinery).
+- Margin stayed ≥0 (0⁺) at ALL 30 real-zero heights tested (mpmath.zetazero to ~270) — RH-consistent.
+- PATH F (HANDLE, one window): §834 crossing re-confirmed; empirical formula N*=(floor−b)/a predicts collapse
+  (N*=7.46 vs measured 8) at [14,44]/4W=2.2.
+CORRECTIONS THE WORKFLOW FORCED (temper my own recent claims — this is the real value):
+1. ★ §835 CAUSAL FRAMING WITHDRAWN. PATH D found the eigenvector angle is CONSTANT (87.46°) regardless of an
+   off-line zero shift δ. REASON (now obvious): v_p and v_a are eigenvectors of the PRIME and ARCH operators,
+   which DO NOT reference the zeros at all — so the angle is zero-INDEPENDENT. My §835 statement "an off-line
+   zero rotates v_p into v_a → margin<0" is CONCEPTUALLY WRONG. The orthogonality is a FIXED structural property
+   of the arch/prime forms; zeros do NOT act on it. What the zeros control is the Weil-form VALUE (margin) via the
+   explicit formula, not the eigenvector geometry. Also PATH D's off-line "falsification" is INVALID: the huge
+   negative margins (~1e25) are Fejér-kernel blow-up artifacts at complex evaluation points, not RH structure.
+2. ★ ORTHOGONALITY IS NOT UNIFORM. PATH A (30 real zeros) found RESONANCES where cos(v_p,v_a)→0.9999 (near-
+   ALIGNMENT) at specific (height,N) pairs (γ∈{32.9,69.5,88.8,124.3,141.1,187.2,237.8}, low N=5,6,7). So §835/§837
+   "orthogonality persists" is only BEST-CASE / fixed-N; at resonant N the eigenvectors nearly align. Margin stays
+   ≥0 there ANYWAY — which means at the resonances the positivity is NOT from orthogonality (they're aligned!),
+   so orthogonality is NOT the sole/uniform protector. (Float-precision confound is severe: ±0.05 height swings cos
+   by ~0.95 at resonant N — some resonance sharpness may be numerical.)
+3. §837 "height-stable" TENSION: fixed-N stable (PATH E ✓) vs adaptive-N shows huge variation (PATH B, 60.8× across
+   heights). Unresolved discrepancy — the stability is sampling-strategy-dependent, not unconditional.
+4. CCM (PATH C, re-fetched arXiv 2511.22755): 3 corrections to §828/CCM_BRIDGE.md — Corollary 3.8 is ONE-DIRECTION
+   (μ_λ→0 ⟹ RH, NOT ⟺); Lemma 7.2 is cited from Slepian–Pollak (external), not proven in CCM; their Section 6 is
+   individual-eigenvalue convergence, not μ_λ evolution. All REPORT-tier (paper reading).
+5. PATH F: floor∝Ω(t) is HEIGHT-DEPENDENT (ratio 0.081–0.154), NOT the universal constant claimed; the crossing
+   formula is an empirical FIT, not a derivation.
+HONEST NET: no proof progress; the workflow's value was ANTI-FABRICATION — it verified the v_p⊥v_a fact is real
+but killed my causal RH-framing of it (§835: eigenvectors are zero-independent) and showed the orthogonality is
+non-uniform (resonances). The corrected understanding is MORE accurate: the arch/prime eigenvector geometry is a
+FIXED (zero-independent) structural feature that helps but does not uniformly explain Q≥0; RH is whether that fixed
+geometry + the eigenVALUE crossing (§834) keep Q≥0 as the space grows. §834 (eigenVALUE crossing) is the more
+robust description than §835 (eigenVECTOR orthogonality).
+VERIFIED NEXT MOVES (from the workflow, both concrete): (Move 1) fixed-LARGE-N (16/32/64, out of resonance) height-
+stability test across [14,44]→[300,400] to resolve the PATH A/B resonance-vs-stability discrepancy — if unstable
+even at fixed large N, the orthogonality reduction fails and we know it. (Move 2) fit floor(t)=c₀·Ω(t)+c₁/log t
+across ≥10 heights × 2 widths and cross-check the explicit formula — a rigorous floor↔zero-density link.
+Artifacts: PATH_A_FINAL_REPORT.md, PATH_F_REPORT.md, operators/path_d_*.py (blow-up artifact — flagged, keep for record).

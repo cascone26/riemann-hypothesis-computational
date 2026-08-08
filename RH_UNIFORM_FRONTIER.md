@@ -44,6 +44,20 @@ height-dependent archimedean floor Ω(t)~ln(t/2π) — which IS the zero density
 formula), so the two aren't separable. Correct statement: the finite razor is governed by the arch-floor/
 zero-density (one object), Weil-side (G-healthy), margin→0⁺ never negative. See LEDGER §833.
 
+## §838 CORRECTIONS (6-path verified workflow — tempers §835/§837, keeps §834)
+A multi-agent adversarial workflow re-verified the core and CORRECTED my recent framing:
+- **§835 causal framing WITHDRAWN.** v_p and v_a are eigenvectors of the PRIME and ARCH operators, which do
+  NOT reference the zeros — so their angle is zero-INDEPENDENT (PATH D: angle constant 87.46° regardless of an
+  off-line shift). "An off-line zero rotates v_p into v_a" is WRONG. The orthogonality is a FIXED structural
+  feature; zeros control the Weil VALUE (margin) via the explicit formula, not the eigenvector geometry.
+- **Orthogonality is NOT uniform.** PATH A (30 real zeros) found RESONANCES where cos(v_p,v_a)→0.9999 at
+  specific (height,N) pairs. Margin stays ≥0 there anyway — so at the resonances positivity is NOT from
+  orthogonality. §835/§837 "orthogonality persists" is best-case/fixed-N only. (Severe float confound at resonances.)
+- **KEPT:** v_p⊥v_a is real (re-verified) and helps protect the margin; §834 (eigenVALUE crossing pnorm↑ vs
+  floor) is the MORE ROBUST description than §835 (eigenVECTOR orthogonality). Margin ≥0 at all 30 tested heights.
+- CCM: Cor 3.8 is one-direction (μ_λ→0 ⟹ RH, not ⟺); Lemma 7.2 is Slepian–Pollak; floor∝Ω(t) is height-dependent.
+See LEDGER §838.
+
 ## The HONEST open core (= RH)
 Prove **arch(ψ)+pole(ψ)−prime(ψ) ≥ 0 for all band-limited ψ, uniformly in width** — the PRIME side,
 with NO assumption on zeros. This is Weil's criterion. The margin is razor-thin (→0) on the sub-t*
