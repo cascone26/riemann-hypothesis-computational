@@ -9973,3 +9973,71 @@ archimedean budget for all W — that bound is what the missing arithmetic-surfa
 provenance) — they show the methodology (propose→test→refute→correct) and prevent a future session from
 re-proposing the same refuted scalar laws. The whipsaws were the noise floor (±0.001) being read as
 signal; the fix each time was respecting it and isolating the confound-free measurement.
+
+---
+
+# Arc §808→837 (Riemann8, continued) — from certified anchor to the geometric RH-core
+
+**Where this arc started.** §817 closed the scalar-hunting phase ("Weil positivity is irreducibly
+multi-dimensional; the next real work is structure, not float scans"). Parallel to that, the barrier/
+anchor thread delivered §808: a CERTIFIED + Lean-kernel-verified ∀-positivity theorem for the Weil form
+on a described infinite band-limited class at the open rung (constants m_E≥0.0918, λ₇≤0.607, sup|Ω|≤2.018,
+τ_E≤0.086, ε₀=1e-4; closing inequality proved in Lean with trusted axioms only). That is the solid Handle
+this arc builds ON.
+
+**Decision fork (Jacob): parallel tracks.** After a review, Jacob greenlit two tracks in parallel:
+(1) WRITE UP §808 as a real artifact; (2) the CCM bridge. §827 produced ANCHOR_PAPER.md (paper-shaped,
+Charisma Report/Handle labeled, honest prior-work + open-core sections; closing inequality independently
+re-checked, RHS=2.03e-2>0). §828 built the CCM 2511.22755 dictionary (their μ_λ = our Q_floor, SAME
+object) — BUT the subagent over-read its own probe (claimed "exponential convergence rate" + a Beurling
+demonstration). Main-session re-verification CAUGHT both: the collapse was the over-capacity conditioning
+confound, and the probe (run at 4W=4.0, t*=343 far above the window) never crossed t* so couldn't show
+Beurling. This catch SET UP the rest of the arc.
+
+**The pivot that opened the productive vein.** The §828 catch forced the question: what does the margin
+collapse ACTUALLY track — sampling (Beurling t*) or conditioning (Gram degeneracy)? §829 built the clean
+capacity-matched probe (fixed mode count below frame capacity, sweep 4W so t*=2πe^{4W} crosses the window;
+report λmin(G)/cond(G) every row). RESULT: with G well-conditioned, the pure t* crossing does NOT collapse
+the margin (stays 0.15-0.19); the collapse is the CONDITIONING knee at N_cap=30·2W/π (§829 Panel 3). This
+CORRECTED our own banked §821 ("margin-tracks-t*" was conditioning-conflated). §830 arb-CERTIFIED the
+below-capacity positivity across the full crossing (margins 0.15-0.19, radii ~1e-6) — a new Handle.
+
+**§831 double pivot.** A precision-frontier probe showed arb prec is the WRONG knob (radius is
+integration-limited, flat across prec 100-400). Deeper reframe: over-capacity collapse = basis redundancy
+(G singular) = representation artifact, NOT RH content. The RH-relevant question is whether the certified
+BELOW-capacity positivity SURVIVES as the true function space grows — the B16/§799/§811 knife-edge. Pivoted
+there.
+
+**The knife-edge investigation (§832-837) — the arc's real yield.** §832: capacity-matched ladder
+(N≈0.78·N_cap, 4W=1.3→2.2), certified margins 0.151/0.145/0.103/5.6e-5 — the margin THINS as the space
+grows, ~1800× drop at 4W=2.2. Float verification proved it REAL (G-healthy, cond≤4 at collapse — not
+conditioning), collapse onset at N=8=#zeros in [14,44]. §833 (self-correction): the decisive zero-count
+test (hold length/4W/primes fixed, vary window HEIGHT) TEMPERED the clean "N=#zeros" law — [14,44] onset=8
+exact, [40,70] rough, [68,98] no collapse. The real driver is the height-dependent arch floor Ω~ln(t/2π),
+which IS the zero density (same ln t by the explicit formula — not separable). §834 (the quantitative
+razor): decomposed margin into floor=λmin(arch+pole,G) [constant ~0.125] and pnorm=λmax(prime,G) [rises
+with N]; collapse ⟺ pnorm crosses floor. BUT the crude scalar bound margin≈floor−pnorm is FALSE — margin
+stays +0.00015 when floor−pnorm=−0.058, so positivity past the crossing is NON-scalar. §835 (geometric
+core): measured the angle between the prime-top eigenvector and arch-bottom eigenvector — ~90° (cos~0.005),
+nearly ORTHOGONAL; the "protection" (margin beating floor−pnorm) exactly cancels the negative scalar bound.
+RH RESTATED: RH ⟺ prime-top ⊥ arch-bottom eigenvectors stay misaligned; an off-line zero = v_p rotating
+into v_a → margin<0. §836 (height ladder, flagged a confound): at the razor per height, cos APPEARED to
+climb (0.0002→0.078) — but I flagged this as confounded (razorN drifting toward capacity). §837
+(de-confound): at FIXED N (fixed capacity-fraction) cos is FLAT across heights (~0.002-0.01, angle ~90°) —
+so §836's climb WAS the confound, and §835's orthogonality PERSISTS with height (vindicated).
+
+**Where this arc lands.** The RH-hard object is now CONCRETE and GEOMETRIC, not vague: the joint
+eigenvector geometry (orthogonality) of the archimedean and prime quadratic forms on band-limited spans.
+It is height-STABLE (cos ~90° uniformly at fixed capacity-fraction, §837), the arch floor grows ~ln t
+(§833/§836), and the margin stays 0⁺ never negative throughout — RH-consistent, more robust at higher
+windows. The uniform-certification target is now well-posed: certify cos(v_p,v_a) bounded away from 1
+UNIFORMLY (the concrete form of the intersection-form/signature route). This is the SAME frontier §817
+pointed at ("the arithmetic-surface object"), now measured and geometrized rather than only named.
+
+**Methodology this arc (kept for provenance):** propose→test→temper/refine/de-confound, self-corrections
+loud and in-ledger — §833 tempers §832, §836 refines §835, §837 resolves §836's own flagged caveat and
+vindicates §835. And the subagent-over-reach catch (§828) is the reason the whole clean-probe chain exists:
+independent re-verification of a delegated claim OPENED the productive vein rather than just closing a hole.
+Proof pointers: LEDGER §827-837; operators/cert_beurling_clean.py, cert_beurling_arb.py, cert_knife_ladder.py,
+cert_knife_float.py, cert_floor_vs_prime.py, cert_misalignment.py, cert_misalign_ladder.py,
+cert_misalign_fixedN.py; ANCHOR_PAPER.md; CCM_BRIDGE.md; RH_UNIFORM_FRONTIER.md.
