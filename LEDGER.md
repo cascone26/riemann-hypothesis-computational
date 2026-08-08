@@ -16812,3 +16812,23 @@ a clean dense-boundary-shell horizon test needs a capacity-MATCHED (not over) de
 concentration-eigenspace pencil (§812 machinery), deferred. The §806 instrument-horizon claim (strict
 cert can't resolve the vanishing margin) stands as REPORT from §795/§810, not freshly certified here.
 No Handle for RH.
+
+## §827 (WRITEUP TRACK — the anchor ∀-theorem banked as a paper-shaped artifact: ANCHOR_PAPER.md; closing inequality independently re-checked) — ANCHOR_PAPER.md
+Track 1 of the parallel "writeup + CCM bridge" pass Jacob green-lit. The §808 certified+Lean anchor
+theorem now exists as a clean, publishable-shaped document (ANCHOR_PAPER.md) instead of living only
+in the ledger — abstract, setup, statement, the 5-constant assembly, the two verified layers
+(arb + Lean kernel), an HONEST prior-work section (Weil/Bombieri/Li/de Branges/CCM 2025), the honest
+open core (= RH, prime-form-vs-arch-floor, §825), and what extends it. Charisma-labeled throughout:
+each numerical constant + the closing scalar inequality are [HANDLE] (arb-certified / Lean-kernel);
+the operator-assembly chain linking them is stated as [REPORT] (on-paper standard functional
+analysis, not yet Lean-formalized) — explicitly, not papered over. Novelty stated carefully as "not
+aware of a prior machine-verified positivity result for the Weil form on a described infinite class."
+FRESH PROOF POINTER (independent re-check, not the banking script): with m_E≥0.09176, B_pf≤2.223,
+C_f≤1.582, λ₇≤0.60696 ⟹ ff=2.54427, s₀=2.54427e-4 (= Lean 5/19652 exactly), the worst-case Weil
+lower bound RHS = m_E(1−s₀) − 2·B_pf·√(s₀(1−s₀)) − C_f·s₀ − ε₀ = 2.0326e-2 > 0 ✓, and the Lean
+rational over-approx √(s₀(1−s₀))=0.01594874 ≤ 15949/1000000=0.015949 ✓. Both Lean handles
+(anchor_eps0_positive, zerofree_rung_certM_posSemidef) re-confirmed PASS with only trusted axioms
+{propext, Classical.choice, Quot.sound}. Superseded 17-probe/k=9/λ₁₀ route (nan compression trace in
+cert_concentration.out) explicitly NOT used — banked route is the k=6 Ky-Fan trace bound
+(trA_even=6.31020 exact, Σ₆=5.7086 ⟹ λ₇≤0.60696). Track 2 (CCM bridge, CCM_BRIDGE.md) running in
+parallel.
