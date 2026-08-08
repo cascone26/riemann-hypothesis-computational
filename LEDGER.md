@@ -17186,3 +17186,15 @@ floor (grows ~0.158·ln(t/2π) with height, fixed in 4W) vs prime pnorm (grows w
 height). Positivity safe when floor ≥ pnorm; the razor is the low-height/high-support corner. RH ⟺ the margin
 stays ≥0 there for all 4W. NEXT WORKFLOW targets exactly this corner (pnorm(4W) growth law, does it stay below
 the low floor; the height(4W) safe-boundary; arb-cert the corner sign; literature on this corner as the crux).
+
+## §841 (corner margin is REAL-positive, not float noise — resolution-stable; float IS trustworthy at the corner) — operators/corner_margin_resolution.py
+Checked whether the corner margin (§840: 1.2e-9 at [14,44]/4W=4/N=14) is a real tiny +margin or float noise.
+Recomputed at dr=0.004/0.002/0.001: margin = +1.149859e-9, +1.149860e-9, +1.149859e-9 — STABLE to 6 sig figs
+(floor 0.12635, pnorm 0.29309 both dr-invariant). ⟹ NOT integration noise; a real, well-conditioned
+generalized eigenvalue (~7 orders above float64 epsilon relative to the O(0.3) matrix scale). 
+IMPLICATION (methodological): float IS trustworthy at the corner despite the tiny margin — the eigenvalue is
+well-conditioned, so we can track the corner's approach to 0⁺ in FLOAT without needing arb (which would
+radii-swallow ~1e-9 anyway, integration-limited radius ~1e-6, §831). So the corner is FLOAT-CONFIRMED RH-safe
+through 4W=4 (margin real-positive → 0⁺), and the running corner-race workflow's float extrapolation (PATH A/D:
+does pnorm saturate below the 0.125 floor as 4W→∞?) is on trustworthy ground. HONEST distinction: float-trustworthy
+positive ≠ arb-CERTIFIED — no Handle at the corner (margin < arb radius floor), but strong float evidence margin>0.
