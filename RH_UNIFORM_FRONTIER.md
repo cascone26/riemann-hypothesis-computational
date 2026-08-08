@@ -38,10 +38,22 @@ corner directions; Beurling density (§821) explains WHY (undersampling) and WHE
 proof does not get to assume the zeros, so the illuminating zero-side split (§821) is NOT an
 unconditional reduction (§821-CAVEAT). The unconditional target is monolithic prime-side positivity.
 
-## §821 status, precisely (after self-caveat)
+## §821 status, precisely (after self-caveat, then §829 refinement)
 CONFIRMED and durable: the margin-tracks-t* prediction (mechanistic understanding of the collapse).
 WITHDRAWN: the "unconditionally reduces RH to the finite corner" framing — the above-t* frame half is
 zero-side/conditional. Use §821 as understanding, not as a proof reduction.
+
+**§829 REFINEMENT (clean capacity-matched probe, cert_beurling_clean.py).** The "margin collapses to
+0 as the window's zeros fall below t*" numbers (§821: 2/8 below→0.093, 8/8→0) were CONDITIONING-
+CONFLATED — measured on dense/near-capacity spans where the t* sweep and the frame-capacity knee move
+together. With mode count held FIXED below capacity and G-conditioning reported every row, sweeping 4W
+so t* crosses the whole window does NOT collapse the margin: it stays robustly positive (0.15–0.19).
+The dramatic collapses coincide EXACTLY with λmin(G)→0 at the frame capacity N_cap=30·2W/π (critical
+sampling), independent of t*. So §821 is right about WHERE the razor lives (critical sampling) but the
+collapse-to-zero was the capacity degeneracy, not the pure t* crossing. Honest core, sharpened: below
+capacity margin is robustly positive across the crossing [float, solid]; at critical sampling the margin
+is instrument-undecidable (float=noise ~1e-11; arb radii swallowed it in §823) — resolving whether the
+critically-sampled margin stays ≥0 uniformly IS the hard core = RH.
 
 ## Connection to the field (§820, CCM 2511.22755)
 The leading spectral program's key basis = the PROLATE spheroidal functions = our concentration

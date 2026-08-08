@@ -16858,3 +16858,41 @@ width-uniform positivity bound = RH). Our apparatus CAN compute this object live
 clean capacity-matched rate, and a main-session re-fetch confirming their Lemma 7.2. Those are next rungs.
 DISCIPLINE: this is exactly the CLAUDE.md multi-session warning in action — agent over-read its own probe
 (rate + Beurling), independent re-verification caught it before it banked as Handle. Kept in-ledger.
+
+## §829 (★ THE CLEAN CAPACITY-MATCHED BEURLING PROBE — the §826 fix, delivered. Disambiguates sampling vs conditioning; CORRECTS the §821/§828-probe "margin collapses at t*" framing ★) — operators/cert_beurling_clean.py
+The conditioning-controlled experiment §826 couldn't do (over-capacity confound) and the §828 agent-probe
+got wrong (ran at 4W=4.0, t*=343 far above window). Three panels, G-conditioning (λmin(G), cond(G))
+reported every row so sampling and conditioning can't be conflated. Float = REPORT (measured).
+GEOMETRY FIXED: t*=2π·e^(4W) with the 4W-VALUE as exponent ⟹ t* sits IN window [14,44] only for
+4W≈1.4–2.0 (t*≈25→46), the §823 regime — NOT 4W=4.0.
+PANEL 1 (Beurling sweep, K=5 FIXED below capacity, G healthy throughout λmin(G)≈6.9–7.7 cond≈1.4–3.1):
+  4W 1.30→2.05, t* 23→49, zeros-below-t* 2/8→8/8 (window fully crosses below t*):
+  margin = 0.151, 0.165, 0.181, 0.191, 0.188, 0.184 — RISES then gently falls, PEAK ~4W=1.75.
+  ⟹ with modes fixed below frame capacity, the pure t*/sampling crossing does NOT collapse the Weil
+  margin; it stays robustly positive (~0.15–0.19) across the entire crossing.
+PANEL 2 (fixed 4W=1.60, N=3→6 within capacity, G healthy): margin 0.191,0.192,0.181,0.145 — ~stable,
+  mild decline as G loads (λmin(G) 9.9→5.3). Collapse is NOT from adding modes within capacity.
+PANEL 3 (fixed 4W=1.60, N=7→16 over capacity): margin 0.095→1.5e-3→1.3e-5→1.7e-7 tracking EXACTLY
+  λmin(G) 2.77→0.18→3.7e-5→2.4e-11, cond(G) 7.7→157→1e6→2.2e12. The knee is at N≈7–9 = the frame
+  capacity N_cap=30·2W/π≈7.6 for this window (W=0.4). ⟹ THIS collapse (and only this) is the
+  critical-sampling / Gram degeneracy — the §826 artifact, mechanism isolated and locked to λmin(G)→0.
+NET (honest, this is a CORRECTION to our own map):
+  1. POSITIVELY CONFIRMS §828-catch: the agent-probe's "1e-11 exponential convergence rate" = conditioning
+     artifact. Withdrawn stays withdrawn, now with the mechanism pinned (collapse ⟺ λmin(G)→0 at N_cap).
+  2. REFINES §821 (banked "margin-tracks-t*, CONFIRMED durable"): that tracking was
+     conditioning-CONFLATED (§821 measured on dense/near-capacity spans where the t* sweep and the
+     capacity knee move together). The pure crossing on controlled below-capacity spans does NOT collapse.
+     §821's mechanistic story is not wrong about WHERE the razor lives (critical sampling), but the
+     "collapses to 0 as zeros fall below t*" numbers (2/8→0.093, 8/8→0) were the capacity knee, not t*.
+  3. SHARPENS the real open core: the margin collapse and the Gram degeneracy COINCIDE at critical
+     sampling (Beurling density→1) — they are the SAME event. Float cannot distinguish "genuine
+     tiny-but-positive margin" from "numerical artifact" there (λmin~1e-11 = float noise); §823 already
+     showed arb radii SWALLOW the sub-t* razor (instrument-undecidable, Gödel §806). So the honest
+     frontier statement: below capacity the Weil margin is robustly positive across the t* crossing
+     [float, solid]; AT critical sampling the margin question is instrument-undecidable in both float
+     (noise) and current arb (radii-swallowed), and resolving whether the critically-sampled margin
+     stays ≥0 uniformly IS the hard core = RH.
+NEXT MOVE LOADED: (a) arb-certify the Panel-1 below-capacity positivity as a Handle curve (should
+certify cleanly — margins ~0.15 are far above the §823 razor); (b) attack the critically-sampled margin
+with EXACT RATIONAL Gram (beat the arb radii that swallowed §823) — the next idea must out-resolve the
+radii, not just re-measure. Capacity law N_cap=30·2W/π is itself a clean certifiable structural fact.
