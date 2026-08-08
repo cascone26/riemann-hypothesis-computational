@@ -37,8 +37,12 @@ the window has zeros, and thins to 0⁺ EXACTLY as N → #window-zeros (=8), wit
 WELL-CONDITIONED throughout (cond(G)≤4 at the collapse — so it is NOT a conditioning artifact, unlike the
 §829 over-capacity collapse). The margin goes to 0⁺, never negative — precisely RH's prediction (marginal
 positivity at critical sampling; an off-line zero drives it negative). Certified ladder: m(4W)=0.151,
-0.145, 0.103, 5.6e-5 at 4W=1.30/1.60/1.90/2.20 (N≈0.78·N_cap). The finite razor is set by the WINDOW's
-zero-count, not the frame capacity — the clean finite-dimensional shadow of RH. See LEDGER §832.
+0.145, 0.103, 5.6e-5 at 4W=1.30/1.60/1.90/2.20 (N≈0.78·N_cap). See LEDGER §832.
+**§833 TEMPERING:** the clean "razor exactly at N=#zeros" is NOT a strict law (held at [14,44]:onset=8=#zeros;
+roughly at [40,70]; failed at [68,98]:no collapse through N=14). The real governing quantity is the
+height-dependent archimedean floor Ω(t)~ln(t/2π) — which IS the zero density (same ln t by the explicit
+formula), so the two aren't separable. Correct statement: the finite razor is governed by the arch-floor/
+zero-density (one object), Weil-side (G-healthy), margin→0⁺ never negative. See LEDGER §833.
 
 ## The HONEST open core (= RH)
 Prove **arch(ψ)+pole(ψ)−prime(ψ) ≥ 0 for all band-limited ψ, uniformly in width** — the PRIME side,

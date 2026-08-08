@@ -16964,3 +16964,30 @@ NEXT MOVE LOADED: (a) arb-certify the G-healthy-at-N=#zeros collapse point (marg
 Handle — the certified statement "Weil margin >0 but O(1e-4) at N=#window-zeros with G well-conditioned";
 (b) test window-zero-count dependence: change the window (different #zeros) and confirm the razor moves to
 the new N=#zeros — would PROVE the razor is set by the zero count, the cleanest finite RH-shadow yet.
+
+## §833 (decisive test of §832 — TEMPERS the clean "N=#zeros" claim; the razor is set by the arch floor Ω~ln(t) = the zero density, same object by the explicit formula) — operators/cert_knife_zerocount.py
+Designed to PROVE §832's "razor set by window zero-count" by holding window length (30), 4W (2.8),
+primes, and frame-capacity FIXED and varying only window HEIGHT (⟹ zero-count): [14,44]=8, [40,70]=11,
+[68,98]=12 zeros. Float, G-conditioning reported (identical across all three — G depends only on relative
+spacing, not height → margin differences are pure Weil-side, NOT conditioning).
+RESULT (honest, tempers §832):
+  [14,44] 8 zeros: collapse onset N=8 (margin 3.3e-6). EXACT match.
+  [40,70] 11 zeros: onset N≈11–12 (margin 0.045@N11, 6.9e-3@N12). Rough match.
+  [68,98] 12 zeros: NO collapse through N=14 (margin still 0.091@N14; can't test N>14, past G-capacity 13.4).
+So the clean "collapse strictly at N=#zeros" is NOT a law. REAL governing quantity: the height-dependent
+archimedean floor Ω(t)=Re ψ₀(¼+it/2)−lnπ ~ ln(t/2π), which GROWS with window height (t~30:Ω~1.56;
+t~80:Ω~2.54) and holds the Weil margin (arch−prime) positive to higher N at higher windows. Prime side is
+height-independent (same primes) → §816 mechanism on the height axis.
+THE DEEPER (correct) READING: the zero DENSITY and the archimedean density Ω are the SAME ln(t) function
+(explicit-formula duality: N(t)~(t/2π)ln(t/2π), density~(1/2π)ln(t/2π) ≡ Ω/2π). So "razor at N=#zeros" and
+"margin held up by the arch floor" are ONE fact viewed two ways — NOT separable by moving the window (both
+scale as ln t together). That identity is WHY [14,44] gave the clean N=8 coincidence. My §832 clean
+combinatorial "zero-count razor" is thus TEMPERED to: the finite razor is governed by the arch-floor/
+zero-density (one object), which grows with height — a more correct, more explicit-formula-connected
+statement than the combinatorial guess.
+INVARIANT ACROSS ALL THREE (robust): margin → 0⁺, NEVER negative, wherever it thins — RH-consistent. And
+the §832 core stands: the thinning is Weil-side (G-healthy, identical conditioning), not a conditioning
+artifact. What's withdrawn is only the strict "onset = #zeros" combinatorial law.
+NEXT: recast the knife-edge as arch-floor-vs-prime directly — certify the margin lower bound as a function
+of the arch floor min over the window (Ω_min(window)) minus the prime operator norm; §816-CERT already
+certified the arch floor, §803A the prime bound — assemble m(window) ≥ f(Ω_min, B_prime) as a Handle.
