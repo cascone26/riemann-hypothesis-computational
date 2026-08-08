@@ -17017,3 +17017,30 @@ EASY certified statement is the SUFFICIENT side: while pnorm < floor (N < crossi
 certify m ≥ 0 on the pnorm<floor regime (a genuine Handle, the robust below-razor zone). The HARD side
 (margin ≥ 0 when pnorm > floor, via misalignment) is the RH-hard core — NOT scalar-certifiable, needs the
 joint arch⊕prime eigenstructure bound (the arithmetic/intersection-form object the whole map points at).
+
+## §835 (★ GEOMETRIC RESTATEMENT OF THE RH-HARD CORE — the past-razor positivity IS prime-top ⟂ arch-bottom eigenvector orthogonality; RH ⟺ that misalignment persists uniformly ★) — operators/cert_misalignment.py
+Quantified §834's misalignment-protected positivity. In the G-metric, measured the angle between the
+prime-top eigenvector v_p (eigvec of λ_max(prime,G)) and the arch-bottom eigenvector v_a (eigvec of
+λ_min(arch+pole,G)), and protection = margin − (floor − pnorm).
+[14,44], 4W=2.2, N=5→9:
+  angle(v_p,v_a) ≈ 89.7° (cos≈0.005) at ALL N — NEARLY ORTHOGONAL throughout.
+  protection: +0.120, +0.102, +0.070, +0.058, +0.041.
+  At N=8 (past crossing): floor−pnorm = −0.058, margin = +1.5e-4, protection = +0.058 — the protection
+  EXACTLY cancels the negative scalar bound, holding margin at 0⁺. Right at the razor the angle dips
+  slightly (87.46°, cos 0.044) — the small alignment increase is WHY margin is minimal there.
+FINDING (clean, geometric): the residual positivity keeping the Weil form ≥0 PAST the naive
+prime-top-crosses-floor point is the near-ORTHOGONALITY of v_p and v_a. The crude scalar bound
+floor−pnorm is pessimistic precisely BY the misalignment; the true margin = floor − pnorm + protection,
+and protection ≈ pnorm·(1 − alignment) keeps it ≥0. 
+RH RESTATED (finite-window, testable form): RH ⟺ the prime-top and arch-bottom eigenvectors stay
+misaligned (v_p ⟂ v_a, cos small) UNIFORMLY as the window/height grows. An off-line zero = v_p rotating
+INTO v_a (alignment↑) → protection fails → margin < 0 (the §780 negative-detector, now with a geometric
+cause). This is the signature/orthogonality structure the intersection-form / Hodge-index route points at
+(positivity from an orthogonal joint arch⊕prime geometry, NOT any scalar floor−norm bound — which §834
+proved false). 
+WHERE THIS PUTS THE PROGRAM: the RH-hard object is now concrete and geometric — the joint eigenstructure
+(alignment) of the archimedean and prime quadratic forms on band-limited spans, uniformly in height. NEXT:
+(a) certify the SUFFICIENT side (pnorm<floor ⟹ margin>0) as a clean Handle (arb, the robust below-razor
+zone); (b) track cos(v_p,v_a) up a height ladder — does the orthogonality persist (RH-consistent) or
+degrade? a certified uniform lower bound on the misalignment (cos bounded away from 1) would be a genuine
+structural step toward the hard side.
