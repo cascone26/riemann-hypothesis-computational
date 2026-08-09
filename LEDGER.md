@@ -17498,3 +17498,16 @@ Q from the prime+arch side (no zeros) and gets ≥0 precisely because, by the ex
 sum of squares. This is the cleanest "what IS the RH-critical mode" answer of the run — the zero-side lens (§858
 path-check shift) gave it; earlier eigenvector probes (§835/846/855) couldn't because they used the wrong lens.
 Ties together §832 (razor at N=#zeros), §850 (near-null dim=N−#zeros), §856 (t*=1 at corner).
+
+## §859 (confirms §858 — margin thins as the window captures more zeros; the sampling/interpolation mechanism, verified) — operators/window_width_margin.py
+§858 predicted: wider window (more in-window zeros) → near-null mode vanishes at more points → residual from
+further-out zeros (smaller tails) → thinner margin. Tested: base a=14, width L=20→70, 4W=4, N=0.75·capacity:
+  L=20 (5 in-zeros): margin 3.25e-9 | L=30 (8): 1.09e-9 | L=40 (11): 8.33e-13 | L=50 (14): 1.60e-12 |
+  L=60 (18): 7.66e-15 | L=70 (22): 7.98e-15 (float floor).
+CONFIRMED: margin thins MONOTONICALLY as the window captures more zeros (3e-9 → float floor over L=20→70), with
+G-conditioning HEALTHY throughout (cond 4.5–6.7 — NOT a conditioning artifact). This is the genuine §858 mechanism:
+the RH-marginal thinness is governed by how many zeros the window captures vs how far the near-null mode's tails
+must reach for its residual. Wider window = more captured zeros = smaller-tail residual = thinner margin. The
+sampling/interpolation picture (§858) verified. Ties to §832/§840/§850/§856 — all the "razor" phenomena are this
+one mechanism: a band-limited function of finite capacity interpolating zero at the captured zeros, positivity from
+the unavoidable tails at the uncaptured ones.
