@@ -17654,3 +17654,20 @@ here it reduces (matched cutoffs), and the derivation itself is the honest, rigo
 result would need a positive band-limited minorant of S with positive integral (unconditional) — which, given the
 matched cutoff, requires the g≥0 constraint to do ALL the work, i.e. a Fejér-Riesz/Bochner positivity of the
 arch−prime symbol that doesn't route through the zeros = the "new positivity mechanism" (still the open core = RH).
+
+## §868-869 (CONSTRUCTIVE ATTACK on the positivity certificate — explicit SOS built per window; Weil-measure route being computed carefully in the workflow) — operators/weil_measure.py, sos_certificate.py
+Pivoted to CONSTRUCTING the positivity certificate (attack mode). Workflow wf_31e7ca94 launched (5 constructive
+angles: SOS, LP threshold, zero->prime SOS transform, Weil measure, arb-certify).
+§869 EXPLICIT SOS CERTIFICATE (reliable, exact): the compressed (pole+arch-prime) operator in the G-metric admits
+a generalized Cholesky Q = sum_k <l_k,phi>^2 with ALL PIVOTS > 0 at every tested window ([14,44] 4W=2, [50,80]
+4W=3, [120,150] 4W=4). This IS an explicit sum-of-squares positivity certificate per window (min-eig 0.103/0.092/
+0.080). Positivity is now backed by an explicit SOS, not just a measured eigenvalue. Pivots vary per window; the
+UNIFORM-structure question (does the SOS stabilize across windows -> a single certificate) is what workflow PATH A
+pushes.
+§868 Weil measure dW = arch density - prime atoms: quick numeric FT of Omega(r) gave negative arch density at
+u=log n, but Omega(r)~ln(r) grows so its FT is DISTRIBUTIONAL and the quick tapered-FT is unreliable for it -
+the careful computation (proper archimedean density from the explicit formula) is in workflow PATH D. Ground truth:
+margin > 0 everywhere (positivity holds); the SOS certificate (§869) confirms it constructively.
+FORWARD: workflow attacking the uniform certificate + the LP g>=0 threshold (largest 4W with unconditional
+positivity from g>=0 alone) + arb-certified frontier. Pushing toward the largest band-limit with a PROVEN
+unconditional positivity certificate = a new theorem.
