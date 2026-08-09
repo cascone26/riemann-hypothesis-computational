@@ -265,7 +265,52 @@ state this as "not aware of," pending a full literature check, rather than as an
 
 ---
 
-*Status: this draft is grounded entirely in banked, certified results (LEDGER §788–§808) and the two
-PASS Lean handles. Constants are the arb/Lean values, not floats. The one place the chain is not yet
-machine-checked — the operator assembly linking the certified constants to the closing inequality —
-is stated as such (§5), not papered over.*
+## 8. Addendum — the operator–symbol picture and the certified budget (LEDGER §843–§848)
+
+Subsequent work sharpened *where* the difficulty sits into a clean operator-theoretic statement, and
+certified the unconditional half of it.
+
+**8.1 The Weil form is a compressed multiplication operator (§844).** On the band-limited Fejér span,
+the Weil form Q = pole + arch − prime is the compression to Paley–Wiener functions of multiplication
+by the **symbol**
+    S(r) = (1/2π) Ω(r) − P(r),   P(r) = (1/π) Σ_{log n < 4W} Λ(n) n^{−1/2} cos(r log n),
+where Ω(r) = Re ψ₀(¼ + ir/2) − ln π is the archimedean density and P is exactly the explicit-formula
+prime oscillation. By the Rayleigh principle the margin (least generalized eigenvalue) satisfies
+    margin ≥ min_{window} S(r).
+Measurement (§844) shows S is **negative on a positive-measure subset of every window** (the prime
+oscillation locally exceeds the arch budget), so **Weil positivity is never pointwise**. The margin is
+lifted to positivity entirely by the band-limiting: band-limited test functions cannot concentrate on
+{S < 0}. Define the **lift** = margin − min_window S; at the marginal corner lift = |min S| exactly.
+
+**8.2 The RH-hard core, precisely located (§846–§847).** The lift is the least-eigenvalue gap of a
+compressed multiplication operator against a *sign-changing* symbol — a Beurling–Selberg / Montgomery–
+Vaaler extremal quantity, not a prolate-concentration factor (whole-window concentration saturates).
+Four independent attacks — eigenvector geometry, the arch-floor/prime eigenvalue race, the rigorous
+asymptotic literature (Suzuki 2606.09096, Kim 2607.24830, Groskin 2607.02828), and extremal-function
+theory — all reduce the uniform statement to the *same* object: an **unconditional lower bound on the
+lift**, uniform in width and height. That bound is RH. Known extremal results bound the linear Σ φ̂(γ),
+not the quadratic Σ φ̂(γ)², and the zeta-zero band-limited bounds are RH-conditional. No existing
+technique reaches it — consistent with Suzuki's Corollary 1.6 and the field's stated frontier.
+
+**8.3 The budget half is certified and exact (§843, §848).** The archimedean floor
+floor(t) = λ_min(arch + pole, G) is, by a Szegő symbol-minimum argument, asymptotically the *exact*
+constant times the arch density:
+    **floor(t) → (1/2π) · ln(t/2π)**   (coefficient 1/(2π), not a fit).
+This is **unconditional** (no zeros, no RH). It is arb-certified at sample heights (§848):
+floor ≥ 0.12575 at t = 29, ≥ 0.35893 at t = 75, ≥ 0.46936 at t = 135, all with interval radius ≈ 10⁻⁶,
+and floor(t) / [(1/2π) ln(t/2π)] → 1 as t grows (0.52 → 0.91 → 0.96). Thus the *budget* side of the
+race — the archimedean floor the prime obstruction must be bounded against — is a certified Handle with
+an exact leading constant. What remains open is exactly the *prime* side: bounding the prime oscillation's
+compressed-operator top eigenvalue below this floor, uniformly — which §8.2 identifies as RH.
+
+*Provenance for §8: LEDGER §843 (floor constant), §844 (operator–symbol), §846 (lift = extremal object),
+§847 (four-angle reduction to RH), §848 (arb-certified floor). Scripts: operators/weil_symbol_check.py,
+floor_constant_check.py, lift_structure.py, cert_floor_arb.py.*
+
+---
+
+*Status: this draft is grounded entirely in banked, certified results (LEDGER §788–§808, §843–§848) and
+the two PASS Lean handles. Constants are the arb/Lean values, not floats. The one place the §1–5 chain is
+not yet machine-checked — the operator assembly linking the certified constants to the closing inequality
+— is stated as such (§5), not papered over. §8 adds the operator–symbol picture and the certified,
+exact-constant archimedean floor (the unconditional budget half); the prime-side bound remains RH.*
