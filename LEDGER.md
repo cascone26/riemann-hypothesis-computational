@@ -17581,3 +17581,30 @@ see the mean (Szegő); the fluctuation below the mean is sub-critical below capa
 saturates the mean at the razor (min_eig=0⁺). RH = the fluctuation never overshoots. This is the cleanest complete
 mechanistic account of the run — why Q≥0 holds (positive mean), why there's a razor (fluctuation→mean at critical
 sampling), and why proving it uniformly is RH (the saturation is exactly marginal, no slack to exploit).
+
+## §864 (the §862/863 mechanism IS Szegő-Widom / Landau-Widom extreme-eigenvalue theory — a PROVEN framework; but it confirms the min-eig → symbol min in the unrestricted limit, so positivity = the band-limited restriction = RH; same wall, now in proven language) — WebSearch [REPORT]
+Checked whether the §862/863 Szegő-fluctuation picture connects to a proven framework. It does — WebSearch (REPORT
+tier, not deep-read) confirms the relevant proven theory:
+- Szegő-Widom limit theorems + Widom's conjecture: two-term asymptotics for traces of functions of truncated
+  Wiener-Hopf / Toeplitz operators.
+- Parter-Widom: main-term asymptotics for the EXTREME (min/max) eigenvalues of Toeplitz matrices.
+- "Toeplitz/Bargmann-Toeplitz operators with symbols of VARIABLE SIGN" — spectrum governed by the geometry of the
+  positive/negative parts of the symbol (exactly our sign-changing S).
+- Landau-Widom: eigenvalue distribution of time-and-frequency limiting = prolate spheroidal (our band-limiting).
+CONNECTION (honest): our compressed multiplication-by-S operator IS a truncated Toeplitz/Wiener-Hopf-type operator;
+§862/863's mechanism (eigenvalues distribute like S, min-eig → symbol min as N→cap, band-limiting lifts below cap)
+is precisely Szegő-Widom/Parter-Widom/Landau-Widom extreme-eigenvalue theory. So the §862/863 picture sits in a
+DEEP PROVEN FRAMEWORK.
+BUT (same wall, confirmed a 6th way): Parter-Widom PROVES the min eigenvalue → symbol MIN (negative, ~−0.5) as
+N→∞ for a fixed window — but that unrestricted limit is the OVER-capacity/non-band-limited regime, OUTSIDE the
+valid Weil (band-limited, finite exponential type) regime. The theory describes the razor's structure beautifully
+and confirms the min-eig reaches the negative symbol min in the full limit — so Weil positivity depends ENTIRELY
+on the band-limited/finite-type RESTRICTION keeping min-eig ≥ 0 uniformly, which is exactly RH. Szegő-Widom gives
+the eigenvalue asymptotics but NOT an unconditional positivity bound for the restricted (band-limited) operator.
+NET: the mechanism is now placed in its proven home (Szegő-Widom/Landau-Widom), a real gain in understanding — and
+it re-confirms (6th independent framing) that proving uniform positivity of the band-limited restriction is RH.
+NEXT (deeper, if pursued): read Parter-Widom / Landau-Widom for whether their finite-N (band-limited) extreme-eig
+bounds — not the N→∞ limit — give anything unconditional for our specific symbol. REPORT-tier until deep-read.
+Sources: link.springer.com/chapter/10.1007/978-3-0348-0263-5_12 (Widom conjecture), arxiv.org/pdf/0912.4486
+(variable-sign Toeplitz spectrum), arxiv.org/pdf/1702.08147 (truncated Toeplitz Szegő), arxiv.org/pdf/2104.12394
+(Toeplitz eigenvalue asymptotics).
