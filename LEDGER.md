@@ -17439,3 +17439,15 @@ band-limited subspace intrinsically; the RH-critical near-null modes (§850-851)
 RH ⟺ they stay ≥0. Changing the test-function SPACE (Gaussian/Hermite, à la CCM) is a genuinely different problem
 (CCM's program), not a reparametrization of ours — worth pursuing as CCM's own setup, but it does NOT make our
 razor "go away." Honest correction of §853 (verify-before-ship: caught the conceptual error, not just the numeric one).
+
+## §855 (near-null eigenvalue vs zero-spacings — HONEST NULL: no clean arithmetic law in the spacings) — operators/nearnull_arithmetic.py
+Tested whether the RH-critical near-null eigenvalue (at N=#zeros+1, one near-null mode, below capacity) tracks
+the window's zero spacings. Real zeros (mpmath), full Weil form (no §853 confound). Result:
+  [14,44] margin 1.3e-6 (min_gap 2.41), [30,60] 5.6e-6 (1.77), [60,90] 3.6e-2 (1.38), [100,130] 1.5e-2 (0.85),
+  [150,180] 5.5e-6 (0.82).
+  log(margin) ~ log(min_gap): R²=0.195; ~ log(mean_gap): R²=0.197. NO clean law (R² near 0).
+VERDICT (honest null): the near-null eigenvalue has NO clean arithmetic law in the zero spacings — it depends on
+more than local spacing (full interpolation residual + band-limit + capacity proximity). Also re-confirms §851:
+at [60,90] the N=#zeros+1 mode is NOT near-null (margin 3.6e-2), so the near-null onset is NOT exactly at #zeros
+(the §850 law is approximate, §851). Clean setup, honest negative — the near-null-spectrum arithmetic thread does
+NOT yield a law. (Valid negative, unlike §853's confounded probe.)
