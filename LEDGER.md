@@ -17310,3 +17310,26 @@ VERIFIED next direction: attack the lift via EXTREMAL band-limited function theo
 Vaaler, Logan, Gonçalves-Littmann-Vaaler) — the known bridge between band-limited positivity and RH zero-counting.
 The RH-marginal condition is precisely: the extremal band-limited lift ≥ the symbol's negative depth |S_min|,
 uniformly. NEXT WORKFLOW = this.
+
+## §847 (extremal-lift workflow — DEFINITIVE: extremal-function theory gives NO unconditional margin bound; that bound IS RH. 4th angle to confirm the wall) — workflow wf_4acc4e45 (7 agents)
+Attacked the §844/§846 band-limiting lift via Beurling-Selberg / Montgomery-Vaaler extremal theory. Verified:
+PATH B (definitive, REPORT): NO unconditional lower bound on the Weil margin exists in the extremal-function
+literature — "margin ≥ 0 unconditionally IS the Riemann Hypothesis." Precise obstructions: (1) the literature
+bounds the LINEAR Σφ̂(γ), not our QUADRATIC Σφ̂(γ)²; (2) all zeta-zero band-limited extremal results are
+RH-CONDITIONAL (Carneiro-Littmann-Vaaler, Carneiro-Chandee-Chirre-Milinovich); (3) inversion gap — Montgomery-Vaaler
+bound concentration ON a window, not AVOIDANCE of the symbol's negative set. Confirms §825 from the extremal angle.
+PATH A (REPORT): band-limited minorants of S recover 99.6% of the S_min gap but stay NEGATIVE — no positive
+provable bound (and the naive convolution minorant violated m≤S, invalidating its Rayleigh bound; constraint-valid
+constructions give positive bounds only with worse gap recovery). No proof.
+PATH C (REPORT): negative-set concentration c_neg ≤ 0.66 (band-limited functions concentrate ≤66% on {S<0}, which
+is 19–40% of the window, 6–21 components) — a structurally suggestive uncertainty mechanism, BUT the (1−c_neg)↔margin
+correlation is WEAK (R²~0.06). Mechanism describes the data; does not prove positivity.
+★ THE 4-WORKFLOW ARC (§838,842,845,847) HAS NOW CHARACTERIZED THE OBSTACLE FROM FOUR INDEPENDENT ANGLES — eigenvector
+orthogonality (§838-839), arch-vs-prime eigenvalue race (§842), rigorous-literature grounding (§845), extremal-
+function theory (§847) — ALL converging on the SAME precise wall: proving the Weil margin ≥ 0 unconditionally IS RH,
+and no existing technique reaches it (the quadratic functional, unconditionally, over band-limited test functions).
+This is the field's genuine frontier (matches §825, Suzuki Cor 1.6, Kim's "fundamental" density mismatch).
+PRODUCTIVE PIVOT (durable-output lane, NOT re-confirming the wall): the §843 floor law floor(t)≈(1/2π)ln(t/2π) is
+the UNCONDITIONAL BUDGET HALF (Szegő symbol-min, no RH input). ARB-CERTIFY it as a Handle — extend the §808/§830
+certified set with a certified budget-side statement. That banks real durable output while the "prove the full bound"
+lane stays what it is (RH). NEXT = arb-certify floor(t) ≥ (1/2π)ln(t/2π) − ε at sample heights.
