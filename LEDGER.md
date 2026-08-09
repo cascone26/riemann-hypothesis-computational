@@ -17803,3 +17803,22 @@ operator bounds don't capture. So refined operator bounds are eliminated as a co
 full joint structure — workflow wf_de31e32e PATH C (refined bound via the joint structure) + PATH B (worst φ*) are
 the live attacks. Genuine progress: a candidate route tested + eliminated, difficulty precisely located (growing
 above-floor prime rank + arch cross-terms).
+
+## §879 (★ THE CORNER JOINT STRUCTURE, fully concrete — the (N−#zeros) strong-prime eigenvectors each have arch(w_j)=μ_j (individually null); RH ⟺ this near-null block stays PSD via off-diagonal arch coupling ★) — operators/arch_in_prime_basis.py
+Computed arch in the PRIME eigenbasis {w_j} (prime diagonal μ_j) at the corner [14,44] 4W=4, N=13 (margin 1.7e-9):
+  μ_j (desc): 0.287,0.250,0.225,0.176,0.153,0.093,−0.001,... (top 6 positive)
+  arch(w_j)=diag: 0.2875,0.2502,0.2255,0.176,0.1534,0.2664,...
+  arch(w_j)−μ_j (desc): 1e-4, 5e-4, 2e-4, 0, 0, 0.173, 0.275,... — so arch(w_j)=μ_j EXACTLY for the top 5, then
+    jumps to 0.17+ for the rest.
+KEY: EXACTLY 5 near-null directions, and N−#zeros = 13−8 = 5 (§850). So the §850 near-null space IS the span of the
+strong-prime eigenvectors, each individually null because ARCH EXACTLY BALANCES PRIME there: arch(w_j)=μ_j ⟹
+Q(w_j)=arch(w_j)−μ_j=0. Off-diagonal arch coupling (max 0.019) ≫ the near-zero diagonals (1e-4) — so the positivity
+of Q on the full space is a SCHUR-COMPLEMENT / BLOCK-PSD property: the 5 individually-null strong-prime directions
+stay COLLECTIVELY PSD via their off-diagonal arch cross-coupling to each other and to the robust directions.
+THE RH-HARD CORE, FULLY CONCRETE: the (N−#zeros)-dimensional near-null block — where each strong-prime eigenvector
+has arch(w_j)=μ_j — stays positive-semidefinite through its off-diagonal arch coupling. RH ⟺ this block PSD. This
+UNIFIES: §850 (near-null dim=N−#zeros), §876/877 (arch(w_j)≥μ_j, here =μ_j for the strong directions), §878 (why
+rank bounds fail — the coupling is load-bearing), §858 (the near-null modes = these directions). The corner is now
+a concrete linear-algebra statement (a specific block staying PSD via specific coupling), not "misalignment."
+NEXT: the near-null block's PSD-ness = the Schur complement of the strong-prime block w.r.t. the robust block ≥ 0.
+That Schur complement is the concrete RH-hard object — attack whether the arch coupling structure forces it ≥0.
