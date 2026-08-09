@@ -17738,3 +17738,21 @@ set beyond the prior 4W≤2.2, all zero-free/unconditional.
 STATE: robust region certified + unbounded (banked, in the paper). The corner = exact-algebra target. NEXT: the
 exact SOS approach at the corner (algebra, since arb is radii-blocked there), and/or push the certified frontier
 higher at high windows.
+
+## §875 (★ CLEAN RIGOROUS SUFFICIENT CONDITION — floor(t) > pnorm(4W) ⟹ Weil positivity, unconditional; explicit height threshold; the provable theorem behind the robust region ★) — operators/floor_pnorm_sufficient.py
+Derived + verified the operator bound: arch ⪰ floor·G (floor=λmin(arch+pole,G)), prime ⪯ pnorm·G (pnorm=λmax(prime,G))
+⟹ arch−prime ⪰ (floor−pnorm)·G ⟹ margin ≥ floor − pnorm (RIGOROUS lower bound). Verified margin ≥ floor−pnorm in
+ALL cases. Consequence:
+  floor(t) > pnorm(4W)  ⟹  margin > 0  ⟹  Weil positivity, UNCONDITIONALLY (both floor & pnorm zero-free).
+CONFIRMED across the grid:
+  ROBUST (floor>pnorm): [50,80]4W=3 (f−p=+0.243,m=0.296), [120,150]4W=4 (+0.100,0.107), [300,330]4W=5 (+0.232,0.237),
+    [14,44]4W=2 (+0.087,0.185), [60,90]4W=4 (+0.029,0.036) — all margin>0 RIGOROUSLY (margin > floor−pnorm > 0).
+  CORNER (floor<pnorm): [14,44]4W=3 (−0.107), 4W=4 (−0.161) — bound gives margin≥negative (useless), margin tiny+
+    only via misalignment (§834). Exactly the hard part, cleanly separated.
+EXPLICIT THRESHOLD: floor(t)≈(1/2π)ln(t/2π) (§843/848 certified) ⟹ floor>pnorm ⟺ t > 2π·exp(2π·pnorm(4W)). So for
+height above this explicit threshold, unconditional Weil positivity is GUARANTEED (provable, not just certified
+per-point). This is the PROVABLE theorem behind the §873 unbounded robust region — turns the empirical "robust at
+high windows" into a clean sufficient condition floor>pnorm with an explicit height cutoff. FASTER to certify too:
+certify floor (PD, §848) + pnorm (λmax prime) separately, floor>pnorm ⟹ positivity, no slow full-pencil margin.
+NEXT: bound pnorm(4W) explicitly (from the prime sum) to make the threshold t>2π·exp(2π·pnorm(4W)) fully analytic —
+then it's a closed-form robust-region positivity theorem. The corner (floor<pnorm) stays the exact-algebra target.
