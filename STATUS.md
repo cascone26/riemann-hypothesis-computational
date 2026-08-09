@@ -4301,3 +4301,40 @@ SYNTHESIS: RH_UNIFORM_FRONTIER.md (read first). SESSION VERDICT: certified+Lean 
 field's open core needing a NEW positivity mechanism (arithmetic surface / Hodge index), not a known
 technique. 8 scalar/reduction over-reaches proposed+refuted (kept in-ledger for provenance). No RH proof
 — genuine ground mapped + certified pieces banked.
+
+---
+
+## Session state — Riemann8 autonomous run §827–848 (2026-08-08)
+
+**Durable CERTIFIED Handles (the real output):**
+- §808 anchor ∀-theorem: Weil positivity on a described infinite band-limited class, arb + Lean-kernel certified.
+- §830: below-capacity Weil positivity certified across the t* crossing (margins 0.15–0.19).
+- §848 (in progress): arb-certify the floor law floor(t)≈(1/2π)ln(t/2π) — the UNCONDITIONAL budget half.
+
+**Genuine new results this run:**
+- §843: the floor coefficient is the EXACT constant 1/(2π) (Szegő symbol-min, essentially provable, no RH input).
+- §844: the Weil form is a COMPRESSED MULTIPLICATION OPERATOR, symbol S(r)=(1/2π)Ω(r)−P(r) (P = explicit-formula
+  prime oscillation). Symbol always <0 ⟹ positivity is NEVER pointwise — it's the band-limiting LIFT.
+- §846: the lift = band-limited λmin gap vs a sign-changing symbol = Beurling-Selberg/Montgomery-Vaaler extremal
+  object (NOT prolate concentration).
+
+**Honest corrections banked (verification caught my own over-reaches):**
+- §839 CLOSED the §835–837 eigenvector-orthogonality thread as wrong-emphasis (eigenvectors are zero-independent;
+  positivity is the eigenVALUE gap, not eigenVECTOR geometry).
+- §845 literature-grounding = clean NULL (our floor-vs-height / margin-vs-4W laws aren't in the published formulas).
+- §838 CCM Cor 3.8 is one-directional (μ_λ→0 ⟹ RH, not ⟺). Citations corrected: Suzuki=2606.09096, Kim=2607.24830,
+  Groskin=2607.02828.
+
+**The wall, characterized from 4 independent angles (§838 orthogonality, §842 race, §845 literature, §847 extremal):**
+ALL converge on the same precise frontier — proving the Weil margin ≥ 0 UNCONDITIONALLY (the quadratic Σφ̂(γ)²
+over band-limited test functions) IS the Riemann Hypothesis; no existing technique reaches it. Matches §825,
+Suzuki Cor 1.6, Kim's density mismatch. Everything measured is RH-CONSISTENT (margin ≥0, →0⁺ never negative;
+hard low-height/high-support corner float-confirmed safe through 4W=5.0).
+
+**4 workflows run this session** (wf_8b79b88b orthogonality, wf_037ce907 corner-race, wf_b5fa495f literature,
+wf_4acc4e45 extremal), 13/13/7/7 agents, all with adversarial verify stages — the verification is what caught
+the over-reaches.
+
+**Where the loop stands / next:** the "prove the uniform bound" lane = RH (confirmed inaccessible 4 ways). The
+PRODUCTIVE lane = bank durable certified output (extend §808/§830/§848 certified positivity + the budget-side floor
+Handle). Resumable from LEDGER §848 + this block. All committed.
