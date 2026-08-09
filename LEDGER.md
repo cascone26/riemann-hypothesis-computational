@@ -17248,3 +17248,26 @@ THE RACE, now sharp: floor(t) = (1/2π)·min_window Ω [budget, exact/provable] 
 empirical ~(4W)^0.71]. RH at the corner ⟺ pnorm(4W) stays below the (small, low-height) floor as 4W→∞. NEXT:
 ground the PRIME side too — is pnorm(4W) similarly a symbol-max or a prime-sum quantity with an exact constant?
 If BOTH sides get exact symbols, the race becomes an explicit inequality (arch symbol-min vs prime symbol-max).
+
+## §844 (the Weil form IS a compressed multiplication operator; positivity is NEVER pointwise — always from the band-limiting lift = the RH-hard object, precisely located) — operators/weil_symbol_check.py
+Following §843 (arch floor = symbol-min of (1/2π)Ω): tested whether the WHOLE Weil form is a compressed
+multiplication operator with symbol S(r) = (1/2π)Ω(r) − P(r), where P(r) = (1/π)Σ_{log n<4W}Λ(n)/√n cos(log n·r)
+is the prime oscillation (straight from the explicit formula). CONFIRMED:
+  margin ≥ min_window S(r) in ALL cases (Rayleigh bound for a compressed multiplication operator) ✓
+  BUT S_min < 0 EVERYWHERE: [14,44] S_min=−0.41(4W=2),−0.32(3),−0.66(4); [100,130]−0.55,−0.65; [400,430]−0.56.
+  arch symbol-min 0.13–0.66 vs prime symbol-MAX 0.68–1.23 — the prime oscillation ALWAYS locally exceeds the
+  arch budget, so min S < 0 always. The pointwise sufficient condition "min S ≥ 0" is NEVER satisfied.
+⟹ Weil positivity is NEVER pointwise-symbol positivity — it is ALWAYS produced by the BAND-LIMITING LIFT: the
+margin is raised from the (always negative) symbol-min (~−0.5) up to the actual positive margin (+0.1 … +1e-9)
+purely because band-limited test functions can't concentrate at the symbol's negative min (their
+positive-definiteness averages the oscillation out). This is the standard Weil-criterion structure (positivity
+from test-function positive-definiteness, not pointwise), faithfully reproduced by our apparatus.
+NET: §843+§844 ground the RACE in explicit-formula symbols — arch symbol (1/2π)Ω(r) [exact, §843] vs prime
+oscillation P(r)=(1/π)ΣΛ/√n cos(log n·r) [explicit-formula exact]. The margin = symbol-min + LIFT. The
+symbol-min lower bound is USELESS (always negative). ALL the RH content is in the LIFT (the band-limiting/
+positive-definiteness gain), = the §834 non-scalar protection, now precisely located as an
+uncertainty-principle quantity: how much does band-limiting raise λmin above the essential-range min of an
+indefinite symbol. RH ⟺ LIFT ≥ |min_window S| uniformly. This reframes the hard core cleanly but does not solve
+it (the lift is the subtle part). NEXT: is the LIFT bounded below by a known uncertainty/concentration
+inequality (prolate/Slepian, Beurling-Selberg extremal, Logan)? That literature is exactly about band-limited
+functions vs sign-changing symbols — the running literature-grounding workflow may connect here.
