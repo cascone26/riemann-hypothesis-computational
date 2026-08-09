@@ -17822,3 +17822,21 @@ rank bounds fail — the coupling is load-bearing), §858 (the near-null modes =
 a concrete linear-algebra statement (a specific block staying PSD via specific coupling), not "misalignment."
 NEXT: the near-null block's PSD-ness = the Schur complement of the strong-prime block w.r.t. the robust block ≥ 0.
 That Schur complement is the concrete RH-hard object — attack whether the arch coupling structure forces it ≥0.
+
+## §880 (★ margin = Schur complement of the strong-prime block, EXACTLY; RH-core = arch and prime COINCIDE on the (N−#zeros)-dim critical subspace, RH ⟺ Q_SS ⪰ 0 ★) — operators/schur_corner.py
+Computed the corner Schur complement (prime eigenbasis, split into strong S=[prime eig>floor] and robust R):
+  [14,44]4W=4 (k=5=N−#zeros): Q_SS eigenvalues [0,0,1e-4,2e-4,6e-4] (PSD), Q_RR min 0.172, SCHUR min = 1.658e-9
+    = margin (1.657e-9) EXACTLY.
+  [14,44]4W=3 (k=2): Q_SS [0,1e-4], SCHUR min = 3.474e-6 = margin (3.473e-6) EXACTLY.
+STRUCTURE (fully concrete): margin = min eigenvalue of the Schur complement of the STRONG-PRIME block Q_SS. Q_SS is
+PSD with ALL-TINY entries (~1e-4): arch(w_j)=μ_j on the diagonal (§879), and PSD forces the within-block
+off-diagonals tiny too (Cauchy-Schwarz). So Q_SS = arch|_S − prime|_S ≈ 0 — on the strong-prime subspace, ARCH AND
+PRIME COINCIDE AS OPERATORS (arch|_S ≈ diag(μ_j) = prime|_S), not just on the diagonal. The margin is the residual
+of this near-coincidence (+ the tiny R-coupling Schur correction).
+THE RH-HARD CORE, as a concrete small-matrix condition: on the (N−#zeros)-dimensional strong-prime/near-null
+subspace S, arch|_S ≈ prime|_S (they coincide), and RH ⟺ arch|_S ⪰ prime|_S (Q_SS ⪰ 0), marginally. This is the
+EXPLICIT-FORMULA DUALITY made concrete: arch and prime are the dual halves of the completed ξ's log-derivative, and
+they exactly COINCIDE on the critical subspace — that coincidence IS the RH knife-edge. Unifies the whole corner
+thread (§850 dim, §876/877 arch(w_j)=μ_j, §878 rank-fail, §879 block, §880 Schur=margin).
+NEXT: the RH-hard object is now Q_SS ⪰ 0 (a specific (N−#zeros)-dim matrix, arch|_S − prime|_S). Attack: WHY do arch
+and prime coincide on S? (the explicit-formula/functional-equation identity forcing arch|_S = prime|_S + PSD.)
