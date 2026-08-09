@@ -17541,3 +17541,24 @@ RH-marginal condition. Complete 3-sided portrait of the razor: zero-side (§858)
 (§860). All consistent, all RH-consistent. The razor IS: a band-limited mode vanishing at the captured zeros,
 whose small-prime arch/prime balance is exactly critical (arch=prime), residual positivity from uncaptured-zero
 tails (§859).
+
+## §862 (★ THE CLEANEST "WHY" — Szegő: Weil positivity holds because the symbol has POSITIVE MEAN (arch mean>0, prime oscillation mean=0) and band-limited functions see the AVERAGE; the razor is where band-limiting resolves the local dips ★) — operators/szego_spectrum.py
+Compared the FULL Weil eigenvalue distribution to the symbol S(r)=(1/2π)Ω(r)−P(r) distribution over [50,80] 4W=3,
+N=8/13/18 (below→over capacity):
+  eig MEAN 0.354/0.373/0.372 ≈ symbol MEAN 0.378 (trace identity ✓); eig MEDIAN ≈ symbol median (0.38).
+  BUT symbol ranges [−0.572,+1.262] with 25% NEGATIVE, while ALL eigenvalues POSITIVE (min 0.091→0.0005→0.0 as
+  N→cap, never <0). The eigenvalues are the symbol PULLED TOWARD ITS MEAN — extreme symbol values (negative dips
+  AND positive peaks) averaged out by the band-limiting.
+THE MECHANISM (cleanest "why Weil positivity holds" of the run):
+  1. The symbol S = (1/2π)Ω − P has POSITIVE MEAN. arch mean ≈ (1/2π)⟨Ω⟩ = floor ~ (1/2π)ln(t/2π) > 0 (§843);
+     the PRIME oscillation P=(1/π)ΣΛ/√n cos(log n·r) has ZERO MEAN over the window (⟨cos(u r)⟩ ~ 1/(u·width) ≈ 0).
+     So mean S ≈ arch mean > 0 — the prime side does NOT lower the average, it only makes LOCAL dips.
+  2. Band-limited test functions see the symbol's AVERAGE (Szegő trace), which is positive ⟹ Q > 0.
+  3. The razor (margin→0) is where band-limiting starts to RESOLVE the symbol's local negative dips (as capacity
+     is approached). FULL resolution (Szegő limit N→∞, 25% of eigenvalues going negative) lies OUTSIDE the valid
+     BAND-LIMITED Weil regime (that limit = the raw multiplication operator, not band-limited test functions).
+CONSEQUENCE: Weil positivity is "almost trivial" (positive mean, prime averages out) YET subtle (RH = whether
+band-limited functions of ANY type ever RESOLVE a net-negative dip where the prime locally beats the arch). This
+is the crux made vivid. UNIFIES the whole run: §843 (arch mean=floor>0), §844 (symbol negative locally), §858/859
+(band-limited resolution/sampling), §850 (razor at capacity), §856 (t*=1 at corner), §860/861 (small primes make
+the dips). The cleanest single mechanistic statement of why Q≥0 holds and why proving it uniformly is RH.
