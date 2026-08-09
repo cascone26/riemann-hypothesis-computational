@@ -17362,3 +17362,23 @@ CERTIFIED-SET PICTURE (now coherent): positivity is CERTIFIED razor-thin at the 
 ~0.125) and CERTIFIED robust at higher heights (§849, floor grows ~(1/2π)ln(t/2π), §848). The hard case is the
 low-height/high-support corner (§840); everything else certifies comfortably. This matches the whole picture:
 the difficulty localizes to where the arch budget is smallest (low t) and the prime obstruction largest (high 4W).
+
+## §850 (★ the Weil form's NEAR-NULL DIMENSION = N − #window-zeros exactly; obstruction is high-dimensional not rank-one — kills the CCM-rank-one hope, but a clean spectral law ★) — operators/spectral_profile.py
+Checked whether the corner margin is an isolated eigenvalue (rank-one → CCM's rank-one-perturbation operator)
+or clustered. Full generalized spectrum of Q=pole+arch−prime vs G:
+  [14,44] 4W=2.0 N=7:  λ1=+0.103,  #near-null(<0.05)=0
+  [14,44] 4W=3.0 N=11: λ1=+3.2e-7, λ2=+7.6e-6, #near-null=3
+  [14,44] 4W=4.0 N=14: λ1=+1.1e-9, λ2=+2.8e-8, #near-null=6
+  [100,130] 4W=4.0 N=14: #near-null=1;  [400,430] 4W=4.0 N=14: #near-null=0 (robust at high height)
+RANK-ONE HOPE KILLED: the corner obstruction is NOT one isolated mode — it's a CLUSTER of near-null eigenvalues
+that GROWS with 4W (0→3→6). So the positivity is genuinely high-dimensional (re-confirms the §810-821
+"irreducibly multi-dimensional" lesson); no easy CCM rank-one connection.
+★ CLEAN SPECTRAL LAW: the near-null dimension = max(0, N − #zeros-in-window), EXACTLY. At [14,44] (8 zeros):
+N=7→0, N=11→3, N=14→6, i.e. N−8 every time. The Weil form has exactly (N − #window-zeros) near-null eigenvalues
+once N exceeds the window's zero count. This is the finite-dimensional shadow of the explicit formula: the window's
+#zeros zeros "account for" #zeros positive directions; the EXCESS sampling modes (N − #zeros) are the near-null
+ones (→0⁺, RH-marginal). Re-confirms §832 spectrally (the razor at N=#zeros = the FIRST near-null mode appearing)
+and ties the whole low-eigenvalue structure quantitatively to the zero count. The margin (smallest of the cluster)
+→0⁺ as 4W grows because the cluster grows and pushes deeper toward 0.
+NET: honest — no rank-one shortcut (that hope closed), but a clean quantitative spectral law (near-null dim =
+N−#zeros) that sharpens §832 and connects the finite spectrum to the explicit formula's zero-counting.
