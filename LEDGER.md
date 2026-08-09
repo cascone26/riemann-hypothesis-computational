@@ -17294,3 +17294,19 @@ are measured+RH-consistent but unproven. Honest. The floor law stands on its own
 of the (absent) literature match. NEXT LEAD (from §844, NOT covered by this workflow): the "lift" (margin − symbol_min,
 band-limiting gain) is a BEURLING-SELBERG / extremal-band-limited quantity (Montgomery-Vaaler-Logan-Gonçalves) — the
 KNOWN bridge between band-limited positivity and RH. That is the next workflow.
+
+## §846 (VERIFY the §844 lead: the "lift" is NOT prolate-concentration — it's the band-limited λmin gap vs a sign-changing symbol = Beurling-Selberg/extremal territory) — operators/lift_structure.py
+Before spending a workflow, verified whether the §844 "lift" (margin − symbol_min) is a prolate/concentration
+quantity (→ CCM program) or extremal (→ Beurling-Selberg). Per (window,4W):
+  lift/|S_min|: 1.25(4W=2), 1.0000(4W=3), 1.0000(4W=4) at [14,44]; 1.16,1.03 at [100,130]; 1.59 at [400,430].
+  conc_top (top eigenvalue of the whole-window concentration operator A=2∫_win F F, in G-metric): 1.0000 EVERYWHERE.
+FINDING: at the corner (low-height, 4W=3,4) lift/|S_min| = 1.0000 EXACTLY — margin≈0 means the band-limiting lift
+EXACTLY compensates the symbol's negative depth (the RH-marginal knife-edge: lift = |S_min|, so margin=0⁺). But
+conc_top=1 everywhere (probes fully saturate the window) → the lift is NOT captured by whole-window prolate
+concentration (that's saturated/uninformative). ⟹ the lift is the genuine band-limited-operator λmin GAP against
+the sign-changing symbol S(r) — exactly the BEURLING-SELBERG / Montgomery-Vaaler extremal object (band-limited
+majorant/minorant of a sign-changing function), NOT the CCM prolate-concentration factor.
+VERIFIED next direction: attack the lift via EXTREMAL band-limited function theory (Beurling-Selberg, Montgomery-
+Vaaler, Logan, Gonçalves-Littmann-Vaaler) — the known bridge between band-limited positivity and RH zero-counting.
+The RH-marginal condition is precisely: the extremal band-limited lift ≥ the symbol's negative depth |S_min|,
+uniformly. NEXT WORKFLOW = this.
