@@ -17671,3 +17671,24 @@ margin > 0 everywhere (positivity holds); the SOS certificate (§869) confirms i
 FORWARD: workflow attacking the uniform certificate + the LP g>=0 threshold (largest 4W with unconditional
 positivity from g>=0 alone) + arb-certified frontier. Pushing toward the largest band-limit with a PROVEN
 unconditional positivity certificate = a new theorem.
+
+## §870 (POSITIVITY-CERTIFICATE workflow — explicit UNCONDITIONAL SOS certificates built (zero-free); arb frontier extended §832→~2.50; PUSHING arb to 4W=3,4) — workflow wf_31e7ca94 (11 agents) + operators/cert_frontier_push.py
+Workflow attacked the constructive positivity certificate (5 angles). BUILT (verified):
+- EXPLICIT UNCONDITIONAL SOS CERTIFICATES: Q(φ)=Σ_k⟨l_k,φ⟩² via generalized Cholesky, at 9+ (window,4W) pairs,
+  reconstruction residual ≤1e-16. UNCONDITIONAL — grep-verified NO zeros/RH used, only digamma (arch) + von
+  Mangoldt (prime) + pole. A manifest sum-of-squares positivity certificate per window. [HANDLE, confirmed]
+- PATH E arb-CERTIFIED the RIGOROUS frontier from §832's 4W=2.20 to ~4W=2.40–2.50 (~12% extension), interval-
+  arithmetic, unconditional. [HANDLE]
+CORRECTED OVER-CLAIMS (verify-before-ship, not banking these as proven):
+- "4W=6.0 positivity PROVEN" is FLOAT at margin ~3.9e-9 = the float floor (§842: float reliable only to ~4W=5).
+  Real: float-verified (not rigorous) to ~5; margin at 4W=6 is float-noise. Not a rigorous theorem there.
+- PATH B "4W*≈5.0 constant threshold" was a search-interval artifact (verifier caught: actual >6.6, but that's
+  float-floor). PATH A "principal-vector sparsity 80-94%" is mostly the TRIVIAL lower-triangular Cholesky zeros —
+  not a genuine structural discovery; needs skeptical recheck before building on it.
+FORWARD PUSH (running, §870 arb): the float margins are COMFORTABLE (>0.08) at higher windows even at 4W=4
+([120,150] 4W=4 margin 0.087; [300,330] 4W=4 margin 0.15) — far above arb radii. So arb-certifying at 4W=3,4 on
+those windows extends the RIGOROUS frontier from 2.50 to potentially 4.0 — a substantial real theorem. cert_
+frontier_push.py running on [50,80]@4W=3, [120,150]@4W=4, [300,330]@4W=4.
+NET: genuine new results = explicit zero-free SOS certificates + arb frontier extension; pushing the rigorous
+frontier hard past the prior 2.20. The uniform (all-4W) result stays the target; each certified 4W is a banked
+unconditional positivity theorem on a described class.
