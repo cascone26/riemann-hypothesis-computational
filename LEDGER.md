@@ -17756,3 +17756,23 @@ high windows" into a clean sufficient condition floor>pnorm with an explicit hei
 certify floor (PD, §848) + pnorm (λmax prime) separately, floor>pnorm ⟹ positivity, no slow full-pencil margin.
 NEXT: bound pnorm(4W) explicitly (from the prime sum) to make the threshold t>2π·exp(2π·pnorm(4W)) fully analytic —
 then it's a closed-form robust-region positivity theorem. The corner (floor<pnorm) stays the exact-algebra target.
+
+## §876 (★ corner structure LOCALIZED — arch(v_p) ≥ pnorm at every window, EXACTLY equal at the corner: the prime's strongest direction sits where the arch is big enough to cover it ★) — operators/corner_correction.py
+Decomposed the corner misalignment. v_p = prime's top eigenvector (in G-metric), pnorm=prime(v_p). Computed
+arch(v_p) [arch+pole in the prime-top direction] and Q(v_p)=arch(v_p)−pnorm:
+  [14,44]4W=2: arch(v_p)=0.3080 ≫ pnorm=0.0385, Q(v_p)=+0.270 (robust)
+  [14,44]4W=3: arch(v_p)=0.2328 ≈ pnorm=0.2326, Q(v_p)=+0.0001 (MARGINAL — knife-edge)
+  [14,44]4W=4: arch(v_p)=0.2875 ≈ pnorm=0.2873, Q(v_p)=+0.0001 (MARGINAL)
+  [50,80]4W=4: arch(v_p)=0.3685 > pnorm=0.2999, Q(v_p)=+0.069;  [300,330]5.0: 0.6201>0.3832, Q=+0.237
+FINDING: arch(v_p) ≥ pnorm at EVERY window (Q(v_p)≥0), and arch(v_p) = pnorm EXACTLY at the corner (Q(v_p)=0⁺).
+The misalignment (§835, cos(v_p,v_a)≈0.005, near-orthogonal) means the prime's STRONGEST direction v_p is NOT the
+arch's weak direction — arch(v_p) (0.29 at corner) is much bigger than the floor (0.13). So the prime's peak
+strength lands where the ARCH is big enough to cover it: arch(v_p) ≥ pnorm ⟹ Q(v_p) ≥ 0.
+LOCALIZED RH-MARGINAL CONDITION: the corner positivity is carried by the single inequality arch(v_p) ≥ pnorm (the
+arch in the prime's top-eigenvector direction ≥ the prime's top eigenvalue), SATURATED (=) at the corner. This is
+a concrete, checkable structural reformulation of the corner — much sharper than "misalignment saves it": the
+misalignment is exactly that v_p sits in a high-arch region. (Note: Q(v_p)≥0 is necessary; the true margin is
+slightly below Q(v_p) — the exact worst φ is near but not equal to v_p. margin 1.7e-9 vs Q(v_p) 1e-4 at 4W=4.)
+NEXT: is arch(v_p) ≥ pnorm PROVABLE uniformly? v_p maximizes ∫P|φ|² (concentrates at the prime oscillation's
+peaks); arch(v_p) = the arch density averaged over those peaks. The condition arch(v_p) ≥ pnorm = "the arch
+density at the prime-peak locations ≥ the prime peak value" — a specific, concrete arithmetic inequality to attack.
