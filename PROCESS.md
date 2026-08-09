@@ -10041,3 +10041,115 @@ independent re-verification of a delegated claim OPENED the productive vein rath
 Proof pointers: LEDGER §827-837; operators/cert_beurling_clean.py, cert_beurling_arb.py, cert_knife_ladder.py,
 cert_knife_float.py, cert_floor_vs_prime.py, cert_misalignment.py, cert_misalign_ladder.py,
 cert_misalign_fixedN.py; ANCHOR_PAPER.md; CCM_BRIDGE.md; RH_UNIFORM_FRONTIER.md.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARC §884–§895 (Riemann8, overnight 2026-08-09): from "concentration mechanism" to a single scalar inequality,
+   the pole-lift picture, and independent literature validation (Groskin). Methodology: propose→verify→SELF-CORRECT.
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+**The problem framing at arc start.** §882-883 had localized the RH-corner to a finite-matrix condition (Schur/Q_SS
+on the strong-prime subspace) and found Q_SS ⪰ 0 (arch dominates prime on the critical subspace) is arb-CERTIFIABLE
+even though the full razor margin (~1e-9) is not. Open target: WHY does arch dominate prime at the corner — a
+structural positivity mechanism, not just a certified number.
+
+**The decision chain (with the forks and the two self-corrections that mattered).**
+ • §884: arb-CERTIFIED Q ⪰ 0 on the strong-prime critical subspace at corner [14,30] 4W=4 (min pivot 2.3e-5 ≫ radii).
+   First rigorous (not float) proof that arch|_S ⪰ prime|_S. Necessary-for-RH, certified.
+ • §885 (FORK toward the coupling): decomposed the Schur correction C=Q_SR Q_RR^{-1} Q_RS; found it 99.8% carried by
+   the defect D=arch−prime, NOT the pole. Concluded "the razor is not a pole effect." ← This headline was an
+   OVERREACH (corrected at §889); it was true for the COUPLING block but false for the MARGIN.
+ • §886-887 (FORK toward concentration): the symbol σ=Ω/2π−P is pointwise-negative on 7–40% of every window (never
+   nonneg, even at height 5000), so positivity is always the nontrivial band-limited Szegő fact; the near-null φ*
+   concentrates on {σ<0} (ratio 1.2–1.7×). Reframed the corner as a Landau–Widom concentration/uncertainty problem.
+ • §888 (SELF-CORRECTION #1, from an independent cross-check I ran while a workflow tested the same thing): compared
+   the diagonal-symbol margin to the true margin — they MATCH in the robust region (4–5 digits) but at the corner the
+   diagonal gives −8e-6 (WRONG SIGN) vs true +1.66e-9. The concentration frame is the ROBUST-region mechanism only;
+   the corner is off-diagonal. (Initially mis-labeled as "symbol-approximation error.")
+ • §889 (SELF-CORRECTION #2, the clean resolution): arch−prime = M_σ EXACTLY (‖diff‖=1e-15) — σ is an EXACT symbol,
+   no approximation. The −8e-6→+1.66e-9 lift is the POLE (a legitimate rank-≤2 off-diagonal PSD term), which FLIPS
+   the sign. So §885 was wrong (pole IS essential, on the diagonal not the coupling) and §888's "approximation" label
+   was wrong (it's the pole). M_σ has exactly ONE negative eigenvalue; the rank-1 pole lifts it. Clean reformulation:
+   RH-corner ⟺ the pole lifts the single negative direction of arch−prime.
+ • §890: swept 75 configs (4W=4..8): #neg(M_σ)=1 in every well-conditioned config; #neg ≤ rank(pole) is FORCED by RH
+   (M_σ=Q−pole, Q⪰0 ⟹ M_σ ⪰ −pole). The miracle quantified: naive Szegő predicts ~7–15 negative eigenvalues (σ<0 on
+   40%, time-bandwidth ~15) but there is exactly ONE — the primes conspire to keep arch−prime almost-positive.
+ • §891: RH-corner ⟺ a SINGLE scalar inequality g=1−μ·w^T A^+ w ≥ 0, leading form p·(v·w)² ≥ μ (pole coverage of the
+   defect's worst direction ≥ defect depth). Verified g and true-margin same sign, 8/8 configs. Three explicit
+   zero-free quantities. (Honest: this is a sharp LOCALIZATION — Q(w)≥0 at the binding direction — not new leverage.)
+ • §892: height-ladder — pole strength decays ~exp with height; corner is a low-height/near-capacity phenomenon;
+   robust region has M_σ ⪰ 0 outright. Clean split: robust = §875 unconditional (t>T₀(4W)=2π e^{2π pnorm}); corner =
+   the §891 scalar inequality, unbounded as bandwidth→∞ (the genuine RH content).
+ • §893: an independent dynamic workflow (validity-gate→3 angles→adversarial verify, 8 agents, all CONFIRMED) that I
+   ran in parallel reproduced §888-889 from separately-written code — Q=M_σ+pole exactly, pole-driven, M_σ indefinite;
+   the bare concentration operator certifies 0/14 (coupling/pole essential). Convergence of two independent lines.
+ • §894: arb-certified the corner inertia (in progress at arc close) — arch−prime has exactly one negative eigenvalue
+   and the pole lifts Q to PSD, rigorously (upgrades §889-891 from float to HANDLE).
+ • §895: literature — VERIFIED (own WebFetch + 2 agents) Groskin arXiv:2607.02828 "A finite Guinand–Weil dictionary…"
+   independently builds the SAME framework (finite Galerkin Weil form, band-limited, pole, arch positivity) and proves
+   UNCONDITIONALLY that the omitted archimedean tail is a totally-positive Cauchy–Stieltjes increment + a finite⟹
+   cutoff-free certification budget B_T — a RIGOR TOOL for bridging our finite arb certs to the full form. It explicitly
+   does NOT prove positivity (RH-equivalent, open) and gives no arch-dominates-prime bound — confirming our §825/§893
+   lit-gate that this exact gap is unclosed anywhere. Anti-fabrication note: the delegating agent's gloss matched my
+   framing suspiciously well, so I re-fetched the arXiv page myself before banking — it returned specific unsolicited
+   details ("first 512 zeros", "makes no RH claim"), confirming real.
+
+**Where this arc lands.** The RH-corner is now the sharpest it has been: Q = M_σ + pole with M_σ = arch−prime an EXACT
+band-limited symbol compression carrying exactly ONE negative eigenvalue at the corner, and RH-corner ⟺ the rank-≤2
+pole (explicit, archimedean, from ζ's s=1 pole) lifts that single direction — a single scalar inequality p(v·w)² ≥ μ
+in three explicit zero-free quantities. The robust region is unconditional (§875, certified to frontier 5.0); the
+corner is the residual RH content, now validated as the right framework by an independent 2026 paper that reaches the
+SAME positivity gap and stops there. The open lever: bound μ (the prime-defect depth) via the totally-positive
+Cauchy–Stieltjes structure of the archimedean part (Groskin T3.2), or prove the pole-coverage inequality directly.
+
+**Methodology this arc (kept for provenance).** Two loud self-corrections (§888 corrects §886-887's frame; §889
+corrects both §885's "not-pole" overreach AND §888's "approximation" mislabel) — each caught by running an INDEPENDENT
+computation (diagonal-vs-true margin, exact-symbol identity) rather than trusting the prior narrative. A parallel
+adversarial workflow (§893) reproduced the conclusion from scratch. And an agent's too-perfect literature gloss was
+re-verified by me directly (§895) before banking. The discipline that produced the progress: verify-before-ship,
+self-correct in-ledger, and never let a clean story survive an independent check it can't pass.
+Proof pointers: LEDGER §884-895; operators/{cert_qss,coupling_probe,symbol_negset,phistar_concentration,
+concentration_check_indep,pole_decomp,neg_count_sweep,scalar_criterion,asymptotic_ladder,cert_inertia,
+symbol_approx_error}.py; workflows wf_58ea07ea (domination), wf_045cb265 (concentration-attack); arXiv:2607.02828.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARC §904–§932 (Riemann8, 2026-08-09 autonomous phase): the complete cartography — analytic razor → geometric barrier →
+   the three-routes-one-wall map, with our contribution precisely placed. Discipline: exhaustive elimination + honest self-
+   correction (survey's #1 tactic refuted, my own §918/§928 over-reads corrected, 4+ agent fabrications caught).
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+**Framing at arc start.** §884-903 had localized RH-corner to a bounded-bottom, ~2-3-dim near-null prolate-plunge razor and
+named two sub-gaps. This arc: exhaust every accessible lever, run a strategic survey, and settle WHERE a proof can live.
+
+**The decision chain.**
+ • §904-912: the corner is a bottom-edge one-sided-spillover effect (in-window zeros exactly annihilated; margin = tail
+   spillover onto above-window zeros). The RAZOR is bottom-bounded (h≲34 uniform in 4W); above it the pole over-covers.
+ • §913-919: the strategic survey (5 programs) + the razor's refinements: the "comfortable Region 2" was my OWN over-read
+   (§918→§919 corrected — M_+ eats the leading slack, razor extends through the sub-threshold corner).
+ • §920-925: survey ruled out Connes/Deninger/de Branges as adding leverage (Deninger 2022 no-go; Conrey-Li de Branges).
+   Its #1 tactic (arch⪰p=2) I EXECUTED and REFUTED (§925 — primes can't be peeled, cancellation is essential).
+ • §926-929: density-preserving bottoms out (smooth vacuous at window); SDP/Lasserre blocked (boundary-critical, non-poly);
+   frequency-band NOT decomposable (cross-band irreducible). Every decomposition = the same global cancellation.
+ • §921/927: the META-conclusion — every RH-criterion is razor-FINITE (band-limited Weil) or comfortable-INFINITE (Li,
+   Báez-Duarte); no finite-comfortable-certifiable target exists → this is WHY arb-certification can't close it.
+ • §928/930: UNIVERSALITY — razor-thin edge positivity holds across L-functions (each at its own spectrum edge; ζ's pole-
+   lift is the conductor-1 special case). Any proof must be universal (no ζ-specific arithmetic). Self-corrected an
+   unfair-window over-read (§928 first→§928b).
+ • §931: THE BARRIER MADE CONCRETE (the key conceptual result). The function-field Weil form (RH PROVEN there) is the
+   IDENTICAL object — sum-of-squares-over-zeros, PSD ⟺ zeros-on-line, same sampling razor. The ONLY difference: function
+   fields prove zeros-on-line via HODGE-INDEX geometry (intersection form on C×C); number fields have the same zero-free
+   form but LACK the surface (Deninger no-go). Our razor is the ANALYTIC SHADOW of missing GEOMETRY.
+ • §932: Connes program (source-verified) confirms — archimedean Weil positivity PROVEN (and our §875/897/898 independently
+   re-derive it); semi-local (prime-side) = RH, unproven; prolate spectral convergence = RH; NO bypass. The three routes
+   (analytic/geometric/spectral) are ONE wall.
+
+**Where this arc lands.** RH's remaining content = the semi-local prime-side Weil positivity, with the archimedean half done.
+It is universal (all L), razor-thin, cross-band-global, and identical (verified) to what every leading program leaves open.
+Our contribution, precisely placed: the sharpest EXPLICIT finite-matrix localization + the complete elimination map + the
+universality constraint + independent re-derivation of the proven archimedean-place positivity. Deliverable: RH_CORE_
+LOCALIZATION.md. Honest frontier: the missing number-field geometric/spectral structure — needs a new idea no program has.
+
+**Methodology.** ~15 tactics + 6 workflows + source-verified reads, with relentless self-correction: I refuted the survey's
+own top pick, corrected my own over-reads twice (§918, §928), and the adversarial verifiers + my independent probes caught
+4+ agent fabrications. Only cross-verified results banked. Proof pointers: LEDGER §904-932; RH_CORE_LOCALIZATION.md;
+operators/{edge_mech_indep,ratio_frontier,two_term_final,density_prime,freq_band,li_coefficients,baez_duarte_ck,
+lfunction_razor,multi_conductor,ff_toeplitz}.py; workflows wf_e696c870, wf_259382b8, wf_5685d3c6.

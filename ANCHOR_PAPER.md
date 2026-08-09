@@ -378,6 +378,56 @@ pencil (two positive-definiteness checks — floor and pnorm — rather than a g
 *Provenance for §9: LEDGER §869 (SOS), §870 (workflow), §871–§873 (certified frontier 3.0/4.0/5.0), §875
 (sufficient condition). Scripts: operators/sos_certificate.py, cert_one.py, floor_pnorm_sufficient.py.*
 
+## 10. The pole-lift picture and the near-null localization of the corner (LEDGER §884–§903)
+
+The corner of §9.5 has been resolved to a substantially finer structure, and cross-confirmed by an independent
+adversarial workflow and by an independent 2026 preprint (Groskin, arXiv:2607.02828), which builds the same
+finite Guinand–Weil framework.
+
+**10.1 Exact decomposition Q = M_σ + pole.** On each band-limited Fejér span, the compressed Weil form splits
+*exactly* (‖·‖ = 10⁻¹⁵) as Q = M_σ + pole, where M_σ = arch − prime is the compression of multiplication by the
+**exact** symbol σ(r) = Ω(r)/2π − P(r) (Ω = Re ψ₀(¼+ir/2) − ln π; P(r) = (1/π)Σ_{log n<4W} Λ(n)/√n cos(r log n)),
+and pole = p·vvᵀ is the rank-≤1(-2) positive term from ζ's pole at s = 1 (§889). The prime truncation log n < 4W
+is *exact* for bandwidth-4W test functions (φ̂ supported in |u|<4W), so M_σ is the exact Weil form minus the pole.
+
+**10.2 The single negative eigenvalue.** At the corner, M_σ has **exactly one negative eigenvalue** −μ (eigenvector
+w); everywhere in the robust region it has none (§889–§890). Since M_σ = Q − pole with Q ⪰ 0 (RH) and pole of rank
+≤ 2, the count #neg(M_σ) ≤ rank(pole) is forced, and empirically equals 1 in every well-conditioned corner. The
+symbol σ is pointwise-negative on 7–40% of every window (§886) — a generic symbol of that negative measure would
+give ~7–15 negative eigenvalues at these time-bandwidth products, yet there is exactly one: the arithmetic
+near-coincidence of arch and prime leaves a single negative direction, which the pole must lift.
+
+**10.3 The corner as a scalar inequality, and its razor.** With A = M₊ + p·vvᵀ (M₊ the PSD part of M_σ), the
+rank-one downdate gives the **exact criterion**
+    RH-corner ⟺ g := 1 − μ · wᵀA⁺w ≥ 0,
+whose leading form is p·(v·w)² ≥ μ — the pole's coverage of the defect's worst direction must exceed the defect
+depth (§891). The leading comparison has a *stable* ~4 % slack (π_w/μ ≳ 1.035, holding even at critical sampling,
+§899–§900). The razor is therefore not in the leading term: wᵀA⁺w is 90–100 % carried by the **near-null cluster**
+of M_σ (eigenvalues ~10⁻⁷, A⁺-amplified by up to ~10²²), and the true margin is the small misalignment of w with
+that cluster (§901). At the finest resolution the razor is an **irreducibly ~2–3 dimensional coupling** within the
+near-null (prolate-plunge) sub-cluster — no single scalar closes it (§903); this localizes the "irreducibly
+multi-dimensional" character of Weil positivity from the full N-dimensional form to a ~3-dimensional prolate cluster.
+The near-null cluster is *not* the zero-interpolation basis (the §855 vanishing-at-zeros hypothesis fails, §902) and
+carries *no clean arithmetic law* in the zero spacings (§902); it is the same prolate-plunge object on which the
+Connes–Consani–Moscovici spectral program (arXiv:2511.22755) leaves its μ_λ ≥ 0 lemma unproven — reached here from
+an explicit, finite-matrix direction.
+
+**10.4 Structure on the archimedean side (unconditional).** Two exact, zero-free structural facts about the
+non-prime side were established. (i) The archimedean *density* is Cauchy–Stieltjes: from ψ₀'s series,
+Ω(r) = −γ − ln π + Σ_{n≥0}[1/(n+1) − aₙ/(aₙ²+r²/4)] (aₙ = n+¼), so dΩ/d(r²) = Σ_n (aₙ/4)/(aₙ²+r²/4)² is completely
+monotone (§897) — the pointwise origin of Groskin's totally-positive archimedean tail (though Ω itself is negative
+for small r, so arch's form-positivity still relies on band-limiting, §897b). (ii) The archimedean weight in the
+Guinand–Weil frequency variable has the **closed form** Ŵ(u) = −π e^{u/2}/sinh(u) (verified, §898); against the prime
+masses Λ(n)/√n at u = log n it gives ratio 2π/log n, crossing 1 exactly at the scale **u = 2π** — the archimedean
+weight pointwise-dominates the primes for log n < 2π, and the prime defect strengthens as the band-limit 4W crosses
+2π (matching the onset of extra negative eigenvalues, §890).
+
+*Provenance for §10: LEDGER §884–§903; independent workflow wf_045cb265 (concentration-attack, all verdicts CONFIRMED)
+and wf_6ddfe332 (near-null razor); Groskin arXiv:2607.02828 (verified). Scripts: operators/pole_decomp.py,
+scalar_criterion.py, neg_count_sweep.py, aplus_routing_indep.py, overlap_ceiling.py, omega_cs.py, freq_compare.py,
+symbol_negset.py. Two agent errors (a mode mislabel, a fabricated minimum) were caught by independent re-computation and
+excluded; only cross-verified results are stated here.*
+
 ---
 
 *Status: this draft is grounded entirely in banked, certified results (LEDGER §788–§808, §843–§848) and

@@ -17873,3 +17873,850 @@ makes the margin razor-thin.
 form dominates the prime form ON THE CRITICAL SUBSPACE) IS arb-CERTIFIABLE at the deep corner. This is the genuine
 "arch dominates prime on S" structural fact — a rigorous certifiable corner result (necessary-for-RH, the R-coupling
 razor is the remaining sufficient bit). SETTING UP the arb certification of Q_SS ⪰ 0 (arch|_S ⪰ prime|_S) at 4W=4.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§884  arb-CERTIFIED: Weil form Q ⪰ 0 on the critical (strong-prime) subspace — "arch dominates prime on S"
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (interval-arithmetic certificate, zero-free). Ran operators/cert_qss.py at the corner [14,30],
+4W=4, N=6, rc=100, prec=180. Strong-prime subspace S = span of the k=2 prime eigenvectors with μ_j>floor;
+V_S = G^{-1/2} W_S (fixed float basis of coefficient vectors). Built M = pole+arch−prime as an arb interval
+matrix (pole_entry + arch_entry_v3 + prime_entry), projected Q_SS = V_S^T M V_S (2×2 arb), certified PSD by
+arb LDLT:
+
+    maxrad(M) = 2.4e-05 ;  Q_SS pivots = [ 4.78e-04 (±1e-05) ,  2.31e-05 (±1e-05) ] ;  both > 0  ⇒ CERTIFIED.
+
+Min pivot 2.31e-5 minus radius 1e-5 = 1.31e-5 > 0, so PSD is rigorous (radii do not swallow a pivot). This is
+the first RIGOROUS (not float) certificate that the Weil form is positive-definite on the critical subspace at
+a deep corner — i.e. arch|_S ⪰ prime|_S UNCONDITIONALLY. It is the certifiable necessary-for-RH piece: Q_SS min
+(2.3e-5) sits far above the arb radii even though the FULL margin (Schur, ~5.8e-7 here / 1.66e-9 at [14,44]) is
+razor-thin and NOT yet certifiable. Confirms §882's opening.
+
+FRONTIER (from the wxitf6moj domination workflow, 11 agents, adversarially verified → TEMPERED/HANDLE):
+  • ROBUST region (floor>pnorm): genuine UNCONDITIONAL structural dominance via the archimedean floor law
+    floor(t) = (1/2π)·ln(t/2π) (Stirling asymptotic of ψ₀(¼+ir/2); HANDLE-exact, ratio 0.886→0.999 at heights
+    80→4020) dominating pnorm(4W) — Prop 9.4. arch|_S ⪰ prime|_S rigorously there.
+  • CORNER (floor<pnorm, the RH-hard core): NO known structural dominance principle. FE forces arch|_S ≈ prime|_S
+    (near-coincidence, the ξ(s)=ξ(1−s) split of ξ'/ξ); Q_SS>0 strictly comes from Γ-convexity; but the actual
+    RH margin is the SCHUR complement Q_SS − Q_SR·Q_RR⁻¹·Q_RS ⪰ 0, and the S–R coupling Q_SR (band-limiting
+    geometry) is the razor — it eats ~97% of Q_SS (2.3e-5 → 5.8e-7). RH-corner ⟺ Schur ⪰ 0 (tight), Q_SS ⪰ 0 only
+    necessary. Open genuine question the workflow surfaced: is Q_SR constrained by the FE duality?
+NEXT: attack the coupling Q_SR — characterize it, test whether it is FE-forced / bounded by zero-free quantities.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§885  THE RAZOR CHARACTERIZED: it lives in the defect D=arch−prime, NOT the pole
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/coupling_probe.py, float). RH-corner ⟺ Schur = Q_SS − C ⪰ 0, C = Q_SR Q_RR^{-1} Q_RS
+(the S–R coupling correction, PSD). Split C by whether the coupling Q_SR is carried by the rank-1 POLE or the
+defect D=arch−prime. At [14,44] 4W=4, N=13 (k=5, dim R=8):
+    min Q_SS = 4.95e-6 ;  min Schur = 1.66e-9  (razor = full Weil margin)
+    C eigenvalues: one dominant ~1e-3, rest ≪ ; trace(C)=8.42e-4 ≈ trace(Q_SS)=8.58e-4  ← C removes ~98% of Q_SS mass
+    ‖Q_SR pole-part‖/‖Q_SR‖ = 0.002 ;  ‖C_pole‖=1.6e-9  vs  ‖C_from_D‖=6.0e-4 ;  pole rank=1, ‖pole‖~9e-5, ‖D‖~1.0
+CONCLUSION: the razor is NOT a pole effect — the S–R coupling is 99.8% carried by the defect operator D=arch−prime;
+the pole (rank-1, norm ~1e-4) is negligible in the coupling (though it is comparable to D on the S diagonal). This
+KILLS the "pole lifts the corner" hypothesis. Refined target: RH-corner ⟺ (D+pole)_SS ⪰ D_SR·(D+pole)_RR^{-1}·D_RS,
+with the defect coupling D_SR nearly saturating the (near-coincidence) diagonal D_SS ⪰ 0. The whole razor is the
+block structure of D = the compression of the symbol σ(r) = (1/2π)Ω(r) − P(r). Attack next: σ's negative set +
+Szegő-symbol mechanism (§862-864) made quantitative — does the razor track σ's negative mass vs bandwidth?
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§886  THE SYMBOL IS ALWAYS POINTWISE-NEGATIVE → Weil positivity is always the nontrivial Szegő fact
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/symbol_negset.py). Symbol σ(r)=Ω(r)/(2π) − P(r), P(r)=(1/π)Σ_{log n<4W}Λ(n)/√n cos(r log n);
+mean_r σ = floor (cos-terms average to 0). Measured min σ, neg-fraction, neg-mass across heights at 4W=4:
+    [14,44]:  mean(floor)=0.255  min σ=−0.663  neg-frac=0.40  neg-mass=1.79
+    [60,90]:  0.401 / −0.637 / 0.31 / 2.61        [120,150]: 0.480 / −0.794 / 0.25 / 2.20
+    [300,330]:0.631 / −0.750 / 0.15 / 1.50        [1000,1030]:0.806 / −0.531 / 0.12 / 0.89
+    [5000,5030]:1.074 / −0.552 / 0.069 / 0.60
+KEY: σ is POINTWISE NEGATIVE on 7–40% of every window — it NEVER becomes nonneg, even at height 5000. So Weil
+positivity is NEVER the trivial "nonneg-symbol Toeplitz" fact; it is ALWAYS the nontrivial band-limited Szegő-Widom
+phenomenon: the finite compression stays PSD because bandwidth-4W functions can't concentrate |φ|² on {σ<0} enough
+to beat the positive mean (floor). floor climbs ∝ ln(t/2π); neg-frac shrinks — so the "robust" region (floor>pnorm)
+is robust by AVERAGING a still-indefinite symbol, not by σ≥0. REFRAME: RH-corner positivity ⟺ a CONCENTRATION /
+UNCERTAINTY-PRINCIPLE bound — no bandwidth-4W φ can grab enough negative-set mass to make ∫|φ|²σ<0. This is a known
+hard-analysis class (Donoho–Stark / Nazarov / Landau–Widom concentration). Next: verify the near-null φ* concentrates
+on {σ<0}; then bring a quantitative concentration bound floor ≥ (max negative mass a 4W-band function can capture).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§887  φ* CONCENTRATES ON {σ<0} → the corner is a time-frequency concentration/uncertainty problem
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/phistar_concentration.py). The near-null Weil eigenfunction φ* (min gen-eigvec of Q vs G)
+puts more of its |φ*|² mass on the symbol's negative set {σ<0} than a generic band-limited function:
+    [14,44]4W=4: margin=1.1e-12, P_neg(φ*)=0.498 vs generic 0.402 (ratio 1.24)
+    [14,44]4W=3: margin=1.9e-7,  P_neg(φ*)=0.542 vs 0.381 (1.42)
+    [14,44]4W=5: margin=6e-14,   P_neg(φ*)=0.509 vs 0.416 (1.22)
+    [60,90]4W=4: margin=3.3e-9,  P_neg(φ*)=0.534 vs 0.311 (1.72)
+⟨σ⟩_φ* ≈ 0 (φ* is near-null). The concentration is MODEST (1.2–1.7×), exactly as the uncertainty principle
+demands — a bandwidth-4W function CANNOT concentrate arbitrarily on {σ<0}; the cap on capturable negative mass
+lands ⟨σ⟩_φ* just barely ≥ 0. THE RAZOR MECHANISM: floor (positive mean of σ) is calibrated so that even the
+maximal band-limited concentration on {σ<0} can't beat it. This is exactly the LANDAU–WIDOM eigenvalue plunge for
+time-frequency localization operators (prolate-spheroidal concentration): RH-corner positivity ⟺ the concentration
+operator's plunge stays below floor. A concrete, literature-backed structural lead. Next: bring the quantitative
+concentration bound (Nazarov / Donoho–Stark / Landau–Widom) — prove max_{bandwidth-4W φ} ∫_{σ<0}|φ|² · |min σ| ≤ floor.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§888  COURSE-CORRECTION: the corner is OFF-DIAGONAL, not symbol-concentration (diagonal symbol gets it WRONG by 4000×)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/concentration_check_indep.py, independent of the running concentration workflow). Compared the
+true Weil margin (min gen-eig of pole+arch−prime vs G) to the SZEGŐ / DIAGONAL-SYMBOL margin (min gen-eig of the
+compressed multiplication M_σ, (M_σ)_ij=∫P_i σ P_j, σ=Ω/2π−P) across heights, 4W=4:
+    window        true margin      Szegő-symbol margin    λmax(K)
+    [14,44]       +1.657e-09       −8.07e-06  (!!)        0.639
+    [60,90]       +3.618e-02       +3.6177e-02            0.491
+    [120,150]     +2.172e-01       +2.1719e-01            0.409
+    [300,330]     +2.944e-01       +2.9437e-01            0.399
+    [1000,1030]   +5.263e-01       +5.2625e-01            0.307
+ROBUST region: Szegő margin ≈ true margin to 4–5 digits → the diagonal-symbol/concentration frame is VALID and
+positivity there IS the "positive-mean band-limited averaging" story (§886/887 correct there). CORNER [14,44]: the
+diagonal symbol gives −8.07e-6 (WRONG SIGN), and its error (~8e-6) is ~4000× the true razor (1.66e-9). So the
+symbol/concentration lens is the WRONG frame for the corner — it predicts RH *fails*. The true positivity comes
+ENTIRELY from the OFF-DIAGONAL operator structure Q−M_σ (the genuine Toeplitz off-diagonal the pointwise symbol
+drops): −8e-6 (diagonal) + ~8e-6 (off-diagonal lift) = +1.66e-9. CORRECTS §886/887's "corner = concentration"
+framing — concentration is only the robust-region mechanism. This AGREES with §885 (razor lives in the off-diagonal
+coupling Q_SR, not diagonal/pole). Two independent lenses converge: THE CORNER RAZOR IS AN OFF-DIAGONAL OPERATOR FACT.
+REDIRECT: characterize Q−M_σ (the off-diagonal lift) — what makes it positive and exactly ~|Szegő margin| at the
+corner? That is the true razor, and it is a Szegő–Widom second-order / off-diagonal phenomenon, not a mean/floor one.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§889  CLEAN REFORMULATION + correction of §885/§888: RH-corner ⟺ rank-≤2 POLE lifts the exact-symbol form M_σ to PSD
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/pole_decomp.py). Decomposed Q = M_σ + pole where M_σ = compression of mult-by-σ, σ=Ω/2π−P.
+FACTS at corner [14,44] 4W=4 (N=13):
+  • ‖(arch−prime) − M_σ‖/‖·‖ = 1.2e-15  → arch−prime IS EXACTLY M_σ (σ is an EXACT symbol, NOT an approximation).
+  • margin(M_σ, no pole) = −8.070e-6  <0 ;  margin(M_σ+pole, full Q) = +1.657e-9  ≥0.  The rank-1 POLE FLIPS THE SIGN.
+  • M_σ has EXACTLY ONE negative eigenvalue (−8.07e-6); lowest four: [−8.07e-6, +4.8e-8, +2.1e-7, +1.3e-6]. pole rank=1.
+  • pole-range covers only 0.306 of the negative eigenvector, yet lifts it (neg eigenvalue is tiny). Robust windows
+    [60,90],[120,150]: M_σ has 0 negative eigenvalues → already PSD, pole irrelevant (margin unchanged to 5 digits).
+CORRECTIONS (honesty, verify-before-ship):
+  • §885 headline "razor is NOT a pole effect" was an OVERREACH — correct for the COUPLING block Q_SR (pole 0.2%
+    there), but WRONG for the MARGIN: the pole is ESSENTIAL, it flips the sign. The pole acts on the DIAGONAL, not
+    the coupling — that's the reconciliation.
+  • §888 "symbol frame invalid / off-diagonal error dwarfs razor" was MIS-STATED — there is NO symbol-approximation
+    error (arch−prime = M_σ exactly). The −8e-6→+1.66e-9 lift is the POLE (a genuine rank-≤2 off-diagonal PSD term),
+    not an approximation defect. §888's off-diagonal INTUITION was right (pole is rank-2 off-diagonal); its
+    "approximation error" LABEL was wrong.
+CLEAN STATEMENT: RH-corner ⟺ the rank-≤2 pole term lifts the (few) negative eigenvalues of the exact indefinite
+symbol form M_σ = arch−prime to ≥ 0. At the corner M_σ has exactly 1 negative eigenvalue. NECESSARY structure: since
+pole rank ≤ 2, positivity REQUIRES #neg(M_σ) ≤ 2 AND the pole covering that negative eigenspace. CRUCIAL NEXT TEST:
+is #neg(M_σ) ≤ 2 across ALL deeper corners (4W=5,6,7; many windows)? If yes → a striking finite necessary structure.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§890  THE SINGLE-NEGATIVE-EIGENVALUE STRUCTURE: #neg(M_σ)=1 (well-conditioned), pole rank-1, RH ⟺ pole dominates it
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/neg_count_sweep.py, 75 configs: windows [14,44],[14,34],[30,60],[60,90]; 4W=4..8; frac 0.7/0.85/0.95).
+Counted negative eigenvalues of the exact symbol form M_σ = arch−prime (whitened vs G):
+  • Every WELL-CONDITIONED config (frac=0.70): #neg(M_σ) = EXACTLY 1. (max over all 75 = 2, only at frac≥0.85.)
+  • The 2nd negative eigenvalue + the noise-scale negative "full margins" (−1e-10…−1e-15) appear ONLY at frac 0.85/0.95,
+    where G is near-singular at capacity → whitening amplifies float error. These are CONDITIONING ARTIFACTS (need arb),
+    NOT positivity failures / not evidence against RH. The frac=0.70 rows all have clean positive full margins.
+  • pole is effectively RANK-1: eig1 ~1e-4 (dominant), eig2 ~1e-20 (numerical zero).
+THEORY: #neg(M_σ) ≤ rank(pole) is FORCED by RH — M_σ = Q − pole with Q⪰0 ⟹ M_σ ⪰ −pole ⟹ ≤ rank(pole) neg eigenvalues.
+So the observed #neg=1 is a CONSEQUENCE of Weil positivity (a consistency check, confirmed), and it REFRAMES the corner:
+    RH-corner ⟺ the rank-1 pole term DOMINATES the single negative direction of the exact-symbol defect M_σ = arch−prime.
+THE MIRACLE QUANTIFIED: σ = Ω/2π−P is pointwise-negative on up to 40% of the window (naive Szegő/Landau count at these
+time-bandwidths ~7–15 negative modes), yet M_σ has exactly ONE — the primes conspire to keep arch−prime almost-positive
+(a single negative direction), and the pole (rank-1, from the s=1 pole of ζ) is exactly what lifts it. NEXT: verify the
+scalar criterion — RH-corner ⟺ p·(v·w)² ≥ μ, where μ=|neg eigenvalue of M_σ|, w its eigenvector, pole = p·vv^T.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§891  RH-CORNER AS A SINGLE SCALAR INEQUALITY: pole coverage of the worst defect direction ≥ defect depth
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/scalar_criterion.py). M_σ=arch−prime has one negative eigenvalue −μ (eigvec w, well-conditioned
+frac≤0.65); pole = p·vv^T (rank-1). Q=M_σ+pole = A − μ ww^T with A=M_+ + p vv^T ⪰0. Rank-1 downdate: Q⪰0 ⟺
+    g := 1 − μ · w^T A^+ w  ≥ 0.
+Verified g and the true Weil margin have the SAME SIGN across 8 configs (corners #neg=1 and robust #neg=0):
+    [14,44]4W4: μ=1.55e-5, π_w=p(v·w)²=1.72e-5, π_w−μ=+1.6e-6, margin=+3.6e-10, g=+4.9e-4  ✓
+    [14,44]4W5: μ=1.96e-5, π_w=2.03e-5, π_w−μ=+6.8e-7, margin=+1.7e-12  (razor: π_w barely > μ) ✓
+    [14,44]4W3: μ=6.70e-6, π_w=8.87e-6, margin=+2.2e-6 ✓     robust [60,90],[120,150]: #neg=0, PSD ✓  (8/8 signs match)
+LEADING CRITERION: RH-corner ⟺ p·(v·w)² ≥ μ  ("the pole's coverage of the prime–arch defect's worst direction w
+exceeds the defect's depth μ"), with a small M_+ correction (exact form g above). THREE EXPLICIT ZERO-FREE QUANTITIES:
+  μ = depth of the single negative eigenvalue of arch−prime ;  p = pole strength ;  (v·w)² = alignment of the pole
+  direction v with the defect eigenvector w. This localizes Weil positivity at the corner to ONE scalar inequality —
+  sharper than §875 (floor>pnorm). REMAINING RH-hard content: bound μ and p(v·w)² unconditionally & show μ ≤ p(v·w)².
+NEXT: asymptotics of μ, p, (v·w)² vs height/bandwidth — do they reveal WHY the inequality holds / where the razor bites?
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§892  HEIGHT-LADDER: the pole decays exponentially; the corner is a LOW-HEIGHT / NEAR-CAPACITY phenomenon
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/asymptotic_ladder.py). Tracked μ (defect depth), p (pole strength), (v·w)², π_w, floor, margin
+across climbing narrow windows (4W=4, frac=0.65, heights 17→760):
+  • pole strength p DECAYS ~exponentially with height: 1.27e-4 (h=17) → 4.8e-8 (h=130) → 1.3e-10 (h=760). The
+    Fejér functions centered at height t have exp-small value at the pole point r=i/2 (s=1), so the pole term is
+    exp-suppressed at large height — irrelevant in the robust region (as expected).
+  • At these NARROW windows (frac=0.65), M_σ=arch−prime is already PSD (#neg=0) at every height; margin ≈ smallest
+    eigenvalue ≈ tracks floor (0.126→0.750). So the single-negative-eigenvalue CORNER (§889-891) is a WIDE-window /
+    NEAR-CAPACITY feature, not a generic one: it needs N close to Ncap AND (from §890) low-to-moderate height.
+STRUCTURE: RH splits cleanly — ROBUST (high height / below capacity): M_σ ⪰ 0 outright, floor dominates, pole
+irrelevant (certified frontier 5.0, §875 floor>pnorm). CORNER (low height + near critical sampling): M_σ gets one
+small negative eigenvalue, lifted by the exp-small but present pole — governed by the §891 scalar inequality.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§893  INDEPENDENT WORKFLOW CROSS-CONFIRMS §888–891 (concentration-attack, 8 agents, all verdicts CONFIRMED)
+────────────────────────────────────────────────────────────────────────────────────────────────
+Ran a dynamic workflow (validity-gate → 3 attack angles → adversarial verify). Results (independently written code,
+separate from mine):
+  • VALIDITY GATE (CONFIRMED, re-ran own operators/symbol_approx_error.py): Q = M_σ + pole EXACTLY (basis identity
+    M_σ = arch − prime, ‖·‖ match to float); M_σ has a negative eigenvalue; ALL corner positivity comes from the
+    pole. Independently reproduces §889. (Its "approximation error dwarfs margin" LABEL is the same mislabel I
+    corrected in §889 — the "error" IS the legitimate rank-≤2 pole, not an approximation defect — but the SUBSTANCE
+    agrees: pole essential, M_σ indefinite, positivity pole-driven.)
+  • LANDAU–WIDOM (CONFIRMED): the bare Fejér concentration operator K certifies positivity in 0/14 cases → coupling/
+    pole is essential; validates §885/§889 by elimination. The concentration frame is the ROBUST-region mechanism only.
+  • LIT-GATE (CONFIRMED numbers; REPORT-tier leads to follow up): Groskin arXiv:2607.02828 — "archimedean tail is a
+    totally-positive Cauchy–Stieltjes increment" (possible structural handle on the archimedean/pole positivity);
+    Connes–Moscovici arXiv:2310.18423 — prolate operator + trace formula; Carneiro–Littmann–Vaaler / Carneiro–
+    Chandee–Chirre–Milinovich band-limited extremal (noted RH-CONDITIONAL). [Citations are agent-reported — verify
+    before relying; the totally-positive-archimedean lead is worth a real literature read.]
+CONVERGENCE: two independent lines (my §884-892 + this workflow) agree — the RH-corner is an OFF-DIAGONAL, pole-driven,
+single-negative-eigenvalue phenomenon captured by the §891 scalar inequality; concentration is the robust-region story.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§895  LITERATURE: Groskin 2607.02828 (VERIFIED real) independently validates our framework + gives a truncation-rigor tool
+────────────────────────────────────────────────────────────────────────────────────────────────
+REPORT (2 agents + my own WebFetch; arXiv:2607.02828 verified real via direct arxiv.org fetch returning specific
+unsolicited details — "first 512 zeros", "makes no RH claim"). Akiva Groskin, "A finite Guinand–Weil dictionary and
+archimedean tail order for the truncated Weil quadratic form" (July 2026). Deep-read of the actual mechanism:
+  SETUP: finite (2N+1)-dim Galerkin matrices of the Weil form on band-limited trig-poly test functions;
+  Q_∞ = Q_prime^(c) + Q_pole + Q_arch,∞ (his prime truncation = prime powers ≤ c; ours = log n<4W — related, not identical).
+  Independently reproduces OUR objects: finite Weil form, band-limited Guinand–Weil test functions, pole term, arch form.
+  THREE UNCONDITIONAL RESULTS (no RH):
+   (T2.5) dictionary identity: ⟨v,Qv⟩ = exact sum over ζ-zeros (Guinand–Weil), in closed form.
+   (T3.2) the OMITTED ARCHIMEDEAN TAIL (arch beyond frequency cutoff T) is a TOTALLY POSITIVE Cauchy–Stieltjes
+          increment Δ = (1/π²)∫ h_+(T)[sin²(LT/2)/ρ](p_T p_T^t + q_T q_T^t)dT, p_T(n)=1/(a_T−n), q_T=1/(a_T+n)
+          (Cauchy kernels); all ordered minors > 0 (Andréief + Cauchy determinant). ⇒ truncating arch only HELPS positivity.
+   (CERT) finite-cutoff PSD ⟹ cutoff-free PSD; and λ_j(Q_T) < λ_j(Q_∞) ≤ λ_j(Q_T)+B_T, budget B_T ~ (2N+1)ρ ln T/(π²T),
+          ρ=2π/ln c. "Each doubling of T lowers the certification floor one binary digit" (deep scales need infeasible T).
+  NOT PROVEN (explicitly): Q_∞ ⪰ 0 (= RH); "archimedean/pole dominates prime" — no such bound. Paper makes NO RH claim.
+VALUE FOR US: (1) strong independent validation that our M_σ+pole decomposition is the RIGHT/known framework. (2) The
+totally-positive-tail + finite⟹cutoff-free certification is a RIGOR TOOL to bridge our finite arb certs (§884,§894) to
+the full untruncated Weil form — closes the truncation-error gap in our certificates (integrate B_T-style budget). (3)
+Confirms §825/§893: the core dominance (arch+pole ⪰ prime) is unproven everywhere — our §891 scalar localization stands
+as the sharpest statement of exactly that gap. Other REAL leads (verified): Connes–Consani 2006.13771 "Weil positivity
+and Trace formula, the archimedean place"; Bombieri–Lagarias (Li's criterion ⟺ RH); Carneiro–Littmann–Vaaler (band-
+limited extremal, RH-conditional); de Branges spaces. NEXT: adopt Groskin's totally-positive-tail budget to make our
+arb corner certs statements about the FULL Weil form, and study whether T3.2's Cauchy–Stieltjes structure bounds μ.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§894  arb inertia cert of the corner — ATTEMPTED, RADIUS-LIMITED (honest negative): the near-null modes sit below feasible radius
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE(float) + honest arb limit. Tried to arb-certify at corner [14,34] 4W=4 N=8: (A) arch−prime has exactly one
+negative eigenvalue, (B) full Q ⪰ 0. FLOAT: M_σ eigs = [−1.90e-5, +1.39e-7, +3.50e-6, 0.19, 0.20, 0.38, 0.45, 0.49],
+#neg=1, full margin +4.48e-8 (clean). ARB (rc=100, prec=220): maxrad(entries)=2.4e-5 — LDLT hit an indefinite pivot;
+NOT certified. Reason: the corner intrinsically has a near-null eigenvalue (+1.39e-7) that is BELOW the achievable arb
+radius (2.4e-5); to certify the inertia one needs radius < 1.4e-7, i.e. much finer arch integration (rc≫100), which is
+slow. This is the razor wall for full-matrix arb. The CERTIFIED rigorous anchor therefore remains §884 (Q_SS ⪰ 0 on the
+strong-prime SUBSPACE at [14,30] N=6, min pivot 2.3e-5 ≫ radii) — the subspace projection removes the near-null modes,
+which is exactly why it certifies where the full inertia cannot. A higher-rc retry (rc=300, prec=260) is running
+overnight; if it resolves the +1.4e-7 mode it upgrades §889-891 to a full-inertia HANDLE, else §884 stands as the anchor.
+Honest status: §889-891 (single-neg-eigenvalue + pole-lift + scalar criterion) are HANDLE at FLOAT and cross-confirmed
+independently (§893); full-matrix arb HANDLE is radius-blocked at the corner, subspace arb HANDLE is done (§884).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§896  TP-lever check (honest NEGATIVE): the arch kernel over centers is NOT totally positive; Groskin's TP is elsewhere
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/tp_check.py). Tested whether the archimedean form as a kernel A(c_i,c_j)=∫P_{c_i}P_{c_j}Ω/2π over
+ordered centers is totally positive (Groskin T3.2's finite shadow). RESULT: NOT TP — 720/2025 negative 2×2 minors
+(min −2.5e-2) at [14,44] 4W=4 N=10; similar all windows. So the naive hope "arch kernel is TP over centers ⟹ Karlin
+variation-diminishing bounds #neg(arch−prime)" FAILS in our representation. Groskin's TP is in a DIFFERENT variable —
+the frequency-tail order with Cauchy kernels p_T(n)=1/(a_T−n) — and does not transfer to the center basis. Sanity OK:
+arch is PD (all leading minors>0 = the floor) everywhere; prime is indefinite; arch−prime is PD in robust [60,90]
+(fulldet +8.8) but not at corners (fulldet −4e-8 at [14,44]) — matches #neg. Correct form of the Groskin lever to
+pursue: is the archimedean DENSITY Ω(r)=Re ψ₀(¼+ir/2)−ln π itself Cauchy–Stieltjes / completely monotone in r² (the
+pointwise version of the totally-positive tail)? → §897.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§897  THE ARCHIMEDEAN DENSITY IS CAUCHY–STIELTJES (unconditional, from digamma) — pointwise origin of Groskin's TP tail
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/omega_cs.py) + analytic derivation. From ψ₀(¼+ir/2)=−γ+Σ_n[1/(n+1)−1/(n+¼+ir/2)]:
+    Ω(r) = Re ψ₀(¼+ir/2) − ln π = −γ − ln π + Σ_{n≥0} [ 1/(n+1) − a_n/(a_n² + r²/4) ],   a_n = n+¼.
+Each r-dependent term is −a_n/(a_n²+x/4) with x=r² — a Cauchy–Stieltjes kernel in x. Hence
+    dΩ/dx = Σ_n (a_n/4)/(a_n²+x/4)²  is COMPLETELY MONOTONE (sum of CM functions).
+VERIFIED: (1) the series matches the direct digamma Ω to ~4e-6 (series-truncation residual) at r=0.5..150; (2) the
+finite-difference signs of dΩ/dx and its x-derivatives are (+,−,+,−) at every x∈{1,9,100,2000,20000} — the CM pattern.
+⇒ Ω(r) is a Bernstein-type function of r² with a Stieltjes (CM) derivative = the archimedean density is Cauchy–Stieltjes,
+UNCONDITIONALLY, straight from the digamma series. By Bernstein's theorem dΩ/dx = ∫₀^∞ e^{−xs}dρ(s), ρ≥0. CONSEQUENCE:
+the archimedean quadratic form arch(φ)=∫φ(r)²Ω(r)/2π dr is a POSITIVE combination of resolvent forms ∫φ²/(a_n²+r²/4) —
+manifestly positive, and this is the pointwise/analytic realization of Groskin T3.2's totally-positive Cauchy–Stieltjes
+archimedean tail (§895). This is a real, provable structural handle on the ARCH side (the explicit, non-prime side of
+the scalar criterion §891). OPEN LEVER (the genuine next theory step): use the resolvent/CS representation of arch to
+bound arch − prime BELOW — i.e. bound the single-negative-eigenvalue depth μ (§889-891) via the resolvent structure vs
+the prime oscillation P(r)=(1/π)ΣΛ(n)/√n cos(r log n). That bound, if it dominates the pole-coverage p(v·w)², is RH.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§897b  CORRECTION to §897 (verify-before-ship): CM is of the DERIVATIVE; arch is NOT pointwise-positive
+────────────────────────────────────────────────────────────────────────────────────────────────
+§897 overstated one line. SOLID & VERIFIED: dΩ/d(r²) is completely monotone (signs +,−,+,− confirmed), so Ω(r) is
+concave-increasing in r² with a Cauchy–Stieltjes (CM) derivative — an unconditional structural fact from the digamma
+series. WRONG in §897: "arch is a manifestly positive combination of resolvent forms." Ω(r) itself is NEGATIVE at
+small r (Ω(0.5)=−3.33, Ω(3)=−0.74; it crosses 0 near r≈11 and floor=mean Ω/2π>0 only on average) — so the arch
+quadratic form's positivity STILL relies on band-limiting (φ can't concentrate at small r), exactly like the full
+symbol σ. The CM/CS property is a genuine handle on the SHAPE of Ω (monotone-concave in r², resolvent-decomposable
+derivative), NOT a manifest-positivity proof of arch. Net: the arch side is "nontrivially positive" too (band-limited),
+which means the §897 lever is subtler than stated — the resolvent structure constrains Ω's shape but doesn't trivially
+dominate the prime oscillation. Honest status of the lever: promising for controlling Ω's variation, not a positivity
+shortcut. (This is the same self-correction discipline as §888/§889 — caught on my own re-examination before shipping.)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§898  CLOSED-FORM archimedean weight + the u=2π crossing scale (frequency-domain arch-vs-prime, Guinand–Weil frame)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (analytic + operators/freq_compare.py, freq_verify.py). Cosine-transformed the archimedean density into the
+Guinand–Weil frequency frame. Each Lorentzian a_n/(a_n²+r²/4) → π e^{−2a_n|u|}; geometric sum over a_n=n+¼ gives the
+CLOSED FORM archimedean weight (full-line cosine transform of Ω):
+    Ŵ(u) = −π e^{u/2}/sinh(u) = −2π e^{u/2}/(e^u − e^{−u}).
+CONFIRMED numerically: transforming the FULL Ω with convergence factor e^{−εr}, the numeric/closed ratio is EXACTLY
+2.0 and CONSTANT across u=log2..3 (2.0 = one-sided vs full-line convention; the shape −e^{u/2}/sinh u matches perfectly).
+u→0: Ŵ ~ −π/u (the ln-singularity of Ω); u→∞: Ŵ ~ −2π e^{−u/2} → 0.
+THE COMPARISON: |Ŵ(log n)| = 2π n^{3/2}/(n²−1) ≈ 2π/√n vs prime mass Λ(n)/√n = log n/√n. RATIO = 2π / log n.
+  ⇒ the archimedean weight POINTWISE-DOMINATES the prime masses for log n < 2π (n < e^{2π} ≈ 535, u < 2π ≈ 6.283),
+    and the primes exceed the arch weight only for u > 2π. THE CROSSING SCALE IS u = 2π — exactly the t/2π scale of the
+    Weil formula. Consistent with §890: extra negative eigenvalues turn on as bandwidth 4W crosses 2π≈6.28 (seen at
+    4W=5–7). For 4W=4 < 2π the arch weight pointwise-dominates the whole band (ratio ≥ 2π/4 ≈ 1.57 > 1).
+HONEST CAVEAT: this is a POINTWISE-in-frequency comparison; the true arch form is a CONVOLUTION (Toeplitz with kernel
+Ŵ), not diagonal, so pointwise domination does NOT rigorously give operator domination (same subtlety as §886/§888 —
+the tiny negative eigenvalue at 4W=4 capacity is an off-diagonal effect). But the u=2π crossing is a genuine structural
+scale and the closed-form Ŵ(u)=−π e^{u/2}/sinh u is a clean, verified, unconditional handle on the arch side.
+NEXT: the operator comparison — is the Toeplitz(Ŵ) form ⪰ the prime point-mass form on the band? and does 4W<2π give a
+provable pointwise-to-operator domination (arch weight dominating with room to spare below the 2π crossing)?
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§899  THE RAZOR HAS ~3% SLACK (not zero): π_w/μ ∈ [1.03, 3.6], tightest at low-height wide corners
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/ratio_probe.py). Quantified the scalar-inequality slack π_w/μ (π_w=p(v·w)² pole coverage, μ=defect
+depth) across 25 well-conditioned corners (#neg=1, G PD; windows [14,44],[14,34],[20,50],[30,60]; 4W=3,4,5; frac 0.6-0.8):
+    π_w/μ ∈ [1.027, 3.617], mean 1.508 — ALWAYS > 1 (consistent with RH / margin>0).
+    TIGHTEST ~1.03 (3% slack) at the low-height WIDE corners [14,44]/[14,34] 4W=4,5 (margins down to 6e-15).
+    LOOSER 1.6-3.6 at higher-height corners [20,50]/[30,60] — μ shrinks FASTER than π_w with height, so the inequality
+    gets EASIER above the corner (μ→0 faster than pole coverage). The razor (ratio→1) is a LOW-HEIGHT phenomenon.
+READ: the scalar inequality π_w ≥ μ (§891) has genuine but THIN slack (~3% at the razor), concentrated at low height;
+it does NOT approach 1 arbitrarily in this sweep (min 1.027). THE CRUX for a proof: is there a UNIFORM positive floor
+π_w/μ ≥ 1+δ (δ~0.02-0.03), or does the ratio →1 at critical sampling (frac→1) / deeper corners? A uniform floor,
+proven, IS RH; ratio→1 would mean the razor is asymptotically zero-slack. Not settled here (frac≤0.8) — the next
+make-or-break test is frac→1 at the low-height corner, watching whether the ~3% floor holds or thins. This is the
+sharpest quantitative statement yet of exactly how much room the RH-corner inequality has.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§900  THE LEADING SLACK IS STABLE (~4%), THE RAZOR IS FINER: π_w/μ floors at ~1.04 even at critical sampling
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/floor_test.py). Pushed frac 0.55→0.97 at the low-height corner [14,44] 4W=4 & 5, tracking cond(G):
+  • cond(G) stays LOW (2→86 across frac 0.55→0.97, dr=0.003, pad+70) — so these ARE trustworthy, NOT noise.
+  • π_w/μ HOLDS at ~1.04 (4W=4) / ~1.05-1.07 (4W=5) across ALL frac — it does NOT thin toward 1 at critical sampling.
+    Stable min ~1.035. So the LEADING criterion (pole coverage p(v·w)² vs defect depth μ) has a robust ~4% floor.
+  • YET the full margin still goes razor (→1e-15, dipping to float-noise −2e-16 at 4W=5 frac≥0.94). So the ~4% leading
+    slack is ABSORBED at finer order — the razor is NOT in π_w vs μ.
+REFINEMENT of where the razor lives: the exact criterion (§891) is g=1−μ·w^T A^+ w, A=M_+ + p vv^T. A^+ amplifies the
+negative direction w's overlap with M_σ's NEAR-NULL POSITIVE modes (the ~1e-7 cluster — the SAME modes that blocked
+§894's arb inertia cert). That near-null coupling eats the 4% leading slack down to a razor margin. So: the pole
+comfortably over-covers the defect depth (leading, robust 4%); the RH-corner razor is the second-order coupling of the
+negative direction to M_σ's near-null positive cluster. NEXT: characterize that near-null cluster (§855 near-null modes
+= band-limited functions vanishing at the window's zeros) and the coupling w↔near-null through A^+ — that is the true,
+finest locus of the RH-corner, one level below the §891 scalar inequality.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§901  THE RAZOR IS A SINGLE NEAR-NULL MODE: w^T A^+ w dominated (90-94%) by one A-mode with α≈μ; g ≈ 1−(w·a_dom)²
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/aplus_routing_indep.py, independent of the workflow). Decomposed w^T A^+ w = Σ_k (w·a_k)²/α_k over
+A=M_+ + p vv^T eigenmodes, 3 corners:
+    [14,44]4W4 N13: A eigs asc [4.6e-8,1.9e-7,1.2e-6,7.92e-6,...,0.49]; dominant contribution α=7.92e-6 → 94%; from
+                    near-null A-modes (α<1e-3): 100.0%; pole-scale modes (α>p/2): 0.0%.  (α_dom 7.92e-6 ≈ μ 8.09e-6)
+    [14,44]4W5 N17: dominant α=2.0e-5 → 90%; near-null 100%.   [14,34]4W4 N8: dominant α=2.35e-5 → 83%; near-null 100%.
+So w^T A^+ w ≈ (w·a_dom)²/α_dom with α_dom ≈ μ ⇒ g = 1−μ·w^T A^+ w ≈ 1 − (w·a_dom)². THE RH-CORNER RAZOR = the tiny
+MISALIGNMENT of the defect direction w with the single dominant near-null A-mode a_dom: (w·a_dom)²=0.9995 at [14,44]4W4
+(margin = the 0.05% residual). Essentially a rank-1 / two-mode condition. Reconnects to §835 (RH ⟺ prime/arch eigenvectors
+stay misaligned). RECONCILIATION: the parallel workflow's Angle B labeled the dominant mode "bulk" — provably a MISLABEL
+(a true bulk mode α~0.2 with overlap 0.97 contributes ~5, not 82% of 6e4; the dominant mode's α must be ~1.8e-5 = near-null).
+Both computations found the SAME dominant small-α mode + w-overlap ~0.95; only the near-null-vs-bulk LABEL differed, and my
+direct α-printout (100% from α<1e-3) settles it as near-null. Independent cross-check caught the workflow's mislabel.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§902  near-null cluster identity (workflow yield, honestly filtered): §855 zeros-vanishing FAILS; no clean arithmetic law
+────────────────────────────────────────────────────────────────────────────────────────────────
+Ran the rh-nearnull-razor workflow (4 angles + adversarial verify, 8 agents). Honest filtered yield:
+  • ANGLE A (TEMPERED): the §855 hypothesis "near-null modes = band-limited functions vanishing at the window's ζ-zeros"
+    does NOT hold — vanishing ratio at zeros ~1e-4 (no special vanishing), decay ratio ~1.0-1.3, coefficient concentration
+    between zeros ~50-75% (≈ random, no significant optimization). So the near-null cluster is NOT simply zero-interpolating.
+  • ANGLE C (REFUTED — fabrication caught): an agent fabricated a w^T A^+ w minimum (1.8e-11, absent from output). The real
+    result stands: NO clean arithmetic law for the razor across 5 windows (μ vs min-gap R²=0.002; margin vs min-gap R²=0.72;
+    w-overlap vs min-gap R²=0.28 — all weak/insignificant). The razor does not track zero-spacings by a clean power law.
+  • ANGLE D: A^+ amplification of the smallest near-null eigenvalue is ~1e22 (enormous) — confirms the near-null coupling
+    mechanism (§900/§901); the prolate/CCM (2511.22755 μ_λ≥0) connection is plausible but REPORT-tier (see journal).
+NET: the near-null cluster driving the razor is NOT the zero-interpolation basis (§855 refuted) and has NO clean arithmetic
+law in the spacings — it is an intrinsic band-limited-compression (prolate-plunge) object. Two agent errors (Angle B mislabel
+via my §901 cross-check, Angle C fabrication via the verifier) were caught and excluded — only verified results banked.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§903  FINEST RESOLUTION: no scalar ceiling — the razor is an irreducibly ~2-3 dimensional near-null coupling
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/overlap_ceiling.py). Tested whether (w·a_dom)² (the §901 two-mode overlap; g≈1−(w·a_dom)²) stays
+bounded below 1 (RH ceiling) or →1 (razor→0) as frac→0.97, across 4 corners, tracking cond(G):
+    (w·a_dom)² varies 0.70–0.9993 NON-monotonically — does NOT cleanly approach 1. [14,44]4W4 climbs to 0.9993 at
+    frac0.97 (single mode dominates), but [14,44]4W5→0.882, [14,34]4W4→0.707, [20,50]4W4→0.757 at high frac (razor
+    SPREADS over 2-3 near-null modes; a_dom alone is only 88% there). Exact g stays POSITIVE wherever cond(G)
+    trustworthy; the sub-noise negatives (g~−6e-9, margin~−3.8e-16 at 4W=5 frac≥0.94, cond~60) are below float precision.
+CONCLUSION: there is NO single-scalar ceiling for the razor. The §901 "rank-1/two-mode" picture is a good approximation
+at moderate frac (~90% one mode) but the TRUE finest structure at the deepest corners is a small MULTI-mode (2-3 near-null
+/ prolate-plunge) coupling. This LOCALIZES the established "Weil positivity is irreducibly multi-dimensional" result
+(memory §810-821, six scalar mechanisms refuted) down from the full N-dim form to a ~3-DIMENSIONAL near-null sub-cluster
+— genuine progress in pinning WHERE the irreducibility lives (the prolate-plunge cluster, not the bulk, not the pole).
+Consistent with CCM 2511.22755's μ_λ≥0 being an unproven prolate-basis lemma (§820): our razor IS their prolate object,
+now localized to dim ~3 with an explicit (few-mode overlap) handle. The RH-corner is a low-dim prolate-plunge coupling
+positivity — the field's open object, reached from a new (explicit, finite-matrix) direction with new handles (§891/898/901).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§904  NO sub-2π threshold (honest negative): the corner exists at ALL bandwidths, down to 4W=1
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/sub2pi_indep.py, independent cross-check of workflow Angle 1). Swept 4W=1→7 × windows × heights ×
+frac near capacity, counting #neg(M_σ). RESULT: #neg(M_σ) reaches 1 at EVERY 4W, including 4W=1 (window [8,24], low
+height, min M_σ = −5.2e-2 — actually DEEP). So there is NO bandwidth threshold below which M_σ ⪰ 0; the §898 pointwise
+"arch weight dominates prime for 4W<2π" does NOT prevent the operator corner. The u=2π crossing is a POINTWISE-frequency
+scale ONLY, not an operator threshold — pointwise domination ≠ operator domination (same lesson as §886/§888/§896).
+The corner is a LOW-HEIGHT / NEAR-CAPACITY phenomenon at ALL bandwidths. REFINED height picture: at very low height the
+defect is DEEP (−0.05) but the pole is LARGE (test functions have big value at the pole point r=i/2 near a low window) →
+comfortably lifted; the RAZOR-thin regime (defect & pole both ~1e-5) is specifically at MODERATE height; at high height
+M_σ ⪰ 0 outright (robust). KILLS the "sub-2π is provably easy" hope. The corner is genuinely bandwidth-uniform RH content.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§905  prolate-frontier workflow yield + a CORRECTION of my own §902 (banked a fabricated number without checking)
+────────────────────────────────────────────────────────────────────────────────────────────────
+Ran rh-prolate-frontier workflow (3 angles + adversarial verify). Verifiers caught fabrications in 2/3 angles; honest yield:
+  • ANGLE 1 sub-2π (REFUTED): finder fabricated an eigenvalue spectrum + a "sub-2π threshold 4W≈2.5-2.8". Verifier
+    refuted it (corner persists at all 4W) — INDEPENDENTLY CONFIRMS my §904 (no sub-2π threshold). §904 stands.
+  • ANGLE 2 prolate-identity (TEMPERED, numbers real/reproduced): built the concentration (prolate/Slepian) operator
+    and compared. The near-null cluster PARTIALLY overlaps the prolate plunge eigenspace (median overlap 0.53, mean 0.55,
+    4/5 configs >0.5) BUT is NOT the classical Landau–Widom plunge: LW plunge-width formula off 20–30× (measured plunge
+    6–14 vs LW estimate 0.44–0.51), dimension match off ~2× (ratio 1.75–2.5). ⇒ REPORT tier: our razor cluster is
+    prolate-RELATED (an arithmetic-perturbed concentration object), NOT the textbook LW plunge. Genuine (tempered) result.
+  • ANGLE 3 CCM (REFUTED for a fabricated number; lit summary sound): arXiv IDs real, CCM citations accurate, symbol
+    error ~1e-15 confirmed. But the finder's "A⁺ amplification ~1e22" is FABRICATED — real value ~1e7–1e11.
+
+CORRECTION TO §902 (verify-before-ship, my own error): §902 banked "A⁺ amplification of the smallest near-null eigenvalue
+is ~1e22" — this was taken from the EARLIER nearnull-razor workflow's Angle D WITHOUT independent verification, and it is
+WRONG. The correct numbers (from my own §901 + re-check): w^T A⁺ w ≈ 5e4–1.2e5 (the actual razor quantity); 1/α_min(A)
+ranges ~2e7 ([14,44]4W4, α_min 4.6e-8) to ~1e11 ([14,44]4W5, α_min 9.2e-12) — NOT 1e22. My §901 already showed w^T A⁺ w =
+1.24e5, so 1e22 was implausible on its face and I should have caught it when banking §902. The near-null coupling
+mechanism (§900–903) is UNAFFECTED (it never depended on the magnitude, only on which modes dominate — verified in §901);
+only the stray "1e22" figure is retracted. Lesson re-learned: independently verify EVERY agent-sourced number before
+banking, even inside an otherwise-verified workflow. Net: §900–904 stand; the "1e22" in §902 is corrected to ~1e7–1e11.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§906  THE COINCIDENCE TIE CONFIRMED: near-null = arch≈prime coincidence subspace; neg direction has arch(w)=prime(w) to 4 digits
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/coincidence_prolate.py). Tied §882 (coincidence) to §889-891 (razor):
+  • The near-null cluster of M_σ IS the arch≈prime COINCIDENCE subspace: on its eigenvectors u_k, max|arch(u_k)−prime(u_k)|
+    = 1.4e-5 (≈ the near-null eigenvalue scale) — arch and prime coincide there, confirmed.
+  • The single NEGATIVE direction w is a coincidence direction where prime MARGINALLY exceeds arch:
+    [14,44]4W4: arch(w)=0.16930, prime(w)=0.16930 (equal to 4 digits!), prime−arch = +8.086e-6 = μ.
+    [14,44]4W5: arch=prime=0.1701, prime−arch=1.89e-5=μ.  [14,34]4W4: arch=prime=0.1611, prime−arch=1.89e-5=μ.
+  So THE CLEANEST STATEMENT OF THE RAZOR: at the corner there is a band-limited direction w on which the archimedean and
+  prime quadratic forms are EQUAL to ~4 digits (~0.17), prime tips the balance by exactly μ~1e-5, and the pole covers that
+  by π_w=p(v·w)² (with ~4% leading slack, §900). RH-corner ⟺ the pole's coverage exceeds the amount by which prime beats
+  arch on this coincidence direction. Ties §882+§889-891+§901 into one picture.
+  HONEST caveat: my prolate-overlap sub-check here was DEGENERATE (the Fejér-in-window basis put all N modes in the
+  "plunge," giving trivial overlap 1.0 — a bad concentration-operator construction, not a real result). So §905's Angle-2
+  value (near-null ~0.53-overlapped with the true Slepian plunge, NOT clean Landau–Widom) stands as the workflow-VERIFIED
+  figure; I did NOT independently reconfirm it (my construction was wrong). Proper Slepian construction needed to reverify.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§907  the pole coverage's EXPLICIT half: p (pole strength) ~ cosh²(½W)·N/height⁴, zero-free closed-form-able
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/pole_explicit.py). Characterized π_w=p(v·w)² (the non-prime, archimedean half of RH-corner ⟺ π_w≥μ).
+The pole = 2Re(f fᴴ), f_c = Fejér_c(0.5i±c) = test-function value at the pole point r=i/2; f_c ~ cosh(½W)/(Wc)² (from
+sin(½iW−Wc), cosh(½W) from the imaginary shift), so p (whitened pole strength) ≈ 0.4·‖f‖², ‖f‖ ~ √N·cosh(½W)/height².
+Measured decay: p = 9.05e-5 (h29) → 1.93e-5 (h35) → 5.81e-6 (h45) → 1.02e-6 (h60), tracking ~1/height⁴; ‖f(i/2)‖ =
+1.45e-2 (h29) → 1.56e-3 (h60). So p is EXPLICIT, closed-form-able, zero-free. π_w/μ ∈ [1.04, 3.3] on corners (μ>0).
+NET: in the reduced criterion π_w = p·(v·w)² ≥ μ, the pole strength p is the TRACTABLE explicit half (archimedean,
+~1/height⁴); the RH-content is the alignment (v·w)² (pole direction vs coincidence direction w) and the prime-defect
+depth μ = prime(w)−arch(w) on the coincidence direction. The reduced problem is crisp: bound (v·w)²·p from below vs the
+prime-over-arch excess μ on the single coincidence direction — with p already explicit. This is the tractable-vs-hard
+split of the corner made precise.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§908  THE RAZOR IS ADJACENT-ZERO SPILLOVER: margin = 2Σ_γ w(γ)², dominated by zeros JUST ABOVE the window (fresh)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/zero_sum_dual.py, actual ζ zeros via mpmath). Dual/zeros view of the razor. Verified the explicit-
+formula identity for the worst direction w (min gen-eigvec of Q vs G, ‖w‖_G=1):
+    2Σ_γ w(γ)² (actual zeros to h120) ≈ margin:  [14,44]4W4: 1.43e-9 vs margin 1.35e-9 (ratio 1.06); [14,34]: 6.34e-8 vs
+    6.18e-8 (1.03); [20,50]: 4.27e-7 vs 4.26e-7 (1.004). Identity confirmed (excess = zeros above the h120 cutoff).
+KEY NEW STRUCTURE: the razor is dominated by the zeros JUST ABOVE the window, NOT the in-window zeros:
+    [14,44] (in-window zeros at h 14-44): top-5 razor-contributing zeros are γ = 49.8, 53.0, 65.1, 69.6, 75.7 — ALL above
+      the window, each ~1.2e-10; the 8 in-window zeros each contribute LESS.
+    [14,34]: dominant γ = 40.9, 43.3, 48.0, 56.5, 59.4 (all above).  [20,50]: γ = 56.5, 65.1, 69.6, 75.7, 77.1 (all above).
+INTERPRETATION: the band-limited worst direction w EASILY annihilates its in-window zeros (it is built band-limited over
+[a,b]), but its tails LEAK onto the adjacent (just-above) zeros, which it cannot suppress — the residual spillover mass on
+those near-above zeros IS the margin. This reframes the razor from a global "all zeros" object to a LOCAL band-limited
+SPILLOVER / extremal problem over the near-adjacent zeros (Beurling–Selberg / Carneiro–Littmann–Vaaler extremal territory),
+and ties to the sampling/aliasing picture (memory §818-821: margin collapses when the window undersamples the zeros). This
+is more local/tractable than the full zero set — a genuinely new handle on the razor. NEXT: is the margin ≈ the extremal
+spillover onto the nearest ~10 above-zeros? can that spillover be bounded (Beurling–Selberg majorant) → an explicit razor bound?
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§909  spillover refined (honest temper of §908): in-window zeros EXACTLY annihilated; margin spread over ~20-40 above-zeros
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/spillover_local.py). Decomposed the razor contribution 2w(γ)² by zero location, worst direction w:
+  • IN-WINDOW zeros contribute 0.0% of the margin (exactly) — the band-limited w PERFECTLY annihilates its own window's
+    zeros. BELOW-window ~0%. ABOVE-window = 100% (99.4% for [20,50], which has 1 below-zero at 0.6%). Clean, confirmed.
+  • BUT the above-spillover is NOT tightly local: it spreads over ~20-47 above-zeros with an IRREGULAR, oscillatory pattern
+    (not distance-decaying). [14,44]: nearest above-zeros contribute 1%,6%,6%,1%,5%,0%,7%,1%... — γ=65.1 (+21) gives 7%
+    while γ=48 (+4) gives 1%; 90%-of-above reached only by the nearest 47 zeros. [20,50]: 19 zeros; [14,34]: 22 zeros.
+INTERPRETATION: this is the band-limited sinc-TAIL of w oscillating over the above-window zeros — w kills the in-window
+zeros exactly, but its Paley-Wiener tail has unavoidable oscillatory mass on the zeros above, summing to the margin. So
+§908's "local spillover" is TEMPERED: the razor is a band-limited extremal problem over the ABOVE-window zeros (in-window
+exactly annihilated — that part is clean and structural), but spread over ~20-40 above-zeros irregularly, NOT the nearest
+few. Still more structured than "all zeros" (in-window=0, below=0, it is specifically the above-tail). The clean fact — w
+annihilates in-window zeros exactly and the margin is pure above-tail spillover — is the durable new structural handle.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§910  *** THE CORNER IS A BOTTOM-EDGE-OF-SPECTRUM EFFECT *** (one-sided spillover); interior is robust — a PROOF PATH
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/edge_mech_indep.py, actual ζ zeros). Swept windows climbing bottom→interior (4W=4, frac 0.85):
+    [14,44]  h29  #z-below=0:  #neg(M_σ)=1 (CORNER), μ=4.1e-5, spillover below/above = 0%/100% (ONE-SIDED, upward)
+    [30,60]  h45  #z-below=3:  #neg=0 (PSD, NO corner), spillover 18%/82% (becoming two-sided)
+    [60,90]  h75  #z-below=13: PSD, 29%/71%
+    [100,130] h115: PSD, margin 7.8e-3;  [150,180]: PSD margin 6.3e-2;  [200,230]: PSD margin 8.2e-2 (deep interior, robust)
+RESULT: the RH-corner (#neg(M_σ)=1, razor-thin margin) exists ONLY at the BOTTOM EDGE of the zero spectrum, where the
+window has few/NO zeros below it and the band-limited worst-direction's Paley-Wiener spillover is ONE-SIDED (upward only —
+nothing below to balance). The instant a window sits above some zeros ([30,60], 3 below), the negative eigenvalue VANISHES
+(M_σ PSD) and spillover becomes two-sided/balanced; the deep interior is robustly positive (margin → 0.06-0.08). So the
+corner is an EDGE effect, not a generic one.
+PROOF-PATH IMPLICATION (the big one): RH-corner ⟺ positivity on a BOUNDED bottom-edge region (finite verification, arb-
+certifiable in principle) + a PROVABLY-ROBUST interior (two-sided-balanced / §875 floor>pnorm). This is the classical
+"finite check + asymptotic tail" structure — IF the edge region is bounded in height. CRITICAL NEXT TEST (§911): does the
+edge/corner region stay BOUNDED as bandwidth 4W→∞, or grow? Bounded → a finite proof of the corner becomes possible.
+Calibration: clean at 4W=4/frac0.85; must verify edge-boundedness vs 4W (§890/§904 hinted corners extend up to ~[45,75]
+at 4W=6-8) before claiming the finite-proof path — but this is the most promising structural opening of the session.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§911  corner region GROWS with 4W (naive finite path tempered) BUT depth collapses → the RAZOR may still be bottom-bounded
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/edge_extent.py). Max corner height (#neg(M_σ)=1, frac 0.85) vs 4W: 4W=4→h29 (μ=4.1e-5); 5→45 (5.9e-7);
+6→45 (5.1e-7); 7→58 (1.9e-8); 8→75 (μ=2.6e-10). So the corner region GROWS ~linearly with 4W (NOT bounded) — it tracks the
+§875 floor<pnorm region (threshold grows with pnorm(4W)). This TEMPERS §910's naive finite-proof hope: the corner is not a
+fixed finite height range. HOWEVER the corner DEPTH μ at the frontier COLLAPSES super-exponentially (4e-5 → 2.6e-10 as the
+corner extends h29→h75). Since the pole coverage π_w ~ p(v·w)² with p~1/height⁴ (§907) shrinks only POLYNOMIALLY, at the
+high frontier π_w (~1e-7 at h75) ≫ μ (~2.6e-10) — ratio ~400 — so the EXTENDED corners are EASY (pole massively over-covers).
+The RAZOR (π_w ≈ μ, the genuinely hard part) is therefore plausibly confined to a BOUNDED bottom region, with the higher
+extensions comfortably positive. REFINED PROOF PATH: instead of "positivity on a bounded region", the target is "π_w/μ ≥ 1
+everywhere, with π_w/μ → ∞ away from a bounded bottom edge (provable via π_w~1/h⁴ vs μ collapsing faster) + finite check of
+the bounded bottom razor". CRITICAL NEXT (§912): map π_w/μ across the corner frontier — is it bottom-bounded (razor only at
+the bottom, ratio grows upward)? That would make the hard part genuinely finite. [Calibration: §910 finite-path was
+over-optimistic on its own; §911 corrects it and points to the depth-collapse as the real structural lever.]
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§912  *** THE RAZOR IS BOTTOM-BOUNDED, UNIFORMLY IN 4W *** π_w/μ ≈ 1 only at h≈22-34; grows to 26 above
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/ratio_frontier.py). Mapped π_w/μ (pole coverage / defect depth) across corner windows climbing in
+height, for 4W=4..8:
+    4W=4: h22=1.19, h29=1.04, then PSD (no corner) above.
+    4W=6: h22=1.14, h29=1.03, h34=1.32, h40=1.48, h45=1.58, PSD above.
+    4W=8: h22=1.04, h29=1.01, h34=2.11, h40=1.70, h45=1.62, h52=1.96, h57=3.10, h67=5.31, h75=3.92, h90=26.14.
+RESULT: the RAZOR (π_w/μ ≈ 1.0-1.05, the genuinely-hard part) is confined to h ≈ 22-34 for EVERY bandwidth 4W. Above that
+bounded bottom band, π_w/μ ≥ ~1.3 and GROWS with height (to 26 at h90) — the pole massively over-covers, provably (π_w~1/h⁴,
+§907, vs μ collapsing super-exponentially, §911). So the hard content of the RH-corner is a BOUNDED BOTTOM REGION (h≲34),
+uniform in bandwidth. This is the strongest structural localization of the session: the razor is not just "low height" but a
+UNIFORMLY BOUNDED bottom band. Refined proof structure: RH-corner ⟺ [positivity on the bounded bottom razor h≲34] + [π_w/μ>1
+above, provable from explicit π_w~1/h⁴ vs collapsing μ]. HONEST: the bottom razor (h~29, ratio 1.01-1.04, true margin ~1e-15
+with the M_+ correction, §900/§903) IS where RH's difficulty concentrates — bounded, but still the hard positivity (finite ≠
+trivial). Real gain: the hard part is now a BOUNDED, uniform-in-4W region.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§913  extremal-assault workflow: NO route closes; the tempting "finite closure" is CIRCULAR (flagged); real gaps named
+────────────────────────────────────────────────────────────────────────────────────────────────
+Ran rh-extremal-assault (4 angles + adversarial verify, 8 agents). ALL angles TEMPERED — none closes RH. Honest yield:
+  • ANGLE A (Beurling–Selberg): spillover facts solid, but the claim "w = the Beurling–Selberg extremal function" is
+    UNJUSTIFIED — no theorem connects the Q-generalized-eigenvalue minimizer to the BS extremal problem. BS route does not
+    close; the "bound is tight/immovable" claim is unsupported. (The BS *connection* remains a conjecture to prove.)
+  • ANGLES B/D "finite closure" — CIRCULAR, FLAGGED: an agent's finite_closure_test.py claimed a proof via margin =
+    S_finite(first 50 zeros) + S_tail(rest), with "S_tail ≥ 0 by Paley–Wiener". This is CIRCULAR — S_tail = 2Σ_{γ>b}w(γ)²
+    ≥ 0 is trivial ONLY if the zeros are real = RH itself. The verifier also caught the split is numerically inconsistent
+    (S_finite 1.586e-9 > total margin 1.352e-9, ratio 1.17). NOT a proof. Do not treat "finite closure" as a real path —
+    the tail-nonnegativity IS the thing to prove.
+  • ANGLE C (pole-covers-defect): π_w ≥ μ holds unconditionally & numerically on the tested corners (slack 5-62%), but
+    scoped to the band-limited projection, NOT full RH; the gap is a LOWER BOUND on (v·w)² (needs a "semi-classical
+    non-degeneracy" theorem — the pole direction's overlap with the worst direction). This is the concrete open sub-lemma.
+NET (grounded, honest): no route closes yet; the genuine structural gain this round is §912 (razor bottom-bounded, uniform
+in 4W) + the precise naming of the two real sub-gaps: (i) identify/relate w to a BS-extremal (Angle A), (ii) prove a lower
+bound on the pole–worst-direction alignment (v·w)² (Angle C). The bottom-razor positivity itself remains RH, now bounded.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§914  sub-lemma C attempt (honest NEGATIVE): (v·w)² is NOT bounded below by a constant; coverage is JOINT π_w-vs-μ
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/alignment_bound.py). Tested whether the pole–worst-direction alignment (v·w)² has a lower bound (the
+§913 sub-lemma C, the missing piece of π_w=p(v·w)²≥μ). Over 24 bottom-razor corners (4W=4..8): (v·w)² ∈ [0.036, 0.876],
+mean 0.44 — NOT bounded away from 0 (min 0.036 at [30,54]/7W). So sub-lemma C FAILS as stated: no clean scalar floor on
+(v·w)². Why π_w≥μ still holds: where alignment is low, μ is even lower (e.g. [30,54]: (v·w)²=0.036 but μ=2.2e-7, ratio
+1.97) — the inequality is JOINT, not a standalone alignment bound. STRUCTURAL GAINS (real): (1) the pole direction v LIVES
+in the coincidence subspace S ('v in S' ~ 0.2-0.9, generally ≈ or > (v·w)²) — the pole is not generic, it sits in the
+arch≈prime coincidence subspace. (2) At the TIGHTEST razor (bottom, [14,x] h~29, ratio 1.0-1.05), (v·w)² is LARGE (0.72-
+0.88) — the pole aligns strongly with the worst direction exactly where it is hardest. NET: both naive §913 sub-lemmas (A:
+w=BS-extremal identification, unjustified; C: (v·w)² floor, fails) do not close cleanly. Path-elimination done. The
+durable unbroken handle is §912 (razor bounded to h≲34 uniform in 4W) + pole ∈ coincidence subspace; the coupling is
+irreducibly joint (consistent w/ memory §810-821 "no scalar bound"). Next lever: the bounded-bottom-region structure
+itself, not scalar sub-bounds.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§915  pole-scaling α* (new lens, mostly confirmatory): α*≈1.0000 at the bottom razor — pole is EXACTLY critically calibrated
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/pole_scaling.py). α* = smallest α with arch+α·pole−prime ⪰ 0 (α=1 = real Weil form; dual to §856
+prime-scaling). BOTTOM RAZOR [14,30]/[14,44] low 4W: α* = 1.0000 to 4 digits (razor-exact — the real pole is EXACTLY the
+critical amount). SHALLOW corners [24,48]: α* = 0.59 (slack 0.41, pole over-covers). CAVEAT: several near-capacity entries
+hit α*=64 (bisection cap) — numerical failures (ill-conditioned G), not real. NET: at the bottom razor the pole strength
+is exactly critically calibrated (α*=1); since ζ's pole residue = 1 is FIXED (not free), the arithmetic hands us precisely
+the critical pole coverage at the bottom edge. This is a sharp RESTATEMENT of the razor (α*=1 ⟺ margin=0 ⟺ RH-corner
+marginal), not new leverage — confirmatory of §912. The genuinely-hard content remains the bounded bottom razor.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§916  the bottom razor's arithmetic = a finite balance among the FIRST ~8 primes (concrete)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/prime_sensitivity.py). Decomposed prime(w) (worst direction) per prime-power. The bottom razor's prime
+side is dominated by the FIRST FEW primes with SIGN-ALTERNATING interference:
+  [14,44]4W4: n=7 (+54.5%), n=5 (+53.9%), n=2 (+28.7%), n=3 (−21.5%), n=9=3² (−12.6%), n=4=2² (−8.5%), n=11 (+7.3%);
+    prime(w)=0.1736 vs arch(w)=0.1735 → μ=4.07e-5. Positive contribs sum 0.274, negative −0.101, net 0.174.
+  [14,30]4W4: same pattern (7,5,2 positive; 3,9 negative). [14,44]4W5: spreads to 7,4,29,3,2,41 as 4W grows.
+The sign (which primes push prime(w) up vs down) = the interference of w with each prime frequency cos(r·log n). So the
+razor's arithmetic content is a FINITE, EXPLICIT balance among the lowest primes vs the archimedean term — internal
+cancellation within prime(w) (0.274 − 0.101) plus near-cancellation against arch (μ=4e-5 residual). Concrete but not a
+clean finite closure: the balance is mediated by the worst direction w, which is not finite-determined. Feeds the
+edge-induction question (is the bounded bottom a finite-prime + explicit-arch condition?). Visible arithmetic structure
+of the razor; the first ~8 primes carry it.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§917  the razor is a GLOBAL prime cancellation (tempers §916): builds non-monotonically, needs the full band-limited prime set
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/prime_cutoff.py). λmin(arch−prime) & full margin vs prime cutoff K at [14,44] 4W=4 (full set = primes/
+prime-powers n<e⁴≈54): K=none +0.126; K≤2 +0.032; K≤3 (add prime 3) −0.077 (goes negative); K≤4 −0.135 (deepest); K≤7
+−0.069; K≤15 −0.005; K≤19 +1.3e-6 (near razor); K≤30 −0.017 (DROPS again); K≤53 (full) → margin +3.48e-12 (the razor).
+NON-MONOTONIC — the margin swings by orders of magnitude as primes accumulate (−0.14 → +1e-6 → −0.017 → +3.5e-12), settling
+at the razor ONLY with the complete band-limited prime set. So the bottom razor is a DELICATE GLOBAL CANCELLATION over ALL
+primes up to e^{4W}, NOT a first-few-primes effect. TEMPERS §916: §916 (fixed worst-direction w) showed low primes dominate
+the VALUE prime(w), but the MARGIN (min eigenvalue, direction shifts with K) is a global effect requiring the full prime sum.
+CONSEQUENCE: no finite-low-prime shortcut for the bottom razor — it needs primes to e^{4W} (grows with bandwidth). The razor
+is the full arithmetic conspiracy (~53 prime contributions nearly cancelling the arch term to −4e-5, pole-lifted to +3.5e-12).
+Consistent with "no finite closure" (§913) and "irreducibly multi-dimensional" (memory §810-821).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§918  PROOF SKELETON (session synthesis): RH-corner splits into 3 height regions — 1 proven, 1 comfortable, 1 hard core
+────────────────────────────────────────────────────────────────────────────────────────────────
+Consolidating §875 + §908–917 into the assembly target. For each bandwidth 4W, RH-corner positivity (Q⪰0 on band-limited
+test functions) splits by window height t into THREE regions:
+  REGION 1 — t > T₀(4W) = 2π·exp(2π·pnorm(4W))  [ROBUST, PROVEN §875]: arch+pole ⪰ floor·G ⪰ pnorm·G ⪰ prime, so M_σ⪰0
+    outright, unconditionally. DONE (certified frontier to 4W=5, §871-873). No pole needed.
+  REGION 2 — 34 ≲ t < T₀(4W)  [SHALLOW CORNERS, "comfortable", NEEDS A BOUND]: M_σ has a small negative eigenvalue but the
+    pole over-covers with room — π_w/μ ≥ ~1.3, growing to ~26 (§912). Positivity here needs π_w = p(v·w)² ≥ μ with a
+    NON-tight (factor ≥1.3) margin. p is explicit (~cosh²(½W)N/t⁴, §907); the open piece is an UPPER bound on μ (defect
+    depth) — but only a loose one (ratio is comfortable). This is the most likely region to close with existing tools.
+  REGION 3 — t ≲ 34  [THE HARD CORE, RH-concentrated]: the razor (π_w/μ ≈ 1.0, pole α*=1 exactly, §915; margin ~1e-15). It
+    is: bounded & uniform in 4W (§912); one-sided spillover onto above-window zeros (§908-909); a delicate GLOBAL prime
+    cancellation needing the full band-limited prime set (§917); an irreducibly ~2-3 dimensional near-null/coincidence
+    coupling (§903); = the CCM μ_λ≥0 open object. No scalar sub-bound closes it (§914); no finite-low-prime shortcut (§917);
+    arb-radius-blocked (§894). Needs a genuinely new structural input (the de Branges/SOTA workflow is checking the theory).
+ASSEMBLY PLAN: Regions 1 (done) + 2 (attack the comfortable μ-bound) would reduce RH-corner to Region 3, a BOUNDED, uniform-
+in-4W, explicitly-characterized hard core. The remaining mathematical content of RH is then exactly Region 3's positivity.
+This is the sharpest decomposition the session produced — the target for the Wed assembly. Honest: Region 3 is RH itself,
+localized; closing it is the open problem, not a mechanical step.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§919  Region 2 does NOT close by a corrected bound + CORRECTION of §918: there is no "comfortable" Region 2
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/region2_bound.py). Two findings, one a correction of my own §918:
+ (1) The misalignment-corrected operator bound (project prime onto the low-(arch+pole) subspace) gives floor−pnorm_eff =
+     −0.025 to −0.041 across Region 2 — STILL NEGATIVE. It closes ~75% of the crude gap (floor−pnorm ≈ −0.08 → −0.03) but
+     does NOT reach 0. So Region 2 positivity is NOT captured by this corrected operator bound; it is a finer cancellation.
+ (2) CORRECTION OF §918: the actual MARGINS in "Region 2" are razor, not comfortable: [24,48]4W4 margin 1.9e-7; [40,70]4W6
+     7.8e-12; [45,75]4W7 6.2e-14; [60,90]4W8 9.4e-16 (with μ=2.6e-10). The "π_w/μ ≥ 1.3 comfortable" I claimed in §918 was
+     only the LEADING ratio — the M_+ near-null correction (§900) EATS that slack, leaving a razor actual margin. So there is
+     NO comfortable Region 2 at the margin level. The razor (actual margin ~1e-7 down to ~1e-16, thinning as 4W grows)
+     extends throughout the sub-T₀ corner, which GROWS with 4W (§911) — it is NOT bounded to h≲34 (§912's h≲34 measured only
+     where the LEADING ratio hits exactly 1.0, not the actual razor extent).
+REVISED SKELETON: only TWO regions — REGION 1 (deep interior t≫T₀(4W): comfortable margin ~0.06-0.08, §910, provable via
+§875) and the HARD CORNER (all t≲T₀(4W): razor throughout, actual margin 1e-7→1e-16, M_+-correction-eaten, growing with 4W).
+The hard corner is bigger than §918 claimed — it is the whole sub-threshold region, not a bounded bottom. Honest: §918's
+clean 3-region split was over-optimistic; the razor is not confined. The genuine reductions that STAND: RH-corner = the
+sub-T₀ razor = a delicate global prime cancellation (§917) = irreducibly multi-dim near-null coupling (§903) = CCM μ_λ object.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§920  de Branges/SOTA workflow: no route closes; de Branges GLOBAL killed by Conrey–Li, BAND-LIMITED unresolved (= our razor)
+────────────────────────────────────────────────────────────────────────────────────────────────
+Ran rh-debranges-sota (3 angles + adversarial verify, 6 agents). Verifiers caught 1 fabrication + 2 tier-inflations. Honest yield:
+  • DE BRANGES (TEMPERED): the H(E) Hilbert-space-of-entire-functions framework + reproducing-kernel-positivity RH strategy are
+    real. Conrey–Li 2000 (math/9812166, IMRN) gave a NUMERICAL COUNTEREXAMPLE to de Branges' GLOBAL positivity condition —
+    ℜ{ξ'(ρ)ξ(1+ρ)} = −5.4e-69 < 0 at the 34th ζ-zero (h≈111) — the known reason de Branges' RH attempts failed. GENUINELY OPEN
+    (and interesting for us): whether the BAND-LIMITED / bounded restriction RECOVERS positivity where the global condition
+    fails. Our entire framework IS band-limited → we may be exactly in the regime that evades Conrey–Li's global obstruction.
+    This is the same open razor, but a NEW framing: "band-limited de Branges positivity where global fails." A real lead.
+  • SOTA (REFUTED a fabrication): CONFIRMED no paper unconditionally bounds our bottom-window zero-sum / arch-dominates-prime
+    at low height. An agent fabricated a Groskin "Thm 3.2: arch-tail > prime-tail order" claim — Groskin makes NO prime claim
+    (2 theorems, not 3); caught. All lit (Bombieri–Lagarias, CCM, Suzuki, Kim, Groskin) correctly = RH-equivalent/conjectural.
+  • EDGE-INDUCTION (TEMPERED): no finite/inductive closure of the bounded region; a claimed arb-frontier 4W=2.20 was inflated
+    (real arb-verified frontier ≤1.32; 2.20 is float sketch). The razor edge + 4W→∞ remain open.
+NET (theory side, honest): NO route closes the RH-corner. The deepest framework (de Branges) has a known global obstruction
+(Conrey–Li) that our band-limited setting MIGHT evade — unresolved, = our razor. Confirms from the theory side what the
+numerics showed: RH-corner = the field's open object. New loaded lead: band-limited-de-Branges positivity vs Conrey–Li global.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§921  STRATEGIC: the razor is a BAND-LIMITING artifact — Li coefficients are comfortably positive (non-razor)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/li_coefficients.py, 139 zeros to h302). Computed Li coefficients λ_n=Σ_ρ[1−(1−1/ρ)^n] (RH ⟺ λ_n≥0 ∀n):
+λ_1=0.021, λ_2=0.082, λ_5=0.511, λ_10=2.02, λ_20=7.74, λ_30=16.2, λ_50=37.1 — COMFORTABLY POSITIVE and GROWING ~(n/2)ln n
+(matches the Keiper-Li asymptotic (n/2)(ln(n/2π)+γ−1): λ_20=7.74 vs 7.35, λ_50=37.1 vs 41.3, close given truncation). So
+the Li positivity is NON-RAZOR — large, growing margins. RH-content = whether the FLUCTUATION ever overwhelms the smooth
+growth (an off-line zero ρ_0 with |1−1/ρ_0|>1 makes λ_n blow up exponentially in n → eventually negative).
+STRATEGIC IMPLICATION (the step-back insight): OUR razor (band-limited Weil margin ~1e-15) is an ARTIFACT of BAND-LIMITING
+(finite window) — §853 found it basis-independent WITHIN band-limited bases, but the NON-band-limited criteria (Li) are
+comfortably positive. We have been fighting a razor that the finite-window restriction CREATES. Our unique asset (arb-
+certification of finite matrices) is blocked by the razor (sub-radius), but a COMFORTABLE positivity (Li / Nyman-Beurling /
+non-band-limited) would be a far better certification target IF the all-n / fluctuation-control content can be engaged.
+CAVEAT: proving λ_n≥0 ∀n is still RH (comfortable per-n, but infinite + fluctuation). Feeds the strategic survey: the
+highest-leverage direction may be a COMFORTABLE (non-band-limited) positivity where our explicit/certification tools help,
+NOT the band-limited razor. Reconsider the whole test-function-class choice.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§925  SURVEY MOVE #1 REFUTED: arch+pole ⪰ p=2 is NOT uniform — fails at 4W≥6; primes cannot be peeled apart
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/two_term.py→two_term_final.py). Executed the strategic survey's top recommendation (prove arch+pole ⪰
+the p=2 term unconditionally). At 4W=4 it looked comfortable (§922: +0.03 to +0.23). BUT at 4W=6 (near-saturated p=2 power
+tower 2,4,8,...,256), arch+pole − (p=2 tower) goes NEGATIVE at the bottom: [14,30] −0.040, [14,44] −0.052, [24,54] −0.082;
+turns positive only at h≳49. So "arch+pole ⪰ p=2" is NOT UNIFORM — it FAILS at moderate bandwidth (pnorm(p=2 tower) grows to
+~0.31 > floor ~0.21). REASON (= §917): the primes CANNOT be peeled apart. The FULL Weil form is positive at [24,54]4W6 (RH),
+but removing all primes except p=2 makes it MORE negative — the other primes (3,5,7,...) contribute net-POSITIVE in the
+p=2-worst direction, cancelling the p=2 excess. The prime form is INDEFINITE and the global cancellation is ESSENTIAL; there
+is no valid "arch dominates the first prime alone" comfortable sub-result. SURVEY MOVE #1 (40-60% odds) → REFUTED by direct
+computation. Honest: my own §922 optimism (and the survey's) missed the higher-bandwidth failure — verify-before-ship caught it.
+IMPLICATION: the "comfortable certifiable sub-result" strategy (§921) cannot be realized by prime-truncation (any peeling
+breaks the essential cancellation). A comfortable sub-result, if one exists, must preserve the full prime interference (e.g.
+a smoothed/density-preserving prime sum, or a different criterion entirely) — NOT a finite prime subset. Redirect needed.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§926  tactic #1 density-preserving decomposition — BOTTOMS OUT (smooth part vacuous at the window; content = RH)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/density_prime.py). Split prime = SMOOTH (PNT main term, density e^{u/2} in u=log n) + FLUCTUATION.
+Result: the smooth prime form has NEGLIGIBLE content at the corner windows — pnorm(smooth)=0.0002 vs pnorm(true)=0.3 —
+because its symbol ∫_0^{4W}e^{u/2}cos(ur)du is PEAKED at r=0 (no oscillation cancellation there) and CANCELS at the window
+height r~30 (fast oscillation over u∈[0,4W]). The band-limited window (mass at r~30) is essentially ORTHOGONAL to the
+smooth part. So arch "dominates" the smooth prime VACUOUSLY (it's ≈0 at the window) — margin(arch+pole−smooth)≈floor,
+comfortable but meaningless. ALL the arithmetic content (the razor) sits in the FLUCTUATION = the discrete prime resonance
+at the window = the PNT error term = RH. The discreteness IS the content: smoothing removes exactly the arithmetic that
+creates the window resonance. Tactic #1 relabels the error term as RH — does NOT help, as predicted. (Autonomous run per
+Jacob "do everything at once".) The workflow wah9ovz03 is running tactics #3/#4/wild-card in parallel.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§927  META-CONCLUSION: every RH-criterion is razor-finite OR comfortable-infinite; no finite comfortable target exists
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/baez_duarte_ck.py, mpmath dps=60). Computed the Báez-Duarte/Riesz coefficients c_k=Σ_j(-1)^j C(k,j)/
+ζ(2j+2) (RH ⟺ c_k=O(k^{-3/4+ε})): c_1=-0.316, c_5=-0.146, c_10~-0.07, c_20=-0.026, c_40=-0.008 — smooth COMFORTABLE
+decay; k^{3/4}·c_k bounded (0.32→0.49→0.13, decreasing) = consistent with RH; well-conditioned to any precision, NO razor.
+But the RH-content is the UNIFORM O(k^{-3/4}) for ALL k — an infinite-limit statement.
+COMBINED WITH §921 (Li λ_n comfortable, ~(n/2)ln n) + §925/926 (band-limited Weil is razor, primes can't be peeled): the
+honest META-CONCLUSION is that EVERY RH-equivalent criterion is EITHER (a) RAZOR-FINITE (band-limited Weil margin ~1e-15,
+certifiable in principle but sub-radius) OR (b) COMFORTABLE-INFINITE (Li / Báez-Duarte: well-conditioned per-index but the
+content is an all-index limit). There is NO comfortable-FINITE-bounded-away-from-zero reformulation. Our unique asset (arb-
+certification of finite matrices) needs exactly that — and it does not exist. This is WHY the wall is uniform: RH's content
+is irreducibly either a vanishing margin (finite) or a limit (infinite), never a certifiable finite positive gap. Verified
+from three independent criteria. This is the sharpest statement of why our specific toolkit cannot close RH, and it is not
+a defeat — it precisely characterizes what a NEW tool would need: convert the infinite-k limit (comfortable) into a finite
+certifiable positive quantity, or lift the finite razor above interval radius via exact algebra. Neither is supplied by
+any surveyed program. [Conrey–Li 2000 VERIFIED real: math/9812166, IMRN 2000(18) — de Branges positivity fails for ζ,L(χ4).]
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§928  UNIVERSALITY: razor-thin edge positivity is UNIVERSAL across L-functions; the pole-lift mechanism is ζ-specific
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/lfunction_razor.py). Built the Weil form for L(s,χ4) (χ mod 4 odd: arch=Re ψ₀(3/4+ir/2)−lnπ+ln4 with
+odd-shift + conductor floor-raise; primes χ-twisted, p=2 dropped since χ(2)=0; NO pole). FIRST read (wrong): at ζ's edge
+windows [14,44] χ4 was comfortable (+0.2) → "razor is ζ-specific". CORRECTED (§928b, fair windows): at χ4's OWN bottom edge
+(χ4 first zeros ~6.0,10.2,13.0,16.3): [4,24]4W4 margin +7.4e-7, [2,16]4W4 +2.1e-6 — RAZOR-THIN, going comfortable only in
+the interior ([8,26] +0.023). So the razor-thin edge positivity IS UNIVERSAL (each L razor at its OWN spectrum bottom edge;
+ζ ~1e-9, χ4 ~7e-7). My initial "ζ-specific" was the unfair-window artifact (ζ-edge windows are INTERIOR for χ4, which has
+lower zeros). STRUCTURAL TWIST: the MECHANISM differs — ζ's M_σ=arch−prime goes NEGATIVE (#neg=1) and needs the POLE to
+lift it; χ4 (conductor-raised floor + no p=2 + sign-alternating primes + no pole) has M_σ BARELY PSD directly (#neg=0,
+margin ~1e-6). So the pole-lift is ζ-specific (conductor-1, has pole), but razor-thin edge positivity is universal = GRH.
+IMPLICATION (a real constraint on the approach): any proof via this route must be UNIVERSAL — work for ALL L at their
+bottom edge — so it CANNOT lean on ζ-specific features (the pole, the specific low primes, p=2). The proof must be a
+universal edge-positivity argument (arch+conductor dominates the χ-twisted primes at the spectrum bottom, all L). This
+matches the general character of the field's programs (Connes/Selberg-class are universal). Self-corrected read (unfair→fair).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§929  frequency-band decomposition (workflow-suggested) → confirms GLOBAL-IRREDUCIBILITY (not interface-separable)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/freq_band.py). Partitioned primes by log n into unit bands, computed λmin(arch+pole − prime_band) per
+band vs global. [14,44]4W4: band[0,1](n=2)=+0.060, band[1,2](n=3-7)=−0.026 (NEGATIVE), band[2,3](n=8-13)=+0.029,
+band[3,4](n=21-26)=+0.123; GLOBAL margin=+1.26e-9. The global razor is ORDERS below the sum of per-band mins (~0.19) —
+the bands INTERACT (the full-form worst direction differs from each band's), and the small-odd-primes band (3,5,7) alone
+EXCEEDS arch (−0.026). Only the complete cross-band cancellation lands the margin at the razor. So the cancellation is NOT
+decomposable into comfortable bands + interface constraints (the workflow's hoped-for lever) — it is genuinely GLOBAL /
+cross-band. This is the workflow's own "if not decomposable → confirms RH is irreducible (no structural lever outside the
+Weil reduction)" branch. Matches §917 (global prime cancellation) from the frequency side.
+────────────────────────────────────────────────────────────────────────────────────────────────
+SESSION VERDICT (§884–§929): the RH-corner has been localized to its irreducible core and EVERY accessible lever tested and
+ruled out — scalar/operator bounds, finite region, low-prime, two-term (survey's #1), density-preserving, SDP/Lasserre,
+de Branges global (Conrey–Li) & local, function-field/Hodge (Deninger no-go), frequency-band, comfortable criteria (Li/
+Báez-Duarte are infinite-limit), newest 2024-26 lit (no unconditional uniform bound). All bottom out at the SAME statement:
+inf_K λmin(arch(K)−prime(K)) ≥ 0 uniformly = a global prime cancellation = RH. Universal across L-functions (§928). Genuine
+banked contribution: the sharpest explicit finite-matrix localization + the complete elimination map (RH_CORE_LOCALIZATION.md).
+Honest open core: a universal, razor-thin, cross-band-global, ~2-3-dim near-null edge positivity — needs a genuinely new
+structural input no surveyed program (classical or 2024-26) supplies without circularity or a known obstruction. RH remains
+solvable; this session mapped its core precisely and exhausted the accessible tactics. [Note: an agent verifier cautioned
+against predetermined-negativity — the negativity here is the EARNED result of ~12 rigorously-tested tactics, not a prior.]
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§930  multi-conductor edge scan: razor-thin edge positivity confirmed for q=3,4,5 (universality reinforced)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/multi_conductor.py). Real primitive χ mod q=3,4,5,8 (correct parity→gamma shift, conductor floor-raise),
+edge windows: q=3 [4,20] margin +1.2e-7, [6,22] +3.8e-6; q=4 [4,20] +2.9e-6; q=5 [5,20] +3.8e-6 — all RAZOR-THIN at their
+bottom edge (#neg 0). q=8 comfortable at [6,22]/[8,24] (+0.16/+0.22) because its higher conductor (floor 0.32-0.37) + denser
+spectrum make those windows interior (its true edge is lower). So razor-thin edge positivity is UNIVERSAL (each small-q L
+razor at its own edge, §928 reinforced); a clean margin(q) scaling law was NOT cleanly extracted (window-matching sensitive —
+the edge location shifts with conductor in a way needing per-q zero-data). Qualitative universality solid; quantitative law open.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§931  FUNCTION-FIELD COMPARISON (where RH is PROVEN): the razor is identical; only the PROOF (geometry) differs
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/ff_toeplitz.py). Built the function-field Weil positivity concretely: for a curve/F_q, RH ⟺ Frobenius
+eigenvalues α_i on |α|=√q ⟺ the normalized power-sum Toeplitz form T_N=[c_{m-n}/q^{(m-n)/2}], c_k=Σα_i^k, is PSD. Genus-4/
+F_25 (2g=8 eigenvalues): ON-CIRCLE min eig = +7.5,+7.2,+6.9,+5.7 for N≤8, then EXACTLY 0 (−2e-16,−5e-15) for N≥9=2g+1 (the
+sampling razor — band-limit interpolates all 2g zeros → null space). ONE eigenvalue OFF-circle (r=5.6): min eig goes
+NEGATIVE (−1.15 at N=9, −4.1 at N=11) — Weil positivity FAILS ⟺ RH violated.
+THE KEY INSIGHT (concrete): BOTH function fields and number fields have the SAME Weil form = a sum-of-squares-over-zeros
+(Q=2Σ_γφ̂(γ)² / a Gram matrix VV*), PSD ⟺ zeros on the line, with the IDENTICAL sampling razor (min eig→0 as band-limit →
+#zeros). The ONLY difference is the PROOF of zeros-on-line: function fields prove it via the HODGE-INDEX geometry
+(intersection form on C×C, signature (1,ρ−1), Frobenius class in the positive cone) — which HANDS them the Gram/PSD
+structure. Number fields have the same zero-free form (arch+pole−prime, ⟺ RH) but LACK the surface/Hodge-index (Deninger
+2022 no-go for real-coefficient arithmetic Weil cohomology). So OUR RAZOR IS THE ANALYTIC SHADOW OF THE MISSING GEOMETRY —
+and no amount of analyzing the arch-vs-prime balance (an identity ⟺ RH) supplies the geometric positivity. This is WHY
+every analytic lever this session bottomed out: the missing ingredient is structural/geometric, not analytic. The number-
+field geometric analog (Connes' arithmetic site, or a Deninger-no-go-evading cohomology) is the genuine open frontier —
+consistent with the §920 survey. A concrete, clarifying result on the nature of the barrier (not a crack, but real understanding).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§932  CONNES PROGRAM (source-verified deep-read) confirms: barrier universal, archimedean DONE, semi-local = RH, no bypass
+────────────────────────────────────────────────────────────────────────────────────────────────
+REPORT (source-verified agent + my own §920 cross-check). The Connes–Consani–(Marcolli/Scholbach/Moscovici) program:
+  • ARITHMETIC SITE (1502.05580): a TOPOS (tropical/char-1, Frobenius-flow semigroup) — NOT a classical 2D surface like
+    C×C. So no direct real-coefficient intersection form (consistent with Deninger 2204.02714 no-go). VERIFIED.
+  • ARCHIMEDEAN WEIL POSITIVITY (2006.13771, Connes–Marcolli–Scholbach): PROVEN for the SINGLE archimedean place, via the
+    trace of the scaling action compressed onto the orthogonal complement of the cutoff projections (prolate + Toeplitz).
+    ← THIS MATCHES OUR unconditional archimedean results: §875 (floor law), §897 (Ω Cauchy–Stieltjes), §898 (closed-form
+    weight Ŵ=−π e^{u/2}/sinh u). We independently re-derived the archimedean-place positivity. The archimedean side is DONE.
+  • SEMI-LOCAL Weil positivity (all primes + archimedean): UNPROVEN, explicitly = RH. This is exactly our prime-side gap.
+  • PROLATE SPECTRAL (2511.22755, 2310.18423): operators whose spectra CONVERGE to ζ-zeros NUMERICALLY; a rigorous
+    convergence proof "would establish RH" (their words). Open. Our near-null cluster (§905) IS prolate-plunge-related
+    (~0.53 overlap) → the one concrete point where our band-limited machinery might engage (the convergence), but it too = RH.
+BOTTOM LINE (verified): the Connes program has NOT circumvented the positivity — every path (semi-local positivity /
+spectral convergence) = RH restated; NO unconditional geometric structure exists to plug an explicit approach into. This
+CLOSES the strategic map: ALL THREE routes to RH — ANALYTIC (our arch-vs-prime razor, §884-930), GEOMETRIC (Hodge index —
+function fields only, Deninger no-go for number fields, §931), SPECTRAL (Connes prolate — convergence = RH) — are the SAME
+wall: the semi-local Weil positivity / zeros-on-line, with the archimedean half done and the prime/finite half = RH.
+OUR SESSION'S CONTRIBUTION, precisely placed: the sharpest EXPLICIT finite-matrix localization of that gap + the complete
+elimination map + the universality constraint (§928) + independent re-derivation of the proven archimedean-place positivity.
+The genuine open frontier is the semi-local prime-side positivity (= the number-field geometry/spectral-reality), needing a
+structural input no program supplies. This is the honest, complete map (RH_CORE_LOCALIZATION.md updated §6).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+§933  universality scan (18 L-functions): confirms universality = §875 floor-vs-pnorm + conductor floor-shift (no NEW invariant)
+────────────────────────────────────────────────────────────────────────────────────────────────
+HANDLE (operators/universality_scan_indep.py). Scanned real primitive χ_d=(d/·) (Kronecker, fundamental discriminants
+d=−3..33), auto-detecting each L's edge. Edge margins: razor for LOW conductor (d=−3 +5.4e-7, d=−4 +1.9e-5, d=5 +1.0e-5,
+d=−7 +4.6e-3, d=8 +4.6e-5) → COMFORTABLE for higher (d=−11 +0.10, d=−15 +0.20, d=−19 +0.29, ... up to +0.32). floor vs
+log|d| correlation 0.85. INTERPRETATION: the razor-vs-comfortable transition is just the §875 floor-vs-pnorm balance with the
+CONDUCTOR as an additive floor shift (floor gets +ln|d|/2π); higher-conductor L clear pnorm at the same window → comfortable;
+ζ (conductor 1, lowest floor) is the HARDEST case. So universality = §875 universalized, NOT a genuinely new structural
+invariant. The clean margin(|d|)-law extraction is CONFOUNDED by edge-detection (higher conductor's razor is at higher
+bandwidth / its own deeper edge — needs per-L first-zero data to place edges precisely; that is the accelerable-but-undone
+version). Qualitative universality solid (all L razor at the floor<pnorm balance); no new invariant. Honest negative on
+"novel universal law". The higher-leverage angle (condensed-math Deninger-workaround) is in the running accelerated workflow.
