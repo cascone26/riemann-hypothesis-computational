@@ -17478,3 +17478,23 @@ resonance-type variation as §846/§855). Rough fit t*~0.37·ln(height)−0.32; 
 t* increases with height (confirms §856's "comfortable, grows with height") but no clean law — the safety
 margin's height-dependence is noisy, not a clean function. The t* lens gave one clean result (§856, t*=1 at
 corner) and this noisy follow-up; the thread is characterized.
+
+## §858 (★ WHAT the RH-critical near-null mode IS: it vanishes at the in-window zeros; its positivity comes ENTIRELY from tails hitting the OUT-of-window zeros — the Nyquist mechanism, concrete ★) — operators/nearnull_which_zeros.py
+Shifted to the ZERO SIDE (validated): Q_zero(v)=2Σ_γ F_v(γ)² (test function F_v=Σv_c F_c evaluated AT the real
+zero heights — a MANIFEST sum of squares, no complex-FT trap). Extracted the margin eigenvector at [14,44], 4W=4.8,
+N=15 (margin 8.5e-11). Explicit-formula check: Q_zero(vmin)=6.3e-11 ≈ margin ✓ (zero side = prime+arch side).
+FINDING (clean, mechanistic): the RH-critical near-null mode VANISHES at all 8 IN-WINDOW zeros — they contribute
+0.0% of the residual. Its entire tiny Weil value comes from TAILS hitting the OUT-of-window zeros: 60.83 (18.2%),
+52.97 (16.4%), 79.34 (14.6%), 84.74 (8.6%), 92.49, 87.43, 48.01, ... — each 2·F_v(γ)² > 0.
+MECHANISM (concrete Nyquist/sampling): a band-limited function of capacity N can interpolate ZERO at the #zeros
+in-window zeros (that's what makes it near-null, §850: near-null dim = N−#zeros), but its tails NECESSARILY hit
+the neighboring out-of-window zeros (band-limited ⇒ not compactly supported), and those tail contributions —
+2·F_v(γ)², a sum of squares over the REAL zero heights — keep Q > 0. So the RH-marginal positivity at the corner
+is secured by the mode's INABILITY to also vanish at the surrounding zeros.
+WHY IT'S MANIFESTLY ≥0 = WHY IT'S RH: Q_zero = 2Σ_γ F_v(γ)² is a sum of squares BECAUSE the zeros γ are REAL
+(on the line) ⇒ F_v(γ) real ⇒ each term ≥0. An OFF-LINE zero ⇒ F_v(complex height) ⇒ term not manifestly ≥0 ⇒
+positivity could break. So the manifest sum-of-squares positivity IS "zeros are real" = RH — our apparatus computes
+Q from the prime+arch side (no zeros) and gets ≥0 precisely because, by the explicit formula, it equals this real
+sum of squares. This is the cleanest "what IS the RH-critical mode" answer of the run — the zero-side lens (§858
+path-check shift) gave it; earlier eigenvector probes (§835/846/855) couldn't because they used the wrong lens.
+Ties together §832 (razor at N=#zeros), §850 (near-null dim=N−#zeros), §856 (t*=1 at corner).
