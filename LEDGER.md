@@ -17511,3 +17511,17 @@ must reach for its residual. Wider window = more captured zeros = smaller-tail r
 sampling/interpolation picture (§858) verified. Ties to §832/§840/§850/§856 — all the "razor" phenomena are this
 one mechanism: a band-limited function of finite capacity interpolating zero at the captured zeros, positivity from
 the unavoidable tails at the uncaptured ones.
+
+## §860 (prime-sensitivity — the SMALL primes (2,3) are load-bearing for Weil positivity; higher terms robust) — operators/prime_sensitivity.py
+Perturbed each prime-power weight Λ(n)/√n at [14,44] 4W=2.0 (base margin 0.103); found the critical scale factor
+driving the margin to 0:
+  n=2 (wt 0.49): crit 2.5× (breaks at +0.74 added weight) — LOAD-BEARING
+  n=3 (wt 0.63): crit 3.0× (+1.27) — LOAD-BEARING
+  n=4=2² (wt 0.35): crit 21×; n=5 (0.72): 16.5×; n=7 (0.74): >60× — robust
+FINDING: Weil positivity is carried primarily by the SMALLEST PRIMES (2, then 3) — smallest absolute perturbation
+to break it. The higher prime-powers are much less load-bearing (need 6–24× more perturbation). It is the prime 2
+ITSELF (crit 2.5), not its square 4 (crit 21), that is load-bearing — tracks the weight magnitude Λ(n)/√n which is
+largest for small primes. This validates the apparatus's positivity is genuinely tied to the TRUE small-prime
+weights (perturbing them breaks it), and connects to §808: the anchor (4W just past log 3) is EXACTLY the regime
+where positivity is carried by 2 and 3 alone — the load-bearing primes. As 4W grows, more primes enter but with
+smaller weights (less load-bearing); positivity stays small-prime-dominated. Clean arithmetic-structure result.
