@@ -17382,3 +17382,17 @@ and ties the whole low-eigenvalue structure quantitatively to the zero count. Th
 →0⁺ as 4W grows because the cluster grows and pushes deeper toward 0.
 NET: honest — no rank-one shortcut (that hope closed), but a clean quantitative spectral law (near-null dim =
 N−#zeros) that sharpens §832 and connects the finite spectrum to the explicit formula's zero-counting.
+
+## §851 (TEMPERS §850 — near-null dim ≈ N−#zeros but NOT exactly; O(1) window-dependent correction) — operators/verify_nearnull_law.py
+Verified the §850 "exactly N−#zeros" law across 7 windows with REAL zero counts (mpmath.zetazero to height 640):
+  [14,44] 8z: N=13→5, N=17→9 = N−8 ✓ (exact)
+  [50,80] 11z: N=13→#nearnull 1 (pred 2) ✗; N=17→5 (pred 6) ✗ — OFF BY 1
+  [150,180] 17z, [300,330] 19z: N<#zeros → 0 near-null ✓ (robust, margins 0.08–0.18)
+VERDICT: the clean "#near-null = N−#zeros EXACTLY" (§850) is TEMPERED — it holds at [14,44] and where N<#zeros,
+but is off by ~1 at [50,80]. So near-null dim ≈ N−#zeros with an O(1) window-dependent correction (and the count
+is threshold-sensitive near the 0.02 cutoff — an eigenvalue sitting near the threshold flips the count). The
+QUALITATIVE law stands (near-null modes appear once N exceeds ~#zeros; count grows ~N−#zeros; robust when N<#zeros),
+the EXACT equality does not. §850's exactness was partly coincidental to [14,44]. Honest tempering (verify-before-
+ship caught it — same discipline as §833 tempering §832, §839 correcting §835-837).
+ROBUST INVARIANT (holds everywhere across all 7 windows): margin ≥ 0, →0⁺ where N approaches/exceeds #zeros,
+comfortably positive (0.08–0.18) at higher windows where N<#zeros. RH-consistent throughout.
