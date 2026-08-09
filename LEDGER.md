@@ -17692,3 +17692,12 @@ frontier_push.py running on [50,80]@4W=3, [120,150]@4W=4, [300,330]@4W=4.
 NET: genuine new results = explicit zero-free SOS certificates + arb frontier extension; pushing the rigorous
 frontier hard past the prior 2.20. The uniform (all-4W) result stays the target; each certified 4W is a banked
 unconditional positivity theorem on a described class.
+
+## §871 (★ RIGOROUS FRONTIER EXTENDED to 4W=3.0 — arb-certified unconditional Weil positivity, comfortable margin ★) — operators/cert_one.py
+Pushed the arb-certified positivity frontier past the workflow's ~2.50. CERTIFIED: [50,80] (height 65), 4W=3.0,
+N=5: Weil Q=pole+arch−prime ≥ 0.31887 (maxrad 2.0e-6), CERTIFIED in interval arithmetic, UNCONDITIONAL (zero-free
+§788 route, no zeros). ~6 min compute (prec 200, rc 240).
+The rigorous certified frontier is now 4W=3.0 (up from §832's 2.20, PATH-E's 2.50) — a ~36% extension, with a
+COMFORTABLE certified margin 0.319 (≫ radii 2e-6), so far from thin. New banked unconditional positivity theorem:
+Weil Q ≥ 0.319 for band-limited test functions concentrated in [50,80] at band-limit 4W=3.0. NEXT: push to 4W=4
+(margins float-comfortable 0.09-0.15 at higher windows) → frontier 4.0. arb slow (~min/cert), running foreground.
