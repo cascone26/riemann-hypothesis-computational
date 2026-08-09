@@ -17396,3 +17396,13 @@ the EXACT equality does not. §850's exactness was partly coincidental to [14,44
 ship caught it — same discipline as §833 tempering §832, §839 correcting §835-837).
 ROBUST INVARIANT (holds everywhere across all 7 windows): margin ≥ 0, →0⁺ where N approaches/exceeds #zeros,
 comfortably positive (0.08–0.18) at higher windows where N<#zeros. RH-consistent throughout.
+
+## §852 (broad NEGATIVITY HUNT — 426 configs, NO robustly-negative margin; strong RH-consistent evidence, no counterexample) — operators/negativity_hunt.py
+Scanned 426 (window, 4W, N) configs: heights {14,30,60,120,250,500} × lengths {20,30,40} × 4W {1.6,2.0,2.5,3.0,
+3.5,4.0} × N∈{0.5,0.7,0.9,1.05}·N_cap. Full Weil margin λmin(pole+arch−prime,G) + cond(G) each.
+RESULT: MOST NEGATIVE margin = −9.06e-17 (at [14,44] 4W=4 N=20, cond=344 — float epsilon AND ill-conditioned).
+NO robustly-negative margin (none with margin<−1e-6 AND cond<100). Weil positivity holds across the ENTIRE
+scanned grid — margin ≥0 everywhere G is well-conditioned; the only "negatives" are float-noise at over-capacity
+points. Strong RH-consistent evidence over a wide sweep; no counterexample, no bug. (Not a proof — this is what RH
+predicts.) Complements §842 (corner RH-safe through 4W=5.0) and the whole run's uniform "margin ≥0, →0⁺, never
+negative" finding.
