@@ -31,7 +31,7 @@ def certQ(fourW,CEN,rc):
         if ok(arb(mid)): lo=mid
         else: hi=mid
     return lo,mr
-a,b,fourW,rc=120,150,4.0,300
+a,b,fourW,rc=300,330,5.0,540
 CEN=[float(x) for x in np.linspace(a,b,4)]
 m,mr=certQ(fourW,CEN,rc)
 print(f"[{a},{b}] 4W={fourW} N=4 rc={rc}: cert Q>= {m if m is None else round(m,6)}  maxrad {mr:.1e}  {'CERTIFIED' if m else 'no'}")

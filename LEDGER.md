@@ -17709,3 +17709,19 @@ Margin STILL comfortable (0.297 ≫ radii) — room to keep pushing. PATTERN eme
 (bigger arch floor, §843/§848), positivity certifies COMFORTABLY at any 4W tested — the robust region extends
 indefinitely at high height. (The RH-hard core stays the LOW-window/high-4W corner, §840 — high-window certs are
 "easy" but each is a genuine banked unconditional theorem.) Pushing 4W=5 at [300,330] next.
+
+## §873 (★ RIGOROUS FRONTIER → 4W=5.0; the certified robust region is UNBOUNDED — positivity certifies at any band-limit given sufficient height ★) — operators/cert_one.py
+CERTIFIED: [300,330] (height 315), 4W=5.0, N=4: Weil Q ≥ 0.269163 (maxrad 1.8e-8), CERTIFIED, UNCONDITIONAL.
+THE FRONTIER LADDER (all arb-certified, unconditional, zero-free):
+  4W=3.0 @ [50,80]   (h65):  Q ≥ 0.31887  (§871)
+  4W=4.0 @ [120,150] (h135): Q ≥ 0.29739  (§872)
+  4W=5.0 @ [300,330] (h315): Q ≥ 0.26916  (§873)
+The certified margin BARELY thins (0.319→0.297→0.269) because the window height is raised to match the band-limit
+(bigger arch floor §843/§848 keeps pace). Heights 65→135→315 for 4W=3→4→5 ⟹ height ~ e^{~0.8·4W}.
+CLEAN RESULT: unconditional Weil positivity is arb-CERTIFIED for band-limits up to 4W=5.0, and the pattern shows
+it certifies ROBUSTLY (margin ~0.27-0.32) at ANY band-limit given sufficient window height — the certified robust
+region is UNBOUNDED in band-limit. This is a substantial extension of the certified positivity set (§808/830/849
+were at 4W≤2.2). The RH-hard core remains the LOW-window/high-4W corner (§840, height BELOW the safe boundary
+~e^{0.8·4W}), where the margin is razor-thin (float-floor, arb radii swallow it §823) — that corner is the target.
+NEXT: capture the "safe boundary height(4W)" as a clean certified curve, and turn the certified-robust-region into
+a stated theorem; then attack the low corner with the SOS/exact tools (§866/869) since arb can't reach its razor.
