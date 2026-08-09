@@ -17470,3 +17470,11 @@ robust regime (N<#zeros). t*(window,4W) is a clean single "distance to the posit
 subsumes §832 (razor at N=#zeros), §840 (hard corner), §850 (near-null onset). At the corner t*=1 = the near-null
 mode = margin→0⁺ = RH-marginal. Consistent with RH being exactly marginal (zeros ON the line, not inside).
 The path-check-shift discipline worked: stalled quick-probing → new angle → clean unifying result.
+
+## §857 (t*(height) — grows ~0.37·ln(t) but NOISY, no clean law; confirms safety increases with height) — operators/tstar_height_law.py
+t* across heights 75–2015 (4W=4, N=13, robust): 1.11, 1.77, 1.59, 1.92, 2.87, 2.13 — grows overall (safety
+increases with height, as floor grows) but NON-monotonically, with window-specific interference noise (same
+resonance-type variation as §846/§855). Rough fit t*~0.37·ln(height)−0.32; no clean closed form. Honest:
+t* increases with height (confirms §856's "comfortable, grows with height") but no clean law — the safety
+margin's height-dependence is noisy, not a clean function. The t* lens gave one clean result (§856, t*=1 at
+corner) and this noisy follow-up; the thread is characterized.
