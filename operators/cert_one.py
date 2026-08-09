@@ -3,7 +3,7 @@ import sys,os,numpy as np
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from flint import arb,ctx
 import arb_fejer_cert2 as ac, arb_zerofree_cert3 as zc
-ctx.prec=200
+ctx.prec=170
 def certQ(fourW,CEN,rc):
     ac.W=arb(fourW)/4; ac.TW=2*ac.W; ac.c_tri=arb.pi()/ac.W
     cs=[arb(c) for c in CEN]; n=len(cs); Q=[[None]*n for _ in range(n)]; Gm=[[None]*n for _ in range(n)]; mr=0.0
@@ -31,7 +31,7 @@ def certQ(fourW,CEN,rc):
         if ok(arb(mid)): lo=mid
         else: hi=mid
     return lo,mr
-a,b,fourW,rc=50,80,3.0,240
-CEN=[float(x) for x in np.linspace(a,b,5)]
+a,b,fourW,rc=120,150,4.0,300
+CEN=[float(x) for x in np.linspace(a,b,4)]
 m,mr=certQ(fourW,CEN,rc)
-print(f"[{a},{b}] 4W={fourW} N=5 rc={rc}: cert Q>= {m if m is None else round(m,6)}  maxrad {mr:.1e}  {'CERTIFIED' if m else 'no'}")
+print(f"[{a},{b}] 4W={fourW} N=4 rc={rc}: cert Q>= {m if m is None else round(m,6)}  maxrad {mr:.1e}  {'CERTIFIED' if m else 'no'}")

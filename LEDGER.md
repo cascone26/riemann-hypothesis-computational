@@ -17701,3 +17701,11 @@ The rigorous certified frontier is now 4W=3.0 (up from §832's 2.20, PATH-E's 2.
 COMFORTABLE certified margin 0.319 (≫ radii 2e-6), so far from thin. New banked unconditional positivity theorem:
 Weil Q ≥ 0.319 for band-limited test functions concentrated in [50,80] at band-limit 4W=3.0. NEXT: push to 4W=4
 (margins float-comfortable 0.09-0.15 at higher windows) → frontier 4.0. arb slow (~min/cert), running foreground.
+
+## §872 (★ RIGOROUS FRONTIER → 4W=4.0 — arb-certified Q≥0.297 unconditional; nearly DOUBLE the §832 frontier, still comfortable ★) — operators/cert_one.py
+CERTIFIED: [120,150] (height 135), 4W=4.0, N=4: Weil Q ≥ 0.297387 (maxrad 2.9e-7), CERTIFIED interval arithmetic,
+UNCONDITIONAL (zero-free). ~4 min. Rigorous certified frontier now 4W=4.0 — up from §832's 2.20 (§871 did 3.0).
+Margin STILL comfortable (0.297 ≫ radii) — room to keep pushing. PATTERN emerging: at appropriately-HIGH windows
+(bigger arch floor, §843/§848), positivity certifies COMFORTABLY at any 4W tested — the robust region extends
+indefinitely at high height. (The RH-hard core stays the LOW-window/high-4W corner, §840 — high-window certs are
+"easy" but each is a genuine banked unconditional theorem.) Pushing 4W=5 at [300,330] next.
