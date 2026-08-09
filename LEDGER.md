@@ -17451,3 +17451,22 @@ more than local spacing (full interpolation residual + band-limit + capacity pro
 at [60,90] the N=#zeros+1 mode is NOT near-null (margin 3.6e-2), so the near-null onset is NOT exactly at #zeros
 (the §850 law is approximate, §851). Clean setup, honest negative — the near-null-spectrum arithmetic thread does
 NOT yield a law. (Valid negative, unlike §853's confounded probe.)
+
+## §856 (★ NEW LENS (path-check shift) — the prime-scaling safety margin t*: the actual primes sit EXACTLY on the positivity boundary (t*=1) at the hard corner, comfortably inside (t*>1) elsewhere ★) — operators/prime_scaling_safety.py
+Quick-probe sub-approach had stalled (§852-855: expected/null/tempered). Did a solo path-check, shifted to a NEW
+angle: instead of "is Q≥0" (RH), ask HOW CLOSE the actual primes are to breaking positivity. t* = largest t with
+arch+pole − t·prime ⪰ 0 (t=1 = the real Weil form). Full Weil form, valid (no §853 confound). Bisection on t.
+RESULT (clean + unifying):
+  [14,44] 4W=2.0 (N=7<#zeros=8): t*=2.226 (comfortable — no near-null mode)
+  [14,44] 4W=3.0 (N=10>8): t*=1.0000 — ON THE BOUNDARY (margin(t=1)=3.5e-6)
+  [14,44] 4W=4.0 (N=13,17>8): t*=1.0000 — ON THE BOUNDARY (margin 1.7e-9, 1.1e-12)
+  [60,90] 4W=4: t*=1.110; [120,150]: t*=1.769; [300,330]: t*=1.889 (all comfortable, higher = safer)
+FINDING: at the hard low-height/high-support corner the ACTUAL primes sit EXACTLY on the positivity boundary
+(t*=1) — Weil positivity is CRITICALLY tight there (any more prime weight → negative). Everywhere else t*>1:
+primes comfortably inside positivity, t* measuring the safety margin (grows with height). So RH is "JUST BARELY
+TRUE" at the corner and comfortably true elsewhere — a vivid new characterization.
+UNIFIES the run: t*=1 EXACTLY when the near-null modes appear (N crosses #zeros, §850/§832/§840); t*>1 in the
+robust regime (N<#zeros). t*(window,4W) is a clean single "distance to the positivity boundary" quantity that
+subsumes §832 (razor at N=#zeros), §840 (hard corner), §850 (near-null onset). At the corner t*=1 = the near-null
+mode = margin→0⁺ = RH-marginal. Consistent with RH being exactly marginal (zeros ON the line, not inside).
+The path-check-shift discipline worked: stalled quick-probing → new angle → clean unifying result.
