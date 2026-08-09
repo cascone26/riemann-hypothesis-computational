@@ -17406,3 +17406,19 @@ scanned grid — margin ≥0 everywhere G is well-conditioned; the only "negativ
 points. Strong RH-consistent evidence over a wide sweep; no counterexample, no bug. (Not a proof — this is what RH
 predicts.) Complements §842 (corner RH-safe through 4W=5.0) and the whole run's uniform "margin ≥0, →0⁺, never
 negative" finding.
+
+## §853 (Gaussian-vs-Fejér basis probe — INCONCLUSIVE / too approximate to conclude; dropped-pole + non-band-limited confound) — operators/gaussian_basis_compare.py
+Asked: is the corner razor-thinness intrinsic or a Fejér-basis artifact? Quick Gaussian-basis comparison
+(matched bandwidth s=1/2W, arch−prime only). Result: Gaussian margins −0.010 to −0.036 (NEGATIVE) vs Fejér ~0
+at the corner. BUT this is INCONCLUSIVE — the probe is too approximate to conclude anything:
+  (1) POLE DROPPED for both bases — but the pole term (small ~1e-3) is exactly what secures Fejér positivity at
+      the razor (with pole, Fejér margin is +, §842); dropping it makes both ~0/negative. Confound.
+  (2) Gaussians are NOT band-limited (infinite u-support) — so the explicit-formula prime cutoff, and the whole
+      arch/prime/pole balance, is fundamentally different; the "prime sum" isn't the same finite exact object.
+  ⟹ the Gaussian negatives are SETUP ARTIFACTS, not evidence the razor is basis-dependent. CANNOT conclude
+  "basis-dependent" (would be a false conclusion from a flawed probe). Honestly banked as inconclusive.
+DISCIPLINE NOTE: this probe hit the limit of what a quick scan can validly answer — dropping the pole + a
+non-band-limited basis invalidates the comparison. Per verify-before-ship/Charisma, NOT claiming the tempting
+"razor is basis-artifact" headline. The proper test (full band-limited-Hermite Weil form WITH the exact pole
+term, connecting to CCM's Hermite/prolate program §820) is a careful setup, not a rushed probe — that is the
+genuine next investigation, to be built carefully.
