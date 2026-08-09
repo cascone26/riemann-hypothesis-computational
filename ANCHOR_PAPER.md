@@ -339,6 +339,25 @@ radii of any finite-precision integration exceed the margin, so numerical certif
 blocked — the corner is the exact-algebra target (the SOS of §9.1 exists there but with a vanishing pivot),
 and it is exactly the uniform bound §8.2 identifies as RH.
 
+**9.5 The corner as a finite-matrix condition (§876–§881).** The corner has been localized to a concrete,
+finite-dimensional positive-semidefiniteness condition. In the eigenbasis of the prime form (eigenvalues μ_j,
+eigenvectors w_j), split into the *strong-prime* block S = {j : μ_j > floor} and the robust rest R. Then:
+- **The margin equals the Schur complement** of the strong block: margin = λ_min(Q_SS − Q_SR Q_RR⁻¹ Q_RS)
+  (verified exactly — §880).
+- **On the strong-prime subspace, arch and prime coincide as operators:** dim S = N − #zeros (the near-null
+  count, §850), and arch(w_j) = μ_j on each strong direction (arch(v_p) ≥ pnorm, mpmath-certified to 150 digits,
+  §881), with the within-block off-diagonals forced small by positive-semidefiniteness. So Q_SS = arch|_S −
+  prime|_S ≈ 0 — the archimedean and prime forms **coincide** on the critical subspace (§879).
+- Therefore **RH ⟺ Q_SS ⪰ 0** on this (N−#zeros)-dimensional subspace: the archimedean form dominates the prime
+  form there, marginally.
+
+This is the explicit-formula duality made concrete — arch and prime are the two halves of the completed ξ's
+logarithmic derivative, and they *coincide* on the critical subspace; whether the archimedean half dominates
+(Q_SS ⪰ 0) is exactly the Riemann Hypothesis, now expressed as one finite matrix built from zero-free quantities.
+
+*Provenance for §9.5: LEDGER §876–§881. Scripts: operators/corner_correction.py, arch_in_prime_basis.py,
+schur_corner.py, archvp_sweep.py.*
+
 **9.4 A rigorous, explicit sufficient condition (§875).** The robust region has a clean provable description.
 Let floor(t) = λ_min(arch + pole, G) and pnorm(4W) = λ_max(prime, G) — both zero-free, explicitly computable.
 Since arch + pole ⪰ floor·G and prime ⪯ pnorm·G, subtraction gives arch + pole − prime ⪰ (floor − pnorm)·G,
