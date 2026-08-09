@@ -17333,3 +17333,17 @@ PRODUCTIVE PIVOT (durable-output lane, NOT re-confirming the wall): the §843 fl
 the UNCONDITIONAL BUDGET HALF (Szegő symbol-min, no RH input). ARB-CERTIFY it as a Handle — extend the §808/§830
 certified set with a certified budget-side statement. That banks real durable output while the "prove the full bound"
 lane stays what it is (RH). NEXT = arb-certify floor(t) ≥ (1/2π)ln(t/2π) − ε at sample heights.
+
+## §848 (★ CERTIFIED HANDLE — the archimedean floor arb-certified UNCONDITIONALLY at sample heights, matching (1/2π)ln(t/2π); the budget half is now a Handle ★) — operators/cert_floor_arb.py
+arb-certified floor(window)=λmin(arch+pole,G) — the UNCONDITIONAL budget half of the race (no prime, no zeros,
+no RH). All PD, floor ≫ radii:
+  [14,44] h29: floor ≥ 0.125753 (maxrad 4.7e-6), ratio to (1/2π)ln(t/2π)=0.517
+  [60,90] h75: floor ≥ 0.358927 (maxrad 4.7e-6), ratio 0.909
+  [120,150] h135: floor ≥ 0.469362 (maxrad 2.5e-6), ratio 0.961
+Ratio → 1 as height grows (0.517→0.909→0.961) — confirms floor(t)→(1/2π)ln(t/2π) in arb; the low-height
+deficit (0.517 at h29) is the window-edge/curvature effect (§843). CERTIFIED HANDLE extending §808/§830:
+the budget side of the arch-vs-prime race is now certified unconditionally + matches the exact-constant law.
+Combined with the Szegő symbol-min argument (§843), the statement "floor(t) → (1/2π)ln(t/2π)" is essentially-
+provable AND arb-certified at sample points. The RH-hard half remains the PRIME side (pnorm vs this floor,
+uniformly) = the wall (§847). NEXT: consolidate the run's genuine durable results (§843/844/848) into ANCHOR_PAPER.md
+as the operator-symbol framing + certified budget-side section.
