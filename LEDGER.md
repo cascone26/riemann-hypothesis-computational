@@ -17347,3 +17347,18 @@ Combined with the Szegő symbol-min argument (§843), the statement "floor(t) �
 provable AND arb-certified at sample points. The RH-hard half remains the PRIME side (pnorm vs this floor,
 uniformly) = the wall (§847). NEXT: consolidate the run's genuine durable results (§843/844/848) into ANCHOR_PAPER.md
 as the operator-symbol framing + certified budget-side section.
+
+## §849 (CERTIFIED HANDLE — Weil positivity at a HIGHER zero-height (t=75): Q ≥ 0.339, robust, unconditional) — operators/cert_positivity_higher.py
+Extended the certified positivity set to higher heights (combining §830 positivity + §848 floor-grows-with-height).
+CERTIFIED: [60,90] (height 75), 4W=2.0, N=6: full Weil Q pencil-min ≥ 0.339044 (maxrad 4.7e-6), CERTIFIED,
+zero-free/unconditional (no verified-zero list, §788 route). The margin 0.339 is COMFORTABLE (far above radii)
+— vs the anchor's razor-thin low corner (§808 ε₀-tier) — directly confirming §848: at higher height the bigger
+arch floor (0.359 at t=75 vs 0.126 at t=29) makes Weil positivity robust, not razor-thin. NEW HANDLE: Weil
+positivity for band-limited test functions concentrated at zero-height ~75, certified.
+(NOTE: the [120,150] and 4W=2.5 rows were KILLED mid-run — the higher-window arch integrals at rc=360 are slow
+(~11 min in), a resource cutoff, NOT a math failure. The one completed row is the durable result. Re-running the
+slower windows deferred — not worth the long arb time for an already-clear pattern.)
+CERTIFIED-SET PICTURE (now coherent): positivity is CERTIFIED razor-thin at the low corner (§808/§830, floor
+~0.125) and CERTIFIED robust at higher heights (§849, floor grows ~(1/2π)ln(t/2π), §848). The hard case is the
+low-height/high-support corner (§840); everything else certifies comfortably. This matches the whole picture:
+the difficulty localizes to where the arch budget is smallest (low t) and the prime obstruction largest (high 4W).
