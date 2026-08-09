@@ -17776,3 +17776,13 @@ slightly below Q(v_p) — the exact worst φ is near but not equal to v_p. margi
 NEXT: is arch(v_p) ≥ pnorm PROVABLE uniformly? v_p maximizes ∫P|φ|² (concentrates at the prime oscillation's
 peaks); arch(v_p) = the arch density averaged over those peaks. The condition arch(v_p) ≥ pnorm = "the arch
 density at the prime-peak locations ≥ the prime peak value" — a specific, concrete arithmetic inequality to attack.
+
+## §877 (arch(v_p)≥pnorm is UNIVERSAL (0/220 failures, saturates ~0 at razor) — a clean necessary condition, but WEAKER than margin (v_p not the worst direction); building block for the refined bound) — operators/archvp_sweep.py
+Broad check of §876: arch(v_p) ≥ pnorm across 220 (window,4W,N) configs — ZERO failures, min(arch(v_p)−pnorm)=
+1.16e-5 (→0 at the razor). So arch(v_p) ≥ pnorm holds UNIVERSALLY, saturating to 0 exactly at the RH-marginal corner.
+PRECISION (honest): arch(v_p)≥pnorm is NECESSARY (Q(v_p)=arch(v_p)−pnorm ≥0 since v_p is a valid test function, so
+Q⪰0 ⟹ arch(v_p)≥pnorm) but WEAKER than margin≥0: at [14,44]4W=4, margin=1.7e-9 ≪ arch(v_p)−pnorm=2e-4, so v_p is
+NOT the worst direction φ* (the margin-achieving φ* gives a much smaller Q than v_p). So proving arch(v_p)≥pnorm alone
+does NOT prove positivity — it's a clean universal structural fact and a BUILDING BLOCK, not the proof route.
+THE REAL ROUTE (workflow wf_de31e32e running): the worst direction φ* (PATH B) and a refined operator bound that
+LEVERAGES arch(v_p)≥pnorm to beat floor−pnorm (PATH C). The corner bound must control the WORST φ*, not just v_p.
