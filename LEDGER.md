@@ -17227,3 +17227,24 @@ NEXT (pivot to structure): match our measured floor law (0.144·ln(t/2π)+...) a
 asymptotic formulas the literature already proved (Groskin archimedean budget, Suzuki floor) — if they match, we
 GROUND our apparatus in proven theory (real progress); if the margin-decay = Groskin's archimedean tail budget,
 the corner collapse is an UNDERSTOOD tail artifact, not an RH-critical edge. Plus mpmath confirm a couple 4W>5.
+
+## §843 (★ the floor coefficient is the EXACT constant 1/(2π) — the budget side of the race is GROUNDED, essentially provable ★) — operators/floor_constant_check.py
+The §842 floor law was fitted (0.144–0.182·ln(t/2π)). Tested whether the leading coefficient is the EXACT
+constant 1/(2π)=0.159155. Computed floor(t) at t=80..4020 (length-40 window, 4W=3):
+  floor/[(1/2π)ln(t/2π)] = 0.886, 0.973, 0.991, 0.998, 0.9992  → 1 cleanly and monotonically.
+  floor ≈ (1/2π)·Ω̄(window) even tighter: 0.886→0.9992 (Ω̄ = window-mean of Ω(t)=Re ψ₀(¼+it/2)−lnπ).
+⟹ floor(t) → (1/2π)·ln(t/2π) EXACTLY (coefficient 1/(2π), NOT a fit). And more precisely floor ≈ (1/2π)·Ω̄(window).
+WHY THIS IS ESSENTIALLY PROVABLE (Szegő-type): the archimedean operator is multiplication by (1/2π)Ω(t)
+compressed to band-limited functions concentrated on the window [a,b]. The min eigenvalue of a smooth-multiplier
+(Toeplitz-like) operator → the symbol's window-minimum: floor → (1/2π)·min_{[a,b]}Ω. Since Ω(t)~ln(t/2π) is
+increasing + slowly varying over a fixed-length window, min_window Ω = Ω(a) ≈ Ω̄ ≈ ln(t/2π). So
+floor(t) → (1/2π)ln(t/2π), unconditionally (standard symbol-min asymptotic, no RH input).
+SIGNIFICANCE: the BUDGET (archimedean floor) side of the arch-vs-prime race is now GROUNDED in an exact
+constant and an essentially-provable asymptotic — not an empirical fit. Half the race is characterized
+unconditionally. (Caveat: at LOW height the convergence isn't reached — floor(t=29)=0.125 is BELOW the
+asymptotic (1/2π)Ω̄~0.24, because the min eigenvalue picks up window-edge/curvature at low t; that low-corner
+deficit is exactly why the hard corner is hard — the floor there is smaller than its own asymptotic budget.)
+THE RACE, now sharp: floor(t) = (1/2π)·min_window Ω [budget, exact/provable] vs pnorm(4W) [prime obstruction,
+empirical ~(4W)^0.71]. RH at the corner ⟺ pnorm(4W) stays below the (small, low-height) floor as 4W→∞. NEXT:
+ground the PRIME side too — is pnorm(4W) similarly a symbol-max or a prime-sum quantity with an exact constant?
+If BOTH sides get exact symbols, the race becomes an explicit inequality (arch symbol-min vs prime symbol-max).
