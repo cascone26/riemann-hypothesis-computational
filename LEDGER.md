@@ -17629,3 +17629,28 @@ height, it's a new unconditional positivity theorem (ntfy-worthy). CAVEAT (§863
 mean at criticality (no slack) — so the derivation must be TIGHT, and likely certifies positivity strictly BELOW
 the critical band-limit (a real partial result), with the critical case remaining RH. That is the honest, concrete
 next analytical undertaking.
+
+## §866 (★ DID the derivation — the finite-N Szegő bound rigorously reduces to Beurling-Selberg (§847); the matched band-limit=prime-cutoff is WHY there is no slack (§863 explained); unifies the two frameworks ★) — analytic derivation
+Attempted the §865 target (derive a finite-N min-eig lower bound for the compressed arch−prime operator). It resolves
+cleanly and connects everything:
+DERIVATION: min-eig = min over band-limited φ (type 2W, on window) of ∫S(r)|φ(r)|²dr/‖φ‖², S=(1/2π)Ω−P.
+  1. φ type 2W ⟹ |φ|² band-limited to 4W, |φ|²≥0, ∫|φ|²=‖φ‖². So ∫S|φ|² = ∫S_{≤4W}|φ|² (only S's ≤4W part couples).
+  2. The prime oscillation P=(1/π)Σ_{log n<4W}Λ(n)/√n cos(log n r) has ALL frequencies {log n} < 4W ⟹ P ⊂ S_{≤4W}:
+     the band-limiting SMOOTHS NOTHING (prime cutoff = 4W = the |φ|² band exactly). So min-eig ≥ min_window S_{≤4W}
+     = min S < 0 — the soft bound is EXACTLY USELESS.
+  3. ⟹ THE MATCHED BAND-LIMIT (2W→|φ|² band 4W) = PRIME CUTOFF (log n<4W) IS WHY THERE IS NO SLACK. This DERIVES
+     §863's "fluctuation saturates the mean, no slack": the two cutoffs coincide by construction, so no smoothing
+     gap exists to exploit.
+  4. The ONLY improvement over min S: use the constraint g=|φ|² ≥ 0 (positive-definite / Fejér-positive spectrum).
+     min ∫Sg over {g≥0, band-4W, ∫g=1} > min S iff S has a positive band-limited minorant with positive integral —
+     which is EXACTLY the BEURLING-SELBERG extremal problem (§847).
+CONCLUSION: the finite-N Szegő-Widom derivation (§864/865) RIGOROUSLY REDUCES to the Beurling-Selberg problem for
+our symbol S (§847) — the two frameworks are the SAME wall via this derivation. §847 established Beurling-Selberg
+gives only RH-conditional bounds for our S (the extremal minorant stays negative). So this path, worked out
+rigorously, lands exactly on the known wall — but now with a PRECISE STRUCTURAL REASON for the no-slack (matched
+band-limit/prime-cutoff) and a clean unification of the Szegő-Widom, Beurling-Selberg, and §862/863 fluctuation
+pictures. THIS is how the search resolves: attempt the derivation → it either gives slack or reduces to the wall;
+here it reduces (matched cutoffs), and the derivation itself is the honest, rigorous result. The genuinely-new
+result would need a positive band-limited minorant of S with positive integral (unconditional) — which, given the
+matched cutoff, requires the g≥0 constraint to do ALL the work, i.e. a Fejér-Riesz/Bochner positivity of the
+arch−prime symbol that doesn't route through the zeros = the "new positivity mechanism" (still the open core = RH).
