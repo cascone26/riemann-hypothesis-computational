@@ -17859,3 +17859,17 @@ block, arch|_S ≈ prime|_S coinciding on the critical subspace), now DOUBLY con
 the workflow's independent φ* localization). arch(v_p)≥pnorm (certified) is a necessary building block.
 NEXT: the target is Q_SS ⪰ 0 (§880) — a concrete (N−#zeros)-dim matrix, arch|_S − prime|_S, both zero-free. Attack
 WHY arch|_S ⪰ prime|_S (the coincidence + domination on the critical subspace).
+
+## §882 (coincidence op characterized + §880 corrected to Schur; ★ KEY: Q_SS min eig 4.95e-6 > arb radii ⟹ arch|_S ⪰ prime|_S is CERTIFIABLE at the DEEP corner ★) — operators/coincidence_op.py
+Characterized the critical subspace. (1) arch|_S ≈ prime|_S CONFIRMED: eigenvalues match to ~3 digits
+(0.1534/0.176/0.2255/0.2502/0.2875 arch vs 0.1534/0.176/0.2253/0.2497/0.2873 prime), ‖arch|_S−prime|_S‖_F=6e-4. (2)
+M (=arch|_S=prime|_S) is NOT the concentration operator — concentration|_S eigenvalues ≈ 1.0 (the strong-prime modes
+are fully window-concentrated), while M's eigenvalues are 0.15-0.29; ‖arch|_S−concentration|_S‖=1.75. M is genuinely
+the arch(=prime) restriction. (3) PRECISION FIX to §880: the TIGHT RH-corner condition is SCHUR(Q_SS) ⪰ 0 (=margin,
+1.66e-9 at 4W=4), with Q_SS ⪰ 0 NECESSARY but looser. margin = λmin(Schur); the R-coupling Q_SR Q_RR⁻¹ Q_RS is what
+makes the margin razor-thin.
+★ KEY OPENING: Q_SS min eig = 4.95e-6 at the DEEP corner [14,44] 4W=4 (and 4.1e-5 at 4W=3) — ABOVE the arb radii
+(~1e-6). The full margin (1.66e-9) is arb-UNREACHABLE, but Q_SS ⪰ 0 (= "arch|_S dominates prime|_S", the archimedean
+form dominates the prime form ON THE CRITICAL SUBSPACE) IS arb-CERTIFIABLE at the deep corner. This is the genuine
+"arch dominates prime on S" structural fact — a rigorous certifiable corner result (necessary-for-RH, the R-coupling
+razor is the remaining sufficient bit). SETTING UP the arb certification of Q_SS ⪰ 0 (arch|_S ⪰ prime|_S) at 4W=4.
