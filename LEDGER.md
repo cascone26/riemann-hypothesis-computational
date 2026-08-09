@@ -17422,3 +17422,20 @@ non-band-limited basis invalidates the comparison. Per verify-before-ship/Charis
 "razor is basis-artifact" headline. The proper test (full band-limited-Hermite Weil form WITH the exact pole
 term, connecting to CCM's Hermite/prolate program §820) is a careful setup, not a rushed probe — that is the
 genuine next investigation, to be built carefully.
+
+## §854 (CORRECT resolution of the §853 basis question — the margin is SUBSPACE-INTRINSIC (basis-independent); the razor is intrinsic to the band-limited subspace, NOT a basis artifact) — conceptual
+§853 asked "is the razor a Fejér-basis artifact?" and ran a flawed Gaussian probe. The question is answered
+CORRECTLY without any probe, and §853's framing was conceptually confused:
+KEY FACT: margin = λmin(Q, G) = min over the SPAN of Q(φ)/‖φ‖² (a generalized eigenvalue). This is a property of
+the SUBSPACE, not the basis within it — ANY two bases spanning the same subspace give the IDENTICAL margin
+(generalized-eigenvalue basis-invariance). So there is no "Fejér-basis artifact" to escape: every band-limited
+basis of the same span yields the same margin.
+⟹ The razor-thinness is INTRINSIC to the band-limited (Paley-Wiener) test-function SUBSPACE at the given capacity
+— it is NOT a basis choice. The §853 Gaussian "basis" was not a different basis for the same problem: Gaussians
+span a DIFFERENT function space (not band-limited), which changes the Weil-positivity problem itself (and breaks
+the finite-exact prime sum). So the Gaussian comparison was ILL-POSED, not merely approximate — corrected here.
+CONSEQUENCE: the "try a better basis to dodge the razor" hope is mathematically void. The razor lives in the
+band-limited subspace intrinsically; the RH-critical near-null modes (§850-851) are subspace-intrinsic directions;
+RH ⟺ they stay ≥0. Changing the test-function SPACE (Gaussian/Hermite, à la CCM) is a genuinely different problem
+(CCM's program), not a reparametrization of ours — worth pursuing as CCM's own setup, but it does NOT make our
+razor "go away." Honest correction of §853 (verify-before-ship: caught the conceptual error, not just the numeric one).
