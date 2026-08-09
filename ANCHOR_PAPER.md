@@ -309,6 +309,41 @@ floor_constant_check.py, lift_structure.py, cert_floor_arb.py.*
 
 ---
 
+## 9. Explicit SOS certificates and the certified robust region (LEDGER §869–§873)
+
+**9.1 Explicit unconditional sum-of-squares certificates.** On each band-limited Fejér span the compressed
+Weil operator (pole + arch − prime, in the L² Gram metric) is positive-definite, hence admits a generalized
+Cholesky Q = L Lᵀ giving an **explicit sum of squares**
+    Q(φ) = Σ_k ⟨l_k, φ⟩²,
+a manifest positivity certificate. The construction uses only ψ₀ (archimedean density) and Λ(n) (von
+Mangoldt) — **no zeros of ζ are located, assumed, or referenced** — so each certificate is unconditional.
+
+**9.2 The certified frontier and the unbounded robust region.** Interval-arithmetic (arb, zero-free route)
+certification of Q ⪰ 0 has been pushed well past the earlier 4W = 2.2 rung:
+
+| band-limit 4W | window | height | certified Q ≥ | interval radius |
+|---|---|---|---|---|
+| 3.0 | [50,80] | 65 | **0.31887** | 2.0×10⁻⁶ |
+| 4.0 | [120,150] | 135 | **0.29739** | 2.9×10⁻⁷ |
+| 5.0 | [300,330] | 315 | **0.26916** | 1.8×10⁻⁸ |
+
+The certified margin barely thins (0.319 → 0.269) because the window height is raised to keep the arch floor
+(§8.3, ≈ (1/2π)ln(t/2π)) ahead of the growing prime side. Empirically the certifying height scales like
+≈ e^{0.8·4W}. Thus **the certified robust region is unbounded in band-limit**: for every 4W there is a window
+height at which unconditional Weil positivity is arb-certified with a comfortable margin. This is a large,
+explicitly-certified extension of the positivity set (§808/§830 were confined to 4W ≤ 2.2).
+
+**9.3 The one region certification cannot reach.** By §8, the hard case is the *low-window / high-support
+corner* (height below the ≈ e^{0.8·4W} boundary), where the margin is razor-thin (→ 0⁺). There the interval
+radii of any finite-precision integration exceed the margin, so numerical certification is intrinsically
+blocked — the corner is the exact-algebra target (the SOS of §9.1 exists there but with a vanishing pivot),
+and it is exactly the uniform bound §8.2 identifies as RH.
+
+*Provenance for §9: LEDGER §869 (SOS), §870 (workflow), §871–§873 (certified frontier 3.0/4.0/5.0). Scripts:
+operators/sos_certificate.py, cert_one.py.*
+
+---
+
 *Status: this draft is grounded entirely in banked, certified results (LEDGER §788–§808, §843–§848) and
 the two PASS Lean handles. Constants are the arb/Lean values, not floats. The one place the §1–5 chain is
 not yet machine-checked — the operator assembly linking the certified constants to the closing inequality

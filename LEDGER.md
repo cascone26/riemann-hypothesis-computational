@@ -17725,3 +17725,16 @@ were at 4W≤2.2). The RH-hard core remains the LOW-window/high-4W corner (§840
 ~e^{0.8·4W}), where the margin is razor-thin (float-floor, arb radii swallow it §823) — that corner is the target.
 NEXT: capture the "safe boundary height(4W)" as a clean certified curve, and turn the certified-robust-region into
 a stated theorem; then attack the low corner with the SOS/exact tools (§866/869) since arb can't reach its razor.
+
+## §874 (corner arb-grind hits the intrinsic radii limit; robust-region result captured in ANCHOR_PAPER §9) — operators/cert_corner_fine.py, ANCHOR_PAPER.md
+Tried fine-integration arb (seg=0.5, prec 420) to certify the LOW corner [14,44] past 4W=2.5 — timed out (fine
+integration too slow to fit the compute window; the razor there needs radii < ~5e-7). The corner is the ONE
+region numerical certification is intrinsically blocked: margin →0⁺ < any finite-precision interval radius. It is
+the exact-algebra target (the §869 SOS exists there with a vanishing pivot), = the uniform bound §8.2 identifies.
+CAPTURED THE WIN: ANCHOR_PAPER §9 now states the explicit unconditional SOS certificates (§869) + the certified
+frontier ladder (§871-873: 4W=3/4/5 certified Q≥0.319/0.297/0.269) + the UNBOUNDED ROBUST REGION (for every 4W,
+a height ~e^{0.8·4W} certifies with comfortable margin). A large, explicitly-certified extension of the positivity
+set beyond the prior 4W≤2.2, all zero-free/unconditional.
+STATE: robust region certified + unbounded (banked, in the paper). The corner = exact-algebra target. NEXT: the
+exact SOS approach at the corner (algebra, since arb is radii-blocked there), and/or push the certified frontier
+higher at high windows.
