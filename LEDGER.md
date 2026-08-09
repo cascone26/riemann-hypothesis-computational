@@ -17271,3 +17271,26 @@ indefinite symbol. RH ⟺ LIFT ≥ |min_window S| uniformly. This reframes the h
 it (the lift is the subtle part). NEXT: is the LIFT bounded below by a known uncertainty/concentration
 inequality (prolate/Slepian, Beurling-Selberg extremal, Logan)? That literature is exactly about band-limited
 functions vs sign-changing symbols — the running literature-grounding workflow may connect here.
+
+## §845 (literature-grounding workflow — HONEST NULL: our floor/decay laws do NOT cleanly match the published formulas; citations verified+corrected) — workflow wf_b5fa495f (7 agents)
+Tried to ground our measured floor law + margin-decay in the rigorous literature (Groskin/Suzuki/Kim). Verified
+findings:
+CITATIONS VERIFIED + CORRECTED (all 3 arXiv IDs resolve): Suzuki = 2606.09096, Kim et al. = 2607.24830,
+Groskin = 2607.02828. (Confirms riemann7 memory; CORRECTS the §842/PATH-F mis-cite that had "Suzuki 2607.24830"
+— that ID is KIM, not Suzuki.)
+NO CLEAN MATCH (honest null):
+- Our floor(t) ≈ (1/2π)ln(t/2π) is indexed by ZERO HEIGHT t. Suzuki Thm 1.4 (λ_a = log(1/a)+μ₁−log2π+ψ(2)−1+O(a))
+  and Kim (A_k(a)=log(1/a)+log(k−2)+B₀+O(a)) give the floor as a function of DOMAIN HALF-WIDTH a (a computational
+  parameter), NOT of height. Orthogonal axes — no published formula predicts floor(t) vs zero height. So §843's
+  floor law is measured + essentially-provable-by-us (Szegő symbol-min) but NOT in these published results.
+- Our margin decay (~exp(−6·4W), R²=0.995 over 4W∈[2.5,5.0]; −7.5 with all points; nonlinear, caveated) matches
+  NO known scale: Beurling d(ln t*)/d4W=1.0, prime-sum 0.64, N_cap 1.0. The decay rate ~6 is 6–10× faster — a
+  "higher-order coupling," not a simple scaling. Not grounded.
+- Groskin's budget B_T~(2N+1)ρ log T/(π²T) measures archimedean TRUNCATION ERROR, a different quantity — 10^5–10^12×
+  mismatch. Inapplicable to the margin.
+NET: the grounding FAILED to anchor us to published proofs — our apparatus-specific parametrizations (floor vs
+height, margin vs 4W) aren't in the literature. The framework (Weil form, RH⇔Q≥0) is proven; our specific asymptotics
+are measured+RH-consistent but unproven. Honest. The floor law stands on its own (§843 Szegő argument), independent
+of the (absent) literature match. NEXT LEAD (from §844, NOT covered by this workflow): the "lift" (margin − symbol_min,
+band-limiting gain) is a BEURLING-SELBERG / extremal-band-limited quantity (Montgomery-Vaaler-Logan-Gonçalves) — the
+KNOWN bridge between band-limited positivity and RH. That is the next workflow.
