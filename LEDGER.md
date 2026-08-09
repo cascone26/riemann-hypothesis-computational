@@ -17608,3 +17608,24 @@ bounds — not the N→∞ limit — give anything unconditional for our specifi
 Sources: link.springer.com/chapter/10.1007/978-3-0348-0263-5_12 (Widom conjecture), arxiv.org/pdf/0912.4486
 (variable-sign Toeplitz spectrum), arxiv.org/pdf/1702.08147 (truncated Toeplitz Szegő), arxiv.org/pdf/2104.12394
 (Toeplitz eigenvalue asymptotics).
+
+## §865 (deep-read of the Szegő-Widom/variable-sign-Toeplitz lead — confirms the framework/principle but NO off-the-shelf finite-N bound; the ntfy-worthy path is to DERIVE the prolate finite-N bound for our symbol) — WebFetch [REPORT]
+Pursued §864's concrete lead (does proven Szegő-Widom/variable-sign-Toeplitz theory give a finite-N min-eigenvalue
+lower bound for our symbol?). Deep-read arXiv:0912.4486 (Bargmann-Toeplitz, variable-sign symbols):
+- CONFIRMS the §862 principle: eigenvalue asymptotics for a sign-changing symbol are governed by the GEOMETRY of
+  the positive/negative parts of the symbol (not just measure) — exactly our arch(pos-mean) vs prime(local-dips) picture.
+- BUT: it is Bargmann/2D (Landau Hamiltonians), and the results are ASYMPTOTIC (N→∞), not a finite-N unconditional
+  positivity bound. So the literature gives the FRAMEWORK/principle, NOT an off-the-shelf bound for our case.
+HONEST VERDICT (verify-before-ship): the proven Szegő-Widom family confirms our mechanism's home and principle,
+but does NOT provide a citable finite-N positivity bound for the 1D band-limited (prolate) compression of the
+arch−prime symbol. That bound would have to be DERIVED for our specific operator — a genuine analytical task
+(Landau-Widom prolate + the exact arch−prime symbol geometry), not a lookup.
+THIS IS THE "HOW TO FIND THE NEXT BIG RESULT" METHOD, DEMONSTRATED: pursue the concrete lead → verify against the
+actual literature → find it confirms the framework but leaves the sharp bound to be derived → the ntfy-worthy
+target is now precise and concrete: DERIVE a finite-N (finite-band-limit) lower bound on min-eig of the compressed
+arch−prime operator, using the Landau-Widom prolate machinery + the symbol's positive-mean/zero-mean-prime
+geometry (§862). If that derivation gives min-eig > 0 for band-limit below an explicit threshold UNIFORMLY in
+height, it's a new unconditional positivity theorem (ntfy-worthy). CAVEAT (§863): the fluctuation saturates the
+mean at criticality (no slack) — so the derivation must be TIGHT, and likely certifies positivity strictly BELOW
+the critical band-limit (a real partial result), with the critical case remaining RH. That is the honest, concrete
+next analytical undertaking.
