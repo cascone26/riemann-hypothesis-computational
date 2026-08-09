@@ -17525,3 +17525,19 @@ largest for small primes. This validates the apparatus's positivity is genuinely
 weights (perturbing them breaks it), and connects to §808: the anchor (4W just past log 3) is EXACTLY the regime
 where positivity is carried by 2 and 3 alone — the load-bearing primes. As 4W grows, more primes enter but with
 smaller weights (less load-bearing); positivity stays small-prime-dominated. Clean arithmetic-structure result.
+
+## §861 (prime-side structure of the RH-critical mode — arch=prime exact balance, pole=0, small primes 2/3/5/7 dominate; the prime-side dual of §858) — operators/nearnull_prime_structure.py
+Extracted the margin eigenvector v at [14,44] 4W=4 (margin 1.66e-9) and decomposed Q(v):
+  arch(v)=+0.18573, pole(v)=+0.00000, prime(v)=+0.18573 → Q=arch+pole−prime=1.66e-9 (EXACT balance arch=prime).
+  Per-prime contributions (share of prime(v)): n=5 (41.7%), n=2 (32.7%), n=7 (30.5%), n=3 (10.9%); all higher
+  primes/powers < 5% each with mixed signs (net cancel to 100%).
+FINDINGS: (1) the RH-critical mode's marginal balance is arch(v)=prime(v) EXACTLY (0.18573=0.18573) — this is
+what makes Q≈0 (the near-null balance). (2) pole(v)=0 — the mode is orthogonal to the pole direction; the balance
+is PURELY arch-vs-prime. (3) the prime side is dominated by the SMALL primes 2,3,5,7 (§860 confirmed at the
+eigenvector level), higher primes negligible/cancelling.
+This is the PRIME-SIDE DUAL of §858 (zero-side): the RH-critical mode vanishes at in-window zeros (§858) AND its
+arch-vs-prime balance is carried by the small primes (§861), with the exact arch=prime cancellation being the
+RH-marginal condition. Complete 3-sided portrait of the razor: zero-side (§858), prime-side (§861), sensitivity
+(§860). All consistent, all RH-consistent. The razor IS: a band-limited mode vanishing at the captured zeros,
+whose small-prime arch/prime balance is exactly critical (arch=prime), residual positivity from uncaptured-zero
+tails (§859).
