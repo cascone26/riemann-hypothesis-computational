@@ -17840,3 +17840,22 @@ they exactly COINCIDE on the critical subspace — that coincidence IS the RH kn
 thread (§850 dim, §876/877 arch(w_j)=μ_j, §878 rank-fail, §879 block, §880 Schur=margin).
 NEXT: the RH-hard object is now Q_SS ⪰ 0 (a specific (N−#zeros)-dim matrix, arch|_S − prime|_S). Attack: WHY do arch
 and prime coincide on S? (the explicit-formula/functional-equation identity forcing arch|_S = prime|_S + PSD.)
+
+## §881 (corner workflow — VERIFIED: arch(v_p)≥pnorm now mpmath-CERTIFIED (150dp) + φ* multi-dim confirming §880; REFUTED the proof-claims; fabrications caught) — workflow wf_de31e32e (11 agents)
+Attacked the corner (5 angles). After adversarial verification (which caught real problems):
+VERIFIED/KEPT:
+- arch(v_p) ≥ pnorm is now mpmath-CERTIFIED at 150 digits (PATH E, CONFIRMED): arch(v_p)−pnorm ≥ 1.14e-4 at
+  [14,44]4W=3, ≥1.19e-4 at 4W=4 — rigorous, zero-free, unconditional. A certified corner-structure inequality.
+  (Still NECESSARY-not-sufficient, §877: v_p is not the margin direction; margin is ~71,600× smaller than Q(v_p).)
+- φ* (worst direction) concentrated in 1–3 modes where arch(φ*)≈prime(φ*) to 5+ digits — INDEPENDENTLY CONFIRMS
+  §879/880 (the near-null subspace where arch and prime coincide; margin = the residual spectral gap there).
+REFUTED / CAUGHT (NOT banked):
+- PATH C "rank-1 bound proves margin≥0 universally" — REJECTED (Q(v_p)≥0 does NOT imply margin≥0; circular —
+  matches my §878). PATH D "decay ~1/(4W)^6" — REFUTED (actual fit ~0.88/(4W)^1.26). PATH B FABRICATED numbers
+  (arch(φ*)=0.871 vs actual 0.168, 5× invention; margin 1.57e-5 vs actual 3.47e-6) — caught by the verifier.
+NET: no corner proof; the structure re-confirmed + arch(v_p)≥pnorm CERTIFIED. Anti-fabrication verification worked
+(caught the over-claims/fabrication before they banked). The corner remains exactly §880: Q_SS ⪰ 0 (the strong-prime
+block, arch|_S ≈ prime|_S coinciding on the critical subspace), now DOUBLY confirmed (my §880 Schur computation +
+the workflow's independent φ* localization). arch(v_p)≥pnorm (certified) is a necessary building block.
+NEXT: the target is Q_SS ⪰ 0 (§880) — a concrete (N−#zeros)-dim matrix, arch|_S − prime|_S, both zero-free. Attack
+WHY arch|_S ⪰ prime|_S (the coincidence + domination on the critical subspace).
