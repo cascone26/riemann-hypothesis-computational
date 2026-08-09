@@ -17786,3 +17786,20 @@ NOT the worst direction φ* (the margin-achieving φ* gives a much smaller Q tha
 does NOT prove positivity — it's a clean universal structural fact and a BUILDING BLOCK, not the proof route.
 THE REAL ROUTE (workflow wf_de31e32e running): the worst direction φ* (PATH B) and a refined operator bound that
 LEVERAGES arch(v_p)≥pnorm to beat floor−pnorm (PATH C). The corner bound must control the WORST φ*, not just v_p.
+
+## §878 (refined rank-k operator bound TESTED and does NOT crack the corner — floor−pnorm_2 is not a valid lower bound; corner margin far smaller than rank bounds; joint coupling is load-bearing) — operators/refined_pnorm2.py
+Tested the candidate refined bound margin ≳ floor − pnorm_2 (rank-1 downdate of the top prime eigenvalue, using
+v_p⊥v_a §835 to protect the floor). RESULT — does NOT hold:
+  [14,44]4W=2.5: floor 0.125 > pnorm_2 0.106 (#prime-eig>floor = 1), but margin=4.6e-6 ≪ floor−pnorm_2=0.019 —
+    so floor−pnorm_2 is NOT a valid lower bound (margin far below it). The rank-1 downdate heuristic fails (arch
+    cross-terms + higher downdates break it).
+  [14,44]4W=3.0/3.5/4.0: #{prime eig > floor} = 2/4/5 — GROWS with 4W. So even the rank structure isn't rank-1;
+    multiple prime eigenvalues exceed the floor, growing with the band-limit.
+CONCLUSION (honest elimination): no simple rank-k operator bound (floor−pnorm_k) gives a positive lower bound at
+the corner — the true margin (~1e-9) is far smaller than these bounds, because the ARCH CROSS-TERMS in the prime
+eigenbasis (the joint arch-prime coupling / full misalignment across ALL directions, not just v_p⊥v_a) are
+load-bearing. The corner margin is genuinely determined by the WORST direction φ* (§877: φ* ≠ v_p), which the
+operator bounds don't capture. So refined operator bounds are eliminated as a corner route; the corner needs the
+full joint structure — workflow wf_de31e32e PATH C (refined bound via the joint structure) + PATH B (worst φ*) are
+the live attacks. Genuine progress: a candidate route tested + eliminated, difficulty precisely located (growing
+above-floor prime rank + arch cross-terms).
