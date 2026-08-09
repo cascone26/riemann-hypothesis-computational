@@ -17198,3 +17198,32 @@ radii-swallow ~1e-9 anyway, integration-limited radius ~1e-6, §831). So the cor
 through 4W=4 (margin real-positive → 0⁺), and the running corner-race workflow's float extrapolation (PATH A/D:
 does pnorm saturate below the 0.125 floor as 4W→∞?) is on trustworthy ground. HONEST distinction: float-trustworthy
 positive ≠ arb-CERTIFIED — no Handle at the corner (margin < arb radius floor), but strong float evidence margin>0.
+
+## §842 (CORNER-RACE workflow #2 verified + main-session decisive sweep — corner is RH-SAFE (margin trustworthy-positive → 0⁺) through 4W=5.0; floor law PINNED; but it's a MEASUREMENT of the known crux, no proof) — workflow wf_037ce907 (13 agents) + operators/corner_sweep_resolution.py
+Second 6-path workflow on the low-height/high-support corner. Verified findings + my decisive follow-up:
+FLOOR LAW PINNED (PATH C, HANDLE, R²=0.9999 over t∈[29,2015]): floor(t) ≈ 0.144·ln(t/2π) + 0.148 − 0.367/ln(t)
+  (or linear 0.182·ln(t/2π)−0.112, R²=0.994). 4W-independent (pure arch operator, §840/§816 ✓). floor/Ω→0.159.
+PNORM GROWTH (PATH A/D, REPORT): pnorm rises 0.113→0.305 as 4W=2→5.8; ~(4W)^0.71 full-range OR log-linear
+  (slope 6.3e-3) late-stage (saturation ambiguous). pnorm CROSSES the low floor 0.125 at 4W≈2.2 — YET margin
+  stays ≥0. ⟹ RE-CONFIRMS §834: margin ≠ floor−pnorm; the scalar "floor-vs-pnorm race" is NOT the mechanism;
+  positivity is non-scalar (pnorm can exceed floor with margin still >0). The "race" framing is a useful picture
+  but the scalar comparison is the wrong reduction (same lesson as §834/§835 — kept honest).
+★ MAIN-SESSION DECISIVE SWEEP (corner_sweep_resolution.py — resolution-stability, upgrades agents' conservative
+  "undetermined ≥3"): margin at [14,44] is TRUSTWORTHY-POSITIVE (agree to ≥3 sig figs across dr=.004/.002, so
+  integration error < margin) through 4W=5.0:
+    4W 2.5→+4.69e-6, 3.0→+3.27e-7, 3.5→+1.22e-8, 4.0→+1.15e-9, 4.5→+1.67e-11, 5.0→+1.55e-12 (ALL stable +),
+    4W 5.5→+1.8e-15 vs +2.1e-15 (diverge = float noise floor reached).
+  ⟹ corner is FLOAT-CONFIRMED RH-SAFE through 4W=5.0, margin decaying ~geometrically (~×1e-2 per Δ4W=0.5) to 0⁺,
+  NEVER negative. Beyond 4W=5.5 needs mpmath high-precision integration.
+LITERATURE (PATH F, REPORT): the corner is a RE-EXPRESSION of the KNOWN Connes/Bombieri/Suzuki arch-vs-prime
+  tension, NOT new structure. Surfaced Groskin arXiv:2607.02828 archimedean budget B_T~(2N+1)ρ log T/(π²T) and
+  Suzuki 2607.24830 (width-independent floor) as the rigorous formulas to match our measurements against.
+PATH E (analytic, INCONCLUSIVE): no analytic floor≥pnorm bound — that bound IS RH (Weil duality identified, not
+  quantified). Honest.
+HONEST NET: high-fidelity MEASUREMENT of the known crux; corner RH-consistent through 4W=5.0; floor law pinned.
+NO proof, NO new structure. The float-push direction is precision-limited (margin→0⁺, chasing the noise floor as
+4W grows — no finite computation settles all 4W = that's RH). DIMINISHING RETURNS on more float scanning.
+NEXT (pivot to structure): match our measured floor law (0.144·ln(t/2π)+...) and margin-decay to the RIGOROUS
+asymptotic formulas the literature already proved (Groskin archimedean budget, Suzuki floor) — if they match, we
+GROUND our apparatus in proven theory (real progress); if the margin-decay = Groskin's archimedean tail budget,
+the corner collapse is an UNDERSTOOD tail artifact, not an RH-critical edge. Plus mpmath confirm a couple 4W>5.
