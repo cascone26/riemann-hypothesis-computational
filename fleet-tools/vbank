@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# vbank — the fleet's un-foolable "verify-before-bank" primitive.
+# Generalizes forge-brick: a unit of work is BANKED (persisted/claimed/shipped) ONLY if a
+# ground-truth VERIFIER passes. Un-verified work physically cannot pass. Domain-agnostic —
+# the verifier is whatever proves the work is real:
+#   Lean brick      → axiom_gate (axioms clean)
+#   bug-bounty PoC  → the exploit actually fires
+#   code change     → tests pass
+#   extraction      → round-trips / matches known truth
+#
+# Usage:
+#   vbank <name> --verify '<cmd, exit 0 iff work is real>' --bank '<cmd to persist>' [--gen '<cmd to produce it first>']
+#
+# Exit 0 = verified & banked. Exit 1 = verification failed, NOT banked. Logs every attempt to
+# ~/.fleet/work-ledger.tsv (name  timestamp-ish  VERIFIED|REJECTED). Nothing dirty enters the ledger.
+set -uo pipefail
+LEDGER="$HOME/.fleet/work-ledger.tsv"; mkdir -p "$HOME/.fleet"
+
+name="${1:?usage: vbank <name> --verify CMD --bank CMD [--gen CMD]}"; shift
+gen=""; verify=""; bank=""
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --gen) gen="$2"; shift 2;;
+    --verify) verify="$2"; shift 2;;
+    --bank) bank="$2"; shift 2;;
+    *) echo "vbank: unknown arg $1" >&2; exit 2;;
+  esac
+done
+[ -n "$verify" ] || { echo "vbank: --verify is required (the whole point)" >&2; exit 2; }
+
+log() { printf '%s\t%s\t%s\n' "$name" "$(date '+%Y-%m-%d %H:%M')" "$1" >> "$LEDGER"; }
+
+if [ -n "$gen" ]; then echo "→ generating $name"; eval "$gen" || { echo "✗ gen failed"; log "GEN_FAIL"; exit 1; }; fi
+
+echo "→ verifying $name"
+if eval "$verify"; then
+  echo "✓ verified"
+  if [ -n "$bank" ]; then eval "$bank" && echo "✓ BANKED $name"; fi
+  log "VERIFIED"
+  exit 0
+else
+  echo "✗ REJECTED $name — verifier failed, NOT banked."
+  log "REJECTED"
+  exit 1
+fi
