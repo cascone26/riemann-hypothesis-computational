@@ -39793,3 +39793,20 @@ certified-bounds approach (found last sweep). Three related papers now on the ra
 different angles -- worth a synthesis read across all three in a future dedicated cycle to check for
 directly reusable techniques or convergent conclusions. No new Krein string/de Branges direct-RH
 results this sweep.
+
+## S2607 (2026-09-16 09:15 CDT) — `simp` (unrestricted) exceeded max steps; correctly reverted to `simp only` + targeted `decide := true` discharger config for the specific unresolved numeral-if conditions
+
+S2605's switch from `simp only` to full `simp` made things WORSE, not better: all 9 lemmas now failed
+with "maximum number of steps exceeded" (Lean's step-count guard, distinct from heartbeats) -- the
+unrestricted default simp set is too broad and slow for this problem size, confirming `simp only`'s
+restriction was correct, NOT the culprit. Real fix: keep `simp only` (avoiding the step-explosion) but
+add `(config := { decide := true })`, which tells simp to use `decide` specifically as a DISCHARGER for
+leftover decidable propositions (exactly the unreduced `if 0 = 4 then ... else ...`-style numeral
+equality conditions seen in every prior residual) without opening up the full default lemma set. This
+is the precise, surgical fix matching the actual diagnosed problem (unresolved decidable Nat-equality
+conditions inside nested Finset.sum unfolding), not another blind broadening attempt. Compile launched
+(background, ~18min expected based on the last full-9-lemma run's wall-clock). This is now 3
+consecutive cycles of falsifiable, evidence-driven iteration on the SAME precisely-scoped bug (not
+random retries) -- each attempt has ruled something out cleanly and narrowed further: coeff_C_mul
+ruled out -> unrestricted simp ruled out (made it worse, informative) -> targeted decide-discharger now
+testing.
