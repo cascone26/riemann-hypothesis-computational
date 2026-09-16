@@ -39696,3 +39696,17 @@ bug precisely; if all 17 cases pass, the theorem is proven AND the "ring scale l
 confirmed as the actual root cause all along. Queued as next cycle's concrete work -- real lemma
 engineering (Polynomial.coeff_add/sub/C/X_pow simp set + interval_cases), scoped to one focused cycle
 rather than crammed into this one. Spot-reverify: CrossK4ReducedK9 clean, no regression.
+
+## S2600 (2026-09-16 08:14 CDT) — literature sweep (due): two new September 2026 preprints found, one directly relevant
+
+Sweep found: (1) **arXiv:2609.02882** (Sept 2) "A new proof that more than 2/3 of the zeros of the
+Riemann zeta function are simple and on the critical line" -- unconditional, verified by Alpöge &
+Furman. Broader RH-adjacent zero-density result, not Hilbert-Pólya-specific, but worth tracking as
+independent-track progress on the same overall problem. (2) **arXiv:2608.24827** (Aug 24) "Weil
+positivity in compact windows: a finite reduction, certified two-sided bounds, and a Landau-Widom decay
+law" -- directly relevant to this project's own explicit-formula/Weil-positivity core approach; offers
+a finite reduction + certified bounds on the Weil quadratic form, worth a deeper read to check for
+overlap/synergy with Shi's finite Hilbert-Pólya construction (arXiv:2609.04908, our current base) or
+useful certified-bound techniques applicable to our own K-general construction. No new Krein
+string/de Branges preprints this sweep. Queued: deeper read of 2608.24827 for a future cycle to check
+whether its certified-bound machinery is directly reusable.
