@@ -40139,3 +40139,22 @@ apply Cauchy interlacing / Weyl's inequality rigorously to this exact rank decom
 Tools: `/tmp/groskin_cascade_test.py` -> banking to `frontier/groskin2607/cascade_generalizes_finiteN.py`.
 Honest status: REPORT-tier structural finding + a concrete, well-posed next computation -- not yet a proof
 of any exponent. No lever on RH itself yet, but a real, previously-unconnected mechanism now identified.
+
+## S2625 (2026-09-16 01:31 PM CDT) — correction to S2624's interlacing sketch: background alone is NOT positive-definite, naive rank-<=2M argument doesn't apply as stated
+
+Checked the S2624 "Cauchy interlacing" next-step numerically before investing more in it (verify-before-ship
+on my own claim, same session). Computed eigenvalues of `W02-WR` (the "background") ALONE at the same test
+points: it is NOT positive-definite -- smallest eigenvalue is negative at every tested (c,N) (e.g. c=30,N=8:
+bg_min=-3.27; c=100,N=8: bg_min=-6.75). This kills the specific framing "PD background minus rank-<=2M
+perturbation, interlacing protects dim-2M eigenvalues" as I stated it -- that argument needs a positive-
+definite anchor to bite, and this one isn't. Also, in every regime actually tested, 2M (M=#primes<=c) already
+exceeds the matrix dimension (2N+1), so the rank bound was vacuous there anyway (not yet binding evidence
+either way). The cascade-generalizes finding from S2624 itself is UNAFFECTED (that was a direct numerical
+telescoping check, independent of this framing) and stays banked. What's actually needed: identify the
+correct positive/negative decomposition this Weil form admits (likely a specific even/odd-sector split or a
+different grouping than raw W02 vs WR vs Wp, per the project's own established p=2/p=3 even-odd-sector
+machinery elsewhere in the record) before an interlacing argument can say anything real. Correctly scoped
+as: real structural lead (cascade generalizes to finite N) + one refuted framing attempt (naive PD-background
+interlacing) + a sharper question now posed (what IS the right positive anchor for this specific matrix
+decomposition). Not a wall -- a precisely diagnosed wrong turn, same discipline as the K=5 Lean arc's own
+"two failed numeric shortcuts, pivot cleanly" pattern earlier this session.
