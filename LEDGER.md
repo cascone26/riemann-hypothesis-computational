@@ -39910,3 +39910,15 @@ never actually tested with the full recipe before (they were previously buried i
 interval_cases fallback, which failed on BUDGET before ever revealing this arithmetic-normalization
 gap) -- so this is the first real look at their specific failure mode, precisely diagnosed on sight,
 not a repeat of anything already ruled out.
+
+## S2615 (2026-09-16 10:50 CDT) — Nat.sub_self worked (the Finset.range residuals are gone); found a simple template bug -- missing `ring` after simp for the 8 odd lemmas
+
+qqce_coeffOdd1's rerun with Nat.sub_self confirmed the fix worked (no more `Finset.range (0-0)` etc.
+leftovers) -- but revealed a much simpler issue: the odd-lemma code template only had
+`simp (config:=...) only [...]` with NO trailing `ring`, unlike the even lemmas which correctly have
+`simp...; ring`. The post-simp residual for the odd cases is a real but non-literal arithmetic identity
+(both sides structurally equal but not simplified down to bare `0`), exactly analogous to the even
+cases -- needs `ring` to close, same as always. Added the missing `ring` call (simple one-line
+template fix, not a new investigation) and relaunched the isolated odd-lemma test. This is the kind of
+mechanical gap that's easy to miss when iterating fast -- caught immediately by reading the actual
+residual rather than assuming the fix didn't work.
