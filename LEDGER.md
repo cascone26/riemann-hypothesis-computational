@@ -39843,3 +39843,18 @@ collapse immediately instead of lingering), plus `maxRecDepth` raised 4000->2000
 (higher-degree) coefficient lemmas more headroom for the now-cheaper-per-step but still deep recursion.
 This is the natural conjunction of two independently-necessary, independently-verified partial fixes --
 not a blind guess. Compile launched, result pending.
+
+## S2610 (2026-09-16 09:58 CDT) — ★★ combined fix (decide+ite_true/false+maxRecDepth) SUCCEEDS on 6 of 9 coefficient lemmas; only the 3 highest-degree ones (X^12/14/16) still fail, with a NEW cleaner diagnosis
+
+The combined fix from S2609 got 6 of 9 top-level coefficient lemmas (X^0,2,4,6,8,10) to compile clean
+-- the biggest jump yet. Only X^12, X^14, X^16 still fail, now specifically with "maximum number of
+steps exceeded" (simp's own internal step counter, distinct from heartbeats/recDepth/memory). Precise
+explanation: the OUTER Finset.antidiagonal-based convolution unfolds `Finset.range (n+1)` for
+coefficient-at-degree-n, so HIGHER n inherently needs MORE Finset.sum_range_succ peeling steps
+regardless of how sparse the actual nonzero terms are -- X^16 needs range(17), X^14 needs range(15),
+X^12 needs range(13), all three the largest n values, exactly matching which 3 failed. Fix: raise
+simp's `maxSteps` config (default too low for this many peel-steps) alongside the existing decide+ite
+fixes. Isolated the 3 failing lemmas into a standalone quick-test file (not the full 9+assembly file)
+for fast iteration instead of re-paying the full ~17min compile each time -- launched, result pending.
+This is now unambiguous positive momentum: 6/9 real coefficient identities PROVEN this cycle (via the
+combined fix), the remaining 3 have a crisp, mechanical, already-diagnosed cause.
