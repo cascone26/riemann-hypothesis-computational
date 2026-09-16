@@ -39875,3 +39875,9 @@ launched the FULL file compile (9 lemmas + the Polynomial.ext assembly theorem, 
 same simp config in its fallback branches for the 8 trivially-zero odd-degree cases) -- if the assembly
 also closes, `quarticQuadrupleProductExpand` is fully proven, EXIT0, unblocking K=5's entire
 coefficient-brick queue. Compile running, result pending.
+
+## S2612 (2026-09-16 10:19 CDT) — literature sweep (due): nothing new beyond already-tracked papers
+
+Second sweep this session confirms no new September 2026 preprints beyond the 4 already tracked
+(2609.04908, 2608.24827, 2607.02828, 2609.02882). Full assembly compile for quarticQuadrupleProductExpand
+still running on Olympus (17+ min CPU time, consistent with prior full-file compile durations).
