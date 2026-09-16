@@ -40037,3 +40037,15 @@ don't lower it, when a bigger multi-block case needs more headroom" guidance) ra
 a different fix blind. Relaunched, result pending. If this also OOMs, the next real fix is applying
 CrossK4Key's OWN proven `generalize`-based opacity trick (give ring1/simp's normalizer true opacity on
 the quad_i terms instead of `set`'s live let-binding) rather than continuing to just raise the ceiling.
+
+## S2622 (2026-09-16 12:21 PM CDT) — OOM confirmed fixed by the raised cap (30GB); new failure is a heartbeat timeout on the linear_combination step, raising heartbeats before reaching for a bigger restructure
+
+30GB cap ran genuinely further (9m24s, no OOM) and hit a NEW, more localized issue: the `hpoly'`
+linear_combination step (combining cubic1*quad1+...+cubic5*quad5 via `hpoly - cubic1*hqpe1 - ... -
+cubic5*hqpe5`) timed out at maxHeartbeats=8000000. Noted that crossK4LeadingCoeff itself compiled fine
+using plain `set` (not `generalize`) for its cubic/triple definitions -- the generalize/congrArg fix
+was needed for CrossK4Key/PolyVanish's DIFFERENT (nu-substitution-across-all-N-indices) proof pattern,
+not this LeadingCoeff-style one. Since K=4's LeadingCoeff didn't need that restructure, tried the
+cheaper, matching-precedent fix first: raised maxHeartbeats 8M->40M (5x) rather than jumping straight
+to a bigger proof restructure. Relaunched, result pending. If this also fails, the generalize-based
+opacity fix (proven K=4Key toolkit) is the queued fallback.
