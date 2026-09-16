@@ -40011,3 +40011,15 @@ of Riemann Zeros via the Truncated Weil Form" (June 2026, cutoff-indexed operato
 already tracked with 2609.04908/2608.24827/2607.02828) and **arXiv:2509.10699** "Etudes in the Inverse
 Spectral Problem, II" (Krein-de Branges + Sturm-Liouville inverse theory). Queued: a dedicated future
 cycle to read 2606.13932 against our own Krein-string work for potential synergy or technique reuse.
+
+## S2620 (2026-09-16 12:01 PM CDT) — quarticQuadrupleProductExpand.olean regenerated (113MB, real artifact); CrossK5LeadingCoeff's first real compile now running after a trivial rw-syntax fix
+
+The .olean regeneration completed (matches the earlier ~27min timing for this file). First
+CrossK5LeadingCoeff.lean compile attempt failed instantly (3.3s) with a clean syntax error --
+generator bug: `rw [...]` target lists were joined with plain spaces instead of commas (Lean4 requires
+`rw [a, b, c]`, not `rw [a b c]`) in 3 spots (rw_hqpe_lines, rw_cubic_defs, rw_quad_defs). Fixed in
+gen_k5_leadingcoeff.py, regenerated, relaunched -- this time it's actually running real elaboration
+(past the syntax-check stage, into genuine compute), not failing instantly. This is exactly the kind
+of first-attempt mechanical hiccup expected for brand-new generator machinery, not a math problem --
+the underlying proof STRATEGY (direct mirror of the already-proven crossK4LeadingCoeff, extended by
+one block) is sound by construction. Result pending.
