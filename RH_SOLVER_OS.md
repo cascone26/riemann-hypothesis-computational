@@ -3255,3 +3255,27 @@ Sources: [2609.04908](https://arxiv.org/abs/2609.04908).
 Infra note: fixed a latent Olympus lakefile.lean regression this cycle (deprecated dependency syntax
 silently no-op'ing `lake env`) that would have blocked ALL future compiles — verified fix against a
 known-good file.
+
+## TOP 5 LANES refresh (2026-09-16 09:27 CDT) — quadruple-product bug precisely isolated, 3 cycles deep on the fix, converging
+1. **quarticQuadrupleProductExpand fix (in progress)** — top priority, actively converging: the formula
+   was confirmed correct 4 independent ways early on; every subsequent Lean-level failure has been
+   precisely diagnosed as a tactic/simp-set issue, not a math error. Sequence: monolithic ring (3x,
+   residual) -> per-coefficient split as 9 separate top-level theorems (structurally sound, heartbeat
+   timeout not residual) -> missing coeff_C_mul (ruled out cleanly, identical residual) -> unrestricted
+   simp (ruled out, made it WORSE with step-count explosion, confirming simp-only was right) -> now
+   testing `simp only [...] (config := { decide := true })` as the targeted discharger for the specific
+   unresolved numeral-equality `if` conditions diagnosed in every prior residual. Compile running on
+   Olympus (~18-20min expected based on prior full-9-lemma run timing).
+2. **K=5 odd-group concrete arc** — blocked only on #1 resolving; CrossK5Key + CrossK5PolyVanish both
+   already EXIT0 (first-try, matching K=4's exact toolkit).
+3. **General-K induction scoping** — backed by 3 real concrete instances (K=3, K=4, K=5's core),
+   strengthening the case once #1 unblocks K=5's coefficient bricks.
+4. **K=4 even-group cascade (ReducedK8/6/4/2)** — confirmed needs fresh derivation, naive mirror
+   definitively fails (two derivative conditions give different coefficients). Deprioritized, not
+   abandoned.
+5. **K=6+ symbolic verification** — parked on a genuine sympy performance wall (4 fair attempts);
+   needs elementary-symmetric-polynomial approach instead of full expansion.
+
+Literature: three related papers now tracked in the same finite-Weil-truncation space as our base
+construction (2609.04908 base, 2608.24827 certified bounds, 2607.02828 Guinand-Weil dictionary) --
+worth a synthesis read once #1 clears.
