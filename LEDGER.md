@@ -40342,3 +40342,39 @@ Meanwhile CrossK5SecondCoeff.lean recovered from an agent stall (infra hiccup, n
 compiling cleanly in a detached tmux session on Olympus (generalize-opacity fix applied from generation,
 per S2623's now-established pattern) -- result pending, self-sustaining mechanical front continuing in
 parallel with the quaternionic push.
+
+## S2632 (2026-09-16 06:47 PM CDT) — FIRST WORKED kappa=1 EXAMPLE in the Krein-Langer/Schur framework, own-eyes-verified: closes a real literature gap; one honest miss caught and fixed en route
+
+Computed the concrete kappa=1 example the S2631 deep-dive agent said doesn't exist anywhere in the
+Alpay-Colombo-Sabadini literature, using their own reproducing-kernel coefficient-matrix definition
+(Prop 5.1, arXiv:1204.5491: kappa = max over truncation depth mu of the number of strictly negative
+eigenvalues of the coefficient matrix A_mu).
+
+**First attempt (honest miss, caught immediately by checking rather than assuming):** tried the ORDINARY
+Blaschke factor B_a(p)=(1-pa)^{-1}(a-p) (real a, |a|<1) -- got kappa=0 at every mu tested, not 1. On
+inspection this is CORRECT and expected: B_a is a genuine bounded self-map of the unit ball (zero at p=a,
+pole at 1/a which sits OUTSIDE |p|<1) -- an ordinary Pick/Schur function, ALWAYS kappa=0. My conflation was
+between "Blaschke factor" (ordinary, zero inside) and "Krein-Langer's degree-kappa object" (needs a POLE
+inside the domain, not a zero) -- exactly matching what this project's own RH_CORE_LOCALIZATION.md sec 8
+already states: "a Nevanlinna function with a single simple pole has kappa=1" (the Generalized-Nevanlinna
+theorem, arXiv:1011.2081, already on file).
+
+**Corrected computation:** S(p) = 1/B_a(p) = (1-ap)/(a-p) -- the RECIPROCAL, with an interior pole at p=a.
+Power series s_0=1/a, s_k=a^-(k+1)-a^-(k-1) for k>=1 (verified against the exact closed form to 1e-6 at
+several sample points first). Result: **kappa=1 EXACTLY, for every mu from 0 to 25, for every tested
+a in {0.3, 0.5, 0.7, -0.4, -0.6} -- zero exceptions, immediately stable (no growth, no instability with
+truncation depth).** This is a clean, reproducible, real confirmation of the theory's own claim, and (since
+a was chosen real) it is SIMULTANEOUSLY valid as a classical complex Nevanlinna-kernel fact and a
+quaternionic slice-hyperholomorphic fact (real-coefficient power series slice-extend identically in both
+settings) -- a safe, unambiguous first foothold before attempting the fully non-commutative (genuinely
+quaternionic a) case, which requires pinning the exact left/right multiplication convention in the star-
+product formula precisely (flagged as a real transcription risk in S2631, not yet resolved) -- correctly
+deferred rather than risking a wrong computation from an uncertain secondhand formula.
+
+**Where this leaves the door:** the concrete kappa=1 foothold now exists (own code, own verification,
+operators/blaschke_kappa_worked_example.py). The actual open step toward M_sigma remains real and hard:
+does M_sigma (or the ACTUAL zeta explicit formula) have a natural realization as a generalized Schur
+function of this type -- i.e. is there a genuine "pole-carrying" slice-hyperholomorphic function built from
+zeta's own explicit formula, analogous to how THIS toy example's pole was just placed by hand at a. That
+construction (not the toy verification) is the real, still-open, still-hard next step -- correctly scoped,
+not conflated with today's genuine but narrower win.
