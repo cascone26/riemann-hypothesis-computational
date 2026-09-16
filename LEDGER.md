@@ -40313,3 +40313,32 @@ question requiring learning the Alpay-Colombo-Sabadini Schur-function machinery 
 algebra -- correctly scoped as a genuine next-session research investment, not a quick computation.
 
 Verified code: operators/quat_hermitian_evenness_test.py (own eyes, ran it, reproducible).
+
+## S2631 (2026-09-16 06:42 PM CDT) — slice-hyperholomorphic Schur kappa investigated: genuinely different machinery than the closed-off naive quaternionic matrix, but no published kappa=1 worked example exists; own theory should supply one via degree-1 Blaschke-Potapov factor -- checking directly
+
+Deep-dive agent confirmed the Alpay-Colombo-Sabadini framework computes kappa via a REPRODUCING-KERNEL
+Schur-function construction (K_S(p,q) built from power-series coefficient-matrix signatures), NOT by
+diagonalizing a single quaternionic-Hermitian matrix -- structurally distinct from the S2630 naive lift that
+was definitively closed (Kramers-forced even kappa). This kernel-based kappa does NOT obviously inherit the
+Kramers doubling mechanism (honest assessment: "structurally plausible" escape, not proven). But: Deninger's
+parity obstruction is COHOMOLOGICAL, and nothing in the Alpay-Colombo-Sabadini literature addresses whether
+it re-emerges at the functional/kernel level -- genuinely open, unaddressed anywhere. No quaternionic
+zeta/L-function bridge exists in the literature at all (confirmed again).
+
+**Key gap identified, and a real lead to close it ourselves:** the agent reported no published kappa=1
+WORKED NUMERICAL example exists in this framework. But their own Krein-Langer factorization theorem states
+every kappa-negative-square generalized Schur function decomposes as S = B^(-star) * S_0, where B is a
+degree-kappa Blaschke-Potapov factor and S_0 is an ordinary (kappa=0) Schur function -- meaning a BARE
+degree-1 Blaschke-Potapov factor should BE the canonical kappa=1 object by construction/theorem, even though
+nobody spelled out its reproducing kernel numerically. Dispatched a narrow, fast lookup (not another broad
+survey) to pin the EXACT formula (the quaternionic Blaschke-Potapov factor, the exact K_S(p,q) kernel
+definition with its J-signature convention) so I can compute this myself directly -- own eyes, real numbers,
+verify whether it really gives kappa=1 as the theory implies. Result pending. If confirmed, this becomes the
+first concrete foothold (a real, verified kappa=1 quaternionic object to study) before attempting anything
+zeta-specific -- exactly the right order of operations (verify the tool works on a known case before
+pointing it at the open problem).
+
+Meanwhile CrossK5SecondCoeff.lean recovered from an agent stall (infra hiccup, not a math wall) and is
+compiling cleanly in a detached tmux session on Olympus (generalize-opacity fix applied from generation,
+per S2623's now-established pattern) -- result pending, self-sustaining mechanical front continuing in
+parallel with the quaternionic push.
