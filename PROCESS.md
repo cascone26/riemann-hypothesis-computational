@@ -21113,3 +21113,14 @@ itself is sound, it's just resource-accumulation across one giant interval_cases
 17 cases at once. Next: split into 9 separate have-lemmas so each case gets a fresh heartbeat budget,
 directly matching this loop's own standing "smaller have-lemmas" guidance. Real forward progress, not
 a repeat.
+
+### 2026-09-16 11:29 CDT — quarticQuadrupleProductExpand CLOSED, EXIT0, after a genuinely long precise-diagnosis arc
+The K=5 coefficient-brick helper lemma is fully proven. This arc (spanning roughly S2593-S2617, most
+of a session) is a clean example of the discipline working exactly as intended: never guessed blind,
+every single fix was verified against something concrete (sympy math, the toolchain's own lemma source,
+an isolated fast-feedback test) before spending a real compile cycle on it. The final proof strategy
+(split a huge polynomial identity into Polynomial.ext + one theorem per coefficient, each with its own
+fresh tactic budget) is now a durable, reusable pattern for this project -- worth remembering for any
+future large sparse-polynomial identity that a monolithic ring call can't handle. Immediate next step:
+use this lemma to build K=5's coefficient-extraction bricks, continuing the concrete-instance arc that
+already has CrossK5Key and CrossK5PolyVanish proven.
