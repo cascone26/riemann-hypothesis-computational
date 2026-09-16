@@ -21124,3 +21124,19 @@ fresh tactic budget) is now a durable, reusable pattern for this project -- wort
 future large sparse-polynomial identity that a monolithic ring call can't handle. Immediate next step:
 use this lemma to build K=5's coefficient-extraction bricks, continuing the concrete-instance arc that
 already has CrossK5Key and CrossK5PolyVanish proven.
+
+### 2026-09-16 12:44 PM CDT — session end, Jacob stopped the loop; final state banked
+Jacob called stop on the /loop. Final state of this session's work: `quarticQuadrupleProductExpand`
+CLOSED (EXIT0, committed). K=5's `CrossK5Key` and `CrossK5PolyVanish` also EXIT0 from earlier this
+session. First K=5 coefficient brick, `CrossK5LeadingCoeff.lean`, is mid-debug -- past its OOM issue
+(fixed by raising ulimit 27GB->30GB), now running with maxHeartbeats raised 8M->40M to clear a
+linear_combination timeout on the 5-cubic/5-quad combination step. That compile was left running
+detached on Olympus (background process, harmless if left unattended -- writes to
+~/rhforge/forge/CrossK5LeadingCoeff.lean and /tmp/k5lc5.txt there). If it OOMs/times out again next
+session, the queued fallback is CrossK4Key's own proven `generalize`-based opacity trick (sever the
+definitional link on cubic_i/quad_i so ring1/simp's normalizer doesn't try to unfold them), which this
+LeadingCoeff-style proof hasn't needed yet but K=4's Key/PolyVanish did.
+
+Next session should start by checking whether CrossK5LeadingCoeff finished (and if so, whether it
+passed) before deciding the next move -- either continue the K=5 coefficient-brick queue (mirroring
+K=4's pattern) or debug this specific brick further with the generalize fallback.
