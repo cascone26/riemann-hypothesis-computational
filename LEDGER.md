@@ -39829,3 +39829,17 @@ the exact lemma names exist in this project's own pinned toolchain source
 (~/.elan/toolchains/leanprover--lean4---v4.33.0/src/lean/Init/SimpLemmas.lean) before compiling, per
 verify-before-build discipline -- avoids wasting another ~15min compile cycle on a typo'd identifier.
 Compile launched, result pending.
+
+## S2609 (2026-09-16 09:41 CDT) — combining both diagnosed fixes: decide:=true (resolves numeral conditions) + ite_true/ite_false (collapses them) + higher maxRecDepth for the larger cases
+
+v10 (ite_true/ite_false alone, no decide) showed the SAME "if 0 = 2 then..." unresolved-condition
+residual as before at coeff0 -- proving `decide := true` genuinely IS necessary to decide the numeral
+equalities in the first place (ite_true/false alone can't fire on an undecided condition). v9 (decide
+alone, no ite_true/false) got the conditions decided to True/False but then hit resource limits on
+LARGER lemmas before the ite could collapse -- and without ite_true/false explicitly in the set, even
+successfully-decided ifs wouldn't simplify away, compounding term size unnecessarily on every later
+step. Combined fix: both `decide := true` AND `ite_true, ite_false` together (so decided conditions
+collapse immediately instead of lingering), plus `maxRecDepth` raised 4000->20000 to give the larger
+(higher-degree) coefficient lemmas more headroom for the now-cheaper-per-step but still deep recursion.
+This is the natural conjunction of two independently-necessary, independently-verified partial fixes --
+not a blind guess. Compile launched, result pending.
