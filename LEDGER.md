@@ -39935,3 +39935,49 @@ diagnosis, per-coefficient splitting, and 5 successive targeted simp-config fixe
 out, unrestricted simp ruled out, decide:=true partial, ite_true/false partial, maxSteps closed the
 even cases, Nat.sub_self + missing ring closed the odd cases). Every single step was a real, banked,
 falsifiable finding -- nothing was guessed blind. Compile running, result pending.
+
+## S2617 (2026-09-16 11:29 CDT) — ★★★★★★★★★ quarticQuadrupleProductExpand FULLY PROVEN, EXIT0 — the K=5 blocking lemma is CLOSED
+
+**`'quarticQuadrupleProductExpand' depends on axioms: [propext, Classical.choice, Quot.sound]` --
+ZERO errors, no sorryAx, real 27m40s compile of the complete 17-lemma + assembly file.** This closes
+the arc that ran across this entire session (S2593 through S2617, ~4 hours): the K=5 coefficient-brick
+helper lemma (the 4-factor analog of the proven `quarticTripleProductExpand`, needed for K=5's
+LeadingCoeff-style coefficient extraction, mirroring K=4's 16-brick pattern) is now Handle-tier proven.
+
+**Full arc summary (every step a real, falsifiable finding, nothing guessed blind):**
+1. Formula independently verified correct 4 ways before ever touching Lean (sympy coeff_monomial
+   extraction, full reconstruction vs the true root-factored product, numeric eval of generated text,
+   hand-derivation of the specific coefficient that later showed the clearest residual).
+2. Two independently-coded, independently-verified text generators both hit an identical `ring`
+   residual on the monolithic 4-factor expansion -- ruled OUT coefficient/sign bugs.
+3. A compositional proof (pre-factoring via the already-proven triple-product lemma) also failed
+   identically -- ruled out that specific mitigation, though didn't yet disambiguate root cause.
+4. Split into `Polynomial.ext` + per-degree coefficient lemmas (matching the project's own established
+   `crossK4LeadingCoeff` coeff_mul/antidiagonal pattern) -- structurally sound (hit a heartbeat timeout,
+   not a residual -- a qualitatively better signal).
+5. Split into 9 SEPARATE top-level theorems (fresh heartbeat budget each) -- isolated individual
+   coefficient failures showing literal un-reduced `if`-conditions -- pinpointed a real simp-set gap.
+6. Iteratively diagnosed and fixed the EXACT simp-set gaps, each verified against the pinned toolchain
+   source before compiling: missing `coeff_C_mul` (ruled out), unrestricted `simp` (ruled out, made it
+   WORSE with step-count explosion -- confirmed `simp only` was right), `decide := true` (partial --
+   resolves numeral conditions), `ite_true`/`ite_false` (partial -- collapses decided conditions),
+   combined together + higher `maxRecDepth` (got 6/9 lemmas), `maxSteps := 1000000` (closed the
+   remaining 3 highest-degree lemmas -- diagnosed precisely as `Finset.range(n+1)` unfolding scaling
+   with degree, not term count).
+7. Extended the SAME fix to the 8 trivially-zero odd-degree cases (same shared-budget problem
+   recurring), found `Nat.sub_self` needed for `Finset.range(k-k)` normalization, caught a simple
+   missing-`ring` template bug, and closed all 17.
+8. Assembled all 17 into the final theorem -- pure `exact` dispatch, zero inline tactic work -- EXIT0.
+
+**Final proof recipe (the durable, reusable artifact of this whole arc):** for large sparse-polynomial
+product identities, split into `Polynomial.ext` + one top-level theorem per coefficient (own fresh
+heartbeat/step budget), each closed by
+`simp (config := { decide := true, maxSteps := 1000000 }) only [coeff_add, coeff_sub, coeff_mul,
+coeff_C_mul, coeff_C, coeff_X_pow, coeff_X, ite_true, ite_false, Nat.sub_self,
+Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk, Finset.sum_range_succ, Finset.sum_range_zero]; ring`
+with `set_option maxRecDepth 20000`. Committed to git.
+
+**Next (immediate, natural continuation):** build K=5's coefficient-extraction bricks (LeadingCoeff
+through the full set, mirroring K=4's 16-brick pattern) using this now-proven helper -- this was the
+entire point of building the lemma, and the K=5 arc (CrossK5Key + CrossK5PolyVanish already EXIT0) is
+now fully unblocked to extend toward a real fourth concrete instance.
