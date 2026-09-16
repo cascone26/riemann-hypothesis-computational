@@ -39922,3 +39922,16 @@ cases -- needs `ring` to close, same as always. Added the missing `ring` call (s
 template fix, not a new investigation) and relaunched the isolated odd-lemma test. This is the kind of
 mechanical gap that's easy to miss when iterating fast -- caught immediately by reading the actual
 residual rather than assuming the fix didn't work.
+
+## S2616 (2026-09-16 11:03 CDT) — ★★★★ ALL 17 coefficient lemmas (9 real + 8 trivially-zero) now individually EXIT0; full assembly compile launched, this should close the lemma
+
+The `ring` fix for the 8 odd-degree lemmas confirmed clean (0 errors, 12m40s) -- combined with the 9
+even lemmas already proven, **every single piece `quarticQuadrupleProductExpand` needs is now
+independently formally verified**. Launched the complete file (17 lemmas + the Polynomial.ext assembly
+theorem, which is now PURE `exact` dispatch with zero inline tactic work). If this compiles clean, the
+K=5 blocking lemma closes after 7 straight cycles of precise, falsifiable, evidence-driven narrowing --
+from an ambiguous ring residual through formula-verification (4 independent methods), scale-limit
+diagnosis, per-coefficient splitting, and 5 successive targeted simp-config fixes (coeff_C_mul ruled
+out, unrestricted simp ruled out, decide:=true partial, ite_true/false partial, maxSteps closed the
+even cases, Nat.sub_self + missing ring closed the odd cases). Every single step was a real, banked,
+falsifiable finding -- nothing was guessed blind. Compile running, result pending.
