@@ -39810,3 +39810,22 @@ consecutive cycles of falsifiable, evidence-driven iteration on the SAME precise
 random retries) -- each attempt has ruled something out cleanly and narrowed further: coeff_C_mul
 ruled out -> unrestricted simp ruled out (made it worse, informative) -> targeted decide-discharger now
 testing.
+
+## S2608 (2026-09-16 09:35 CDT) — pinpointed the exact missing simp lemmas: `ite_true`/`ite_false`, verified to exist in Lean core before spending another compile cycle
+
+S2607's `decide := true` config PARTIALLY worked (the residual now shows `if True then ... else 0` /
+`if False then ... else 0` instead of unreduced numeral comparisons like `if 0 = 4 then...` -- genuine
+progress, the condition itself now decides correctly) but decide's own evaluation cost caused NEW
+resource blowups on later, larger coefficient lemmas ("maximum recursion depth", "INTERNAL PANIC: out
+of memory", "maximum number of steps exceeded" on lines 87/101/113/127/141 -- the higher-degree, more
+term-heavy cases). Root cause of the REMAINING gap: `ite True a b = a` / `ite False a b = b` are real,
+cheap, `@[simp]`-tagged core lemmas (`ite_true`/`ite_false`, confirmed by grepping
+Init/SimpLemmas.lean:237-238 on Olympus's own toolchain BEFORE writing any Lean) -- but since they're
+tagged `@[simp]` (meaning `simp`, not `simp only`, would find them automatically), our restricted
+`simp only [...]` never applied them since they weren't in our explicit list. Removed the costly
+`decide := true` config (reverting to plain `simp only`) and added `ite_true, ite_false` explicitly --
+this is a **targeted, free, confirmed-to-exist fix** rather than a resource-expensive guess. Verified
+the exact lemma names exist in this project's own pinned toolchain source
+(~/.elan/toolchains/leanprover--lean4---v4.33.0/src/lean/Init/SimpLemmas.lean) before compiling, per
+verify-before-build discipline -- avoids wasting another ~15min compile cycle on a typo'd identifier.
+Compile launched, result pending.
