@@ -40158,3 +40158,30 @@ as: real structural lead (cascade generalizes to finite N) + one refuted framing
 interlacing) + a sharper question now posed (what IS the right positive anchor for this specific matrix
 decomposition). Not a wall -- a precisely diagnosed wrong turn, same discipline as the K=5 Lean arc's own
 "two failed numeric shortcuts, pivot cleanly" pattern earlier this session.
+
+## S2626 (2026-09-16 01:47 PM CDT) — Roundtable #H3 complete: 1/6 survived (vs 0/6 x2 prior), real blocking audit task surfaced
+
+6-seat Opus Roundtable #H3 (wf_324c9a9f-ba1, 13 agents, 577K tokens, ~6.3min wall) re-seated the D1/F1
+crux on a MINIMAL-SUFFICIENT-WITNESS framing (bypass full F1 construction rather than find an alternative
+angle or smallest brick, both already exhausted by H1/H2). Result: 5/6 lenses (deformation/q->1,
+numerical-spectral-certificate, cross-instance-transport, Euler-product-local, minimal-ad-hoc-gadget) each
+reduced to the SAME F1 wall, but this time with PRECISE, distinct closure points per lens (table banked in
+full synthesis) rather than a blanket "circular" verdict -- meaningfully sharper than H1/H2's coarser 0/6.
+Two concrete partial insights banked: (1) the function-field q->1 limit transport is judged the NARROWEST
+plausible shortcut IF the limit itself (curve family L-function -> zeta as q->1, Hodge-signature stability
+under that limit) can be rigorously proven -- open, well-posed, not yet attempted; (2) Groskin/CvS margin
+positivity is confirmed genuinely ONE-WAY (certifies truncated positivity, does not invert to sigPos=1) --
+useful numerical evidence, not itself a witness.
+
+**1/6 SURVIVED (adversarial/skeptic lens)** -- not as a new mathematical angle but as a procedural finding:
+H3 itself may be mis-framed BECAUSE the Lean chain's own soundness hasn't been independently re-audited
+recently. Concrete, cheap, blocking check proposed: does `WeilForm(zeta)`'s actual Lean DEFINITION reference
+RH/sigma=1/2/critical-line anywhere (circularity), and is the RHFromHeig/HodgeManufacturesKappaOne/
+KappaLeOneSignature chain genuinely sorryAx-free as the LEDGER claims, independently re-verified rather than
+taken on faith from an old GREEN BOARD note. Dispatched this exact audit to a subagent (real file-reading
+work, bounded scope) immediately -- result pending, will bank as its own LEDGER entry.
+
+Full synthesis banked at `roundtable_2026-09-16/H3_synthesis.md`. Grounded read: this wasn't a wasted
+re-run -- three prior 0/6 outcomes (H1, H2's two framings) plus this session's 5/6-reduce-but-1-survive
+result together TRIANGULATE the wall precisely enough that the next concrete moves are now well-posed
+computations (the q->1 limit formalization; the Lean chain re-audit) rather than open-ended ideation.
