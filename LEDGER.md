@@ -39858,3 +39858,20 @@ fixes. Isolated the 3 failing lemmas into a standalone quick-test file (not the 
 for fast iteration instead of re-paying the full ~17min compile each time -- launched, result pending.
 This is now unambiguous positive momentum: 6/9 real coefficient identities PROVEN this cycle (via the
 combined fix), the remaining 3 have a crisp, mechanical, already-diagnosed cause.
+
+## S2611 (2026-09-16 10:04 CDT) — ★★★ ALL 9 coefficient lemmas individually EXIT0 -- maxSteps was the last piece; full assembly compile launched, possible closure imminent
+
+Isolated quick-test (5m20s, much faster than full file) of the 3 remaining lemmas (qqce_coeff12/14/16)
+with `maxSteps := 1000000` added to the simp config -- **ZERO errors, all 3 compile clean.** Combined
+with S2610's 6/9, this means **all 9 individual coefficient identities for the K=5 quadruple-product
+lemma are now formally proven** with the full fix stack: `simp (config := { decide := true, maxSteps :=
+1000000 }) only [coeff_add, coeff_sub, coeff_mul, coeff_C_mul, coeff_C, coeff_X_pow, ite_true,
+ite_false, Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk, Finset.sum_range_succ,
+Finset.sum_range_zero]` + `set_option maxRecDepth 20000`. This is the full, precisely-assembled fix
+after 6 straight cycles of falsifiable, evidence-driven narrowing (ring residual -> per-coefficient
+split -> heartbeat timeout -> coeff_C_mul ruled out -> unrestricted simp ruled out (informative) ->
+decide:=true partial -> ite_true/false partial -> combined -> maxSteps closes the gap). Immediately
+launched the FULL file compile (9 lemmas + the Polynomial.ext assembly theorem, which uses the exact
+same simp config in its fallback branches for the 8 trivially-zero odd-degree cases) -- if the assembly
+also closes, `quarticQuadrupleProductExpand` is fully proven, EXIT0, unblocking K=5's entire
+coefficient-brick queue. Compile running, result pending.
