@@ -39710,3 +39710,24 @@ overlap/synergy with Shi's finite Hilbert-Pólya construction (arXiv:2609.04908,
 useful certified-bound techniques applicable to our own K-general construction. No new Krein
 string/de Branges preprints this sweep. Queued: deeper read of 2608.24827 for a future cycle to check
 whether its certified-bound machinery is directly reusable.
+
+## S2602 (2026-09-16 08:31 CDT) — per-coefficient split IS structurally sound, hits a heartbeat timeout not a math residual -- qualitatively different (better) signal
+
+Built the coefficient-split proof (Polynomial.ext + degree bound via compute_degree + `by_cases hn : n
+≤ 16` + `interval_cases n <;> simp[coeff_mul/coeff_add/...+antidiagonal unfold] <;> ring` for the 17
+in-range cases, `coeff_eq_zero_of_natDegree_lt` for the rest), reusing the exact machinery
+`crossK4LeadingCoeff` already uses successfully for 4-fold coeff_mul convolutions. First attempt hit a
+trivial Lean-identifier bug (`le_or_lt` not in scope by that name) -- fixed with `by_cases`. Second
+attempt got past all elaboration/type-checking of the tactic SCRIPT itself (no syntax/name errors) and
+ran for 3m45s before hitting **two heartbeat timeouts** (one inside the combined interval_cases<;>simp
+chain, one in `whnf` type-checking the theorem statement itself) at maxHeartbeats=4000000. **This is a
+meaningfully different and more informative failure than S2596/S2597/S2599's "ring: unsolved goals with
+a residual"** -- a timeout means the tactic script's APPROACH is sound (Lean is making progress, just
+running out of budget), not that the goal is unprovable or the formula wrong. Combining all 17
+interval_cases branches into ONE `<;>` chain means heartbeat cost accumulates across all cases with no
+reset point -- the natural fix (and literally what this cycle's own standing directive already
+recommends: "smaller have-lemmas") is to split into 9 SEPARATE `have` lemmas (one per nonzero-
+coefficient degree: X^0,2,4,...,16), each getting its own fresh tactic block (and could even get its
+own `set_option maxHeartbeats` scope), rather than one monolithic interval_cases sweep. Queued as next
+cycle's concrete, well-motivated refinement -- not a repeat of a failed idea, a structural fix to a
+newly-diagnosed resource-accumulation problem.

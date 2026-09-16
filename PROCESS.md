@@ -21103,3 +21103,13 @@ the proof into per-coefficient pieces (Polynomial.ext + degree case-split), each
 call instead of one giant polynomial identity. This also directly matches this cycle's own top-ranked
 suggested strategy (proof-splitting into smaller have-lemmas) applied to the right target. Queued as
 focused next-cycle work rather than rushed into this cycle's remaining time.
+
+### 2026-09-16 08:31 CDT — per-coefficient split proof structurally sound, hits heartbeat budget not a math wall
+Implemented the coefficient-split strategy queued last cycle, reusing crossK4LeadingCoeff's own
+established coeff_mul/antidiagonal-unfold pattern. Fixed one trivial identifier bug (le_or_lt ->
+by_cases), then the real run got through all elaboration and ran 3m45s before timing out on heartbeats
+-- a genuinely different, better failure mode than the prior 3 attempts' ring residuals: the approach
+itself is sound, it's just resource-accumulation across one giant interval_cases<;> chain covering all
+17 cases at once. Next: split into 9 separate have-lemmas so each case gets a fresh heartbeat budget,
+directly matching this loop's own standing "smaller have-lemmas" guidance. Real forward progress, not
+a repeat.
