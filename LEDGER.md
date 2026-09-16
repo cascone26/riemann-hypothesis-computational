@@ -39981,3 +39981,21 @@ with `set_option maxRecDepth 20000`. Committed to git.
 through the full set, mirroring K=4's 16-brick pattern) using this now-proven helper -- this was the
 entire point of building the lemma, and the K=5 arc (CrossK5Key + CrossK5PolyVanish already EXIT0) is
 now fully unblocked to extend toward a real fourth concrete instance.
+
+## S2618 (2026-09-16 11:34 CDT) — generated CrossK5LeadingCoeff.lean (first K=5 coefficient brick, direct extension of crossK4LeadingCoeff using the newly-proven quarticQuadrupleProductExpand); first attempt failed for a mundane reason (missing .olean), regenerating it now
+
+Built a full Python generator (gen_k5_leadingcoeff.py, reusing quarticQuadrupleProductExpand's own
+sympy coefficient-derivation logic) mirroring crossK4LeadingCoeff's exact proof structure (cubic1-5 +
+quartic1-5 sets, quarticQuadrupleProductExpand applied per-block to the "other 4" quartics, hpoly' via
+linear_combination, degree-19 coefficient extraction via congrArg+coeff_mul+antidiagonal unfold,
+final norm_num+linear_combination) extended from 4 to 5 blocks. First compile attempt failed
+immediately (0.8s) with "unknown module prefix QuarticQuadrupleProductExpand" -- NOT a math or proof
+error, just a mundane fact: `lean <file>.lean` (used for all the coefficient-split debugging this
+session) elaborates and type-checks but does NOT emit a `.olean`, so nothing could `import` the newly-
+proven lemma yet. Fixed by compiling QuarticQuadrupleProductExpand.lean with `lean -o
+QuarticQuadrupleProductExpand.olean ...` to produce the actual importable artifact (relaunched,
+~27min expected matching its known compile time) -- then CrossK5LeadingCoeff.lean can be attempted for
+real. This is genuinely the START of a new phase (K=5 coefficient bricks) built directly on this
+session's major closure, not a setback -- the generator itself is untested against Lean yet and may
+need its own debug round once the import is available, which is normal for a first attempt at new,
+larger machinery.
