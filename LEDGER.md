@@ -40217,3 +40217,41 @@ is shaky. Next real moves, in order of concreteness: (1) the function-field q->1
 from H3's synthesis -- open, narrow, well-posed, unattempted); (2) continue the delta-ring/Lambda-ring
 substrate bricks (cyC2/C3/D1's own already-successful incremental path); (3) K=5 Lean forge bricks
 (self-sustaining, RH-independent scaffolding, currently at Key+PolyVanish+LeadingCoeff EXIT0).
+
+## S2628 (2026-09-16 02:15 PM CDT) — synthesis: today's F1-signature dimensional obstruction IS the same wall as the already-known κ≤1 parity obstruction; the one genuinely unexplored door is the quaternionic/condensed Krein-Langer extension
+
+Cross-referenced this loop-cycle's q->1 literature agent finding against the project's own record (search-
+before-build). The agent found: the q->1 limit of function-field zeta functions is rigorous (Kurokawa's
+absolute tensor product, Connes-Consani, Soule), but the HODGE-INDEX SIGNATURE specifically has no known
+transport under that limit, and the concrete obstruction it identified is dimensional -- Spec Z x_F1 Spec Z
+would need to be a SURFACE (2-dimensional) for a (1,n-1)-style signature to even be stated, but Spec Z itself
+is only 1-dimensional.
+
+This is NOT a new finding -- it is the SAME wall the project already mapped in far sharper, number-field-
+native form via the Krein-Langer/Pontryagin-space reframing (RH_CORE_LOCALIZATION.md §8-8d, LEDGER §946-980,
+2026-08-09/10 session): rather than needing a 2D intersection-form signature at all, the project already has
+the CORRECT-DIMENSIONED, F1-free restatement: **RH <=> neg-space(arch-prime) subset span(pole)** -- a 1-D
+containment statement about an explicit, computable arithmetic operator, verified to machine precision at the
+true primes (§976, cos-alignment 0.9845-1.0) and razor-sharp (destroyed by any prime perturbation, §977).
+Deninger's own no-go (2204.02714, independently re-confirmed via today's new agent AND already deeply read in
+this project) is PARITY not positivity: functional-equation root numbers force ODD symplectic multiplicity,
+real-coefficient complexification forces EVEN -- an odd/even mismatch that blocks any REAL-coefficient
+resolution (Hilbert-space/de Branges approaches, condensed geometric approaches alike). The project's own
+§8 "unifying hypothesis" already identified the single negative square of arch-prime as the ANALYTIC SHADOW
+of this exact parity obstruction.
+
+**Net value of this cross-reference:** confirms (via a genuinely independent literature sweep today) that the
+project's own diagnosis was correct and is the field-consistent one -- three separate approaches (F1/Hodge-
+index dimensional counting, Deninger's cohomological parity no-go, our own Krein-Langer negative-square
+analysis) all triangulate the SAME single obstruction from three different mathematical languages. This is
+strong convergent evidence the diagnosis is right, not an artifact of any one method.
+
+**The one door still explicitly flagged as UNBUILT across every mention (§8, §963, RH_CORE_LOCALIZATION.md):**
+Deninger's own proposed escape is quaternionic/antilinear-involution coefficients (realized abstractly by
+Clausen-Scholze condensed/solid modules), with a QUATERNIONIC Krein-Langer extension already existing in the
+pure-math literature (Alpay-Colombo-Sabadini, arXiv:1204.5491) -- but "NO published bridge to Spec Z zeta yet"
+is stated as an open door every time this comes up, and nobody (published literature OR this project) appears
+to have actually attempted building that bridge. Dispatching a real investigation of this specific gap now --
+read Alpay-Colombo-Sabadini's actual quaternionic Krein-Langer construction and check concretely whether it
+could resolve the odd/even parity mismatch for M_sigma = arch-prime specifically. Genuinely unexplored,
+concretely scoped, not a re-derivation of anything already done.
