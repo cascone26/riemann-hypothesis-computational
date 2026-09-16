@@ -39881,3 +39881,17 @@ coefficient-brick queue. Compile running, result pending.
 Second sweep this session confirms no new September 2026 preprints beyond the 4 already tracked
 (2609.04908, 2608.24827, 2607.02828, 2609.02882). Full assembly compile for quarticQuadrupleProductExpand
 still running on Olympus (17+ min CPU time, consistent with prior full-file compile durations).
+
+## S2613 (2026-09-16 10:24 CDT) — all 9 real coefficient identities confirmed EXIT0; assembly's remaining gap is the SAME shared-budget issue recurring for the 8 trivially-zero odd cases
+
+Full-file compile (17m18s) confirmed: **all 9 nonzero-content coefficient lemmas (qqce_coeff0 through
+qqce_coeff16) compile with ZERO errors** -- no error lines at any of their locations. The ONLY
+remaining failure is inside the assembly theorem's fallback branch (line 190, a heartbeat timeout) --
+which handles the 8 trivially-zero ODD-degree cases (n=1,3,...,15) via an inline `simp;ring` shared
+with the SAME combined-budget problem originally diagnosed in S2602 for the even cases. Applied the
+identical, already-proven fix: split the 8 odd cases into their OWN top-level lemmas too
+(qqce_coeffOdd1 through qqce_coeffOdd15), same decide+ite_true/false+maxSteps recipe, so the assembly
+becomes PURE `exact` dispatch for all 17 cases -- zero inline tactic work left to share a budget.
+Isolated the 8 new lemmas into a fast standalone test (not the full ~17min file) before committing to
+a full run. Compile launched, result pending. This is the SAME proven pattern applied consistently,
+not a new open question -- expect this to close the lemma.
