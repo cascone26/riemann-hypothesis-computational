@@ -39766,3 +39766,30 @@ independent verifications never lied); every prior Lean-level failure was a TACT
 math error or an unfixable ring scale limit.** Result pending (compile running); this is the strongest,
 most concrete lead across the whole quarticQuadrupleProductExpand arc -- a named, understood, fixed bug
 rather than an ambiguous residual or timeout.
+
+## S2605 (2026-09-16 08:57 CDT) — coeff_C_mul fix insufficient (identical residual); refined diagnosis to missing Nat arithmetic normalization, testing `simp only` -> `simp`
+
+S2604's `coeff_C_mul` addition produced a BYTE-IDENTICAL residual (same `if True then ⋯ else 0` /
+`if 0 = 4 then 1 else 0` unreduced conditions at the exact same lines) -- ruling that specific
+hypothesis out cleanly rather than leaving it ambiguous. Re-diagnosed: the unreduced `if`s are most
+likely from `Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk`'s nested inner sums (needed for the
+NESTED coeff_mul calls inside the 4-fold product's convolution) never getting their own bound
+literalized -- e.g. an inner range bound like `4 - 4` needs Nat-literal arithmetic reduction
+(Nat.reduceSub etc.) to become `0` before `Finset.sum_range_succ`/`_zero` can pattern-match and finish
+peeling it, and `simp only` with an explicit lemma list may not be firing Lean's default arithmetic
+simprocs the way plain `simp` would. Switched `simp only [...]` to `simp [...]` (keeping the same
+explicit lemma list, additionally allowing the full default simp set + simprocs) and relaunched.
+Precise, falsifiable, evidence-driven iteration -- ruled out one specific hypothesis cleanly rather
+than guessing blind, immediately queued the next concrete one. Result pending.
+
+## S2606 (2026-09-16 09:00 CDT) — literature sweep (due): one new relevant preprint, arXiv:2607.02828
+
+Found **arXiv:2607.02828** "A finite Guinand-Weil dictionary and archimedean tail order for the
+truncated Weil quadratic form" (July 2026) -- directly relevant to lane 1 (finite reduction of Weil's
+explicit formula): builds a dictionary connecting the truncated Weil quadratic form to spectral data,
+complementing Shi's finite Hilbert-Pólya construction (our base, arXiv:2609.04908) and 2608.24827's
+certified-bounds approach (found last sweep). Three related papers now on the radar
+(2609.04908/2608.24827/2607.02828) all working the same finite-truncation-of-Weil's-formula space from
+different angles -- worth a synthesis read across all three in a future dedicated cycle to check for
+directly reusable techniques or convergent conclusions. No new Krein string/de Branges direct-RH
+results this sweep.
