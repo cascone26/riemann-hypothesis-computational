@@ -21140,3 +21140,28 @@ LeadingCoeff-style proof hasn't needed yet but K=4's Key/PolyVanish did.
 Next session should start by checking whether CrossK5LeadingCoeff finished (and if so, whether it
 passed) before deciding the next move -- either continue the K=5 coefficient-brick queue (mirroring
 K=4's pattern) or debug this specific brick further with the generalize fallback.
+
+## 2026-09-16 12:56 PM CDT — riemann11 resumes: heartbeat raise ruled out, generalize-opacity fix in flight
+
+Resumed after the /loop session ended with CrossK5LeadingCoeff running detached on Olympus. Checked
+it for real rather than assuming: the 40M-heartbeat attempt (5x raise) timed out at the identical
+spot as the 8M attempt, confirming this was never a resource-budget problem -- it's `ring1` getting
+a transparent `set`-bound let-body (the five giant `quad_i` degree-16 polynomials) that it keeps
+trying to unfold during the `hpoly'` linear_combination check. This is exactly the failure class
+CrossK4Key/PolyVanish already solved (S2564/S2565's own recorded lesson: "set doesn't give true
+opacity to ring1; generalize does"). Applied that proven fix mechanically -- wrote a small text-
+transform script that pulls each quad_i's already-written body straight out of the file (rather
+than hand-retyping five ~2000-char polynomials, a real error-surface) and re-emits it inside the
+revert/generalize/intro opacity pattern K4Key uses. Backed up the original file first. First
+compile of the new structure is running now (tmux-detached on Olympus, survives independent of
+this session). While that runs, did the queued literature cross-check from this morning's sweep:
+one of the two leads (2606.13932) turned out to be a same-word-different-object false positive
+("Krein space" quantization in the QFT sense, unrelated to our Krein STRING lane) -- caught before
+wasting more time on it. The other (2605.20224) confirms our own p={2,3}/continuum-wall crux is the
+same open question the wider CvS literature is stuck on too, not a gap unique to us.
+
+Discipline note for this session: verified the actual compile result before writing anything about
+next steps (rather than assuming either success or the same failure), matching the standing
+verify-before-ship rule -- the temptation after a long-running background job is to assume it
+either worked or is still the same problem; checking cost one `cat` and confirmed the real,
+different diagnosis (definitively not a heartbeat problem) that the fix now targets.

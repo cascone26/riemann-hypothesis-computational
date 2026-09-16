@@ -40049,3 +40049,42 @@ not this LeadingCoeff-style one. Since K=4's LeadingCoeff didn't need that restr
 cheaper, matching-precedent fix first: raised maxHeartbeats 8M->40M (5x) rather than jumping straight
 to a bigger proof restructure. Relaunched, result pending. If this also fails, the generalize-based
 opacity fix (proven K=4Key toolkit) is the queued fallback.
+
+## S2623 (2026-09-16 12:56 PM CDT) — riemann11 session: heartbeat raise confirmed dead end (40M still times out at the exact same spot); applied CrossK4Key's generalize-opacity fix, real attempt now running
+
+Picked up mid-arc after Jacob's earlier /loop session stopped with CrossK5LeadingCoeff running
+detached. Confirmed result first (rule: check reality before deciding next move, don't assume):
+the 40M-heartbeat run (S2622's fix) finished at 31m9s with the IDENTICAL failure — timeout at
+`whnf` at the same `hpoly'` linear_combination line. This closes the question S2622 left open:
+raising heartbeats further is not the fix; the problem is `set`-bound `quad_i` (five 9-term
+degree-16 polynomials, the K=5 analog of K=4's smaller `triple_i`) giving `ring1` a transparent
+let-body it keeps re-unfolding inside the linear_combination check, not a resource-budget
+shortfall. This matches the exact CrossK4Key/PolyVanish failure mode from S2564/S2565 (their own
+comment: "`set` doesn't give true opacity to `ring1`. v3 fix: `generalize`").
+
+Applied that proven fix directly to CrossK5LeadingCoeff.lean: wrote a small Python AST-free text
+transform (regex-extracts each `quad_i`'s body from its existing `set quad_i := BODY with
+hquad_idef` block, verbatim — avoiding hand-retyping five ~2000-character degree-16 polynomial
+expressions, which would be a real transcription-risk) that replaces the five `set quad_i`
+declarations with the `revert hqpe_i; generalize hQ_i : (BODY) = Q_i; intro hqpe_i` dance mirroring
+CrossK4Key lines 96-113 exactly, restates `hpoly'` in terms of the now-opaque `Q1..Q5` instead of
+the transparent `quad1..quad5`, and swaps the final coefficient-extraction `rw` to unfold via
+`← hQ_i` instead of `hquad_idef`. Backed up the pre-fix file (non-destructive:
+CrossK5LeadingCoeff.lean.bak-generalize-fix) before transforming. Diff inspected and structurally
+matches intent. First real compile of this new structure now running (tmux session k5lc6 on
+Olympus, detached so it survives regardless of this session's SSH liveness, ulimit -v 30GB,
+maxHeartbeats still 40M as a ceiling that should now be far more than needed if the opacity fix
+works). This is a genuine, first-try-unknown test of a real structural fix, not a repeat of
+anything already ruled out. Result pending.
+
+**Parallel literature check (queued S2619):** read arXiv:2606.13932 in full — it is a FALSE lead,
+a namespace collision: "Krein space quantization" there means the standard physics indefinite-
+inner-product-space sense (de Sitter QFT, retarded propagator, sign-indefinite spectral measures),
+not the Krein STRING / de Branges moment-problem sense our own [[rh-krein-string-mobius-lane]] lane
+uses — no mention of strings, de Branges spaces, or Jacobi matrices in it at all. No synergy; not
+pursuing further. Also read arXiv:2605.20224 (CvS truncated Weil form, first public Galerkin
+implementation, c=13-100, first-zero error to ~1e-334 at c=100/N=250) — directly in our own
+p={2,3} rung-cert / continuum-wall lane, explicitly "we make no claim of proof," open on the same
+c→∞ convergence question our own OS already has flagged as the wall. Confirms we're not behind
+anyone on this front; their high-precision data could be a useful cross-check reference if we
+revisit that lane, but it's not a new lever today.
