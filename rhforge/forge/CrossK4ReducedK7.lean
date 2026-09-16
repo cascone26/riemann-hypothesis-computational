@@ -1,6 +1,9 @@
 import CrossK4LeadingCoeff
 import CrossK4NinthCoeff
 
+set_option maxHeartbeats 4000000
+set_option maxRecDepth 4000
+
 /-!
 # K=4 decoupling: eliminate D3_4 from the degree-7 equation via the degree-15 equation
 
