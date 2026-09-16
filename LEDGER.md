@@ -40088,3 +40088,54 @@ p={2,3} rung-cert / continuum-wall lane, explicitly "we make no claim of proof,"
 c→∞ convergence question our own OS already has flagged as the wall. Confirms we're not behind
 anyone on this front; their high-precision data could be a useful cross-check reference if we
 revisit that lane, but it's not a new lever today.
+
+## S2624 (2026-09-16 01:19 PM CDT) — ★ CrossK5LeadingCoeff FULLY PROVEN, EXIT0 — generalize-opacity fix confirmed durable at K=5 scale, first try
+
+The generalize-opacity transform from S2623 compiled clean on the FIRST real attempt: `'crossK5LeadingCoeff'
+depends on axioms: [propext, Classical.choice, Quot.sound]` -- zero errors, no sorryAx, only a harmless
+unused-simp-argument linter warning (`coeff_sub` no longer needed once `Q_i` replaced the raw polynomial in
+the rw chain -- cosmetic, left as-is). Confirms two things: (1) the CrossK4Key `revert/generalize/intro`
+opacity trick generalizes cleanly to a genuinely bigger instance (five 9-term degree-16 `quad_i`, vs K4's
+four 7-term `triple_i`) without needing further adaptation; (2) the mechanical text-transform approach
+(extracting each `quad_i` body verbatim from its existing `set` block rather than hand-retyping ~2000-char
+polynomials) is a safe, reusable pattern for applying this fix elsewhere -- banked as
+`rhforge/forge/fix_k5_leadingcoeff.py`. This closes CrossK5's first coefficient brick beyond Key/PolyVanish;
+the K=4 pattern's next 16 bricks (Second through SixteenthCoeff) are the direct template for K=5's remaining
+queue. Committed (f786a01), original pre-fix file kept as `.bak-generalize-fix` for provenance.
+
+**Parallel work this session:** fired 6-Fable Roundtable #H3 (Opus-only per Jacob's directive) re-seated on
+a genuinely different question than H1/H2 (both 0/6, both already gated dead: "alternative angle to sigPos=1"
+and "smallest F1 brick") -- this round asks for a MINIMAL-SUFFICIENT WITNESS that sidesteps building the
+full F1 object entirely (deformation/q->1, numerical-spectral-certificate, cross-instance-transport,
+Euler-product-local-data, minimal-ad-hoc-gadget, and an adversarial skeptic lens). Running in background
+(wf_324c9a9f-ba1), result pending.
+
+Also pushed directly on the Groskin/CvS margin-exponent question (the workable-today item from the path
+table): reproduced the exact `tau = W02-WR-Wp` assembly from `arb_ldlt_certify.py` at float64 (REPORT-tier,
+not yet Arb-rigorous) and ran the same per-prime Hellmann-Feynman decomposition that discovered the §176/
+176b/176c "telescoping cascade" law on the LARGE-N near-null operator -- but this time on the actual
+FINITE-(c,N) Groskin margin matrices from `margin_law.py` (c=13/30, N=4/8). **FINDING: the cascade law
+generalizes.** At every (c,N) tested, running the residual `<psi|W02-WR|psi> + Sum_{q<=idx} h(q)` through
+primes in increasing order telescopes down to match the true smallest eigenvalue to within float64 noise
+(agreement improves the smaller the target -- e.g. c=13,N=8: final residual 3.1e-16 vs true lambda_min
+5.0e-17, both already at the double-precision floor). This is the FIRST evidence the two previously-separate
+findings (the large-N Fuchs-envelope cascade, and the finite-(c,N) Groskin margin power law) share ONE
+underlying mechanism, not two unrelated numerical facts.
+
+**Structural read on WHY N matters (new, not yet in the record):** `prime_powers_up_to(c)` depends on c ONLY
+-- every prime power <=c enters Wp regardless of N, so N is NOT limiting which primes participate. Wp is a
+sum of M=#{prime powers<=c} matrices, each visibly rank<=2 (built from a single frequency y=log(q) via
+sin/cos of 2*pi*n*y/L) -- i.e. rank(Wp) <= 2M, matching the SAME "sum of K rank-<=2 PSD terms has rank<=2K"
+shape as Shi's own Prop 5.1 (arXiv:2609.04908) that the parallel Lean forge arc is formalizing right now --
+a genuine, previously-unnoticed structural echo between the two "unrelated" lanes (Groskin/CvS and Shi).
+Sketch of the mechanism: (W02-WR) is the positive-definite archimedean+pole background; tau = background -
+Wp is a rank-<=2M perturbation of it. Cauchy interlacing says only min(2M, dim) eigenvalues of tau can be
+pushed far from the background's own spectrum; once dim=2N+1 exceeds 2M, a growing pool of eigenvalues MUST
+stay bounded below by the background -- but the tracked lambda_min is (empirically) always among the
+"perturbable" ones, and getting a rigorous lower bound on HOW deep the rank-<=2M perturbation can push it
+(rather than curve-fitting the empirical c^(-0.44N)) is exactly the open sub-question. Concrete next step:
+apply Cauchy interlacing / Weyl's inequality rigorously to this exact rank decomposition -- would turn the
+"0.44" curve-fit into a real analytic exponent (or show the true bound is different and sharper/weaker).
+Tools: `/tmp/groskin_cascade_test.py` -> banking to `frontier/groskin2607/cascade_generalizes_finiteN.py`.
+Honest status: REPORT-tier structural finding + a concrete, well-posed next computation -- not yet a proof
+of any exponent. No lever on RH itself yet, but a real, previously-unconnected mechanism now identified.
