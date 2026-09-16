@@ -40023,3 +40023,17 @@ gen_k5_leadingcoeff.py, regenerated, relaunched -- this time it's actually runni
 of first-attempt mechanical hiccup expected for brand-new generator machinery, not a math problem --
 the underlying proof STRATEGY (direct mirror of the already-proven crossK4LeadingCoeff, extended by
 one block) is sound by construction. Result pending.
+
+## S2621 (2026-09-16 12:10 PM CDT) — CrossK5LeadingCoeff first genuine attempt OOMs at 27GB cap, cleanly caught (8m49s, not a wedge); raised ulimit to 30GB and relaunched
+
+First real (post-syntax-fix) compile ran genuine work for 8m49s before hitting the memory ceiling --
+exactly the safety net working as designed (clean, fast failure instead of an hours-long network-
+wedging OOM). Root cause is plausible and expected: K=5's LeadingCoeff has FIVE `quad_i` set
+definitions (9-term sums, one per block's "other 4" quadruple-product) versus K=4's four `triple_i`
+(7-term sums) -- genuinely more live definitional weight through the rw chain and the 5-way coeff_mul
+convolution unfold at the end, vs K=4's 4-way. Checked free memory before deciding (26GB available,
+18GB swap) and raised the ulimit -v cap from 27GB to 30GB (matching the toolkit's own "raise the cap,
+don't lower it, when a bigger multi-block case needs more headroom" guidance) rather than reaching for
+a different fix blind. Relaunched, result pending. If this also OOMs, the next real fix is applying
+CrossK4Key's OWN proven `generalize`-based opacity trick (give ring1/simp's normalizer true opacity on
+the quad_i terms instead of `set`'s live let-binding) rather than continuing to just raise the ceiling.
