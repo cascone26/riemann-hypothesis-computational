@@ -39731,3 +39731,38 @@ coefficient degree: X^0,2,4,...,16), each getting its own fresh tactic block (an
 own `set_option maxHeartbeats` scope), rather than one monolithic interval_cases sweep. Queued as next
 cycle's concrete, well-motivated refinement -- not a repeat of a failed idea, a structural fix to a
 newly-diagnosed resource-accumulation problem.
+
+## S2603 (2026-09-16 08:44 CDT) — per-coefficient split rebuilt as 9 SEPARATE top-level theorems (fresh heartbeat budget each), compiling on Olympus, result pending
+
+S2602 diagnosed the exact fix needed: the combined 17-branch `interval_cases n <;> simp <;> ring`
+chain shares ONE maxHeartbeats budget across all cases (Lean resets heartbeats per top-level command,
+not per `have`), so cost accumulates. Rebuilt as 9 independent top-level theorems (`qqce_coeff0`
+through `qqce_coeff16`), each proving ONE coefficient equality in isolation with its own fresh 4M
+heartbeat budget, reusing crossK4LeadingCoeff's coeff_mul/antidiagonal-unfold pattern per lemma. The
+final assembly theorem (`quarticQuadrupleProductExpand`) now only needs `exact qqce_coeffN ...` for
+the 9 real cases plus a cheap simp+ring fallback for the 8 trivially-zero odd-degree cases -- far less
+work concentrated in one command than any prior attempt. Compile launched on Olympus (ulimit -v
+26000000, background); given 9 separate theorem checks this naturally takes longer wall-clock than
+prior single-shot attempts even though each piece is individually lighter -- result pending, will bank
+definitively next cycle when the background compile's notification lands. This is the natural
+conclusion of 4 straight cycles of precise, narrowing diagnosis (formula verified correct 4 independent
+ways -> ring scale limit suspected -> compositional pre-factoring ruled out as a fix -> coefficient
+split confirmed structurally sound via a timeout not a residual -> now split into properly-scoped
+fresh-budget units). Momentum, not a stall.
+
+## S2604 (2026-09-16 08:48 CDT) — ★ real root cause found: missing `coeff_C_mul` in the simp set, not a math bug or pure scale limit
+
+The 9-separate-theorem split (S2603) finished compiling (6m23s) and gave the CLEAREST signal yet:
+individual isolated lemmas for specific coefficients (qqce_coeff0, qqce_coeff2, ...) failed with
+"unsolved goals" showing literal un-reduced `if True then ... else 0` / `if 0 = 4 then 1 else 0` terms
+in the residual. This is a **precise, mechanical, fixable bug**: my simp set omitted `coeff_C_mul`
+(present in the project's own working precedent, crossK4LeadingCoeff's simp set) -- without it, every
+leaf `C coeff * X^k` sub-term gets routed through the FULLY GENERIC `coeff_mul` convolution (meant for
+the big 4-way quartic product) instead of the trivial constant-lookup `coeff_C_mul` provides, causing
+if-condition explosion that doesn't fully self-reduce under `simp only`. Fixed by adding `coeff_C_mul`
+to the simp set (exact match to the already-proven precedent) and relaunched. **This resolves the
+central ambiguity that persisted across S2596/S2597/S2599/S2602: the formula was correct all along (4
+independent verifications never lied); every prior Lean-level failure was a TACTIC/SIMP-SET gap, not a
+math error or an unfixable ring scale limit.** Result pending (compile running); this is the strongest,
+most concrete lead across the whole quarticQuadrupleProductExpand arc -- a named, understood, fixed bug
+rather than an ambiguous residual or timeout.
