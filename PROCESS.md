@@ -21092,3 +21092,14 @@ retry a third hand-generator (already have 2 independent negative data points on
 to proving it compositionally from the already-EXIT0 quarticTripleProductExpand (rewrite to collapse
 3 of 4 factors via the known lemma, leaving ring a much smaller problem). Queued as the concrete next
 step. Spot-reverify: CrossK5Key clean post-fix.
+
+### 2026-09-16 08:12 CDT — compositional proof also fails identically; correctly reframed as needing real coefficient-split, not another monolithic attempt
+Tried the compositional angle queued last cycle (rewrite via quarticTripleProductExpand to collapse 3
+of 4 factors before the final ring call). Failed with the exact same residual as the two from-scratch
+attempts. Caught my own reasoning error: since the compositional attempt reused the identical target
+RHS text, it didn't actually test "formula bug vs ring scale limit" the way I'd framed it -- both
+stayed open. Rather than trying a 4th monolithic variant, scoped the technically correct fix: split
+the proof into per-coefficient pieces (Polynomial.ext + degree case-split), each a small pure-ℂ ring
+call instead of one giant polynomial identity. This also directly matches this cycle's own top-ranked
+suggested strategy (proof-splitting into smaller have-lemmas) applied to the right target. Queued as
+focused next-cycle work rather than rushed into this cycle's remaining time.

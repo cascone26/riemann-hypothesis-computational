@@ -39672,3 +39672,27 @@ quarticTripleProductExpand instead of expanding all 4 factors from scratch: rewr
 combinatorial problem (bounded cross-product size) reusing trusted, already-EXIT0 machinery instead of
 re-deriving everything. This is a genuinely different, smarter angle, not another blind retry.
 Spot-reverify: CrossK5Key.lean re-compiled clean post-lakefile-fix, axioms unchanged, no regression.
+
+## S2599 (2026-09-16 08:11 CDT) — compositional proof attempt ALSO fails identically; reframes the diagnosis and scopes the real fix (coefficient-by-coefficient split)
+
+Built a THIRD attempt at quarticQuadrupleProductExpand: instead of expanding all 4 quartic factors
+from scratch, rewrote via the already-EXIT0 `quarticTripleProductExpand zj zk zl` to collapse 3 of 4
+factors to its known 7-term result first, then `ring` only needs (7-term poly)*(1 quartic) = (9-term
+RHS). **Also failed, with the IDENTICAL residual pattern** (same asymmetric j-term leftover at
+X^14/X^12/X^10/X^8). Important correction to S2596/S2597's framing: since this compositional attempt's
+target RHS9 text was byte-identical to the from-scratch v3 attempt (reused verbatim, zero transcription
+risk), this test does NOT actually distinguish "ring scale limit" from "formula bug" the way it first
+appeared to -- both remain live hypotheses. What it DOES rule out: pre-factoring via the known lemma is
+not a viable mitigation on its own; `ring`'s final normalization step is the bottleneck regardless of
+how the LHS is derived, since ring still has to fully expand to compare normal forms either way.
+**Real fix, correctly scoped now (matches this cycle's own top-ranked directive -- proof-split into
+smaller pieces rather than one monolithic ring call):** stop asking `ring` to verify one giant
+degree-16 9-atom polynomial identity in one shot. Instead extract and compare coefficients
+individually -- e.g. via `Polynomial.ext` + case-split over the (small, bounded ≤16) degree range,
+each case reducing to a SMALL pure-ℂ arithmetic identity (no X, no Polynomial machinery, ~tens of
+terms in 8 atoms at most) provable by a cheap `ring` call. This is strictly more informative than
+another monolithic attempt: if ONE specific coefficient case fails, that pinpoints a genuine formula
+bug precisely; if all 17 cases pass, the theorem is proven AND the "ring scale limit" hypothesis is
+confirmed as the actual root cause all along. Queued as next cycle's concrete work -- real lemma
+engineering (Polynomial.coeff_add/sub/C/X_pow simp set + interval_cases), scoped to one focused cycle
+rather than crammed into this one. Spot-reverify: CrossK4ReducedK9 clean, no regression.
