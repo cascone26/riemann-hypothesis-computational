@@ -40185,3 +40185,35 @@ Full synthesis banked at `roundtable_2026-09-16/H3_synthesis.md`. Grounded read:
 re-run -- three prior 0/6 outcomes (H1, H2's two framings) plus this session's 5/6-reduce-but-1-survive
 result together TRIANGULATE the wall precisely enough that the next concrete moves are now well-posed
 computations (the q->1 limit formalization; the Lean chain re-audit) rather than open-ended ideation.
+
+## S2627 (2026-09-16 01:26 PM CDT) — Lean chain circularity audit RESULT: chain is sound, axiom-clean, no hidden circularity — F1 gap confirmed as the genuine, honestly-stated frontier
+
+Dispatched subagent audit (per Roundtable #H3's one survivor) came back clean. Verdict:
+**NOT circular.** Individually inspected HilbertPolyaCore/HilbertPolyaCapstone/RHSpectralIff/HodgeAdjunction/
+HodgeIndexOneOnModel/HodgeIndexInequalityOnModel/WeilSpectralRealization/FrobeniusIsometryEigenvalues/
+WeilFormPSD.lean -- each theorem's hypotheses are genuinely independent of RH (pure operator/linear-algebra/
+arithmetic-height statements), no `sorry`, no hidden sigma=1/2 references. The project's own axiom-audit
+gate (`axiom_audit.lean`) is real and does run; `#print axioms` confirms propext/Classical.choice/Quot.sound
+only across the checked chain -- **axiom-clean claim CONFIRMED independently, not just taken on the old
+GREEN BOARD note's word.**
+
+One correction to how we'd been stating the gap: Neron-Tate positivity is NOT an unproven input we're
+borrowing from Faltings-Hriljac -- the project already BUILT it unconditionally in Lean from Mathlib's Weil
+height machinery + Northcott finiteness (24 files, zero sorry, §1045-1067), independent of RH. The Faltings-
+Hriljac reference in ARCHITECTURE.md is a classical-literature ANCHOR for the function-field analog, not an
+unformalized input we depend on. So the chain is even more self-contained than the shorthand "sigPos=1 via
+F1" suggested: arithmetic Hodge machinery (built) + Neron-Tate positivity (built, unconditional) all funnel
+into exactly ONE remaining open hypothesis -- does Spec Z x_F1 Spec Z (the Connes-Consani F1 arithmetic
+surface) exist with the required Hodge-index signature. The project's own LEDGER already states this
+honestly (§484: "the number field has NO surface Spec Z x_F1 Spec Z... so the identical Weil positivity has
+NO geometric source"). Audit found no other unstated gaps and no dishonesty -- the project's own Handle/Open
+labeling was independently confirmed accurate.
+
+**Net effect of Roundtable #H3 + this audit, taken together:** the wall is now triple-confirmed (H1
+alternative-angle sweep, H2 smallest-brick sweep, H3 minimal-witness sweep + independent chain audit) as
+GENUINE mathematical construction, not a process failure, not overclaiming, and not a fixable Lean gap.
+This is a strong, clean floor to build the F1/Lambda-ring substrate on with full confidence nothing upstream
+is shaky. Next real moves, in order of concreteness: (1) the function-field q->1 limit transport (Task 2
+from H3's synthesis -- open, narrow, well-posed, unattempted); (2) continue the delta-ring/Lambda-ring
+substrate bricks (cyC2/C3/D1's own already-successful incremental path); (3) K=5 Lean forge bricks
+(self-sustaining, RH-independent scaffolding, currently at Key+PolyVanish+LeadingCoeff EXIT0).
