@@ -39999,3 +39999,15 @@ real. This is genuinely the START of a new phase (K=5 coefficient bricks) built 
 session's major closure, not a setback -- the generator itself is untested against Lean yet and may
 need its own debug round once the import is available, which is normal for a first attempt at new,
 larger machinery.
+
+## S2619 (2026-09-16 11:53 CDT) — literature sweep: 3 new papers found, notably a direct Krein-space RH result (first new Krein/de Branges lead in a while)
+
+Found: **arXiv:2606.13932** "Krein Space Quantization and a Spectral Interpretation of the Riemann
+ξ-Function" -- directly relevant to the project's own Krein-string lane
+([[rh-krein-string-mobius-lane]] memory), the first new lead there in several sweeps (prior sweeps kept
+returning "nothing new on Krein/de Branges"). Also **arXiv:2605.20224** "High-Precision Approximation
+of Riemann Zeros via the Truncated Weil Form" (June 2026, cutoff-indexed operators, error shrinking
+10^-55 to 10^-168 across cutoff c=13-67 -- directly relevant to the finite-Weil-truncation cluster
+already tracked with 2609.04908/2608.24827/2607.02828) and **arXiv:2509.10699** "Etudes in the Inverse
+Spectral Problem, II" (Krein-de Branges + Sturm-Liouville inverse theory). Queued: a dedicated future
+cycle to read 2606.13932 against our own Krein-string work for potential synergy or technique reuse.
