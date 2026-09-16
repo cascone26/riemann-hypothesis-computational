@@ -40282,3 +40282,34 @@ So the actual test -- does M_sigma's quaternionic lift fall in regime (A) or (B)
 not just unpublished. This is real, fresh territory, precisely enough scoped to attempt directly: construct
 the simplest well-motivated quaternionic lift of M_sigma (arch-prime) and check computationally which regime
 it falls into. Doing this now as this cycle's concrete next move.
+
+## S2630 (2026-09-16 02:44 PM CDT) — naive quaternionic-Hermitian lift of M_sigma DEFINITIVELY closed (kappa always even, proven + verified); precisely relocates the genuine escape
+
+Ran the concrete test queued in S2629: does the "obvious" quaternionic lift of M_sigma (embed its real
+entries into a genuine quaternionic-Hermitian matrix, using the standard *-structure Q_ji=conj(Q_ij)) allow
+an ODD kappa (needed for RH's kappa=1), or does it fall into the literature's "regime B" (structured
+quaternionic systems forced to even multiplicity)?
+
+**RESULT: definitively regime B, no exceptions possible.** A quaternionic-Hermitian matrix (A symmetric,
+B/C/D antisymmetric real blocks, Q=A+Bi+Cj+Dk) embeds into a genuine complex-Hermitian 2Nx2N matrix via the
+standard 2x2-block representation; verified numerically (20/20 random NxN quaternionic-Hermitian matrices,
+N=5-6, arbitrary real entries) that EVERY eigenvalue appears in an exact doubled pair, hence kappa (negative
+eigenvalue count) is ALWAYS EVEN -- zero exceptions, matching machine precision. This is not an artifact of
+random sampling: the underlying reason is structural (the complex embedding carries an antiunitary symplectic
+structure J with J^2=-1 that commutes with the Hermitian form, the same Kramers-degeneracy mechanism behind
+GSE random matrix theory) -- so this holds for EVERY quaternionic-Hermitian matrix, not just tested ones,
+regardless of how arithmetic/prime data would be embedded into the quaternion components.
+
+**This CLOSES the "obvious" quaternionic escape cleanly and honestly** -- confirms in the sharpest possible
+way that Regime B (forced evenness) is what any naive/direct quaternionic lift of M_sigma would hit, exactly
+mirroring Deninger's original real-coefficient parity obstruction one level up, not escaping it. It does NOT
+close the broader quaternionic door: Alpay-Colombo-Sabadini's actual framework works with SLICE-HYPERHOLOMORPHIC
+SCHUR FUNCTIONS on reproducing-kernel Pontryagin spaces, where kappa is defined via a kernel positivity index,
+NOT via diagonalizing a finite quaternionic-Hermitian matrix -- a genuinely different object that this test does
+NOT rule out (regime A: general quaternionic operators without a doubling structural map). The honest, precise
+open question is now: does M_sigma admit a NATURAL slice-hyperholomorphic Schur-function representation (not
+a naive matrix embedding) whose reproducing-kernel kappa could be odd? That is a real, substantially harder
+question requiring learning the Alpay-Colombo-Sabadini Schur-function machinery properly, not just linear
+algebra -- correctly scoped as a genuine next-session research investment, not a quick computation.
+
+Verified code: operators/quat_hermitian_evenness_test.py (own eyes, ran it, reproducible).
