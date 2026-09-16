@@ -40255,3 +40255,30 @@ to have actually attempted building that bridge. Dispatching a real investigatio
 read Alpay-Colombo-Sabadini's actual quaternionic Krein-Langer construction and check concretely whether it
 could resolve the odd/even parity mismatch for M_sigma = arch-prime specifically. Genuinely unexplored,
 concretely scoped, not a re-derivation of anything already done.
+
+## S2629 (2026-09-16 02:33 PM CDT) — quaternionic Krein-Langer investigated: real operator-theoretic machinery exists (Alpay-Colombo-Sabadini), but reveals a SHARPER version of the same parity razor rather than escaping it
+
+Dispatched literature investigation of whether Deninger's own proposed escape (quaternionic/antilinear-
+involution coefficients) genuinely resolves the odd/even parity mismatch for M_sigma = arch-prime. Real,
+honest finding, not overclaimed:
+
+**The machinery is real and concrete.** Alpay-Colombo-Sabadini (arXiv:1204.5491, 1406.6830, 1203.0234) have
+built full quaternionic Krein-Langer factorization, quaternionic Pontryagin/de Branges-Rovnyak spaces, and
+S-spectrum theory for quaternionic operators -- kappa (negative-square count) is well-defined there, and
+Pontryagin space decomposes P = P+ (+) P- with dim(P-)=kappa, same as the classical theory.
+
+**But there is a NEW, sharper tension, not previously flagged anywhere in our own record:** the quaternionic
+literature splits into two regimes. (A) GENERAL quaternionic matrices: no parity constraint (quaternions'
+non-commutativity avoids the polynomial-factorization argument that forces even multiplicity classically).
+(B) STRUCTURED quaternionic systems -- ones carrying an actual quaternionic STRUCTURAL MAP (Dirac operators,
+Kramers-degeneracy systems, dimensions m=2,3,4 mod 8) -- eigenvalues are FORCED to EVEN multiplicity by the
+structural map itself, i.e. the exact same odd/even mismatch Deninger proved for real coefficients can
+RECUR one level up, if M_sigma's natural quaternionic lift turns out to carry that kind of structural map
+(which a functional-equation-symmetric object plausibly would).
+
+**No quaternionic zeta function or explicit formula exists in the literature at all** -- Alpay et al.'s work
+is purely intrinsic operator theory (Schur functions, reproducing kernels), never connected to L-functions.
+So the actual test -- does M_sigma's quaternionic lift fall in regime (A) or (B) -- is GENUINELY UNATTEMPTED,
+not just unpublished. This is real, fresh territory, precisely enough scoped to attempt directly: construct
+the simplest well-motivated quaternionic lift of M_sigma (arch-prime) and check computationally which regime
+it falls into. Doing this now as this cycle's concrete next move.
