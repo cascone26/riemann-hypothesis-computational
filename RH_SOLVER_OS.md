@@ -3279,3 +3279,28 @@ known-good file.
 Literature: three related papers now tracked in the same finite-Weil-truncation space as our base
 construction (2609.04908 base, 2608.24827 certified bounds, 2607.02828 Guinand-Weil dictionary) --
 worth a synthesis read once #1 clears.
+
+## TOP 5 LANES refresh (2026-09-16 11:49 CDT) — ★ MAJOR STATE CHANGE: quarticQuadrupleProductExpand CLOSED, K=5 coefficient bricks now underway
+1. **K=5 coefficient-brick construction** — NEW top priority. quarticQuadrupleProductExpand (K=5's
+   4-factor helper lemma) is fully proven EXIT0 as of 11:29 CDT. First brick, CrossK5LeadingCoeff.lean,
+   generated (direct 5-block extension of crossK4LeadingCoeff) and pending its first real compile
+   attempt once the helper lemma's .olean artifact finishes regenerating (currently in progress,
+   ~27min). Remaining bricks (mirroring K=4's 16-brick pattern, though K=5's larger degree range likely
+   needs more) queued to follow the same generator-script approach.
+2. **K=5 arc completion** — CrossK5Key + CrossK5PolyVanish (EXIT0, first-try both) + the now-proven
+   quadruple-product lemma give K=5 everything K=4 had at the equivalent stage; a full concrete K=5
+   instance (mirroring K=4's complete 19-file arc) is now realistically in reach this session.
+3. **General-K induction scoping** — backed by 3 real concrete instances once K=5 completes, strongest
+   case yet for attempting a genuine Lean induction over K.
+4. **K=4 even-group cascade (ReducedK8/6/4/2)** — confirmed needs fresh derivation, naive mirror
+   definitively fails. Deprioritized, not abandoned.
+5. **K=6+ symbolic verification** — parked on a genuine sympy performance wall; needs
+   elementary-symmetric-polynomial approach instead of full expansion, not yet attempted.
+
+Reusable durable artifact from this session's biggest arc: for large sparse-polynomial product
+identities beyond a monolithic `ring` call's reach, split via `Polynomial.ext` into one top-level
+theorem per coefficient, each closed by `simp (config := { decide := true, maxSteps := 1000000 }) only
+[coeff_add, coeff_sub, coeff_mul, coeff_C_mul, coeff_C, coeff_X_pow, coeff_X, ite_true, ite_false,
+Nat.sub_self, Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk, Finset.sum_range_succ,
+Finset.sum_range_zero]; ring` with `set_option maxRecDepth 20000` -- directly reusable for any future
+K's analogous helper lemma (K=6's quintuple-product, etc).
