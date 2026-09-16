@@ -39895,3 +39895,18 @@ becomes PURE `exact` dispatch for all 17 cases -- zero inline tactic work left t
 Isolated the 8 new lemmas into a fast standalone test (not the full ~17min file) before committing to
 a full run. Compile launched, result pending. This is the SAME proven pattern applied consistently,
 not a new open question -- expect this to close the lemma.
+
+## S2614 (2026-09-16 10:38 CDT) — odd-degree lemmas hit a NEW precise gap: `Nat.sub_self` missing, verified to exist before compiling
+
+qqce_coeffOdd1's failure showed the exact mechanism: leftover terms like `∑ x ∈ Finset.range (0 - 0),
+...` and `Finset.range (1 - 1)` that should trivially vanish (empty range -> Finset.sum_range_zero) but
+don't, because `0 - 0` / `1 - 1` are unevaluated Nat-subtraction EXPRESSIONS, not the literal `0` that
+`Finset.sum_range_zero` needs to pattern-match against -- a genuinely different gap than the ite-decide
+issue fixed for the even cases (this is about normalizing an ARGUMENT to Finset.range, not deciding a
+boolean condition). Verified `Nat.sub_self : n - n = 0` exists and is `@[simp]`-tagged in the pinned
+toolchain (Init/Data/Nat/Basic.lean:290) before writing any Lean, added it to the shared simp set, and
+relaunched just the 8 odd lemmas in isolation for fast feedback. This is expected: the odd cases were
+never actually tested with the full recipe before (they were previously buried inside the combined
+interval_cases fallback, which failed on BUDGET before ever revealing this arithmetic-normalization
+gap) -- so this is the first real look at their specific failure mode, precisely diagnosed on sight,
+not a repeat of anything already ruled out.
