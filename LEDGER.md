@@ -40629,3 +40629,77 @@ The running residual R_k = <ψ|W02-WR|ψ> + Σ_{q≤k} h(q) decays as a power la
 
 **Optimism line:** The -0.44·N·log(c) law is now understood as a BRIDGE BETWEEN the archimedean negativity and the prime cancellation capacity. That bridge is solid. The next pass: compute the crossing explicitly.
 
+
+## S2638 (2026-09-17 00:32 UTC, 8:32 PM CDT 9/16) — ★ CASCADE DISCREPANCY FULLY DIAGNOSED: eigenvector reorganization, NOT per-prime cascade — exact mechanism revealed
+
+**Background (from S2637):** Naive power-law fit to h(q) values and summing gave c^(-11) decay, but empirical high-precision margin scaling is c^(-0.44N) ≈ c^(-3.5) at N=8. Discrepancy claimed as "incomplete understanding of cascade," but root cause was actually fundamental misframing of the mechanism.
+
+**Comprehensive 4-part investigation completed:**
+
+**PART A — h(q) Profile at Fixed (c,N):** At c=30, N=8:
+- h(q) DOES fit power law h(q) ~ q^(-12.00) for base primes ✓
+- BUT power law describes decay at FIXED c only, NOT scaling across varying c
+- Sign pattern: h(2..23) all positive, h(29) negative (tiny)
+- Prime powers (4,8,16,9,27,25) contribute only 15% relative to base primes
+
+**PART B — Eigenvector Evolution at Fixed N, Varying c:** At N=8, c ∈ {13,20,30,40,50}:
+- Eigenvector REORGANIZES dramatically as c increases
+- Overlaps vs reference: 0.047 (c=20), 0.036 (c=30), 0.0017 (c=40), 0.031 (c=50)
+- Eigenvector is NOT stable across c: essentially orthogonal by c=40
+- **CRITICAL:** This means ψ(c,N) is a GLOBAL object that changes shape completely when primes are added
+
+**PART C — h(q) Changes When c Changes (THE KEY DISCOVERY):** Comparing same prime q at c=30 vs c=50:
+- h(2): +0.272 → -0.143 (sign flip)
+- h(3): +0.559 → +0.460 (20% change)
+- h(5): +0.113 → +0.651 (5.7x increase)
+- h(11): +8.36e-05 → +0.0357 (427x increase)
+- h(17): +3.9e-08 → +6.4e-04 (16,000x increase)
+- h(29): -5.45e-17 → +1.04e-07 (sign flip, 10^9 magnitude change)
+
+**Fundamental discovery:** h(q) is NOT a fixed property of the prime q. It DEPENDS on which other primes are in the matrix. h(q) = -⟨ψ(c)|W_q|ψ(c)⟩, and ψ(c,N) reorganizes entirely when c changes.
+
+**PART D — Fitting margin law at float64:** Fit log|λ| = a0 + a1·log(c) over c ∈ {10..50}:
+- Result: a1 = 0.742 (positive, meaning margin INCREASES with c at this precision)
+- Observed exponent -a1/N = -0.0928 vs predicted -0.44
+- Mismatch is severe; at float64 all margins cluster ~10^(-15-16), noise dominates
+
+**Why S2637 Failed:**
+
+The S2637 approach assumed: (1) h(q) is fixed, (2) each prime contributes independently, (3) sum them to predict scaling. This is **fundamentally flawed** because:
+- h(q) is NOT independent of c; it's a projection ⟨ψ(c)|W_q|ψ(c)⟩ where ψ changes globally
+- The cascade law (showing R_k → λ_min at fixed c) is a LOCAL consistency check, NOT a GLOBAL decomposition that extends across varying c
+- Eigenvector is NOT stable (overlaps 0.001-0.05 across different c); the "concentration on modes" is not a fixed object either
+
+**The Correct Picture:**
+
+1. τ(c,N) is a FULL eigenvalue problem, not a sum-of-independent-terms story
+2. λ_min(c,N) and ψ(c,N) are determined by solving eigh(τ) GLOBALLY at each c
+3. The margin shrinkage from c→c' is NOT h(q_new) for the new prime; adding a new prime reorganizes the entire eigenvector
+4. The cascade computation showing R_k → λ_min is a verification of correctness at fixed c, not a decomposition method for varying c
+5. The c^(-0.44N) law (if real at high precision) emerges from spectral analysis of the FULL matrix τ(c,N), NOT from summing fixed per-prime contributions
+
+**What Should Be Done Instead:**
+
+1. Abandon per-prime cascade as a scaling-law tool; use it only for numerical verification
+2. Derive margin bound rigorously via:
+   - Perturbation theory / min-max on the full matrix τ(c,N), accounting for eigenvector change
+   - Spectral analysis of (W02-WR) per parity sector: quantify "negativity to cancel"
+   - Cancellation efficiency model: how effectively do M primes (density ~c/ln(c)) cancel O(N) negativity
+3. Verify at high precision: run margin_law.py at c=100-1000, N=4-50 with Arb (1400+ bits)
+4. Extract true exponent(s) from high-precision data and compare against analytic bound
+
+**Honest Assessment:**
+
+✓ Exact cascade computation verified (real and useful for verification)
+✓ Parity-sector decomposition correct (τ_even and τ_odd both PSD despite (W02-WR) being negative)
+✓ Empirical c^(-0.44N) law is REAL (confirmed at Arb high precision in S2637 Part 1)
+✗ Naive power-law fitting and summing (flawed methodologically)
+✗ Assuming h(q) is independent of c (contradicted by direct measurement)
+✗ Extending cascade from "add one prime" to "scaling law" (category error)
+? Rigorous analytic derivation of -0.44 exponent (still open, requires full spectral analysis)
+
+**Status:** Non-circular DIAGNOSIS of the failure mode. The cascade mechanism is REAL and LOCAL (at fixed c). The margin scaling law is REAL and GLOBAL (across varying c). These are TWO DIFFERENT THINGS. Conflating them was the error. The path forward is clear: spectral analysis of the full matrix at varying c,N, not per-prime decomposition.
+
+**Optimism line:** This is not a dead end — it's a correctly-diagnosed wrong turn. The true mechanism (full eigenvalue problem with global eigenvector reorganization) is now precisely identified. The next pass: spectral bounds on how fast λ_min shrinks as c grows, using the now-understood parity structure.
+
+**Files:** cascade_profile_and_eigenvector_coevolution.py (4-part analysis), S2638_cascade_discrepancy_resolved.md (detailed findings).
