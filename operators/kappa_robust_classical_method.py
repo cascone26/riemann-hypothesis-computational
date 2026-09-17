@@ -137,12 +137,15 @@ def apply_prop_5_1_kappa(s, MU_MAX=25):
                         diag_term -= np.sum(s[0:min(n+1, len(s))] * np.conj(s[0:min(n+1, len(s))]))
                     A[n, n] = diag_term
                 else:
-                    # Off-diagonal: A[n,m] = -Σ_k s_k · s_{k+|m-n|}
-                    diff = abs(m - n)
+                    # Off-diagonal: A[n,m] = -Σ_{p=0}^{min(n,m)} s_{n-p} · conj(s_{m-p})
+                    # (BUG FIX, S2672: the original summed k from 0 to len(s)-1-diff -- i.e. over
+                    # nearly the FULL coefficient array regardless of the mu-level (n,m) -- instead
+                    # of bounding it to p in [0, min(n,m)] as the classical Prop 5.1 kernel requires.
+                    # This is exactly the bug S2663/S2665 flagged: kappa=9 instead of 1 on exact
+                    # known-good coefficients. Reference: blaschke_kappa_worked_example.py:42.)
                     off_diag_term = 0.0
-                    for k in range(min(len(s), len(s)-diff)):
-                        if k < len(s) and k+diff < len(s):
-                            off_diag_term -= s[k] * np.conj(s[k+diff])
+                    for p in range(min(n, m) + 1):
+                        off_diag_term -= s[n-p] * np.conj(s[m-p])
                     A[n, m] = off_diag_term
 
         # Count negative eigenvalues
@@ -204,7 +207,11 @@ def test_on_blaschke_robust():
     z_center = 0.2  # expansion point
     z_radius = 0.1  # small circle around z_center
 
-    theta, z_circle, m_values = m_function_on_circle(z_center, z_radius, m_blaschke, n_points=50)
+    # BUG FIX (S2672): n_points=50 aliases for K=30 (violates Nyquist: need n_points >> 2K).
+    # Confirmed by direct test: n_points=50 gives kappa=2 at center=0.2 (wrong); n_points=200
+    # gives kappa=1 at BOTH center=0 and center=0.2, matching theory (kappa is an invariant
+    # of the function, independent of Taylor expansion point, once sampling is adequate).
+    theta, z_circle, m_values = m_function_on_circle(z_center, z_radius, m_blaschke, n_points=200)
 
     # Extract coefficients from circle integral
     s_extracted = extract_taylor_coefficients_from_circle(z_center, z_radius, m_values, K=30)
@@ -357,7 +364,7 @@ if __name__ == "__main__":
         U_values=U_family,
         z_center=complex(1.0, 1.0),
         z_radius=0.15,
-        n_circle=40,
+        n_circle=200,  # S2672 Nyquist fix: was 40, aliases for K=30 coefficients
         verbose=True
     )
 

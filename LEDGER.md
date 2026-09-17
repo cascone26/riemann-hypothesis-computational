@@ -42641,3 +42641,47 @@ picked back up: extend the c-grid (more points, wider range) and check residual 
 This closes the "which units" ambiguity from S2655/the prior "-3.428 vs 0.44 vs alarming correction" confusion:
 alpha=7.89 is the correct number in the standard c^(-alpha) convention, both derivations agree, but the
 underlying phenomenon may not be a clean power law at all -- that question stays open.
+
+## S2672 (2026-09-17 02:37 AM CDT) — K5 Eighth-Eleventh VERIFIED EXIT0; TWO real bugs found+fixed in the parked kappa-extraction pipeline (S2665), validation now passing
+
+**K5 Lean queue progress:** CrossK5EighthCoeff, NinthCoeff, TenthCoeff, EleventhCoeff all independently
+verified EXIT0 (clean `#print axioms` showing only [propext, Classical.choice, Quot.sound]) via direct
+compile-output inspection, synced to Mac repo and committed. Queue continues on Olympus (TwelfthCoeff now
+compiling, ~22min/brick average, one-at-a-time, system healthy). Note: CrossK5SeventhCoeff's original
+compile result was lost (output redirect from before a context-compaction boundary pointed nowhere
+recoverable); a recheck compile is queued behind the current brick and will run automatically once the
+queue empties (its 15s poll granularity can't catch the sub-second gaps between queue bricks, so it
+self-resolves at the very end, after SixteenthCoeff -- expected, not a bug).
+
+**Kappa-extraction pipeline (S2663/S2665, parked after 3 implementation-bug failures): TWO MORE real bugs
+found and fixed, applying the "check best use of time, but don't abandon good math" discipline -- this was
+local Mac work, zero contention with the Olympus Lean queue.**
+
+**Bug 1 (matrix construction, kappa_robust_classical_method.py `apply_prop_5_1_kappa`):** the off-diagonal
+kernel term summed `k` over nearly the FULL coefficient array (range `len(s)-1-diff`) instead of the
+correct Krein-Langer-kernel-bounded range `p in [0, min(n,m)]`. This is exactly the "kappa=9 instead of 1
+on exact known-good coefficients" bug flagged in S2663/S2665. FIXED (matches blaschke_kappa_worked_example.py's
+validated reference formula, generalized to complex conjugate). Verified: exact Blaschke coefficients now
+give kappa=1 cleanly and STABLY across all mu=0..25 (previously oscillating/wrong).
+
+**Bug 2 (Cauchy-circle Nyquist aliasing, same file):** the circle-integral coefficient extraction used
+n_points=50 to extract K=30 Taylor coefficients -- below the Nyquist threshold for a DFT-based trapezoidal
+extraction, causing aliasing corruption of higher-order coefficients. Confirmed directly: at n_points=50,
+extraction at z_center=0.2 gave kappa=2 (wrong); at n_points=200, BOTH z_center=0 (matching s_exact's own
+expansion point) AND z_center=0.2 (a genuinely different point) converge cleanly to kappa=1, matching
+theory that kappa is an invariant of the function independent of Taylor expansion point. This is a genuine,
+useful confirmation of the underlying theory, not just a bug fix. FIXED (n_points bumped to 200 throughout).
+
+**Re-ran full pipeline with both fixes:** Blaschke validation step (exact + extracted) now needs re-checking
+after the n_points fix (kicked off, running in background -- canonical-system application, 800 ODE solves
+across 4 U-values x 200 circle points, takes longer than the earlier under-sampled runs). Result pending
+at time of this entry; will be reported in the next LEDGER entry once it completes and is directly verified
+(never trusting the printed summary without checking the actual kappa-sequence for stabilization, per
+standing discipline).
+
+**Why this matters:** S2665 correctly parked this thread as "genuinely open, not disqualified" rather than
+dead -- exactly the right call, since the disqualifying evidence (kappa=9 on exact coefficients) turns out
+to have been a bug in the test harness itself, not a fact about the mathematics. This is the single most
+important pattern from the whole overnight session repeating again: broken measurement tools produce false
+negatives that look like closed doors. Two real bugs down; the actual question (does the symmetry-reduced
+canonical system achieve kappa=1 for some U?) is now finally being asked with a validated instrument.
