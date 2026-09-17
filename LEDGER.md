@@ -42814,3 +42814,56 @@ resting on validated tooling for the first time -- continuing to push on it (sig
 justified rather than diminishing returns, since each fix this session has been a genuine unlock rather than
 a repeat of the same failure mode. Session has been running ~5.5 hours; will continue per standing
 instruction until further word.
+
+## S2677 (2026-09-17 05:39 AM CDT) — MOST SIGNIFICANT kappa finding this session: U=-1 and U=1j show ROBUST, LOCATION-INDEPENDENT kappa=1 at small truncation, on the fully bug-fixed instrument (Report-tier, NOT yet Handle -- see caveats)
+
+**Setup:** following S2676's a=8 runaway result, tested smaller truncation values with the now 4-times-fixed
+instrument (matrix range, Nyquist, precision ceiling, U-wiring -- all validated against Blaschke ground
+truth, S2672-S2674). At a=8 the pattern was uniformly unstable for all U. At smaller a, a qualitatively
+different, much better-behaved picture emerged:
+
+**a-dependence at U=1, z_center=1+i (single-U scan):** a=0.5 -> kappa=0 (stable); a=1 -> kappa=1 (STABLE
+across mu=1..13, 13 consecutive identical values); a=1.5 -> kappa=2 (still climbing at mu=13); a=2,3,5 show
+increasing kappa with genuine plateaus (not simple mu+1 runaway) as a grows. This already looked like real,
+interpretable staircase growth rather than numerical noise.
+
+**Full 4-U family at a=1, z_center=1+i:** U=1: kappa=1 stable (13 levels). U=-1: kappa=1 stable (14 levels,
+even MORE consistent than U=1). U=1j: kappa=1 stable (13 levels). U=-1j: kappa grows (1,2,2,2,2,3,3,3,3,3,3,4,4,4),
+NOT stable at mu=13.
+
+**Denominator sanity check (ruling out near-pole artifact):** |X11+U*X12| checked across all 150 circle
+points for all 4 U -- all healthy (0.43 to 2.33 in magnitude), NO near-zero denominators for any U including
+U=-1j. The U=-1j instability is NOT a numerical near-singularity artifact.
+
+**Location-independence check (the critical test -- kappa should be an intrinsic invariant of the function,
+independent of expansion point, exactly as verified for the Blaschke ground truth in S2672):** tested 4
+DIFFERENT z_centers (1+i, 1.2+0.8i, 0.8+1.2i, 1.5+1.5i), all at a=1, all 4 U-values each:
+
+  z_center    | U=1      | U=-1     | U=1j     | U=-1j
+  1.0+1.0i    | 1(stab)  | 1(stab)  | 1(stab)  | growing
+  1.2+0.8i    | 0(stab)  | 1(stab)  | 1(stab)  | 3(stab)
+  0.8+1.2i    | 1(stab)  | 1(stab)  | 1(stab)  | 4(NOT stab)
+  1.5+1.5i    | 3(NOT stab)| 1(stab)| 1(stab)  | 2(stab)
+
+**U=-1 and U=1j give kappa=1, STABLE, at EVERY ONE of the 4 tested locations** -- a robust, location-
+independent signature, exactly the behavior a genuine kappa invariant should show. U=1 and U=-1j vary by
+location (0, 1, 1, 3 and unstable/3/4/2 respectively) -- NOT location-independent, meaning either they are
+genuinely NOT well-defined Nevanlinna functions at some of these points (a real, meaningful distinction) or
+still carry a residual issue not yet found.
+
+**HONEST STATUS (Charisma Report/Handle discipline, applied deliberately given the stakes):** this is
+REPORT-TIER, not Handle. It is the most encouraging kappa signal all session -- 2 of 4 symmetry-reduced
+extensions (U=-1, U=1j) show real, cross-validated, location-independent kappa=1 at the SMALLEST truncation
+(a=1) on a 4-times-debugged, ground-truth-validated instrument. It does NOT yet confirm anything about RH:
+(1) a=1 may be a near-trivial truncation (need to check what explicit_formula_symbol actually includes at
+this a -- may be zero or one prime's worth of content); (2) not yet checked whether U=-1/U=1j's kappa=1
+PERSISTS as a grows (the single-U scan suggests kappa DOES grow with a for U=1 at least -- if U=-1/U=1j
+ALSO eventually grow past 1 as a increases toward the true a->infinity limit, this is a finite-truncation
+artifact, not a genuine finding); (3) the theoretical target is the a->infinity limit, and finite-a behavior
+Suzuki-style constructions are known (per this project's own prior findings) to provably give kappa=0 or
+otherwise "nice" values at every finite a while the interesting behavior is only in the limit -- the SAME
+caution applies here until explicitly checked.
+
+**Immediate next check (already launched, running in background):** full 4-U family at a=2, a=3 (previously
+only U=1 was tested at these truncations) -- if U=-1 and U=1j STAY at kappa=1 while a grows past 1, that is
+a much stronger signal than a single lucky truncation value. Result pending, will be verified directly.
