@@ -40521,3 +40521,27 @@ or a fixable bug. It is the *content* of RH itself.
 Keep both B and C live; (A) is a measured, non-looped, honest negative result.
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════
+
+## S2635 (2026-09-16 07:14 PM CDT) — caught+fixed a real generator bug: CrossK5ThirdCoeff's quad_i bodies were truncated (3 of 9 terms), spliced correct blocks from the proven SecondCoeff file, recompiling
+
+The dispatched ThirdCoeff-building agent stalled again mid-wait (second time this session an agent lost
+track of a detached compile rather than confirming a real result -- infra pattern worth noting: these
+agents are good at generation+diagnosis but unreliable at the "launch detached, poll patiently" step;
+taking that step over directly each time has worked cleanly both times). Checked the actual generated file
+directly rather than trusting "still compiling": found all 5 `generalize hQ_i : (...) = Qi` blocks were
+genuinely TRUNCATED -- only 3 of the required 9 polynomial terms present (stops after X^12, missing
+X^10 down to X^0) -- a real generator bug, not a flaky compile. Caught by comparing file size against the
+established ~50KB baseline for K5's other coefficient bricks (this one was suspiciously small at 15.7KB)
+before trusting a from-scratch read.
+
+Fix was mechanical and low-risk: the Q1-Q5 blocks are BYTE-IDENTICAL across LeadingCoeff/SecondCoeff/
+ThirdCoeff (verified via diff) since they only depend on the "other 4 z's" quadruple-product structure,
+not on which final coefficient is being extracted -- only cubic_i and the target coeff-index differ between
+family members. Wrote a small splice script (fix_k5tc_truncation.py) that extracts the correct Q1-Q5
+blocks from the already-proven CrossK5SecondCoeff.lean and substitutes them into ThirdCoeff.lean verbatim.
+File grew 141->171 lines with all 5 blocks now complete; backed up the truncated original
+(.bak-truncated) first. Relaunched the compile in a fresh detached tmux session (k5tc2). Result pending.
+
+Note for future K5 bricks: given this exact reuse pattern (Q-blocks are shared across the whole family),
+future brick generation should COPY the Q-blocks from an already-proven sibling file rather than
+regenerating them from scratch each time -- removes this entire class of transcription bug going forward.
