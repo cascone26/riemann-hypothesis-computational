@@ -40770,3 +40770,35 @@ Three bookkeeping/verification items from this cycle, banked together:
 2. **Caught a real overclaim (verify-before-ship):** that same agent's final report said compilation "encountered build-environment wiring issues" and was "deferred," yet closed with "No structural or mathematical issues identified" as if that were a confirmed clean result. It is NOT confirmed -- the agent never got a real compile signal. Took over directly: relaunched the actual compile in a properly detached tmux session (k5fc2) rather than trusting the unverified claim. Result pending -- this entry does NOT claim CrossK5FourthCoeff is proven; only that its generation is complete and a real compile is now running.
 
 3. **Arb precision bug on the exponent-extraction side:** arb_sector_margin_extraction.py's docstring promised "1400+ bit" precision but the code actually ran at `dps=100` (roughly 330 bits, and only 100 DECIMAL digits, not 1400 BITS -- an even bigger gap than it first looked). This under-precision is the likely reason its fitted exponents (alpha_even=0.63, alpha_odd=0.60) still overshot the 0.44 target almost as much as float64 did (0.77/0.71) -- a ~40% error reduction is not enough to trust the fit yet. Bumped to dps=300 and relaunched (background, /tmp/arb_sector_extract_300dps.log) -- if alpha moves meaningfully closer to 0.44 with more precision, that confirms precision (not sector-decoupling structure) was the dominant error source; if it doesn't move much, that's real evidence the sectors genuinely have a different intrinsic exponent than the full matrix's empirical law, which would itself be a substantive finding (extreme-value-statistics-of-a-min, not either sector's own rate). Result pending.
+
+## S2641 (2026-09-16 07:58 PM CDT) — precision hypothesis REFUTED (300 vs 100 decimal digits: zero change), surfaces a real internal-consistency puzzle between the sector exponents and margin_law.py's own full-matrix exponent
+
+Reran arb_sector_margin_extraction.py at dps=300 (3x the original dps=100). Result: the fitted exponents
+did not move AT ALL -- alpha_even=0.6336, alpha_odd=0.6035, identical to 4 decimal places against the
+dps=100 run. This DEFINITIVELY REFUTES the S2640 precision hypothesis: insufficient decimal precision was
+NOT why the sector-fitted exponents overshoot the 0.44 target. The overshoot is real and structural, not a
+numerical artifact of under-precision.
+
+**This surfaces a genuine, unresolved puzzle, not yet explained:** if τ block-diagonalizes exactly into
+even/odd sectors (verified true -- both sectors are independently, exactly PSD), the FULL matrix's smallest
+eigenvalue should just BE min(lambda_even, lambda_odd). Since both sector exponents (0.60, 0.63) are LARGER
+than 0.44 (i.e. both sectors decay FASTER than the empirical full-matrix rate), min(lambda_even,lambda_odd)
+should ALSO decay at the FASTER of the two rates (~0.60-0.63), not the slower 0.44 margin_law.py measured
+on the full matrix at genuine 1400-bit Arb precision (S2637). A same-precision full-matrix vs
+min-of-sectors cross-check (float64, quick sanity attempt) was INCONCLUSIVE -- the full (un-split) matrix's
+eigenvalue computation at plain float64 hits its own catastrophic-cancellation noise floor immediately
+(consistent with S2639's own finding that only the SECTOR-SPLIT computation is reliable at float64), so it
+could not adjudicate the puzzle either way with the tools used in this cycle.
+
+**Open, precisely stated:** either (a) the parity-sector split, while individually PSD-correct, is not
+capturing the SAME quantity margin_law.py's exponent describes (possible bug or definitional mismatch in
+weil_parity_decompose.py's construction vs the reference build_arb_tau), or (b) margin_law.py's own fit
+itself needs re-examination at these SAME specific (c,N) points via a proper Arb (not float64) computation
+of the FULL matrix's min eigenvalue, cross-checked directly against min(lambda_even, lambda_odd) computed
+at the SAME precision -- this exact controlled comparison has not yet been done and is the correct next
+step, not another blind precision bump or another independent modeling attempt.
+
+Honest status: real progress (killed a wrong hypothesis cleanly, found a genuine consistency question worth
+resolving before trusting the parity-sector exponents further) rather than a completed derivation. This is
+exactly the kind of precise, falsifiable puzzle that's worth nailing down before building further theory on
+top of the S2636 decomposition.
