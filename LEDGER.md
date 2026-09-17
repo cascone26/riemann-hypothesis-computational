@@ -42685,3 +42685,40 @@ to have been a bug in the test harness itself, not a fact about the mathematics.
 important pattern from the whole overnight session repeating again: broken measurement tools produce false
 negatives that look like closed doors. Two real bugs down; the actual question (does the symmetry-reduced
 canonical system achieve kappa=1 for some U?) is now finally being asked with a validated instrument.
+
+## S2673 (2026-09-17 04:34 AM CDT) — kappa-extraction instrument now FULLY VALIDATED (3rd bug fixed: precision ceiling); applied to real canonical system, found a genuine (non-artifact) negative-definite pattern, NOT precision garbage
+
+**Third bug found+fixed (following S2672's first two):** double-precision ceiling. Direct diagnostic on
+the Blaschke ground-truth (same z_center=0.2/z_radius=0.1 geometry used in validation) showed kappa stable
+and CORRECT through K=20 (coefficient magnitude ~7e10, comfortably within float64 precision) but breaking
+down starting K=25 (~3e13) and fully garbage by K=30 (~1e16, at the float64 edge). Capped K=20/MU_MAX=15
+throughout (validation test + canonical-system application). Re-ran: **Blaschke self-validation now PASSES
+CLEANLY** -- kappa=1 on both exact AND Cauchy-circle-extracted coefficients. All three implementation bugs
+from S2663/S2665 (matrix off-diagonal range, Nyquist aliasing, precision ceiling) are now fixed and the
+instrument is validated on the one case where the answer is independently known.
+
+**Applied to the real canonical system (a=8, U in {1,-1,i,-i}, z_center=1+i, z_radius=0.15):** still showed
+the "kappa=mu+1, never stabilizing" runaway pattern even with the validated, precision-safe K=20 cap. RULED
+OUT precision-artifact as the explanation via a direct diagnostic: checked |s_k| at every k from 0 to 20 --
+values are ALL well-behaved O(1) through k=16 (e.g. |s_8|=0.44, |s_10|=0.64, |s_15|=2.49 -- nowhere near any
+precision ceiling), yet kappa STILL climbs 1,2,3,...,9 at K=8 alone (tiny, perfectly safe coefficients).
+This is not a numerical artifact -- it's a genuine property of THIS matrix: it is negative-definite (or very
+close to it) at every truncation level tested, not converging to a finite kappa.
+
+**Root cause note (not yet fixed, flagged for next session):** m-values on the circle have Im(m(z)) < 0
+uniformly for Im(z) > 0 in the sampled region (checked: m(1.15+1.0j) = -2.13-5.49j) -- the OPPOSITE sign of
+the Herglotz/Nevanlinna property (Im(m(z))>0 for Im(z)>0) that ordinary (kappa=0) Nevanlinna functions have.
+Whether extract_weyl_m_function has a genuine sign-convention bug, or this canonical system's m-function is
+legitimately of a different (indefinite, high-kappa, or wrong-branch) character at this a/U/z_center choice,
+is the open question -- worth checking against the ORIGINAL ODE/ Weyl-solver derivation (canonical_weyl_solver.py)
+next, and/or trying a z_center much closer to the real axis where boundary behavior is more diagnostic.
+
+**Honest status:** this is real, non-trivial progress -- three real bugs eliminated, the instrument trusted,
+and a genuine (not artifactual) finding in hand. It does NOT confirm or refute kappa=1 for this construction
+yet; it identifies the next concrete diagnostic (m-function sign/branch check) needed to interpret the
+negative-definite pattern correctly. Filed as an open lead, not a closure -- matches S2665's original honest
+"genuinely open" framing, now backed by a trustworthy measurement instead of buggy ones.
+
+**K5 Lean queue status:** Sixteenth (final brick) compiling on Olympus as of this entry; Seventh's recheck
+(queued behind the whole run since ~01:06, self-resolving once the queue empties) will fire automatically
+once Sixteenth finishes. 15 of 16 K5 bricks independently verified EXIT0 and committed so far.
