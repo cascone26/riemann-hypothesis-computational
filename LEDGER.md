@@ -42977,3 +42977,27 @@ by THREE independent lines of evidence: (1) exact match to K=4's real historical
 Q-polynomial's factor structure in real, compiled, EXIT0-verified Lean source. This is now solid enough to
 treat as a proven structural lemma for any future K, not merely an empirical pattern -- a genuine, reusable
 building block for the general-K induction attempt named as top priority in RH_SOLVER_OS's latest refresh.
+
+## S2681 (2026-09-17 06:18 AM CDT) — K=6 symbolic wall: one candidate generating-function model tried and DISPROVEN before banking, correctly caught rather than forced
+
+Attempted a fresh angle on the K=6+ symbolic performance wall (S2583/S2585): hypothesized that magnitude_sympy's
+per-degree formulas (e.g. b=8's `Bj*Bk+Bj*Bl+Bk*Bl+Aj+Ak+Al` for K=4's 3 others) might arise as the coefficient
+of a formal grading variable s^n in a per-index generating function product like prod_j(1+B_j*s+A_j*s^2) --
+if true, this would let sympy's fast Poly arithmetic (verified: builds a 7-factor product in 0.007s with zero
+blowup, tested through K=8) replace the manual combinatorial enumeration that hits the wall at K=6+.
+
+**Directly verified this hypothesis against the REAL, already-proven K=4 b=8 formula: FALSE.** The generating-
+function model gives `AjAk+AjAl+AjBkBl+AkAl+AkBjBl+AlBjBk`, which does not match the actual
+`Aj+Ak+Al+BjBk+BjBl+BkBl`. Caught via direct sympy comparison before banking this as a fix -- the true
+combinatorial origin of magnitude_sympy's specific formula (likely tied to the trigonometric sin/conj-sin
+structure of the original construction, not a generic per-index polynomial product) is NOT reproduced by
+this guess. Correctly discarding this specific model rather than forcing an unverified "solution."
+
+**Honest status of the K=6+ symbolic wall:** still genuinely open. The real fix requires either (a) locating
+the ORIGINAL mathematical derivation that produced magnitude_sympy's exact per-b formulas (not found in this
+repo -- likely predates the current file structure, same archaeology gap noted in S2679 for K=3's data), or
+(b) a correct from-scratch re-derivation of the actual combinatorial identity connecting the sin/cos structure
+to these specific A,B-symmetric-function formulas, which requires more mathematical care than a quick
+generating-function guess. Not chasing further this cycle without that groundwork -- flagged honestly as
+next-session work requiring either the lost derivation or a careful fresh derivation session, not another
+guess-and-check attempt.
