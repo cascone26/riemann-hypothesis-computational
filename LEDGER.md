@@ -41668,3 +41668,116 @@ if the "correct" extension needs to also be characterized by a positivity condit
 Proceeding directly to the construction: verify the canonical system's Hamiltonian genuinely has the
 functional-equation symmetry, then apply the 1411.5351 reduction explicitly and see how far the family
 actually shrinks.
+
+## S2650 (2026-09-17 22:35 CDT) — CRITICAL FINDING: c^(-0.44N) empirical law contradicted by high-precision data; true exponent ~2.9x LARGER
+
+**Summary:** Attempted fresh analytic approaches (homotopy eigenvalue tracking, inertia analysis, universality class investigation) to understand the 0.44 exponent. In the process, discovered that **the c^(-0.44N) law from S2637 is NOT supported by the high-precision data itself.**
+
+**Discovery Method:**
+1. Extracted λ_min at 1400-bit Arb precision across (c,N) = {(13,4), (13,6), (13,8), (30,4), ..., (100,8)}
+2. Verified extracted values match margin_law.py's own reported numbers exactly
+3. For each N, fitted λ_min ~ c^(-α) and extracted exponent α
+4. Compared α_observed against α_expected = 0.44·N from S2637's claim
+
+**Data (Arb precision, all confirmed against margin_law.py):**
+
+| N | c=13 | c=30 | c=100 | Fit: α obs | Fit: α expected | Error |
+|---|------|------|-------|-----------|-----------------|-------|
+| 4 | -14.01 | -16.08 | -18.40 | 4.92 | 1.76 | +180% |
+| 6 | -18.31 | -21.63 | -25.05 | 7.53 | 2.64 | +185% |
+| 8 | -22.11 | -26.73 | -31.36 | 10.33 | 3.52 | +193% |
+
+**Key Finding:** Observed exponent α_obs ≈ **2.86 · α_expected** across all N tested.
+
+This means:
+- **S2637 claim:** λ ~ c^(-0.44N)
+- **Observed scaling:** λ ~ c^(-1.26N) or worse (exponent grows with N; ratio obs/exp increases from 2.79 at N=4 to 2.93 at N=8)
+
+**Status:** NOT a dead end. This is a PRECISE, FALSIFIABLE finding that corrects a prior claim. The true scaling law is fundamentally different from S2637's announcement.
+
+**Implications:**
+
+1. **The form λ ~ c^(constant·N) may be incorrect altogether.** Instead:
+   - α(N) appears to increase slowly with N (1.76→2.64→3.52 expected, but 4.92→7.53→10.33 observed)
+   - Ratio α_obs/α_exp stays roughly constant (~2.86) independent of N
+   - This suggests a systematic, multiplicative scaling factor, not a fundamental change in form
+
+2. **The true law might be:**
+   - λ ~ c^(-β·N·log(c)) for some β, (non-separable in c,N)
+   - OR: λ ~ c^(-f(c,N)) where f is more complex than linear
+   - OR: λ ~ c^(-α·N) but α ≠ 0.44 (α ≈ 1.25±0.04)
+
+3. **Structural understanding is still valid:**
+   - τ is NOT block-diagonal (S2642) ✓
+   - Strong coupling between sectors (||Wp||_2 ~ |λ_min(BG)|) ✓
+   - Staged inertia flip suggests avoided crossings (S2650 inertia tracking) ✓
+   - Eigenvalues approach zero from negative side at t→1 in homotopy ✓
+
+**Tools & Artifacts Created This Session:**
+- `homotopy_eigenvalue_trajectory.py` — eigenvalue path tracking, limited by float64 precision
+- `inertia_tracking_via_ldlt.py` — MOST ROBUST; shows staged sign-flip mechanism, confirms matrix is NOT block-diagonal
+- `universality_class_investigation.py` — spectral properties; identifies strong-coupling regime
+- `arb_minimal_eigenvalue_scaling.py` — high-precision extraction and fitting (1000-1400 bits)
+- `HOMOTOPY_AND_UNIVERSALITY_FINDINGS.md` — comprehensive analysis of structural insights
+
+**Honest Assessment:**
+
+✓ Refined structural understanding (avoided crossings, strong coupling, staged mechanism)
+✓ Identified systematic discrepancy in the empirical law (3x factor, not noise)
+✗ Did NOT derive the 0.44 (or true) exponent analytically
+✗ Did NOT identify the correct functional form λ(c,N)
+
+**Momentum & Next Direction:**
+
+The homotopy/avoided-crossing hypothesis is sound and testable. The 2.86x factor is a precise, reproducible clue. Before pursuing more analytically:
+
+1. **Verify the factor of ~3:** Is it a known constant in matrix perturbation theory? (e.g., spectral norm of Wp / spectral norm of background?)
+2. **Investigate non-factorizable form:** If true form is c^(-f(c,N)), what is f? 
+3. **Universality class matching:** Does the spectrum of τ match a known Toeplitz-plus-low-rank ensemble with a known extremal eigenvalue law?
+
+The prior session claimed victory on an unverified assumption. This session's discovery is the honest re-examination: the claim fails, but the structure is clearer now. Keep going.
+
+**Filed:** findings in frontier/groskin2607/arb_minimal_eigenvalue_scaling.json, supporting calculations in .log.
+
+
+## S2655 (2026-09-16 10:41 PM CDT) — correction: the "0.44 exponent" itself was built on a natural-log/log10 unit mixup; the alarming "180% error, law is wrong" claim (mislabeled S2650, colliding with the real S2650) is not a validated finding either -- both numbers need distrust, individual raw data is fine
+
+Checked the latest agent's alarming claim ("the c^(-0.44N) law is WRONG, true exponent ~2.9x larger")
+directly, since it contradicts data I personally verified earlier tonight by reading margin_law_results.txt
+myself. Also caught a SECOND S-number collision (the new agent labeled itself "S2650", already used
+tonight for the Mathlib-infra-fix entry -- flagging here, not fixing the existing entries, per append-only).
+
+**Reproduced the new agent's raw eigenvalues exactly** (own re-run of extract_min_eigenvalue_arb at c=13,
+30, 100, 300, 1000, N=8: log10(lambda) = -22.115, -26.729, -31.362, -34.623, -37.163 -- matches
+margin_law_results.txt's ORIGINAL numbers to 2-3 decimal places). So the underlying Arb eigenvalue
+computation is fully correct and trustworthy; nothing wrong there.
+
+**Found the real, concrete, confirmed bug -- a units mixup, not a wrong law:** margin_law.py's own N=8 fit
+used `L = math.log(c)` (Python's math.log is NATURAL log/ln, not log10), giving the historically-quoted
+slope "-3.428" in units of "per unit of ln(c)". But the standard convention "lambda ~ c^(-alpha)" requires
+the slope against LOG10(c), not ln(c) -- converting properly (multiply by ln(10)=2.3026): the TRUE log10-
+basis exponent at N=8 is -3.428*2.3026 = -7.894, not -3.428. Dividing by N=8 gives ~0.99, close to 1.0 --
+NOT 0.44, and also NOT the new agent's claimed ~1.29 (10.33/8) either (a further, separate discrepancy,
+likely from the new agent's own narrower default c-range {13,20,30,50} picking up small-c transient
+curvature rather than the true asymptotic rate, matching the ALREADY-KNOWN Panel-A finding that the N-
+scaling itself has a real quadratic/curvature component, not a clean single exponent).
+
+**What this means, precisely:** the original "0.44" figure's actual provenance was never margin_law.py's
+own data at all -- it was hardcoded as an empirical constant in the OLDER groskin_required_T_analysis.py
+(itself sourced from "cycle 176-182", a dataset never directly re-derived or cross-checked THIS session).
+Tonight's entire "explain/derive the 0.44 exponent" arc (S2636 through S2642 and the new S2650-mislabeled
+entry) has been implicitly treating "0.44" as margin_law.py's own confirmed number, when the two were never
+actually shown to be the same measurement in the same units. This is a real methodological gap, not a
+minor typo -- it means the specific NUMBER "0.44" (though not the qualitative mechanism findings: the
+telescoping cascade, the non-block-diagonal coupling, the avoided-crossing signature, all of which are
+about structure/mechanism and remain valid) should not be trusted as an anchor until redone cleanly.
+
+**Correct next step (deliberately NOT rushed tonight, given the delicacy of unit conventions under time
+pressure):** a single, careful, CONSISTENT redo -- log10 throughout, no ln, a wide c-range at each of
+several N values (matching margin_law.py's own original 5-point c-grid, not a narrow 4-point one) -- to
+establish, once and for all, what the actual log10-basis exponent is and how it depends on N. Until that
+clean redo exists, PAUSING further "derive the exponent analytically" attempts on this specific numeric
+target (no point building elaborate theory to explain a number that was never properly established) --
+the mechanism-level findings can still be reported honestly as "explains why the margin decays fast, exact
+rate pending a clean re-derivation." Redirecting tonight's effort to the functional-equation construction
+(S2654's line), which doesn't depend on this number at all.
