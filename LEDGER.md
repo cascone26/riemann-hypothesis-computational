@@ -42477,3 +42477,15 @@ Since S2647 explicitly warned "goal formula... genuinely changes shape," and S26
 
 **Lesson:** PAIRS mapping in K4 generator (degree → antidiagonal pairs) suggests goal formulas ARE degree-specific; a proper K5 extension needs either (a) sympy derivation like K4, or (b) an exhaustive PAIRS_K5 mapping table derived once symbolically and hardcoded. Current approach assumes (b); production will likely need (a).
 
+
+## S2667 (2026-09-17 12:19 AM CDT) — CrossK5SixthCoeff independently VERIFIED EXIT0 -- first genuinely-generated (not hand-adapted) K5 brick compiles clean, validating the generator on unseen territory
+
+First compile attempt hit a hard memory crash (std::bad_alloc, SIGABRT) at the original 30GB ulimit cap --
+not a math error, just needed headroom (matching the established "raise the cap" pattern from earlier
+tonight). Relaunched at 40GB, ran clean: zero errors, no sorryAx, axioms=[propext, Classical.choice,
+Quot.sound]. This is the first K5 brick built by the GENERATOR (gen_k5_coeff_final.py) targeting a degree
+(14) it had not seen a hand-built example of before -- a genuine validation that the generator's mechanical
+template-transformation approach works, not just a lucky copy. K=5 coefficient-brick family now at 8
+independently verified bricks (Key, PolyVanish, Leading, Second, Third, Fourth, Fifth, Sixth). Generator
+removes the manual-adaptation bottleneck that caused the S2635/S2647 bugs going forward -- next bricks
+should be much faster to produce.
