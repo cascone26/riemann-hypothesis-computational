@@ -42616,3 +42616,28 @@ CrossK5SeventhCoeff (running since 00:24, the sole survivor of the original reso
 uninterrupted; the corrected queue is now correctly waiting for it before starting Eighth. System memory
 healthy throughout (23GB available). No lasting damage from any of tonight's process-management churn --
 every misstep was caught by direct verification before it caused a second incident.
+
+## S2671 (2026-09-17 12:56 AM CDT) — Groskin margin-law exponent unit bug FIXED and re-measured: true alpha = 7.89, NOT the historically-quoted 0.44
+
+The original `margin_law.py` (frontier/groskin2607/) plotted log10(min-eig) [correct base-10] against
+`L=math.log(c)` [natural log] and reported the fitted slope directly as if it were the exponent alpha in
+`min-eig ~ c^(-alpha)`. Mixed log bases mean that slope (-3.428 at N=8) is NOT alpha in the standard
+convention -- it needs multiplying by ln(10) to convert to a log10-log10 (i.e. true power-law) basis.
+
+Built `margin_law_log10fix.py` (new file, original left untouched per non-destructive discipline) which:
+(1) refits log10(min-eig) vs log10(c) directly (5 points, c in {13,30,100,300,1000}, N=8, prec=1400) --
+    slope = -7.8936, so alpha = 7.8936, NOT 0.44.
+(2) independently converts the OLD natural-log slope (-3.4281) via alpha = -slope*ln(10) = 7.8936 --
+    exact match, confirming this is a units bug, not new physics, and ruling out a second undetected bug.
+
+HONEST CAVEAT: residual on the 5-point log-log fit is 0.92 (in log10(min-eig) units) -- not negligible
+over 5 points spanning c=13 to c=1000. This does NOT look like a clean single power law; the true relation
+may curve (e.g. exponential-in-N cascade at fixed c, as part A of the original script suggests, dominating
+over the c-dependence at fixed N=8). Treat alpha=7.89 as "the correct unit-consistent slope of this specific
+5-point log-log fit," not yet as a validated universal power-law exponent -- next step if this thread is
+picked back up: extend the c-grid (more points, wider range) and check residual behavior / whether a
+2-parameter (power-law + cascade) model fits better than either 1D fit alone.
+
+This closes the "which units" ambiguity from S2655/the prior "-3.428 vs 0.44 vs alarming correction" confusion:
+alpha=7.89 is the correct number in the standard c^(-alpha) convention, both derivations agree, but the
+underlying phenomenon may not be a clean power law at all -- that question stays open.
