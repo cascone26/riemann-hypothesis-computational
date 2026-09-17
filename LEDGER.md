@@ -40378,3 +40378,14 @@ function of this type -- i.e. is there a genuine "pole-carrying" slice-hyperholo
 zeta's own explicit formula, analogous to how THIS toy example's pole was just placed by hand at a. That
 construction (not the toy verification) is the real, still-open, still-hard next step -- correctly scoped,
 not conflated with today's genuine but narrower win.
+
+## S2633 (2026-09-16 07:00 PM CDT) — CrossK5SecondCoeff EXIT0, first-try clean; generalize-opacity fix confirmed as a durable, reusable template across the K=5 brick family
+
+Recovered CrossK5SecondCoeff.lean from the earlier agent stall (infra hiccup, file was already generated
+correctly with the fix baked in from the start) by relaunching the compile directly in a detached tmux
+session. Compiled clean, zero errors, no sorryAx, axioms=[propext, Classical.choice, Quot.sound] -- same
+signature as CrossK5LeadingCoeff. Confirms the S2623 generalize-opacity fix is now a genuinely reusable
+template: applied preemptively (not discovered through failure) for the second brick in a row, first-try
+clean both times. K=5 now has Key, PolyVanish, LeadingCoeff, SecondCoeff all EXIT0 -- 4 of the ~19 bricks
+K=4's pattern implies (16 ordinal coefficients + a few Reduced* files). Self-sustaining mechanical arc,
+continuing.
