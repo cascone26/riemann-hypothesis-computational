@@ -3337,3 +3337,31 @@ Session note: this refresh follows a ~6-hour unsupervised overnight run (S2647-S
 entire K=5 arc and did substantial, honest, verified debugging work on the kappa-extraction numerics.
 Both lanes 1(complete) and 5(characterized) represent real closure/characterization, not open loose ends
 -- the natural next moves (#2 induction, #3 K=6 symbolic) are cleanly scoped for whoever picks this up next.
+
+## TOP 5 LANES refresh (2026-09-17 06:49 AM CDT) — ★★★★★ MAJOR: K=6+ symbolic wall BROKEN after multi-session block
+1. **K=6+ symbolic verification** — ★ PROMOTED, wall broken. LEDGER S2682: the magnitude polynomial for
+   ANY K's coefficient-extraction bricks has an exact closed form, M_K(Y) = prod_{other blocks}(Y^2-B_j*Y+A_j),
+   with degree-b coefficient = coeff of Y^(b/2). Verified exactly against K=4's real formulas (all 6 b-values)
+   AND K=5's real compiled Lean source. Fast (sub-10ms through K=8, no blowup) vs the old raw-expansion
+   method that hit a hard performance cliff at K=6 across 4 separate attempts (S2583/S2585) plus one more
+   failed model this session (S2681) before the correct derivation. Tool: tools/k_general_magnitude.py.
+   Next: formalize this Y-substitution identity as a genuine Lean lemma and attempt an induction over the
+   other-block list length, rather than one hardcoded lemma per K.
+2. **General-K induction scoping** — now has BOTH core combinatorial pieces solved in closed form:
+   the antidiagonal-pair selection (S2679/S2680: PAIRS_K(d), verified from first principles in real Lean
+   source) AND the magnitude polynomial itself (#1, this refresh). The remaining gap is formalizing these
+   as actual Lean definitions/lemmas parametrized over K, not further symbolic verification -- the
+   mathematical content is now fully characterized.
+3. **K=5 concrete arc** — COMPLETE (16/16 coefficient bricks + Key + PolyVanish, all independently
+   verified EXIT0). Provided the real Lean source (CrossK5SixthCoeff.lean's Q1 construction) that made
+   #1's correct derivation possible.
+4. **K=4 even-group cascade (ReducedK8/6/4/2)** — still needs fresh derivation, naive mirror definitively
+   fails. Deprioritized, not abandoned.
+5. **Weil-positivity / Krein-Langer kappa-extraction lane** — characterized this session (4 real bugs
+   fixed, instrument validated, honest negative result for the raw finite-truncation construction — see
+   LEDGER S2672-S2678). Deprioritized pending a regularization idea, same status class as lane 4.
+
+This is the biggest single structural unlock of the whole overnight session -- a wall that survived 2
+separate sessions (S2583 on 2026-09-16, and this session's own S2681 before the correct answer) is now
+open, and it unblocks the SAME lane (general-K induction) that K=5's completion had already promoted to
+top priority. The two lanes converge: #1 and #2 are now effectively the same task from different angles.
