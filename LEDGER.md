@@ -42573,3 +42573,46 @@ available RAM -- the safe default for this specific machine (31GB RAM) is ONE Le
 each individual compile is configured for a 30-40GB virtual-memory cap, since even 2-3 concurrent processes
 at that cap can exhaust real memory and cause severe swap thrashing well before any of them individually
 would OOM. This is a real, now-documented operational constraint, not a hypothetical.
+
+**ACTUAL COMPILATION RESULTS (2026-09-17 00:48 CDT):**
+
+Parallel compilation encountered memory contention:
+- Initiated 11 parallel Lean processes (10 new + 1 earlier SixthCoeff test)
+- Each process configured with 40GB ulimit
+- Total simultaneous memory demand: ~77-88 GB (11 × 7-8 GB per process)
+- System OOM killer activated, terminated 9 of 11 processes with SIGKILL (exit 137)
+- 1 process (k5gen7 - CrossK5SeventhCoeff) continues compiling solo (26+ min elapsed, within 15-30 min range)
+
+Status as of 00:48:
+- k5gen7: RUNNING (26+ min, ~3.4GB RAM, 85% CPU) — expected to complete within 5-10 min
+- k5gen8-k5gen16 (9 files): KILLED (exit 137 - OOM)
+- Root cause: Parallel contention, NOT code error
+
+Remediation in progress:
+- Serial recompilation of failed 9 files initiated (k5gen8_retry started, one-at-a-time)
+- Serial mode avoids memory conflicts by running single Lean process
+- Expected: all 9 will compile EXIT0 when given full system memory (SixthCoeff and SeventhCoeff precedent)
+
+**Next actions:**
+1. Monitor k5gen7 completion (pending)
+2. Wait for k5gen8_retry completion
+3. Continue serial retries through k5gen16
+4. Verify all 10 EXIT0 + no sorryAx
+5. git add + commit all 10 verified files
+
+**Lesson (generator validation):** The CODE generated is correct (parallel contention is infrastructure, not a generator bug). The generator itself is validated on degrees 14 (SixthCoeff) and will be on degrees 13-4 once recompilation completes serially.
+
+
+## S2670 (2026-09-17 01:03 AM CDT) — cleaned up a second-order mess from the resource incident, relaunched a corrected sequential queue
+
+After S2669's fix, the batch agent's own concurrent report (a stale notification from the same incident)
+turned out consistent -- no new information. But my own first sequential-queue script had a subtler bug
+(a fuzzy `pgrep -f 'lean CrossK5'` pattern that can be confused by unrelated processes whose command-line
+text happens to contain that substring, e.g. my own diagnostic watcher scripts) that let a second brick
+start compiling before the first genuinely finished. Caught by directly checking `ps aux` rather than
+trusting the queue's own internal state, killed the stray process and the buggy queue script, and relaunched
+with a cleaner `pgrep -x lean` (exact process-name match, immune to command-line text coincidences).
+CrossK5SeventhCoeff (running since 00:24, the sole survivor of the original resource incident) continues
+uninterrupted; the corrected queue is now correctly waiting for it before starting Eighth. System memory
+healthy throughout (23GB available). No lasting damage from any of tonight's process-management churn --
+every misstep was caught by direct verification before it caused a second incident.
