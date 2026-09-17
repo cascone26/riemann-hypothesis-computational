@@ -42722,3 +42722,44 @@ negative-definite pattern correctly. Filed as an open lead, not a closure -- mat
 **K5 Lean queue status:** Sixteenth (final brick) compiling on Olympus as of this entry; Seventh's recheck
 (queued behind the whole run since ~01:06, self-resolving once the queue empties) will fire automatically
 once Sixteenth finishes. 15 of 16 K5 bricks independently verified EXIT0 and committed so far.
+
+## S2674 (2026-09-17 04:35 AM CDT) — ROOT CAUSE FOUND: the U boundary parameter is NEVER wired into the shared ODE solver -- all "U=1,-1,i,-i" results across S2656-S2673 were computing the IDENTICAL quantity four times
+
+Following S2673's open question (why is the canonical-system Nevanlinna kernel negative-definite at every
+truncation level?), checked `canonical_weyl_solver.py` directly instead of only the extraction layer.
+
+**Finding:** `grep -n "\bU\b" canonical_weyl_solver.py` returns ZERO matches. `solve_canonical_system_finite_a`,
+`canonical_system_ode`, and `hamiltonian_2x2` take no `U` argument whatsoever -- the ODE's initial condition
+is hardcoded `X0 = I` (identity) unconditionally. `U` appears ONLY in `kappa_robust_classical_method.py`'s
+outer loop (`for U in U_values: ... results[U] = ...`) -- purely as a print-label and dict key, never actually
+passed into the solver or used to modify the boundary condition. This means every "Processing U = 1 / -1 / i /
+-i" block in every run this session computed the EXACT SAME m-function, which is exactly why all four U-values
+always returned identical kappa (16, 4, and every other value observed) -- there was never any real
+U-dependence to find in the first place.
+
+**This retroactively explains the S2663 Method-1 finding too** ("CRITICAL ISSUE: U-parameter NOT incorporated
+in eigenvalue computation... spectrum is the same for all U") -- that was flagged as a bug specific to Method 1's
+discretization. It is actually a bug in the SHARED canonical_weyl_solver.py module that Methods 1, 2, and 3 all
+depend on. One root cause, three symptom sites.
+
+**What this means for prior conclusions:** every "kappa != 1 for all U in {1,-1,i,-i}" result from S2656 through
+S2673 tested only ONE actual boundary condition (implicitly U=whatever X0=I encodes, likely U=infinity or the
+Dirichlet/degenerate case), not four genuinely distinct ones. The arXiv:1411.5351 symmetry-reduction mathematics
+(verified correct in S2656: M(-t)=M(t), reduction to discrete {1,-1,i,-i}) has NEVER actually been numerically
+tested -- the numerical pipeline silently dropped it at the implementation stage.
+
+**Why this is real, useful progress, not a new wall:** this is the SAME pattern (broken measurement -> false
+"negative" result) that was the single most valuable meta-finding of the whole overnight session, now caught a
+second time in a different layer. The mathematical idea (does some U in the discrete family give kappa=1?) is
+still completely open and untested -- we just found out the test was never actually run.
+
+**Next concrete step (not yet done):** wire U into the boundary condition properly. For a canonical system
+dX/dt = z*M(t)*X on [0,a] with self-adjoint extensions parametrized by U on the unit circle, the standard
+construction imposes the boundary condition X(a) via a U-dependent linear relation (e.g. X_2(a) = U*X_1(a) or
+equivalent, per the von Neumann extension theory already verified in S2656/symmetry_forced_extension_selection.py)
+-- NOT by changing X(0). The m-function should then be extracted as a U-dependent combination of X(a)'s columns,
+not the fixed X21/X11 ratio currently hardcoded in extract_weyl_m_function. This is a real, scoped, well-defined
+fix -- next session's first move on this thread.
+
+**K5 Lean queue:** Sixteenth (final brick) still compiling on Olympus, 21+ min in, healthy. Seventh's recheck
+will fire automatically once it finishes.
