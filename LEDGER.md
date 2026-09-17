@@ -43067,3 +43067,18 @@ elimination / hsum-constraint substitution) remains open, but is now much more c
 either locating S2582's original methodology or a fresh, careful re-derivation of how the linear hsum
 constraint interacts with the magnitude polynomial -- a well-defined task for a session with time to do it
 carefully, not another quick guess.
+
+## S2684 (2026-09-17 07:20 AM CDT) — literature triage: 3 papers from 2026-09-16 arxiv-watch sweep, none directly actionable
+
+Checked the 3 untriaged papers from tools/arxiv_watch_log.md's 2026-09-16 batch (2607.09797 already
+flagged/reviewed earlier):
+- **2609.15329** (Pearce-Crump, "Optimising Selberg's method for critical zeros") — classical unconditional
+  positive-proportion-of-zeros technique (Zhuravlev 1974 revisited). Different method family from our
+  Krein-Langer/canonical-system approach; not directly actionable for either active thread.
+- **2609.15862** (Najnudel-Nikeghbali, "Cauchy laws for zeta logarithmic derivatives") — probabilistic/
+  statistical zero-spacing result (Stieltjes transform limit law), unconditional. Not directly actionable.
+- **2609.11560v2** (Chen et al., "Local Embedding Problem for Hardy Spaces of Dirichlet Series") — functional-
+  analysis/operator-theory result on Hardy-space norms, tangentially adjacent to our Nevanlinna/Krein-Langer
+  operator-theoretic lane but does not address kappa or pole-counting directly. Worth a closer read only if
+  the kappa-extraction thread needs a different function-space framing later; not urgent now.
+No new actionable lead this sweep -- consistent with the project's routine literature-check cadence.
