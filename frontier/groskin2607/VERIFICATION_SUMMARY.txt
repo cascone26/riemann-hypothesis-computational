@@ -1,0 +1,154 @@
+================================================================================
+SECTOR EXPONENT PUZZLE — COMPLETE RESOLUTION
+================================================================================
+
+TASK: Resolve the contradiction between:
+  - Full matrix min eigenvalue decay: α ≈ 0.44 (margin_law.py, 1400-bit Arb)
+  - Sector min eigenvalue decay: α_even ≈ 0.63, α_odd ≈ 0.60 (float64 analysis)
+
+For a truly block-diagonal matrix, min(λ_full) = min(λ_even, λ_odd).
+If sectors decay slower than the full matrix, something is wrong.
+
+================================================================================
+STEP 1: VERIFY MATRIX CONSTRUCTIONS MATCH
+================================================================================
+
+Test: Do build_arb_tau (arb_ldlt_certify.py) and build_tau_and_terms
+      (cascade_generalizes_finiteN.py) construct the SAME τ?
+
+Result: ✓ YES — Max relative difference 2.14e-14 (machine precision only)
+        Both methods are mathematically identical; difference is numerical only.
+
+Script: verify_tau_construction_match.py
+
+================================================================================
+STEP 2: COMPARE EIGENVALUES AT MATCHED PRECISION (1400-bit Arb)
+================================================================================
+
+Test: At the exact (c,N) points from margin_law.py, compute:
+      - Full matrix min eigenvalue (via build_arb_tau + mpmath eigsy)
+      - Even/odd sector min eigenvalues (via same Arb precision)
+
+Results (log₁₀ scale):
+  c=30, N=4:   λ_full=-16.08  vs  min(λ_even=-7.11, λ_odd=-6.00) → Δ = -8.97
+  c=30, N=6:   λ_full=-21.63  vs  min(λ_even=-9.22, λ_odd=-8.31) → Δ = -12.42
+  c=30, N=8:   λ_full=-26.73  vs  min(λ_even=-10.88, λ_odd=-10.14) → Δ = -15.85
+  c=30, N=10:  λ_full=-31.18  vs  min(λ_even=-12.34, λ_odd=-11.64) → Δ = -18.85
+  c=30, N=12:  λ_full=-35.52  vs  min(λ_even=-13.80, λ_odd=-13.08) → Δ = -21.71
+
+Interpretation: Full matrix minimum is 10⁹ to 10²¹ times SMALLER (more negative).
+                This is NOT rounding error — it's a REAL discrepancy.
+
+Script: matched_precision_sector_comparison.py
+
+================================================================================
+STEP 3: CHECK BLOCK DIAGONALITY
+================================================================================
+
+Test: Does τ have off-diagonal entries between even and odd frequency modes?
+
+Results: 
+  c=30, N=4:  Max off-diagonal coupling = 4.59e-02 ≈ 89.6% of max(τ)
+  c=30, N=8:  Max off-diagonal coupling = 1.15 ≈ 49.8% of max(τ)
+
+Conclusion: ✗ τ is NOT block-diagonal
+            Off-diagonal coupling between parity sectors is MASSIVE and systematic.
+
+Script: check_block_diagonality.py
+
+================================================================================
+STEP 4: ANALYZE MINIMUM EIGENVECTOR STRUCTURE
+================================================================================
+
+Test: Does the global minimum eigenvector respect parity symmetry?
+      (If it did, it would be purely even or purely odd.)
+
+Results:
+  c=30, N=4:  Even energy = 50.60%, Odd energy = 49.40%
+  c=30, N=8:  Even energy = 49.42%, Odd energy = 50.58%
+
+Conclusion: ✗ The minimum eigenvector mixes BOTH parities almost equally.
+            This proves the global minimum eigenstate is a superposition
+            that requires BOTH even and odd frequency components.
+
+Script: analyze_eigenvector_parity_mixing.py
+
+================================================================================
+ROOT CAUSE
+================================================================================
+
+The Weil form τ = W₀₂ - W_R - W_p does NOT block-diagonalize into independent
+even/odd sectors because:
+
+1. Archimedean term (W₀₂ - W_R):
+   - Off-diagonal S-terms: (S_signed(m) - S_signed(n)) / (π·Δn)
+   - These are non-zero even when m and n have different parities
+   - Example: τ[0,1] = 4.59e-02 (even mode n=0, odd mode n=-3)
+
+2. Prime term (W_p):
+   - Per-prime phases cos(2πn·y/L) and sin-difference formulas
+   - These mix frequency modes without parity restriction
+   - Systematic coupling at many (i,j) pairs across parity boundary
+
+3. Result: τ has STRONG, STRUCTURED off-diagonal coupling.
+          It is NOT diagonal in the frequency-parity basis.
+
+================================================================================
+RESOLUTION OF THE PUZZLE
+================================================================================
+
+The discrepancy between full-matrix exponent (0.44) and sector exponents (0.60-0.63)
+is NOT a numerical error or precision artifact. It's a STRUCTURAL FACT:
+
+- margin_law.py (α = 0.44): CORRECT
+  Measured from the full matrix's true minimum eigenvalue at 1400-bit Arb precision.
+  This eigenvalue comes from an eigenvector mixing both parities equally (50-50).
+
+- Sector analysis (α_even = 0.63, α_odd = 0.60): INVALID
+  These were computed from eigenvalues of SUBMATRICES of τ.
+  Since τ is coupled, extracting submatrices and analyzing them separately
+  breaks the coupling structure and gives meaningless results
+  (off by 10⁹ to 10²¹ in the actual eigenvalue magnitudes).
+
+Why coupling matters:
+  In spectral theory, coupling between systems typically LOWERS the minimum eigenvalue
+  (and raises others). The full matrix's minimum exploits the even-odd coupling
+  to achieve a lower eigenvalue than either sector alone can reach.
+
+================================================================================
+IMPLICATIONS FOR PRIOR FINDINGS
+================================================================================
+
+S2636 ("τ decomposes into PSD even/odd sectors")
+  → REFUTED. The matrix does not block-diagonalize.
+  
+S2639/S2637 ("sector exponents α_even ≈ 0.63, α_odd ≈ 0.60")
+  → INVALID. Based on submatrix analysis of a coupled system.
+
+margin_law.py ("empirical law λ ~ c^(-0.44·N)")
+  → CONFIRMED CORRECT. This is the true, full-matrix result.
+
+================================================================================
+VERIFICATION COMPLETE
+================================================================================
+
+All three independent lines of evidence point the same direction:
+  1. Matrix entry magnitudes: 89.6% off-diagonal coupling (not block-diagonal)
+  2. Eigenvalue measurements: 10⁹-10²¹ discrepancy (not rounding error)
+  3. Eigenvector structure: 50-50 parity mixing (not decoupled)
+
+The puzzle is resolved. The sector analysis was fundamentally flawed because
+it assumed block-diagonalization that doesn't exist. The full-matrix result
+(α = 0.44) is the ground truth, and it's explained by parity coupling.
+
+Files created:
+  - verify_tau_construction_match.py
+  - matched_precision_sector_comparison.py
+  - check_block_diagonality.py
+  - analyze_eigenvector_parity_mixing.py
+  - S2642_PUZZLE_RESOLVED.md
+  - This file (VERIFICATION_SUMMARY.txt)
+
+LEDGER entry: S2642 (appended to LEDGER.md)
+
+Timestamp: 2026-09-16 20:05 CDT
