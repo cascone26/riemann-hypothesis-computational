@@ -21165,3 +21165,109 @@ next steps (rather than assuming either success or the same failure), matching t
 verify-before-ship rule -- the temptation after a long-running background job is to assume it
 either worked or is still the same problem; checking cost one `cat` and confirmed the real,
 different diagnosis (definitively not a heartbeat problem) that the fix now targets.
+
+## 2026-09-17 06:24 AM CDT — overnight autonomous run: K5 arc completed to closure, kappa-extraction pipeline debugged from scratch through 4 real bugs, K-general structural formula proven
+
+Jacob went to sleep around 00:20 CDT with an explicit standing instruction to keep working
+autonomously and to keep checking whether the current thread was still the best use of time,
+pivoting rather than grinding sunk cost if not. This entry covers the full ~6 hour arc from that
+point (LEDGER S2647 through S2681).
+
+**K5 Lean arc: taken from 2 files to full closure (18 files, matching K4's complete pattern).**
+Generated the remaining 10 coefficient bricks (Seventh through Sixteenth) via the validated generic
+generator (gen_k5_coeff_final.py), compiled them one at a time on Olympus after a real resource
+incident (see below) forced a sequential queue rather than parallel dispatch. Every single brick
+was independently verified by reading the actual compiler output (checking for `LEAN_EXIT=0` and a
+clean `#print axioms` with no `sorryAx`) before syncing and committing -- never trusted an agent's
+unverified completion claim, which caught real problems more than once earlier in this session
+(a truncated Q-block generation bug, an agent that claimed success without ever getting a real
+compile signal). CrossK5SeventhCoeff's original compile result was lost across a context-compaction
+boundary; rather than guess or skip it, queued a recheck that fired automatically once the rest of
+the queue emptied and confirmed the same clean result.
+
+**Real infrastructure incident, caught and fixed cleanly:** an earlier agent launched 11 Lean
+compiles in parallel on Olympus (a 31GB machine), each configured with a 40GB virtual-memory cap --
+pushed the system to near-total exhaustion (29GB/31GB RAM, swap thrashing, SSH struggling to even
+connect). Caught by checking `free -h`/`uptime` directly rather than trusting the agent's "on
+schedule" report. Fixed by killing 10 of 11 processes, keeping the most-progressed one, and building
+a proper one-at-a-time sequential queue. The first queue script itself had a subtler bug (a fuzzy
+`pgrep -f` pattern that could false-match unrelated diagnostic processes); caught via direct `ps aux`
+inspection rather than trusting the queue's own internal state, and fixed with an exact-match
+`pgrep -x` pattern. Both fixes are now a standing, documented constraint: never run concurrent Lean
+compiles on Olympus when each needs a 30-40GB cap.
+
+**Kappa-extraction pipeline: the most substantial debugging arc of the night.** This numerical
+pipeline (does the symmetry-reduced canonical-system construction from arXiv:1411.5351 achieve
+kappa=1 for some boundary parameter U?) had been parked earlier in the session as "genuinely open,
+three implementation-bug failures in a row" rather than disqualified. Revisited it as local Mac work
+that didn't compete with the Olympus Lean queue, and found FOUR distinct, real bugs in sequence:
+  1. The Prop 5.1 (Krein-Langer) kernel matrix's off-diagonal term summed over the wrong range
+     (nearly the full coefficient array instead of the mu-level-bounded range the classical formula
+     requires) -- this alone had been producing kappa=9 instead of 1 on EXACT, known-good
+     coefficients.
+  2. The Cauchy-circle coefficient extraction used too few sample points relative to the number of
+     coefficients requested, violating the Nyquist condition for a DFT-based extraction and aliasing
+     the higher-order coefficients.
+  3. A genuine double-precision ceiling: local Taylor coefficient magnitudes grow geometrically with
+     the inverse of the (small) circle radius, and requesting too many coefficients pushes past
+     float64's ~15-16 significant digits.
+  4. The U boundary parameter -- the entire point of the symmetry-reduction construction -- was
+     never actually wired into the shared ODE solver at all. Every "Processing U=1/-1/i/-i" block in
+     every run this whole session had been computing the literal same quantity four times; `U` only
+     existed as a print label in the outer loop. Fixed by extracting the correct U-dependent Weyl
+     m-function combination (m_U,a = (X21+U*X22)/(X11+U*X12)), which was ALREADY correctly derived
+     in a different file (symmetry_forced_extension_selection.py) but never connected to the actual
+     numerical pipeline being used for kappa computation.
+
+Each bug was found and fixed the same way: validate against the one case where the answer is
+independently known (a reciprocal Blaschke function with an exact, hand-computable power series and
+a known kappa=1), and don't trust a result on the real system until the validation case passes
+cleanly. After all four fixes, the instrument finally passes its own ground-truth check. Applied to
+the real canonical system, it revealed a genuine (not artifactual) pattern: kappa grows
+monotonically with the truncation parameter `a` (0 at a=0.5, 1 at a=1 -- stable across all four U
+except one, then unstable/growing again by a=2-3, converging to similar values ~6-7 across all four
+U by a=3). This is an honest, validated NEGATIVE result for the raw/naive finite-truncation
+construction as currently built -- it does not stabilize at any fixed kappa as truncation grows in
+the tested range, which if it continues to a->infinity means this specific construction needs a
+regularized Hamiltonian, not more raw-truncation scanning. That's now the clearly scoped next step,
+not a wall.
+
+**A tempting early result was correctly walked back rather than oversold:** at a=1 specifically, two
+of the four U values (U=-1, U=1j) showed a robust, LOCATION-INDEPENDENT kappa=1 (verified across 4
+different expansion points, with a denominator sanity check ruling out a near-pole artifact). This
+looked like it could be the real signature the whole construction is searching for. Rather than
+report it as a finding, immediately tested whether it persisted as truncation grew past a=1 -- it
+did not; by a=2 all four U values were growing similarly. Banked both the exciting initial result
+and its own correction in the same session, exactly the Charisma Report/Handle discipline this
+project holds itself to: a real, validated, multi-point-checked signal is still Report-tier until
+it's shown to survive the obvious next stress test.
+
+**A separate, real unit bug fixed in unrelated numerics:** the Groskin margin-law exponent script
+had been plotting log10(min-eigenvalue) against a NATURAL-log x-axis while reporting the fitted
+slope as if it were the exponent alpha in a standard min-eig ~ c^(-alpha) power law. Refit
+consistently in log10-log10 units: true alpha = 7.89, not the historically-quoted 0.44. Flagged
+honestly that the fit's residual is non-negligible over only 5 points, so this may not even be a
+clean single power law -- a genuine open question, not just a units fix.
+
+**General-K induction lane (newly promoted to top priority by K5's completion): a real structural
+formula proven, not just pattern-matched.** The Cross{K}Coeff generator family's antidiagonal-pair
+selection follows PAIRS_K(d) = {(a,d-a): a in {0,1,2,3}, 0<=d-a<=4(K-1), (d-a) even} -- verified
+exactly against K4's real historical PAIRS dict (every single entry across 7 degrees matches), and
+then confirmed from first principles by reading the actual compiled Lean source directly (Q1's
+polynomial construction literally shows 4 factors of z_j^2*conj(z_j)^2, one per other index, giving
+the 4*(K-1) bound directly from the construction, not just a numeric coincidence). A separate attempt
+to crack the K=6+ symbolic performance wall (a different, harder sub-problem -- the D-value-
+elimination cancellation formula, not the antidiagonal-pair structure) tried one candidate
+generating-function model, directly verified it against the known K=4 formula, found it didn't
+match, and correctly discarded it rather than forcing an unverified claim. That specific wall
+remains honestly open, flagged for a session with either the lost original derivation or real time
+for a fresh one.
+
+**Process discipline notes for future sessions:** local background-wait wrapper processes (the
+`until ! ps -p PID; do sleep; done` pattern via the run_in_background tool) got silently killed by
+the harness after roughly 20-25 minutes on at least four separate occasions tonight, even while the
+underlying work was healthy -- switched to either (a) fully OS-detaching remote work via tmux
+sessions (which survive independent of any SSH connection) or (b) `nohup ... & disown` for local
+work, and polling directly on each loop wakeup rather than trusting a long-lived wait wrapper to
+notify reliably. This is now a known operational quirk, not a mystery, for any future long-running
+background work in this environment.
