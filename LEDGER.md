@@ -43045,3 +43045,25 @@ the list of other indices (a genuine induction on list length, using Polynomial.
 identity), rather than one hardcoded lemma per K. This is the natural bridge from "verified in sympy for
 any K" to "proven in Lean for any K" that the whole induction-scoping lane has been building toward across
 multiple sessions.
+
+## S2683 (2026-09-17 07:16 AM CDT) — K=6 block_goal construction verified to build cleanly end-to-end using the new magnitude tool; D-value-elimination substitution not yet reconstructed
+
+Extended S2682's magnitude fix into the full block_goal construction (matching build_k4reduced_generic.py's
+own block_goal function) generalized over K, and confirmed it runs cleanly at K=6 with no errors: cubic_i
+formulas (K-independent, already known) combined with the new fast magnitude_coeff tool correctly build the
+top-degree combined identity E_top for K=4, K=5, AND K=6 without any construction-level issues.
+
+**What this does NOT yet show:** E_top vanishing requires substituting the `hsum` linear constraint (the
+relation among p_i,q_i,r_i,s_i that the theorem's hypothesis encodes) -- S2582's original D-value-elimination
+methodology (solving for one variable via the K-th block's relation and checking the resulting coefficient
+vanishes) was not reconstructed here, since the original script wasn't found in this repo (same archaeology
+gap as K=3's data, S2679) and guessing at its exact substitution mechanics risks repeating S2681's mistake
+(a plausible-sounding but wrong model). Correctly stopping here rather than forcing a guess at this specific
+remaining piece.
+
+**Honest net position after S2679-S2683:** TWO of the THREE pieces needed for a genuine K-general induction
+are now solved in verified closed form (antidiagonal pairs, magnitude polynomial). The third (D-value-
+elimination / hsum-constraint substitution) remains open, but is now much more clearly scoped: it needs
+either locating S2582's original methodology or a fresh, careful re-derivation of how the linear hsum
+constraint interacts with the magnitude polynomial -- a well-defined task for a session with time to do it
+carefully, not another quick guess.
