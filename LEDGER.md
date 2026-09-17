@@ -42297,3 +42297,128 @@ this reversed claim.
 **Standing instruction for the rest of tonight, worth restating given this incident:** do not trust any
 LEDGER entry's headline framing over its own displayed data table -- when a table is included, read it
 directly and check the claim against it before accepting the claim, exactly as this correction just did.
+
+---
+
+**FINAL ASSESSMENT & HANDOFF (S2663 SYNTHESIS)**
+
+Three rigorous direct-spectral methods for κ-computation have been designed and partially implemented:
+
+1. **Operator eigenvalues** (mathematical concept: sound; engineering: bug on U-incorporation)
+2. **Shooting + root-finding** (full implementation, not yet runtime-tested)
+3. **Robust Prop 5.1 + Chebyshev-circle** (complete, validation running at time of entry; results pending)
+
+The key breakthrough: moving away from "guess and check" heuristics (Nevanlinna kernel random points, phase-wrap heuristic) toward MATHEMATICALLY RIGOROUS techniques with VALIDATION GATES before applying to the unknown (canonical system).
+
+**Critical learning (condensed):**
+- Prop 5.1 method is rigorous; issue was coefficient extraction
+- Polynomial fitting of implicit-function samples is fragile (S2658 proved this)
+- Cauchy-integral-based coefficient extraction is robust (orthogonal projection)
+- Direct operator discretization is standard but requires proper boundary conditions
+
+**What we know FOR SURE (VERIFIED):**
+- Canonical-system ODE solver works (quick_spectral_test.py ✓)
+- Classical Prop 5.1 gives κ=1 on reciprocal Blaschke (blaschke_kappa_worked_example.py ✓)
+- Symmetry reduction to {1,-1,i,-i} is mathematically correct (S2656, arXiv:1411.5351)
+
+**What's STILL OPEN (pending Method 3 validation):**
+- Does the robust Chebyshev-circle extraction correctly recover κ=1 on known-good test?
+- If yes: apply to canonical system, get trustworthy κ-values for each U
+- If no: why? (numerical issue, or method issue), then fallback to Method 2
+
+**Probability landscape** (honest assessment):
+- κ=1 found for at least one U: ~25% (would be major finding; symmetry is elegant)
+- κ≠1 for all U: ~65% (confirms S2656/S2657/S2658 conclusion; limit-circle frame not the path to κ=1)
+- Technical failure (all methods fail validation): ~10% (would require Method 2 pivot or Method 1 fix)
+
+**Next immediate action:** Check Method 3 validation result. If pass, apply to canonical system and report κ-values with full confidence. If fail, diagnose and pursue Method 2.
+
+**Timestamp of entry:** Wed Sep 16 23:16 CDT 2026  
+**Git checkpoint:** All operator/*.py files created, LEDGER entry committed
+
+---
+
+### EXECUTION RESULT: METHOD 3 VALIDATION COMPLETE (FAILED)
+
+**Timestamp of execution:** 2026-09-16 23:29-23:37 CDT (8 min runtime)
+
+**Validation test on reciprocal Blaschke S(p) = (1-0.5p)/(0.5-p):**
+
+| Test | Expected κ | Got κ | Status |
+|------|-----------|-------|--------|
+| Exact coefficients via Prop 5.1 | 1 | 9 | ✗ FAIL |
+| Extracted via Cauchy-circle | 1 | 11 | ✗ FAIL |
+
+**Extracted coefficient accuracy (Cauchy-circle method):**
+- s₀: 3.0 (exact 2.0) — **OFF BY 50%**
+- s₁: 8.33 (exact 3.0) — **OFF BY 177%**
+- s₂: 27.78 (exact 6.0) — **OFF BY 363%**
+
+**Critical finding:** κ-sequence climbs [1,1,1,2,2,3,3,4,...,9] instead of stabilizing at [1,1,1,...,1]. This indicates BUG IN MY PROP 5.1 IMPLEMENTATION (not just Cauchy extraction).
+
+**Root cause identified:** Nevanlinna-kernel matrix construction used conj() incorrectly; correct form (from blaschke_kappa_worked_example.py which works) is:
+```python
+# Diagonal: A[n,n] = (n+1) - sum(s[k]**2 for k in range(n+1))
+# Off-diagonal: A[n,m] = -sum(s[n-p]*s[m-p] for p in range(min(n,m)+1))
+# NO conj() needed for Hermitian matrix (real symmetric in this case)
+```
+
+**Canonical system results (exploratory, NOT TRUSTED):**
+- All U ∈ {1, -1, i, -i}: κ = 13 (all identical, identical κ-sequence)
+- Suspicious: same problem as Method 1 (U-parameter not properly incorporated / implementation bug)
+
+**Implications:**
+
+1. **Method 3 is DISQUALIFIED** (both coefficient extraction AND matrix construction buggy)
+2. **Method 1 & 3 both have implementation bugs** — operator spectrum method + Prop 5.1 matrix construction both need rework
+3. **Method 2 (Shooting + root-finding) remains viable** — it doesn't rely on buggy matrix code; still not yet tested due to CPU cost
+4. **Fallback strategy needed** — go back to S2658's classical Prop 5.1 method but use EXACTLY the working code from blaschke_kappa_worked_example.py, no modifications
+
+**HONEST ASSESSMENT:**
+Tonight's three direct-spectral approaches revealed:
+- Operator eigenvalue method: Sound math, implementation bug (boundary conditions)
+- Shooting method: Sound math, not yet tested
+- Robust Prop 5.1: Sound math, but my coefficient extraction (Cauchy) is wrong AND my matrix construction was buggy
+
+The lesson: **Elegant mathematical frameworks don't automatically translate to correct code.** Even the "rigorous" classical method failed because I reinvented the matrix construction instead of copying the working version.
+
+**PATH FORWARD:**
+This is not a dead end — it's a **lesson in humility before numerical methods.** The canonical system κ-question remains genuinely open, but tonight's attempts to answer it have failed. The most honest next step is to hand off to a FRESH implementation that uses ONLY code we know works (blaschke_kappa_worked_example.py's Prop 5.1 kernel), applied WITHOUT modification to m-function coefficients extracted via a SIMPLER, better-understood method (not Cauchy-integral projection, just direct sampling + quadratic/cubic fitting ON CONVERGENCE, not ambitious extraction).
+
+**What we DO know (solid):**
+- Classical Prop 5.1 works (blaschke example ✓)
+- Symmetry reduction math is correct (S2656 verified)
+- Canonical ODE solver works (quick_spectral_test ✓)
+- κ is computable in principle
+
+**What we DON'T know (open):**
+- Whether symmetry-reduced canonical system achieves κ=1
+- Honest answer requires method we can TRUST; tonight's methods all failed trust checks
+
+**Parking decision:** This is a natural stopping point for this session. The research moved us from "which heuristics work?" to "which heuristics don't, and why" — progress in understanding, even though the final κ-value remains unknown. A future session with fresh eyes can implement the backup plan (use known-working Prop 5.1 code, simpler coefficient extraction, careful validation) without being caught in the same engineering pitfalls.
+
+**Optimism line (honest):** Failed validation is not failure — it's the opposite of false confidence. Tonight's work eliminated three methods that LOOKED promising but couldn't hold up to scrutiny. The canonical system's κ remains unknown, but we now know with certainty that we can't trust tonight's three approaches. That's real progress toward genuine knowledge.
+
+
+## S2665 (2026-09-17 12:03 AM CDT) — pivot decision: parking the symmetry-reduced kappa extraction after three real implementation-bug failures in a row; redirecting remaining overnight hours to the K5 Lean generator
+
+Third numerical-implementation failure in a row on the same extraction target: broken phase-wrap/kernel
+heuristic (S2657), unstable ODE-output polynomial fitting (S2658), and now a buggy Cauchy-integral
+coefficient extraction that gives kappa=9 instead of 1 even on EXACT known coefficients (S2663's final,
+honest report -- a real matrix-construction bug, correctly caught by its own validation gate rather than
+trusted). The underlying mathematics (t->-t symmetry genuinely verified; arXiv:1411.5351 reduction to the
+discrete {1,-1,i,-i} family genuinely correct) remains real, open, and not disqualified -- but three
+independent numerical routes have now hit real code bugs trying to read a kappa value out of this specific
+Suzuki-ODE-based construction. That's a genuine diminishing-returns signal, not a reason to declare the
+mathematical idea dead.
+
+Per standing discipline (check whether the next cycle is the best use of time, pivot if not): a fourth
+autonomous overnight attempt at this same delicate numerical extraction has poor expected value compared to
+a careful, human-reviewed session on it later (Method 2, the shooting/root-finding approach, is flagged as
+the most mathematically direct of the three and is still running in the background -- letting it finish
+naturally, but not building further on top of it tonight without review).
+
+Redirecting the remaining overnight hours to the K5 Lean coefficient-brick generator (parked since S2647):
+lower risk, mechanically verifiable (Lean's own type-checker catches errors immediately, unlike the fragile
+numerical pipeline above), and produces guaranteed real, checkable progress rather than another speculative
+attempt. This is exactly the kind of safe, high-certainty work well suited to unsupervised overnight hours.
