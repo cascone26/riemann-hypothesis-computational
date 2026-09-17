@@ -40389,3 +40389,37 @@ template: applied preemptively (not discovered through failure) for the second b
 clean both times. K=5 now has Key, PolyVanish, LeadingCoeff, SecondCoeff all EXIT0 -- 4 of the ~19 bricks
 K=4's pattern implies (16 ordinal coefficients + a few Reduced* files). Self-sustaining mechanical arc,
 continuing.
+
+## S2634 (2026-09-16 07:22 PM CDT) — m-function construction gap PRECISELY diagnosed: not circular, not abandoned, a named specific missing bridge with 3 concrete candidate constructions
+
+Dispatched a diagnosis (not fresh literature survey -- reading our OWN code/LEDGER around §974/§982-989)
+of exactly why the ζ Weyl m-function pole-count route stalled. Result, precise and honest:
+
+**What's already correct (verified, own code):** M_σ=arch-prime has kappa=1 (§953-954, robust). The
+NAIVE Suzuki-truncated m-function attempt (m=vp/vm, §974) failed for a real mathematical reason, not a
+numerical one: the naive ratio v-hat+/v-hat- is not real-symmetric (defect 3.5-5.2), violating the
+generalized-Nevanlinna definition outright -- a genuine category error, not a sampling bug. This was
+ALREADY FIXED in a later arc (§982-987, SUZUKI_WEYL_CONSTRUCTION.md): the correct Cayley-transformed Weyl
+function Theta(z)=-(z-i)v+/((z+i)v-) -> m(z)=i(1+Theta)/(1-Theta) IS real-symmetric to machine precision
+(defect 4e-16) and gives kappa=0 at every FINITE truncation a -- which is CORRECT per Suzuki's own Thm 1.5
+(finite-a characteristic functions are provably real-zeroed, no UHP pole possible at finite support).
+
+**The genuine open frontier:** does kappa stay 0 as a->infinity, or does the s=1 pole finally enter the
+Weyl function only in the limit? §988 attacked this 5 independent ways (pole-alignment, phase-continuity,
+Kaltenbäck-Woracek rank-forcing, function-field unitarity, energy-penalty) -- 0/5 survived, all reduced to
+circularity. §989 confirms via primary-source deep-read: Suzuki's OWN papers (2606.09096, 1204.1827)
+explicitly state the a->infinity limit "requires detailed arithmetic analysis which lies beyond their
+approach" -- this is the FIELD's own open frontier, not a gap unique to us or a fixable artifact.
+
+**Three concrete candidate next constructions, precisely named (not vague):**
+(A) inverse-spectral: build a canonical-system Hamiltonian H(t) directly from M_σ's OWN known spectral
+data (its eigenvalues/eigenvectors are fully computable now), via the same Krein-string/inverse-spectral
+machinery this project already uses elsewhere (operators/krein_string_zeta.py, weyl_*) for a related but
+different object (the |zeta|^2 measure's Krein string) -- has NOT yet been pointed at M_σ itself.
+(B) build from the ALREADY-PROVEN PSD restriction (arch-prime)|pole-perp (§976, true for all windows, not
+just finite a) and ask whether augmenting it recovers the pole direction's kappa=1 contribution cleanly.
+(C) boundary-at-infinity: build the canonical system with boundary conditions AT infinity directly
+(encoding the a->infinity limit structurally) rather than approximating via finite a and taking a limit.
+
+Attempting (A) directly now -- most concrete, most connected to tools we already have working elsewhere,
+least likely to repeat the finite-truncation category error that (naive-Suzuki) already hit.
