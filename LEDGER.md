@@ -42782,3 +42782,35 @@ self-resolution mechanism worked exactly as designed.
 the m-function extraction (m_U,a = (X21+U*X22)/(X11+U*X12) per the von Neumann extension formula). This is
 the first run all session where the four U in {1,-1,i,-i} tests are actually computing four DIFFERENT
 quantities. Result pending; will be verified directly (not trusted from any printed summary) once complete.
+
+## S2676 (2026-09-17 05:28 AM CDT) — CrossK5SeventhCoeff recheck VERIFIED EXIT0: all 16 K5 bricks now genuinely complete. U-fix (S2674) CONFIRMED working but runaway pattern persists across all 4 U
+
+**K5 family: TRUE completion.** CrossK5SeventhCoeff's recheck (queued since ~01:06, auto-fired once the
+queue emptied after Sixteenth) came back LEAN_EXIT=0, clean axioms. Synced and committed. All 16 K5
+coefficient bricks (LeadingCoeff through SixteenthCoeff) plus Key and PolyVanish are now independently
+verified EXIT0 -- a genuinely complete, checkable family, built almost entirely by the validated generic
+generator (gen_k5_coeff_final.py) across a single overnight session.
+
+**U-fix (S2674) result:** reran the canonical-system kappa computation with the corrected U-dependent
+m-function extraction. CONFIRMED the fix is real and working: U=1 now gives a DIFFERENT kappa-sequence
+(final=15) than U=-1, U=i, U=-i (all three still =16) -- this is the first time all session that different
+U-values have produced ANY difference at all, proving U is now genuinely entering the computation (previously
+all 4 were bit-for-bit identical, per S2674's root-cause finding).
+
+**However, the underlying runaway (never-stabilizing, kappa=mu+1-ish) pattern persists for ALL four U in the
+family** at this specific (a=8, z_center=1+i, z_radius=0.15) parametrization. With four real implementation
+bugs now fixed (matrix off-diagonal range, Nyquist aliasing, precision ceiling, U-wiring) and the instrument
+independently validated against the Blaschke ground truth, this is a substantially more trustworthy negative
+result than anything produced earlier this session -- but it is still a negative result at ONE specific
+(a, z_center) choice, not a general disproof. The unresolved S2673 sign-convention flag (Im(m(z))<0 for
+Im(z)>0, opposite of the Herglotz property expected for an ordinary Nevanlinna function) remains the leading
+candidate explanation for why the kernel matrix stays negative-definite regardless of U -- worth checking
+directly against the mathematical derivation of the Weyl m-function's expected sign convention next, before
+trying different (a, z_center) parameter choices.
+
+**Best-use-of-time check (per standing discipline):** four real, useful, verified bug-fixes and a completed
+16-brick Lean family in one overnight session is substantial, checkable progress. The kappa thread is now
+resting on validated tooling for the first time -- continuing to push on it (sign-convention check next) is
+justified rather than diminishing returns, since each fix this session has been a genuine unlock rather than
+a repeat of the same failure mode. Session has been running ~5.5 hours; will continue per standing
+instruction until further word.
