@@ -183,7 +183,7 @@ def test_on_blaschke_robust():
         else:
             return a_blaschke**(-(k+1)) - a_blaschke**(-(k-1))
 
-    s_exact_array = np.array([s_exact(k) for k in range(31)], dtype=np.complex128)
+    s_exact_array = np.array([s_exact(k) for k in range(21)], dtype=np.complex128)
 
     print(f"\nReciprocal Blaschke: a = {a_blaschke}")
     print(f"EXACT coefficients:")
@@ -192,7 +192,9 @@ def test_on_blaschke_robust():
     print(f"  s_2 = {s_exact(2):.10f}")
 
     # Apply Prop 5.1 to exact coefficients
-    kappas_exact, kappa_exact_final = apply_prop_5_1_kappa(s_exact_array, MU_MAX=25)
+    # S2672: K/MU_MAX capped at 20/15 (was 30/25) -- validated-safe precision range, see
+    # compute_kappa_canonical_robust's comment for the diagnostic that established this ceiling.
+    kappas_exact, kappa_exact_final = apply_prop_5_1_kappa(s_exact_array, MU_MAX=15)
 
     print(f"\nProp 5.1 on EXACT coefficients:")
     print(f"  κ-sequence: {kappas_exact[:15]}")
@@ -214,7 +216,7 @@ def test_on_blaschke_robust():
     theta, z_circle, m_values = m_function_on_circle(z_center, z_radius, m_blaschke, n_points=200)
 
     # Extract coefficients from circle integral
-    s_extracted = extract_taylor_coefficients_from_circle(z_center, z_radius, m_values, K=30)
+    s_extracted = extract_taylor_coefficients_from_circle(z_center, z_radius, m_values, K=20)
 
     print(f"\nChebyshev-circle extraction:")
     print(f"  s_0 extracted = {s_extracted[0]:.10f}  (exact: {s_exact(0):.10f})")
@@ -222,7 +224,7 @@ def test_on_blaschke_robust():
     print(f"  s_2 extracted = {s_extracted[2]:.10f}  (exact: {s_exact(2):.10f})")
 
     # Apply Prop 5.1 to extracted coefficients
-    kappas_extracted, kappa_extracted_final = apply_prop_5_1_kappa(s_extracted, MU_MAX=25)
+    kappas_extracted, kappa_extracted_final = apply_prop_5_1_kappa(s_extracted, MU_MAX=15)
 
     print(f"\nProp 5.1 on EXTRACTED coefficients:")
     print(f"  κ-sequence: {kappas_extracted[:15]}")
@@ -286,11 +288,20 @@ def compute_kappa_canonical_robust(a, U_values, z_center=None, z_radius=0.15, n_
         print(f"\nProcessing U = {U}...")
 
         # Define m_U(z) as a callable
-        def m_U_func(z):
+        # S2674 FIX: extract_weyl_m_function() IGNORES U entirely (hardcoded X21/X11 ratio) --
+        # this was the root-cause bug making all 4 U-values compute the identical m-function.
+        # Correct U-dependent Weyl extraction (per symmetry_forced_extension_selection.py:209,
+        # the von Neumann self-adjoint-extension boundary condition): m_U,a = (X21+U*X22)/(X11+U*X12).
+        def m_U_func(z, U=U):
             X_final = solve_canonical_system_finite_a(z, a)
             if X_final is None:
                 return np.nan + 1j*np.nan
-            m_z = extract_weyl_m_function(X_final, z, a)
+            X11, X12 = X_final[0, 0], X_final[0, 1]
+            X21, X22 = X_final[1, 0], X_final[1, 1]
+            denom = X11 + U * X12
+            if abs(denom) < 1e-10:
+                return np.inf + 1j*np.inf
+            m_z = (X21 + U * X22) / denom
             return m_z if not np.isnan(m_z) else (np.inf + 1j*np.inf)
 
         # Evaluate on circle
@@ -319,10 +330,16 @@ def compute_kappa_canonical_robust(a, U_values, z_center=None, z_radius=0.15, n_
                         m_values_clean[i] = m_values[nearest]
 
             # Extract coefficients via Cauchy integral
-            s_extracted = extract_taylor_coefficients_from_circle(z_center, z_radius, m_values_clean, K=30)
+            # S2672 precision-ceiling fix: K=30 gives double-precision garbage for coefficients
+            # this size (|s_K| ~ 1e16 at K=30, at the edge of float64 precision). Direct diagnostic
+            # on the Blaschke ground-truth (same z_center/z_radius geometry) showed kappa stable
+            # and CORRECT through K=20 (|s_K|~7e10), breaking down starting K=25. Since Prop 5.1's
+            # kappa is supposed to stabilize quickly (immediate from mu=0 on exact coefficients),
+            # a genuine kappa value doesn't need K=30 -- K=20 with margin (MU_MAX=15) is validated-safe.
+            s_extracted = extract_taylor_coefficients_from_circle(z_center, z_radius, m_values_clean, K=20)
 
             # Apply Prop 5.1
-            kappas, kappa_final = apply_prop_5_1_kappa(s_extracted, MU_MAX=25)
+            kappas, kappa_final = apply_prop_5_1_kappa(s_extracted, MU_MAX=15)
 
             results[U] = {'kappa': kappa_final, 'kappas': kappas}
 
