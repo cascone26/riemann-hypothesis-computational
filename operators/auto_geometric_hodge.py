@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; tau, ns = build_tau_np(64, 14); import numpy as np; hodge_form = np.eye(tau.shape[0]) - np.outer(ns, ns) / np.dot(ns, ns); signature = np.linalg.eigh(hodge_form)[0]; print('Hodge form signature:', signature)

@@ -1,0 +1,179 @@
+{
+  "conductors": [
+    3,
+    4,
+    5,
+    7,
+    8,
+    11,
+    12,
+    13,
+    15,
+    16,
+    20,
+    24
+  ],
+  "margins": [
+    {
+      "q": 3,
+      "parity": 1,
+      "min_eig": 0.3851714367552283,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 0.3851714367552283,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.430999575646418,
+      "margin_to_floor": 0.3851714367552283
+    },
+    {
+      "q": 4,
+      "parity": 0,
+      "min_eig": 0.8635881438409653,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 0.8635881438409653,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.47678559951603966,
+      "margin_to_floor": 0.8635881438409653
+    },
+    {
+      "q": 5,
+      "parity": 0,
+      "min_eig": 1.5243751572604733,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 1.5243751572604733,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.5122999987267761,
+      "margin_to_floor": 1.5243751572604733
+    },
+    {
+      "q": 7,
+      "parity": 1,
+      "min_eig": 0.22197986989622773,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 0.22197986989622773,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.565851218398228,
+      "margin_to_floor": 0.22197986989622773
+    },
+    {
+      "q": 8,
+      "parity": 0,
+      "min_eig": 28.390208607690823,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 28.390208607690823,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.5871033995923655,
+      "margin_to_floor": 28.390208607690823
+    },
+    {
+      "q": 11,
+      "parity": 1,
+      "min_eig": 0.11933202464859669,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 0.11933202464859669,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.6377868850459376,
+      "margin_to_floor": 0.11933202464859669
+    },
+    {
+      "q": 12,
+      "parity": 1,
+      "min_eig": 29.34126484033087,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 29.34126484033087,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.6516351757990695,
+      "margin_to_floor": 29.34126484033087
+    },
+    {
+      "q": 13,
+      "parity": 0,
+      "min_eig": -0.6738159702251925,
+      "n_neg": 3.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 0.2988356604820273,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.6643743683837724,
+      "margin_to_floor": 0.2988356604820273
+    },
+    {
+      "q": 15,
+      "parity": 1,
+      "min_eig": 42.748877451434396,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 42.748877451434396,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.687149575009806,
+      "margin_to_floor": 42.748877451434396
+    },
+    {
+      "q": 16,
+      "parity": 0,
+      "min_eig": 41.79292637355533,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 41.79292637355533,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.6974211996686912,
+      "margin_to_floor": 41.79292637355533
+    },
+    {
+      "q": 20,
+      "parity": 0,
+      "min_eig": 42.825650361111606,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 42.825650361111606,
+      "first_zero_height": 5.0,
+      "local_density_at_edge": 0.7329355988794278,
+      "margin_to_floor": 42.825650361111606
+    },
+    {
+      "q": 24,
+      "parity": 1,
+      "min_eig": 44.85525703005751,
+      "n_neg": 0.0,
+      "n_small": 0.0,
+      "smallest_nonneg": 44.85525703005751,
+      "first_zero_height": 5.056198322111862,
+      "local_density_at_edge": 0.7637318456995336,
+      "margin_to_floor": 44.85525703005751
+    }
+  ],
+  "correlations": {
+    "linear_floor_diff": {
+      "coef": -148.34679095434527,
+      "intercept": -72.13305028517911,
+      "R2": 0.5751206714338498,
+      "residuals": 1934.0785433333979
+    },
+    "saturation": {
+      "coef": -367.08637998439826,
+      "intercept": 247.30572026653496,
+      "R2": 0.5518258095550517
+    },
+    "exponential": {
+      "coef": -263.98939056893005,
+      "intercept": 162.5539069986069,
+      "R2": 0.5568208012374032
+    },
+    "log_q": {
+      "coef": 23.65263324066461,
+      "intercept": -34.20845840288493,
+      "R2": 0.5746805433614415
+    }
+  },
+  "best_fit": {
+    "name": "linear_floor_diff",
+    "R2": 0.5751206714338498,
+    "coef": -148.34679095434527,
+    "intercept": -72.13305028517911
+  }
+}

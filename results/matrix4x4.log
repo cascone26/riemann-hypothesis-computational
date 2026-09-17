@@ -1,8 +1,0 @@
-§198 4×4 even Weil block (k=1,3,5,7)  M=800
-a=0.440 Sylvester minors: ['0.008286', '9.554e-5', '1.076e-5', '1.025e-5']  ALL>0 (PD✓)
-a=0.480 Sylvester minors: ['0.005165', '2.163e-5', '1.529e-6', '1.647e-6']  ALL>0 (PD✓)
-a=0.520 Sylvester minors: ['0.001592', '1.961e-6', '2.232e-7', '2.535e-7']  ALL>0 (PD✓)
-a=0.549 Sylvester minors: ['0.0004458', '1.102e-7', '1.026e-7', '3.454e-8']  ALL>0 (PD✓)
-
-READ: all 4 minors >0 at every a ⟹ the 4×4 is PD ⟹ positivity holds (mod tail). The minors' a-shapes guide the
-closed-form/Arb-certified proof. det(4×4)→0-ish tracks the near-null (last minor is the tightest).

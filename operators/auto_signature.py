@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 14); signature_matrix = np.sign(np.linalg.eigh(tau)[0]); signature_count = np.sum(signature_matrix == -1); print(f'Negative Signature Count: {signature_count}')

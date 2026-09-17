@@ -1,0 +1,11 @@
+K-convergence @ a=0.5 (exact-Q K=80 float64 -> 1.019e-6):
+  K=26: lam=1.077028e-6
+  K=50: lam=1.05001e-6
+  K=80: lam=1.018887e-6
+CERTIFY a>=0.9 (past float64 floor), K-converged + Cholesky PD:
+  a=0.9 K=50: lam=7.06741e-23 PD=True
+  a=0.9 K=70: lam=5.31187e-23 PD=True
+  a=1.0 K=55: lam=1.12095e-29 PD=True
+  a=1.0 K=75: lam=8.23736e-30 PD=True
+  a=1.2 K=70: lam=1.13169e-45 PD=True
+  a=1.2 K=90: lam=3.04064e-48 PD=True

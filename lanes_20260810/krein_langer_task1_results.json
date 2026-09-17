@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-08-10T06:28:28.885021",
+  "parameters": {
+    "a": 0.2,
+    "K": 80,
+    "NG": 320
+  },
+  "inertia": {
+    "pos": 79,
+    "zero": 0,
+    "neg": 1
+  },
+  "lambda_min": -0.13262822265757135,
+  "lambda_max": 0.9204614643831804,
+  "rank_K_minus": 1,
+  "pole_neg_overlap": 0.9845218470575553,
+  "M_sigma_Frobenius": 6.694392715922032,
+  "K_plus_Frobenius": 6.6930787825592395,
+  "K_minus_Frobenius": 0.13262822265757135
+}

@@ -1,0 +1,9 @@
+g(t) as off-line-zero detector (move zero #1, g1=14.1347, to Re=1/2+delta):
+ delta   max_t g(t) [t<=30]   breaks g<=0?
+ 0.00    -0.020464            No
+ 0.02    -0.019416            No
+ 0.05    -0.013094            No
+ 0.10    +0.053816            YES (t~29.3)
+ 0.20    +1.883657            YES
+Sensitivity: off-line contribution ~ cosh(delta*t)/gamma^2; breaks margin ~0.02 when cosh(delta*T)/gamma^2 > margin.
+=> verified g<=0 up to t=T excludes off-line zeros at height gamma with delta >~ arccosh(margin*gamma^2)/T.

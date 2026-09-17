@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; tau, ns = build_tau_np(64, 14); import numpy as np; cohomology_form = np.eye(tau.shape[0]) - np.outer(ns, ns) / np.dot(ns, ns); intersection_signature = np.linalg.eigh(cohomology_form)[0]; print('Cohomological intersection signature:', intersection_signature)

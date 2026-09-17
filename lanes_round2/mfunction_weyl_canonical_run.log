@@ -1,0 +1,51 @@
+============================================================================================
+§977 WEYL m-FUNCTION FROM CANONICAL SYSTEM (true Weyl normalization)
+============================================================================================
+
+CONSTRUCTION 1: m(z) from canonical system using M_σ = arch - prime
+--------------------------------------------------------------------------------------------
+  λ_a = -7.186954e+00, λ shift = 0.2
+  Weyl normalization: npl=5.599066e+00, nmi=5.599066e+00
+
+CONSTRUCTION 2: m(z) from canonical system using Q = arch + pole - prime
+--------------------------------------------------------------------------------------------
+  λ_a = 5.960733e-14, λ shift = 0.2
+  Weyl normalization: npl=6.905228e+00, nmi=6.905228e+00
+
+============================================================================================
+NEVANLINNA KERNEL ANALYSIS
+============================================================================================
+
+Control tests (validate kernel code):
+  m(z)=z   (N₀, expect κ=0): κ=0 ✓
+  m(z)=z²  (N₁, expect κ=1): κ=1 ✓
+  m(z)=-1/z (N₀, expect κ=0): κ=0 ✓
+
+--------------------------------------------------------------------------------------------
+ζ Weyl m-function κ analysis:
+  κ(m from M_σ only):     12
+    Eigenvalues of K_m: min=-1.194e-01, max=6.710e-02
+  κ(m from Q with pole):  13
+    Eigenvalues of K_m: min=-2.938e+00, max=5.113e-01
+
+  Δκ from pole: +1
+
+============================================================================================
+POLE LOCATION AND RESIDUE
+============================================================================================
+
+Sample values near Re(z)=1:
+  z=1.00+0.10j: m_no_pole=9.941e-01+3.547e-02j, m_with_pole=1.448e-01+8.347e-01j
+  z=1.00+0.01j: m_no_pole=9.988e-01+3.600e-02j, m_with_pole=1.641e-01+9.698e-01j
+  z=0.95+0.10j: m_no_pole=9.945e-01+3.298e-02j, m_with_pole=2.133e-01+8.234e-01j
+  z=1.05+0.10j: m_no_pole=9.936e-01+3.813e-02j, m_with_pole=7.410e-02+8.403e-01j
+
+Eigenvalue structure (poles of m(z)=(A-zI)^{-1}):
+  Poles of m_no_pole:   [-1.07804314e+01  1.67272883e-13  1.83398125e-13] ... 6.935489697417554
+  Poles of m_with_pole: [8.94109929e-14 1.65663499e-13 1.69417851e-13] ... 6.935359236523206
+  New eigenvalue from pole: λ_min(Q) - λ_min(M_σ) = 1.078043e+01
+
+✓ Results saved to lanes_round2/mfunction_weyl_results.json
+✓ Saved interpretation to lanes_round2/mfunction_weyl_interpretation.md
+
+============================================================================================

@@ -1,0 +1,9 @@
+g(t)=2 sum_gamma (cos(gamma t)-1)/gamma^2 = -4 sum_gamma sin^2(gamma t/2)/gamma^2
+zero-side (2000 zeros) vs prime-side (cycle 302), constant offset 8.85e-4 = truncation tail:
+ t   g_zero      g_prime     diff
+ 1  -0.043122   -0.044007   8.85e-4
+ 2  -0.052456   -0.053341   8.85e-4
+ 5  -0.044485   -0.045371   8.86e-4
+ 8  -0.030065   -0.030949   8.84e-4
+16  -0.039912   -0.040803   8.91e-4
+all (cos(gamma t)-1) terms <=0 : True (gamma real)

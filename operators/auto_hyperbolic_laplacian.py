@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; tau, ns = build_tau_np(64, 14); import numpy as np; laplacian_approx = np.linalg.matrix_power(tau, 2) - 2 * np.eye(tau.shape[0]); spectrum = np.linalg.eigh(laplacian_approx)[0]; print('Approximate Laplacian spectrum:', spectrum)

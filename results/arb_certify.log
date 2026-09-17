@@ -1,7 +1,0 @@
-§199.3c RIGOROUS Arb certification, even 4×4 Weil block @ a=0.549, prec=700, NLERCH=1500
-  pivot 0: 2.387147e-04  +/- 5.80e-07   lower=2.381351e-04  >0 OK
-  pivot 1: 1.483471e-05  +/- 2.68e-05   lower=-1.199475e-05  FAIL
-  pivot 2: nan  +/- inf   lower=nan  FAIL
-  pivot 3: nan  +/- inf   lower=nan  FAIL
-
-not certified

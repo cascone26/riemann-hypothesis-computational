@@ -1,0 +1,41 @@
+{
+  "task": "m-function construction (Gap 3 bridge)",
+  "a": 1.5,
+  "K": 80,
+  "phi_cyclic": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    "..."
+  ],
+  "kappa_M_sigma_only": 0,
+  "kappa_Q_with_pole": 4,
+  "kappa_change": 4,
+  "eigenvalues_M_sigma_min_5": [
+    -0.13262822265757143,
+    0.1282542681985439,
+    0.22747820364027568,
+    0.2962840196286541,
+    0.34587606796579773
+  ],
+  "eigenvalues_Q_min_5": [
+    8.972115695296027e-14,
+    1.639502654716659e-13,
+    1.707423858899221e-13,
+    1.91576030768508e-13,
+    1.9464403308478045e-13
+  ],
+  "pole_rank_expected": "\u22642 (\u03b6 has single simple pole at s=1)",
+  "pole_rank_observed": 2,
+  "handles": [
+    "\u03ba count via nevanlinna_kappa (HANDLE: code run, observed)",
+    "Eigenvalue decomposition via scipy.linalg.eigh (HANDLE: code run, verified)"
+  ],
+  "reports": [
+    "Krein-Langer \u00a71011.2081: single pole \u27f9 \u03ba=1 (REPORT: literature)",
+    "Suzuki canonical system: m(z) as Q-function (REPORT: arXiv:2206.03682)",
+    "Weil kernel M_\u03c3 = arch - prime (REPORT: classical theory)"
+  ]
+}

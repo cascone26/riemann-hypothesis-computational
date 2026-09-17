@@ -1,0 +1,17 @@
+Suzuki screw function g(t) = boundary+prime+arch_core+arch_tail (eq 1.3), UNCONDITIONAL
+Cor 4.3: RH <= g(t)<=0 for t>=t0.  Check sign of g(t):
+    t             g(t)       boundary          prime    arch_core   sign
+    1        -0.044007        -1.0210         0.1504       2.6861 <=0 OK
+    2        -0.053341        -4.3446         1.7459       5.3722 <=0 OK
+    3        -0.039709       -10.8193         6.1280       8.0583 <=0 OK
+    5        -0.045371       -41.0583        31.5535      13.4305 <=0 OK
+    8        -0.030949      -210.4659       193.1723      21.4887 <=0 OK
+   12        -0.029232     -1605.7251      1577.7522      32.2331 <=0 OK
+   16        -0.040803    -11915.8333     11877.1130      42.9775 <=0 OK
+Traceback (most recent call last):
+  File "/tmp/gscan.py", line 10, in <module>
+    g=screw_g(float(t),Lam,Nmax)
+  File "/Users/scones/projects/riemann/operators/suzuki_screw_lambda_a.py", line 80, in screw_g
+    prime = np.sum(L[nz] / np.sqrt(ns[nz]) * (at - np.log(ns[nz])))
+                                   ~~^^^^
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 485165194 but size of corresponding boolean axis is 59999999

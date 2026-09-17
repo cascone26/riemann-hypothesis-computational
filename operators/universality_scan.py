@@ -522,11 +522,20 @@ def main():
     # Save results
     output_file = os.path.join(os.path.dirname(__file__), "universality_scan_results.json")
     with open(output_file, 'w') as f:
-        # Convert to JSON-serializable form
+        # Convert to JSON-serializable form (convert numpy types to Python floats/ints)
+        def make_serializable(obj):
+            if isinstance(obj, (np.integer, np.floating)):
+                return float(obj)
+            elif isinstance(obj, dict):
+                return {k: make_serializable(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [make_serializable(item) for item in obj]
+            return obj
+
         results_for_json = {
             'conductors': conductors,
-            'margins': [m.to_dict() for m in margins],
-            'correlations': corr['correlations'],
+            'margins': [make_serializable(m.to_dict()) for m in margins],
+            'correlations': make_serializable(corr['correlations']),
             'best_fit': {
                 'name': best_fit[0],
                 'R2': float(best_fit[1]['R2']),

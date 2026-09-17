@@ -82,12 +82,18 @@ def main():
     print("=" * 74)
 
     # load enough zeros to saturate the Gaussian at the largest w
-    zeros = []
-    with open("data/zeros_100k.txt") as f:
-        for line in f:
-            zeros.append(line.strip())
-            if len(zeros) >= 20000:
-                break
+    import numpy as _np, os as _os
+    _zpath = "data/zeros_100k.txt"
+    if _os.path.exists(_zpath):
+        zeros = []
+        with open(_zpath) as f:
+            for line in f:
+                zeros.append(line.strip())
+                if len(zeros) >= 20000:
+                    break
+    else:  # fallback to the available .npy (2026-08-26, Olympus-independent local check)
+        _z = _np.load("zeros100k.npy")[:20000]
+        zeros = [mp.nstr(mp.mpf(float(v)), 20) for v in _z]
     print(f"Loaded {len(zeros)} zeros (γ1={zeros[0]}, γ_last={zeros[-1]})\n")
 
     print(f"{'w':>6}  {'A+B-P (primes)':>22}  {'Σ_γ h(γ) (zeros)':>22}  {'|diff|':>12}  {'rel':>10}")

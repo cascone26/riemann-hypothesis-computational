@@ -1,7 +1,0 @@
-THETA SCAN — does a single theta lock W-zeros onto zeta zeros? gam= [14.13 21.02 25.01 30.42 32.94 37.59 40.92 43.33]
-
-a=1.0: BEST theta=3.011  mean|zeta-nearestWzero|(first5)=0.0741  (rigid-null best=0.4311)
-  matched: g1=14.13->W=14.17  g2=21.02->W=21.00  g3=25.01->W=24.81  g4=30.42->W=30.43  g5=32.94->W=33.05
-
-a=1.2: BEST theta=1.963  mean|zeta-nearestWzero|(first5)=0.0775  (rigid-null best=0.3695)
-  matched: g1=14.13->W=14.14  g2=21.02->W=21.26  g3=25.01->W=24.96  g4=30.42->W=30.37  g5=32.94->W=32.89

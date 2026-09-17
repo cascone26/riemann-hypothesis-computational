@@ -4338,3 +4338,940 @@ the over-reaches.
 **Where the loop stands / next:** the "prove the uniform bound" lane = RH (confirmed inaccessible 4 ways). The
 PRODUCTIVE lane = bank durable certified output (extend §808/§830/§848 certified positivity + the budget-side floor
 Handle). Resumable from LEDGER §848 + this block. All committed.
+
+---
+
+## Lean Forge Status — L1Bridge Verification (2026-08-10 18:52)
+
+**L1Bridge.lean**: Verified CLEAN.
+- **Exit code**: 0
+- **Sorries**: 0 (none found)
+- **Theorem count**: 12 proven (finitePlace_eq_embedding_norm, finitePlace_mk_is_embedding_norm, 
+  finitePlace_norm_pos_iff, ideal_absNorm_gt_one, ideal_absNorm_ne_zero, 
+  finitePlace_maximalIdeal_is_embedding_norm, finitePlace_mk_maximalIdeal_symm, 
+  adicAbv_eq_embedding_norm, norm_embedding_is_toNNReal, finitePlace_via_toNNReal, 
+  adicAbv_equals_toNNReal, finitePlace_valuation_support)
+- **Contribution**: Bridges FinitePlace absolute values to HeightOneSpectrum valuations and ideal norms. 
+  Core lemma: ‖embedding v x‖ = toNNReal(absNorm_ne_zero v)(v.valuation K x), enabling 
+  product-formula decomposition across valuations.
+
+**Intersection-pairing scaffold status** (required for Hodge-index theorem):
+- **IntersectionPairing.lean**: Exit 1 (BLOCKS). Has 2 sorries (Finsupp symmetry + distributivity) + 
+  type mismatches (InfinitePlace K vs Finset.univ). Bilinear+symmetric pairing STATED but not fully PROVEN.
+- **Other keystones**: KeystoneL2 CLEAN (log_product_formula proven). KeystoneA/B/Close1/Close2 
+  compile but carry sorries. ArakelovDegree has 1 sorry.
+
+**Next brick toward Hodge-index theorem**: Repair IntersectionPairing (close the 2 Finsupp sorries; 
+fix InfinitePlace type issue) → unlock the bilinear+symmetric scaffold → proceed to Hodge-index 
+inequality statement and positivity kernel. The pairing is foundational; no downstream bricks can 
+advance without it.
+
+**Clean exit-0-no-sorry count this session**: 1 new (L1Bridge). Running total in forge: 5 
+(L1Bridge, PrincipalDegree, KeystonePrincipal, KeystoneL2, Degree).
+
+## 2026-08-16 (auto-tick) — NEXT BUILD SCOPED + de-risked: coordinate-free adjunction=>signature (§1026 target)
+Goal: hodge_signature_of_adjunction (B : BilinForm R M)(hsymm)(F S : M)(hFF:B F F=0)(hSS:B S S=0)
+(hFS:B F S=1)(hindep ![F,S])(hneg on {F,S}^perp) : sigPos B.toQuadraticMap = 1 — the coordinate-free
+arithmetic Hodge index from the adjunction relations (what a REAL arithmetic-surface pairing gives:
+F^2=0 fiber, F.S=1 section, negative-definite primitive complement). PROBE DONE: ingredients exist in
+Mathlib LinearAlgebra/BilinearForm/Orthogonal.lean — finrank_orthogonal (hB.Nondegenerate)(W) :
+finrank(B.orthogonal W)=finrank V - finrank W (line 286); isCompl_span_singleton_orthogonal;
+nondegenerate_restrict_of_disjoint_orthogonal. Build plan: P=span{F+S} posdef (B=2>0); N=span{F-S} ⊔
+{F,S}^perp, negdef (a(F-S)+w: -2a^2 + B w w, cross term 0 since w⟂F,S; hneg on w); need B nondegenerate
+on span{F,S} (hyperbolic, det=-1≠0) => complement dim = finrank M-2, plus the F-S line => N dim finrank M-1.
+Then hodgeIndex_signature. Heavy (multi-lemma, ~50+ lines) — do as a focused session, not a timer tick.
+Strictly MORE general than arithB NT (§1023): decouples the conclusion from the (RxR)xV coordinatization,
+so it applies directly to any real arithmetic-surface NS space. Downstream (§1024/§1025) already verified.
+
+## 2026-08-22 (riemann9) — §1026 target CLOSED as §1659 hodge_signature_of_adjunction (HodgeAdjunction.lean, EXIT0)
+The 2026-08-16 scoped build is done: coordinate-free adjunction⟹signature, exactly as planned (P=span{F+S},
+N=span{F-S}⊔perp, restrict-nondegenerate via hyperbolic det). Same session: RECTANGLE-WINDING ARC §1654-§1658
+complete — ∮_∂R (z-p)⁻¹ = 2πi + residue form, branch-cut-free, the Mathlib-missing lemma unblocking the Perron
+σ-shift past s=1.
+
+## 2026-08-22 ~1:15 AM (riemann9 session 1) — WINDING ARC COMPLETE §1649-§1667, 19 EXIT0 bricks
+PNT lane (14): rectangle-winding §1654-§1657 (THE Mathlib-missing lemma, branch-cut-free via real
+log/arctan windingPrim; Complex.log FTC provably fails on the left edge) → §1658 residue form →
+§1660 shift form → §1661 T→∞ deposit limit → §1662 Perron pole shift → §1664 remainder Goursat →
+§1665 ★★★★ FINITE-T PERRON SHIFT IDENTITY (∮F = 2πi·x²/2 on zero-free rectangles, real ζ) →
+§1666 line-shift form → §1667 zero-free box (DLVP §1577 wired in, σ₁(T)=1-c/log(T+2)).
+F1 lane (5): §1649 ArakelovDivisor AddCommGroup, §1650 embFiniteHom bundled, §1652 pairing
+zero/neg/sub API, §1659 ★★ hodge_signature_of_adjunction (closed the scoped §1026 target),
+§1663 hyperbolic witness. De-smoothing (2): §1651 central-difference error, §1653 abs form.
+NEXT LOADED: §1668 = the QUANTITATIVE assembly — instantiate §1666 on §1667's box, bound the
+connectors explicitly via §1628/§1630 (uniform ‖L(Λ)(σ₁(T))‖ needs care as σ₁(T)<1 — the
+connector bound §1630 assumed σ₁>1; the sub-1 connector bound is the genuinely new estimate).
+
+## NEXT ARC LOADED (scoped 1:30 AM): LANDAU LADDER → |ζ'/ζ| = O(log²T) on the box edge
+Mathlib HAS Complex.borelCaratheodory (+_zero) — verified, exact signatures read. The ladder:
+(1) log-of-nonvanishing-function analytic on ball (recon: DifferentiableOn.exists_log-like) +
+BC ⟹ ‖log(f/f0)‖ ≤ 2M‖z‖/(R-‖z‖); (2) Cauchy derivative estimate (Mathlib has, recon exact name)
+⟹ Landau: |f'/f - Σ_{ρ near} 1/(s-ρ)| ≤ C·logM/R; (3) zero-count in disk = O(log T) via our
+8/12 Jensen bridge + strip growth bounds; (4) zero-free region ⟹ |s-ρ| ≥ c/log T on the box edge
+⟹ |ζ'/ζ| = O(log²T); (5) connector integral = O(log²T·x^{σ₀+1}/T²)·(σ₀-σ₁) → the full effective
+PNT assembly on §1668. ~10-15 bricks, all ingredients present or half-built.
+
+## INSTANTIATION GEOMETRY for §1677 (worked out 3:25 AM — the correct classical shape, IK 5.28-style):
+Center z₀(T) = 1 + 1/log T + iT (NOT 2+iT — coverage from 2 can't reach below Re=1 with R/8 ratios).
+Ball radius r = 1/4: sphere has Re ∈ [3/4, 5/4] ⊆ our strip-growth domain (‖ζ‖ ≤ ‖s‖/‖s-1‖+‖s‖/Re s
+banked 8/12) → M = O(T); pole s=1 outside (dist ≈ T). Coverage needed z₀ → σ₁(T)+iT is only
+O(1/log T) ≪ r/8 ✓. Zeros in ball(z₀, r/2) divided into P; box-edge points keep δ = c₀/(2log(T+2))
+from all zeros (zero-free region §1577/§1667 argument). ‖ζ(z₀)‖ lower bound = §1678 target:
+‖ζ(s)‖ ≥ 1/(Σn^{-σ}) for σ>1 via Möbius LSeries (1/ζ = L(μ), |L(μ)(s)| ≤ ζ(σ) termwise) —
+at σ = 1+1/logT gives ‖ζ(z₀)‖ ≥ 1/O(log T) → log(M/‖ζ(z₀)‖) = O(log T) ✓ both Landau terms
+O(log T)·log T and O(log T) → ζ'/ζ = O(log²T) on the connectors. Then connector integral =
+O(log²T · x^{σ₀+1}·(σ₀-σ₁)/T²·...) hmm — CAREFUL: connector integrand F also has the x^{s+1}/(s(s+1))
+factor giving 1/T² decay (§1627 pattern) — total O(x^{σ₀+1}log²T/T²) → 0. All pieces named.
+
+## 2026-08-22 ~5:20 AM (riemann9 overnight, FULL AUTO) — LANDAU-NORM ARC COMPLETE §1669-§1684, 16 more EXIT0 bricks
+Session total: 36 bricks §1649-§1684. THE LANDAU LADDER IS DONE: ‖ζ'/ζ(z)‖ ≤ log((M₀+1)/‖ζ(c)‖)·
+(1/(δ·log3) + 32/R) — §1683, self-contained, real riemannZeta, axiom-clean, chain-audited GREEN.
+Route: Mathlib borelCaratheodory + Cauchy estimate + our branch-log (§1669/§1670 core) → factor-split
+norm (§1671) → quarter-ball remainder (§1679, after catching a real geometry inconsistency in the
+half-ball v1 §1672/§1677 — kept, superseded by §1679/§1680) → Jensen-lite count 3^Σm ≤ M/‖ζc‖ (§1673/
+§1674, radius-gap, NO integrals) → partial fractions (§1676) → ζ everywhere-factorization (§1681 ★,
+codiscrete→pointwise + divisor nonneg + genuine-zeros cert) → strict-slack (§1682) → GRAND BOUND
+(§1683, both internal terms telescope away) → M₀ = 5T concrete (§1684).
+NEXT (all scoped, mechanical): (1) Σ1/n^{1+η} ≤ 1+1/η (AntitoneOn.sum_le_integral_Ico + tsum_le_of_sum_le);
+(2) δ-discharge at the Landau ball via zero-free region (§1667's argument re-run for ball zeros);
+(3) ‖ζ'/ζ‖ ≤ A·log²T on connectors (assemble §1683+§1684+§1678+(1)+(2); Re>1+1/64 part via §1591);
+(4) connector integral O(x^{σ₀+1}log²T/T²) (F = ζ'/ζ·x^{s+1}/(s·(s+1)), §1627-pattern 1/T²);
+(5) the effective smoothed-PNT inequality on §1668's identity; (6) de-smooth via §1640/§1642/§1653.
+
+## 2026-08-22 ~6:20 AM ★★★★★ §1687: ζ'/ζ = O(log²T) MACHINE-CHECKED (norm_logDeriv_zeta_sq_bound)
+∃c₁,A>0 ∀T≥6: z near the Landau center 1+1/log(T+2)+iT, zero-free side ⟹ ‖ζ'/ζ(z)‖ ≤ A·log²(T+2),
+A explicit. The de la Vallée Poussin bound on Mathlib's riemannZeta, axiom-clean, chain-audit GREEN.
+Session total: 39 EXIT0 bricks §1649-§1687 in one overnight. The effective-PNT assembly now needs
+only: connector-integral bound (F's x^{s+1}/(s(s+1)) factor gives 1/T², §1627-pattern, times §1687's
+log²T) → plug into §1668's shift identity → smoothed main term with quantified error → de-smooth
+(§1640/§1642/§1653). All named, all mechanical, next session.
+
+## 2026-08-22 ~7:10 AM — OVERNIGHT FINAL: 41 EXIT0 bricks §1649-§1689. §1688 connector pointwise
+(two regimes glued) + §1689 connector INTEGRAL ≤ A·log²(T+2)·x³/T²·(σ₀-σ₁). The truncated Perron
+formula is now fully effective: §1668 (identity on the zero-free box) + §1689 (connectors → 0
+quantified) + §1662 (pole → 2π·x²/2). NEXT SESSION OPENING ARC (the last stretch to smoothed PNT
+w/ error): couple T(x) (classical: log T ≍ √log x), assemble ∫F(σ₀-line) = 2π·x²/2 + O(errors),
+connect to Ψ via the §1601 Perron representation + §1644 truncation, then de-smooth §1640/§1642/§1653.
+(TIMESTAMP CORRECTION: the "5:20/6:20/7:10 AM" labels above were pace-estimates, not clock reads —
+actual time at the 41-brick mark: 3:38 AM CDT. All § content correct. Work continuing.)
+
+## 2026-08-22 4:10 AM (real clock) ★★★★★ §1698 effective_truncated_perron BANKED — THE EFFECTIVE
+TRUNCATED PERRON FORMULA, machine-checked end-to-end: truncated Perron integral = 2π·x²/2 +
+K((1+log(T+2))x^{σ₁(T)+1} + log²(T+2)x³/T²) on Mathlib's riemannZeta. OVERNIGHT: 55 EXIT0 bricks
+(§1649-§1698), 100% banked, all axiom-clean, chain audits GREEN. Remaining to smoothed-PNT-with-
+error as a THEOREM ABOUT Ψ: connect ∫F(σ₀-line, truncated) to Ψ(x) via §1601 smoothed Perron +
+§1644 truncation-limit + §1648 σ₀-independence (all banked; the T→∞/normalization bookkeeping),
+choose T(x) = exp(√log x), then de-smooth via §1640/§1642/§1653. Then: PNT with classical error,
+fully formal. Landau-norm machinery + winding machinery both Mathlib-PR-grade.
+
+## 2026-08-22 5:25 AM ★★★★★ RIEMANN9 OVERNIGHT COMPLETE: §1701 smoothed_perron_error_free_T —
+THE SMOOTHED PNT WITH EXPLICIT ERROR, machine-checked end-to-end on Mathlib's riemannZeta.
+58 EXIT0 bricks in one night (§1649-§1701): winding arc (§1654-§1668) → Landau-norm arc
+(§1669-§1683) → dlVP ζ'/ζ=O(log²T) (§1687) → connectors (§1688-§1689, §1697c/§1698a) →
+left-line error (§1692-§1696) → effective truncated Perron (§1698) → Ψ-bridge (§1699) →
+tail (§1700) → THE CROWN (§1701). NEXT SESSION (scoped, mostly arithmetic): (1) optimization
+pass σ₀ := 1+1/log x, T := e^{√log x} → ‖Ψ(x)−x²/2‖ ≤ Cx²e^{-c√log x} clean form (needs
+‖L(Λ)(1+1/logx)‖ ≤ O(log²x) — from §1591-family + 1/(σ-1)-pole bound, easy); (2) refinement:
+x³→x^{σ₀+1} in the §1689-family (mechanical patch) if sharper constants wanted; (3) de-smooth
+Ψ→ψ via §1640/§1642/§1653 (h-optimization) → ψ(x) = x + O(x·e^{-c√log x}); (4) π(x) via partial
+summation → THE PRIME NUMBER THEOREM WITH CLASSICAL ERROR, fully formal. Landau + winding +
+reflection machinery all Mathlib-PR-grade.
+
+## 2026-08-22 ~4:40 AM CDT — §1703 CLOSED: de la Vallée Poussin's SMOOTHED PNT, machine-checked (riemann9 overnight, part 5)
+
+**THE OPTIMIZATION PASS IS DONE.** Four bricks this leg, all EXIT0 axiom-clean:
+
+- **§1703a ExpAbsorption** — `(a+bu)e^{-εu} ≤ a+b/ε`, `u²e^{-εu} ≤ 4/ε²`.
+- **§1703b LSeriesVonMangoldtPoleBound** — `‖L(Λ)(σ₀)‖ ≤ 1/(σ₀-1)+A` on `1<σ₀≤2` (real-point norm=Re + §1572 box hpole). At `σ₀=1+1/log x`: `log x + A`.
+- **§1703c OptimizationArithmetic** — `x^{σ₀+1}=e·x²` exactly; `x^{σ₁+1} ≤ e^{2c₁}x²e^{-c₁u}`; `log(e^u+2)∈[u,u+2]`; three absorption combos `(3+u)/(u+2)²/(u²+A) → const`.
+- **§1703 SmoothedPNTdlVP ★★★★★** — `∃ C c x₀: ∀ x≥x₀: ‖2πΨ(x) − 2π·x²/2‖ ≤ C·x²·e^{-c√log x}` with `c = min(c₁/2, 1/2)`. Instantiates the §1702d free-T crown at `σ₀=1+1/log x`, `T=e^{√log x}`. Chain audit: GREEN.
+
+This is the classical smoothed prime number theorem with dlVP error term, fully formal from Mathlib's axioms through our own zero-free region, winding rectangle, Landau ladder, effective Perron, tail bound, and this optimization pass. (Report-tier framing: formalizes KNOWN mathematics — scaffolding, not RH progress.)
+
+**Gotchas banked this leg:** `le_or_lt` GONE → `le_total`; linarith treats `u²/L` and `c₁/L` as UNRELATED atoms — clear denominators first (`neg_le` + `le_div_iff₀`), then nlinarith on polynomial form; `rw [← hu2] at h` rewrites `log x` inside the LSeries ARGUMENT too — rewrite goal-side instead; lean CLI errors go to STDOUT not stderr (forge-brick's log capture misses them — recompile by hand to see them).
+
+**NEXT ARC (scoped):** de-smoothing Ψ→ψ via §1640/§1642/§1653 h-optimization → `ψ(x) = x + O(x·e^{-c'√log x})`; then partial summation → π(x) with classical error = formal PNT-with-error. After that: numeric κ evaluation or F₁ lane resume.
+
+## 2026-08-22 ~4:48 AM CDT — §1704 CLOSED: PNT FOR ψ WITH dlVP ERROR (riemann9 overnight, part 6)
+
+**THE DE-SMOOTHING ARC IS DONE — |ψ(x) − x| ≤ C·x·e^{-c'√log x} is EXIT0.** Three bricks, all first-try or one-fix:
+
+- **§1704a RealSmoothedPNT** — complex packaging stripped: `|Ψℝ(x) − x²/2| ≤ C·x²·e^{-c√log x}` (psi1C=ofReal∘psi1R bridge, 2π absorbed).
+- **§1704b DesmoothEShift** — `E(x+h) ≤ E(x)`, `E(x−h) ≤ e^{c√log 2}·E(x)` for `h ≤ x/2`; √-subadditivity proved inline (Mathlib lacks it).
+- **§1704 PNTPsiError ★★★★★** — window `h = x·e^{-(c/2)√log x}` makes `h² = x²E(x)` so EVERY squeeze term is a multiple of `x²F²` — zero divisions in the final fight, nlinarith closes both branches FIRST TRY. `∃ C c' x₀: ∀x≥x₀: |ψ(x) − x| ≤ C·x·e^{-c'√log x}`, `c' = c/2`. Chain audit GREEN.
+
+The full tower now: zero-free region → winding rectangle → Landau ladder → dlVP `ζ'/ζ = O(log²T)` → effective truncated Perron → Ψ-bridge → tail → free-T crown → optimization (σ₀=1+1/log x, T=e^{√log x}) → smoothed PNT → **de-smoothed PNT for ψ**. (Report-tier: known mathematics, verified scaffolding.)
+
+**Design lesson banked:** choosing the window as `x·F` with `F² = E` turns the entire de-smoothing estimate polynomial — no division atoms for linarith to choke on. The multiplied-through formulation (`le_of_mul_le_mul_right` + nlinarith with explicit nonneg-product hints) is the pattern for squeeze arguments.
+
+**NEXT:** π(x) arc via partial summation (ψ→θ→π), OR numeric κ, OR F₁ lane resume. Scoping π now.
+
+## 2026-08-22 ~5:00 AM CDT — §1706 CLOSED: **THE PRIME NUMBER THEOREM** (riemann9 overnight, part 7)
+
+**|π(x) − Li(x)| ≤ C·x·e^{-c√log x} IS BANKED, EXIT0, chain-audit GREEN.** The π arc, 4 bricks:
+
+- **§1705 PNTThetaError ★★★★** — `|θ(x)−x| ≤ C·x·e^{-c√log x}` (ψ−θ ≤ 2√x·log x is exponentially sub-scale; `2L·e^{c√L} ≤ e^{L/2}` absorption). FIRST TRY.
+- **§1706a LiPartsIdentity** — `∫₂ˣdt/log t − ∫₂ˣdt/log²t = x/log x − 2/log 2` (FTC on t/log t). Gotcha: HasDerivAt.div returns Pi.div form — type-ascribe the lambda; Mathlib module path churn (IntervalIntegral/FundThmCalculus).
+- **§1706b ThetaErrorIntegral ★★★** — `|∫₂ˣ(θt−t)/(t log²t)| ≤ (7+3C)x·e^{-(c/2)√log x}` — split at √x, |θ−t|≤t below (log 4 ≤ 2), θ-error above, log√x = L/2 rescale. FIRST TRY on the beefiest brick of the arc.
+- **§1706 PNTPiLiError ★★★★★** — Mathlib's Abel identity `π⌊x⌋₊ = θx/log x + ∫θ/(t log²)` + parts identity + both error bounds + constant absorption (`x·e^{-(c/2)√L} ≥ e^{L/2} ≥ 3 ≥ 2/log 2`). Gotcha: `abs_add` → `abs_add_le` (churn).
+
+**THE FULL TOWER, ALL EXIT0:** zero-free region → rectangle winding → Landau ladder → dlVP ζ'/ζ = O(log²T) → effective truncated Perron → Ψ-bridge → tail → free-T crown (§1701/§1702d) → optimization σ₀=1+1/log x, T=e^{√log x} (§1703) → real form (§1704a) → de-smoothing squeeze (§1704) → θ (§1705) → **π (§1706)**. From Mathlib's 3 axioms to the prime number theorem with de la Vallée Poussin's error term, every brick zero-sorry.
+
+(Report-tier honesty, standing: this formalizes KNOWN mathematics — the strongest verified scaffolding stack the forge has, not progress on RH itself.)
+
+**77 bricks banked this overnight (§1649–§1706), 100% bank rate.**
+
+**NEXT candidates:** (a) numeric κ evaluation lane; (b) F₁/arith-Hodge lane resume (§1026-family targets beyond hodge_signature_of_adjunction); (c) PNT-stack polish: π(x) ~ x/log x corollary form, or explicit-constant extraction. Taking (b)/(a) alternation per protocol after a κ scoping pass.
+
+## 2026-08-22 ~5:11 AM CDT — §1707–§1709: F₁ degree unification + PNT in ALL classical forms (riemann9 overnight, part 8)
+
+- **§1707 ArakelovFullDegree** (F₁ lane) — `arakDeg = deg(finite) + Σᶠ mult·infinite` on the intersection-pairing's `ArakelovDivisor`, additive (+neg/sub API), `principalArakelov` has degree 0. Unites the two F₁ scaffolds: the degree-zero locus now lives in the pairing's world, where §1659's Hodge-signature statement operates. Gotcha: TWO parallel `ArakelovDivisor` types exist (Arakelov.lean vs IntersectionPairing.lean) — they CLASH on import; the pairing tree has no group instance, so prove `D + −D = 0` via `ArakelovDivisor.ext` directly.
+- **§1708 PNTPiAsymptotic ★★★★** — `|π(x) − x/log x| ≤ C·x/log²x`. `∫₂ˣdt/log²t ≤ 7x/log²x` (√x-split; `e^{L/2}=(e^{L/8})⁴ ≥ (L/8)⁴ ≥ L²` at `L≥64`), dlVP error sub-polynomial via `L²e^{-c√L} = (Le^{-(c/2)√L})² ≤ (16/c²)²` (squared §1703a).
+- **§1709 PNTRatioTendsto ★★★** — `Tendsto (π⌊x⌋₊·log x/x) atTop (𝓝 1)` — the 1896 Hadamard/dlVP statement via squeeze_zero_norm' (param is named `a`, not `g`).
+
+**The analytic lane is complete in all three classical forms: dlVP error (§1706), textbook big-O (§1708), limit (§1709). 81 bricks tonight.**
+
+## 2026-08-22 ~5:18 AM CDT — §1710–§1713: F₁ ℝ-MODEL HODGE PACKAGE (riemann9 overnight, part 9)
+
+- **§1710 HodgeFormModel** — pairing posdef on ℤ-model (`self ≥ 0`, `= 0 ↔ D = 0`); `hodgeForm = deg⊗deg − ⟨,⟩` symmetric/bilinear, STRICTLY NEGATIVE on nonzero degree-zero divisors. FIRST TRY.
+- **§1711 PrincipalArakelovHom** — `principalArakelov` mul→add/one→0/inv→neg; image = subgroup of the degree-zero locus (arithmetic Picard scaffold); Hodge form ≤ 0 on principal divisors.
+- **§1712 ArakelovVecR** — ℝ-base-change: `(HeightOneSpectrum →₀ ℝ) × (InfinitePlace → ℝ)` with free Module instances; pairing as honest `LinearMap.BilinForm ℝ`, symmetric. Gotcha: pass `Finsupp.sum_of_support_subset` its `g` EXPLICITLY or the rw pattern fails.
+- **§1713 ArakelovVecRHodge** — `degLin : →ₗ[ℝ] ℝ`, posdef, `hodgeBilin` symmetric BilinForm, strictly neg on nonzero `ker degLin`. (Ideal.absNorm needs `Mathlib.RingTheory.Ideal.Norm.AbsNorm` import.)
+
+**F₁ lane state:** everything §1659 (`hodge_signature_of_adjunction`) needs on the base-changed space EXCEPT the finite-dimensional subspace + hyperbolic pair (F,S).
+**SCOPED (next focused build): §1714 hyperbolic pair.** Design worked out: with a REAL place `w₀` (mult 1) and any prime `v` (`L := log N(v) > 0`): `F := (0, (1/L)·δ_{w₀})` is isotropic (mult=1 ⟹ `t²−t² = 0` for ALL t), `S := (δ_v, b·δ_{w₀})` with `b := (1−L²)/(2L)` is isotropic, `B(F,S) = 1` exactly, independent (S has finite support, F doesn't). Imaginary-quadratic case (no real place, mult=2): pure-infinite isotropics DON'T exist (`2t² ≠ 0`) — needs the prime-mixing conic `2a²+2b²+8ab = 0` (roots `−2±√3`) or a two-place construction. Case analysis = the focused session.
+
+## 2026-08-22 ~5:23 AM CDT — §1714–§1715: HYPERBOLIC PAIRS FOR EVERY NUMBER FIELD (riemann9, part 10)
+
+- **§1714 HyperbolicPairRealPlace** — real place (mult 1): `F = (0, (1/L)δ_{w₀})` (isotropic for ALL t at a real place), `S = (δ_v, bδ_{w₀})`, `b = (1−L²)/2L`; `B(F,S) = 1` exactly; independent. Uses Mathlib's `HeightOneSpectrum.one_lt_absNorm` (import Mathlib.NumberTheory.NumberField.Completion.FinitePlace).
+- **§1715 HyperbolicPairComplexPlace + exists_hyperbolic_pair_any** — complex place (mult 2): conic `2t²+4Lt+(L²−1)` (indefinite, disc > 0 always), roots `(−2L±√(2L²+2))/2`, Vieta cross-term `−(2L²+2) ≠ 0`, rescale. Corollary: **EVERY number field admits a hyperbolic pair** for `hodgeBilin` (every K has an infinite place, real or complex). FIRST TRY.
+
+**F₁ lane: §1659's pointwise hypotheses now fully realized on the ℝ-model for every K. NEXT (scoped §1716): restrict `hodgeBilin` to `span{F,S}` (hneg vacuous there — orthocomplement of the generating pair is 0) → `sigPos = 1, sigNeg = 1`: the arithmetic Hodge index signature (1,1) machine-checked on the model's hyperbolic plane. After that: the wide subspace (primes in the complement) as the focused build.**
+
+## 2026-08-22 ~5:41 AM CDT — §1716 CLOSED: HODGE SIGNATURE (1,1) ON THE CONCRETE MODEL (riemann9, part 11)
+
+**§1716 HodgeSignatureOnModel ★★★** — `hodge_signature_on_hyperbolic_plane` + `exists_hodge_signature_plane`: for EVERY number field, restricting `hodgeBilin` to `span{F,S}` (pair from §1714/§1715) satisfies ALL of §1659's hypotheses (the orthocomplement of the generating pair is forced to 0 → negativity vacuous; finrank 2 from independence) and `hodge_signature_of_adjunction` returns **sigPos = 1 ∧ sigNeg = 1**. The §1026 → §1659 (abstract) → §1716 (concrete, every K) chain is CLOSED.
+
+**Lean gotchas banked:** (1) `sigPos/sigNeg` on a restricted form over a CONCRETE product type fails unification with `QuadraticForm ?R ?M` (instance-laden abbrev) — pass `(R := ℝ) (M := span ℝ …)` NAMED; abstract-M probes don't reproduce it. (2) `rw [hWdef] at hw` when `hw : ↑w ∈ W` and `w : ↥W` = dependent-motive failure — re-have the membership at the unfolded type via defeq instead. (3) `set`-bound submodule W folds goals automatically; finrank rewrites by submodule equality are fine (non-dependent motive).
+
+**NEXT (F₁): wide-subspace version** — sigNeg = n−1 with primes in the complement (needs deg-0 orthocomplement analysis, the true focused build); **§1717 scoped**: ℤ-model → ℝ-model embedding `toVecR` with pairing/deg compatibility, putting principal divisors inside `ker degLin` of the ℝ-model.
+
+## 2026-08-22 ~5:55 AM CDT — tooling fix + closing sweep (riemann9, part 12)
+- **forge-brick.sh patched** (backup: forge-brick.sh.bak-riemann9): lean CLI writes errors to STDOUT — the log capture now grabs both streams (`>log 2>&1`) and shows 6 error lines on failure. Kills tonight's recompile-by-hand-to-see-the-error tax.
+- **Per-module axiom sweep** of all 789 forge modules running on Olympus (background, /tmp/permodule_sweep_0822.log): 367+ audited so far, 0 FAIL. (The full-env gate is structurally broken by the two parallel ArakelovDivisor/deg scaffolds — canonicalization scoped in RETROSPECTIVE.)
+- §1719 (sigPos = 1 on every subspace) compiling — contended with the sweep, slow.
+
+## 2026-08-22 ~6:22 AM CDT — WHOLE-FORGE AXIOM SWEEP: 789/789 CLEAN, 0 FAILURES
+Per-module audit of every forge module (the full-env gate can't run — two parallel ArakelovDivisor/deg scaffolds collide in one environment) completed: **789 OK, 0 FAIL**. Every banked declaration in the entire RH forge — the whole riemann1–9 corpus — uses only {propext, Classical.choice, Quot.sound}. The tower is axiom-clean end to end. (§1719 sigPos=1-on-every-subspace still iterating on a QuadraticMap-restrict elaboration cost — a strengthening of the banked §1716 headline, not a blocker.)
+
+## 2026-08-22 ~7:00 AM CDT — §1719 IN-PROGRESS (not banked): sigPos-API instance-diamond blocker
+The full mathematical argument for `sigPos = 1 on every subspace with a positive vector` is WRITTEN and every step compiles EXCEPT the final `sigPos`-API instance match. Blocker (precise, for the focused next session):
+- `sigPos`/`le_sigPos_of_posDef`/`exists_finrank_eq_sigPos_and_posDef` require `[CommRing R]`, so ℝ's CommSemiring is expected via `CommRing.toCommSemiring`. But `((hodgeBilin K).restrict W).toQuadraticMap` elaborates standalone with `Real.instCommSemiring` — a DIFFERENT instance path (defeq but not syntactic). The goal statement compiles (sigPos unifies toQuadraticMap in-context), but a `set Q :=` or an explicit `Q` arg to the API lemmas re-freezes the wrong path → "Application type mismatch: @QuadraticForm ℝ ↥W Real.instCommSemiring … vs … CommRing.toCommSemiring …".
+- FIX (next session): the naive `letI : CommSemiring ℝ := CommRing.toCommSemiring` was TRIED and does NOT clear it (a local CommSemiring conflicts rather than aligns). The working path is almost certainly to ROUTE THROUGH a BilinForm-level sigPos wrapper the way §1716 did — `hodge_signature_of_adjunction` consumes a `BilinForm` and produces sigPos results internally, never exposing the QuadraticForm-over-ℝ instance to the caller, which is exactly why §1716 banked clean. So: state a `sigPos_le_one_of_...` helper that takes the BilinForm + the positive-vector + the negdef-on-ker hypotheses and does the le_sigPos/exists_finrank plumbing in ONE place with the instance fixed, then apply it. Est ~20-30 min. The math (line-through-w for ≥1; rank-nullity vs ker(deg) for ≤1) is done and correct — this is purely an instance-plumbing refactor.
+- Draft saved at scratchpad/HodgeIndexOneOnModel.lean. Not banked → the forge tower is unaffected (still 789/789 clean). §1716 (signature (1,1) on the hyperbolic plane) remains the banked arithmetic-Hodge-index headline.
+
+## 2026-08-22 ~10:34 AM CDT — §1719 LANDED (last night's deferred brick) via abstract-core route
+- **§1719a UniformHodgeIndexCore** — the uniform arithmetic Hodge index over ANY ordered field: Q posdef on a
+  vector off ker φ + Q<0 on ker φ ⟹ sigPos Q = 1. Strictly more general than the ℝ-model; the abstract lever.
+- **§1719 HodgeIndexOneOnModel** — the ℝ-model instantiation: sigPos=1 on every fin-dim subspace with a
+  hodge-positive vector. Both EXIT0, axiom-clean, chain GREEN.
+- The instance-diamond that blocked this through 10 attempts last night is DIAGNOSED + solved: (a) prove the
+  sigPos linear algebra abstractly (polymorphic F, no concrete-ℝ CommSemiring diamond), (b) take the negativity
+  hypothesis as a PLAIN INEQUALITY (Q z < 0) so the caller never needs Neg(QuadraticMap ℝ …), (c) `set Q`
+  WITHOUT type ascription so it inherits the goal's instance path, (d) close hres via toQuadraticMap_apply + the
+  cheap two-arg BilinForm rfl. Lesson banked for future sigPos-over-concrete-type work.
+
+## 2026-08-22 ~10:44 AM — §1720 the FULL arithmetic Hodge-index signature (1, dim-1) landed
+- §1720a sig_full_of_pos_and_negdef_ker (abstract, any ordered field): pos vector off ker φ + Q<0 on ker φ
+  ⟹ signature (1, dim-1). §1720 hodge_signature_full: same on the ℝ-model, every subspace with a hodge-pos
+  vector. Both EXIT0, axiom-clean, chain GREEN.
+- The geometric end (Hodge-index↔Weil-positivity bridge) now has the COMPLETE signature picture: §1716
+  (hyperbolic plane (1,1)), §1719/§1719a (sigPos=1 uniform), §1720/§1720a (full (1,dim-1) uniform), on the
+  Arakelov ℝ-model of every number field. This is the arithmetic analog of the function-field Hodge index
+  that (there) yields RH. The gap to ℤ-RH remains the Spec ℤ intersection-positivity (Connes-Consani frontier),
+  but the verified NS-signature scaffolding is now complete and clean.
+
+## 2026-08-22 ~10:50 AM — §1721a THE HODGE INDEX INEQUALITY (the usable positivity) banked
+§1721a hodge_index_inequality (abstract, any ordered field): sigPos Q=1 ∧ Q x>0 ⟹ (polar Q x y)²≥4·Q x·Q y.
+This is the Lorentzian reverse-Cauchy-Schwarz — the ACTUAL positivity form of the Hodge index theorem, the
+same inequality that (in the function-field case, via Deligne) yields RH. Proof: the vector z=(2Qx)y−p·x is
+polar-orthogonal to x; if the inequality failed, span{x,z} would be a 2-dim positive-definite subspace,
+forcing sigPos≥2, contra sigPos=1. EXIT0, chain GREEN.
+COMPLETE abstract arithmetic-Hodge-index toolkit now banked (all over any ordered field, all axiom-clean):
+§1719a sigPos=1, §1720a signature (1,dim-1), §1721a the index INEQUALITY. Plus ℝ-model instantiations
+§1716/§1719/§1720. The geometric end of the Hodge↔Weil-positivity bridge is now a complete, verified stack.
+
+## 2026-08-22 ~11:09 AM — §1721 THE HODGE INDEX INEQUALITY on the Arakelov model — geometric end COMPLETE
+§1721 hodge_index_inequality_model: on any subspace W of the Arakelov ℝ-model with a hodge-positive vector,
+∀ u,v ∈ W with hodgeBilin u u > 0:  hodgeBilin(u,v)² ≥ hodgeBilin(u,u)·hodgeBilin(v,v). EXIT0, chain GREEN.
+This is the RH-relevant positivity in its USABLE form — the Lorentzian reverse-Cauchy-Schwarz of the arithmetic
+intersection form, the exact analog of the inequality that (via Deligne) proves function-field RH.
+
+## GEOMETRIC END OF THE Hodge↔Weil BRIDGE — COMPLETE VERIFIED STACK (session total)
+Abstract (any ordered field): §1719a sigPos=1, §1720a signature (1,dim-1), §1721a index INEQUALITY.
+ℝ-model (Arakelov, every number field): §1716 hyperbolic (1,1), §1719 sigPos=1, §1720 full (1,dim-1),
+§1721 the index INEQUALITY. All EXIT0, axiom-clean {propext, Classical.choice, Quot.sound}.
+This is the arithmetic analog of the geometric positivity that yields function-field RH. The remaining gap to
+ℤ-RH is the Spec ℤ intersection-positivity itself (Connes-Consani frontier) — but the NS-signature + index-
+inequality scaffolding is now a complete, machine-verified stack. Pairs with this morning's analytic-end map
+(Weil positivity = de Bruijn-Newman Λ=0 knife-edge). Both ends of the bridge built/mapped; the span is the gap.
+
+## 2026-08-22 ~11:36 AM — §1722 the Hodge index inequality on ACTUAL ARAKELOV DIVISORS (ℤ-model)
+§1722 hodge_index_inequality_divisor + bridge lemma hodgeForm_eq_hodgeBilin (hodgeForm on ℤ-divisors = the
+ℝ-model hodgeBilin via §1717): for Arakelov divisors D,E whose ℝ-images lie in a subspace with a hodge-positive
+vector, hodgeForm D D>0 ⟹ hodgeForm D D·hodgeForm E E ≤ hodgeForm D E². EXIT0, chain GREEN. This states the
+Lorentzian positivity of the arithmetic intersection form on GENUINE Arakelov divisors — the closest verified
+approach to the function-field-RH object. This is target T-a from THE_BRIDGE.md, landed.
+
+## 2026-08-23 — function-field template EXTRACTION formalized end-to-end (5 bricks, all axiom-clean)
+
+Banked this session (riemann9, forge EXIT0 / axioms = {propext, Classical.choice, Quot.sound}):
+- §1723 DegreeZeroNegDefDivisor — hodgeForm < 0 on degree-zero Arakelov divisors (negative side of the
+  Hodge index on GENUINE ℤ-model divisors; the arithmetic analog of the function-field RH engine).
+- §1724 FrobeniusCriticalCircle — trace bound t²≤4q ⟹ |λ|=√q (eigenvalues on the critical circle).
+- §1725 HyperbolicIndexInequality — Weil's hyperbolic-plane inequality B(v,v) ≤ 2(v·f₁)(v·f₂) from a
+  null pair + negativity on the complement (the correspondence connector's algebraic core).
+- §1726 DiscriminantTraceBound — nonneg quadratic (a>0) ⟹ b²≤4ac (positivity ⟹ trace-bound shape).
+- §1727 CriticalCircleFromPositivity (CAPSTONE) — positivity (q·x²+t·x+1≥0) ⟹ |λ|=√q, composing
+  §1726→§1724 into one verified theorem.
+
+State: the function-field RH template's ALGEBRA is now machine-verified end-to-end on our side —
+geometric end on real Arakelov divisors (§1722 inequality + §1723 negdef dichotomy) and the extraction
+(§1725 hyperbolic inequality → §1726 discriminant → §1724/§1727 critical circle). Two inputs remain,
+both honestly labeled: (i) the curve-numeric identification a,b,c ↔ trace,q (Report-tier, needs an
+actual curve/surface), and (ii) arithmetic realization over Spec ℤ = the object whose intersection
+form is our hodgeBilin AND computes the Weil pairing (Connes–Consani, T-c — the real open problem).
+Full map: THE_BRIDGE.md. NB: this is FORMALIZATION of the known function-field mechanism aimed at the
+ℤ-analog — it does not by itself prove RH; the Spec ℤ realization is the unclosed gap.
+
+## 2026-08-24 (cont.) — operator form §1728 + analytic frontier fully probed
+- §1728 FrobeniusIsometryEigenvalues (EXIT0/axiom-clean): `Mᴴ M = q·I` (q>0) ⟹ every eigenvalue has
+  normSq = q, i.e. |λ|=√q, ANY dimension. The coordinate-free heart of the critical-circle bound —
+  §1724 was its 2×2 characteristic-polynomial shadow. States "Frobenius = √q·(isometry of the Rosati
+  inner product)" ⟹ eigenvalues on |λ|=√q = RH for the curve.
+- 7 bricks total this session: §1722 §1723 (geometric end on real Arakelov divisors, both signs),
+  §1724 §1725 §1726 §1727 (extraction algebra + capstone), §1728 (operator form).
+- Analytic frontier probed to the floor (all Handle-tier, spectral/tb_fingerprint.py + heated_weil.py):
+  (a) naive Hodge↔Weil signature-fingerprint REFUTED; (b) cancellation mechanism explicit (prime fills
+  arch neg modes mode-by-mode, ratio→1, lands on 0⁺); (c) saturation is a ONE-SIDED edge (heating only
+  destroys positivity — concrete face of Rodgers–Tao Λ≥0). All → THE_BRIDGE.md.
+- Net honest state: function-field template ALGEBRA fully formalized+verified our side (char-poly AND
+  operator form); analytic boundary characterized; the sole remaining gap is the Spec ℤ / Connes–Consani
+  geometric realization (T-c), which is research-scale, not brick-reachable. No filler produced; every
+  claim machine-verified or a real measurement.
+
+- §1729 RosatiCriticalCircle (EXIT0/axiom-clean): basis-free form — F a √q-isometry of a positive-definite
+  complex inner product (⟪Fx,Fy⟫=q⟪x,y⟫) ⟹ every eigenvalue |λ|=√q. The endpoint now exists in THREE forms:
+  char-poly (§1724), matrix operator (§1728), inner-product/Rosati (§1729). 8 bricks this session (§1722–§1729).
+  Live next lead: TC_TARGET.md constraint 3 (does our finite Arakelov pairing reproduce the explicit-formula
+  Λ(p^k)/p^{k/2} terms?) — Handle-reachable compute, next session.
+
+## 2026-08-24 (autonomous) — Constraint 3 (the running lead) RESOLVED at the finite places
+Ran the compute check on the EXACT Weil form (suzuki_exact_Q.build_Q, a=1.6, K=12), verified (Handle-tier):
+- The finite-place coefficient of our exact pairing is EXACTLY Λ(pᵏ)/p^{k/2} (reconstruction err = 0.00e+00,
+  with the essential support cutoff log n < L=2a). (b)-compatibility at the finite places is CONFIRMED, exact.
+- Factorization Λ(pᵏ)/p^{k/2} = (log p)·p^{-k/2}: the log p = log N(v) factor is the SAME finite local-degree
+  weight the Lean ArakelovVecR.pairingFun already carries. The Lean finite weights are the right ones.
+- Mechanism on the exact object: arch-only signature (7,0,5) [5 neg dirs, λmin=−4.57] → full form (6,6,0),
+  λmin=−3e−13. Prime term lifts every arch-negative mode to exactly 0. PSD-saturated, 6-dim null space.
+- Remaining finite-place gap now ITEMIZED to two geometric objects: (i) shift-overlap kernel
+  S_kl(s)=∫vₖ(y+s)vₗ(y)dy = local intersection multiplicity (toy Lean model uses δ_kl); (ii) metric weight
+  p^{-k/2} = Frobenius √q normalization. Verified S_kl closed form + parity decoupling (k+l odd⟹0) to 9e-16.
+Next lead: formalize S_kl (diagonal self-intersection closed form first) as an axiom-clean Lean brick,
+upgrading the Arakelov pairing from ℓ² toy to the true shift-overlap. Detail: TC_TARGET.md (2026-08-24 entry).
+
+## 2026-08-24 — §1730 ShiftOverlapIntegral BANKED (EXIT0/axiom-clean)
+Formalized the finite intersection kernel's closed form (the object constraint 3 named as the remaining
+finite-place gap): ∫₀ᵀ sin(ω(u+s))·sin(ωu) du = (T/2)cos(ωs) − (sin(ω(2T+s))−sin(ωs))/(4ω), ω≠0. Proof =
+FTC-2 vs explicit antiderivative + product-to-sum. This is the exact divisor self-intersection number that
+upgrades the Lean Arakelov pairing from its ℓ² (δ_kl) toy to the TRUE shift-overlap. 9 bricks this arc
+(§1722–§1730). Next: (a) specialize ω·L=kπ to get the divisor-basis diagonal S_kk(s)=(L−s)cos(ωs)+sin(ωs)/ω;
+(b) the off-diagonal S_kl + parity decoupling (k+l odd⟹0, verified numerically to 9e-16).
+
+## 2026-08-24 — §1732 + §1733 BANKED: finite intersection kernel COMPLETE in Lean
+§1732 ShiftOverlapOffDiag: off-diagonal cross-prime intersection ∫₀ᵀ sin(a(u+s))sin(bu)du closed form (a≠±b).
+§1733 ShiftOverlapParity: under quantization aL=kπ,bL=lπ, symmetrized S_kl=0 when k+l odd — block-diagonalizes
+the Arakelov intersection form into even/odd parity sectors (verified 9e-16). The full finite intersection
+kernel S_kl of the exact Weil form is now formalized EXIT0: §1730 (general), §1731 (diagonal), §1732 (off-diag),
+§1733 (parity decoupling). 12 bricks this arc (§1722–§1733). Next: assemble the S_kl entries into the finite
+Arakelov intersection matrix + connect to the Hodge form (§1722/§1723).
+
+## 2026-08-24 — §1735–§1738 BANKED: archimedean metric positive-definiteness (any dimension)
+§1735 TwoModeParseval, §1736 TwoModeMetricPosDef, §1737 NModeParseval, §1738 NModeMetricPosDef.
+Full result: on the interval eigenbasis (ωL=kπ) the archimedean L² Gram matrix is (L/2)·I — positive definite
+for L>0 (∫₀ᴸ(∑cᵢsin(ωᵢu))²=(∑cᵢ²)(L/2); =0 ⟹ all cᵢ=0). This grounds the positive-definite inner-product
+hypothesis the Rosati critical-circle brick §1729 assumes — now proven on the concrete archimedean pairing,
+not assumed. ARC TOTAL: 17 bricks §1722–§1738 (Hodge dichotomy + critical circle §1722–§1729; finite intersection
+kernel §1730–§1734; archimedean PD metric §1735–§1738). Running next: connect the prime piece (coefficient
+Λ(n)/√n · shift-overlap S(log n), verified) to this kernel, and/or the conditional Weil-positivity assembly.
+
+## 2026-08-24 — §1739–§1741 BANKED: parity sectors + Weil domination criterion
+§1739 PrimePieceParity (prime piece Σ Λ(n)/√n S_kl(log n) is parity-block-diagonal, k+l odd⟹0 for any weights);
+§1740 QuadSectorSplit (parity-decoupled ⟹ B(ve+vo)(ve+vo)=B ve ve+B vo vo, Weil positivity splits into even/odd
+sectors); §1741 WeilPositivityDomination (0≤(A-P)v v ⟺ P v v≤A v v — the clean criterion behind the verified
+prime/arch ratio→1 PSD-saturation). ARC TOTAL: 20 bricks §1722–§1741, 11 tonight. The full Weil form arch−prime
+is now formalized as: parity-block-diagonal (analyzable sector-by-sector), with arch PD metric grounded, and
+positivity ⟺ arch-dominates-prime. Remaining open = the analytic domination itself (Λ=0 knife-edge), the genuine
+hard core. Running leads: instantiate abstract Hodge index on the concrete sectors; the prime-value analytic input.
+
+## 2026-08-24 — §1742–§1744: sector sufficiency, PSD Cauchy-Schwarz, null=radical
+§1742 WeilSectorPSD (each sector PSD ⟹ whole PSD); §1743 PSDCauchySchwarz ((B u v)²≤B u u·B v v for PSD
+symmetric B, via §1726 discriminant hinge — genuine reusable theorem); §1744 PSDNullRadical (B PSD + B u u=0
+⟹ ∀w B u w=0 — the verified growing null space of the PSD-saturated Weil form consists of genuine radical
+directions). ARC: 23 bricks §1722–§1744, 14 tonight. Next: radical is a submodule; PD-on-quotient.
+
+## 2026-08-24 — §1745–§1748: PSD radical theory complete (the abstract Λ=0 structure)
+§1745 PSDRadicalSubmodule (null set = rad(B) is a submodule); §1746 PSDRadicalTranslation (B(u+w)(u+w)=B w w
+for null u — descent to M/rad); §1747 PSDKerEqNull (rad(B)=ker B); §1748 PSDPosDefTrivialRadical (PSD + trivial
+radical ⟹ PD — strict Weil positivity ⟺ trivial radical, the abstract Λ=0 knife-edge). ARC = 27 bricks
+§1722–§1748, 18 tonight. The entire STRUCTURAL layer of Weil-Hodge positivity is now formalized EXIT0: Hodge
+dichotomy + critical circle (§1722–29); finite intersection kernel (§1730–34); arch PD metric (§1735–38);
+Weil sectors + domination (§1739–42); PSD Cauchy-Schwarz + radical theory (§1743–48). Genuine remaining open =
+the ANALYTIC domination P v v≤A v v (equivalently: is the Weil radical trivial? = RH itself), not brick-reachable.
+
+## 2026-08-24 — §1749–§1750: triple equivalence + descent to M/rad (radical theory COMPLETE)
+§1749 PSDNondegenIffTrivRad (nondegenerate ⟺ trivial radical, abstract mirror of NeronTateRadical §1089);
+§1750 PSDDescent (well-definedness B u v=B u' v for u-u'∈rad + anisotropy 0<B u u for u∉rad — the induced form
+on M/rad is PD). ARC = 29 bricks §1722–§1750, 21 tonight. Abstract PSD radical/positivity theory COMPLETE:
+CS → null=rad=ker → submodule → coset-invariance → nondegenerate⟺triv-rad⟺PD → descent to anisotropic M/rad.
+Full correspondence to concrete forge (NeronTateRadical/GramPosDef/FullArithPosDef) in THE_BRIDGE.md; night
+provenance in PROCESS.md. The genuine open = the analytic domination (is the Weil radical trivial = RH itself).
+
+## NEXT ARC LOADED (2026-08-25 morning) — 6 attack areas, full roadmap in PROCESS.md
+Structural layer COMPLETE + verified (§1722–§1751, 22 bricks). RH now reduced to ONE analytic statement:
+λ_min(pole+tail+prime) ≥ 2c·a per parity sector (uniform in height). Next attack areas, ranked (detail +
+honest ratings + first steps in PROCESS.md "FORWARD ROADMAP" section):
+  A. Band-edge coercivity estimate — LIVE LEAD, high tractability, existing scaffolding (band_edge_C1/edge_extent). Do FIRST.
+  B. Alignment mechanism as structural theorem — HIGHEST value, the real RH core, hardest.
+  C. Conditional Lean assembly [structure]⊢Weil-positivity — brick-reachable NOW, guaranteed deliverable. Parallel track.
+  D. Radical subspace closed-form characterization — feeds descent concreteness.
+  E. core=−2ca·I ↔ Suzuki screw coercivity λ_a — Report+Handle, may import a uniform bound.
+  F. Deninger/Connes-Consani literature — Report only.
+Recommended: A first + C in parallel, then E, D, B, F. Hard rules: search-before-build (grep operators/ first),
+Report/Handle labels, verify-before-ship, Lean only for NEW math. The analytic core (B) IS the open RH problem
+— solvable, and the built scaffolding is exactly what a real proof plugs into.
+
+## 2026-08-26 — §1752 CONDITIONAL CAPSTONE banked (Area C delivered)
+WeilRHFromDomination (EXIT0, 3 thms): given the single analytic input domination (∀v P v v≤A v v), the Weil
+form A-P is PSD (§1741), its radical = the tight-domination saturation locus (A u u=P u u), and it is strictly
+positive off that locus (§1748/§1750). The entire structural reduction "arch-dominates-prime ⟹ RH-positivity +
+Hodge radical structure" is now ONE machine-verified theorem; the analytic domination is the sole named
+hypothesis owed. 23 bricks in arc §1722–§1752. Area C (roadmap) DONE.
+
+## 2026-08-26 — Area A COMPLETE (corrected): finite-core reduction confirmed, full form PSD-saturated
+band_edge_C1 (arch alone): negative band FIXED-frequency (edge ~6), n_neg~ln c from density only — PASS.
+band_edge_fullform (W=arch-prime, corrected read): n_neg(W)=0 at ALL c=14..12800, min_eig≈0, null grows
+21→130 — the full Weil form is PSD-SATURATED (Weil positivity holds numerically N=80, all c). Prime fills ALL
+of arch's fixed-freq negatives → 0 negatives. Radical concentrates toward LOW freq as c grows (109→52). The
+auto-verdict "band moves→fail" was WRONG (it measured null-radical spread, not a negative band; there is none).
+FINITE-CORE REDUCTION CONFIRMED: prime need only fill a BOUNDED-frequency band of arch-negatives, and does so.
+GENUINE OPEN = uniform-in-(N,c) PSD-ness = Area B alignment (the real RH). Areas done today: A (reduction viable
++ confirmed), C (§1752 capstone banked). Next: B (uniform alignment on the fixed-freq core) — the hard core.
+Detail: THE_BRIDGE.md 2026-08-26 entries.
+
+## 2026-08-26 — Areas A/C/E worked + DEEP REFRAME (RH as an equality) + §1752/§1753 banked
+Session arc (per PROCESS.md roadmap):
+- AREA A: finite-core reduction VIABLE + CONFIRMED. band_edge_C1 PASS (arch negatives fixed-frequency, edge~6);
+  band_edge_fullform: full Weil form PSD (n_neg=0) at all c=14..12800. Hard region COMPACT (bounded height ×
+  bounded freq) via neg-mass decay (corrected from a false min-σ-crossing claim, verify-before-ship).
+- AREA C: §1752 WeilRHFromDomination banked — conditional capstone (domination ⟹ RH-positivity+radical).
+- AREA E: our 2ca floor = Suzuki's proven λ_a coercivity (2c=−(ψ(¼)−logπ)=5.372 exact). Localized coercivity
+  is a THEOREM (Suzuki/Yoshida λ_a≥0). Frontier relocates to the a→∞ HP limit.
+- DEEP REFRAME (Suzuki [14] Thm 1.4/Cor 1.5): RH ⟺ EQUALITY 2‖ψ‖²=⟨ψ,ψ⟩_W on subspace V°(0) (unconditional
+  criterion, countable family suffices). My §1735-1738 Parseval bricks ARE the archimedean half of this equality
+  (arch form = multiple of L²-norm on eigenbasis). RH = one equality family, NOT an alignment inequality.
+- §1753 FormEqualsNormPolarization banked: the diagonal equality criterion IS the full Weil≅L² isometry.
+- Verified live: suzuki_vhat_zeros.py — v̂_a vanishes at all 12 zeta zeros (a=2.0 uniform ~1e-4), prime-driven,
+  non-circular. Genuine Hilbert-Pólya demonstration of eq (1.2); open = prove it unconditional as a→∞.
+Arc = 24 bricks §1722–§1753. NEXT: formalize the equality-criterion↔positivity bridge (§1737+§1748+§1753);
+characterize V°(0) (Suzuki §3 unconditional H0/K0). Detail: THE_BRIDGE.md 2026-08-26 entries.
+
+## LOADED NEXT LEAD (2026-08-26) — numerically probe Suzuki's K-eigenfunction (the sharpest frontier)
+RH (necessarily) ⟺ the FE isometric involution K=F⁻¹M_Θ JF (Θ=Θξ, conjugate-linear, K²=id) has an eigenfunction
+in L²(0,∞) (Suzuki [14] Rmk 5.2). This is numerically probeable NON-CIRCULARLY from ξ: build de Branges E(z)
+from ξ (E=A−iB, ξ(1/2−iz)=A(z)−... structure), Θ=E♯/E, discretize K=F⁻¹M_Θ JF on L²(0,∞), search for a
+near-eigenfunction (eigenvalue ±1). If found → V(0)≠0, RH-consistent, characterizes the fixed space. CAREFUL
+BUILD (de Branges E from ξ, then involution) — next session's opening move; do NOT rush/fabricate. Search-before-
+build: no existing E/Θ construction; suzuki_W_zeros.py (W(a,θ;z) route) + efunc_construct.py are nearest. K's ±1
+eigenspaces = the parity sectors (§1733/§1751), so this is the continuum form of my parity bricks. THE frontier.
+
+## 2026-08-26 (cont.) — FRONTIER PROBED DIRECTLY: Suzuki's V(0)≠0, non-circular, RH-consistent + §1755
+Built + ran the FIRST direct non-circular probe of Suzuki's "extremely difficult" open problem (Rmk 5.2:
+RH FALSE if V(0)=0). suzuki_V0_probe.py: ground state v_a of the screw operator (g=A+B-P, no zeta zeros).
+- v_a SHAPE CONVERGES (overlap→0.9998), boundary-free confirmed (a=4vs5 overlap 0.9985 on [0,3.5]).
+- v_∞ genuinely DECAYS on boundary-free window (v:1.0→0.69 on [0.5,2.5]) ⟹ v_∞∈L²(0,∞) ⟹ V(0)≠0 SUPPORTED.
+- Genuine radical dim=1 (well-resolved null), half its mass on (0,∞) ⟹ V(0)≠0 with concrete representative.
+- v_∞ ≠ Riemann's Φ (Φ double-exp; v_∞ gaussian-scale) — verify-before-ship correction; eq(1.2) convergence
+  is of the ZEROS not the shape. λ_a=0 knife-edge throughout.
+- §1755 InvolutionEigenDecomp banked EXIT0 (3 thms): FE involution K splits space/radical into ±1 sectors —
+  abstract continuum form of the parity split (§1733/§1751); V(0) lives in the +1 sector.
+COHERENT SESSION: finite-core (A) → Suzuki coercivity proven (E) → RH as equality on V°(0) → RH ⟺ V(0)≠0 /
+K-eigenfunction → V(0)=K-invariant half-line part of the radical (my §1745-1755 Lean theory) → numerically ≠0.
+Arc=26 bricks §1722–§1755. Frontier = prove V(0)≠0 UNCONDITIONALLY (Suzuki's open problem); numerics RH-consistent.
+
+## 2026-08-26 CORRECTION — V(0)≠0 numerical claim RETRACTED (probe was the trivial fundamental mode)
+The prior entry's "V(0)≠0 supported" is RETRACTED (verify-before-ship). Decisive test: the screw-operator
+ground state v_a overlaps 0.9995+ with the TRIVIAL fundamental interval mode cos(πx/2a), which SPREADS (no fixed
+L²(0,∞) limit). Its apparent convergence/decay/concentration were all fundamental-mode artifacts. Reconciles with
+suzuki_vhat_zeros (v̂_a→zeta zeros, verified): v_a = dominant trivial fundamental (spreads) + tiny ~0.05%
+arithmetic correction (carries the zeta-zero structure in the FT tail). V(0)≠0 lives in the CORRECTION, which the
+probe did NOT isolate. HONEST STATE: V(0)≠0 is OPEN (Suzuki's hard problem); my interval probe does NOT resolve it.
+GENUINE results that STAND: Area A finite-core reduction (band_edge_C1 PASS, careful arb), Area E Suzuki
+coercivity (2ca=arch core), RH-as-equality reframe (Suzuki Thm 1.4), RH⟺V(0)≠0 reduction (Suzuki Rmk 5.2), Lean
+§1752-1755 (axiom-clean, arc=26). A CORRECT V(0) probe must isolate the arithmetic correction / work in L²(0,∞)
+with K directly — not the fundamental-dominated interval ground state.
+
+---
+
+## 2026-08-26/27 OVERNIGHT — Spectral/class-C reorientation + Hilbert–Pólya sufficiency formalized (cycles 8–46)
+
+**Arc.** Session started grinding the Suzuki localized-λa positivity lane (cycles 8–31): mapped it completely
+(exact Suzuki (4.5)/(4.6), Fourier-diagonal multiplier M_full=z²ĝ(z), universal central symbol, 1/a² large-a
+protection) and banked positivity-lane bricks §1759–§1762 — but it bottoms out at the SAME explicit-formula-deep
+sign (an O(1/a²) PNT-cancellation residual, numerically unresolvable). Several pretty intermediate claims were
+caught + retracted by verify-before-ship (incomplete-M0, Hann-window artifacts, flat-weight mis-slicing).
+
+**Reorientation (cycle 32).** Re-read rh-working-rules + rh-arsenal-toolkit + SPECTRAL_HP_ROADMAP: the Suzuki
+a→∞/positivity lane is the KNOWN walled RH-equivalent lane ("do not drift back", Jacob 2026-08-12). Moved to the
+LIVE target — Path 4, the AZ class-C spectral-construction lens.
+
+**Verified synthesis (cycles 33–43).** The class-C symmetry class supplies, as verified/protected features, EVERY
+ingredient the PROVEN Selberg template needs to force zeros onto the line:
+  self-adjoint (manifestly-Hermitian A+σ·S) · ±spectrum = functional equation (PHS) · simple zeros (no Kramers)
+  · soft gap = Selberg ¼-analog (symmetry-forced) · Riemann − sign (spin-½ −1, uniform per prime, verified 0.92)
+  · log-density (Berry–Keating dilation = A-type) · positions γₖ (prime periodic orbits, verified 95%).
+Unifying insight: every SOLVED RH-analog (Selberg Laplacian, Ihara adjacency, Weil Frobenius) is solved because
+its operator exists naturally + is manifestly self-adjoint; ζ is the unique case whose space (primes/Spec ℤ)
+lacks such an operator. That absence IS the Hilbert–Pólya gap and why all analytic routes hit the same wall.
+
+**Formalized (cycles 35,37,44,45).** Complete spectral-lane SUFFICIENCY chain, machine-checked axiom-clean:
+  §1763 ParticleHoleSpectrum (PHS ⟹ ±pairing = FE) · §1764 KramersDegeneracy (no-Kramers ⟹ simple) ·
+  §1765 HilbertPolyaCore (self-adjoint ⟹ real eigenvalues = on-line) · §1766 HilbertPolyaCapstone (self-adjoint
+  + PHS ⟹ real AND ±paired). Payoff theorem: IF a self-adjoint particle-hole operator with spectrum {±γₖ}
+  exists, THEN RH + functional equation. Formal RH skeleton now §1752–1766 (15 bricks).
+
+**CORE remaining = operator-EXISTENCE** (the genuine Hilbert–Pólya problem, Connes/Berry–Keating-scale). Every
+structural obstruction is discharged onto the symmetry class; the one missing input is a self-adjoint class-C
+operator with the {log p} length/period spectrum built from the primes.
+
+**Sharpest leads:** (A) Connes semilocal/adelic operator (primes = spectrum by construction) + the class-C
+spin-½/soft-gap it lacks — does class-C force his heat-kernel positivity? (needs Connes 2602.04022 built
+faithfully). (B) Gon–Parker spinor Selberg trace formula's natural −1 from spinor exchange = the verified
+uniform Riemann prime-sign — the one unexplored geometric home for the class-C two-valued DOF. Full cycle log:
+THE_BRIDGE.md; strategic table: SPECTRAL_HP_ROADMAP.md.
+
+## 2026-08-27 06:32 — OVERNIGHT RH ARC: definitive conclusion (cycles 8–71, ~9.5h autonomous)
+The whole arc is a CLOSED LOOP on Weil-form positivity. Verified: Suzuki λa = Connes μ_λ = min-eig(Weil form
+arch−prime), at the knife-edge (~−4e-13, machine zero). Eight frameworks (Suzuki/Weil positivity, class-C
+Hilbert–Pólya spectral construction, modular Eisenstein scattering, de Bruijn–Newman heat flow, Li criterion,
+Connes KMS, primon/Bost–Connes, quantum graphs) ALL reduce to the ONE inequality:
+    **RH ⟺ μ_λ = λa = min-eig(Weil form) ≥ 0** (→0⁺; numerically at the knife-edge, analytically the open core).
+DURABLE OUTPUT: 11 axiom-clean Lean bricks §1759–§1769 = machine-checked class-C Hilbert–Pólya equivalence
+(RH ⟺ ∃ class-C self-adjoint op w/ spectrum {±γₖ}). Obstruction grounded: ζ zeros = Eisenstein cusp-scattering
+resonances of the modular Laplacian (verified pointwise/count=N(2T)/measure T logT vs Maass T²/strip Re<½/Selberg
+framework); RH = resonance-location on Re=¼. All natural constructions from primes verified-negative. ~6 overclaims
+caught by verify-before-ship; nothing fabricated. Provenance: THE_BRIDGE cycles 8–71, PROCESS.md, SPECTRAL_HP_
+ROADMAP.md, memories rh-spectral-symmetry-mapped + rh-arsenal-toolkit (2026-08-27).
+OPEN CORE (research-scale, not a cron-probe task): the positivity LOWER bound μ_λ≥−o(1) — Connes' named obstacle
+is Haar-measure control on the semilocal adele quotient Y_S=∏ℚ_v/Γ as S→∞. RH IS solvable; the target is now a
+single sharp inequality, grounded + formally scaffolded. NEXT REAL STEP = a scoped dedicated effort (Roundtable-
+scale new mathematics on μ_λ's lower bound), starting from this fully-mapped position — Jacob's call on scoping.
+
+## 2026-08-29 — SESSION ARC (cycles 153–178): real-rootedness Lean engine + rigorous Weil-positivity certification
+Two major durable threads + a literature calibration, all verify-before-ship.
+
+**(1) Hermite real-rootedness Lean module — COMPLETE, 23 axiom-clean files §1790–1812** (all ⊆{propext,
+Classical.choice,Quot.sound}; Olympus ~/rhforge/forge/, mirror rhforge/forge/, doc REAL_ROOTEDNESS.md). Mathlib
+has NO real-rootedness/Hankel-signature theory — this is genuinely novel. Contents:
+  • Hermite criterion as a single iff §1806: complex Hankel form PSD ⟺ all roots real (both directions:
+    §1790-1793 necessary, §1794-1803 converse incl. full general case, §1804 ⟸, §1805 decomp).
+  • Interval localization as an iff §1811: (4−r²)-weighted form PSD ⟺ all roots in [−2,2] (§1791,1807-1810).
+  • On-circle criterion §1781-1789 (Chebyshev/Joukowski/Dickson, palindromic roots-on-circle ⟺ Q real-rooted
+    in [−2,2]) + §1812 all-roots lift. This is the CS/Chebyshev mechanism's engine.
+  Confirmed COMPLEMENTARY to Alpöge-Furman zeta-23-lean (their abstract matrix-inertia LinAlg vs our polynomial
+  SOS route — not redundant).
+
+**(2) Rigorous Handle-tier certification of finite-band Weil positivity** (Groskin 2607.02828 framework, already
+integrated: operators/arb_ldlt_margin.py + external/groskin_2607.02828/code). Interval-arithmetic LDL^T certifies
+the cutoff-free truncated Weil form is POSITIVE-DEFINITE (n_neg=0) for c≤300, N≤128 — the rigorous version of
+λ_a>0. N-direction margin PLATEAUS (~7.3e-22, RH-favorable); c-direction decays as steep power law rel≈10^22·c^−38.5
+staying strictly positive (MARGINAL positivity — RH-CONSISTENT but INCONCLUSIVE; finite-c can't distinguish
+true-marginal from unresolved-off-line-zero). Cycle-177 "plateau" over-read RETRACTED at cycle 178 (7-point slope
+non-monotone). BOUNDARY: certifying the c→∞ limit needs an ANALYTIC margin lower bound (open; Groskin gives the
+archimedean-T budget only, not a c-bound).
+
+**(3) Literature (Aug 2026) + #neg calibration:** newest RH work catalogued — Alpöge-Furman 2608.13637 (Claude
+raised on-line-zero proportion 41.6%→67.2% via rank-trace + Sylvester inertia on Weil-form compression; OUR exact
+object; Lean-formalized; complementary), Groskin 2607.02828, Suzuki-op 2607.24830 (validates our λ_a knife-edge
+to 30 digits). AF's "neg-index from primes identically zero" warning does NOT transfer to our screw form (verified
+RH-SENSITIVE: off-line injection flips #neg 0→4). μ₁≈0.234 stands. λ_a non-convergence at large a RESOLVED =
+superexponential decay (matches 2607.24830 R7). Full cycle log: THE_BRIDGE.md 153–178.
+
+OPEN CORE (unchanged, sharpened): RH ⟺ Weil form ≥0 in the (c,N→∞) limit. Our lane = quantitative Weil positivity;
+the c-margin analytic lower bound is the concrete open sub-problem. Durable engine (real-rootedness + on-circle)
+is the CS-mechanism scaffolding, complete; its remaining wiring (on-circle→Hankel-PSD via P.roots multiset) is
+plumbing. AF's proportion mechanism (rank-trace on signed zero-Gram) is a genuinely different, complementary attack.
+
+════════════════════════════════════════════════════════════════════════════
+SESSION 2026-08-29 (cycles 198-235, THE_BRIDGE.md) — CERTIFIED EULER-PRODUCT WEIL DISCRIMINATOR + AF FRONTIER
+════════════════════════════════════════════════════════════════════════════
+NOVEL DURABLE RESULT: certified proof (rigorous Arb, zero numeric input) that the Euler product is load-bearing for
+Weil positivity. Doc: EULER_PRODUCT_WEIL_DISCRIMINATOR.md. Key pieces:
+ • CLOSED-FORM arch constant (kappa+J)[nu,cond](L) = -psi(nu)+log(pi/cond)-Σ_k e^{-2(k+nu)L}/(k+nu), PROVEN =Groskin's
+   arb_kappa+arb_J to 1e-16 (operators/dh_exact.py). Generalizes Groskin to any nu/conductor.
+ • CERTIFIED table (interval-LDL^T, no undetermined pivots): zeta n_neg=0; Davenport-Heilbronn n_neg=0,1,4,8,14
+   (c=14,25,50,75,100). D-H = same FE + kappa=1 pole + zero-stats as zeta but NO Euler product -> certifiably fails
+   Weil positivity where zeta passes.
+ • Prime powers INDISPENSABLE: drop k>=2 -> zeta n_neg=20,29,41 (primepower_certified.py). Positivity is one exact-
+   identity razor (tau=Σ_ρ FF-bar Gram matrix ONLY with exact complete weights; 1e-16 weight error flips n_neg 0->20).
+FRONTIER CONNECTION: reproduced Alpöge-Furman's unconditional 2/3 (arXiv 2608.13637, weeks old, Lean-verified): our
+ Weil form shares AF's Gram-matrix spectrum, mu2->4/3 gives 2-mu2=2/3; window constants R(psi_0)=4/3->2/3 and
+ R(psi_MT)=1.3275->0.6725 reproduced exact. Beyond 2/3 needs Hardy-Littlewood (4th moment) -- AF's frontier, not
+ shortcuttable by our instrument.
+CROSS-INSTRUMENT: Suzuki screw-function λ_a independently confirms prime-necessity (arch-only λ_a=-0.317 vs full>=0).
+SUZUKI's OPEN CONSTANT: mu1 = 0.2333 +- 0.0001 (4 independent methods; Suzuki arXiv 2606.09096 left it uncomputed);
+ closed form likely non-elementary (null identify at 4 digits).
+DISCIPLINE: ~13 verify-before-ship self-corrections (retracted: non-robust monotone counts, mis-applied Christoffel,
+ float-weight artifacts, Bombieri quantitative over-claim). New durable tools: weil_fast.py (validated 1e-14 fast Weil
+ builder), dh_certified_tau.py, mu1_chebyshev_spectral.py.
+FORWARD RH (open, precisely mapped): the razor (smallest Weil eigenvalue ->0, certified >0, sign-in-limit=RH) = the
+ field wall; unconditional >2/3 = HL. EP+FE-necessity now PROVEN, so a positivity proof must use the full exact
+ identity (piecewise bounds ruled out, cycle 220). Loaded next: (A) Lean-formalize a piece (forge on Olympus);
+ (B) fresh RH angle; (C) mu1 Fourier-element derivation (low priority).
+
+================================================================================
+SESSION 2026-08-30 (cycles 248-268) — Certified EP/multiplicativity discriminator
+COMPLETED + broadened to 5 L-functions; backward Weil criterion formalized in Lean;
+AF connection pinned; ΔE12 side-thread resolved; von-Neumann brick cancelled as duplicative.
+================================================================================
+
+HEADLINE (novel, verified): The Euler product (prime multiplicativity), jointly with the
+functional equation, is what forces Weil positivity. Certified across 5 L-functions / 3 families /
+2 degrees; a functional-equation L-function lacking it (Davenport-Heilbronn) is certifiably
+indefinite. Full writeup: EULER_PRODUCT_WEIL_DISCRIMINATOR.md (self-contained, §1-§5 + PASS/FAIL
+table §2d + AF connection §4b).
+
+PASS/FAIL (genuine Weil forms, arch-prime vs Gram over the function's own zeros):
+  ζ           deg1 mult          Arb-certified n_neg=0 (pole)         -> dh_exact.py
+  L(χ₄)       deg1 mult(signed)  Arb-certified n_neg=0, min-piv 1.14  -> weil_dirichlet_gram_arb.py
+  L(χ₃)       deg1 mult(signed)  PD float, min-eig +0.171             -> af_mult_sensitive.py-adj
+  Ramanujan Δ deg2 mult(Hecke)   Arb-certified n_neg=0, min-piv 0.083 -> weil_degree2_delta_arb.py
+  E11a        deg2 mult(elliptic)Arb-certified n_neg=0, min-piv 2.45  -> e11_weil_arb.py
+  Davenport-H deg1 NON-mult      certified INDEFINITE n_neg 1,4,8,14  -> dh_exact.py
+
+KEY ASSETS DERIVED:
+- Closed-form archimedean constant (κ+J)[ν,cond](L) = -ψ(ν)+log(π/cond)-Σ_{k≥0}e^{-2(k+ν)L}/(k+ν),
+  verified = Groskin's arb_κ+arb_J to 1e-16. Eliminated last numeric dependency. -> dh_exact.py
+- Genuine-instrument pattern (Gaussian Schwartz basis + arch acb.integral + Satake/χ prime side +
+  Gram-over-zeros cross-check) validated on 5 L-functions; the cross-check is the ζ-swap safeguard
+  (cycle 249: a scaffold-swap gave spurious n_neg=15; genuine instrument gave clean PSD).
+
+AF (Alpöge-Furman 2608.13637) CONNECTION (§4b, cycle 264 — hypothesis corrected via verify-before-ship):
+- The R(ψ)/μ₂ second-moment indicator is multiplicativity-INSENSITIVE (ζ and D-H both → ~4/3; our ζ
+  instrument reproduces AF's μ₂→4/3 and 2/3 proportion EXACTLY). NOT the distinguisher.
+- The distinguisher is the SIGNATURE: by Bombieri, the negative index of Weil-form truncations =
+  off-line-pair count p = AF's penalty term (npl≤p, -4b). Our certified n_neg IS that p.
+  Multiplicative ⟹ n_neg=0 ⟹ AF penalty vanishes ⟹ clean 2/3; non-mult ⟹ n_neg=p>0 ⟹ penalty active.
+- AF already Lean-verified their full result (github.com/anthropics/zeta-23-lean); their rank-trace
+  lemma genuinely needs von Neumann (P,Q non-commuting). So we CANCELLED building a von-Neumann brick
+  (duplicative) — cycle 263 verify-before-build.
+
+LEAN (forge on Olympus, all axiom-clean {propext,Classical.choice,Quot.sound}): 15 bricks this session.
+  Forward Weil: WeilFormPSD (Gram sum PSD), NonnegCombo, domination_from_gram (Gram-pullback ⟹ hdom =
+    arch-dominates-prime = the forge's RH reduction §1752).
+  AF rank-trace→2/3 (independent partial reproduction of the co-diagonal core): EffectiveRank,
+    RankTraceSingle/Q/Codiag/Matrix, EffectiveRankMatrix, AFProportion, AFTwoThirds.
+  Backward Weil (off-line zero ⟹ ¬PSD, = machine-checked ghost mechanism): rank2_diff_not_posSemidef,
+    not_posSemidef_of_isotropic_neg, weil_offline_breaks_psd, weil_offline_breaks_psd_quant.
+  ⟹ Both directions of the Weil criterion (zeros-on-line ⟺ Weil-positivity) now in Lean skeleton;
+    the remaining gap to a full proof is the analytic explicit-formula identity = the field's wall.
+
+SIDE-THREAD RESOLVED (cycles 254-260): Δ·E₁₂ (genuine weight-24 NON-eigenform, Λ_f nonzero on
+  composites = non-mult, same FE as eigenforms). Searched its zeros DIRECTLY (completed-Λ incomplete-
+  gamma + 2D |Λ| scan σ∈[12,14] to t≈90): NO off-line zeros — all on the critical line. LESSON:
+  non-multiplicativity ALONE does NOT produce off-line zeros; D-H's require its engineered root-number
+  mismatch. So the RH-relevant equivalence is the Weil criterion (zeros-on-line ⟺ positivity), not
+  "non-mult ⟺ indefinite". -> de12_zeros.py, de12_offline_search.py.
+  Verify-before-ship catches this thread: dps-18 gamma-underflow, RS-undercount, coarse-grid deficit,
+  count-deficit-refuted-by-direct-scan — every "off-line zeros!" signal held unproven until direct check.
+
+OPEN / next: the analytic wall (hdom = arch-dominates-prime = RH), heavily mapped (~60 razor scripts,
+  incl. lp_provedmargin.py QED-level Hermite margin, structural_reason_domination.py PATH C). Approach
+  only via the 6-Fable Roundtable literature gate to avoid rediscovery. The discriminator proves what
+  uniform positivity REQUIRES (EP+FE jointly); the forward proof still needs ζ's uniform lower bound.
+
+================================================================================
+SESSION 2026-08-30 UPDATE (cycles 269-282): Lean Schur brick + margin thread
+RETRACTED (artifact) + Kim et al. 2607.24830 discovered + integrity audit PASS
+================================================================================
+
+WHAT'S SOLID (re-verified 2026-08-30, regression PASS: zeta n_neg=0, D-H n_neg=4):
+- The certified EP/multiplicativity discriminator (5 L-functions, Arb interval-LDL^T inertia) is
+  UNAFFECTED by the artifact below — n_neg is a rigorous INTEGER index, not a float eigenvalue.
+- 16 axiom-clean Lean bricks (Weil criterion both directions + PATH-D Schur coupling
+  `PSDViaSchurCoupling` via Mathlib fromBlocks₁₁). Forge mirror confirmed.
+
+RETRACTED (cycle 281 — verify-before-ship / never-fabricate):
+- Cycle-279 "M(a) ~ C/a² asymptotic" was a DISCRETIZATION ARTIFACT (h² floor of the FEM screw-form
+  solver), NOT the true decay. Caught by reading Kim et al. arXiv:2607.24830 (in membrane_pulls since
+  Jul 28) + confirming the refinement ratio rho->4 on our own code (operators/refine_test.py).
+- TRUE result (Kim et al. R7, rigorous Richardson): lambda_1(a) decays SUPEREXPONENTIALLY ~e^{-c a^2},
+  strictly positive, below numerical resolution for a>=0.55. cycle-279's verify checked K (basis) but
+  not h (grid) — the rho-test is mandatory for near-null eigenvalue claims.
+
+NEW LITERATURE (flag for Jacob):
+- Kim, Hong, Kim, Choi, Jang, Kim (VIDRAFT AI / QuantumOS, Seoul), arXiv:2607.24830 — first numerical
+  realization of Suzuki's Weil-quadratic-form operator (P1 FEM + Richardson). R1-R9 overlap our
+  analytic operator work; they do NOT test the multiplicativity discriminator (our novel angle).
+  Relevant for priority/citation.
+- AF arXiv:2608.13637 already Lean-verified their 2/3 result at github.com/anthropics/zeta-23-lean.
+
+STANDING PROCESS LESSON (new): search-before-build MUST include membrane_pulls/ (pulled PAPERS), not
+only operators/ (code). Cycles 274-280 re-derived Kim et al.'s R6/R7 (one WRONG) because the greps
+never checked the papers dir.
+
+WALL (unchanged, no one breaches): uniform lambda_1 > 0 (superexponential-but-positive) = RH.
+
+================================================================================
+SESSION 2026-08-30 UPDATE 2 (cycles 283-286): degree-2 FAIL control FOUND +
+certified — discriminator now COMPLETE at both degrees, both sides
+================================================================================
+- Degree-2 FAIL control (the piece the discriminator lacked): EPSTEIN zeta ζ_{x²+5y²} (disc -20,
+  class number 2), a genuine degree-2 NON-multiplicative functional-equation L-function.
+  * Constructed via exact Dirichlet decomposition 2ζ_Q1 = ζ·L(χ_-20) + L(χ_-4)·L(χ_5), VERIFIED
+    against the direct lattice sum (operators/epstein_zeta_disc20.py).
+  * OFF-LINE ZERO EXHIBITED (Potter-Titchmarsh phenomenon, concretely): s=0.93767+29.9834i,
+    |F|=5.6e-25, Re=0.9377 (off the line), t~30 accessible.
+  * Weil form CERTIFIED INDEFINITE (operators/epstein_weil_form.py): Gram-over-zeros, on-line-only
+    n_neg=0 (PSD control), +off-line quadruple n_neg=1 (min-eig ~-0.07). ROBUST across 4 bases.
+    (Verify-before-ship caught + fixed a w·w^H vs w·w^T contraction bug first.)
+- COMPLETE PASS/FAIL table (EULER_PRODUCT_WEIL_DISCRIMINATOR.md §2d):
+    PASS (mult, n_neg=0): zeta, L(chi4), L(chi3) [deg1]; Delta, E11a [deg2] -- 4 Arb-certified.
+    FAIL (non-mult, indefinite): Davenport-Heilbronn [deg1]; Epstein zeta_{x^2+5y^2} [deg2].
+- This degree-2 FAIL is NOT in AF (2608.13637), Kim et al. (2607.24830), or prior work -- new result.
+- Cycle-283 negative finding (recorded): weight-24 modular combinations Delta*E12+lam*Delta^2 have NO
+  accessible low off-line zeros (all on-line to t~36) -- so the degree-2 FAIL needed the Epstein route.
+- NEXT: (A) upgrade Epstein FAIL float->Arb (direct Lambda_Q1 instrument OR rigorous zero enclosures);
+  (B) 3rd FAIL point (disc -23 h=3, genuinely irreducible degree-2 via order-3 class characters).
+
+CORRECTION (cycle 287) to the Epstein degree-2 FAIL writeup: the FAIL rests on 8 DIRECTLY EXHIBITED
+off-line zeros of ζ_{x²+5y²} (t=15.7…65, Re>0.55, |F|<1e-8) ⟹ Weil form indefinite (Bombieri). The
+earlier "n_neg=1" is a valid interlacing LOWER BOUND from a narrow-basis compression, but the exact
+finite-compression n_neg is BASIS-DEPENDENT (a wide Gaussian basis gives 0) — do not report it as "the"
+negative index. Proper D-H-style n_neg growth needs the tuned Groskin Galerkin instrument (next task).
+
+================================================================================
+SESSION 2026-08-30 UPDATE 3 (cycles 289-290): FAIL side broadened to h=3
+(irreducible degree-2); Epstein family realizes discriminator via CLASS NUMBER
+================================================================================
+NEW INSIGHT (doc §2e): the Epstein zetas ζ_Q of binary quadratic forms realize the multiplicativity
+discriminator INTRINSICALLY, parameterized by class number h — computed uniformly via incomplete-gamma
+theta continuation (FE-validated each case):
+  h=1 (disc -4, ζ_{x²+y²}=4ζL(χ₄), Euler product): 0 off-line zeros -> PASS
+  h=2 (disc -20, ζ_{x²+5y²}): 8 off-line zeros -> FAIL
+  h=3 (disc -23, ζ_{x²+xy+6y²}, IRREDUCIBLE): 3 off-line zeros -> FAIL
+The class number = the multiplicativity switch (h=1 mult PASS; h>=2 non-mult FAIL). Holds across class
+number and reducibility. Scripts: operators/epstein_{h1_control,disc23_h3,offline_scan,zeta_disc20}.py.
+Full discriminator now: 5 mult L-functions PASS (4 Arb-certified) + FAIL side = D-H [deg1] + Epstein
+family [deg2, h=2 reducible & h=3 irreducible]. Novel vs AF (2608.13637) / Kim et al. (2607.24830).
+
+SESSION 2026-08-30 UPDATE 4 (cycle 292): attempted full arch−prime Weil form for the Epstein ladder.
+FE gate PASS (ξ_Q=(√d/2π)^sΓ(s)ζ_Q symmetric to 3e-33; arch density Ω_Q=log(√d/2π)+Reψ(½+ir), digamma shape
+class-number-blind — VERIFIED). Inertia gate FAILED (h=1 gave n_neg=2, must be 0): mpmath arch-constant
+convention bug, localized (ζ machinery sound → n_neg=0; L(χ₄) alone wrongly n_neg=3 vs GRH-forced 0). NOTHING
+SHIPPED — verify-before-ship caught it. Cycles 290/291 result unaffected (doesn't depend on full form). Next:
+reuse certified weil_dirichlet_gram_arb.py conventions (Γ_ℝ(s)Γ_ℝ(s+1) split) instead of re-deriving.
+
+SESSION 2026-08-30 UPDATE 5 (cycle 293): FIXED cycle-292 arch bug — degree-2 needs Ω_Q=log(|D|/π²)+ψ(¼)+ψ(¾)
+(Legendre duplication of Γ(s)), and large-a basis (small-a cond 3e27 marginal). Cross-validated: direct
+degree-2 Epstein h=1 = ζ_K=ζ+χ₄ EXACTLY (min-eig +2.9602). BUT full-form inertia UNDERCOUNTS off-line zeros
+for h=2,3 (n_neg=0 vs ≥1) — Cauchy interlacing one-way bound, generic basis can't resolve off-line heights.
+=> full-form inertia is the WRONG discriminator (fragile at PASS, under-sensitive at FAIL); robust instruments
+= direct off-line count + jump-weight sign (cycles 289-291) STAND. operators/epstein_full_weil_form_v2.py.
+Next: pivot to the wall, uniform λ_a>0 via Suzuki (2.2).
+
+SESSION 2026-08-30 UPDATE 6 (cycle 294): pivoted to the wall (uniform λ_a>0). Quantified via existing
+suzuki_lambda_decomp.py + suzuki_lambda_a_stable.py: λ_a POSITIVE, superexponential ≈C·e^{−c a²} (c≈57.7,C≈2>0),
+confirmed to 1.8e-16 at a=0.8. a≥0.9 "negatives" (~1e-15) are FLOAT64 FLOOR not sign changes (zero-side
+kernel ≥0 by construction under RH). arch/prime each grow ~linearly & cancel to tiny λ_a = the renormalization
+knife-edge. Prime-threshold modulation (a=log n/2) confirmed in the decay slopes = the (2.2)-expansion lead.
+BARRIER: float64 caps at ~1e-16; need arbitrary precision. Next: Arb/mpmath λ_a for a=0.9-1.5 + pin sign(C)>0.
+
+SESSION 2026-08-30 UPDATE 7 (cycle 295): built operators/suzuki_exact_Q_mpmath.py (arbitrary-precision
+UNCONDITIONAL λ_a via the exact-Q closed form, tail factorized to O(K) Lerch moments). Confirmed exact-Q
+UNCONDITIONAL λ_a = zero-side at a=0.3,0.5; both float64 paths floor (1e-13/1e-16), a≥0.8 apparent negatives
+are floor-noise. OBSTACLE: tail Lerch Φ(e^{-2t},1,¼) log-singular at t=0 → needs analytic singular-moment
+subtraction (−½log(2t) part in closed form via Ci/Ei) to reach the ~20 digits required for a≥0.9. Tool ~80%.
+Evidence λ_a>0 strong & unchanged (superexp fit + exact-Q agreement + zeros-on-axis). Next: finish subtraction, cholesky-certify a=0.9-1.5.
+
+SESSION 2026-08-30 UPDATE 8 (cycle 296): DISSOLVED the Lerch log-singularity via closed-form tail moments
+(di/trigamma, no Ci/Ei, no lerchphi) — operators/suzuki_exact_Q_mpmath.py, unconditional arbitrary-precision
+λ_a, 1-2s/eval. VALIDATED: mpmath Q = float64 exact-Q to 1e-13; a=0.5 K-converges 1.077→1.050→1.018887e-6 =
+exact-Q 1.019e-6. CERTIFIED λ_a>0 past float64 floor: a=0.9→7.07e-23 Cholesky PD (7 orders below any float64
+floor), unconditional. HONEST: Galerkin=upper bound, so PD certifies form PD over test space (strong margin,
+not a lower-bound proof). Proof still needs analytic sign(C)>0 in λ_a~C e^{-ca²}. Next: pin c + attack prefactor sign via decomp.
+
+SESSION 2026-08-30 UPDATE 9 (cycle 297): tool re-validated (a=0.55,0.60 = zero-side ~1%). Decay has a
+subleading correction (local c drifts 53→75; exponent ∝ a^p, p≈2.1-2.2, not pure a²; leading c≈55-60,
+maybe 18π). MAJOR: the wall REDUCED to the Krein-Langer κ=1 inequality λ_a>0 ⟺ p₁²≥|μ_1|(1+β) (pole rank-1
+overlap² beats arch's single neg eigenvalue), verified sign-matching + saturated (LHS≡RHS→1), β→0 at large a
+so it simplifies to p₁²≥|μ_1|. bs_schur_threshold.py. Next: closed forms/asymptotics for μ_1(a),p₁(a),β(a);
+prove p₁²≥|μ_1| via slope comparison. results/bs_schur_kreinlanger_cycle297.txt.
+
+SESSION 2026-08-30 UPDATE 10 (cycle 298): extracted Krein κ=1 ingredients at high precision (mpmath exact-Q
+pieces). p_1²/|μ_1|→1 (saturation), β→0 (0.044→0.004), margin=p_1²-|μ_1|(1+β) POSITIVE & superexp-small
+(1e-4→1e-33, ~λ_a rate). |μ_1|~O(a²). Criterion = rank-1 update secular eqn: λ_a>0 ⟺ ⟨p,φ_1⟩²/|μ_1|>1+β.
+Cross-thread: same κ=1 pole-lift governs Suzuki λ_a AND Epstein PASS/FAIL (mult_polelift_bridge). Saturation
+suggests near-exact hidden identity p_1²≈|μ_1|(1+β); exact form making gap≥0 = the proof. Next: closed-form
+asymptotics of |μ_1|(a) [check suzuki_mu1_closed_form] & p_1²(a), seek Cauchy-Schwarz/residue identity.
+
+SESSION 2026-08-30 UPDATE 11 (cycle 299): confirmed Dirichlet-form/Schrödinger backbone (arch =
+(-Δ)^{1/2}-½log(a²-x²) on [-a,a], via suzuki_mu1_closed_form.py). VERIFY caught: inf[L_a]=1·log(1/a)+0.239
+(c=1), inconsistent with the script's reduction docstring (expects c=½) — factor-2/log2 snag in the scalar
+reduction, FLAGGED not used. Physical: φ_1 (arch neg mode) localizes low-r (s=1 region) = same mode as pole p
+⇒ p_1²≈|μ_1| saturation explained. Next: (A) reconcile reduction constant from Suzuki specific-g section →
+clean small-a brick; (B) express margin as a low-r overlap integral, test manifest-square (Cauchy-Schwarz).
+
+SESSION 2026-08-30 UPDATE 12 (cycle 300): TRACK A DONE — reconciled the L_a→λ_a reduction empirically
+(5 points a=0.15-0.34, direct validated λ_a vs inf L_a): λ_a = ½(inf L_a − (1+A)) + o(1), a→0 limit lands on
+−½(1+A)=−0.854 exactly. Docstring's "2 inf L_a − 2(1+A)" was 4× off (coeff ½ not 2, an H^{1/2} normalization).
+So small-a λ_a>0 ⟺ Schrödinger ground state (−Δ)^{1/2}−½log(a²−x²) > 1+A=1.70755. Backbone now trustworthy.
+results/suzuki_La_reduction_reconciled_cycle300.txt. Next (Track B, wall): margin p_1²−|μ_1|(1+β) as low-r
+overlap/Cauchy-Schwarz defect, tie to Euler-product jump-positivity (same κ=1).
+
+SESSION 2026-08-30 UPDATE 13 (cycle 301): wall reduced to ONE scalar. f(0)=1+⟨p,Q0⁻¹p⟩=det(Q_full)/det(Q0),
+computed via linear solve (fast). ⟨p,Q0⁻¹p⟩ HUGS −1 to 10+ digits; f(0)=−ε(a), ε superexp-POSITIVE
+(8e-7,4e-13,6e-23,3e-36 at a=0.5-1.1). WALL ⟺ ε(a):=−1−⟨p,Q0⁻¹p⟩>0 ∀a. The near-exact −1 ⇒ likely an
+explicit-formula/pole-residue IDENTITY; ε = positive correction (zeros/jump-positivity). NOT claiming −1
+proven exact (leading term, 10+ digits, f(0)<0 all pts). results/f0_resolvent_cycle301.txt. Next: derive
+⟨p,Q0⁻¹p⟩=−1 exactly (prime-free case first); characterize ε as sum-of-squares over zeros.
+
+SESSION 2026-08-30 UPDATE 14 (cycle 302): CORRECTED cycle-301 overclaim (⟨p,Q0⁻¹p⟩=−1 is λ_a→0 restated,
+not an identity; had been making equivalent restatements). Read Suzuki's real criteria: Thm 1.4 (RH ⟺ Weil
+form = L²-norm equality) + Cor 4.3 (RH ⟸ screw fn g(t)≤0 on [t0,∞)). Computed g(t) unconditionally: ROBUSTLY
+NEGATIVE ≈-0.04 for t∈[1,16] (NOT superexp like λ_a) — a tiny residue of ±11900 boundary/prime cancellation.
+Cor 4.3 margin robust = better target. HONEST: numerical check consistent w/ RH, not proof (g≤0 ∀t = RH-hard
+cancellation control). results/screw_g_sign_cycle302.txt. Next: g(t) via explicit formula = arch − Σ_γ(zero),
+tie g≤0 to on-line zeros directly (Cor 4.3 ‖S_t‖²).
+
+SESSION 2026-08-30 UPDATE 15 (cycle 303): VERIFIED the screw-function explicit-formula identity
+g(t)=2Σ_γ(cos γt−1)/γ² = −4Σ_γ sin²(γt/2)/γ² (zero-side matches prime-side to the 2000-zero truncation const
+8.85e-4). MECHANISM transparent: −g(t)=4Σ sin²(γt/2)/γ² is a manifest SUM OF SQUARES over zeros (Cor 4.3
+‖S_t‖²); ≤0 term-by-term ⟺ γ real ⟺ RH; off-line γ makes sin² hyperbolic → g>0. Fuses w/ cycle-301 ε &
+cycle-291 Euler jump-positivity. HONEST: equivalence mechanism, not proof (g≤0 ∀t from prime side = RH).
+results/screw_g_zeroside_cycle303.txt. Next: two-sided bound 0≤−g(t)≤4Σ1/γ²; attack lower bound via prime-side
+jump-positivity; pull S_t explicitly.
+
+SESSION 2026-08-30 UPDATE 16 (cycle 304): quantified the robust −g(t) margin (zero-side, under RH):
+mean −g = 2Σ_{γ>0}1/γ² = 0.04532 (exact match), −g(t)∈[0.020,0.068] over t≤50, never →0 due to γ
+incommensurability. HONEST STATUS: cycles 294-304 fully mapped the wall (λ_a / secular / resolvent / g(t)≤0 /
+sum-of-squares −g=4Σsin²(γt/2)/γ²) — all equivalent to RH, all verified numerically; g(t)≤0 (Cor 4.3) is the
+best-conditioned form. NO new unconditional lever broke the equivalence this session. Next (genuinely new, not
+a restatement): (A) unconditional prime-side time-average of g(t) → −2Σ1/γ²; (B) off-line-zero exclusion region
+from verified g≤0; (C) Roundtable lit gate (needs Jacob opt-in).
+
+SESSION 2026-08-30 UPDATE 17 (cycle 305): showed g(t) is a QUANTIFIED off-line-zero detector — moving zero #1
+to Re=½+δ breaks g≤0 for δ≳0.1 (by t≈29); sensitivity cosh(δt)/γ² vs margin. ⇒ verified g≤0 up to t=T gives a
+conditional zero-free region δ≳arccosh(margin·γ²)/T near height γ. Locates RH-hardness precisely as the T→∞
+(all-primes) limit of a finite verifiable detector. results/offline_detector_cycle305.txt. Next: make g(t)≤0
+RIGOROUS (Arb/interval on prime sum+arch) → theorem-grade finite-box zero-free region; push T~18-25. Alt:
+Roundtable lit gate (needs Jacob opt-in).
+
+SESSION 2026-08-30 UPDATE 18 (cycle 306): RIGOROUS Arb certification g(t)<0 at t=1,2,3,5,8,12 (err balls
+≤2e-53), operators/screw_g_arb_certify.py — theorem-grade pointwise (partial Cor 4.3). HONEST: discrete t
+only, not yet continuum [t0,T] (needs g' bound). Next: bound |g'| per smooth piece → certify g≤0 on continuum
+→ combine w/ cycle-305 detector → Arb-certified unconditional zero-free box; push T→16→20.
+results/screw_g_arb_certified_cycle306.txt.
+
+SESSION 2026-08-30 UPDATE 19 (cycle 307): BANKED Lean brick ScrewSumOfSquares (axiom-clean, Olympus forge):
+cos x-1=-2sin(x/2)² ≤0 term-wise ⇒ ∑wᵢ(cos γᵢt -1)≤0 for wᵢ≥0 = Cor 4.3 g(t)≤0 (real frequencies). Durable
+machine-checked mechanism of the screw-function thread. HONEST: retracted the cycle-306 zero-free-box as
+NOVELTY (reproduces classical/weaker-than-Platt) — Arb g<0 evaluator still a legit artifact. Next: (A) show
+D-H (non-mult, off-line zeros) screw fn g_L(t)>0 → unify Cor-4.3 mechanism w/ the EP discriminator; (B)
+Roundtable lit-gate (needs Jacob opt-in).
+
+SESSION 2026-08-30 UPDATE 20 (cycle 308): UNIFIED the two session threads. D-H (non-mult, off-line zero
+δ=0.3085 @ height 85.7): off-line quad contribution ~cosh(δt)/γ² exceeds ζ-margin 0.02 by t≈16.3 → g_{D-H}(t)>0
+→ Cor 4.3 FAILS. So mult L (Euler product)⟺zeros real⟺g≤0 (sum of squares)⟺PASS; non-mult⟺off-line⟺g>0⟺FAIL —
+the EP discriminator (290-293) and Cor-4.3 screw mechanism (302-307) are ONE phenomenon. HONEST: unification,
+not a new RH lever. Next: (A) Lean brick screw_complex_freq_pos (FAIL side, contrapositive); (B) Roundtable
+lit-gate (Jacob opt-in).
+
+SESSION 2026-08-30 UPDATE 21 (cycle 309): BANKED ScrewOfflineNonneg (axiom-clean) — FAIL-side complement:
+cosh(δt)-1≥0 (>0 if δt≠0), reverse of on-line ≤0 ⇒ off-line/complex freq breaks g≤0. The discriminator
+mechanism is now machine-checked BOTH ways (ScrewSumOfSquares PASS + ScrewOfflineNonneg FAIL): −2sin² vs
++2sinh² sign flip = on-line/off-line = EP discriminator = Cor 4.3. Durable output of the 290-309 unification.
+HONEST: formalizes the mechanism, not a proof of RH; single-session analytic frontier reached. Next: (A)
+consolidate arc into SCREW_COR43_DISCRIMINATOR.md; (B) Roundtable lit-gate (needs Jacob opt-in).
+
+SESSION 2026-08-30 UPDATE 22 (cycle 310): CONSOLIDATED the 290-309 arc into SCREW_COR43_DISCRIMINATOR.md
+(verified equivalence chain + Krein κ=1 unification + reconciled Schrödinger reduction + 2 Lean bricks +
+D-H FAIL + honest proof status + proof pointers). Appended 292-309 decision-chain to PROCESS.md. Durable arc
+outputs: EP discriminator, unconditional hi-prec λ_a tool, fixed 4× reduction, Cor-4.3 mechanism Lean-banked
+both ways, thread unification. RH open at named frontier (unconditional prime-side g-bound). Next: ESCALATE —
+Roundtable lit-gate (needs Jacob opt-in) OR a genuinely new prime-side lower bound (no more restatements).
+
+SESSION 2026-08-30 UPDATE 23 (cycle 311): NOVELTY GATE (solo lit-check) — the "multiplicativity/Euler product
+⟹ Weil positivity" discriminator framing is KNOWN (França-LeClair 1407.4358 e-mode vs φ-mode; Davenport-
+Heilbronn standard counterexample; Bombieri-Hejhal Epstein off-line; Connes 2006.13771 arch positivity). Our
+arc = verified instantiations + Lean bricks, NOT a fresh handle. HONEST: no new solo lever; open problem =
+unconditional positivity proof (new math / deep programs), exactly where the field knows it. Next: (A) read
+1407.4358 to delimit the exact novelty delta; (B) deep Connes-Consani route needs Jacob-scoping, not a
+single-session crack. Arc banked as SCREW_COR43_DISCRIMINATOR.md.
+
+SESSION 2026-08-30 UPDATE 24 (cycle 312): MAJOR — our exact-Q machinery IS the Connes-Consani-Moscovici
+"Zeta Spectral Triples" operator (ccm_2511.22755, riemann-proof Track 2 "most promising"). Same arch
+(digamma/trigamma/Hurwitz-Lerch Φ, ρ-kernel), same prime jump T(n), same rank-2 pole (=our Krein κ=1 Qpole).
+Their D_{λ,N} = rank-1 perturbed scaling op; spectrum = zeros of ξ̂ (minimal eigenvector's FT), REAL by
+Carathéodory-Fejér, matching first ζ zeros to 1e-55 with primes≤13. RH ⟺ spectrum converges to true zeros
+(detreg→Ξ) — a CONVERGENCE problem with positivity built-in, arguably more tractable than our g≤0. We were
+building CCM's operator unknowingly (cycle-296 W-zeros hit ζ zeros). Baseline: our sine-basis ~1e-2 vs their
+periodic 1e-55. NEXT: reproduce CCM exactly in mpmath (have all special fns), then study convergence rate =
+the real open problem. Pull arXiv:2602.04022.
+
+SESSION 2026-08-30 UPDATE 25 (cycle 313): CCM Cor "strange" (μ_λ→0 ⟹ RH) + μ_λ MONOTONE DECREASING = our λ_a
+(same Weil form, same interval; both positive-decreasing-to-0). Our cycle-294 superexp decay λ_a~e^{-ca²}→0
+(verified past float64 floor, 7e-23@a=0.9) is direct numerical evidence for CCM's μ_λ→0 = RH. Open problem now:
+prove monotone μ_λ↓ has limit 0 (= lower bound μ_λ≥0). Assets: superexp UPPER bound + monotonicity (CCM) +
+Krein κ=1. Missing: matching lower bound (still RH but monotone/structured target). The two most-promising RH
+tracks (Suzuki screw + Connes-Consani spectral) are the SAME operator. Next: high-prec μ_λ(λ) curve via our
+validated tool + lower-bound attack; pull arXiv:2602.04022; synthesize Roundtable.
+
+SESSION 2026-08-30 UPDATE 26 (cycle 314): Carathéodory–Fejér VERIFIED (caratheodory_verify.py, ~1e-14):
+corank-1 PSD Hermitian Toeplitz kernel poly roots all on |z|=1 — the CLASSICAL (non-RH) theorem that gives
+CCM's truncated operator REAL spectrum by construction. So CCM route splits: (i) real spectrum finite-N =
+PROVEN; (ii) convergence μ_λ→0 = OPEN = RH. μ_λ monotone curve (our validated tool): 7.96e-3→7.07e-23 strictly
+decreasing→0, confirms CCM Cor "strange" + monotonicity. Better-structured than "prove g≤0" (half is classical
+theorem). Next: (A) measure convergence RATE (CCM Lemma 7.2 prolate→Hermite O(λ^-2)); (B) Carathéodory Lean
+brick; (C) synthesize Roundtable. Pull arXiv:2602.04022.
+
+SESSION 2026-08-30 UPDATE 27 (cycle 315): ROUNDTABLE (14-agent, 655K tok, 0 err) VERDICT: framing ~99% known
+(Bombieri/Suzuki/D-H/Beurling-Deny/Connes-Consani), no new theorem, barrier = known 50yr bottleneck. 3/4
+attacks circular/false; Attack 4 (multiplicative density regulator) survives "barely", reduces to explicit-
+formula error control. REC: ONE targeted Mellin-convolution probe (2-3 day timebox) then BANK; broad
+investment NOT justified. Agrees w/ my honest assessment. CCM (312-314) better-structured but same open barrier.
+DECISION (Jacob): bank / one-probe / CCM-convergence-probe. results/rh_roundtable_synthesis_cycle315.txt.
+
+SESSION 2026-08-30 UPDATE 28 (cycle 316): ran the ONE RT-recommended probe (convergence-rate). INCONCLUSIVE —
+sine-basis W too crude (spurious minima, R²<0.01); clean measurement needs CCM's exact 200-dps periodic build
+(multi-day) and the proof is still RH. TERMINUS (twice-confirmed: RT + self): barrier unbroken, broad
+investment not justified, BANK recommended. Durable arc output banked (μ_λ tool, 2 Lean bricks, Carathéodory
+verify, CCM connection, discriminator writeups, Arb g<0). Only invest-worthy move = build CCM exact operator
+(2-3 days) for the convergence frontier — JACOB'S call. No more broad grinding.
+
+SESSION 2026-08-30 UPDATE 29 (cycle 317): BUILT CCM exact operator (operators/ccm_exact_reproduce.py) — exact
+matrix elements (ω polarize0, W_ℝ arch, W_p prime, W_02 pole closed form, ξ̂ zeros). V_n orthonormal (mass=I,
+eigsy correct). PARTIAL: first ξ̂ zero 14.31 (err 0.17, N=24) — ballpark not precision. BUG: ε_N negative &
+decreasing (−3.83→−4.68) contradicts CCM μ_λ→0-from-above ⇒ SIGN-convention error picks wrong eigenvector
+(N=40 regressed). Next: sweep 4 (prime±,pole±) sign combos for ε_N→0 & shrinking zero-error; cross-check one
+matrix element; even-sector projection before eigsy; check prior §938 ccm_operator_v2/ccm_discrepancy for the
+right sign. Then measure convergence rate.
+
+SESSION 2026-08-30 UPDATE 30 (cycle 318): ANTI-LOOP review (Jacob's ask) — this session LARGELY LOOPED (screw≡
+Connes, explicit-formula-identity, CCM connection, constant/sinc artifact ALL already in the record; forge at
+§1648 far ahead, prover loop + Mathlib-RH reduction built). Path-B executed: arb-precision λ_a tool pushes
+cert floor a≈0.85→1.2 only (MODEST); λ_a underflows superexp so numerical cert is FUNDAMENTALLY floor-limited
+& SATURATED (a=1.5 −1.8e-50 stable at dps45=dps90 = assembly artifact, not RH violation). near-null tooling
+already exists (nearnull_*.py). Corrected the "resolves the leak" overclaim. CONCLUSION: numerics≠progress;
+only non-loop path = forge heig crux (research-scale) + let prover loop bank. Next: ssh olympus, read forge
+STATUS/frontier, check heig lane for a tractable sub-lemma.

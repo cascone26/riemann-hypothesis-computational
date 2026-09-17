@@ -99,3 +99,29 @@ generates fast, verifies un-foolably, and never lets a broken or fabricated bric
 6. **Novelty / Report-Handle gate** — the direct anti-fabrication lever (the failure mode that most threatens quality).
 7. **Dependency-DAG + frontier report** — leverage-targeting + orphan detection.
 8. **Lean LSP** — the deepest iteration-latency win (higher setup cost).
+
+## riemann9 overnight (2026-08-21 → 08-22, ~9 PM – 6 AM) — retrospective delta
+
+**Output: 90+ EXIT0 bricks (§1649–§1719), 100% bank rate, two full arcs closed** — (1) the complete
+PNT tower (rectangle-winding → Landau ladder → dlVP ζ'/ζ → effective Perron → smoothed PNT →
+de-smoothing → ψ/θ/π with dlVP error + all limit forms), (2) the F₁ ℝ-model Hodge package
+(pairing BilinForm + degLin + posdef + hyperbolic pairs for every K + signature (1,1) + sigPos=1
+on every subspace).
+
+**What made the pace:** forge-brick.sh (one command per brick, un-foolable gate) + parametrize-
+by-inputs (`_param` lemmas + min at the obtain site) + the multiplied-through-squeeze pattern
+(choose the window so every term is a multiple of x²F² — zero division atoms) + writing exact
+statement spellings by READING the consumer's file first (grep before every wire-up).
+
+**Recurring tax to fix:**
+1. **The full-env axiom_gate is broken by design debt**: two parallel `ArakelovDivisor` types +
+   two `deg`s collide when all 789 modules load into one environment. Per-module audit works
+   (background sweep running). FIX: one-canonical-name refactor of the divisor scaffolds, or a
+   partitioned gate.
+2. **lean CLI errors print to STDOUT** — forge-brick's stderr-only log capture misses them; had
+   to recompile by hand each failure. FIX: capture both streams in forge-brick.sh.
+3. Name churn hits: `le_or_lt` (→le_total), `abs_add` (→abs_add_le), module path
+   `MeasureTheory.Integral.IntervalIntegral.FundThmCalculus`, `squeeze_zero_norm'` bound param
+   named `a`. Cheatsheet grew accordingly.
+4. **sigPos/sigNeg over concrete product types need named (R :=)(M :=) args** — instance-laden
+   reducible defs fail unification that abstract-variable probes pass; probe with the REAL types.

@@ -1,0 +1,38 @@
+{
+  "task": "Weyl m-function via canonical system (true Weyl form)",
+  "a": 1.5,
+  "K": 90,
+  "NG": 400,
+  "kappa_M_sigma_only": 12,
+  "kappa_Q_with_pole": 13,
+  "delta_kappa_from_pole": 1,
+  "pole_eigenvalues_Q": {
+    "min_5": [
+      8.941099294036773e-14,
+      1.656634985298952e-13,
+      1.694178505950695e-13,
+      1.9016219109218784e-13,
+      1.941342966867865e-13
+    ],
+    "max_3": [
+      6.64013666089224,
+      6.935146235939736,
+      6.935359236523206
+    ],
+    "range": [
+      8.941099294036773e-14,
+      6.935359236523206
+    ]
+  },
+  "control_tests": {
+    "m=z": 0,
+    "m=z\u00b2": 1,
+    "m=-1/z": 0
+  },
+  "nevanlinna_kernel_spectrum": {
+    "K_m_no_pole_min": -0.11935896177387345,
+    "K_m_no_pole_max": 0.06710026444262693,
+    "K_m_with_pole_min": -2.9377239618783015,
+    "K_m_with_pole_max": 0.5112508477026623
+  }
+}

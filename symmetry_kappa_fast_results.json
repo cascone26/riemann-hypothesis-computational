@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-09-16T22:57:14.182946",
+  "method": "classical_Prop51_Krein-Langer",
+  "U_family": [
+    "1",
+    "-1",
+    "i",
+    "-i"
+  ],
+  "results": {
+    "1": {
+      "kappa": 3,
+      "converged": false,
+      "kappa_sequence": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        "..."
+      ]
+    },
+    "-1": {
+      "kappa": 3,
+      "converged": false,
+      "kappa_sequence": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        "..."
+      ]
+    },
+    "1j": {
+      "kappa": 4,
+      "converged": false,
+      "kappa_sequence": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        "..."
+      ]
+    },
+    "(-0-1j)": {
+      "kappa": 3,
+      "converged": false,
+      "kappa_sequence": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "..."
+      ]
+    }
+  },
+  "summary": {
+    "any_kappa_1": false,
+    "which_U_gives_1": []
+  }
+}

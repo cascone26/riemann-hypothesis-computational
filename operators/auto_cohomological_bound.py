@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 8); c_values = [8, 12, 14]; for c in c_values: tau, _ = build_tau_np(64, c); cohom_bound = np.linalg.det(tau) / (np.trace(tau)**len(tau)); print(f'c={c}, Cohomological Bound: {cohom_bound}')

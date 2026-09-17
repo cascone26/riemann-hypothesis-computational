@@ -496,3 +496,167 @@
   Cats: math.NT
   https://arxiv.org/abs/2607.28931v1
   > We investigate the deterministic hierarchy of prime distribution biases in arithmetic progressions modulo $N$ using a regularized spectral approach. Classical studies on Chebyshev's bias attribute prime races primarily to the accumulation of prime squares $p^2 \equiv 1 \pmod N$, which creates a syst
+
+## 2026-08-11 — 1 new paper(s)
+
+- **2608.09712v1** (2026-08-10) — Exact Exponential-Moment Thresholds for Nonlinear Mean-Reverting Diffusions
+  Authors: Jaewoo Lee
+  Cats: math.PR
+  https://arxiv.org/abs/2608.09712v1
+  > We study the exponential moments of the integrated squared drift that appear in Novikov's criterion, for one-dimensional diffusions with constant volatility $σ$ whose drift $λ$ is strictly mean-reverting but may steepen rapidly in the tails. A localised change of measure reduces the question to a si
+
+## 2026-08-12 — 2 new paper(s)
+
+- **2608.10121v1** (2026-08-10) — Classification of Fourier summation formulas on a horizontal strip
+  Authors: Guilherme Vedana
+  Cats: math.CA, math.CV, math.NT
+  https://arxiv.org/abs/2608.10121v1
+  > We extend the classification of Fourier summation formulas to the setting in which the measure $μ$ is supported on a strip of finite width in $\mathbb{C}$. This broader framework encompasses important examples, including the Guinand--Weil explicit formulas for functions in the Selberg class, which l
+
+- **2608.10476v1** (2026-08-11) — Finite Good Witnesses for Generalized Curve Projections at the Rectifiable Endpoint
+  Authors: Caleb Marshall
+  Cats: math.CA, math.MG
+  https://arxiv.org/abs/2608.10476v1
+  > For a $1$-rectifiable set $E \subset \mathbb{R}^d$ of positive length, a theorem of Federer shows that, among any $d$ linearly independent orthogonal projections of $E$, at least one has positive length. We develop a version of this finite-witness principle for generalized curve projections. Given s
+
+## 2026-08-16 — 2 new paper(s)
+
+- **2605.20224v3** (2026-05-13) — High-Precision Approximation of Riemann Zeros via the Truncated Weil Form
+  Authors: Akiva Groskin
+  Cats: math.NT
+  https://arxiv.org/abs/2605.20224v3
+  > The Connes-van Suijlekom truncated Weil quadratic form, indexed by a cutoff $c$ (controlling the primes $p\leq c$ in the operator), has a ground state whose Fourier-Mellin zeros provably lie on the critical line; whether they converge to the Riemann zeros as $c\to\infty$ is open (Connes 2026; Connes
+
+- **2607.02828v2** (2026-07-02) — A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form
+  Authors: Akiva Groskin
+  Cats: math.NT, math.SP
+  https://arxiv.org/abs/2607.02828v2
+  > The Connes-van Suijlekom and Connes-Consani-Moscovici truncations of the Weil quadratic form, at a prime cutoff c>1 and frequency band N, produce finite Galerkin matrices whose spectra are the finite-rank window on Weil positivity. We prove two exact finite theorems about this truncation. First, eve
+
+## 2026-08-17 — 3 new paper(s)
+
+- **2605.20224v4** (2026-05-13) — High-Precision Approximation of Riemann Zeros via the Truncated Weil Form
+  Authors: Akiva Groskin
+  Cats: math.NT
+  https://arxiv.org/abs/2605.20224v4
+  > The Connes-van Suijlekom truncated Weil quadratic form, indexed by a cutoff $c$ (controlling the primes $p\leq c$ in the operator), has a ground state whose Fourier-Mellin zeros provably lie on the critical line; whether they converge to the Riemann zeros as $c\to\infty$ is open (Connes 2026; Connes
+
+- **2607.02828v3** (2026-07-02) — A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form
+  Authors: Akiva Groskin
+  Cats: math.NT, math.SP
+  https://arxiv.org/abs/2607.02828v3
+  > The Connes-van Suijlekom and Connes-Consani-Moscovici truncations of the Weil quadratic form, at a prime cutoff c>1 and frequency band N, produce finite Galerkin matrices whose spectra are the finite-rank window on Weil positivity. We prove two exact finite theorems about this truncation. First, eve
+
+- **2608.13637v1** (2026-08-13) — More than two thirds of the zeta zeros are simple and on the critical line
+  Authors: Levent Alpöge, Ralph Furman
+  Cats: math.NT
+  https://arxiv.org/abs/2608.13637v1
+  > We prove unconditionally that at least two thirds of the nontrivial zeros of the Riemann zeta function, counted with multiplicity, are simple and lie on the critical line, and that at least five sixths are distinct; the previous unconditional records are $\frac{5}{12}$ and $0.6603$. With the Montgom
+
+## 2026-08-18 — 1 new paper(s)
+
+- **2606.09096v2** (2026-06-08) — Weil's quadratic form via the screw function
+  Authors: Masatoshi Suzuki
+  Cats: math.NT, math.FA
+  https://arxiv.org/abs/2606.09096v2
+  > We establish a unified operator-theoretic framework for understanding the results on the Weil quadratic form obtained by Yoshida (1992), Bombieri (2001, 2003), Connes--Consani (2023), and Connes--Consani--Moscovici (2025+) from the perspective of the screw function introduced in Suzuki (2023). An ad
+
+## 2026-08-20 — 1 new paper(s)
+
+- **2608.19047v1** (2026-08-19) — Eureka: Task-Conditioned Meta-Agent Orchestration for Scientific Discovery
+  Authors: Alizer Wong, Heng Cui, Yi Tan, Xiongchao Zhan, Liang Lin, Yuxiang Guo, Zhaorong Dai, Zixin Zeng, Wenyuan Li
+  Cats: cs.AI, math.NT
+  https://arxiv.org/abs/2608.19047v1
+  > We present Eureka, a task-conditioned Meta-Agent architecture that compiles long-horizon tasks into dynamic obligation graphs with explicit acceptance semantics. During execution, Eureka forms Macro-Agents with specialized state, memory, operators, tools, verifiers, and local topology via receding-h
+
+## 2026-08-21 — 1 new paper(s)
+
+- **2608.13637v2** (2026-08-13) — More than two thirds of the zeta zeros are simple and on the critical line
+  Authors: Levent Alpöge, Ralph Furman
+  Cats: math.NT
+  https://arxiv.org/abs/2608.13637v2
+  > We prove unconditionally that at least two thirds of the nontrivial zeros of the Riemann zeta function, counted with multiplicity, are simple and lie on the critical line, and that at least five sixths are distinct; the previous unconditional records are $\frac{5}{12}$ and $0.6603$. With the Montgom
+
+## 2026-08-27 — 2 new paper(s)
+
+- **2604.23764v2** (2026-04-26) — A Fujita-type threshold for the semilinear damped wave equation with Hartree-type nonlinearity and initial data from homogeneous Besov spaces
+  Authors: Duc An Phan
+  Cats: math.AP
+  https://arxiv.org/abs/2604.23764v2
+  > In this paper, we consider the semilinear damped wave equation with Hartree-type nonlinearity $\mathcal{I}_γ\left(|u|^{p_1}\right)|u|^{p_2}$, where $0<γ<n$, with initial data possessing additional negative regularity in $\dot{B}_{2, \infty}^{-β}$, $β\in [0,n/2)$. We first establish decay estimates f
+
+- **2608.24827v1** (2026-08-25) — Weil positivity in compact windows: certified two-sided bounds and a Landau--Widom decay law
+  Authors: Marcus Chuk
+  Cats: math.NT, math.SP
+  https://arxiv.org/abs/2608.24827v1
+  > Weil's criterion equates the Riemann Hypothesis with the positivity of an explicit quadratic form $Q(f)$. For test functions supported in a window $[-L,L]$ we study the profile $λ^*(L)=\inf Q(f)/\|f\|_2^2$ from both sides. A one-stroke reduction converts window positivity into positive semidefiniten
+
+## 2026-08-28 — 1 new paper(s)
+
+- **2608.27130v1** (2026-08-27) — On variants of Pólya's conjecture
+  Authors: Songlin Han
+  Cats: math.NT
+  https://arxiv.org/abs/2608.27130v1
+  > In this paper, we study a Riesz-type weighted sum of the Liouville function, $f(x):=-\sum_{n\le x}\frac{λ(n)\log n}{\sqrt n}\log\frac{x}{n}$ for sufficiently large $x$. Motivated by a recent research on the sign criteria for the Riemann Hypothesis arising from weighted prime-counting functions, we i
+
+## 2026-09-01 — 1 new paper(s)
+
+- **2607.28931v2** (2026-07-31) — The Fine-Structure Hierarchy of Prime Biases and the Universal Dominance of $-1 \pmod N$
+  Authors: Shin-ya Koyama
+  Cats: math.NT
+  https://arxiv.org/abs/2607.28931v2
+  > We investigate the deterministic hierarchy of prime distribution biases in arithmetic progressions modulo $N$ using a regularized spectral approach. Classical studies on Chebyshev's bias attribute prime races primarily to the accumulation of prime squares $p^2 \equiv 1 \pmod N$, which creates a syst
+
+## 2026-09-02 — 1 new paper(s)
+
+- **2609.01101v1** (2026-09-01) — Sharp lower bounds for shifted moments of Dedekind zeta functions
+  Authors: Benjamin Durkan, Nilmoni Karak, Kamalakshya Mahatab
+  Cats: math.NT
+  https://arxiv.org/abs/2609.01101v1
+  > Let $K_1,\cdots,K_r$ be fixed number fields, and let $L$ be the compositum of their Galois closures. Assuming GRH for $ζ_L$, we prove a sharp lower bound for products of shifted Dedekind zeta functions on the critical line, for arbitrary fixed positive real exponents and uniformly for shifts of size
+
+## 2026-09-11 — 3 new paper(s)
+
+- **2608.10121v2** (2026-08-10) — Classification of Fourier summation formulas on a horizontal strip
+  Authors: Guilherme Vedana
+  Cats: math.CA, math.CV, math.NT
+  https://arxiv.org/abs/2608.10121v2
+  > We classify Fourier summation identities in which the measure on the Fourier side is supported in a horizontal strip of $\mathbb{C}$. Let $μ=ν+η$, where $ν$ is a strongly tempered measure on $\mathbb{R}$, $η=\sum_{m\geq1} b(γ_m)δ_{γ_m}$ is a strongly tempered pure point measure supported off the rea
+
+- **2609.11046v1** (2026-09-10) — Recurrence and transience of random walks with drift $ρx^α/t^β$
+  Authors: Ngo P. N. Ngoc, Tuan-Minh Nguyen
+  Cats: math.PR, cond-mat.stat-mech, math-ph
+  https://arxiv.org/abs/2609.11046v1
+  > Menshikov and Volkov [Electron. J. Probab. 13 (2008)] studied recurrence and transience of a class of Markovian random walks on $\mathbb R_+$ whose conditional drift depends on both time and position and is of order $ρx^αt^{-β}$ with $ρ>0$. The case on the critical line $2β-α=1$, with $α\in(-1,1)\se
+
+- **2609.11560v1** (2026-09-10) — The Local Embedding Problem for Hardy Spaces of Dirichlet Series
+  Authors: Bonan Chen, Xiang Fang, Feng Guo, Shengzhao Hou, Yizhou Shao, Qi Zhou
+  Cats: math.FA
+  https://arxiv.org/abs/2609.11560v1
+  > We solve the local embedding problem for Hardy spaces of Dirichlet series, which is a dimension-free trace problem asking whether the global $\mathscr{H}^p$-norm controls local $L^p$-mass on the critical line $\operatorname{Re}s=1/2$. More precisely, for every $2<p<\infty$, there exists a constant $
+
+## 2026-09-16 — 4 new paper(s)
+
+- **2607.09797v4** (2026-07-09) [GM/low-signal category] — Explicit formula for the discrete Laplace transform of the Möbius function, related special functions, and a criterion for the Riemann hypothesis
+  Authors: Sergey Liflandsky
+  Cats: math.GM
+  https://arxiv.org/abs/2607.09797v4
+  > In this paper, we assume that all the zeros of the Riemann zeta function are simple. Under this assumption we give an explicit formula for the function $Φ(e^{-t})=\sum_{n=1}^{\infty}μ(n)e^{-nt}$, as a function of the values of $ζ(s)$ and $ζ'(s)$ at the odd integers and as a function of the zeros of 
+
+- **2609.11560v2** (2026-09-10) — The Local Embedding Problem for Hardy Spaces of Dirichlet Series
+  Authors: Bonan Chen, Xiang Fang, Feng Guo, Shengzhao Hou, Yizhou Shao, Qi Zhou
+  Cats: math.FA
+  https://arxiv.org/abs/2609.11560v2
+  > We solve the local embedding problem for Hardy spaces of Dirichlet series, which is a dimension-free trace problem asking whether the global $\mathscr{H}^p$-norm controls local $L^p$-mass on the critical line $\operatorname{Re}s=1/2$. More precisely, for every $2<p<\infty$, there exists a constant $
+
+- **2609.15329v1** (2026-09-14) — Optimising Selberg's method for critical zeros
+  Authors: Andrew Pearce-Crump
+  Cats: math.NT
+  https://arxiv.org/abs/2609.15329v1
+  > We revisit Zhuravlev's 1974 quantitative form of Selberg's sign-change method for the zeros of the Riemann zeta function on the critical line. Zhuravlev's work, originally in Russian and little known in the West, established an explicit positive proportion of such zeros. Using modern techniques we o
+
+- **2609.15862v1** (2026-09-14) — Cauchy laws for zeta logarithmic derivatives and stationary Stieltjes transforms
+  Authors: Joseph Najnudel, Ashkan Nikeghbali
+  Cats: math.NT, math.PR
+  https://arxiv.org/abs/2609.15862v1
+  > We prove an unconditional Cauchy limit for a symmetrically truncated Stieltjes transform of the projected ordinates of the zeros of the Riemann zeta function. A suitable normalization of the logarithmic derivative of $ζ$ on the critical line has the same limit provided that the sum of the distances 

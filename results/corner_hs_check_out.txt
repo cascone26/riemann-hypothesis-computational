@@ -1,2 +1,0 @@
-M= 259: Cauchy corner norm=0.3877  HS=0.3882  (bound sqrt(log2)/2=0.4163)  u-law ||B||=0.4740  ||B||^2=0.2247
-M= 801: Cauchy corner norm=0.4047  HS=0.4053  (bound sqrt(log2)/2=0.4163)  u-law ||B||=0.4992  ||B||^2=0.2492

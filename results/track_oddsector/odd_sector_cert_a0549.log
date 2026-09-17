@@ -1,4 +1,0 @@
-§199.3c/§200 RIGOROUS Arb certification, ODD sector @ a=0.549, prec=1400, NLERCH=8000, modes=[1]
-  pivot 0 (mode 1): [0.0002395 +/- 5.56e-8]  rigorously>0? True
-
-*** CERTIFIED PD (all pivots lower-bound >0) — p=2-only positivity RIGOROUS at a=0.549 (both parities) ***

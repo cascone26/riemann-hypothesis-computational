@@ -1,8 +1,0 @@
-{
-  "type": "bound",
-  "script": "projects/riemann-tracks/tail/operators/track_tail/arb_certify_k0.py",
-  "expect": "CERTIFIED PD (all",
-  "description": "K0=7 tail-lemma block rigorous Arb certification: 4 LDL pivots (modes [5,7,3,1]) all rigorously >0, even-sector infinite-dim Weil positivity proven via tail-lemma Gershgorin composition.",
-  "environment": "flint_venv, prec=1400, NL=8000, a=0.549, K0=7 (minimal operational K0)",
-  "timestamp": "2026-07-24T02:15:00Z"
-}

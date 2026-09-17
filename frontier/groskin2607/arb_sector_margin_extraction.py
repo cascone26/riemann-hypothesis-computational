@@ -39,7 +39,7 @@ def extract_parity_blocks_numpy(mat, N):
     return even_mat, odd_mat
 
 
-def compute_sector_margins_arb(c, N, dps=100):
+def compute_sector_margins_arb(c, N, dps=300):
     """
     Compute λ₁(τ_even) and λ₁(τ_odd) at Arb precision dps decimal places.
 
@@ -125,7 +125,7 @@ def main():
                 M = len(pdata)
 
                 lambda_even_arb, lambda_odd_arb, lambda_even_f64, lambda_odd_f64 = \
-                    compute_sector_margins_arb(c, N, dps=100)
+                    compute_sector_margins_arb(c, N, dps=300)
 
                 print(f"{c:>4} {N:>3} {M:>4} {lambda_even_f64:>16.6e} {lambda_even_arb:>16.6e} {lambda_odd_f64:>16.6e} {lambda_odd_arb:>16.6e}")
 

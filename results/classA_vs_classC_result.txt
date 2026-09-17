@@ -1,0 +1,14 @@
+N zeros = 10000,  <r> (all) = 0.6147
+  window [0:2000]  <r> = 0.6172  (n=2000)
+  window [2000:5000]  <r> = 0.6153  (n=3000)
+  window [5000:10000]  <r> = 0.6134  (n=4998)
+
+Reference: Poisson=0.3863  GOE=0.5307  GUE=0.5996  GSE=0.6744
+
+Unfolded mean spacing = 1.0000 (should be ~1)
+  P(s<0.1) = 0.0005
+  P(s<0.2) = 0.0042
+  P(s<0.3) = 0.0163
+  P(s<0.5) = 0.0878
+
+Small-s CDF slope = 3.24  => repulsion exponent beta ~ 2.24  (GUE beta=2, GSE beta=4)

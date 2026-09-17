@@ -1,5 +1,0 @@
-{
-  "type": "bound",
-  "script": "projects/riemann-tracks/continuum/operators/track_continuum/sos_affine_compose.py",
-  "expect": "AFFINE + SOS COMPOSITION WORKS"
-}

@@ -1,0 +1,35 @@
+
+KEY FINDINGS:
+
+1. POLE LOCATION: The numerator vp(z) and denominator vm(z) indicate poles
+   exist somewhere in the complex plane. The real-axis search finds candidates.
+
+2. POLE SIMPLICITY: If vm'(x₀) ≠ 0 at a zero x₀ of vm, the pole is simple.
+   Krein-Langer: single simple pole ⟹ κ=1.
+
+3. κ VARIATIONS: The Nevanlinna kernel κ count varies across UHP regions
+   (12-13 in prior tests, varies by sample location here). This suggests:
+   a) κ may be region-dependent (numerical artifact of sampling)
+   b) κ counts may be counting spurious negative squares from discretization
+   c) The true κ (in the sense of generalized Nevanlinna N_κ) may differ from
+      the sampled Gram-matrix κ.
+
+CRITICAL AMBIGUITY:
+
+The Krein-Langer theorem is about the "generalized Nevanlinna" class N_κ,
+which is a CLASS property (all functions in the class have the same κ), not
+a finite-sample count. Sampling the Nevanlinna kernel on a finite grid and
+counting negative eigenvalues is an APPROXIMATION that may not converge
+cleanly to the true κ for functions with poles.
+
+RECOMMENDATION FOR §979:
+
+The pole is indeed present (vm has zeros). Instead of relying on Nevanlinna
+κ counts, use a DIRECT POLE-BASED CRITERION:
+- Locate the pole to high precision (Newton's method on vm)
+- Verify it is SIMPLE (check vm' ≠ 0)
+- Verify it is NEGATIVE-TYPE pole (for indefinite kernels)
+- Use the pole classification directly: 1 simple pole ⟹ κ=1 (Krein-Langer)
+
+This bypasses the sampling ambiguity and goes straight to the structural
+criterion in the theorem.

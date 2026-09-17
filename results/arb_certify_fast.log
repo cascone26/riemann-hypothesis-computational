@@ -1,7 +1,0 @@
-§199.3c RIGOROUS Arb certification, even 4×4 Weil block @ a=0.549, prec=700, NLERCH=1500
-  pivot 0: [0.621096 +/- 8.43e-7]  rigorously>0? True
-  pivot 1: [0.52620 +/- 3.51e-6]  rigorously>0? True
-  pivot 2: [0.000943 +/- 5.77e-7]  rigorously>0? True
-  pivot 3: [+/- 1.69e-7]  rigorously>0? True
-
-*** CERTIFIED PD (all pivots lower-bound >0) — p=2-only positivity RIGOROUS at a=0.549 ***

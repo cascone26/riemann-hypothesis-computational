@@ -1,0 +1,8 @@
+Schur threshold: s=mu_1+p1^2/(1+beta) should match sign(lambda_a); LHS=p1^2/|mu1| vs RHS=1+beta
+    a    lambda_a      mu_1      p1^2       beta    s(Schur)       LHS       RHS   LHS-RHS
+ 0.50   5.346e-06   -1.9786    2.0120      0.017   8.204e-06    1.0168    1.0168 4.216e-06
+ 1.00   3.112e-06   -4.2819    4.3134      0.007   3.985e-06    1.0073    1.0073 9.375e-07
+ 2.00   2.256e-06  -11.1363   11.1527      0.001   3.215e-06    1.0015    1.0015 2.891e-07
+ 3.00   2.087e-06  -25.6740   25.6964      0.001   3.661e-06    1.0009    1.0009 1.427e-07
+
+If s~lambda_a (sign+size) and LHS~RHS (saturated): the Schur/BS threshold IS the RH criterion here.

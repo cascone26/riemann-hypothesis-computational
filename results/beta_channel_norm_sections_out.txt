@@ -1,1 +1,0 @@
-high-precision at n=8192: ||D||=0.743432  ||B||/beta=0.743432  ratio=1.000000

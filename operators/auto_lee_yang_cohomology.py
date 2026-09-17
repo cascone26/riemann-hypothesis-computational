@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 14); ly_zeros = np.all(np.roots(tau.diagonal()) == 0); print(not ly_zeros)

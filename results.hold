@@ -1,0 +1,11 @@
+{
+  "base": "results",
+  "blob_size": 222360864,
+  "comp": "targz",
+  "hash": "3e1dd794e974895256747f7a7ceda16c9c1cc970f55508f9492adf965ab685e3",
+  "kind": "dir",
+  "mode": 16877,
+  "mtime": 1786309779.4682508,
+  "orig_size": 256616742,
+  "path": "/Users/scones/projects/riemann/results"
+}

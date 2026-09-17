@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 8); c_values = [8, 12, 14]; results = []; for c in c_values:    tau, _ = build_tau_np(64, c)    _, s, _ = np.linalg.svd(tau)    min_singular_value = s[-1]    results.append((c, min_singular_value)); print(results)

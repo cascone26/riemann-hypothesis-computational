@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 14); intersection_form = tau @ tau.T; topological_signature = np.linalg.matrix_rank(intersection_form) - np.trace(np.linalg.inv(intersection_form)) / (2 * len(ns)); print(topological_signature)

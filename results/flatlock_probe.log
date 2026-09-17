@@ -1,9 +1,0 @@
-§194 flat-lock probe (even sector)  K=24
-      a       margin  arch-Rayleigh  prime-Rayleigh  overlap w/prev v0
-  0.480   2.61779e-5      0.0104683     -0.01044212                  —
-  0.520   2.59443e-5      0.0150394     -0.01501342            1.03972
-  0.549   2.64807e-5      0.0235792     -0.02355275            1.02738
-
-READ: margin = arch-Rayleigh + prime-Rayleigh. If prime-Rayleigh ≈ −arch-Rayleigh + 2.6e-5 (they co-track) AND
-cross-a overlap≈1 (fixed ground-state shape), the flat-lock = a FIXED near-null vector whose arch/prime parts
-cancel to a constant — the finite-window analog of the CvS k_λ. That fixed vector is the proof handle.

@@ -1,0 +1,221 @@
+# RH SOLVER OS — the operating system for the Riemann endeavor
+
+**Purpose.** Stop wandering. This is the SINGLE source of truth consulted FIRST every cycle. It holds
+(1) the broad→narrow PATH TREE with live status on every node, (2) the DESCENT + WALL + ANTI-LOOP + VERIFY
+protocol, (3) the write-back discipline. If a probe isn't advancing a `FRONTIER` node per the descent rule,
+it does NOT run. Modeled on Tony's gated/provenance protocols (Charisma Report/Handle, the Membrane).
+
+Last synced: 2026-08-30 (cycle 319). Companions: [[rh-positivity-global-metatheorem]], [[rh-arsenal-toolkit]],
+[[rh-forge-formal-verification]], [[autonomous-forge-protocol]], THE_BRIDGE.md, PROCESS.md, LEDGER.md.
+
+---
+
+## 0. THE PROTOCOL (every cycle, in order — no exceptions)
+
+1. **ORIENT** — read this file's PATH TREE (§2). Identify the current target = the deepest `FRONTIER` node.
+2. **ANTI-LOOP GATE** — before any probe, check it against §3 (the DEAD/LOOPED/SATURATED registry) AND
+   `grep operators/` + `mem find`. If the probe re-does a registry entry, it is a LOOP — do NOT run it.
+   (The failure that created this OS: cycles 290-317 re-derived screw≡Connes, the g=−4Σsin² identity, the
+   CCM connection, and the constant-artifact bug — all already in the record.)
+3. **ACT** — do REAL work on the target FRONTIER node (compute / derive / bank a Lean brick / read a paper).
+4. **VERIFY (Charisma Report vs Handle)** — numerics/reading = **REPORT** (never a proof). Lean-verified
+   axiom-clean / a genuine analytic theorem = **HANDLE**. A zero-match claim MUST carry a sinc/null baseline
+   (cy132 discipline). An "identity" (A+B−P=Σ_γh) is NOT a positivity test (§37 metatheorem).
+5. **WALL PROTOCOL** — if the target walls: do NOT reach for a random new thing. (a) record the wall on the
+   node in §2, (b) ASCEND to its parent, (c) descend into the next-highest-value unexplored/FRONTIER child.
+   The tree, not the vibe, chooses the next move.
+6. **WRITE-BACK** — update the node's status in §2, append the decision to PROCESS.md, THE_BRIDGE.md cycle,
+   and memory if a durable fact. Every cycle mutates this file or PROCESS.md — else it was a loop.
+
+**Status legend:** `FRONTIER` (live, tractable, not yet walled) · `RESEARCH` (real place a proof lives, but
+research-scale) · `LOOPED` (an equivalent reframe / already-known — ruled out as a lever) · `DEAD` (proven a
+dead end — never retry) · `SATURATED` (numerically floor-limited — can't reach proof or frontier by more compute)
+· `BUILT` (exists, live, reuse — don't rebuild).
+
+---
+
+## 2. THE PATH TREE (broad → narrow; work the deepest FRONTIER)
+
+```
+RH  (ζ nontrivial zeros all on Re=1/2)
+│
+├─ A. POSITIVITY / Weil form  (RH ⟺ A(g)+B(g) ≥ P(g))            ⟵ MOSTLY EXHAUSTED
+│   ├─ A1 screw fn g(t)≤0 (Suzuki Cor 4.3)                       SATURATED (numerics floor; g=−4Σsin² is an IDENTITY)
+│   ├─ A2 λ_a>0 derivative form (min eig, #neg)                  SATURATED (arb-prec floor a≈1.2; superexp underflow)
+│   ├─ A3 multiplicativity discriminator (Euler ⟹ positivity)   LOOPED (França-LeClair; heuristic, not theorem)
+│   ├─ A4 sum-of-squares −g=4Σsin²(γt/2)/γ²                      LOOPED (identity, not a positivity test)
+│   ├─ A5 local/per-prime/single-test-fn certificate            DEAD (metatheorem: positivity is irreducibly GLOBAL)
+│   └─ A6 χ-family averaging                                     DEAD (escapes local obstruction → variance/large-sieve wall)
+│
+├─ B. SPECTRAL / HILBERT–PÓLYA  (operator whose spectrum = zeros)
+│   ├─ B1 Connes–CS: #neg≤1 / min simple+isolated+even ∀a       FRONTIER-NARROWED (cy322: "#neg≤1 from ARCH structure alone"
+│   │      via Carathéodory–Fejér self-adjointness                          is DEAD — arch-only form has #neg=8 (grows w/ modes in
+│   │                                                                       |r|<6.29 band), so #neg≤1 needs the PRIME cancellation
+│   │                                                                       = global positivity = RH. Live sub-angle left: de Branges
+│   │                                                                       /Pontryagin index-1 from the FE — but risks positivity-in-disguise.)
+│   │      ◄ RESOLVED (cy334): B1 is ESTABLISHED (κ=1 robust at saturation) AND ⊂ D1 — #neg≤1 is DERIVABLE
+│   │        from heig via the proven κ=1 chain (HodgeManufacturesKappaOne). NOT an independent lever. de Branges
+│   │        E(z) (E_uhp_zerocount §956), Szegő/OPUC (krein_szego_phase, forge BorelCaratheodoryCenter/
+│   │        CriticalCircleFromPositivity) all heavily worked → same core. Re-running any = LOOP. Descent absorbed into D1.
+│   ├─ B2 CCM ξ̂ zeros → ζ zeros (finite-N Hilbert–Pólya)        RESEARCH (real spectrum PROVEN by C-F; convergence proof = RH)
+│   │      └─ plain (non-derivative) form minimizer=constant     DEAD (sinc artifact, cy132/cy317 — carries NO zeta content)
+│   └─ B3 near-null eigenvector carries γ                        SATURATED (done a=4-7 → 5e-4; nearnull_*.py suite exists)
+│
+├─ C. ZERO-LOCATION / de Bruijn–Newman  (RH ⟺ Λ=0)
+│   ├─ C1 push Polymath15 (Λ≤0.22) → 0 via the ACTUAL flow,      REVIEWED cy339: [τ,R]=0 decoupling WAS used (even⊕odd
+│   │      using [τ,R]=0 FE-sector decoupling (an exact tool)                halving). Live frontier = the p=3 RUNG of the CC positivity
+│   │                                                                       program (CC proved ≤p=2; p=3 OPEN). §217b certified crossing
+│   │                                                                       a:0.549→0.560 (but its ODD half was VACUOUS per ODD_SECTOR_GAP).
+│   │                                                                       cy339 even→0.565; cy340 CLOSED the odd-sector gap: TRUE odd
+│   │                                                                       (even-k) Arb-certified at 0.549 & 0.565 (mode-2 ~5e-6, robust)
+│   │                                                                       ⟹ FIRST genuine FULL both-sector point-cert @0.565. cy341 both
+│   │                                                                       sectors @0.567 too (even prec5000, mode-1 ±3.4e-8; frontier +0.002).
+│   │                                                                       Even BINDING (eroding 4.4e-8→3.4e-8 toward ~0.57 wall); odd comfy.
+│   │                                                                       cy342 continuum-SOS = noise-floor; cy343 monotonicity-scan = 1e-8
+│   │                                                                       below float resolution. LANE CLOSED: all 3 numerical methods (point/
+│   │                                                                       continuum/monotonicity) wall at the ~1e-8 knife-edge. Rigorous
+│   │                                                                       interval theorem needs §218 analytic relay = residual = crux.
+│   │                                                                       ASCEND: pivot to B2/CCM (self-adjoint op EXISTS, gap=convergence).
+│   └─ C2 toy τ(t)=τ+t·diag(r²)                                  DEAD (circular — adds PSD diagonal to already-PD τ)
+│
+├─ D. ARITHMETIC GEOMETRY / F₁
+│   └─ D1 heig = extend arithmetic Hodge-index theorem           ★RESEARCH, NARROWED★ (cy323 VERIFIED via axiom-clean Lean:
+│          (proven for function fields) to Spec ℤ ×_F₁ Spec ℤ               the FULL downstream chain is MACHINE-PROVEN — heig(sigPos=1)
+│                                                                           →κ=1/#neg≤1 [HodgeManufacturesKappaOne/KappaLeOneSignature,
+│                                                                           axiom-clean] → positivity/strip-bound → RH [AbstractRH, axiom-
+│                                                                           clean]. The ONLY open input = "ζ Weil form has Hodge sig
+│                                                                           sigPos=1" = the F₁ transfer of the function-field Hodge index
+│                                                                           (CastelnuovoSeveri.lean already has the FUNCTION-FIELD case).)
+│          cy326 VERIFIED: RH⟸heig is AXIOM-CLEAN (RHFromHeig/RHForgeMain/RHReductionMain). heig = HILBERT–PÓLYA:
+│          a symmetric T with Tv=s(1−s)v at every ζ zero ⟹ RH. = N→∞ limit of CCM operator D_{λ,N} = §1025 isometry.
+│          Proven neighbors: Frobenius §1728 (F†F=q·1⟹|eig|=√q) + Elliptic sigPos=1. The ζ construction is the gap.
+│          cy330 CONSTRUCTIVE BRIDGE (box-moment→Favard→heig): m_k=Σ_γ box_γ^{−k} computed UN-CIRCULARLY from ξ
+│          (operators/box_moment_unconditional.py; verified 2·m_1 = 2+γ_E−log4π exact to 6 digits, beats zero-
+│          truncation). Favard: a Hankel-PSD {m_k} yields an EXPLICIT self-adjoint Jacobi J with spectrum
+│          {1/box_γ} = a concrete heig. So RH ⟺ ξ-box-moments Hankel-PSD; a PSD proof hands heig explicitly.
+│          Positivity still conserved (proving all H_n⪰0 IS RH — LOOPED as a lever) BUT now the RIGHT object
+│          (box, not the DEAD λ_n) in un-circular ξ-computable form + the constructive route to heig.
+│          cy331 VERIFIED the construction: un-circular Chebyshev Jacobi (a_n,b_n) from ξ-moments REPRODUCES
+│          the true heig-Jacobi entries for n=0,1,2 (rel.err ≤2%, all b_n²>0), then precision-dies at n=3
+│          (~2.3 digits/coeff moment ill-conditioning = the superexp floor; a_3 blowup is PRECISION not sign).
+│          The Favard→heig bridge is now numerically instantiated. WALL: un-circular NUMERICAL route to the
+│          full operator hits the superexp floor — do NOT brute-force more dps (that's the loop). STRUCTURE:
+│          true b_n decay monotonically→0 (governed by the UNCONDITIONAL zero density N(T)~(T/2π)log(T/2π)).
+│          cy332 SATURATED the box-moment→Jacobi NUMERICAL/ASYMPTOTIC sub-branch: the heig Jacobi coeffs obey
+│          the UNCONDITIONAL mean-law a_n≈1.126/(¼+T_n²), T_n=N⁻¹(n) (verified n=1..35, ratio std 6%), and
+│          a_n≈2b_n ⟹ lower spectral edge=0 (positive compact op). But the smooth N(T) law is RH-BLIND (off-line
+│          zeros share the same N(T); RH lives in the S(T) FLUCTUATIONS, and "b_n²>0" = Hankel-PSD = RH = circular).
+│          Construction VERIFIED sound; every unconditional fact RH-blind, every RH fact circular (metatheorem).
+│          cy333: forge-brick lead WALLED as REDUNDANT (search-before-build) — forge already has
+│          FiniteBoxRealization §1230 (finite real box → symmetric realization; crux = ALL zeros + positivity)
+│          + HilbertPolyaCore §1765 (self-adjoint⟹real⟹RH) + full reduction. Don't rebuild. cy333 NEW FACT:
+│          box-moment Hamburger problem is DETERMINATE (Carleman, verified) ⟹ heig ESSENTIALLY SELF-ADJOINT &
+│          UNIQUE — closes the extension-ambiguity gap §1765 needs. BOX BRANCH NOW STRUCTURALLY COMPLETE
+│          (cy329-333: un-circular moments→Favard construction→N(T) mean-law→determinacy). Every uncond. fact
+│          RH-blind, every RH fact circular. No more box levers. ASCEND to B1.
+│
+└─ E. FORMAL VERIFICATION  (isolate + machine-check the gap)     ⟵ THE VEHICLE (built, live, ahead)
+    ├─ E1 Lean reduction on Mathlib's real RiemannHypothesis     BUILT (RiemannSymmetry.lean: RH ⟺ strip half-plane bound)
+    ├─ E2 forge scaffolding tower (PNT / F₁ intersection API)    BUILT+LIVE (§1648, 450+ EXIT0 bricks; owes heig)
+    └─ E3 AI prover loop (Qwen3-32B + axiom_gate + forge-brick)  BUILT+LIVE (auto-banks scaffolding on Olympus)
+```
+
+### The current best path (broad → narrow), decided by the tree — NOT the vibe
+- **The proof lives at D1 (heig).** Everything else is scaffolding around it. D1 is research-scale; we can't
+  *invent* the Hodge-index extension, but the forge (E) makes everything AROUND it verified so a crack lands cleanly.
+- **Two live analytic FRONTIER angles that could yield a real sub-lemma:** **B1** (is `#neg≤1` provable without RH?)
+  and **C1** (push dBN Λ→0 via the [τ,R]=0 FE-sector tool). These are the only non-looped, non-saturated analytic nodes.
+- **Keep E2/E3 auto-banking** (low-effort, real verified progress; feeds D1's surroundings).
+- **Do NOT** re-enter A1–A4 (looped/saturated), A5/A6/B2-plain/C2 (dead), or B3 (saturated). That is the wandering.
+
+**DESCENT ORDER right now:** work **B1** and **C1** (tractable frontier) as the analytic front; let **E3** run;
+treat **D1** as the north star that B1/C1 sub-results feed. If B1 and C1 both wall → the honest state is "the
+crux is D1, research-scale" and the machine's job is to keep E banking + surface D1 cleanly, NOT to re-loop A/B3.
+
+**UPDATE cy335 — state shift.** BOX BRANCH (D1 sub) COMPLETE end-to-end (cy329-335): un-circular ξ-moments →
+Favard→heig construction verified → N(T) mean-law → determinate/ess-self-adjoint → fluctuation-locus (RH in
+a bounded shrinking S(T)-scale wiggle). Fully characterized, metatheorem-limited, no lever. B1 RESOLVED (⊂D1).
+Independently corroborated by arXiv 2607.24830 (cy334: our walls are real+published). **ACTIVE LEAD = the #neg
+LEVER side via Groskin arXiv 2607.02828 (cy335):** totally-positive archimedean TAIL ⟹ finite-band Weil
+positivity CERTIFIES cutoff-free positivity; cutoff-free LDLᵀ resolves the 10⁻⁵⁹ superexp-floor scale directly.
+First genuinely new finite→infinite POSITIVITY bridge + a tool reaching the knife-edge scale that walled λ_a.
+cy336 ANTI-LOOP CATCH: Groskin lever ALREADY HANDLE-worked (cy176-182: rigorous Arb-LDLᵀ margin scaling —
+N→∞ PLATEAUS RH-favorable; c→∞ margin~c^(−0.44N) product-law, stays positive). NEW synthesis (groskin_
+required_T_analysis.py): cutoff-free cert needs T~c^(0.44N) (COMPUTATIONAL wall, not logical; cross-validates
+Groskin's own T~8e62 floor). Both main routes (spectral box + positivity Groskin) now mapped to the SAME
+marginal floor, both RH-FAVORABLE, metatheorem-limited. ACTIVE LEAD = the analytic escape: lower-bound the
+CvS matrix's smallest eigenvalue (the margin). Is it achieved by Groskin's non-collapsing POLE-NEUTRAL mode,
+and is that Rayleigh quotient analytically bounded below slower than the tail budget? Derive the 0.44 exponent.
+grep pole.?neutral|rayleigh|near.?null|smallest.?eig; check Groskin anc/audit_pole_neutral_survival.py. Wall→C1.
+
+**UPDATE cy345 — Prolate spectrum analysis (new LEAD angle):** Connes-Moscovici prolate wave operator 
+PW_λ(q)ψ = -∂((λ²-q²)∂)ψ + (2πλq)²ψ on the Sonin space, λ=√2: shooting method successfully computes 
+eigenvalues E_k = √|ν_k|, and 2E_k converge to ζ zeros γ_k with oscillating errors shrinking from ~70% at 
+k=1 → ~1-2% at k=5-10. FRONTIER/CONVERGENCE CONFIRMED but EXACT spectrum walls at finite-index accuracy. 
+Wall: low-k errors (k=1-3) suggest extension ambiguity + Sonin space constraint (Fourier-vanishing) not 
+enforced in shooting. Next step = spectral method (matrix eigenvalue on full Sonin subspace, not ODE 
+shooting). See PROLATE_EXACT_SPECTRUM_cy345.md. This is a NEW angle → Hilbert-Pólya lane (operational, 
+not just spectral heuristic).
+
+---
+
+## 3. ANTI-LOOP REGISTRY (checked before every probe — these are RULED OUT)
+
+| Thing | Verdict | Why (one line) | Source |
+|---|---|---|---|
+| reframe positivity into a new form | LOOPED | "difficulty is conserved; reframing is NOT the lever" | Jacob 2026-08-10; metatheorem |
+| any local/per-prime/factorization/single-test-fn certificate | DEAD | positivity is irreducibly GLOBAL/product-emergent | rh-positivity-global-metatheorem A14/A6/§37 |
+| A+B−P = Σ_γ h(γ) as a "probe" | DEAD-as-proof | it's an IDENTITY (validated 1e-32), not a positivity test | metatheorem §37 |
+| screw g ≡ Connes 𝒟̃ ; g=−4Σsin²(γt/2)/γ² | LOOPED | already pinned (cy118) / already an identity | rh-arsenal cy118; cy303 |
+| plain (non-derivative) Weil form zeros → γ | DEAD | minimizer = constant; sinc lands near any target, ZERO zeta content | rh-arsenal cy129-132; my cy317 |
+| numerical λ_a>0 / g<0 certification at large a | SATURATED | λ_a underflows superexp (e^{−ca²}); floor a≈1.2 even arb-prec | cy294/296/318 |
+| near-null carries γ (eigenvector) | SATURATED-done | a=4-7 → 5e-4; nearnull_*.py suite exists | rh-arsenal cy132 |
+| Suzuki screw-property ⟹ #neg≤1 | CIRCULAR | Suzuki proves g_ξ∈𝒢_∞ only UNDER RH (Su22 Thm 1.2) | rh-arsenal cy126 |
+| Prolate wave op shooting (rt6_prolate*.py files, ~25 variants) | CONVERGING | Shooting works but finite-truncation + extension ambiguity; spectral method needed | cy345 |
+| toy dBN τ(t)=τ+t·diag(r²) | DEAD | circular (PSD diagonal on already-PD τ) | rh-dbn §34c |
+| χ mod q averaging for a single χ | DEAD | escapes local obstruction → variance/large-sieve wall | metatheorem LEDGER §62 |
+| build a Lean scaffold / prover loop | BUILT | already live on Olympus (E1/E2/E3) | rh-forge-formal-verification |
+| #neg≤1 from arch structure alone | DEAD | arch-only form has #neg=8 (grows w/ band modes); needs prime cancel = RH | cy322 |
+| free-text multi-agent math derivation | UNRELIABLE | CONFABULATES frontier math (cy321 synth invented results from empty input) — un-foolable parallelism = Lean-gated forge (E3) + hands-on VERIFIED compute ONLY | cy321; rh-forge fabrication note |
+| box-moment Hankel-PSD as a LEVER | LOOPED-as-lever | proving all H_n⪰0 IS RH (positivity conserved); un-circular ξ form VERIFIED (2m_1=2+γ_E−log4π) + right object (vs DEAD λ_n) + Favard→heig bridge = KEEP for D1 construction, NOT as an independent proof | cy330 |
+| Li coefficients λ_n as the positive object | DEAD | wrong object: λ_n Hankel det H_2=−0.0037<0 (hankel_moment_test.py); box=¼+γ² is correct (cy330) | Track-1; cy330 |
+| re-deriving Suzuki/Weil-operator arch spectrum, λ_1>0, W-zeros-real, zeros-in-error-term | SATURATED/PUBLISHED | arXiv 2607.24830 independently realized ALL of it numerically; abstract: "does NOT prove RH nor advance toward proof, results archimedean+universal". Our walls confirmed real+expert-acknowledged. Zero-info ONLY in symbol/moments/a→∞ | cy334 |
+| B1 de Branges κ=1 / #neg≤1 as an independent lever | LOOPED | ⊂ D1 (derivable from heig via κ=1 chain, HodgeManufacturesKappaOne); E(z)/Szegő/OPUC all worked → same core | cy334 |
+| finite Weil form small eigenvalues ~ |ζ'(ρ)|²/(¼+γ²) | REFUTED | small eig span 8 orders (2e-15..5e-7, truncation near-null artifacts); |ζ'|²/(¼+γ²) spans factor 2.4; CV=2.32, corr=0.958 was a sorting artifact. §480 continuous-symbol structure ≠ finite-form small spectrum | cy344 |
+| POLE-FREE even-χ L n_neg via prec800 LDLᵀ inertia | UNRELIABLE | pole-free even χ (non-principal Dirichlet) have a near-null CLUSTER (~1e-16..1e-9); LDLᵀ miscounts sign as neg (χ_5 → spurious n_neg=3,11); direct-eig prec2000 → true n_neg=0 (χ_5 validated). ζ ITSELF (with pole) is FINE — the κ=1 pole-lift REGULARIZES; ζ LDLᵀ=direct-eig=0, robust (cy349). Read pole-free even-χ n_neg via eigendecomp/high-prec | cy346-349 |
+| push AF proportion past 2/3 via the finite instrument's μ4 | REFUTED | instrument μ4 DECREASES with N (2.63→2.02), never reaches HL 3.25 — rigid arithmetic ladder ≠ GUE/HL (2607.24830 §2.5); beating 2/3 needs analytic mollified 4th moment, not the finite instrument | cy338 |
+| forge-bank AF rank-trace ⟹ 2/3 | DONE | AFTwoThirds.lean/AFProportion.lean/RankTrace*.lean already banked; ζ inputs (R=4/3, inertia) Report-tier | cy338 |
+
+---
+
+## 4. GATES (verify-before-ship, always)
+- **Report vs Handle** — numerics/paper-reading = Report; only Lean-axiom-clean or a genuine theorem = Handle.
+- **Axiom gate** — `axiom_gate.sh` on any "EXIT0/done" Lean claim (catches sorryAx via imports).
+- **Sinc/null baseline** — every zero-match claim carries a sinc/constant-null baseline or it's an artifact.
+- **Identity ≠ positivity** — a validated identity is not a proof of a sign.
+- **Superexp floor** — any λ_a/g numeric near 0 at large a is a precision floor, not a sign result.
+
+---
+
+## 5. NORTH STAR
+RH is solvable and ~99% believed true+provable. The proof plausibly lives at **D1 (heig)**. Our machine's job:
+keep **E** verified-banking the whole surround, push the live frontiers for a sub-lemma, and never re-loop the
+exhausted nodes. Wall on a node → ascend the tree, descend the next FRONTIER. Always a next move loaded.
+
+**cy337 WHOLE-FRONTIER MAP (durable; every route verified & mutually consistent, RH-favorable):**
+- SPECTRAL (box, cy329-335): heig fully characterized (real positive compact, determinate/ess-self-adjoint,
+  N(T)-pinned, RH in a shrinking S(T)-fluctuation). Metatheorem-limited.
+- POSITIVITY (Groskin, cy336): finite-band Weil positivity certified; margin plateaus in N / c^(−0.44N); cutoff-
+  free cert needs T~c^(0.44N) (computational wall).
+- UNCONDITIONAL PARTIAL (Alpöge–Furman 2608.13637, cy337): ≥2/3 zeros simple+on-line, PROVEN via rank-trace/
+  Sylvester-inertia on a finite Weil compression, Lean-verified, REALIZED by our instrument (n_neg=AF penalty;
+  ζ multiplicative ⟹ n_neg=0 ⟹ clean 2/3). Best unconditional result; ceiling = classical 2nd-moment input.
+- FORMAL (function-field §1720-1726): Weil |λ|=√q chain COMPLETE + axiom-clean (connector §1725/1726 banked).
+- SINGLE CRUX = D1/heig: realize the F₁/Connes-Consani arithmetic surface for ζ = supply Hodge-index negativity
+  for ζ's Weil form from an INDEPENDENT (non-circular) geometric source. All else done/verified/RH-favorable.
+- ACTIVE LEADS: (a) forge-bank AF's rank-trace⟹2/3 if not present (HANDLE-tier); (b) can certified n_neg=0
+  feed AF's μ2 input to push past 2/3? Corroborated by 2607.24830+AF+Groskin — walls are real, published.
+- cy345: RH⟸heig deliverable RE-VERIFIED axiom-clean (GREEN BOARD 7/7). VK/zero-free lead = mapped (PNT-error
+  sign RH-hard; VK-vs-RH gap enormous). 17 cycles (329-345) exhaustively mapped the frontier; every new angle
+  walled or already-worked. LOADED ESCALATION = the 6-Fable ROUNDTABLE (proven tool for surfacing a NEW attack
+  when single-session is exhausted) — NEEDS JACOB'S GO. Steady-state: forge E3 banking + fresh-lit watch.

@@ -1,0 +1,1 @@
+import sys; sys.path.insert(0, "/home/cobo/projects/riemann/operators"); from critical_eigvec_id import build_tau_np; import numpy as np; tau, ns = build_tau_np(64, 14); M = np.random.rand(tau.shape[0], tau.shape[0]); M_star_M = np.dot(M.T, M); min_eigenvalue = np.linalg.eigh(M_star_M)[0][0]; print(f'Min Eigenvalue of M^*M: {min_eigenvalue}')
