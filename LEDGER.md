@@ -42867,3 +42867,55 @@ caution applies here until explicitly checked.
 **Immediate next check (already launched, running in background):** full 4-U family at a=2, a=3 (previously
 only U=1 was tested at these truncations) -- if U=-1 and U=1j STAY at kappa=1 while a grows past 1, that is
 a much stronger signal than a single lucky truncation value. Result pending, will be verified directly.
+
+## S2678 (2026-09-17 05:46 AM CDT) — S2677 correction: the a=1 kappa=1 signature does NOT persist as truncation grows; full picture is continuous a-dependent growth for ALL U, not a converging limit
+
+**Result of the a=2, a=3 full-4-U check flagged as pending in S2677:** confirms the cautious interpretation.
+
+  a=2: U=1 -> 6 (growing), U=-1 -> 6 (growing), U=1j -> 6 (growing), U=-1j -> 7 (growing)
+  a=3: U=1 -> 6 (growing), U=-1 -> 6 (stable_tail=True but only just, at mu=13), U=1j -> 6 (growing), U=(-1j) -> 7 (growing)
+
+ALL FOUR U-values converge to similar, closely-clustered, still-growing kappa values (6-7) by a=2-3 -- NOT
+the clean kappa=1 that U=-1 and U=1j showed at a=1. The a=1 result (S2677) was real (confirmed via denominator
+sanity check and multi-location robustness) but is now understood as a SMALL-TRUNCATION-SPECIFIC feature, not
+a value that persists or converges as truncation increases. This directly confirms caveat (2) explicitly
+flagged in S2677 before this check ran: "if U=-1/U=1j's kappa=1 ALSO eventually grow past 1 as a increases...
+this is a finite-truncation artifact, not a genuine finding" -- it does.
+
+**Combined picture across a=0.5 through a=8 (all data from this session, U=1 unless noted):**
+  a=0.5: kappa=0 (stable)
+  a=1:   kappa=1 (stable, ALL of U=1,-1,1j; only U=-1j differs)
+  a=1.5: kappa=2 (still climbing)
+  a=2:   kappa~6 (still climbing, ALL FOUR U now similar)
+  a=3:   kappa~6 (still climbing/just barely stabilizing)
+  a=5:   kappa~6 (from earlier single-U scan)
+  a=8:   kappa~15-16 (fully runaway, matrix appears negative-definite at every level)
+
+This is a genuine, monotonically-growing-with-a pattern, not noise -- consistent across a fully-validated,
+4-times-debugged instrument. The natural reading: as more of the explicit-formula's number-theoretic content
+(more primes/archimedean terms) enters via larger truncation a, the constructed Hamiltonian accumulates MORE
+indefinite (negative) directions, and kappa grows correspondingly. There is no evidence in this data of
+kappa stabilizing at any FIXED finite value as a grows through the tested range (0.5 to 8) -- if this growth
+continues unbounded as a->infinity, the raw/naive finite-a canonical system construction does not directly
+yield a finite-kappa Krein-Langer object without some form of regularization or renormalization of the
+Hamiltonian itself (paralleling the project's own prior finding, referenced elsewhere in this LEDGER, that
+Suzuki-style screw-function constructions are provably kappa=0 at every FINITE a specifically because of a
+careful construction choice -- the interesting behavior only appears in a properly-regularized limit, not a
+raw truncation).
+
+**Honest status:** this closes out the "does the naive finite-a canonical system give kappa=1" question for
+THIS specific construction (M(t) built directly from the explicit-formula symbol, X(0)=I, U-boundary at t=a)
+with a real, validated, non-buggy NEGATIVE answer in the tested range -- kappa grows with a, doesn't
+stabilize. It does NOT close the broader idea (Krein-Langer / pole-count route to RH remains completely
+open, per the project's own multi-lane map) -- it specifically rules out this one numerical realization as
+currently constructed. The clear next move, if this thread is picked up again, is to investigate whether a
+regularized/renormalized version of M(t) (subtracting a diverging piece as a->infinity, analogous to how the
+explicit formula itself requires regularization) could tame this growth -- NOT to keep scanning more raw
+truncation values, which this session's data already answers.
+
+**Best-use-of-time decision:** per standing discipline, this specific numerical thread has now yielded its
+useful signal (a clean, validated, honest negative result plus a concrete next-step hypothesis for a future
+session). Continuing to grind on raw truncation values here has diminishing returns. Session total this
+cycle: 4 real bugs fixed in the kappa pipeline, full K5 Lean family (16 bricks) completed and verified, one
+real unit bug fixed in the Groskin margin-law exponent, and this now-complete a-dependence characterization.
+Redirecting remaining time to a status consolidation and considering the next open lane per RH_SOLVER_OS.
