@@ -42763,3 +42763,22 @@ fix -- next session's first move on this thread.
 
 **K5 Lean queue:** Sixteenth (final brick) still compiling on Olympus, 21+ min in, healthy. Seventh's recheck
 will fire automatically once it finishes.
+
+## S2675 (2026-09-17 05:02 AM CDT) — K5 COEFFICIENT FAMILY COMPLETE: all 16 bricks (LeadingCoeff..SixteenthCoeff) independently verified EXIT0; U-fix rerun in progress
+
+**Milestone:** CrossK5SixteenthCoeff verified EXIT0 (clean axioms, no sorryAx) and synced/committed. This
+completes the full K5 coefficient-extraction family started this session (S2647-S2674): Key, PolyVanish,
+plus all 16 ordinal coefficient bricks (LeadingCoeff through SixteenthCoeff), every one independently
+compiled and verified via direct compiler-output inspection (never trusting an unverified agent claim),
+synced from Olympus to the Mac repo, and committed individually. The parametrized generator
+(gen_k5_coeff_final.py, S2666) is now validated across the full degree range 1-19, having correctly
+generated 10 of the 16 bricks from scratch (Seventh-Sixteenth) after being proven on SixthCoeff.
+
+CrossK5SeventhCoeff's recheck (queued since ~01:06 after its original compile result was lost to a
+context-compaction boundary) auto-started the moment the queue emptied, confirming the queue-completion
+self-resolution mechanism worked exactly as designed.
+
+**Kappa-extraction thread (S2674's U-fix):** rerun in progress with genuine U-dependence now wired into
+the m-function extraction (m_U,a = (X21+U*X22)/(X11+U*X12) per the von Neumann extension formula). This is
+the first run all session where the four U in {1,-1,i,-i} tests are actually computing four DIFFERENT
+quantities. Result pending; will be verified directly (not trusted from any printed summary) once complete.
