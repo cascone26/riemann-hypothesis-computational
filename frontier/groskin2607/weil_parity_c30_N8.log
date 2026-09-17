@@ -1,0 +1,135 @@
+====================================================================================================
+c=30 N=8 dim=17  lambda_min=4.386188e-16 (log10=-15.36)
+  <psi|W02-WR|psi> = -1.106709
+   prime^k   y=logq           h(q)   residual_after  log10|resid|
+         2    0.693   2.723673e-01    -8.343417e-01         -0.08
+         4    1.386   1.491515e-01    -6.851902e-01         -0.16
+         8    2.079   1.143155e-03    -6.840470e-01         -0.16
+        16    2.773   3.649477e-08    -6.840470e-01         -0.16
+         3    1.099   5.586044e-01    -1.254426e-01         -0.90
+         9    2.197   5.017545e-04    -1.249408e-01         -0.90
+        27    3.296   1.308010e-15    -1.249408e-01         -0.90
+         5    1.609   1.133376e-01    -1.160324e-02         -1.94
+        25    3.219   1.165642e-13    -1.160324e-02         -1.94
+         7    1.946   1.151279e-02    -9.044740e-05         -4.04
+        11    2.398   8.361668e-05    -6.830720e-06         -5.17
+        13    2.565   6.788740e-06    -4.197963e-08         -7.38
+        17    2.833   3.932468e-08    -2.654947e-09         -8.58
+        19    2.944   2.647752e-09    -7.194745e-12        -11.14
+        23    3.135   7.195592e-12     8.476101e-16        -15.07
+        29    3.367  -5.446195e-17     7.931481e-16        -15.10
+  FINAL running residual = 7.931481e-16  vs true lambda_min = 4.386188e-16  (ratio 1.8083)
+====================================================================================================
+c=13 N=8 dim=17  lambda_min=5.018396e-17 (log10=-16.30)
+  <psi|W02-WR|psi> = 0.655401
+   prime^k   y=logq           h(q)   residual_after  log10|resid|
+         2    0.693  -4.836884e-01     1.717129e-01         -0.77
+         4    1.386  -1.031364e-02     1.613993e-01         -0.79
+         8    2.079  -9.398125e-08     1.613992e-01         -0.79
+         3    1.099  -1.596439e-01     1.755354e-03         -2.76
+         9    2.197  -4.854048e-09     1.755349e-03         -2.76
+         5    1.609  -1.749013e-03     6.336328e-06         -5.20
+         7    1.946  -6.336325e-06     3.054306e-12        -11.52
+        11    2.398  -3.054049e-12     2.565697e-16        -15.59
+        13    2.565   5.395608e-17     3.105257e-16        -15.51
+  FINAL running residual = 3.105257e-16  vs true lambda_min = 5.018396e-17  (ratio 6.1877)
+====================================================================================================
+c=30 N=4 dim=9  lambda_min=-7.331247e-16 (log10=-15.13)
+  <psi|W02-WR|psi> = 0.653420
+   prime^k   y=logq           h(q)   residual_after  log10|resid|
+         2    0.693  -4.441905e-01     2.092299e-01         -0.68
+         4    1.386  -2.553728e-02     1.836926e-01         -0.74
+         8    2.079  -1.564963e-04     1.835361e-01         -0.74
+        16    2.773  -2.035988e-08     1.835361e-01         -0.74
+         3    1.099  -1.666588e-01     1.687733e-02         -1.77
+         9    2.197  -7.698092e-05     1.680035e-02         -1.77
+        27    3.296  -1.331930e-14     1.680035e-02         -1.77
+         5    1.609  -1.531791e-02     1.482438e-03         -2.83
+        25    3.219  -6.333454e-13     1.482438e-03         -2.83
+         7    1.946  -1.462992e-03     1.944615e-05         -4.71
+        11    2.398  -1.738014e-05     2.066011e-06         -5.68
+        13    2.565  -2.035688e-06     3.032347e-08         -7.52
+        17    2.833  -2.737433e-08     2.949138e-09         -8.53
+        19    2.944  -2.927133e-09     2.200590e-11        -10.66
+        23    3.135  -2.200607e-11    -1.778727e-16        -15.75
+        29    3.367  -3.251476e-16    -5.030203e-16        -15.30
+  FINAL running residual = -5.030203e-16  vs true lambda_min = -7.331247e-16  (ratio 0.6861)
+==========================================================================================
+Weil Form Parity Decomposition Analysis
+c=30, N=8, dim=17
+==========================================================================================
+
+Building tau = W02 - WR - Wp...
+Full tau: lambda_min = -1.499375e-15
+W02-WR alone: lambda_min = -3.273221e+00 (should be negative)
+
+--- PARITY DECOMPOSITION ---
+
+Even-frequency sector:
+  τ_even (n=[-8, -6, -4, -2, 0, 2, 4, 6, 8]):
+    Frequencies: [-8, -6, -4, -2, 0, 2, 4, 6, 8]
+    Dimension: 9
+    min eigenvalue: 1.321401e-11
+    n_pos=8, n_neg=0, n_zero=1
+
+Odd-frequency sector:
+  τ_odd (n=[-7, -5, -3, -1, 1, 3, 5, 7]):
+    Frequencies: [-7, -5, -3, -1, 1, 3, 5, 7]
+    Dimension: 8
+    min eigenvalue: 7.175703e-11
+    n_pos=7, n_neg=0, n_zero=1
+
+--- W02-WR PARITY DECOMPOSITION ---
+
+Even sector of W02-WR:
+  (W02-WR)_even:
+    Frequencies: [-8, -6, -4, -2, 0, 2, 4, 6, 8]
+    Dimension: 9
+    min eigenvalue: -1.060856e+00
+    n_pos=7, n_neg=2, n_zero=0
+
+Odd sector of W02-WR:
+  (W02-WR)_odd:
+    Frequencies: [-7, -5, -3, -1, 1, 3, 5, 7]
+    Dimension: 8
+    min eigenvalue: -2.813899e+00
+    n_pos=4, n_neg=4, n_zero=0
+
+=== RANK ANALYSIS ===
+W02-WR (background): rank ≈ 17 out of 17
+Wp_total (prime sum): rank ≈ 17 out of 17
+  [If rank(Wp) << dim, interlacing-type arguments might apply]
+
+=== NUMERICAL COINCIDENCE CHECK ===
+c=30, N=8, lambda_min=-1.499375e-15
+
+Classical analytic number theory targets:
+  |Mertens log - asymp|: 4.415113e-02
+    mertens_log=-1.845494e+00, asymp=-1.801343e+00
+  sqrt(c)*log(c): 1.862913e+01
+  psi(c)/c - 1: -5.078338e-02
+  log(c) / dim: 2.000704e-01
+  1/sqrt(c): 1.825742e-01
+  log(c) / c^0.44N: 2.148647e-05
+
+Ratio checks (is |lam| a multiple of a classical quantity?):
+  |lam|/mertens_asymp: 8.323652e-16
+  |lam|/sqrt_c_log_c: 8.048555e-17
+  |lam|/psi_c/c: 1.579592e-15
+  |lam|/log(c)^2/c: 3.888373e-15
+  |lam|/1/c^(0.44N): 2.373434e-10
+
+==========================================================================================
+INTERPRETATION:
+==========================================================================================
+✓ BOTH even and odd sectors of τ are PSD!
+  → Can use each sector independently for interlacing arguments
+  → Potential path: rank-counting in each sector separately
+
+Key finding: W02-WR itself decomposes into mixed-sign sectors by parity.
+  This explains S2625: (W02-WR)_even and (W02-WR)_odd may have opposite signs.
+  (W02-WR)_even min: -1.060856e+00
+  (W02-WR)_odd min:  -2.813899e+00
+  → The naive 'PD background' idea fails at the SECTOR level, not just globally.
+
+==========================================================================================
