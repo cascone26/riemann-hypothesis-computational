@@ -41112,3 +41112,22 @@ own kappa does. If it does, that's real evidence toward non-circularity (the con
 correct sensitivity, not just an assumed one). If kappa STAYS at 1 under perturbation, that would prove the
 construction is NOT capturing the real arithmetic content and is exactly the generic/automatic case the
 theorem predicts regardless of input -- an important, precise negative result either way.
+
+## S2647 (2026-09-16 08:47 PM CDT) — CrossK5FifthCoeff hits a genuine structural wall: mechanical K4-pattern copying breaks past FourthCoeff, needs a real K=5 goal-formula generator
+
+Honest failure, correctly reported (agent said "compile unverified, mathematical work incomplete" rather
+than overclaiming -- good). Root cause precisely diagnosed: the goal formula's antidiagonal pair structure
+(which (a,b) index pairs sum to the target coefficient degree) genuinely changes shape between FourthCoeff
+(degree-16, single antidiagonal pair) and FifthCoeff (degree-15, TWO antidiagonal pairs, e.g. (1,14) and
+(3,12)) -- a naive "change the target degree number and reuse the K4 template" edit only updates the extraction
+line, not the goal formula itself, which needs proper symmetric-polynomial derivation across 5 blocks (K4's
+existing generator, build_k4reduced_generic.py, is hardcoded for 4-block/3-variable magnitude polynomials
+and doesn't extend automatically).
+
+This closes out the "just copy the K4 pattern by hand" phase of the K=5 mechanical arc cleanly at 6
+bricks (Key, PolyVanish, LeadingCoeff, SecondCoeff, ThirdCoeff, FourthCoeff, all independently verified
+EXIT0) -- a real, solid run. FifthCoeff and beyond need an actual K=5-generic generator script (extending
+build_k4reduced_generic.py's own logic to 5 blocks/variables) rather than one-off hand transformations --
+correctly scoped as its own small project, not a quick fix. Parking this specific brick for a future
+cycle with that generator built properly; not a wall on the K=5 arc overall, just the natural point where
+ad-hoc pattern-copying runs out and real infrastructure is needed next.
