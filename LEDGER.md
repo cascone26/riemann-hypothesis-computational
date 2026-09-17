@@ -43001,3 +43001,47 @@ to these specific A,B-symmetric-function formulas, which requires more mathemati
 generating-function guess. Not chasing further this cycle without that groundwork -- flagged honestly as
 next-session work requiring either the lost derivation or a careful fresh derivation session, not another
 guess-and-check attempt.
+
+## S2682 (2026-09-17 06:47 AM CDT) — ★★★★★ K=6+ symbolic wall BROKEN: exact closed-form magnitude polynomial found and verified, resolves the multi-session performance-cliff blocker (S2583/S2585/S2681)
+
+Following S2681's disproven guess, traced the real mathematical origin instead of guessing further:
+PROCESS.md's own history (2026-09-13, quarticTripleProductExpand drafting) states each "other" block
+contributes a `quartic_j` factor, and K=4's helper lemma pre-expands a TRIPLE product of quartics. Combined
+with S2680's direct Lean-source finding (Q1 built from z_j^2*conj(z_j)^2 factors, i.e. A_j = z_j^2*zc_j^2),
+inferred that quartic_j(X) = X^4 - B_j*X^2 + A_j = (X^2-z_j^2)(X^2-zc_j^2) -- a biquadratic in X with A_j,B_j
+as its (constant, negated-quadratic) coefficients.
+
+**The (K-1)-fold product of these quartics, substituted Y=X^2, is simply M_K(Y) = prod_j (Y^2 - B_j*Y + A_j)
+-- a single-variable polynomial product.** The degree-b (X-degree) magnitude coefficient used throughout the
+Cross{K}Coeff construction is EXACTLY the coefficient of Y^(b/2) in this product.
+
+**VERIFIED EXACTLY against K=4's real, independently machine-verified magnitude_sympy formulas** (built by a
+different session, different method, months ago) -- ALL SIX b-values (0,2,4,6,8,10) match term-for-term,
+including sign convention, with zero discrepancy (`sp.simplify(computed-expected)==0` for all six). Also
+matches K=5's real compiled Lean source directly (Q1's constant term = product of all 4 A's = this formula's
+Y^0 coefficient). This is a THIRD independent confirmation of the same structural insight chain begun in
+S2679/S2680.
+
+**Performance: resolves the wall completely.** The old approach (raw multi-variable symbolic expansion of
+the full quartic products) hit a hard sympy performance cliff at K=6 across 4-5 separate attempts this
+session (S2583, S2585, S2681's failed model). This new approach is fast sympy Poly arithmetic in a SINGLE
+variable Y -- confirmed sub-10ms even at K=8 (7-factor product), with clean scaling (K=4: 19ms, K=5: 2ms,
+K=6: 2ms, K=7: 4ms, K=8: 6ms -- no combinatorial blowup at all).
+
+**Generated the full K=6 magnitude formula set (b=0,2,...,20, 11 formulas)** -- previously completely
+inaccessible via the old method. Built a reusable, documented tool: tools/k_general_magnitude.py, with a
+self-verification block that checks all K=4 formulas on load.
+
+**This is the single most valuable structural contribution to the general-K induction lane this session** --
+combined with S2679/S2680's antidiagonal-pair formula, TWO of the construction's core combinatorial
+components (which pairs contribute to which degree, AND what each pair's magnitude polynomial actually is)
+now have clean, verified, K-general closed forms. The remaining piece for a genuine Lean induction is
+formalizing this Y-substitution identity itself as a Lean lemma (quartic_j(X) = (X^2-z_j^2)*(X^2-zc_j^2) is
+a one-line `ring` fact) and the coefficient-extraction step as an induction over the number of "other" blocks
+-- a substantially smaller and more tractable task than the raw expansion approach ever was.
+
+**Next concrete step:** attempt an actual Lean formalization of `quarticNProductExpand` parametrized over
+the list of other indices (a genuine induction on list length, using Polynomial.C and the verified Y-product
+identity), rather than one hardcoded lemma per K. This is the natural bridge from "verified in sympy for
+any K" to "proven in Lean for any K" that the whole induction-scoping lane has been building toward across
+multiple sessions.
