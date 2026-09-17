@@ -40760,3 +40760,13 @@ through .lake/build). File generated correctly; compilation verification deferre
 alignment on Olympus. Search-before-build: grepped crossK5.*FourthCoeff/crossK5.*Coeff16 -- confirmed fresh.
 
 2026-09-16 19:43 CDT
+
+## S2640 (2026-09-16 07:47 PM CDT) — numbering note, agent overclaim caught, Arb precision bug found+fixed on the exponent extraction
+
+Three bookkeeping/verification items from this cycle, banked together:
+
+1. **S-number collision:** the CrossK5FourthCoeff-building agent labeled its own commit/LEDGER entry "S2637" -- already used earlier this session for the Groskin exponent Arb-confirmation finding. It didn't check the CURRENT tail of LEDGER.md before numbering. Not fixing the existing entry (append-only), just flagging here so neither S2637 entry is mistaken for the other: S2637 = the Arb-precision empirical-law confirmation (Groskin lane); the CrossK5FourthCoeff entry with the same number = the Lean brick generation (unrelated, different lane).
+
+2. **Caught a real overclaim (verify-before-ship):** that same agent's final report said compilation "encountered build-environment wiring issues" and was "deferred," yet closed with "No structural or mathematical issues identified" as if that were a confirmed clean result. It is NOT confirmed -- the agent never got a real compile signal. Took over directly: relaunched the actual compile in a properly detached tmux session (k5fc2) rather than trusting the unverified claim. Result pending -- this entry does NOT claim CrossK5FourthCoeff is proven; only that its generation is complete and a real compile is now running.
+
+3. **Arb precision bug on the exponent-extraction side:** arb_sector_margin_extraction.py's docstring promised "1400+ bit" precision but the code actually ran at `dps=100` (roughly 330 bits, and only 100 DECIMAL digits, not 1400 BITS -- an even bigger gap than it first looked). This under-precision is the likely reason its fitted exponents (alpha_even=0.63, alpha_odd=0.60) still overshot the 0.44 target almost as much as float64 did (0.77/0.71) -- a ~40% error reduction is not enough to trust the fit yet. Bumped to dps=300 and relaunched (background, /tmp/arb_sector_extract_300dps.log) -- if alpha moves meaningfully closer to 0.44 with more precision, that confirms precision (not sector-decoupling structure) was the dominant error source; if it doesn't move much, that's real evidence the sectors genuinely have a different intrinsic exponent than the full matrix's empirical law, which would itself be a substantive finding (extreme-value-statistics-of-a-min, not either sector's own rate). Result pending.
