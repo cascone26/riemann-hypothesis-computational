@@ -41325,3 +41325,14 @@ Mathlib/dependency build ever looks incomplete or broken, the fix is `lake exe c
 build` on the whole project -- the former is a fast cache restore (seconds), the latter is a full
 recompile (hours) and should never be needed on this pinned toolchain.** Both incidents resolved within
 this cycle, no lasting damage, CrossK5FifthCoeff recompiling now with the corrected LEAN_PATH.
+
+## S2651 (2026-09-16 08:57 PM CDT) — CrossK5FifthCoeff independently VERIFIED EXIT0 -- goal-formula fix + infra LEAN_PATH fix both confirmed working together
+
+Real compile (detached tmux, corrected LEAN_PATH from S2650) confirms: zero errors, no sorryAx,
+axioms=[propext, Classical.choice, Quot.sound]. Both fixes from this cycle held simultaneously (the
+agent's antidiagonal-pair goal-formula correction, and the LEAN_PATH workaround pointing at mathlib4's own
+package builds instead of the forge's empty ones). K=5 coefficient-brick family now at 7 independently
+verified bricks: Key, PolyVanish, LeadingCoeff, SecondCoeff, ThirdCoeff, FourthCoeff, FifthCoeff. Sixth
+onward still needs the proper K5-generic goal-formula generator (S2647) rather than continued hand-fixing --
+parking further bricks for that infrastructure investment, this arc's mechanical-patching phase is a clean,
+solid stopping point.
