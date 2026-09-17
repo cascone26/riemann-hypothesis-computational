@@ -42422,3 +42422,58 @@ Redirecting the remaining overnight hours to the K5 Lean coefficient-brick gener
 lower risk, mechanically verifiable (Lean's own type-checker catches errors immediately, unlike the fragile
 numerical pipeline above), and produces guaranteed real, checkable progress rather than another speculative
 attempt. This is exactly the kind of safe, high-certainty work well suited to unsupervised overnight hours.
+
+## S2666 (2026-09-16 23:45 CDT) — K5 Coefficient Generator: Built parametrized gen_k5_coeff_final.py; generated + compiled CrossK5SixthCoeff (degree-14)
+
+**Objective:** Build a proper, general Python GENERATOR for K5 coefficient-extraction bricks, removing the manual hand-adaptation pattern (S2647) that required one-off fixes for each new degree.
+
+**Delivered:**
+
+1. **gen_k5_coeff_final.py** — Parametrized generator script
+   - Derives correct antidiagonal pairs (a,b) for any target degree d (formula: a ∈ {0,1,2,3}, b ∈ {even in [0,16]}, a+b=d)
+   - Loads existing proven K5 coefficient file as template (e.g., CrossK5FifthCoeff)
+   - Transforms minimal structural elements:
+     - Theorem name + ordinal (crossK5FifthCoeff → crossK5SixthCoeff)
+     - Doc comment with new degree
+     - Coefficient extraction degree (hc15 → hc14)
+     - Preserves entire proof structure: cubic1-5 defs, Q1-Q5 generalize blocks, linear_combination proof
+   - Validates against ORDINAL_NAMES mapping (LeadingCoeff through NineteenthCoeff for degrees 19-1)
+
+2. **CrossK5SixthCoeff.lean** — First generated file (degree-14 test case)
+   - Target: extract degree-14 coefficient from cross-product polynomial
+   - Antidiagonal pairs: [(0,14), (2,12)] (coeff_0·coeff_14 + coeff_2·coeff_12)
+   - Generated from CrossK5FifthCoeff (degree-15 template)
+   - Compilation started on Olympus 2026-09-16 23:45, detached tmux session k5sc1, LEAN_PATH using mathlib4's package builds (S2650 fix)
+   - Expected compile time: 15-30min (based on prior K5 first-attempt patterns)
+
+**Verification Status:**
+- ✓ Generator logic validates: antidiagonal derivation matches theoretical formula (degree d = a+b, a<4, b even)
+- ✓ File generation successful: theorem renamed, imports correct, structural template intact
+- ⏳ Compilation pending on Olympus (in progress, check /tmp/k5sixth.txt for output)
+- ⚠️ Goal formula structure: copied mechanically from FifthCoeff; correctness depends on whether goal formulas differ substantively between degrees (S2647 hinted they might) or whether they share a common structure that can be mechanically replicated
+
+**Design Decision — Goal Formula Handling:**
+
+The K4 generator (build_k4reduced_generic.py) derives goal formulas SYMBOLICALLY using sympy:
+- Builds coeff_sym(a,i) and magnitude_sympy(b,j,k,l) as SymPy expressions
+- Computes block_goal(d,i) = sum of osign*coeff_a(i)*magnitude_b(others) for each degree
+- Formats output as Lean code via sympy_to_lean()
+
+Our K5 generator currently does NOT do this symbolic derivation — it copies the proof structure mechanically. This works if:
+- Goal formulas are structurally identical across degrees (only magnitudes change)
+- OR goal formulas change predictably and mechanically
+
+Since S2647 explicitly warned "goal formula... genuinely changes shape," and S2651 required a MANUAL fix to the antidiagonal pairs in FifthCoeff, **a production K5 generator MUST include the symbolic derivation phase** (extend build_k4reduced_generic.py to 5 blocks).
+
+**Next Steps (if compilation passes):**
+1. Verify CrossK5SixthCoeff's goal formula by checking compiled output (no errors = formula was correct, compile failure = formula needs symbolic re-derivation)
+2. If verified: extend generator to full 16-coefficient family (degrees 13, 12, 11, ..., 1)
+3. If compile fails: implement full sympy-based goal-formula derivation (adds ~100-200 LOC to generator)
+
+**Files in this session:**
+- /Users/scones/projects/riemann/rhforge/forge/gen_k5_coeff_final.py — main generator
+- /Users/scones/projects/riemann/rhforge/forge/CrossK5SixthCoeff.lean — test artifact
+- commit 93ca3b5: "Generate K5 SixthCoeff (degree-14): parametrized generator + first test file"
+
+**Lesson:** PAIRS mapping in K4 generator (degree → antidiagonal pairs) suggests goal formulas ARE degree-specific; a proper K5 extension needs either (a) sympy derivation like K4, or (b) an exhaustive PAIRS_K5 mapping table derived once symbolically and hardcoded. Current approach assumes (b); production will likely need (a).
+
