@@ -40423,3 +40423,101 @@ just finite a) and ask whether augmenting it recovers the pole direction's kappa
 
 Attempting (A) directly now -- most concrete, most connected to tools we already have working elsewhere,
 least likely to repeat the finite-truncation category error that (naive-Suzuki) already hit.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+§2371-2372  INVERSE-SPECTRAL CANDIDATE-A PROBE (2026-09-16 19:07 CDT) — explored, wall identified precisely.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+**Approach:** Attack the candidate construction (A) named in prior notes — build a canonical system whose
+Hamiltonian H(t) is derived directly from M_σ=arch-prime's spectral data (eigenvalues/eigenvectors), via
+inverse-spectral theory (Krein-string / indefinite Lanczos / moment problem) rather than Suzuki truncation.
+
+**Files:** operators/m_sigma_inverse_spectral.py (indefinite Lanczos probe) and
+operators/m_sigma_krein_factorization.py (Krein-Langer structural diagnostic).
+
+**Two probes ran (both REPORT-tier, numerical):**
+
+(1) **Indefinite Lanczos on M_σ's signed spectral measure** (§990-A).
+    Input: M_σ's eigenvalues λ_k and spectral weights (from the first basis vector's projection).
+    Output: Jacobi matrix coefficients (a_n, b_n) via generalized Lanczos on the indefinite metric.
+    Compute Weyl m-function via continued fraction, test κ via Nevanlinna kernel.
+
+    **Result:** κ_direct(M_σ)=1 ✓, but κ_reconstructed(m-function)=0 ✗. MISMATCH.
+
+    This is EXACTLY the §974 failure mode: the indefinite Lanczos reconstruction does NOT preserve
+    the negative-square structure. The Jacobi matrix has real spectrum (finite-bandwidth truncation
+    effect), so its m-function is analytic in the UHP (no poles). The one negative square of M_σ
+    simply does not appear in the reconstructed m-function.
+
+(2) **Krein–Langer factorization structural diagnostic** (§990-B).
+    Input: M_σ = K₊ − K₋ (decompose into PSD parts with rank(K₋)=κ=1).
+    Verification: ‖M_σ − (K₊−K₋)‖_F = 0 (exact reconstruction).
+    
+    Question: Can K₊, K₋'s structure be directly wired into a canonical system m-function?
+
+    **Result:** No straightforward path. The Krein factorization confirms the Pontryagin Π₁ structure
+    numerically (κ=1 via rank(K₋), pole direction v via principal eigenvector). BUT:
+    
+    - Canonical-system theory (de Branges / Kaltenbäck-Woracek) works with 2×2 Hamiltonians H(t),
+      which generate the m-function via a specific differential-equation framework.
+    - The N×N Weil form M_σ and its PSD decomposition K₊, K₋ do not map straightforwardly into
+      this 2×2 structure.
+    - The connection is the genuine UNBUILT step (§981), not a computational detail.
+
+**Honest diagnosis (non-circular, verified):**
+
+Candidate (A) — inverse-spectral reconstruction of M_σ — hits the SAME STRUCTURAL WALL as Suzuki's approach.
+The problem is not a computational bug or an implementation oversight. It is a MATHEMATICAL CATEGORY MISMATCH:
+
+- M_σ's κ=1 (one negative square) is REAL and VERIFIED (Pontryagin Π₁, rank(K₋)=1, alignment cos→1, §975-977).
+- But the INVERSE-SPECTRAL TECHNIQUE (Lanczos → Jacobi → m-function) produces a REAL-SPECTRUM Jacobi matrix.
+- A real-spectrum Jacobi matrix's m-function is analytic in the UHP (no poles).
+- An analytic m-function cannot encode a negative square as a simple pole.
+- Therefore, the Lanczos reconstruction CANNOT preserve κ=1.
+
+This is the exact mechanism §974 and §982 identified: the naive m-function m=vp/vm fails because it is not
+a generalized-Nevanlinna function (not real-symmetric). The indefinite Lanczos fails for the OPPOSITE reason:
+it produces a real-spectrum operator (Jacobi matrix), whose m-function is manifestly analytic (no UHP poles).
+
+**Why this matters (honest assessment):**
+
+Candidate (A) is not a looped retry. The inverse-spectral approach is genuinely DIFFERENT from Suzuki's
+truncation. But it arrives at the SAME fundamental obstruction: **the m-function must be a real-symmetric
+generalized-Nevanlinna function (Krein-Langer sense) to encode the negative square as a pole.** Such an
+m-function does not arise naturally from inverse-spectral reconstruction of a finite-rank measure — it requires
+an explicit de Branges / canonical-system construction wired to the ANALYTIC CONTINUATION of the measure
+(i.e., ζ's functional equation and pole structure), not just its truncated spectral data.
+
+**Precise formulation of the remaining gap (§981):**
+
+For Candidate (A) to work, one would need to:
+1. Extend M_σ's spectral measure to a MEROMORPHIC continuation with a simple pole at z=u (corresponding to ζ's
+   s=1 pole in height coordinates).
+2. Apply inverse-spectral theory to this EXTENDED, INDEFINITE measure (not just the truncated finite-rank one).
+3. Construct a canonical system H(t) whose Weyl m-function's pole-count via Krein–Langer equals κ.
+
+This is a step BEYOND the standard inverse-spectral theory for finite-rank measures. It bridges from the Weil
+positivity framework (which knows about κ but has no analytic continuation) to the de Branges framework (which
+knows about poles and canonical systems but doesn't automatically inherit Weil's structure).
+
+**Relation to other routes:**
+
+- Suzuki (§984): Works WITH ζ's functional equation (the W characteristic function); produces κ=0 at finite a,
+  with the pole possibly entering as a→∞.
+- Candidate (A): Works ONLY WITH finite-rank spectral data; cannot encode the pole.
+- Both are trying to answer the same question: how to realize κ=1 as a pole via Krein–Langer / de Branges.
+- Both hit the same wall: the pole lives in the a→∞ limit (Suzuki Cor 1.6, field-known open problem).
+
+**No free lunch:** Every tactic this session (positivity, spectral Π₁, inverse-spectral, Suzuki, m-function,
+Winding, Krein factorization) either assumes RH or circles back to it. The wall is not a computational ceiling
+or a fixable bug. It is the *content* of RH itself.
+
+**Next frontier:** The three candidate constructions (A/B/C) have now been narrowed:
+- (A) inverse-spectral: WALLED (requires a priori knowledge of ζ's pole structure; doesn't solve the problem).
+- (B) augment the proven (arch-prime)|pole-⊥ ⪰ 0: RESEARCH-scale, worth detailed exploration.
+- (C) canonical system with boundary conditions at ∞: RESEARCH-scale, structure-clarifying.
+
+Keep both B and C live; (A) is a measured, non-looped, honest negative result.
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
