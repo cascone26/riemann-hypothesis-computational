@@ -173,6 +173,7 @@ theorem crossK6Key (N : ℕ) (L : ℝ) (hL : L ≠ 0) (z1 z2 z3 z4 z5 z6 : ℂ)
           + (-(p6 + q6) * A6 * z6 - (r6 + s6) * (starRingEnd ℂ A6) * (starRingEnd ℂ z6)) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 2
           + ((p6 - q6) * A6 + (r6 - s6) * (starRingEnd ℂ A6)) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 3)) * Q1*Q2*Q3*Q4*Q5
       ) = 0 := by
-    sorry
+    field_simp
+    ring
   have hgoal := (mul_eq_zero.mp hfinal).resolve_left (pow_ne_zero 29 hLC)
   linear_combination hgoal
