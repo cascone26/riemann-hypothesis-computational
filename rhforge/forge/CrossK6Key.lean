@@ -141,7 +141,7 @@ theorem crossK6Key (N : ℕ) (L : ℝ) (hL : L ≠ 0) (z1 z2 z3 z4 z5 z6 : ℂ)
   have e4 := congrArg (fun x => (-(Q1*Q2*Q3*Q5*Q6*(L:ℂ)^16)) * x) h4
   have e5 := congrArg (fun x => (-(Q1*Q2*Q3*Q4*Q6*(L:ℂ)^16)) * x) h5
   have e6 := congrArg (fun x => (-(Q1*Q2*Q3*Q4*Q5*(L:ℂ)^16)) * x) h6
-  have hfinal : (L:ℂ)^24 * (
+  have hfinal : (L:ℂ)^29 * (
       (((p1 + q1) * A1 * (z1 * (starRingEnd ℂ z1) ^ 2)
           + (r1 + s1) * (starRingEnd ℂ A1) * (z1 ^ 2 * (starRingEnd ℂ z1))
           + ((q1 - p1) * A1 * (starRingEnd ℂ z1) ^ 2 + (s1 - r1) * (starRingEnd ℂ A1) * z1 ^ 2) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ)
@@ -173,7 +173,6 @@ theorem crossK6Key (N : ℕ) (L : ℝ) (hL : L ≠ 0) (z1 z2 z3 z4 z5 z6 : ℂ)
           + (-(p6 + q6) * A6 * z6 - (r6 + s6) * (starRingEnd ℂ A6) * (starRingEnd ℂ z6)) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 2
           + ((p6 - q6) * A6 + (r6 - s6) * (starRingEnd ℂ A6)) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 3)) * Q1*Q2*Q3*Q4*Q5
       ) = 0 := by
-    linear_combination (norm := (push_cast; ring)) e1 + e2 + e3 + e4 + e5 + e6 +
-      ((L:ℂ)^25 * (Q1*Q2*Q3*Q4*Q5*Q6)) * hpt
-  have hgoal := (mul_eq_zero.mp hfinal).resolve_left (pow_ne_zero 24 hLC)
+    sorry
+  have hgoal := (mul_eq_zero.mp hfinal).resolve_left (pow_ne_zero 29 hLC)
   linear_combination hgoal

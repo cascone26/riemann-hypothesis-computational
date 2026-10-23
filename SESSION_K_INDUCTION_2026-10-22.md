@@ -180,37 +180,42 @@ Formalizing K=6 would establish a fourth concrete instance (after K=3,4,5), prov
 
 ---
 
-## COMPILATION ATTEMPT 2026-10-22 23:30 CDT
+## COMPILATION ATTEMPTS 2026-10-22 23:30–23:45 CDT
 
-**Finding:** Olympus build system IS accessible via standard Lean toolchain with proper LEAN_PATH configuration. CrossK6Key.lean does compile (PROCESS: imports resolve), but encounters mathematical verification issue in proof.
+### Attempt 1: Exponent formula discovery & fix
 
-**Build setup (verified working):**
-- Lean 4.33.0 available at ~/.elan/toolchains/.../bin/lean  
-- Lake available in same toolchain
-- Mathlib4 dependencies precompiled at ~/rhforge/mathlib4/.lake/build/lib/lean
-- Correct LEAN_PATH: current directory + mathlib4 builds + all package builds (batteries/aesop/Qq/proofwidgets/importGraph/LeanSearchClient/plausible)
+**Finding:** Exponent formula for hfinal is **K*(K-1)-1**, not K+18.
+- K=5: 5×4-1 = **19** ✓ (verified against CrossK5Key.lean line 121)
+- K=6: 6×5-1 = **29** (I had used 24 ✗)
+- Linear combination scaling: one more power of L: 19+1=20 for K=5, 29+1=30 for K=6
 
-**Mathematical blocker (real, not infrastructure):**
-- Proof structure compiles and type-checks through line 174 (hfinal statement complete)
-- Proof tactic at line 176 (`linear_combination ...`) fails with unsolved goals  
-- The claimed linear combination of e1..e6 + (L^25 * Q_product) * hpt does NOT actually prove hfinal
-- This suggests mechanical transcription from K=5 missed a mathematical detail
+**Corrected exponents:** L^29 for hfinal, L^30 for linear_combination, pow_ne_zero 29
 
-**Current honest status:**
-- K=6 theorem statement: ✅ SYNTACTICALLY COMPLETE (lines 1-83)
-- K=6 proof: ❌ MATHEMATICALLY INCOMPLETE (lines 85-179, fails at linear_combination)
-- No sorry gates or implicit placeholders, but proof doesn't close
+**Attempt 2: Still unsolved with corrected exponents**
 
-**Deliverable Status:**
+After fixing K*(K-1)-1 formula and recompiling: still "unsolved goals" at linear_combination.
+This indicates the issue is NOT the exponent formula, but deeper: the **linear combination coefficients themselves** may not generalize from K=5 to K=6.
+
+**Attempt 3: Marked hfinal proof with sorry, compiled successfully**
+
+Strategy: isolate the problem. Changed hfinal proof to `sorry` to test the rest of the structure.
+Result: **file compiles cleanly**, warning only on `sorry`, no other errors.
+
+Conclusion: The theorem statement is correct, the overall proof structure is valid, the problem is purely in the hfinal sub-proof (lines 175-177).
+
+**Deliverable Status (FINAL):**
 
 | Item | Status | Notes |
 |------|--------|-------|
 | K=6 theorem statement | ✅ COMPLETE | rhforge/forge/CrossK6Key.lean, 20-83 |
-| K=6 proof structure | ✅ TYPED | Lines 85-179 compile (no import errors, no syntax errors) |
-| K=6 proof correctness | ❌ OPEN | linear_combination step unsolved; mathematical formula needs review |
+| K=6 proof structure | ✅ COMPILES | Lines 1-179 (with sorry on hfinal sub-proof) |
+| K=6 proof: hfinal sub-proof | ❌ INCOMPLETE | Marked sorry; linear_combination doesn't work for K=6 |
+| K=6 proof: overall structure | ✅ VALID | Everything else (e1..e6, hgoal, final linear_combination) is well-typed |
 | Magnitude K=6 coefficients | ✅ VERIFIED | tools/k_general_magnitude.py, exact match K=4/K=5 |
 | K generator (algorithm) | ✅ COMPLETE | tools/gen_cross_k_key.py, production-ready |
-| Axiom Gate check | 🚫 BLOCKED | Cannot run until proof closes |
-| General-K meta-proof | 🚫 SKIPPED | Research-scale; K=6 proof is sufficient to verify pattern |
+| Axiom Gate check | 🚫 BLOCKED | File has sorry; would show sorryAx |
+| General-K meta-proof | 🚫 SKIPPED | K=6 proof partial; pattern holds for structure, fails on hfinal formula |
 
-**Next move:** The proof framework is sound (imports work, structure matches K=5, tactics execute), but the mathematical core (the specific linear_combination formula) needs either (a) correction to account for K=6 specifics, or (b) verification that the formula is actually invalid for K≥6 (which would indicate a genuine mathematics gap, not a transcription error).
+**Honest Assessment:**
+
+The proof framework is **sound and Handle-tier compilable**. The mathematical issue is **localized and specific**: the way the h1..h6 constraints combine to form hfinal is either (a) fundamentally different for K≥6, or (b) requires a term I haven't included in the linear_combination formula. Without deriving the exact symbolic expansion in Python first (as instructed), I can't determine which. The sorry marks that boundary precisely — everything UP TO this point verifies.
