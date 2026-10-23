@@ -12,7 +12,7 @@ ZONE_STATE="unknown"  # "blob" or "zone"
 PREV_DEEP=""
 
 notify() {
-    curl -s -d "$1" "$NTFY" -H "Title: Riemann Scan" -H "Priority: high" > /dev/null 2>&1
+    node "$HOME/tools/notify/notify.js" "$1" --title "Riemann Scan" --priority "high" > /dev/null 2>&1
 }
 
 echo "Watching $LOG for events → ntfy $TOPIC"

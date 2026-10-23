@@ -8,7 +8,7 @@ Generates: structured JSON + markdown summary. Zero Claude tokens needed.
 Deploy to Olympus: scp this to olympus:/tmp/scan-analyzer.py
 """
 
-import sys, re, json, math, argparse, subprocess
+import sys, re, json, math, argparse, subprocess, os
 from pathlib import Path
 
 DEEP_THRESH = 1e-10
@@ -211,9 +211,9 @@ def render_md(data, log_path):
 def ntfy_send(topic, msg, title='Riemann Scan'):
     try:
         subprocess.run(
-            ['curl', '-s', '-d', msg, f'https://ntfy.sh/{topic}',
-             '-H', f'Title: {title}', '-H', 'Priority: high'],
-            capture_output=True, timeout=10
+            ['node', os.path.expanduser('~/tools/notify/notify.js'), msg,
+             '--title', title, '--priority', 'high'],
+            capture_output=True, timeout=15
         )
     except Exception as e:
         print(f'ntfy failed: {e}', file=sys.stderr)

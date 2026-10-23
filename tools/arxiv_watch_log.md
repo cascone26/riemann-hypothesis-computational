@@ -660,3 +660,137 @@
   Cats: math.NT, math.PR
   https://arxiv.org/abs/2609.15862v1
   > We prove an unconditional Cauchy limit for a symmetrically truncated Stieltjes transform of the projected ordinates of the zeros of the Riemann zeta function. A suitable normalization of the logarithmic derivative of $ζ$ on the critical line has the same limit provided that the sum of the distances 
+
+## 2026-09-18 — 1 new paper(s)
+
+- **2609.20367v1** (2026-09-17) — The Three Gates: A Rooted-Operator Approach to Weil Positivity
+  Authors: Marco Desogus
+  Cats: math.NT
+  https://arxiv.org/abs/2609.20367v1
+  > We present a localized rooted-operator argument for Weil positivity in the real odd logarithmic channel, retaining the polar rank-one term throughout. Gate I establishes a strict cellular/shell sign theorem with rigorous interval-arithmetic bounds. Gate II combines the Mellin unit-cell decomposition
+
+## 2026-09-22 — 1 new paper(s)
+
+- **2609.20367v2** (2026-09-17) — The Three Gates: A Rooted-Operator Approach to Weil Positivity
+  Authors: Marco Desogus
+  Cats: math.NT
+  https://arxiv.org/abs/2609.20367v2
+  > We present a localized rooted-operator argument for Weil positivity in the real odd logarithmic channel, retaining the polar rank-one term throughout. Gate I establishes a strict cellular covariance theorem and its midpoint-shell consequence, with rigorous interval-arithmetic bounds on the finite ra
+
+## 2026-09-24 — 1 new paper(s)
+
+- **2606.09096v3** (2026-06-08) — Weil's quadratic form via the screw function
+  Authors: Masatoshi Suzuki
+  Cats: math.NT, math.FA
+  https://arxiv.org/abs/2606.09096v3
+  > We establish a unified operator-theoretic framework for understanding the results on the Weil quadratic form obtained by Yoshida (1992), Bombieri (2001, 2003), Connes--Consani (2023), and Connes--Consani--Moscovici (2025+) from the perspective of the screw function introduced in Suzuki (2023). An ad
+
+## 2026-09-25 — 1 new paper(s)
+
+- **2609.29898v1** (2026-09-24) — Infinitely Many Off-Critical-Line Zeros of the Tempered Xi Function: A Disproof of Yang's Conjecture
+  Authors: Aiken Kazin, Shirali Kadyrov
+  Cats: math.NT, math.CV
+  https://arxiv.org/abs/2609.29898v1
+  > Yang introduced a tempered xi function $\widehatξ(s)$ by replacing the hyperbolic cosine in a classical integral representation of the Riemann xi function by a hyperbolic sine, and conjectured that every zero of $\widehatξ$ lies on the critical line $\Re s=1/2$. We disprove this conjecture. After th
+
+## 2026-09-29 — 1 new paper(s)
+
+- **2607.24830v3** (2026-07-23) [GM/low-signal category] — A Numerical Realization of Suzuki's Weil-Quadratic-Form Operator: The Archimedean Spectral Law, its Universality, and an Operator Form of Weil's Positivity Criterion
+  Authors: Taebong Kim, Youngsik Hong, Minsik Kim, Sunyoung Choi, Jaewon Jang, Minseo Kim
+  Cats: math.GM
+  https://arxiv.org/abs/2607.24830v3
+  > This paper presents the first numerical realization of Suzuki's Weil-Quadratic-Form operator, a candidate for the Hilbert--Pólya program linking spectral positivity to the Riemann Hypothesis (RH). Suzuki's 2026 construction was purely theoretical; here, the operator is instantiated via P1 finite-ele
+
+## 2026-09-30 — 1 new paper(s)
+
+- **2609.37164v1** (2026-09-29) — Collective Contraction in the de Bruijn--Newman Heat Flow: Off-Zero Logarithmic Derivatives and Certified Barrier Refinements
+  Authors: Michel Planat
+  Cats: math.NT
+  https://arxiv.org/abs/2609.37164v1
+  > We study the de Bruijn--Newman family $H_τ(z)$, with heat-deformation parameter $τ$ and $H_0(z)=\tfrac18,ξ(\tfrac12+\tfrac{iz}{2})$. The moving zeros considered here are therefore zeros of $H_τ$, not directly of $ζ(s)$. Retaining the collective interaction term in the zero dynamics, we prove that fo
+
+## 2026-10-03 — 1 new paper(s)
+
+- **2610.01167v1** (2026-10-01) — Vector chiral order and dynamical quantum phase transitions in an Ising chain with dimerized anisotropic Gamma interaction
+  Authors: Yu-Hong Yan, Shi-Qiao Wu, Kun-Liang Zhang
+  Cats: quant-ph, cond-mat.mes-hall
+  https://arxiv.org/abs/2610.01167v1
+  > We investigate a transverse-field Ising chain with dimerized anisotropic Gamma interactions and demonstrate that, both in the absence and presence of Ising interactions, the competition between Gamma anisotropy and the transverse field gives rise to vector chiral order and dynamical quantum phase tr
+
+## 2026-10-06 — 2 new paper(s)
+
+- **2609.03801v2** (2026-09-03) — DCCQ: From Ordered Bernoulli Levels to Critical-Line Geometry: Integer Quantization, Bernoulli Residual Phase, and Prime-Power Spectra
+  Authors: Y. Kenan Yılmaz
+  Cats: cs.LG, math.NT
+  https://arxiv.org/abs/2609.03801v2
+  > We present the discrete--complex complement quotient (DCCQ) framework through the ordered Bernoulli-word kernel $f(p,n,k)=p^k(1-p)^{n-k}$ and its inverse-integer level sets. The binary level $2^{-n}$ selects $p=1/2$ as the unique real split-independent anchor. Imposing the additional continuation ru
+
+- **2610.03728v1** (2026-08-22) — The Riemann-Siegel remainder as a fractional summand
+  Authors: Paul Stahura
+  Cats: math.NT
+  https://arxiv.org/abs/2610.03728v1
+  > Starting from the Riemann-Siegel decomposition of $ζ(s)$ given in Siegel's 1932 paper, we introduce a change of variable, $t=I(T)$, that replaces Siegel's coupled pair "imaginary part $t$ / summation index $m$" with one real index $T$. We then split Siegel's single remainder integral $R$ into two ex
+
+## 2026-10-08 — 2 new paper(s)
+
+- **2609.20367v3** (2026-09-17) — The Three Gates: A Rooted-Operator Approach to Weil Positivity
+  Authors: Marco Desogus
+  Cats: math.NT
+  https://arxiv.org/abs/2609.20367v3
+  > We present a localized rooted-operator argument for Weil positivity in the real odd logarithmic channel, retaining the polar rank-one term throughout. The three gates are structural levels rather than a serial dependency: Gate I is an independent strict cellular/shell positivity theorem and diagnost
+
+- **2609.37164v2** (2026-09-29) — Collective Contraction in the de Bruijn--Newman Heat Flow: Off-Zero Logarithmic Derivatives and Certified Barrier Refinements
+  Authors: Michel Planat
+  Cats: math.NT
+  https://arxiv.org/abs/2609.37164v2
+  > We study the de Bruijn--Newman family $H_τ(z)$, with heat-deformation parameter $τ$ and $H_0(z)=\tfrac18,ξ(\tfrac12+\tfrac{iz}{2})$. The moving zeros considered here are therefore zeros of $H_τ$, not directly of $ζ(s)$. Retaining the collective interaction term in the zero dynamics, we prove that fo
+
+## 2026-10-09 — 2 new paper(s)
+
+- **2610.03728v2** (2026-08-22) — The Riemann-Siegel remainder as a fractional summand
+  Authors: Paul Stahura
+  Cats: math.NT
+  https://arxiv.org/abs/2610.03728v2
+  > Starting from the Riemann-Siegel decomposition of $ζ(s)$ given in Siegel's 1932 paper, we introduce a change of variable, $t=I(T)$, that replaces Siegel's coupled pair "imaginary part $t$ / summation index $m$" with one real index $T$. We then split Siegel's single remainder integral $R$ into two ex
+
+- **2610.10584v1** (2026-10-06) — Finite-radius Jensen and relative-entropy formulations of the Balazard--Saias--Yor criterion
+  Authors: Henning Wunderlich
+  Cats: math.NT, math.FA
+  https://arxiv.org/abs/2610.10584v1
+  > We give two explicit reformulations of a Balazard--Saias--Yor type criterion for the Riemann hypothesis. First, Jensen's formula is applied to $u(s)=(s-1)ζ(s)$ after mapping the unit disk onto $Re s<1/2$. For the normalization whose center corresponds to $s=-1/2$, the images $z_n=(4n-1)/(4n+3)$ of t
+
+## 2026-10-12 — 1 new paper(s)
+
+- **2610.12803v1** (2026-10-08) — A conditional bound $Λ\le0.13963$ for the de Bruijn--Newman constant
+  Authors: Cetin Hakimoglu-Brown
+  Cats: math.NT
+  https://arxiv.org/abs/2610.12803v1
+  > Assuming that $ζ(s)$ has no nontrivial zero with $\mathrm{Re}\, s > 7/8$, as asserted in a recent unrefereed preprint of OpenAI, we obtain $Λ\le 13963/100000 = 0.13963$ for the de Bruijn-Newman constant. A published Polymath boundary computation supplies a finite-region strip of half-width $1/5$. We
+
+## 2026-10-14 — 2 new paper(s)
+
+- **2610.14901v1** (2026-10-10) — Overlap distributions under the Gibbs measure of a Haar model of $\log|ζ|$ on and near the critical line
+  Authors: Frédéric Ouimet
+  Cats: math.PR, math-ph, math.NT
+  https://arxiv.org/abs/2610.14901v1
+  > We study the Gibbs measure of $H(h) = \Re\sum_{p^{j} \leq X}U_{p}^{j}/(j p^{j(σ+ i h)})$, a random field modeling large values of the log-modulus of the Riemann zeta function on and near the critical line, where the $U_{p}$ are independent and uniformly distributed on the complex unit circle. Writin
+
+- **2610.18214v1** (2026-10-13) — A certified classical-strip comparison for the de Bruijn-Newman constant
+  Authors: Michel Planat
+  Cats: math.NT
+  https://arxiv.org/abs/2610.18214v1
+  > We give a directed comparison beginning with the classical zero strip \(\lvert\Ima z\rvert\le1\) for the de Bruijn--Newman heat deformation. Under explicitly stated complete model-to-function source, localisation and global contact premises, translated-probe estimates imply \[ Λ\le\frac{148611789321
+
+## 2026-10-19 — 2 new paper(s)
+
+- **2610.22821v1** (2026-10-16) — Poisson-Dirichlet statistics for the log-modulus of the Riemann zeta function on expanding intervals near the critical line
+  Authors: Frédéric Ouimet
+  Cats: math.NT, math-ph, math.PR
+  https://arxiv.org/abs/2610.22821v1
+  > For $T > 0$ large, let $τ$ be uniformly distributed on $[T,2T]$ and let $σ= σ(T)$ be a deterministic real part approaching $1/2$ from the right. For the Riemann zeta function $ζ$, we study the Gibbs measure with density proportional to $|ζ(σ+ \mathrm{i}τ+ \mathrm{i} h)|^β$ on $I_θ := [ - (\log{T})^θ
+
+- **2610.22927v1** (2026-10-16) — Unconditional Bounds for Two, Three and Four Consecutive Moderate Gaps between Zeros of the Riemann Zeta Function
+  Authors: César Angón, Erick Ross, Ze Sen Tang, Boyang Zhao
+  Cats: math.NT
+  https://arxiv.org/abs/2610.22927v1
+  > We prove unconditional positive-proportion results for consecutive moderate gaps between zeros of the Riemann zeta function. More precisely, for every fixed \(0<c\leq 1/4\), the lower asymptotic densities, normalized by \(N(T)\), of occurrences of two, three, and four consecutive gaps, each of lengt

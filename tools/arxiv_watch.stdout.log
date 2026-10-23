@@ -132,3 +132,103 @@ query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: HTTP Error 429:
 query failed [abs:"positivity" AND abs:"critical line"]: HTTP Error 429: Unknown Error
 No new papers.
 Found 4 new paper(s), logged + notified.
+query failed [abs:"Hilbert-Polya"]: The read operation timed out
+No new papers.
+Found 1 new paper(s), logged + notified.
+No new papers.
+query failed [abs:"Li's criterion"]: HTTP Error 429: Unknown Error
+No new papers.
+No new papers.
+Found 1 new paper(s), logged + notified.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+No new papers.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+query failed [abs:"Weil positivity"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Weil quadratic form"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Guinand-Weil"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"de Bruijn-Newman"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Riemann hypothesis" AND abs:"explicit formula"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Hilbert-Polya"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Li's criterion"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"screw function" AND abs:"zeta"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"positivity" AND abs:"critical line"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+query failed [abs:"Weil positivity"]: The read operation timed out
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+No new papers.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+query failed [abs:"Weil positivity"]: The read operation timed out
+query failed [abs:"Guinand-Weil"]: The read operation timed out
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+query failed [abs:"Weil positivity"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Weil quadratic form"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Guinand-Weil"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"de Bruijn-Newman"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Riemann hypothesis" AND abs:"explicit formula"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Hilbert-Polya"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"Li's criterion"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"screw function" AND abs:"zeta"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+query failed [abs:"positivity" AND abs:"critical line"]: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+No new papers.
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: The read operation timed out
+query failed [abs:"positivity" AND abs:"critical line"]: The read operation timed out
+No new papers.
+query failed [abs:"Weil positivity"]: The read operation timed out
+No new papers.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+query failed [abs:"Weil positivity"]: The read operation timed out
+query failed [abs:"Weil quadratic form"]: HTTP Error 429: Unknown Error
+query failed [abs:"Guinand-Weil"]: HTTP Error 429: Too Many Requests
+query failed [abs:"de Bruijn-Newman"]: The read operation timed out
+query failed [abs:"Riemann hypothesis" AND abs:"explicit formula"]: HTTP Error 429: Unknown Error
+query failed [abs:"Hilbert-Polya"]: The read operation timed out
+query failed [abs:"Li's criterion"]: HTTP Error 429: Too Many Requests
+query failed [abs:"positivity" AND abs:"critical line"]: The read operation timed out
+No new papers.
+query failed [abs:"Weil quadratic form"]: The read operation timed out
+query failed [abs:"de Bruijn-Newman"]: The read operation timed out
+query failed [abs:"Riemann hypothesis" AND abs:"explicit formula"]: HTTP Error 429: Unknown Error
+query failed [abs:"Hilbert-Polya"]: The read operation timed out
+query failed [abs:"Li's criterion"]: HTTP Error 429: Unknown Error
+query failed [abs:"screw function" AND abs:"zeta"]: HTTP Error 429: Unknown Error
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: The read operation timed out
+query failed [abs:"positivity" AND abs:"critical line"]: The read operation timed out
+No new papers.
+query failed [abs:"Weil positivity"]: The read operation timed out
+query failed [abs:"Weil quadratic form"]: HTTP Error 429: Unknown Error
+query failed [abs:"Guinand-Weil"]: HTTP Error 429: Unknown Error
+query failed [abs:"de Bruijn-Newman"]: HTTP Error 429: Unknown Error
+query failed [abs:"Riemann hypothesis" AND abs:"explicit formula"]: HTTP Error 429: Unknown Error
+query failed [abs:"Hilbert-Polya"]: The read operation timed out
+query failed [abs:"Li's criterion"]: HTTP Error 429: Unknown Error
+query failed [abs:"screw function" AND abs:"zeta"]: HTTP Error 429: Unknown Error
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: HTTP Error 429: Unknown Error
+query failed [abs:"positivity" AND abs:"critical line"]: HTTP Error 429: Unknown Error
+No new papers.

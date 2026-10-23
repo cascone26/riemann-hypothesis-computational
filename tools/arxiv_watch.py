@@ -10,6 +10,7 @@ Scheduled by:  ~/Library/LaunchAgents/com.jacob.riemann-arxiv-watch.plist
 """
 import json
 import os
+import subprocess
 import time
 import urllib.request
 import urllib.parse
@@ -81,12 +82,12 @@ def save_state(state):
 
 
 def notify(title, body):
-    payload = body.encode("utf-8")
-    req = urllib.request.Request(NTFY_URL, data=payload, method="POST")
-    req.add_header("Title", title)
-    req.add_header("Priority", "default")
     try:
-        urllib.request.urlopen(req, timeout=10)
+        subprocess.run(
+            ["node", os.path.expanduser("~/tools/notify/notify.js"), body,
+             "--title", title, "--priority", "default"],
+            capture_output=True, timeout=15
+        )
     except Exception as ex:
         print(f"ntfy failed: {ex}")
 

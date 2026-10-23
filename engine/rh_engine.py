@@ -38,8 +38,8 @@ def now(): return datetime.datetime.now().isoformat(timespec="seconds")
 def ntfy_breakthrough(msg):
     """Phone ping ONLY for a gate-passing breakthrough. Nothing else reaches the phone."""
     try:
-        subprocess.run(["curl","-s","--max-time","20","-H","Title: RH BREAKTHROUGH","-H","Priority: max",
-            "-H","Tags: rotating_light","-d",msg.upper(),"ntfy.sh/jacob-cobo-80c6d2b9e9c4"],
+        subprocess.run(["node",os.path.expanduser("~/tools/notify/notify.js"),msg.upper(),
+            "--title","RH BREAKTHROUGH","--priority","max"],
             capture_output=True,timeout=25)
     except Exception: pass
 def load(p,d): 

@@ -47,9 +47,9 @@ def log(msg):
 def ntfy(msg, title='Riemann'):
     try:
         subprocess.run(
-            ['curl', '-s', '-d', msg, f'https://ntfy.sh/{NTFY_TOPIC}',
-             '-H', f'Title: {title}', '-H', 'Priority: high'],
-            capture_output=True, timeout=10
+            ['node', os.path.expanduser('~/tools/notify/notify.js'), msg,
+             '--title', title, '--priority', 'high'],
+            capture_output=True, timeout=15
         )
     except:
         pass
