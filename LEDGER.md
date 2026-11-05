@@ -51780,3 +51780,26 @@ with an explicit, signed, monotone approach.
 **Next:** (1) prior art: monotonicity of Gauss/ORF quadrature nodes under enlarging the space (Markov–Stieltjes
 inequalities, Krein's separation theorems) — does it apply verbatim to nested lattices E_N ⊂ E_{N+1}?;
 (2) prove monotonicity in N via the quadrature nesting (E_N ⊂ E_{N+1} ⟹ interlacing of nodes); (3) λ-monotonicity?
+
+## S2874 (2026-11-05 01:58 CST, HP center cycle 10) — MARKOV HOMOTOPY: TAIL MASS PUSHES NODES UP, LINEARLY
+`operators/hp_markov_homotopy.py` (λ²=14, N=8, dps 90). Split exactly τ = τ_K + τ_tail, τ_K = finite zero-side
+sum over ±γ_1..γ_8 (rank 16 = M−1 ⟹ 1-dim kernel ξ₀, φ_{ξ₀} vanishes exactly at ±γ_k), τ_tail := τ − τ_K
+(explicit side minus finite zero sum): **min eig τ_tail = +9.8e-36 ⪰ 0** (unconditional numerical check that
+the explicit Weil matrix dominates its first 8 zero terms). Homotopy τ_s = τ_K + s·τ_tail, signed t_k−γ_k:
+  s=0: −1.4e-87 … (= precision: nodes EXACTLY at zeros)
+  s=1e-30: +1.7e-43, +2.1e-34, +1.7e-30, +4.4e-26, +1.1e-24, +1.1e-23   (ε=1.2e-49)
+  s=1e-20: ×1e10 each (exactly linear in s; ε linear in s)
+  s=1e-5: +5.2e-20, +5.2e-11, +3.6e-7, +6.1e-3, +0.13, +0.61
+  s=0.1: +4.2e-18, +2.8e-9, +1.3e-5, +0.084, +1.58, +4.04
+  s=1: +1.3e-17, +7.8e-9, +3.2e-5, +0.138, +2.8 (= S2871's true values) — k=1..5 monotone ↑ in s.
+**Markov-type monotonicity confirmed:** adding the (higher-zero) tail mass moves every resolved node UPWARD,
+monotonically, starting exactly linear. This explains L2 (S2873): nodes sit above zeros because all
+unresolved mass sits above.
+**First-order formula (derived):** ξ(s)=ξ₀−sτ_K⁺τ_tailξ₀+O(s²), ε=s ξ₀ᵀτ_tailξ₀+O(s²); with C_K the Cauchy
+columns at ±γ_j, c_{γ_k}ᵀτ_K⁺ = w_k^{-1} D_kᵀ (D_k = dual row of C_K⁺, D_k·c_{γ_j}=δ_jk), so
+   δt_k = (s/(w_k φ'_{ξ₀}(γ_k))) Σ_{ρ∈tail} w_ρ φ_{D_k}(γ_ρ) φ_{ξ₀}(γ_ρ) + O(s²),
+with φ_{ξ₀}(t) = κ₀Π_{j≤N}(t²−γ_j²)/Π_n(t+ν_n) and φ_{D_k} the explicit rational Lagrange-dual (zeros at ±γ_j,
+j≠k, and −γ_k). Both factorized ⟹ the sign of δt_k is a FINITE SIGN COMPUTATION in the positions of
+γ_j, ν_n — the route to a theorem "RH ⟹ first-order upward displacement" (then L2 by continuation in s).
+**Next:** do the sign computation symbolically (product of factor signs on the tail t>γ_N and t<−γ_N), verify the
+formula numerically against the s=1e-30 column, then prove monotonicity in s (no node crossing).
