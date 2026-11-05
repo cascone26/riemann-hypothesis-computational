@@ -52160,3 +52160,13 @@ minimizer relatively large there ⟹ small Rayleigh quotient) is unchanged in fo
 λ²=14, "resolved" = within ¼ local gap of a ζ zero): spurious positive nodes = 3, 2, 4, 6 at N=12,16,20,24 — NOT settling to the
 predicted λ²/2=7; the coarse criterion counts loosely-approximating high nodes as resolved ⟹ INCONCLUSIVE (needs a convergence-
 based criterion and N→∞ at fixed λ). Free-zero count stays a heuristic (REPORT), not evidence.
+
+## S2895 (2026-11-05 08:01 CST, HP center cycle 25) — λ²=20 FLOOR; THE DECAY RATE PLATEAUS AT κ ≈ 12.3 (NOT 2π²)
+λ²=20: N=104 1.44e-95 · **N=120 2.50e-96** (step ratio 0.17 ⟹ saturating) ⟹ μ_{√20} ≈ 1.5e-96 (−ln μ ≈ 220.9).
+Local slopes d(−ln μ)/d(λ²) between saturated floors: 3→3.5 10.8 · 3.5→4 11.6 · 4→5 11.4 · 5→7 11.6 · 7→10 12.0 · 10→14 12.2 ·
+**14→20 12.3** — rising but DECELERATING; NOT heading to 2π²≈19.7 (S2892's Zhu-derived guess — rejected, consistent with S2893).
+**Law (8 saturated floors, λ²=3…20):** μ_λ ≈ C·e^{−κ λ²}, κ → ≈12.3–12.6 (4π = 12.566 is a candidate limit — NOT claimed).
+In the free-zero picture: a roughly CONSTANT cost per free zero, κ ≈ 12.3.
+**Pre-registration (for a future long run):** slope 20→28 ∈ [12.3, 12.7], i.e. μ_{√28} ≈ e^{−(320±2)} ≈ 1e-139 (×10). Cost: N≈170 at
+~800 digits on HP (≈8–12 h single-thread) — queued, not launched this cycle.
+**Ledger of tests in this lane:** λ²lnλ² ✗ · exp-in-λ² ✓✓ · Zhu T*=2πλ² ✗ · κ→2π² ✗ · κ-plateau ~12.3 (new, pending).
