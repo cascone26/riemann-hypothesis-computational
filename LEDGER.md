@@ -51994,3 +51994,25 @@ cleanest object yet for a Lean formalization (Courant–Fischer / singular-value
 **Next:** (1) test whether B_N's last row/column deletion has a sign pattern forcing one-step interlacing (e.g. the deleted
 row/column of B_{N+1} in the G-orthonormal basis is "dominated"); (2) search Mathlib for Cauchy/singular-value interlacing
 (Matrix.eigenvalues, Courant–Fischer) to scope the Lean brick.
+
+## S2884 (2026-11-05 03:57 CST, HP center cycle 17) — THEOREM: ONE-STEP INTERLACING OF SHI'S UNSHIFTED PENCIL (proof complete; numerics confirm the key lemma to 1e-81)
+**Setting.** S=S_{N+1,L} (=CCM τ), D=diag(ν_n), zero-mean contrast space split by parity: even contrasts evc(k)=ev(k)−√2e₀,
+odd od(k) (k=1..N+1), nested in k. Assume G_un ≻ 0 (S ≻ 0 on contrasts — certified for λ²=14, N=12, 24 in S2880/S2881).
+Gram–Schmidt in the S-inner product within each parity, in frequency order: E_1..E_{N+1}, O_1..O_{N+1}. In these bases the
+unshifted pencil (Shi §4.8, Eqs 4.41-4.43) is [[0,B],[Bᵀ,0]] with B_ij = E_iᵀ S D O_j; its positive spectrum = singular values of B.
+**Lemma (B is lower triangular).** (1) Displacement (Shi 3.31): DS−SD = b1ᵀ−1bᵀ, and 1ᵀE_i = 1ᵀO_j = 0 ⟹ E_iᵀSDO_j = (DE_i)ᵀSO_j.
+(2) D·ev(k) = ν_k od(k), D·e₀ = 0 ⟹ DE_i ∈ span{od(1..i)}. (3) O_j ⊥_S span{od(1..j−1)}. ⟹ for i<j: B_ij = ⟨DE_i,O_j⟩_S = 0. ∎
+Numerics (`operators/hp_pencil_block.py`, λ²=14, N=8, dps 100): upper-triangle max |B_ij| per row 1.3e-88 … 1.3e-81
+(= precision zero); lower part O(10–40); ‖x‖ = 1.3e-81, ‖y‖ = 60.6. Singular values = 14.13472514, 21.02203964, 25.0108647, …
+**Theorem.** B_{N+1} = [[B_N, 0],[yᵀ, β]] (the level-N bases are the first N vectors of the level-(N+1) Gram–Schmidt, since G_N =
+G_{N+1}|). Hence B_N B_Nᵀ is a principal submatrix of B_{N+1}B_{N+1}ᵀ and Cauchy interlacing gives, for the positive pencil
+eigenvalues θ (singular values),   **θ^{(N+1)}_k ≤ θ^{(N)}_k ≤ θ^{(N+1)}_{k+1}.** ∎
+**Corollary (monotone limits).** If S_{N,L} ≻ 0 on contrasts for all N ≥ N₀ (fixed λ), then for each k, θ^{(N)}_k is
+non-increasing in N and ≥ 0 ⟹ **θ_k^∞(λ) := lim_N θ^{(N)}_k exists** — unconditionally given positivity. Numerically the limits
+are the ζ ordinates approached from above (S2883).
+**Status:** HANDLE-grade math (complete elementary proof; key lemma numerically exact to 1e-81), not yet Lean. The proof uses
+only: symmetry, the rank-2 displacement identity, zero-mean contrasts, parity, nested Gram–Schmidt, Cauchy interlacing.
+**Opens:** (a) Lean brick — the triangularity lemma is pure linear algebra (bilinear form vanishing), the interlacing step needs
+Cauchy interlacing (check Mathlib); (b) the monotone-limit corollary turns certified positivity into existence of real limits;
+the remaining gap is IDENTIFYING the limits with the ζ ordinates (Shi's §4.9 transfer problem) — now a question about a
+monotone sequence with a known lower bound structure, not about existence.
