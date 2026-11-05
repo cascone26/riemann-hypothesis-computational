@@ -21296,3 +21296,6 @@ ground state lost exactly one sign change per zeta zero below ν_N; made a numer
 before running (4/4 exact). Derived the mechanism (partial-fraction parity lemma) so the law is explained,
 not just observed. Prior-art agent (lean brief, no project docs) confirmed the TP/oscillation angle is
 unaddressed in the literature. Decision: next is Lean for the two bounded lemmas (parity lemma, Cauchy TP).
+- 23:40 CST S2861: chose the parity lemma as the first Lean brick (bounded, analytic-but-elementary, the
+  exact combinatorial core of the S2860 law). Probed lemma names by compiling `#check` on Olympus before
+  writing (cheat-sheet discipline); one rename round. Gate GREEN.

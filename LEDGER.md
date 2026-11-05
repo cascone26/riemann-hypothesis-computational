@@ -51476,3 +51476,20 @@ explicit side would pin the COUNTING function of ξ̂_N zeros to ζ's — half o
 **Next (Lean, bounded algebraic — the forge's proven pattern):** (1) the partial-fraction sign/zero-parity
 lemma for R_u between consecutive poles; (2) Cauchy-matrix TP + Cauchy–Binet ⟹ S2859's conditional TP
 theorem. Then attack the counting identity unconditionally.
+
+## S2861 (2026-11-04 23:40 CST, HP center cycle 2b) — LEAN BRICK, EXIT0 + GATE GREEN
+**`PartialFractionSignChange.lean`: the parity lemma behind S2860's sign-change law, machine-verified.**
+For R(y)=∑ₖ uₖ/(y−xₖ) (any Fintype index) and poles xᵢ<xⱼ with no other pole in [xᵢ,xⱼ]:
+- `exists_zero_between_of_mul_pos`: 0 < uᵢuⱼ ⟹ ∃ y ∈ (xᵢ,xⱼ), R y = 0.
+- `mul_neg_of_no_zero_between`: uᵢ,uⱼ ≠ 0 and R has no zero in (xᵢ,xⱼ) ⟹ uᵢuⱼ < 0.
+Proof: split R = uᵢ(y−xᵢ)⁻¹ + (rest continuous at xᵢ); `tendsto_inv_nhdsGT_zero`/`tendsto_inv_nhdsLT_zero`
++ `Tendsto.atTop_add`/`atBot_add` give R→+∞ at xᵢ⁺, −∞ at xⱼ⁻; pick a, b eventually; IVT
+(`intermediate_value_Icc'`). Negative case by `R_neg`.
+**Verified:** Olympus fresh compile (`rm .olean; lean -o`), EXIT=0, zero errors; `#print axioms` both
+theorems = [propext, Classical.choice, Quot.sound]; `./axiom_gate.sh PartialFractionSignChange`:
+checked=12 clean=12 bad=0 — GREEN BOARD. (2 compile rounds: `continuousAt_finset_sum` doesn't exist in
+this Mathlib → `tendsto_finsetSum`.) HANDLE-tier.
+**Opens:** the sign-change law's combinatorial half is now machine-proven; summing it over node intervals
+(a Finset induction) gives #sign-changes(u) ≥ (n−1) − #{intervals with a zero} unconditionally.
+**Next:** (1) the summed counting corollary; (2) Cauchy-determinant positivity ⟹ TP (S2859's band theorem).
+SESSION TALLY (HP center): 1 Lean brick, 2 theorems (+10 supporting lemmas), all gate-GREEN.
