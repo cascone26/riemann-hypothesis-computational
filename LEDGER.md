@@ -51613,7 +51613,7 @@ both positivity and faithfulness).
 ε ξ̂(ν_k) = 2Σ_ρ ξ̂(γ_ρ) sin((γ_ρ−ν_k)L/2)/(γ_ρ−ν_k); (2) planted double-quadruple → #neg=4 check;
 (3) prior-art: "Weil quadratic form negative index = number of off-line zeros" (Yoshida/Bombieri).
 
-## S2867 (2026-11-05 00:20 CST, HP center cycle 5b) — PRIOR ART + NEGATIVE-INDEX COUNT LAW + DETECTION HORIZON
+## S2867 (2026-11-05 00:14 CST, HP center cycle 5b) — PRIOR ART + NEGATIVE-INDEX COUNT LAW + DETECTION HORIZON
 **Prior art (subagent, cited):** literature has only index-0 ⟺ RH (Yoshida 1992 Thm 2 / Lemma 2 small-a
 positivity; Suzuki JLMS 108 (2023) Thms 1.2-1.4, 4.2; Suzuki 2606.09096 reproof). NO published count of
 negative squares = #off-line zeros; Krein–Langer G_κ never applied to ζ in print. NO published sign
@@ -51633,3 +51633,30 @@ horizon"}; RH ⟺ ind = 0 ∀(λ,N) (CCM/Yoshida) — our contribution is the ho
 sign-faithfulness invariant that switches with it.
 **Next:** measure the horizon law Im_crit(γ_m; N, λ) (scaling with distance above ν_N), and read Yoshida
 Lemma 3 (finite codimension bound = implicit index bound).
+
+## S2868 (2026-11-05 00:15 CST, HP center cycle 6) — EXACT FINITE GAUSS QUADRATURE FOR THE WEIL MATRIX (+ proof)
+`operators/hp_gauss_quadrature.py` (λ²=14, N=6, dps 80): t_j = the 2N=12 zeros of R_ξ(z)=Σ_n ξ_n/(z−ν_n)
+(ground vector ξ; all REAL, max|Im|=0), c_t(n)=1/(ν_n ± t). Solve τ−εI = C A Cᵀ:
+  residual 1.4e-69, max|offdiag A| = 4.8e-64 (precision floor), all 12 diag(A) > 0.
+**⟹ τ_{λ,N} − ε_N I = Σ_{j=1}^{2N} α_j c_{t_j} c_{t_j}ᵀ,  α_j>0,  t_j = real zeros of ξ̂_N** — an exact
+finite "zero side" over the ground function's own zeros. Quadrature nodes t>0: 14.1347(=γ₁), 21.0231,
+25.0513, 32.70, 54.97, 170.6 (beyond ν_N=15.7 they leave ζ's zeros). Weights vs Riemann's zero-side
+weights w(t)=4sin²(tL/2)/L: α_j/w(t_j) = 1.0000, 1.0000, 1.0069, 1.0342, 1.8108, 70.1, 132.7 (center→edge)
+— the finite weights REPRODUCE w(γ) in the interior.
+**PROOF of diagonality (pure linear algebra, unconditional):** D=diag(ν), Θ=diag(t), C_{nj}=1/(ν_n+t_j).
+(i) Shi Eq 3.31: Dτ−τD = b1ᵀ−1bᵀ; same for T:=τ−εI. (ii) Cauchy: DC + CΘ = 11ᵀ. (iii) T=CACᵀ
+(columns c_{t_j} ⊥ ξ since R_ξ(t_j)=0; 2N distinct ⟹ they span ξ^⊥ = range T). Substituting:
+DT−TD = 1(CA1)ᵀ − (CA1)1ᵀ + C(ΘA−AΘ)Cᵀ ⟹ C(ΘA−AΘ)Cᵀ = v1ᵀ−1vᵀ, v:=b−CA1 (up to sign conv.).
+LHS has column space ⊆ ξ^⊥. If **Σ_nξ_n ≠ 0** then 1 ∉ ξ^⊥ ⟹ v ∥ 1 ⟹ RHS = 0 ⟹ ΘA=AΘ ⟹ A diagonal
+(t_j distinct). α_j = d_jᵀ T d_j ≥ 0 (dual basis) since T ⪰ 0 when ε=λ_min.
+⟹ Shi's Thm 4.1 hypothesis `he_sum` (Σe≠0, S2855) is EXACTLY the condition for the quadrature to exist.
+Likely the Gauss-quadrature face of CCM Thm 5.10 (D^{λ,N} self-adjoint in the (τ−ε) inner product ⟹
+orthogonal eigenbasis {c_{t_j}}); our additions = explicit weights α_j, the α_j/w(t_j)→1 law, and the
+Σξ≠0 ⟺ diagonality link. CHECK CCM §5 text before claiming novelty of the identity itself.
+**Opens (the RH lever):** two exact representations of the same matrix —
+  ζ side (explicit formula):  τ = Σ_ρ w(γ_ρ) c_{γ_ρ} c_{γ_ρ}ᵀ   (complex/indefinite terms iff off-line ρ)
+  finite side (proved here): τ = ε I + Σ_j α_j c_{t_j} c_{t_j}ᵀ (real, positive)
+Convergence t_j→γ_j, α_j→w(γ_j) IS CCM's convergence; the interior match is already 1e-4..1e-12.
+**Lean target (bounded, linear algebra, forge-style):** "displacement-rank-2 symmetric T with kernel
+vector ξ, Σξ≠0, Cauchy columns spanning ξ^⊥ ⟹ CᵀT-dual is diagonal" — reuses CauchyMatrixDetGeneral
+(injectivity) and S2855's TheoremFourOneCorrect setting.
