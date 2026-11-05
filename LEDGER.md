@@ -51584,3 +51584,31 @@ double pole) — node crossings act as rank-one diagonal penalties.
 (c) the λ-homotopy: track sgn ξ_k as ν_k(λ) sweeps across a zeta zero — does the flip happen exactly at
 ν_k=γ? (d) prior-art check on "finite Weil matrix negativity index = #off-line zeros" (Yoshida/Bombieri/
 Krein–Langer) before claiming anything there.
+
+## S2866 (2026-11-05 00:20 CST, HP center cycle 5) — λ-HOMOTOPY: GROUND-STATE SIGN FLIPS LAND ON THE ZETA ZEROS
+`operators/hp_lambda_homotopy.py`: vary L so node ν_k=2πk/L sweeps across a zeta zero (exactly at
+L*=2πk/γ_j); bisect (30 steps, resolution 3.7e-11) the L where ξ̂_N(ν_k) ∝ (−1)^k ξ_k changes sign.
+  N=8,  k=5 across γ₁=14.1347: flip at L*−1.9e-11 (= resolution), node offset at flip 1.2e-10.
+  N=10, k=7 across γ₂=21.0220: flip at L*−1.9e-11 (= resolution), node offset 1.9e-10.
+`operators/hp_node_on_zero.py` AT L* exactly (N=8,k=5,γ₁): |ξ_5| = 5.6151e-19, IDENTICAL at dps 40 and 70
+(genuine, not round-off), vs neighbours 1.2e-2 / 1.9e-4; e0 = 1.18e-20 ⟹ ξ_k = O(ε), far inside
+the trivial bound √(ε/L)=7e-11.
+**Mechanism (zero side, RH-consistent data):** Q(u)=uᵀτu = Σ_ρ |ξ̂_u(γ_ρ)|² EXACTLY (w_ρ(c_ρ·u)² =
+ξ̂_u(−γ_ρ)² using w=4sin²(γL/2)/L and the residue identity). Hence the ground state satisfies
+|ξ̂_N(γ_ρ)| ≤ √ε_N at EVERY zero (ε_N = 1e-30…1e-56 here). Node-on-zero: ξ̂(ν_k)=√L(−1)^kξ_k is literally
+a zero-sample ⟹ ξ_k=O(√ε) by the bound, observed O(ε). Sign-faithfulness = "ξ̂_N has no SPURIOUS zeros in
+the node range" (zeros real by CCM's finite self-adjointness; one near each γ by the √ε bound); the
+λ-homotopy shows the discrete invariant changes exactly when — and only when — a zeta zero crosses a node.
+**ANTI-LOOP record (Solver OS §3):** the Löwner/operator-monotone reformulation of S (Loewner matrix of
+β_L(x)=−Σ_ρ w_ρ(L)/(x+γ_ρ)) reduces via Dobsch–Donoghue to Hankel-PSD of Σ_ρ w_ρ γ_ρ^{−(m+1)} = the
+cy329-333 box-moment/Favard criterion with an L-dependent weight — LOOPED (positivity ⟺ RH metatheorem).
+Do not re-enter. (Single-L Pick criterion is a reformulation, not a lever.)
+**Opens:** sign-faithfulness is a deformation invariant in λ whose only change-points are zeta zeros on
+nodes. That gives a counting-type certificate of zero LOCATIONS from the explicit side: for a λ-sweep,
+#flips of sgn ξ̂(ν_k) as ν_k(λ) moves over [a,b] = #zeros in [a,b] (if flips are exactly the zeros). A
+Turing-method analogue built from the Weil matrix — and it detects off-line zeros (S2865: they destroy
+both positivity and faithfulness).
+**Next:** (1) prove (RH-free, explicit side) that sgn changes of ξ̂_N(ν_k(λ)) can only occur where
+Ξ(ν_k)=0 up to O(ε) — candidate via the ground-state equation restricted to the node-k row:
+ε ξ̂(ν_k) = 2Σ_ρ ξ̂(γ_ρ) sin((γ_ρ−ν_k)L/2)/(γ_ρ−ν_k); (2) planted double-quadruple → #neg=4 check;
+(3) prior-art: "Weil quadratic form negative index = number of off-line zeros" (Yoshida/Bombieri).

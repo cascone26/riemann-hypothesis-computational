@@ -1,0 +1,4 @@
+N=8 node k=5 zero #1 gamma=14.1347251417 L*=2.22260611514 (lam2*=9.2313575)  f(L*-.02)=-9.648e-5 f(L*+.02)=0.0001014
+  sign flip at L=2.22260611513   L*=2.22260611514   diff=-1.863e-11  (node offset nu_k-gamma at flip = 1.185e-10)
+N=10 node k=7 zero #2 gamma=21.0220396388 L*=2.09219932538 (lam2*=8.1027161)  f(L*-.02)=3.152e-6 f(L*+.02)=-3.526e-6
+  sign flip at L=2.09219932536   L*=2.09219932538   diff=-1.863e-11  (node offset nu_k-gamma at flip = 1.872e-10)
