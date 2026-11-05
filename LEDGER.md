@@ -52088,3 +52088,6 @@ margin to ~20% — the tail is small, which is exactly what a rigorous tail boun
 **Next:** a rigorous tail estimate at λ²=7/2: bound λ_min of the full form below by λ_min(τ_16) − (tail coupling), via an
 explicit decay bound on |τ_nm| for |n|>16 against the 3.0e-10 margin — first check numerically how ε_N converges (N=16→24→32)
 to see the tail's real size, then design the bound.
+**S2888b PRE-REGISTRATION (04:46 CST, before λ²=7 saturates):** saturated floors μ_λ: λ²=3: 7.3e-8 · 3.5: 3.3e-10 · 4: ~1.0e-12 ·
+5: ~1.2e-17 (N=16/24/32: 1.77e-17, 1.42e-17, 1.21e-17). −ln μ/(λ² ln λ²) = 4.97, 4.98, 4.98, 4.83 ⟹ candidate law
+**μ_λ ≈ exp(−5·λ² ln λ²)**. PREDICTION (in ink): saturated μ at λ²=7 ≈ exp(−68.1) ≈ 3e-30 (within ×10); at λ²=14 ≈ e^{−185} ≈ 1e-80.
