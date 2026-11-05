@@ -9,7 +9,7 @@ QW_lambda(V_n,V_m) = W_R + W_p + W_02 in the periodic scaling basis U_n=L^{-1/2}
 Then: smallest eigenvalue eps_N (simple,even), eigenvector xi; xihat(z)=2 L^{-1/2} sin(zL/2) sum_j xi_j/(z-2pi j/L);
 zeros of xihat = spectrum ~ zeta zeros. Compare first zero to gamma_1=14.1347251417.
 
-SIGN WARNING (S2859, 2026-11-05): this file assembles +W_R + W_p. The zero-side oracle
+SIGN WARNING (S2859, 2026-11-04): this file assembles +W_R + W_p. The zero-side oracle
 (operators/ccm_shi_identity_check.py) shows the correct Weil matrix is W02 - W_R - W_p
 (= Shi S_{N,L}); see operators/ccm_parts.py.
 """

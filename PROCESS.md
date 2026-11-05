@@ -21278,7 +21278,7 @@ Data under this project was removed or relocated off this Mac during an emergenc
 relocated-to-Olympus: memory `fleet-silent-failure-sweep-2026-08-16` (2026-11-01 entry), fleet-wide
 memory store on this Mac.
 
-## 2026-11-05 — HP RH work center, cycle 1 (LEDGER S2859)
+## 2026-11-04 23:30 CST — HP RH work center, cycle 1 (LEDGER S2859)
 Decision chain: resumed at S2858's move (a) "resolve the 14 vs 16π² mismatch". Rather than trust a
 re-read of garbled PDF text, built an INDEPENDENT oracle: Shi's S_mn is *defined* as a zero-side sum,
 so summing over 100k real zeros and fitting against CCM's explicit-side parts decides the dictionary
