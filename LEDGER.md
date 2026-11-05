@@ -52130,3 +52130,17 @@ zero; above T* the zeros outnumber the available degrees of freedom and the resi
 **DISCRIMINATING PRE-REGISTRATION (in ink):** λ²=20: Zhu-form with T*=2πλ² ⟹ −ln μ ≈ 213.7, μ ≈ 5e-93; my quadratic fit (S2890) ⟹
 4e-98. Prediction: **μ_{√20} ∈ [5e-95, 5e-91] (Zhu-form ×100)**; a value near 4e-98 would favor the polynomial fit instead.
 Run launched (λ²=20, N=72…120).
+
+## S2892 (2026-11-05 06:26 CST, HP center cycle 23) — WHY −ln μ_λ IS LINEAR IN λ²: THE FREE-ZERO COUNT IS EXACTLY λ² (heuristic derivation, REPORT)
+Functions in the CCM space (exponential type L/2, support [0,L]) carry at most L/2π zeros per unit frequency (Cartwright/Jensen);
+ζ-zero density is (1/2π)log(t/2π) < L/2π for t < T* = 2πλ². The Weil minimizer tracks every ζ zero below T* and has
+**free zeros** = ∫_0^{T*} (L − log(t/2π))/2π dt = (1/2π)[L·T* − T*log(T*/2π) + T*] = **T*/2π = λ² exactly**.
+Mechanism: the minimizer pushes its λ² free zeros off the real line, making it exponentially LARGE in the sparse low-frequency
+region relative to its values on the zeros (the zero-side cost). Rayleigh quotient ⟹ μ_λ ≈ e^{−κ·λ²}, κ = cost per free zero
+(slowly varying). Consistent with: linear-in-λ² fit (S2889/90, slope ≈ 11–12.5 over λ²∈[3,14], convex); Zhu's form
+2π²N(T*)/ln N(T*) → 2π²λ² asymptotically (N(T*)=λ²(L−1), ln N ~ L) ⟹ candidate asymptotic **κ → 2π² ≈ 19.74**.
+Testable: local slope d(−ln μ)/dλ² should keep rising toward 2π² (≈12.5 at λ²=14; λ²=20 run will give it).
+**Why it matters for the crux:** μ_λ>0 means the free-zero mechanism always "wins" — the minimizer can never make the zero-side
+cost vanish because ζ's zeros outnumber its capacity above T*. Under ¬RH, an off-line pair inside the window behaves like a
+zero the minimizer can't track on the line (S2865/S2878) — the mechanism a positivity proof must exploit: unmatched-zero
+cost vs off-line negative contribution, both measured in units of free zeros.
