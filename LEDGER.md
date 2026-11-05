@@ -51815,3 +51815,19 @@ ABOVE γ_N beats its average over the smooth Plancherel density w·P²/Q² (whic
 A zeros-vs-continuum comparison — Riemann–von Mangoldt territory, κ₀ cancels, everything explicit.
 **Next:** numerically evaluate both averages (N=8, λ²=14) and confirm δt_k/s matches the s=1e-30 column of S2874;
 then attack the inequality itself (density of zeros (1/2π)log(t/2π) vs w(t)/2π, weighted by P²/Q²).
+
+## S2875 (2026-11-05 02:16 CST, HP center cycle 11) — CLOSED-FORM SHIFT VERIFIED (0.2%); SIGN REDUCED TO ONE EXPLICIT INTEGRAL
+`operators/hp_shift_formula_check.py` (λ²=14, N=K=8): S2874's closed form δt_k/s = (2q_k²γ_k/w_k)[ΣW g − ΣW⟨g⟩_{m̃}]
+evaluated with the 100k-zero tail (+ density correction) and mpmath quadrature for m̃:
+  predicted 1.694e-13, 2.054e-4, 1.722, 4.352e4, 1.141e6  vs homotopy-measured 1.69e-13, 2.05e-4, 1.72, 4.35e4, 1.14e6
+  **ratio 0.9975, 0.9980, 0.9990, 0.9996, 0.9988** (residual = 3-digit rounding of the measured column). DERIVATION CONFIRMED.
+Ingredients: ⟨g⟩_tail = +2.40e-5 … +2.60e-5 (>0 automatically: all tail zeros above γ_k);
+⟨g⟩_{m̃} = −5.21e-3, −2.30e-3, −1.62e-3, −1.09e-3, −9.3e-4 (NEGATIVE).
+**Reduction (first order):** since ⟨g⟩_tail>0 always, a SUFFICIENT condition for the upward node shift is
+   I_k := ∫_0^∞ (w(t)/t²)·[Π_j(t²−γ_j²)/Π_{n≤N}(t²−ν_n²)]² · dt/(t²−γ_k²)  <  0,
+a single explicit integral in γ_1..γ_N and the lattice — NO zeta tail. Mechanism: near t=0 the integrand ≈
+−L·Π_j(γ_j/ν_j)⁴/γ_k² (huge, since the zeros sit far above the nodes, γ_j>ν_j), only a small positive part
+for t>γ_k. So "CCM nodes are upper bounds on zeros" (first order in the tail) ⟸ γ_j > ν_j-type dominance.
+**Next:** (1) prove I_k<0 from γ_j>ν_j (j≤N) — e.g. split at t=γ_k, bound the positive part by its
+large-t envelope; (2) characterize when γ_j>ν_j ∀j≤N holds (≈ N < e·L·λ², via N(T)); (3) beyond first order:
+monotonicity in s ∈ [0,1] (no node crossing) — S2874 shows it numerically.
