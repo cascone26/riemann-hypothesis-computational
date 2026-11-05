@@ -51716,3 +51716,21 @@ matrix ↔ measure w dt/2π by Plancherel: ∫f̂_m conj f̂_n = 2πδ_mn). So W
 Lebesgue-type correction ε_N ≥ 0. RH = "the continuous correction never turns negative" — the crux in its
 sharpest finite form yet: a sign of ONE scalar in an exact decomposition.
   (S2870 check: (1/2π)∫w(t)c_t(m)c_t(n)dt = δ_mn verified numerically to a uniform 2.7e-5 quad-tail offset for (m,n)=(0,0),(1,1),(0,1),(2,−1),(3,3); exact by Plancherel.)
+
+## S2871 (2026-11-05 01:05 CST, HP center cycle 8) — NODE ERROR IS LINEAR IN THE GROUND EIGENVALUE
+`operators/hp_rate_scan.py` (λ²=14; γ_k recomputed at run precision — first launch had a 15-digit reference
+bug, caught by the 1e-15 floor and fixed). |t_k−γ_k| (t_k = ξ̂_N zero nearest γ_k, Newton-refined):
+  N=8  ε=1.5e-23: 1.3e-17, 7.8e-9, 3.2e-5, …
+  N=12 ε=2.7e-30: 2.1e-25, 1.6e-20, 5.7e-17, 3.3e-9, 6.7e-6
+  N=16 ε=5.4e-36: 1.6e-31, 2.2e-27, 1.1e-24, 2.8e-20, 4.7e-18, 3.1e-13, 2.3e-7
+  N=20 ε=6.2e-41: 1.1e-36, 6.9e-33, 1.8e-30, 9.7e-27, 5.6e-25, 1.0e-21, 1.1e-18, 1.2e-16, 4.1e-11
+  N=24 ε=7.3e-45: 9.4e-41, 4.0e-37, 7.3e-35, 2.1e-31, 7.8e-30, 5.1e-27, 1.8e-24, 6.4e-23, 3.3e-19, 1.1e-17
+Asymptotic slope d log err_k / d log ε (N=20→24): γ₁ 1.02, γ₂ 1.07, γ₃ 1.09, γ₄ 1.20, γ₅ 1.22 → 1.
+**Law L1 (numerical):** once resolved, |t_k(λ,N) − γ_k| ≈ C_k(λ)·ε_{λ,N}, C_k growing with height
+(err/ε ≈ 1.3e4, 5.5e7, 1e10, 2.8e13, 1.1e15 at N=24).
+**Meaning:** at fixed λ the CCM nodes converge (N→∞) to within O(μ_λ) of ζ's zeros, μ_λ = CCM's limiting
+λ_min — the node accuracy and the Weil-positivity margin are ONE quantity. Couples T1 directly to CCM
+Cor 3.8 (μ_λ→0 ⟹ RH): RH ⟹ (μ_λ→0 and, by L1, nodes→zeros) is the converse to prove.
+**Next:** prove L1 under RH by first-order perturbation of the quadrature (dual vectors d_k with
+c_{t_j}·d_k=δ_jk give Σ_ρ w_ρ D_k(γ_ρ)² = α_k + ε‖d_k‖² exactly — expand at ρ=k), and measure C_k(λ) vs k
+to get the height dependence.
