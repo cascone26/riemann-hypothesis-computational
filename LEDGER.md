@@ -52057,3 +52057,19 @@ HANDLE certificates S2880/S2881; Lean S2861/S2862/S2885. Crux located exactly: �
 (2) quantitative μ_λ(λ) decay law via certified upper bounds ε_{λ,N} ≥ μ_λ across λ (compare Zhu's −ln λ_min ~ 2π²N(T*)/ln N(T*));
 (3) the off-line pairing itself: the rank-2 term's signature is fixed (1,1) — study how a single off-line quadruple's negative
 direction must interact with the infinite PSD on-line Gram (a "one-defect" positivity theorem would be a genuine new statement).
+
+## S2887 (2026-11-05 04:43 CST, HP center cycle 19) — ONE-DEFECT = CHRISTOFFEL INEQUALITY; THE μ_λ MARGIN CURVE
+**One-defect characterization (derived).** With a single hypothetical off-line quadruple z=γ₀+iδ, the zero-side form is
+Σ_on w|φ_u(γ)|² + 2Re[w(z)φ_u(z)²] (+ the −z copy); φ_u(z) has free phase over real u ⟹ positivity on E_N ⟺
+K_N^{μ_on}(z,z) ≤ 1/(2|w(z)|), K = Christoffel/reproducing kernel of the on-line measure on E_N. Detection = the off-real
+Christoffel kernel exceeding the defect weight: quantitative form of the S2879 horizon. Another exact restatement (not a lever).
+**Margin curve** (`operators/hp_mu_lambda.py`, ε_{λ,N} = λ_min τ; results/hp_center/mu_lambda.txt):
+  λ²=3 (L=log3, first OPEN CC rung): N=8 1.03e-7, N=16 7.31e-8  → SATURATING, μ ≈ 7e-8
+  λ²=4:  2.75e-12, 1.06e-12 → nearly saturated, μ ≈ 1e-12
+  λ²=5:  4.6e-15, 1.8e-17 · λ²=7: 2.2e-18, 4.3e-25 · λ²=10: 1.0e-21, 3.7e-31 · λ²=14: 1.5e-23, 5.4e-36 ·
+  λ²=20: 2.0e-25, 4.5e-40 · λ²=30: 1.9e-27, 1.9e-44   (all POSITIVE; e1/e0 ≈ 10³ throughout; λ²≥5 not yet saturated at N=16)
+**Reading:** the full-space margin μ_λ (CCM's criterion quantity) is ≈7e-8 at the first open rung and ≈1e-12 at λ=2, then
+collapses faster than N=16 can resolve. Consistent with §476's rung collapse profile and Zhu's super-exponential law.
+**Next:** (1) saturate λ²=5,7 (N up to 40) to extract μ_λ for 4–5 values of L and fit log μ_λ against L, N(e^L), and Zhu's
+2π²N(T*)/ln N(T*); (2) Arb-certify ε at λ²=3, N=16 (> 7e-8·0.9) — a rigorous finite-subspace margin at the open rung;
+(3) the full-space version needs a prolate-adapted tail bound (multi-session build; S2886 notes why naive Schur fails).
