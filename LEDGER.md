@@ -51612,3 +51612,24 @@ both positivity and faithfulness).
 Ξ(ν_k)=0 up to O(ε) — candidate via the ground-state equation restricted to the node-k row:
 ε ξ̂(ν_k) = 2Σ_ρ ξ̂(γ_ρ) sin((γ_ρ−ν_k)L/2)/(γ_ρ−ν_k); (2) planted double-quadruple → #neg=4 check;
 (3) prior-art: "Weil quadratic form negative index = number of off-line zeros" (Yoshida/Bombieri).
+
+## S2867 (2026-11-05 00:20 CST, HP center cycle 5b) — PRIOR ART + NEGATIVE-INDEX COUNT LAW + DETECTION HORIZON
+**Prior art (subagent, cited):** literature has only index-0 ⟺ RH (Yoshida 1992 Thm 2 / Lemma 2 small-a
+positivity; Suzuki JLMS 108 (2023) Thms 1.2-1.4, 4.2; Suzuki 2606.09096 reproof). NO published count of
+negative squares = #off-line zeros; Krein–Langer G_κ never applied to ζ in print. NO published sign
+agreement ξ̂(ν_k)↔Ξ(ν_k), interlacing, or Turing-type zero counting from Weil eigenvectors. CCM Prop 5.9
+(ξ̂ formula), Thm 5.10 (simple-even ⟹ real zeros), §7 convergence conjecture. Agent's inferred formula:
+each off-line pair {ρ,1−ρ̄} adds a signature-(1,1) term ⟹ index = #off-line zeros/2 on the full space,
+≤ on a window [−L,L]. (Yoshida 1992 Lemma 3 unread — PDF empty; still owed.)
+**Numerics (`operators/hp_planted_multi.py`, λ²=14, dps 80):**
+- N=15 (ν_N=35.7): one planted pair (#2,#3, Im .60) ⟹ #neg=2 (−1.15, −1.11); TWO pairs (#2,#3 & #4,#5,
+  Im .38) ⟹ **#neg=4** (−1.23, −1.16, −0.34, −0.32). Index additive, 2 per off-line pair (2 zeros with
+  Re>½ each) ✓ the inferred formula, inside the window.
+- DETECTION HORIZON (N=12, ν_N=28.6): pair planted ABOVE the node range (#8,#9, γ_m=45.67): Im .70 ⟹
+  #neg=2 but tiny (−2.4e-20, −6.1e-22); Im .117 ⟹ #neg=0 (invisible). Off-line zeros above ν_N are seen
+  only once their negative contribution beats the ε_N scale — a quantitative horizon that grows with N, λ.
+**Opens:** a precise finite-window index law to prove: ind(τ_{λ,N}) = 2·#{off-line pairs "inside the
+horizon"}; RH ⟺ ind = 0 ∀(λ,N) (CCM/Yoshida) — our contribution is the horizon structure + the
+sign-faithfulness invariant that switches with it.
+**Next:** measure the horizon law Im_crit(γ_m; N, λ) (scaling with distance above ν_N), and read Yoshida
+Lemma 3 (finite codimension bound = implicit index bound).
