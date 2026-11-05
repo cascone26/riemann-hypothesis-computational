@@ -51667,3 +51667,28 @@ the T=QW_N−ε inner product with an orthonormal eigenbasis; their normalizatio
 as an explicit positive quadrature τ−εI=Σα_j c_{t_j}c_{t_j}ᵀ, (b) the WEIGHT LAW α_j/w(t_j)→1 in the
 interior (w = Riemann's zero-side weight 4sin²(tL/2)/L), (c) Shi he_sum ⟺ CCM normalization ⟺ quadrature.
 Live target narrows to (b): prove α_j − w(t_j) and t_j − γ_j small in the interior = CCM convergence.
+
+## S2869 (2026-11-05 00:36 CST, HP center cycle 7) — CCM = RATIONAL GAUSS QUADRATURE OF THE WEIL ZERO-MEASURE
+`operators/hp_weight_law.py` (λ²=14, N=12, dps 100; ν_N=28.57, ε=2.7e-30). Quadrature (S2868) nodes t_j vs ζ zeros:
+  γ₁ |t−γ|=2.1e-25 α/w=1 · γ₂ 1.6e-20 α/w=1 · γ₃ 5.7e-17 α/w=1 · γ₄ (ABOVE ν_N) 3.3e-9 α/w=1 ·
+  γ₅ 6.7e-6 α/w=1.00004 · γ₆ 9.2e-3 α/w=1.045 · then spurious nodes 41.5, 46.9, 57.6, 77.0, 124.5, 403.7
+  with α/w = 0.53, 0.74, 7.7, 7.9, 30.6, 312 (they absorb the infinite tail of zeros). off-diag A 5e-73; 24/24 α>0.
+**Reframing (the right theory for CCM's convergence):** with μ_L := Σ_ρ w_ρ(L) δ_{γ_ρ}, w=4sin²(γL/2)/L, the
+explicit formula says τ_mn = ∫ c_t(m)c_t(n) dμ_L(t) (c_t(n)=1/(ν_n+t)). S2868 says τ−εI = ∫ c c ᵀ dμ_N with
+μ_N = Σ_j α_j δ_{t_j}. ⟹ CCM's ξ̂_N zeros are the nodes, and α_j the Christoffel numbers, of a RATIONAL Gauss
+quadrature (orthogonal rational functions with poles on the lattice −ν_n; Bultheel–González-Vera–Hendriksen–
+Njåstad ORF theory) for μ_L, with ε as the quadrature defect. Observed behaviour = textbook Gauss quadrature
+of an ATOMIC measure: isolated low atoms captured super-exponentially (nodes→atoms, Christoffel numbers→
+masses), the tail lumped into spurious nodes. τ itself is the Pick (Loewner) matrix of a boundary
+Nevanlinna–Pick problem for β_L on the lattice.
+**Consequences / honest scope:**
+- Under RH μ_L ≥ 0 and ORF/Christoffel-function theory should give CCM's convergence t_j→γ_j, α_j→w(γ_j)
+  as a THEOREM (RH ⟹ CCM convergence) — with CCM Cor 3.8 (μ_λ→0 ⟹ RH) that would make CCM convergence ⟺ RH.
+  Conditional; does not by itself prove RH.
+- Positivity of μ_L (= Weil positivity = RH) is the same crux; the single-L NP problem is solvable whenever
+  τ_{λ,N}⪰0 ∀N but uniqueness/identification with β_L needs the λ-family (Löwner route already LOOPED, S2866).
+**Next:** (1) prior-art: ORF / rational Gauss quadrature literature applied to Weil/CCM; Christoffel-function
+results for discrete measures with isolated atoms (rates); (2) the RH ⟹ convergence theorem sketch with the
+explicit super-exponential rate (compare observed 2e-25, 2e-20, 6e-17, 3e-9 against the classical
+|t−γ| ≲ (gap/distance)^{2N}-type bounds); (3) the off-line case: μ_L becomes a complex measure — quadrature
+nodes then go complex / weights negative exactly as S2865's planted test showed (#neg=2 per pair).
