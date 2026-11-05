@@ -51869,3 +51869,24 @@ inequality per (λ,N,k).
 pair ABOVE the node range (S2867 horizon: ε<0 small) and check whether the RESOLVED low nodes drop BELOW
 their zeros. If yes: "all resolved CCM nodes lie above their zeros ∀(λ,N)" is an RH-detector on the low
 spectrum — off-line zeros anywhere within the horizon flip the low nodes' displacement sign.
+
+## S2878 (2026-11-05 02:40 CST, HP center cycle 12b) — OFF-LINE ZERO ABOVE THE WINDOW FLIPS THE LOW NODES
+`operators/hp_planted_lownodes.py` (λ²=14, N=12, ν_N=28.6): plant zeros #8,#9 (γ_m=45.67, far ABOVE the node range)
+off-line at Im=f·h; signed t_k−γ_k for the RESOLVED low zeros k=1..4:
+  true ζ:     ε=+2.71e-30, #neg 0: +2.1e-25, +1.6e-20, +5.7e-17, +3.3e-9
+  Im 0.117:   ε=+2.05e-30, #neg 0: +1.6e-25, +1.2e-20, +4.0e-17, +2.2e-9   (beyond horizon: invisible)
+  Im 0.234:   ε=+2.10e-30: all + ;  Im 0.468: ε=+2.24e-30: all +
+  **Im 0.936: ε=−2.96e-11, #neg 2: +1.1e-10, −1.6e-10, −5.2e-9, −1.6e-3**  (signs FLIP for k=2,3,4; accuracy collapses ~1e15×)
+  Im 1.64: ε=−0.022: −1.9e-2, −4.1e-3, +1.1e-2, −0.61 ;  Im 2.34: ε=−2.58: wrecked.
+**Reading:** an off-line zero high above the window, once inside the detection horizon, (a) makes τ indefinite,
+(b) destroys the low nodes' one-sided (L2) property and their super-exponential accuracy simultaneously — the
+ground state switches to the off-line pair's negative mode (a non-perturbative switch, not "displacement ∝ ε<0").
+Below the horizon it is invisible at this (λ,N) (needs larger N/λ — S2867).
+**Synthesis of the night's laws (λ²=14 unless noted):** in the true-ζ world the CCM low spectrum is a one-sided,
+monotone, super-exponentially accurate rational Gauss quadrature of the Weil zero-measure (S2869-S2877); any
+detectable off-line zero breaks positivity, sign-faithfulness, one-sidedness and accuracy at once (S2865, S2878).
+The single live crux remains ε_{λ,N} ≥ 0 ∀(λ,N) (= Weil positivity = RH); everything above is now a precise
+finite instrument around it.
+**Next:** (1) horizon law: the minimal Im detected as a function of (γ_m − ν_N, N, λ) — if detection Im_crit→0 as
+N→∞ for every fixed off-line location, positivity ∀N at ONE λ would already exclude all off-line zeros with
+|Re−½|>0 below some height (quantify); (2) the analytic proof of the C_k certificate in the dominance regime.
