@@ -21271,3 +21271,9 @@ sessions (which survive independent of any SSH connection) or (b) `nohup ... & d
 work, and polling directly on each loop wakeup rather than trusting a long-lived wait wrapper to
 notify reliably. This is now a known operational quirk, not a mystery, for any future long-running
 background work in this environment.
+
+## 2026-11-01 — disk-cleanup data removal/relocation
+Data under this project was removed or relocated off this Mac during an emergency disk-space sweep
+(crisis: 1.7GB free -> fixed to 54GB). Full cross-project catalog, exact paths, and what is gone vs
+relocated-to-Olympus: memory `fleet-silent-failure-sweep-2026-08-16` (2026-11-01 entry), fleet-wide
+memory store on this Mac.

@@ -232,3 +232,29 @@ query failed [abs:"screw function" AND abs:"zeta"]: HTTP Error 429: Unknown Erro
 query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: HTTP Error 429: Unknown Error
 query failed [abs:"positivity" AND abs:"critical line"]: HTTP Error 429: Unknown Error
 No new papers.
+query failed [abs:"Hilbert-Polya"]: The read operation timed out
+query failed [abs:"Li's criterion"]: The read operation timed out
+query failed [abs:"screw function" AND abs:"zeta"]: The read operation timed out
+query failed [abs:"trace formula" AND abs:"Riemann hypothesis"]: HTTP Error 429: Too Many Requests
+query failed [abs:"positivity" AND abs:"critical line"]: HTTP Error 429: Unknown Error
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 2 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 3 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.
+No new papers.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+ntfy failed: [Errno 2] No such file or directory: 'node'
+Found 1 new paper(s), logged + notified.
+No new papers.

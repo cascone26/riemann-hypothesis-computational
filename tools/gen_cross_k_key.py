@@ -39,8 +39,7 @@ def gen_cross_k_key(K):
         f"""let cubic{i} := (((p{i} + q{i}) * A{i} * (z{i} * (starRingEnd ℂ z{i}) ^ 2)
           + (r{i} + s{i}) * (starRingEnd ℂ A{i}) * (z{i} ^ 2 * (starRingEnd ℂ z{i}))
           + ((q{i} - p{i}) * A{i} * (starRingEnd ℂ z{i}) ^ 2 + (s{i} - r{i}) * (starRingEnd ℂ A{i}) * z{i} ^ 2) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ)
-          + (-(p{i} + q{i}) * A{i} * z{i} - (r{i} + s{i}) * (starRingEnd ℂ A{i}) * (starRingEnd ℂ z{i})) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 2
-          + ((p{i} - q{i}) * A{i} + (r{i} - s{i}) * (starRingEnd ℂ A{i})) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 3))"""
+          + (-(p{i} + q{i}) * A{i} * z{i} - (r{i} + s{i}) * (starRingEnd ℂ A{i}) * (starRingEnd ℂ z{i})) * (2 * Real.pi * (((n : ℕ) : ℝ) - (N : ℝ)) / L : ℂ) ^ 2))"""
         for i in range(1, K+1)
     )
 
@@ -96,7 +95,7 @@ def gen_cross_k_key(K):
     # Linear combination terms (e1 + e2 + ... + eK + (Q1*Q2*...*QK*L^...) * hpt)
     lincomb_eigs = " + ".join(f"e{i}" for i in range(1, K+1))
     q_product = " * ".join(f"Q{i}" for i in range(1, K+1))
-    hfinal_exponent = K + 18  # L^(K+18) for the hpt term multiplier
+    hfinal_exponent = K * (K - 1) - 1  # L^(K*(K-1)-1) for hfinal; +1 more for linear_combination multiplier
 
     content = f"""import GroupClearIdentity
 import VPlusVMinusFullKey

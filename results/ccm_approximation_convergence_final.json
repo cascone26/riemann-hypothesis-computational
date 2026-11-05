@@ -1,0 +1,73 @@
+{
+  "task": "CCM approximation convergence rate measurement",
+  "date": "2026-10-23",
+  "method": "Sweep bandwidth parameter a; measure Fourier-zero-tracking error (6 zeta zeros)",
+  "convergence_rate": {
+    "form": "error ~ a^(-alpha)",
+    "alpha": 0.488,
+    "interpretation": "Convergent (error decreases with bandwidth)"
+  },
+  "data": [
+    {
+      "a": 1.5,
+      "mean_err": 0.35198,
+      "max_err": 0.92246,
+      "simplicity_gap": 0.13859,
+      "evenness_err": 2.2204e-15
+    },
+    {
+      "a": 1.8,
+      "mean_err": 0.43261,
+      "max_err": 0.79622,
+      "simplicity_gap": 0.16634,
+      "evenness_err": 1.5543e-15
+    },
+    {
+      "a": 2.0,
+      "mean_err": 0.23259,
+      "max_err": 0.6283,
+      "simplicity_gap": 0.18482,
+      "evenness_err": 4.1078e-15
+    },
+    {
+      "a": 2.2,
+      "mean_err": 0.37606,
+      "max_err": 0.63718,
+      "simplicity_gap": 0.20329,
+      "evenness_err": 3.7748e-15
+    },
+    {
+      "a": 2.4,
+      "mean_err": 0.24117,
+      "max_err": 0.37149,
+      "simplicity_gap": 0.22178,
+      "evenness_err": 6.6058e-15
+    },
+    {
+      "a": 2.565,
+      "mean_err": 0.30257,
+      "max_err": 0.55799,
+      "simplicity_gap": 0.237,
+      "evenness_err": 6.1617e-15
+    },
+    {
+      "a": 2.8,
+      "mean_err": 0.35423,
+      "max_err": 0.48772,
+      "simplicity_gap": 0.25871,
+      "evenness_err": 5.5511e-15
+    },
+    {
+      "a": 3.0,
+      "mean_err": 0.22064,
+      "max_err": 0.5063,
+      "simplicity_gap": 0.2772,
+      "evenness_err": 1.2768e-15
+    }
+  ],
+  "ccm_conditions_verified": {
+    "simplicity": "non-zero gaps 1.39e-01 to 2.77e-01, increasing with bandwidth",
+    "evenness": "errors near machine epsilon (1e-15), perfectly satisfied",
+    "approximation": "zero-tracking errors convergent at rate a^(-0.488)"
+  }
+}

@@ -794,3 +794,85 @@
   Cats: math.NT
   https://arxiv.org/abs/2610.22927v1
   > We prove unconditional positive-proportion results for consecutive moderate gaps between zeros of the Riemann zeta function. More precisely, for every fixed \(0<c\leq 1/4\), the lower asymptotic densities, normalized by \(N(T)\), of occurrences of two, three, and four consecutive gaps, each of lengt
+
+## 2026-10-23 — 2 new paper(s)
+
+- **2610.25661v1** (2026-10-19) — The factorial separation conjecture
+  Authors: Valmir Krasniqi
+  Cats: math.NT
+  https://arxiv.org/abs/2610.25661v1
+  > We propose the Factorial Separation Conjecture (FSC), a strict strengthening of earlier factorial gap conjectures: \[ |n!-m^k|>n \] for all integers $n\ge8$ and $m,k\ge2$. The inequality excludes every displacement up to and including the factorial index. We prove the conjecture unconditionally for 
+
+- **2610.27343v1** (2026-10-19) — Upper Bounds on the de Bruijn-Newman constant for Dirichlet $L$-functions with primitive real-valued characters
+  Authors: Ricardo Freire, Cristian González-Riquelme, Claudio Muñoz, Felipe Poblete, Vicente Salinas
+  Cats: math.NT, math.AP, math.CV
+  https://arxiv.org/abs/2610.27343v1
+  > Let $χ_m$ be a primitive real-valued Dirichlet character of conductor $m\ge3$, let $L(s)=L(s,χ_m)$ be the associated Dirichlet $L$-function, and let $ξ_L(s)$ denote its completed form. For each $t \in \mathbb R,$ we define the entire function \[ H^L_t(z) := \int_{-\infty}^{\infty} e^{tu^2}\, Φ_L(u)\
+
+## 2026-10-24 — 1 new paper(s)
+
+- **2610.26841v1** (2026-10-19) — Isolated zeros of the Riemann zeta function and zeros of linear combinations of Dirichlet $L$-functions
+  Authors: Youness Lamzouri
+  Cats: math.NT
+  https://arxiv.org/abs/2610.26841v1
+  > Let $0<γ_1\leq γ_2\leq \cdots$ be the ordinates of the non-trivial zeros of the Riemann zeta function in the upper half-plane, counted with multiplicity, and fix $c>0$. We say that a non-trivial zero $ρ_n=β_n+iγ_n$ is $c$-isolated if $\min(γ_{n+1}-γ_n, γ_n-γ_{n-1})>2πc/\log γ_n$. Note that any isola
+
+## 2026-10-26 — 3 new paper(s)
+
+- **2609.15329v2** (2026-09-14) — Optimising Selberg's method for critical zeros
+  Authors: Andrew Pearce-Crump
+  Cats: math.NT
+  https://arxiv.org/abs/2609.15329v2
+  > We revisit Zhuravlev's 1974 quantitative form of Selberg's sign-change method for the zeros of the Riemann zeta function on the critical line. Zhuravlev's work, originally in Russian and little known in the West, established an explicit positive proportion of such zeros. Using modern techniques we o
+
+- **2610.32694v1** (2026-10-23) — A genus-two spectral curve of the Riemann $Ξ$-function: Real Structure and Certified Arithmetic Separation of Periods
+  Authors: Michel Planat
+  Cats: math.NT, math.AG, math.CV
+  https://arxiv.org/abs/2610.32694v1
+  > We associate a compact genus-two real spectral core with a transverse logarithmic-derivative discriminant of the Riemann $Ξ$-function. Directed interval arithmetic certifies its branch geometry, a real $P_{\mathrm{III}}(D_6)$ scalar-normal-form realization, and associated Kummer and Shioda--Inose mo
+
+- **2610.32704v1** (2026-10-23) — Spectral convergence associated with Weil's quadratic form
+  Authors: Masatoshi Suzuki
+  Cats: math.NT
+  https://arxiv.org/abs/2610.32704v1
+  > Assuming the Riemann hypothesis, we study a distinguished self-adjoint extension of the differentiation operator on a Hilbert space defined by the Weil quadratic form localized to a finite interval. The local quadratic form is determined by data from finitely many places, without requiring the zeros
+
+## 2026-10-27 — 1 new paper(s)
+
+- **2610.26841v2** (2026-10-19) — Isolated zeros of the Riemann zeta function and zeros of linear combinations of Dirichlet $L$-functions
+  Authors: Youness Lamzouri
+  Cats: math.NT
+  https://arxiv.org/abs/2610.26841v2
+  > Let $0<γ_1\leq γ_2\leq \cdots$ be the ordinates of the non-trivial zeros of the Riemann zeta function in the upper half-plane, counted with multiplicity, and fix $c>0$. We say that a non-trivial zero $ρ_n=β_n+iγ_n$ is $c$-isolated if $\min(γ_{n+1}-γ_n, γ_n-γ_{n-1})>2πc/\log γ_n$. Note that any isola
+
+## 2026-10-28 — 1 new paper(s)
+
+- **2610.36039v1** (2026-10-26) — Two-dimensional galaxy cluster shapes using lensing data: a simulated analysis
+  Authors: C. Giocoli, M. Meneghetti, G. Despali, L. Moscardini, E. Rasia, G. Lesci, W. Cui, G. Yepes
+  Cats: astro-ph.CO
+  https://arxiv.org/abs/2610.36039v1
+  > Context. Cluster morphology reflects assembly history and dynamical state. High-resolution weak lensing can reveal departures from spherical symmetry, but its ability to recover two-dimensional shapes remains less explored. Aims. We assess how reliably weak lensing recovers projected cluster morphol
+
+## 2026-10-30 — 1 new paper(s)
+
+- **2610.39481v1** (2026-10-29) — $e$-Positive caterpillars have maximum degree at most three
+  Authors: Davion Q. B. Tang, David G. L. Wang, Monica M. Y. Wang
+  Cats: math.CO
+  https://arxiv.org/abs/2610.39481v1
+  > Dahlberg, She, and van Willigenburg conjectured that every $e$-positive tree has maximum degree at most three. We prove this conjecture for caterpillars. Our proof introduces a specialization--cone method: we evaluate chromatic symmetric functions under finite-support specializations that are nonneg
+
+## 2026-11-02 — 1 new paper(s)
+
+- **2610.41115v1** (2026-10-30) — A spectral theory of zeta functions of function fields
+  Authors: Masatoshi Suzuki
+  Cats: math.NT
+  https://arxiv.org/abs/2610.41115v1
+  > We study Hilbert spaces constructed from the Weil quadratic form associated with the zeta function of a curve over a finite field, together with self-adjoint extensions of the differentiation operator on these spaces. For a distinguished family of these extensions, we prove that the eigenvalues conv
+
+## 2026-11-03 — 1 new paper(s)
+
+- **2611.02944v1** (2026-11-02) — On some positivity properties of the Riemann $Ξ$ function
+  Authors: Suvrit Sra
+  Cats: math.CA, math.NT, math.PR
+  https://arxiv.org/abs/2611.02944v1
+  > We prove strict log-concavity of the positive functions $Θ$ and $Λ$ with one-sided and bilateral Laplace transforms $1/ξ(\tfrac12+\sqrt s)$ and $1/Ξ$, respectively, where $Ξ(z)=ξ(\tfrac12+iz)$. For either function, log-concavity is the Pólya frequency property of order two (PF$_2$). Without assuming

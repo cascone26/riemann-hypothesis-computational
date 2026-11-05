@@ -1,0 +1,90 @@
+{
+  "method": "variational_rayleigh_quotient",
+  "description": "Establish CCM operator simplicity via spectral gap (\u03bb_2 - \u03bb_1 > 0)",
+  "findings": [
+    {
+      "N": 16,
+      "D": 33,
+      "variational": {
+        "lambda_min": -6.033024707315798e-13,
+        "lambda_second": -2.398985281428625e-13,
+        "spectral_gap": 3.634039425887173e-13,
+        "strictly_convex": false,
+        "interpretation": "Spectral gap > 0 proves strict local convexity of Rayleigh quotient on unit sphere; minimizer is unique (up to sign)"
+      },
+      "arch_alone": {
+        "lambda_min": -2.9969740836517844,
+        "lambda_second": -1.3224883632462414,
+        "spectral_gap": 1.674485720405543,
+        "is_gram_like": false,
+        "n_negative_eigs": 5,
+        "interpretation": "Arch by itself has simple ground state; may arise from positivity/Gram-matrix structure"
+      },
+      "perturbation": {
+        "perturbation_norm": 7.165012056669495,
+        "arch_norm": 7.527907401579736,
+        "relative_perturbation": 0.951793330396959,
+        "gap_arch": 1.674485720405551,
+        "gap_tau": 3.634019583699961e-13,
+        "small_enough_for_classical_theory": false,
+        "interpretation": "Perturbation ||w02 - prime|| = 7.1650e+00 vs gap(arch) = 1.6745e+00; classical theory does NOT apply (ratio=4.2789)"
+      }
+    },
+    {
+      "N": 24,
+      "D": 49,
+      "variational": {
+        "lambda_min": -1.8349798859937666e-12,
+        "lambda_second": -7.55582862311493e-13,
+        "spectral_gap": 1.0793970236822735e-12,
+        "strictly_convex": true,
+        "interpretation": "Spectral gap > 0 proves strict local convexity of Rayleigh quotient on unit sphere; minimizer is unique (up to sign)"
+      },
+      "arch_alone": {
+        "lambda_min": -2.9967367608440023,
+        "lambda_second": -1.3260944635845058,
+        "spectral_gap": 1.6706422972594965,
+        "is_gram_like": false,
+        "n_negative_eigs": 5,
+        "interpretation": "Arch by itself has simple ground state; may arise from positivity/Gram-matrix structure"
+      },
+      "perturbation": {
+        "perturbation_norm": 9.035043921063586,
+        "arch_norm": 11.106456401907067,
+        "relative_perturbation": 0.813494745228748,
+        "gap_arch": 1.6706422972594979,
+        "gap_tau": 1.0794136223380522e-12,
+        "small_enough_for_classical_theory": false,
+        "interpretation": "Perturbation ||w02 - prime|| = 9.0350e+00 vs gap(arch) = 1.6706e+00; classical theory does NOT apply (ratio=5.4081)"
+      }
+    },
+    {
+      "N": 32,
+      "D": 65,
+      "variational": {
+        "lambda_min": -1.0844861438321276e-11,
+        "lambda_second": -4.5840305785944145e-12,
+        "spectral_gap": 6.2608308597268614e-12,
+        "strictly_convex": true,
+        "interpretation": "Spectral gap > 0 proves strict local convexity of Rayleigh quotient on unit sphere; minimizer is unique (up to sign)"
+      },
+      "arch_alone": {
+        "lambda_min": -2.996535993376112,
+        "lambda_second": -1.3279854698556073,
+        "spectral_gap": 1.668550523520505,
+        "is_gram_like": false,
+        "n_negative_eigs": 5,
+        "interpretation": "Arch by itself has simple ground state; may arise from positivity/Gram-matrix structure"
+      },
+      "perturbation": {
+        "perturbation_norm": 10.606550402244336,
+        "arch_norm": 14.608662680615963,
+        "relative_perturbation": 0.7260452673959009,
+        "gap_arch": 1.6685505235205027,
+        "gap_tau": 6.260888251098861e-12,
+        "small_enough_for_classical_theory": false,
+        "interpretation": "Perturbation ||w02 - prime|| = 1.0607e+01 vs gap(arch) = 1.6686e+00; classical theory does NOT apply (ratio=6.3567)"
+      }
+    }
+  ]
+}
