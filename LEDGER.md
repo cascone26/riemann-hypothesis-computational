@@ -51537,7 +51537,7 @@ with the archimedean factor); (ii) N-dependence at fixed ν: does m_N(ν)→cons
 lattice ⟸ an explicit-side identity for ξ̂_N(ν_k)/Ξ(ν_k).
 **Next cycle:** (i)+(ii) numerics across N=12..40 at λ²=14, then derive.
 
-## S2864 (2026-11-05 00:2x CST, HP center cycle 4) — ENVELOPE SCAN + DECISIVE NULL CONTROL
+## S2864 (2026-11-05 00:05 CST, HP center cycle 4) — ENVELOPE SCAN + DECISIVE NULL CONTROL
 **1. Envelope m_N(ν_k)=ξ̂_N(ν_k)/Ξ(ν_k) (λ²=14, normalized m(0)=1; `operators/hp_envelope_scan.py`):**
 positive at EVERY node for N=12 (min 0.0021 at edge), N=20 (min 0.0028 at edge), N=30 (min 0.13 at
 edge; profile humps to 2.73 at k≈22). e0 = 2.7e-30, 6.2e-41, 5.9e-50. Shape still evolving in N at
@@ -51555,3 +51555,32 @@ matrix and replace one on-line zero pair by an off-line quadruple (γ ± iδ), i
 term(γ)] using w(z)=4sin²(zL/2)/L and c_z(n)=1/(ν_n+z). Track e0(δ) and the node-sign agreement as δ
 grows: if sign-faithfulness (an integer, checkable invariant) breaks at the same δ where positivity does,
 the sign pattern becomes a finite combinatorial certificate for the on-line location of zeros below ν_N.
+
+## S2865 (2026-11-05 00:10 CST, HP center cycle 4b) — PLANTED OFF-LINE ZERO: POSITIVITY AND SIGN-FAITHFULNESS DIE TOGETHER
+`operators/hp_planted_offline.py` (λ²=14, N=12, dps 80): exact explicit-side τ, then zero-side surgery
+replacing zeros #2,#3 (21.022, 25.011) by ±(γ_m±√σ), γ_m=23.016, h=half-gap=1.994, using the exact
+zero-side term(z)_mn = 4sin²(zL/2)/(L(ν_m+z)(ν_n+z)). Comparison target Ξ'(t)=Ξ(t)·Π(t²−z²)/Π(t²−γ²).
+  σ/h² = 1 (true): e0=+2.71e-30, #neg 0, sign-agree 13/13
+  σ/h² = 0.5 (moved, on-line): e0=+2.68e-30, #neg 0, 13/13 — sign pattern CHANGED (------++++-++) and
+         still matches the planted Ξ' exactly
+  σ/h² = 0.1: e0=+2.66e-30, #neg 0, 13/13 (------+++++++)
+  σ/h² = 0 (collision, double zero): e0=+2.0e-32, 10/13 (double root: node-sign test degenerate)
+  σ/h² = −0.01 (off-line, Im=0.20): e0=−0.105, **#neg 2**, 7/13 (chance)
+  σ/h² = −0.1, −0.3, −1: e0 = −1.30, −5.52, −48.7, #neg 2, 7/13.
+**Reading:** the ground state TRACKS zero motion along the line (re-faithful to the moved Ξ'), and the
+moment the pair leaves the line τ acquires exactly 2 negative eigenvalues (= the off-line quadruple's
+two Re>½ zeros, matching the Krein–Langer κ-count picture of the RH_SOLVER_OS B1 lane) and the sign
+pattern decoheres to chance. Positivity and sign-faithfulness are the same switch.
+Also: N=40 (dps 210) sign-faithful 41/41 (ν_N=95.2), e0=1.4e-56; envelope positive but GROWS toward
+the edge (m up to 809 at k≈37, 280 at k=40) — ξ̂_N decays slower than Ξ; no convergence of m_N in N at
+fixed λ (expected: the N→∞ limit at fixed λ is the full-Weil ground state, not Ξ).
+**Opens:** a Sturm–Weil correspondence conjecture for τ_{λ,N}:
+  τ ⪰ 0  ⟺  sgn ξ̂(ν_k)=sgn Ξ(ν_k) ∀k≤N  ⟺  (numerically) no off-line zero below ~ν_N.
+The middle condition is a discrete invariant that can only change when ξ̂(ν_k) crosses 0 — a
+homotopy/deformation handle in λ (nodes ν_k=2πk/L move with λ). Exact fact found while deriving: when a
+zeta zero sits exactly on a node (γ=ν_k), its zero-side term collapses to L·e_k e_kᵀ (w→0 times a
+double pole) — node crossings act as rank-one diagonal penalties.
+**Next:** (a) two planted quadruples → expect #neg=4 (κ-count check); (b) e0 vs δ near σ=0⁻ (scaling);
+(c) the λ-homotopy: track sgn ξ_k as ν_k(λ) sweeps across a zeta zero — does the flip happen exactly at
+ν_k=γ? (d) prior-art check on "finite Weil matrix negativity index = #off-line zeros" (Yoshida/Bombieri/
+Krein–Langer) before claiming anything there.
