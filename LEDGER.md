@@ -51715,3 +51715,4 @@ t_k(λ,N)→γ_k and α_k→w(γ_k) with an explicit geometric/super-exponential
 matrix ↔ measure w dt/2π by Plancherel: ∫f̂_m conj f̂_n = 2πδ_mn). So Weil positivity on the N-space ⟺ the
 Lebesgue-type correction ε_N ≥ 0. RH = "the continuous correction never turns negative" — the crux in its
 sharpest finite form yet: a sign of ONE scalar in an exact decomposition.
+  (S2870 check: (1/2π)∫w(t)c_t(m)c_t(n)dt = δ_mn verified numerically to a uniform 2.7e-5 quad-tail offset for (m,n)=(0,0),(1,1),(0,1),(2,−1),(3,3); exact by Plancherel.)
