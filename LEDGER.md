@@ -52153,3 +52153,10 @@ agreement at λ²=10, 14 (S2891) was a coincidence of the range, not predictive.
 consistent; the S2892 free-zero mechanism (−ln μ ≈ κ·λ², κ slowly increasing) is unaffected and predicts a local slope ≥ 12.9
 here (−ln μ(20) ≥ 218.1 ⟹ slope from λ²=14 ≥ (218.1−147.0)/6 = 11.9; final value after N=120).
 Prediction record (this lane): λ²lnλ² ✗ (S2888c) · exponential-in-λ² ✓✓ (λ²=10,14) · Zhu-form T*=2πλ² ✗ (λ²=20).
+**S2894 (07:04 CST) — CORRECTION to S2892 + inconclusive count test.** CCM Thm 5.10: ξ̂_N has ONLY REAL zeros, so the minimizer's
+spare ("free") zeros are NOT pushed off the line (S2892 wording wrong) — they are pushed OUTWARD along the real line: the
+spurious high nodes beyond the resolved zeros (e.g. N=12: 46.9, 57.6, 403.7). The mechanism (fewer zeros in the low region ⟹
+minimizer relatively large there ⟹ small Rayleigh quotient) is unchanged in form. Count test (`operators/hp_spurious_count.py`,
+λ²=14, "resolved" = within ¼ local gap of a ζ zero): spurious positive nodes = 3, 2, 4, 6 at N=12,16,20,24 — NOT settling to the
+predicted λ²/2=7; the coarse criterion counts loosely-approximating high nodes as resolved ⟹ INCONCLUSIVE (needs a convergence-
+based criterion and N→∞ at fixed λ). Free-zero count stays a heuristic (REPORT), not evidence.
