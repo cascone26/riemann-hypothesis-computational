@@ -51831,3 +51831,23 @@ for t>γ_k. So "CCM nodes are upper bounds on zeros" (first order in the tail) �
 **Next:** (1) prove I_k<0 from γ_j>ν_j (j≤N) — e.g. split at t=γ_k, bound the positive part by its
 large-t envelope; (2) characterize when γ_j>ν_j ∀j≤N holds (≈ N < e·L·λ², via N(T)); (3) beyond first order:
 monotonicity in s ∈ [0,1] (no node crossing) — S2874 shows it numerically.
+
+## S2876 (2026-11-05 02:22 CST, HP center cycle 11b) — I_k SCAN, L2 IN THE RESOLVED REGIME, AND A CORRECTION TO L1'
+1. **I_k sign (`operators/hp_Ik_scan.py`):** I_k<0 by huge margins whenever zeros dominate nodes (γ_j>ν_j ∀j≤N):
+   λ²=14 N=8/16/24/40: −9e14 / −2e24 / −1e31 / −1e40 (k=1); λ²=4 N=6,10,14,20 negative. FLIPS positive when many
+   γ_j≤ν_j: λ²=4 N=30 (17 violations) +2.2e3; λ²=2 N≥8.
+2. **L2 survives where I_k>0** (`hp_signed_err.py`): λ²=4 N=20 and N=30 — all 16 signed errors POSITIVE
+   (γ₁: +1.76e-9 → +1.65e-9: saturation at the fixed-λ floor μ_λ). So I_k<0 is sufficient, not necessary.
+   λ²=2 (λ=√2): nodes do not resolve zeros at all (|t−γ|=O(1), mixed signs, N=4,8,12) — below the
+   zero-resolving scale (consistent with Connes–Consani small-λ positivity); not a counterexample to L2,
+   which is a statement about RESOLVED nodes.
+3. **CORRECTION to S2872's L1' (κ universality — FALSIFIED across λ):** κ_k=(t_k−γ_k)|Ξ'(γ_k)|²/ε:
+   λ²=14 N=20: 0.033, 0.035, 0.045, 0.091, 0.149 (≈const for low k — what S2872 saw);
+   λ²=4 N=20: 3.3e-3, 1.5e-4, 1.6e-5, 4.2e-7, 5.9e-8; λ²=30 N=16: 0.90, 138, 1.9e4; λ²=60: 27.9, 1.4e6.
+   ⟹ the 1/|Ξ'|² law is the λ²=14 special case (flat envelope m_N); the correct general form is S2874/S2875's
+   verified closed form δt_k ∝ ε·(q_k²γ_k/w_k)·[⟨g⟩_tail−⟨g⟩_m̃]·ΣW, whose factors carry the λ-dependence
+   (q_k=Q(γ_k)/P'(γ_k), w_k, lattice). L1 (linear in ε) stands; the constant is λ,k-dependent.
+**Standing laws after this cycle:** L1 err ∝ ε (slope→1) ✓; L2 one-sided from above in the resolved regime ✓
+(27+16 cases, 3 λ values); closed-form first-order shift ✓ (0.2%); sufficient explicit criterion I_k<0 ✓.
+**Next:** derive the "resolved" threshold (which k are resolved at given λ,N) from the closed form, and prove
+L2 to first order under γ_j>ν_j via I_k<0 (analytic bound), then handle the I_k>0 regime via the full tail term.
