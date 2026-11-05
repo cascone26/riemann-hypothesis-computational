@@ -2,9 +2,9 @@
 python-flint (Arb). Arch integrals: acb.integral on [d, L] + explicit bound on [0, d]."""
 import sys
 from flint import arb, acb, arb_mat, ctx
-lam2=int(sys.argv[1]); N=int(sys.argv[2]); prec=int(sys.argv[3]); eshift=sys.argv[4]
+lam2s=sys.argv[1]; N=int(sys.argv[2]); prec=int(sys.argv[3]); eshift=sys.argv[4]
 ctx.prec=prec
-L=arb(lam2).log(); PI=arb.pi(); d=arb(10)**(-60)
+from fractions import Fraction as _F; _q=_F(lam2s); LAM2=arb(_q.numerator)/arb(_q.denominator); L=LAM2.log(); lam2=lam2s; PI=arb.pi(); d=arb(10)**(-60)
 M=2*N+1; idx=list(range(-N,N+1))
 # von Mangoldt k < lam2 (k = lam2 has weight factor (L - log k)=0 / sin terms vanish anyway)
 def vm(k):
@@ -13,7 +13,7 @@ def vm(k):
             kk=k
             while kk%p==0: kk//=p
             return arb(p).log() if kk==1 else None
-pw=[(k,vm(k)) for k in range(2,lam2+1) if vm(k) is not None]
+pw=[(k,vm(k)) for k in range(2,int(_F(lam2s))+1) if vm(k) is not None and k<_F(lam2s)]
 def Jsin(n):
     if n==0: return arb(0)
     a=2*PI*n/L

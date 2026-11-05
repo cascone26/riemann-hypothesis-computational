@@ -1,0 +1,4 @@
+lam2=3 N=16 prec=300 shift e=6.5e-8: CERTIFIED (tau - eI) >= (mid - rho - e) > 0 : True  pivots ok=33/33  min pivot~2.6027e-04  rho=6.74e-54
+lam2=3 N=16 prec=300 shift e=8.0e-8: CERTIFIED (tau - eI) >= (mid - rho - e) > 0 : False  pivots ok=28/33  min pivot~-4.2090e+00  rho=6.74e-54
+lam2=7/2 N=16 prec=300 shift e=3.0e-10: CERTIFIED (tau - eI) >= (mid - rho - e) > 0 : True  pivots ok=33/33  min pivot~1.7334e-05  rho=5.91e-54
+lam2=7/2 N=16 prec=300 shift e=3.6e-10: CERTIFIED (tau - eI) >= (mid - rho - e) > 0 : False  pivots ok=25/33  min pivot~-2.6597e+00  rho=5.91e-54

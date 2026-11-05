@@ -52073,3 +52073,18 @@ collapses faster than N=16 can resolve. Consistent with §476's rung collapse pr
 **Next:** (1) saturate λ²=5,7 (N up to 40) to extract μ_λ for 4–5 values of L and fit log μ_λ against L, N(e^L), and Zhu's
 2π²N(T*)/ln N(T*); (2) Arb-certify ε at λ²=3, N=16 (> 7e-8·0.9) — a rigorous finite-subspace margin at the open rung;
 (3) the full-space version needs a prolate-adapted tail bound (multi-session build; S2886 notes why naive Schur fails).
+
+## S2888 (2026-11-05 04:45 CST, HP center cycle 19b) — RIGOROUS FINITE-SUBSPACE CERTIFICATES AT THE CC RUNG BOUNDARY AND INSIDE THE OPEN RUNG  [HANDLE]
+Same verified scheme (Arb prec 300 + exact-rational LDLᵀ + Weyl radius), certifier extended to rational λ² (`operators/hp_arb_tau_certify.py`):
+- **λ²=3 (L=log3), N=16 (33-dim):** e=6.5e-8 CERTIFIED (33/33 pivots>0, ρ=6.7e-54); e=8.0e-8 FAILS. ⟹ λ_min > 6.5e-8.
+  NOTE: at λ²=3 exactly the prime 3 enters with ZERO weight ((L−log k) window vanishes at k=e^L) — this is the BOUNDARY of
+  Connes–Consani's proven rung [log2,log3) (arXiv:2106.01715), not yet the open rung.
+- **λ²=7/2 (L=log3.5 ∈ open rung, primes 2 AND 3 active), N=16:** e=3.0e-10 CERTIFIED (33/33, ρ=5.9e-54); e=3.6e-10 FAILS.
+  ⟹ **λ_min(τ_{λ²=7/2,N=16}) > 3.0e-10 rigorously** (mpmath: 3.32e-10; N=8: 4.11e-10 ⟹ saturating — μ_{√3.5} ≈ 3.3e-10).
+**Scope (honest):** finite-subspace (E_16) positivity at the first open rung — NOT the full-space Weil positivity CC's rung
+asks for (that needs a rigorous tail bound; S2886/S2887 explain why naive Schur fails and that a prolate-adapted basis is
+needed). But the margin is saturated in N (4.1e-10 → 3.3e-10 from N=8 to 16), so the finite space already carries the full
+margin to ~20% — the tail is small, which is exactly what a rigorous tail bound must quantify.
+**Next:** a rigorous tail estimate at λ²=7/2: bound λ_min of the full form below by λ_min(τ_16) − (tail coupling), via an
+explicit decay bound on |τ_nm| for |n|>16 against the 3.0e-10 margin — first check numerically how ε_N converges (N=16→24→32)
+to see the tail's real size, then design the bound.
