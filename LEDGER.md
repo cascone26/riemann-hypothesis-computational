@@ -51734,3 +51734,12 @@ Cor 3.8 (μ_λ→0 ⟹ RH): RH ⟹ (μ_λ→0 and, by L1, nodes→zeros) is the 
 **Next:** prove L1 under RH by first-order perturbation of the quadrature (dual vectors d_k with
 c_{t_j}·d_k=δ_jk give Σ_ρ w_ρ D_k(γ_ρ)² = α_k + ε‖d_k‖² exactly — expand at ρ=k), and measure C_k(λ) vs k
 to get the height dependence.
+**S2871 addendum — L1 ENGINE (derived, RH-conditional zero side; not yet numerically checked — zero-sum
+truncation 1e-10 swamps the 1e-25 terms, needs a different check):** with φ_u(t):=c_t·u=Σ_n u_n/(ν_n+t),
+τξ=εξ on the zero side reads Σ_ρ w_ρ φ_ξ(γ_ρ) c_{γ_ρ} = εξ. Dot with the quadrature dual vector d_k∈ξ^⊥
+(φ_{d_k}(t_j)=δ_jk): RHS→0, so EXACTLY
+   (★) w_k φ_ξ(γ_k) φ_{d_k}(γ_k) = − Σ_{ρ≠k} w_ρ φ_ξ(γ_ρ) φ_{d_k}(γ_ρ).
+LHS ≈ w_k φ'_ξ(t_k)(γ_k−t_k)·(1+o(1)) ⟹ the node error IS a tail correlation. Cauchy–Schwarz on the tail
+with Σ_ρ w_ρφ_ξ(γ_ρ)² = ε gives the rigorous |γ_k−t_k| ≲ √ε·‖√w φ_{d_k}‖_{tail}/(w_k|φ'_ξ(t_k)|);
+observed O(ε) ⟺ ‖√w φ_{d_k}‖_{tail} = O(√ε) (Lagrange-dual vanishes at the spurious nodes that
+approximate the tail). Next: prove that second factor, giving L1 and hence T1 (with Shi Thm 6.1/CCM).
