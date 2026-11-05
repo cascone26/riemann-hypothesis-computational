@@ -51934,3 +51934,15 @@ matched to 2e-10 — a formula-level check, not a proof of the formula itself.
 **Opens:** feed certified ε into the (still unproved) rank-2 perturbation strip theorem (S2879): certified λ_min ⟹
 certified exclusion of off-line zeros with δ > C·ε in the window. Next: certify N=24 (λ_min≈7.3e-45, prec ~600) and
 derive C rigorously from the planted-term derivative ‖∂_δ term‖.
+
+## S2881 (2026-11-05 03:07 CST, HP center cycle 14b) — RIGOROUS CERTIFICATE N=24: λ_min(τ_{λ²=14, N=24}) > 6.5e-45  [HANDLE]
+Same verified scheme as S2880 (Arb prec 700, exact-rational LDLᵀ on midpoints, Weyl radius ρ=9.31e-54):
+  e=6.5e-45 → CERTIFIED (49/49 pivots > 0, min ~1.39e-18);  e=8.0e-45 → FAILS (pivot 49 = −3.2e-9).
+Bracket consistent with mpmath λ_min = 7.254e-45 (S2871). Output: results/hp_center/cert_N24_l14.txt.
+**Statement (HANDLE):** Q_W on E_24 (49-dim; frequencies up to ν_24=57.1, primes ≤13, L=log 14) is positive definite
+with λ_min > 6.5e-45, rigorously (scope as S2880: finite-subspace; formula-level dependence on the τ construction).
+Window now covers zeta zeros γ₁..γ₁₁ (≤ 57). Combined with S2879's numerical horizon law (Im_crit ≈ C·ε inside the
+window), the certified ε is the input the unproved rank-2 strip theorem needs.
+**Next:** derive C rigorously: an off-line pair z=γ_m+iδ replacing two on-line zeros contributes the rank-≤2 real
+matrix B(δ)=Σ_{±z,±z̄}term − Σ_{±γ}term; bound λ_min(τ_true) ≤ uᵀ(τ_onlinepart)u + uᵀB(δ)u with an explicit trial u
+(the S2868 quadrature dual at γ_m) ⟹ positivity forces δ ≤ f(ε). Write it, then test f against S2879's 2.4e-8 / 4.6e-12.
