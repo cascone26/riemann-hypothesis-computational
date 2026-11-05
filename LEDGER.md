@@ -51494,7 +51494,7 @@ this Mathlib → `tendsto_finsetSum`.) HANDLE-tier.
 **Next:** (1) the summed counting corollary; (2) Cauchy-determinant positivity ⟹ TP (S2859's band theorem).
 SESSION TALLY (HP center): 1 Lean brick, 2 theorems (+10 supporting lemmas), all gate-GREEN.
 
-## S2862 (2026-11-04 23:58 CST, HP center cycle 3) — LEAN BRICK GREEN + LAW SHARPENED BY A "FAILED" PREDICTION
+## S2862 (2026-11-04 23:50 CST, HP center cycle 3) — LEAN BRICK GREEN + LAW SHARPENED BY A "FAILED" PREDICTION
 **1. `SignChangeCount.lean` EXIT0, gate GREEN (14/14 with S2861's module).**
 `PFSignChange.signChanges_ge`: x : Fin (m+1) → ℝ StrictMono, u nonzero ⟹
 #{j : u_j·u_{j+1} < 0} ≥ m − #{j : R has a zero in (x_j, x_{j+1})}. Proof: complement-of-bad ⊆ sign-change
@@ -51517,3 +51517,22 @@ explicit-side identity ξ̂(ν_k) ∝ (−1)^k ξ_k and compare to the sign of �
 line; parity of zeros in an interval = sign change of Ξ) — i.e. test sign(ξ_k ξ_{k+1}) vs
 sign(Ξ(ν_k)Ξ(ν_{k+1})) directly; (b) Cauchy-TP Lean brick for the sub-γ₁ band.
 SESSION TALLY (HP center): 2 Lean bricks (S2861, S2862), 3 headline theorems, gate GREEN 14/14.
+
+## S2863 (2026-11-04 23:56 CST, HP center cycle 3b) — SIGN-FAITHFULNESS + POSITIVE ENVELOPE
+**The CCM/Shi ground state agrees in SIGN with Riemann's Ξ at every lattice node, and the ratio is a
+smooth positive envelope.** (`operators/hp_node_sign_vs_xi.py`; ξ̂(ν_k) ∝ (−1)^k ξ_k exactly since
+sin(zL/2) has a simple zero at ν_k.)
+- sgn ξ̂_N(ν_k) = sgn Ξ(ν_k) for ALL k=0..N: λ²=14 N=12 (13/13), λ²=14 N=30 (31/31), λ²=30 N=12 (13/13).
+  57/57. Ξ(t)=ξ(½+it) computed independently by mpmath (no zeros list).
+- Ratio m_N(ν_k) := ξ̂_N(ν_k)/Ξ(ν_k), normalized m(0)=1, λ²=14 N=30: 1.00, 1.00, 1.01, 1.03, 1.06, …,
+  2.28, 2.55, 2.72(peak k≈22), 2.65, 2.21, 1.36, 0.87, 0.44, 0.13 (k=30) — smooth, single-humped, POSITIVE.
+**Reading:** ξ̂_N = Ξ·m_N on the node lattice with a smooth positive multiplier; S2862's odd-count-interval
+law is a COROLLARY (sign-faithfulness + the S2861 Lean parity lemma). The zero-locating content of the
+CCM ground state therefore reduces to ONE object: positivity of the envelope m_N on [0, ν_N].
+Deep in the regime (N=30, ν_N=71 ≫ γ₁) it holds; it is smallest at the lattice edge (0.13) — the edge is
+where a sign failure would first appear as N grows.
+**Opens:** (i) identify m_N analytically (fit log m vs ν, ν²; compare with prolate/Gaussian windows and
+with the archimedean factor); (ii) N-dependence at fixed ν: does m_N(ν)→const (local convergence
+ξ̂_N→cΞ, i.e. CCM's convergence, measured pointwise)? (iii) a proof route: positivity of m_N on the
+lattice ⟸ an explicit-side identity for ξ̂_N(ν_k)/Ξ(ν_k).
+**Next cycle:** (i)+(ii) numerics across N=12..40 at λ²=14, then derive.
