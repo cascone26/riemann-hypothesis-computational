@@ -52091,3 +52091,8 @@ to see the tail's real size, then design the bound.
 **S2888b PRE-REGISTRATION (04:46 CST, before λ²=7 saturates):** saturated floors μ_λ: λ²=3: 7.3e-8 · 3.5: 3.3e-10 · 4: ~1.0e-12 ·
 5: ~1.2e-17 (N=16/24/32: 1.77e-17, 1.42e-17, 1.21e-17). −ln μ/(λ² ln λ²) = 4.97, 4.98, 4.98, 4.83 ⟹ candidate law
 **μ_λ ≈ exp(−5·λ² ln λ²)**. PREDICTION (in ink): saturated μ at λ²=7 ≈ exp(−68.1) ≈ 3e-30 (within ×10); at λ²=14 ≈ e^{−185} ≈ 1e-80.
+**S2888c (04:47 CST) — PRE-REGISTERED LAW FALSIFIED; NEW (post-hoc) LAW + NEW PRE-REGISTRATION.** λ²=7 saturation: N=24 2.05e-27,
+N=32 1.25e-27 ⟹ μ_{√7} ≈ 1.2e-27 vs predicted 3e-30 — off ×~300, OUTSIDE the ×10 window ⟹ **μ≈exp(−5λ²lnλ²) FALSIFIED.**
+(λ²=5 confirmed saturated: N=32 1.208e-17, N=40 1.191e-17.) POST-HOC fit (labeled): **−ln μ_λ ≈ 11.5·λ² − 18.2** reproduces all five
+floors (16.4/16.3, 21.8/22.1, 27.6/27.8, 39.0/39.3, 62.2/62.3 at λ²=3,3.5,4,5,7) ⟹ μ_λ ≈ e^{18.2}·e^{−11.5 λ²}: EXPONENTIAL in λ² (= in T=λ²,
+the prime cutoff), not λ²·lnλ². NEW PRE-REGISTRATION (in ink): saturated μ at λ²=10 ≈ e^{−96.8} ≈ 1e-42 (within ×10).
