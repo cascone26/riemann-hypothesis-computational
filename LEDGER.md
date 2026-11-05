@@ -51946,3 +51946,23 @@ window), the certified ε is the input the unproved rank-2 strip theorem needs.
 **Next:** derive C rigorously: an off-line pair z=γ_m+iδ replacing two on-line zeros contributes the rank-≤2 real
 matrix B(δ)=Σ_{±z,±z̄}term − Σ_{±γ}term; bound λ_min(τ_true) ≤ uᵀ(τ_onlinepart)u + uᵀB(δ)u with an explicit trial u
 (the S2868 quadrature dual at γ_m) ⟹ positivity forces δ ≤ f(ε). Write it, then test f against S2879's 2.4e-8 / 4.6e-12.
+
+## S2882 (2026-11-05 03:21 CST, HP center cycle 15) — NODES INTERLACE ACROSS N (TRUE ζ); FAILS IN THE PLANTED WORLD ⟹ A 5TH POSITIVITY SWITCH
+`operators/hp_interlace.py` (λ²=14, dps 100, full polyroots): positive node sets t^(N), N=6..12 — all exactly real;
+N positive nodes at level N; **strict interlacing t^(N+1)_k < t^(N)_k < t^(N+1)_{k+1} for ALL k at every step
+6→7→…→12 (6/6)**, every node decreasing, one new node entering at the top each step (e.g. top node 170.6→212.8→
+245.3→284.8→322.6→364.2→403.7; resolved nodes freeze onto γ_k from above).
+`operators/hp_interlace_planted.py` (zeros #2,#3 planted off-line, Im=0.3h): ε<0 from N=6 (−6.9e-9 … −1.04 at N=10);
+nodes STILL real (CCM finite self-adjointness is unconditional) but counts jump 5→7→7→9→10 and **interlacing FAILS**.
+The planted matrices keep the Loewner/displacement-rank-2 structure and the S2868 quadrature identity, and the
+unconditional ingredients (μ_N ≥ 0 from τ_N−ε_NI⪰0; μ_{N+1}|_{E_N·E_N} = μ_N + (ε_N−ε_{N+1})·m with ε_N ≥ ε_{N+1} by
+Cauchy interlacing) — so interlacing is NOT a consequence of structure alone: it switches with positivity.
+**Five switches now observed to flip together with Weil positivity:** (1) τ⪰0, (2) sign-faithfulness to Ξ at nodes,
+(3) one-sided (above) node displacement, (4) super-exponential node accuracy, (5) N-interlacing of node sets.
+**Why (5) matters most:** interlacing ⟹ t_k^(N) monotone ↓ and >0 ⟹ real limits t_k^∞(λ) exist. If (5) could be
+derived from positivity of τ_N, τ_{N+1} alone (the planted test does NOT refute that: it has ε<0), it is a purely
+finite, checkable implication: "certified τ_N, τ_{N+1} ≻ 0 ⟹ node interlacing" — a Stieltjes-type separation
+theorem for the nested rational Gauss quadratures μ_N, μ_{N+1} (which differ on E_N·E_N by δ·m, δ=ε_N−ε_{N+1}≥0).
+**Next:** attempt that Stieltjes/Markov separation proof: positive μ_N (2N atoms), μ_{N+1} (2N+2 atoms),
+μ_{N+1} = μ_N + δm on E_N·E_N, plus ε_{N+1}≥0 ⟹ interlacing. Test the hypothesis boundary numerically: planted
+off-line pairs BELOW detection (ε>0 still, S2878 Im≤0.47h) — does interlacing hold there? (predicts yes if the theorem is right).
