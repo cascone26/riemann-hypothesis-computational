@@ -51972,3 +51972,25 @@ POSITIVITY of τ_N, not ζ's arithmetic. Supports the finite conjecture **(C-int
 positive node sets of ξ̂_N, ξ̂_{N+1} strictly interlace** (Stieltjes separation for nested rational Gauss quadratures
 μ_N, μ_{N+1} with μ_{N+1} − μ_N = (ε_N−ε_{N+1})·m on E_N·E_N). If proved, certified positivity (S2880/S2881 machinery)
 delivers monotone, convergent, real node sequences unconditionally on the certified range.
+
+## S2883 (2026-11-05 03:40 CST, HP center cycle 16) — SHI'S UNSHIFTED PENCIL: EXACTLY NESTED, CONVERGES TO ζ ZEROS FROM ABOVE, INTERLACES
+Read Shi 2609.04908 §4.2 (shifted pencil G=Cᵀ(S−λ₁I)C, K=Cᵀ(S−λ₁I)DC — ε-dependent) and §4.8 (UNSHIFTED pencil
+G_un=CᵀSC, K_un=CᵀSDC, Eqs 4.41-4.43; Shi: "same low-energy limit" as the shifted one is open). Note: Shi's own Table 1
+(N=L=13) shows quotient eigenvalues ABOVE the ζ ordinates (21.022039638771555145 > 21.022039638771554993; 25.0108575801628
+> 25.0108575801457) — independent confirmation of our L2 one-sidedness, unremarked by Shi.
+**Key structural fact:** the unshifted pencil is an EXACT compression across N (zero-mean contrast spaces nest under zero-
+padding; S_N principal submatrix of S_{N+1}; D diagonal). No ε anywhere.
+`operators/hp_unshifted_pencil.py` (λ²=14, dps 100), positive eigenvalues θ:
+  N=8 : 14.1347251417, 21.0220396398, 25.0108647313, 30.4932…  · N=10: …, 25.0108575802, 30.4249545914, 32.9426…
+  N=12: 14.1347251417, 21.0220396388, 25.0108575801, 30.4248761265 (γ₄=…1259), 32.9350632391 (γ₅=32.93506159) — ALL ABOVE ζ.
+  max|Im θ| ≤ 9e-91 (Hermitian definite, G_un ≻ 0: minEig 1.7e-23 … 3.0e-30); **interlacing N→N+1: 4/4 True**.
+**Theorem (rigorous, unconditional given S_N ≻ 0 — which S2880/S2881 certify):** in G-orthonormal even/odd bases (Gram–Schmidt
+nests since G_N = G_{N+1}|, parity-respecting), the pencil = [[0,B_N],[B_Nᵀ,0]] with B_N (N×N, even→odd) = B_{N+1} with one row
+and one column deleted ⟹ singular-value interlacing  **θ^{(N+1)}_{k−1} ≤ θ^{(N)}_k ≤ θ^{(N+1)}_{k+1}**  (two-step bracket).
+The OBSERVED one-step interlacing θ^{(N+1)}_k < θ^{(N)}_k < θ^{(N+1)}_{k+1} is stronger than generic deletion interlacing ⟹ extra
+structure in B_N (sign-regular/TP-type, cf. S2859) is doing work — the target for a full proof.
+**Opens:** a ground-state-free, ε-free, nested realization of the CCM/Shi spectrum with a provable interlacing bracket — the
+cleanest object yet for a Lean formalization (Courant–Fischer / singular-value interlacing) and for the monotone-limit argument.
+**Next:** (1) test whether B_N's last row/column deletion has a sign pattern forcing one-step interlacing (e.g. the deleted
+row/column of B_{N+1} in the G-orthonormal basis is "dominated"); (2) search Mathlib for Cauchy/singular-value interlacing
+(Matrix.eigenvalues, Courant–Fischer) to scope the Lean brick.
