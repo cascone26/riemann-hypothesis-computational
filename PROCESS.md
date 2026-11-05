@@ -21300,3 +21300,26 @@ unaddressed in the literature. Decision: next is Lean for the two bounded lemmas
   exact combinatorial core of the S2860 law). Probed lemma names by compiling `#check` on Olympus before
   writing (cheat-sheet discipline); one rename round. Gate GREEN.
 - S2862: N=30 'miss' re-read as a sharper law (odd-count intervals), not dismissed; 10/10. Lean count corollary GREEN.
+
+## 2026-11-04/05 — HP RH WORK CENTER, first overnight run (LEDGER S2859–S2891) — decision chain
+1. Resumed S2858 move (a). Refused to trust a garbled PDF re-read; built an INDEPENDENT ORACLE (zero-side sum over 100k zeros) →
+   CCM τ ≡ Shi S_{N,L} exactly (2e-10); the "14 vs 16π²" was a glyph artifact. Caught a sign bug in ccm_exact_reproduce.py.
+2. Zero side revealed Loewner/Cauchy-Gram structure → tried total positivity (Gantmacher–Krein) → TP threshold law at γ₁ →
+   sign-change law → refined by a FAILED prediction (N=30) into the odd-count-interval law → sign-faithfulness to Ξ (57/57).
+3. Null controls before believing anything: prime-scale c≠1 kills faithfulness; planted off-line zeros kill positivity AND
+   faithfulness together (#neg=2 per pair) → "five switches" all equivalent to Weil positivity.
+4. Recognized the structure as rational Gauss quadrature (ORF) of the Weil zero-measure; checked novelty against CCM Lemma 5.4
+   (identity is theirs, weight law ours). Laws: L1 node error ∝ ε (κ universality later FALSIFIED across λ — corrected),
+   L2 one-sided from above (also visible, unremarked, in Shi's own Table 1), closed-form first-order shift verified to 0.2%.
+5. Rigor: Arb + exact-rational LDLᵀ + Weyl (naive ball LDLᵀ failed — wrapping effect) → HANDLE certificates at λ²=14 (N=12,24),
+   λ²=3 and 7/2 (inside first open CC rung, finite subspace).
+6. Interlacing: observed (true ζ), failed in planted detectable world, held in planted-undetectable world → conjecture C-int;
+   then found Shi's UNSHIFTED pencil is exactly nested → proved B is lower-triangular (displacement + zero-mean + parity +
+   Gram–Schmidt) → THEOREM one-step interlacing ⟹ monotone limits given positivity (S2884); core lemma in Lean (S2885 GREEN).
+7. Identification of limits reduced EXACTLY to the crux (μ_λ→0); crossing/annihilating-measure and one-defect Christoffel
+   formulations recognized as equivalent restatements (marked LOOPED-adjacent).
+8. Pivot to the measurable crux quantity μ_λ: saturated floors λ²=3..14; λ²lnλ² law pre-registered and FALSIFIED; exponential
+   law pre-registered and CONFIRMED twice (λ²=10, 14); scale identified as T*=2πλ² (zero density = lattice density), which
+   reproduces Zhu's empirical law to 2%; discriminating λ²=20 test running.
+Discipline notes: every novelty claim lit-checked by a lean-briefed subagent; every law tested by pre-registration; two of my
+own claims corrected in-LEDGER (S2868 novelty, S2876 κ). Lean: S2861, S2862, S2885 (gate GREEN).

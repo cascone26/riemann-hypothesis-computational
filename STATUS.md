@@ -6398,3 +6398,8 @@ NEXT SESSION: Theorem 4.1 itself (the FULL arithmetic Weil matrix's own hypothes
 genuinely open and is a DIFFERENT, harder undertaking than anything closed this stretch --
 worth naming explicitly as NOT yet attempted, to avoid a repeat of S2851's mix-up. Otherwise,
 the same next-targets as UPDATE 81 remain live.
+
+## 2026-11-05 05:30 CST — HP RH work center (first overnight run)
+LEDGER S2859–S2891. Headlines: CCM≡Shi exact; theorem S2884 (interlacing ⟹ monotone limits given positivity); rigorous
+finite-subspace positivity certificates incl. inside the first open CC rung (λ²=7/2); margin law with T*=2πλ² (2/2 pre-registered
+predictions confirmed). Running: λ²=20 discriminating margin test (results/hp_center/mu_lambda20.txt). Resume: LEDGER tail.

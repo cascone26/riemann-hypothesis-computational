@@ -3365,3 +3365,13 @@ This is the biggest single structural unlock of the whole overnight session -- a
 separate sessions (S2583 on 2026-09-16, and this session's own S2681 before the correct answer) is now
 open, and it unblocks the SAME lane (general-K induction) that K=5's completion had already promoted to
 top priority. The two lanes converge: #1 and #2 are now effectively the same task from different angles.
+
+
+## UPDATE 2026-11-05 (HP center, LEDGER S2859–S2891) — B2 node (CCM convergence) re-mapped
+- B2 now carries: exact CCM≡Shi dictionary; rational-Gauss-quadrature (ORF) framework; THEOREM S2884 (unshifted-pencil
+  one-step interlacing ⟹ monotone real limits GIVEN positivity); HANDLE certificates (S2880/81/88); laws L1/L2; five
+  positivity switches; margin law μ_λ ≈ exp(−2π²N(T*)/ln N(T*)), T*=2πλ² (2% at λ²=10,14).
+- B2's open core is now exactly: μ_λ ≥ 0 ∀λ (identification of limits ⟺ μ_λ→0). LOOPED-adjacent (do not re-enter without a
+  new ingredient): Löwner/Pick reformulation (S2866), crossing ⟺ annihilating measure (S2886), one-defect Christoffel (S2887).
+- Live sub-frontiers: analytic origin of the 2π²N/lnN rate (tail residual above T*); prolate-adapted rigorous tail bound for
+  FULL-space positivity at λ²∈(3,4) (the first open CC rung); Lean Cauchy interlacing (absent from Mathlib) to finish S2884.
