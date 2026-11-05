@@ -51966,3 +51966,9 @@ theorem for the nested rational Gauss quadratures μ_N, μ_{N+1} (which differ o
 **Next:** attempt that Stieltjes/Markov separation proof: positive μ_N (2N atoms), μ_{N+1} (2N+2 atoms),
 μ_{N+1} = μ_N + δm on E_N·E_N, plus ε_{N+1}≥0 ⟹ interlacing. Test the hypothesis boundary numerically: planted
 off-line pairs BELOW detection (ε>0 still, S2878 Im≤0.47h) — does interlacing hold there? (predicts yes if the theorem is right).
+**S2882 boundary test:** planted off-line pair #8,#9 at Im=0.1h (BELOW detection, ε>0: 1.4e-23, 2.4e-25, 4.0e-27,
+1.0e-28, 2.1e-30 for N=8..12) — a non-ζ world — **interlacing holds 4/4**, all nodes decreasing. ⟹ interlacing tracks
+POSITIVITY of τ_N, not ζ's arithmetic. Supports the finite conjecture **(C-int): τ_N ≻ 0 and τ_{N+1} ≻ 0 ⟹ the
+positive node sets of ξ̂_N, ξ̂_{N+1} strictly interlace** (Stieltjes separation for nested rational Gauss quadratures
+μ_N, μ_{N+1} with μ_{N+1} − μ_N = (ε_N−ε_{N+1})·m on E_N·E_N). If proved, certified positivity (S2880/S2881 machinery)
+delivers monotone, convergent, real node sequences unconditionally on the certified range.
