@@ -1,0 +1,5 @@
+lam2=14.0 N=8 nu_N=19.047 gamma_m=45.6661: Im_crit ~ 0.88611
+lam2=14.0 N=12 nu_N=28.57 gamma_m=45.6661: Im_crit ~ 0.58775
+lam2=14.0 N=16 nu_N=38.094 gamma_m=45.6661: Im_crit ~ 0.02324
+N=20: detected already at Im=0.001
+N=24: detected already at Im=0.001

@@ -1,0 +1,2 @@
+lam2=14.0 N=20 nu_N=47.617 gamma_m=45.6661: Im_crit ~ 2.405e-8
+lam2=14.0 N=24 nu_N=57.14 gamma_m=45.6661: Im_crit ~ 4.5615e-12

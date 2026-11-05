@@ -51890,3 +51890,21 @@ finite instrument around it.
 **Next:** (1) horizon law: the minimal Im detected as a function of (γ_m − ν_N, N, λ) — if detection Im_crit→0 as
 N→∞ for every fixed off-line location, positivity ∀N at ONE λ would already exclude all off-line zeros with
 |Re−½|>0 below some height (quantify); (2) the analytic proof of the C_k certificate in the dominance regime.
+
+## S2879 (2026-11-05 03:01 CST, HP center cycle 13) — DETECTION-HORIZON LAW: Im_crit ∝ ε_N INSIDE THE WINDOW
+`operators/hp_horizon_scan.py` (coarse, floor 1e-3) + `hp_horizon_fine.py` (geometric bisection, floor 1e-15),
+λ²=14, off-line pair planted at zeros #8,#9 (γ_m=45.666), Im_crit = smallest Im with λ_min(τ)<0:
+  N=8  (ν_N=19.0): 0.886   · N=12 (28.6): 0.588   · N=16 (38.1): 0.0232   (pair ABOVE the window)
+  N=20 (47.6): **2.4e-8**  · N=24 (57.1): **4.6e-12**                   (pair INSIDE the window)
+Inside the window: Δlog₁₀Im_crit = −3.72 vs Δlog₁₀ε = −3.93 (N=20→24) ⟹ **Im_crit ≈ C·ε_N^{0.95}** — the same
+small parameter that sets node accuracy (L1). Above the window, detection still improves steeply as ν_N approaches γ_m.
+(Confound excluded: δ→0 limit is an on-line double zero, PSD per S2865 — so the threshold measures off-line-ness.)
+**Meaning — a quantified finite exclusion:** positivity of the single finite matrix τ_{λ,N} (rigorously certifiable
+by interval LDLᵀ, cf. project's arb_gap_certify*) excludes, within the window, off-line zeros with
+|Re ρ−½| ≳ C·ε_{λ,N}; at fixed λ the floor is C·μ_λ (CCM's limiting λ_min), and μ_λ→0 as λ→∞ is CCM's RH
+criterion. So the CCM/Shi matrices give a strip-width certificate whose width is the ground eigenvalue itself —
+the cleanest quantitative statement of "how close Weil positivity at finite (λ,N) is to RH" the lane has.
+**Next:** (1) measure C vs window position (planted γ_m at several heights) to see if C ∝ 1/|Ξ'|²-type like L1;
+(2) prior-art: quantitative zero-free strips from finite Weil positivity (Yoshida, Bombieri's Rayleigh quotients,
+"Weil positivity at finite support ⟹ zero-free region" literature); (3) rigorous version: certify λ_min(τ_{14,24})>0
+with interval arithmetic (Olympus python-flint 0.9) and state the resulting certified strip for zeros below 57.
