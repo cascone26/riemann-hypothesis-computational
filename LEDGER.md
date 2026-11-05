@@ -51743,3 +51743,20 @@ LHS ≈ w_k φ'_ξ(t_k)(γ_k−t_k)·(1+o(1)) ⟹ the node error IS a tail corre
 with Σ_ρ w_ρφ_ξ(γ_ρ)² = ε gives the rigorous |γ_k−t_k| ≲ √ε·‖√w φ_{d_k}‖_{tail}/(w_k|φ'_ξ(t_k)|);
 observed O(ε) ⟺ ‖√w φ_{d_k}‖_{tail} = O(√ε) (Lagrange-dual vanishes at the spurious nodes that
 approximate the tail). Next: prove that second factor, giving L1 and hence T1 (with Shi Thm 6.1/CCM).
+
+## S2872 (2026-11-05 01:34 CST, HP center cycle 9) — THE NODE-ERROR CONSTANT IS 1/|Ξ'(γ_k)|²
+Data: S2871 N=24 (λ²=14, ε=7.25e-45). Two predictions tested for C_k := |t_k−γ_k|/ε:
+- penalty-weight guess C_k ∝ 1/w_k (w=4sin²(γL/2)/L): corr(log C, log 1/w) = −0.05 — FALSIFIED.
+- derivative guess C_k ∝ 1/|Ξ'(γ_k)|²: fit log C = 1.052·(−2log|Ξ'(γ_k)|) − 2.34, **corr 0.99926** (10 zeros);
+  offset log C + 2log|Ξ'| = −1.61, −1.76, −1.79, −1.78, −1.75, −1.61 (k=1..6), drifting to −0.42 by k=10
+  (lattice edge ν_N=57.1, where the S2864 envelope m_N departs).
+**Law L1' (numerical):** |t_k − γ_k| ≈ κ ε_{λ,N} / |Ξ'(γ_k)|²,  κ ≈ 10^{-1.7} (interior).
+Equivalently F_N(γ_k)·Ξ'(γ_k) ≈ const·ε_N with F_N the (normalized) ground function: the ground function's
+value at a zeta zero is ε × Res_{γ_k}(1/Ξ) × const — first-order perturbation of F_N ≈ c·Ξ·m_N with the
+quadrature defect ε as the small parameter. Mechanism (penalty/KKT picture, S2872 cycle notes): ground =
+tail-minimizer constrained at resolved atoms; multipliers O(ε); error = F(γ)/F'(γ) with F' ≈ cΞ'm.
+**Opens:** T1 now has its exact quantitative form: RH ⟹ |t_k−γ_k| ≤ C·ε_{λ,N}/|Ξ'(γ_k)|² in the interior,
+and ε_{λ,N}→0 (Shi Thm 6.1 regime / CCM μ_λ). Also a CHECKABLE prediction of the residue structure:
+F_N(γ_k)Ξ'(γ_k)/ε_N ≈ const across k — test directly next (needs F_N at high precision at γ_k).
+**Next:** (1) direct test of F_N(γ_k)Ξ'(γ_k)/ε_N ≈ const (and its sign pattern); (2) derive κ from the
+quadrature identity; (3) λ-dependence of κ.
