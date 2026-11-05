@@ -51585,7 +51585,7 @@ double pole) — node crossings act as rank-one diagonal penalties.
 ν_k=γ? (d) prior-art check on "finite Weil matrix negativity index = #off-line zeros" (Yoshida/Bombieri/
 Krein–Langer) before claiming anything there.
 
-## S2866 (2026-11-05 00:20 CST, HP center cycle 5) — λ-HOMOTOPY: GROUND-STATE SIGN FLIPS LAND ON THE ZETA ZEROS
+## S2866 (2026-11-05 00:10 CST, HP center cycle 5) — λ-HOMOTOPY: GROUND-STATE SIGN FLIPS LAND ON THE ZETA ZEROS
 `operators/hp_lambda_homotopy.py`: vary L so node ν_k=2πk/L sweeps across a zeta zero (exactly at
 L*=2πk/γ_j); bisect (30 steps, resolution 3.7e-11) the L where ξ̂_N(ν_k) ∝ (−1)^k ξ_k changes sign.
   N=8,  k=5 across γ₁=14.1347: flip at L*−1.9e-11 (= resolution), node offset at flip 1.2e-10.
