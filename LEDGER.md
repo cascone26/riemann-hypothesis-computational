@@ -51398,3 +51398,49 @@ step recommendation: either (a) nail the exact CCM<->Shi parametrization match p
 to justify a direct Lean port, or (b) formalize CCM's tau operator in Lean from scratch using
 this session's existing general machinery and attack its own "simple for all N" question on its
 own terms, independent of a perfect Shi correspondence.
+
+## S2859 (2026-11-05, HP RH work center cycle 1 — first HP-hosted cycle)
+**CCM↔Shi correspondence made EXACT; S2858's "14 vs 16π²" constant mismatch was a PDF-extraction
+artifact; new Loewner/Cauchy-Gram structure; total-positivity THRESHOLD LAW located at the first zero.**
+
+1. **Mismatch resolved.** Re-pulled arXiv:2609.04908 + 2511.22755 to `research/papers/` (pdftotext).
+   Shi's pole denominators read `L(ν²_{n,L}+¼)²` — the "14" in S2858's /tmp extract was "¼" with the
+   fraction glyph flattened (Greek letters, incl. π in ν=2πn/L, are also dropped by the extractor).
+   Dictionary: T=λ², L=log T=2logλ, I_N={-N..N}, ν_n=2πn/L.
+2. **Pole term: exact symbolic identity (sympy, residual 0, three ways).** With
+   B^B_n = 8n·sinh²(L/4)/(L(ν_n²+¼)) and B^A_n = 8sinh²(L/4)(¼−ν_n²)/(L(ν_n²+¼)²):
+   (B^B_m−B^B_n)/(m−n) ≡ CCM W02(m,n); B^A_n ≡ W02(n,n); d/dn B^B_n ≡ B^A_n.
+3. **Full matrix: independent zero-side oracle.** Computed Shi's DEFINITION S_mn = Z(G_mn) directly as a
+   sum over the 100k LMFDB zeros (+ R-vM density tail) — no explicit formula used — and least-squares fit
+   it against CCM's three parts: Z = 1.00000000·W02 − 1.00000000·W_R − 1.00000000·W_p, max residual
+   2e-10 (tail floor), N=3, λ²=14. ⟹ **Shi's S_{N,L} = CCM's τ = W02 − W_R − W_p, unit scale.**
+   (`operators/ccm_shi_identity_check.py`, `operators/ccm_parts.py`.) REPORT-tier numerics + symbolic pole
+   identity; the arch/prime terms match by Shi's own Thm (3.37)/(3.39) applied to the same G.
+4. **Bug found:** `operators/ccm_exact_reproduce.py` builds +W_R+W_p (wrong signs; min eig −1.37, not
+   PSD). `ccm_weyl_rigorous_gap.py` (the N=32/40 certification code) uses arch+w02−prime with the
+   spectral Ω-form arch — correct convention. Warning added to the buggy file's docstring.
+5. **Loewner / Cauchy-Gram structure (zero side, RH-consistent data).** S_mn = Σ_ρ w_ρ/((ν_m+γ_ρ)(ν_n+γ_ρ)),
+   w_ρ = 4sin²(γ_ρL/2)/L ≥ 0 ⟹ S is EXACTLY the Loewner matrix at nodes ν_n of β_L(x)=−Σ_ρ w_ρ/(x+γ_ρ).
+   Parity blocks: S^± = C^± W (C^±)ᵀ with C^+_{j,k}=2γ_k/(γ_k²−ν_j²), C^-_{j,k}=2ν_j/(γ_k²−ν_j²) —
+   Cauchy kernels in x=ν², poles γ_k².
+6. **Spectral shape (dps 80, λ²=14).** Eigenvalues geometrically separated: e1/e0 = 374, 486, 725, 980 at
+   N=3,6,10,16 (e0 = 1.3e-12, 1.4e-19, 4.4e-27, 5.4e-36). Ground state EVEN (odd part 1e-49..1e-73).
+   Σ ground entries ≠0 but superexponentially small (5.3e-6, 2.0e-9, 4.2e-13, 1.5e-17) — Shi Thm 4.1's
+   `he_sum` hypothesis holds numerically with a vanishing margin; CCM's ⟨δ_N|ξ⟩=1 normalization rides it.
+7. **TOTAL-POSITIVITY THRESHOLD LAW (new).** Gasca–Peña initial-minor test (dps 70-100): BOTH parity
+   blocks are strictly TP for N=3,5 (λ²=14) and N=7 (λ²=30), and both FAIL at N=8 in each case — first
+   failure exactly at the node k where ν_k first exceeds γ₁: predicted k*=γ₁L/2π = 5.94 (λ²=14),
+   7.65 (λ²=30). Mechanism (RH-conditional proof sketch): C^± is a Cauchy matrix 1/(y_k−x_j) with all
+   x_j=ν_j² < all y_k=γ_k² iff ν_N<γ₁ ⟹ TP (Cauchy determinant); Karlin's basic composition formula with
+   w_ρ>0 ⟹ S^± strictly TP ⟹ Gantmacher–Krein: every eigenvalue of each parity block simple and
+   positive, j-th eigenvector has exactly j sign changes. Past ν_N>γ₁ the Cauchy factor changes sign and
+   TP provably must break — the unconditional explicit-side matrix "sees" γ₁ through its TP boundary.
+   Status: law REPORT (2 L-values, exact match); conditional theorem = proof sketch, not yet Lean.
+
+**What it opens:** (a) a clean, Lean-portable conditional theorem (Cauchy det + Cauchy–Binet + GK) giving
+simplicity of ALL eigenvalues in the sub-γ₁ band — the first structural simplicity mechanism for τ;
+(b) beyond the band (CCM's regime, N≫γ₁L/2π) the Cauchy matrix has nodes INTERLACED with poles, whose
+minors have sign (−1)^{#inversions} — a sign-regular/Krein-space generalization of Gantmacher–Krein is
+the next target for "ground state simple ∀N"; (c) Löwner's local→global theorem attaches to β_L.
+**Next:** prior-art scan (TP/Loewner/Cauchy-Gram for Weil matrices; oscillation-matrix results for
+prolate/Slepian-type spectra), then the interlaced sign-regularity probe on the N≫k* regime.

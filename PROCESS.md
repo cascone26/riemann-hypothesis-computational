@@ -21277,3 +21277,14 @@ Data under this project was removed or relocated off this Mac during an emergenc
 (crisis: 1.7GB free -> fixed to 54GB). Full cross-project catalog, exact paths, and what is gone vs
 relocated-to-Olympus: memory `fleet-silent-failure-sweep-2026-08-16` (2026-11-01 entry), fleet-wide
 memory store on this Mac.
+
+## 2026-11-05 — HP RH work center, cycle 1 (LEDGER S2859)
+Decision chain: resumed at S2858's move (a) "resolve the 14 vs 16π² mismatch". Rather than trust a
+re-read of garbled PDF text, built an INDEPENDENT oracle: Shi's S_mn is *defined* as a zero-side sum,
+so summing over 100k real zeros and fitting against CCM's explicit-side parts decides the dictionary
+without reading a single garbled formula. Result: exact (1,−1,−1), 2e-10. The mismatch was a glyph
+artifact. Side-catch: ccm_exact_reproduce.py had flipped signs (verify-before-trust paid off).
+Pivot: the zero-side form revealed Loewner/Cauchy-Gram structure ⟹ tried total positivity (Gantmacher–
+Krein gives simplicity of EVERY eigenvalue, stronger than CCM's ask). Found TP holds exactly up to the
+first zero and breaks there — confirmed as a predictive law at a second L. Chose to bank the law + the
+conditional mechanism and to aim next at the interlaced (beyond-γ₁) regime where CCM actually lives.
