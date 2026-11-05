@@ -51536,3 +51536,22 @@ with the archimedean factor); (ii) N-dependence at fixed ν: does m_N(ν)→cons
 ξ̂_N→cΞ, i.e. CCM's convergence, measured pointwise)? (iii) a proof route: positivity of m_N on the
 lattice ⟸ an explicit-side identity for ξ̂_N(ν_k)/Ξ(ν_k).
 **Next cycle:** (i)+(ii) numerics across N=12..40 at λ²=14, then derive.
+
+## S2864 (2026-11-05 00:2x CST, HP center cycle 4) — ENVELOPE SCAN + DECISIVE NULL CONTROL
+**1. Envelope m_N(ν_k)=ξ̂_N(ν_k)/Ξ(ν_k) (λ²=14, normalized m(0)=1; `operators/hp_envelope_scan.py`):**
+positive at EVERY node for N=12 (min 0.0021 at edge), N=20 (min 0.0028 at edge), N=30 (min 0.13 at
+edge; profile humps to 2.73 at k≈22). e0 = 2.7e-30, 6.2e-41, 5.9e-50. Shape still evolving in N at
+fixed λ (N≤20 monotone window; N=30 humped) — not yet converged in N; N=40 (dps 210) running.
+**2. NULL CONTROL (`operators/hp_null_control.py`, λ²=14, N=12): scale the prime term, S=W02−W_R−c·W_p.**
+  c=0: e0=−2.04, agree 8/13 · c=0.5: e0=−1.01, 8/13 · c=0.9: e0=−0.20, 8/13 ·
+  **c=1: e0=+2.7e-30, 13/13** · c=1.1: e0=−0.31, 7/13.   (Ξ node signs ++++++---++--.)
+Sign-faithfulness is NOT a structural artefact of the Loewner/Cauchy form or the archimedean factor:
+it appears ONLY at the exact arithmetic weighting, which is exactly where τ is positive (Weil
+positivity). Off the knife-edge the matrix goes O(1)-indefinite and node-sign agreement drops to chance.
+**Meaning:** the ground state's sign pattern is a direct, finite, explicit-side witness of the same
+knife-edge balance that IS Weil positivity — sign-faithfulness and positivity switch on together.
+**Opens (next, the real test):** PLANTED OFF-LINE ZERO experiment — take the RH-consistent zero-side
+matrix and replace one on-line zero pair by an off-line quadruple (γ ± iδ), i.e. S_δ = S + [term(γ±iδ) −
+term(γ)] using w(z)=4sin²(zL/2)/L and c_z(n)=1/(ν_n+z). Track e0(δ) and the node-sign agreement as δ
+grows: if sign-faithfulness (an integer, checkable invariant) breaks at the same δ where positivity does,
+the sign pattern becomes a finite combinatorial certificate for the on-line location of zeros below ν_N.
