@@ -51660,3 +51660,10 @@ Convergence t_j→γ_j, α_j→w(γ_j) IS CCM's convergence; the interior match 
 **Lean target (bounded, linear algebra, forge-style):** "displacement-rank-2 symmetric T with kernel
 vector ξ, Σξ≠0, Cauchy columns spanning ξ^⊥ ⟹ CᵀT-dual is diagonal" — reuses CauchyMatrixDetGeneral
 (injectivity) and S2855's TheoremFourOneCorrect setting.
+**S2868 NOVELTY CORRECTION (same cycle, after reading CCM §5.1 text, research/papers/ccm.txt l.917-990):**
+the diagonal-quadrature identity is EQUIVALENT to CCM Lemma 5.4(ii)-(iii): D̃=D−|Dξ⟩⟨δ| is selfadjoint in
+the T=QW_N−ε inner product with an orthonormal eigenbasis; their normalization ⟨δ_N|ξ⟩=1 is exactly our
+Σξ≠0. So the identity's substance is CCM's (Report: re-expression, not new). Genuinely ours: (a) writing it
+as an explicit positive quadrature τ−εI=Σα_j c_{t_j}c_{t_j}ᵀ, (b) the WEIGHT LAW α_j/w(t_j)→1 in the
+interior (w = Riemann's zero-side weight 4sin²(tL/2)/L), (c) Shi he_sum ⟺ CCM normalization ⟺ quadrature.
+Live target narrows to (b): prove α_j − w(t_j) and t_j − γ_j small in the interior = CCM convergence.
