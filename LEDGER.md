@@ -52042,3 +52042,18 @@ c_ρ = f̂*(γ_ρ) with f* itself in PW. That is a Beurling–Malliavin / comple
 **Next:** prior-art scan on (i) Weil positivity and Beurling–Malliavin / completeness of {e^{iγt}} on intervals, (ii) annihilating
 measures on zeta zeros; then test numerically whether the CCM minimizer at finite N approximately satisfies the annihilation
 identity (residual vs N) — a measurable proxy for "how close to a crossing".
+**S2886 prior-art + verdict (subagent, cited):** no paper links finite-support Weil positivity to Beurling–Malliavin, PW
+sampling/uniqueness by zeta zeros, or PW-annihilating measures (closest: Burnol JTNB 16 (2004) Sonine-space completeness;
+Suzuki 2301.00421 Weil-distribution space ≅ de Branges space under RH; Suzuki 2606.09096 λ_a continuous, simple, even ground
+state; Bombieri 2000 minimizer existence; Carneiro–Chandee–Littmann–Milinovich 1406.5462 RKHS sums over zeros). VERIFIED
+reduction: {e^{iγt}} over the zeta ordinates is complete on every interval unconditionally (N(T)~(T/2π)log T vs O(LT) zeros of
+a PW_L function — Jensen), so the on-line part can never annihilate; a first crossing must come from the INDEFINITE off-line
+pairing f̂(γ)ĝ(γ̄). ⟹ the crossing/annihilating-measure formulation is an EQUIVALENT restatement of Weil positivity, not an
+independent lever. Marked LOOPED-adjacent (cf. Solver OS A-branch); do not re-enter without a new ingredient.
+**Lane status (CCM/Shi, S2859-S2886):** built — exact CCM≡Shi dictionary; quadrature/ORF framework; 5 positivity switches;
+laws L1 (err∝ε), L2 (one-sided), interlacing; THEOREM S2884 (unshifted-pencil interlacing ⟹ monotone limits given positivity);
+HANDLE certificates S2880/S2881; Lean S2861/S2862/S2885. Crux located exactly: μ_λ ≥ 0 ∀λ (= RH); identification of limits ⟺ μ_λ→0.
+**Next ingredient candidates:** (1) Lean infrastructure: Cauchy interlacing (absent from Mathlib) to formalize S2884 fully;
+(2) quantitative μ_λ(λ) decay law via certified upper bounds ε_{λ,N} ≥ μ_λ across λ (compare Zhu's −ln λ_min ~ 2π²N(T*)/ln N(T*));
+(3) the off-line pairing itself: the rank-2 term's signature is fixed (1,1) — study how a single off-line quadruple's negative
+direction must interact with the infinite PSD on-line Gram (a "one-defect" positivity theorem would be a genuine new statement).
