@@ -51692,3 +51692,26 @@ results for discrete measures with isolated atoms (rates); (2) the RH ⟹ conver
 explicit super-exponential rate (compare observed 2e-25, 2e-20, 6e-17, 3e-9 against the classical
 |t−γ| ≲ (gap/distance)^{2N}-type bounds); (3) the off-line case: μ_L becomes a complex measure — quadrature
 nodes then go complex / weights negative exactly as S2865's planted test showed (#neg=2 per pair).
+
+## S2870 (2026-11-05 00:39 CST, HP center cycle 7b) — PRIOR ART ON THE QUADRATURE PICTURE; TWO PUBLISHED OPEN PROBLEMS TARGETED
+Subagent scan (cited): NO paper identifies CCM/Shi with (rational) Gauss quadrature / ORF / Christoffel numbers /
+Nevanlinna–Pick. Closest = Shi 2609.04908: Loewner divided-difference + displacement rank 2 (Eq 3.31-3.32),
+zero-side Cauchy columns at ±γ_k (§5.1), exact reconstruction from N input ordinates (§5.2); never says
+quadrature/Christoffel. Shi Thm 6.1 / Cor 6.3: RH ⟹ λ_min(S_{N,L_N})→0 with λ₁≪log(γ_{N+1})/(Nγ_{N+1})
+(regime 2πN/L_N<γ₁); trial-vector tail bound Eq 6.8 with factor (Q_N/P_{N,L})² = Π(t²−γ_j²)/(t²−ν_j²).
+**OPEN in the literature:** Shi Remark 6.2 ("not yet a convergence theorem for its ground-state eigenvector or
+quotient spectrum"); Connes 2602.04022 (convergence of truncated-Weil minimizer zeros to ζ zeros "not
+proved"); CCM Cor 3.8 is one-directional (μ_λ→0 ⟹ RH).
+**Framework that fits (agent + our S2869):** ξ̂_N zeros = poles of multipoint Padé-type approximants with
+FIXED poles (lattice) to the Cauchy transform of μ_L; geometric pole-convergence theorems: de la Calle
+Ysern–López Lagomasino; Cala Rodríguez–López Lagomasino, Constr. Approx. 14 (1998) (f=∫dμ/(z−x)+r).
+Christoffel numbers ↓ μ({x₀}) at atoms (Shohat–Tamarkin; Simon 0806.1528). Unaddressed: infinitely many atoms
+with density log t/2π + fixed lattice poles interlacing the atoms — our exact setting.
+**Target T1 (conditional, publishable-grade, answers two stated open problems):** RH ⟹ for each fixed k,
+t_k(λ,N)→γ_k and α_k→w(γ_k) with an explicit geometric/super-exponential rate (observed 2e-25,2e-20,6e-17,
+3e-9 at N=12, λ²=14). Route: positivity of μ_L under RH + Padé-pole convergence + Shi Eq 6.8 tail control.
+**Unconditional observation (keep):** α_j>0 always (T=τ−λ_min I⪰0) and t_j real under simple-even (CCM Thm 5.10)
+⟹ μ_N := Σα_jδ_{t_j} is ALWAYS a positive measure, and Λ|_N = μ_N + ε_N·(w(t)dt/2π) exactly (identity
+matrix ↔ measure w dt/2π by Plancherel: ∫f̂_m conj f̂_n = 2πδ_mn). So Weil positivity on the N-space ⟺ the
+Lebesgue-type correction ε_N ≥ 0. RH = "the continuous correction never turns negative" — the crux in its
+sharpest finite form yet: a sign of ONE scalar in an exact decomposition.
