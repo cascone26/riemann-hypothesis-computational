@@ -52096,3 +52096,15 @@ N=32 1.25e-27 ⟹ μ_{√7} ≈ 1.2e-27 vs predicted 3e-30 — off ×~300, OUTSI
 (λ²=5 confirmed saturated: N=32 1.208e-17, N=40 1.191e-17.) POST-HOC fit (labeled): **−ln μ_λ ≈ 11.5·λ² − 18.2** reproduces all five
 floors (16.4/16.3, 21.8/22.1, 27.6/27.8, 39.0/39.3, 62.2/62.3 at λ²=3,3.5,4,5,7) ⟹ μ_λ ≈ e^{18.2}·e^{−11.5 λ²}: EXPONENTIAL in λ² (= in T=λ²,
 the prime cutoff), not λ²·lnλ². NEW PRE-REGISTRATION (in ink): saturated μ at λ²=10 ≈ e^{−96.8} ≈ 1e-42 (within ×10).
+
+## S2889 (2026-11-05 04:53 CST, HP center cycle 20) — PRE-REGISTERED PREDICTION CONFIRMED: THE CCM MARGIN DECAYS EXPONENTIALLY IN λ²
+λ²=10 saturation (`hp_mu_lambda.py`): N=16 3.7e-31 · 24 1.93e-37 · 32 2.24e-41 · 40 4.72e-43 · 48 2.85e-43 (step ratios 1e-6, 1e-4,
+2e-2, 0.60 ⟹ saturated) ⟹ μ_{√10} ≈ 2e-43. S2888c pre-registered 1e-42 (×10 window [1e-43,1e-41]) — **INSIDE ✓ (factor ~5).**
+Six saturated floors μ_λ: λ²=3: 7.31e-8 · 3.5: 3.32e-10 · 4: 1.06e-12 · 5: 1.19e-17 · 7: 1.25e-27 · 10: 2.2e-43.
+Fits of −ln μ: linear **11.69λ² − 19.14** (max resid 0.72 in ln); quadratic 0.0926λ² + 10.48λ − 15.88... [in x=λ²] (max resid 0.12)
+— exponential in the prime cutoff T=λ² with slight convexity. (Earlier λ²lnλ² law falsified, S2888c — kept on record.)
+**Meaning:** CCM's criterion quantity μ_λ (RH ⟺ μ_λ→0⁺ without crossing) shrinks like e^{−~11.7·λ²}: ~5 decades per unit of λ².
+Every finite verification of positivity must resolve margins at that scale — the quantitative reason finite Weil positivity is
+"razor-edge" (§476) and why Zhu's certified range stops at small support. Compare Zhu 2608.24827's empirical law
+−ln λ_min ~ 2π²N(T*)/ln N(T*) (different normalization — reconcile next).
+**NEW PRE-REGISTRATION (in ink):** saturated μ at λ²=14 ∈ [2e-66, 2e-62] (linear 1.8e-63, quadratic 1.9e-65). Run launched (N up to 72).
