@@ -51803,3 +51803,15 @@ j≠k, and −γ_k). Both factorized ⟹ the sign of δt_k is a FINITE SIGN COMP
 γ_j, ν_n — the route to a theorem "RH ⟹ first-order upward displacement" (then L2 by continuation in s).
 **Next:** do the sign computation symbolically (product of factor signs on the tail t>γ_N and t<−γ_N), verify the
 formula numerically against the s=1e-30 column, then prove monotonicity in s (no node crossing).
+**S2874 addendum — CLOSED FORM for the first-order shift (derived; numeric check owed).** Write P(t)=Π_{j≤N}(t²−γ_j²),
+Q(t)=Π_{|n|≤N}(t+ν_n) (odd: Q(−t)=−Q(t)), φ_{ξ₀}=κ₀P/Q, φ_{D_k}=P(t)(at+b)/((t−γ_k)Q(t)) with
+aγ_k+b = q_k := Q(γ_k)/P'(γ_k) (φ_{D_k}(γ_k)=1) and a fixed by D_k⊥ξ₀ (Plancherel: ∫wφ_Dφ_{ξ₀}dt=0).
+Symmetrizing t→−t (w,P²,Q² even) every pair gives 2(at²+bγ_k)/(t²−γ_k²) = 2[a + q_kγ_k/(t²−γ_k²)], so with
+g(t)=1/(t²−γ_k²), tail weights W_ρ = w_ρP(γ_ρ)²/Q(γ_ρ)² ≥ 0 and continuous measure m̃ = w(t)P(t)²/Q(t)² dt on t>0:
+   a = −q_kγ_k⟨g⟩_{m̃}   and
+   δt_k = (2s q_k² γ_k / w_k) · [ Σ_tail W_ρ g(γ_ρ) − (Σ_tail W_ρ)·⟨g⟩_{m̃} ].
+**⟹ upward shift ⟺ ⟨g⟩_{tail zeros, W} > ⟨g⟩_{m̃}:** the normalized average of 1/(t²−γ_k²) over the zeta zeros
+ABOVE γ_N beats its average over the smooth Plancherel density w·P²/Q² (which also sees t<γ_k where g<0).
+A zeros-vs-continuum comparison — Riemann–von Mangoldt territory, κ₀ cancels, everything explicit.
+**Next:** numerically evaluate both averages (N=8, λ²=14) and confirm δt_k/s matches the s=1e-30 column of S2874;
+then attack the inequality itself (density of zeros (1/2π)log(t/2π) vs w(t)/2π, weighted by P²/Q²).
