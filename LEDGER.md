@@ -51444,3 +51444,35 @@ minors have sign (−1)^{#inversions} — a sign-regular/Krein-space generalizat
 the next target for "ground state simple ∀N"; (c) Löwner's local→global theorem attaches to β_L.
 **Next:** prior-art scan (TP/Loewner/Cauchy-Gram for Weil matrices; oscillation-matrix results for
 prolate/Slepian-type spectra), then the interlaced sign-regularity probe on the N≫k* regime.
+
+## S2860 (2026-11-05 ~00:05 CST, HP center cycle 2)
+**Prior-art scan (subagent, verified-by-citation) + ZERO-COUNTING SIGN-CHANGE LAW for the CCM/Shi ground
+state, confirmed predictively at a second L.**
+
+Prior art (rule 13): NO literature on total positivity / oscillation (Gantmacher–Krein) for Weil, CCM, or
+Shi matrices, and nothing tying a TP threshold to γ₁ (S2859's law is unaddressed). CCM 2511.22755 Thm 1.1 /
+Prop 5.7 ASSUME even-simplicity; §8 lists it as a missing step. Śliwiński 2601.12133: error rates, no
+simplicity. de Andrade Silva (Zenodo 20694588, Jun 2026, not peer-reviewed): reduces even-simplicity to
+λ₀^even<λ₀(B_o) + a resolvent inequality m_o<1/2 with S=sinh(x/2) — does not prove it; its claim that
+Suzuki proved small-interval simplicity is NOT confirmed by Suzuki's abstract (2606.09096) — unverified.
+Löwner/operator-monotone formulation of RH via Loewner matrices: not found; nearest = Lagarias AA 89 (1999)
+RH ⟺ Re ξ'/ξ>0 on Re s>½ (Herglotz-type).
+
+**New law (dps 90, `operators/hp_signchange.py`).** Eigenvectors of each parity block of τ, ordered
+largest→smallest eigenvalue, sign-change counts:
+- below threshold (λ²=14, N=5): exactly [0,1,2,…] both sectors — a true oscillation matrix (GK pattern).
+- beyond threshold: the TOP of the spectrum scrambles, but the BOTTOM keeps a consecutive +1 band, and the
+  GROUND state has  sc(ground) = (dim−1) − #{k : γ_k < ν_N}.
+  λ²=14: N=8 (1 zero below ν₈=19.05): even 7, odd 6 ✓; N=12 (3 zeros below 28.57): even 9, odd 8 ✓.
+  PREDICTED then confirmed at λ²=30: N=10 (Z=1) even 9 / odd 8 ✓✓; N=12 (Z=2) even 10 / odd 9 ✓✓.
+**Mechanism (elementary, exact):** in x=ν², the parity-block ground vector u defines
+R_u(y)=Σ_j u_j/(y−x_j). Between consecutive poles x_j<x_{j+1}: residues same sign ⟹ odd # zeros of R_u;
+opposite ⟹ even. Hence sc(u) = (n−1) − #{node intervals carrying an odd number of zeros}. CCM proved ξ̂_N
+(= sin(zL/2)·R) has only REAL zeros (finite-N self-adjointness), and its zeros sit near γ_k ⟹ the law.
+So the explicit-side, unconditionally computable integer sc(ground) is an exact counter of ξ̂_N-zeros
+inside the node range, and empirically equals N_ζ(ν_N).
+**Opens:** an oscillation (Sturm) theory for τ: proving sc(ground_N) = dim−1−N_ζ(ν_N) for ALL N from the
+explicit side would pin the COUNTING function of ξ̂_N zeros to ζ's — half of CCM's convergence step.
+**Next (Lean, bounded algebraic — the forge's proven pattern):** (1) the partial-fraction sign/zero-parity
+lemma for R_u between consecutive poles; (2) Cauchy-matrix TP + Cauchy–Binet ⟹ S2859's conditional TP
+theorem. Then attack the counting identity unconditionally.
