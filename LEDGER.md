@@ -52119,3 +52119,14 @@ function of the prime cutoff on everything we can resolve (to 1e-64). A sign cha
 **Next:** (1) reconcile with Zhu's −ln λ_min ~ 2π²N(T*)/ln N(T*); (2) seek the analytic origin of the λ² rate (prolate eigenvalue
 asymptotics: Slepian's λ_n(c) ~ e^{−2c}-type decay with c ∝ L·bandwidth — test whether 11.7 ≈ a prolate constant); (3) Arb-certify the
 λ²=10/14 floors at large N (rigorous upper+lower brackets of μ).
+
+## S2891 (2026-11-05 05:24 CST, HP center cycle 21) — THE MARGIN LAW'S SCALE IDENTIFIED: T* = 2πλ² (ζ-zero density = lattice density)
+**Derivation (heuristic, mechanism-level):** the CCM test space E_∞ on [0,L] has node density L/2π in frequency; ζ-zero density is
+(1/2π)log(T/2π). They cross at **T* = 2π·e^L = 2πλ²**: below T* the minimizer has enough freedom to vanish (approximately) at every
+zero; above T* the zeros outnumber the available degrees of freedom and the residual Σ_{γ>T*}|f̂(γ)|² sets μ_λ.
+**Reconciliation with Zhu 2608.24827's empirical form −ln λ_min ~ 2π²N(T*)/ln N(T*), using N(T*)≈λ²(L−1):**
+  λ²=10: predicted 100.2 vs measured 98.3 (2%) · λ²=14: 144.6 vs 147.0 (2%) · λ²=7: 69.1 vs 62.2 · λ²=5: 54 vs 39 (law asymptotic;
+  fails as N(T*)→0 at small λ²). ⟹ Zhu's empirical T* is identified analytically as the density-crossover height 2πλ².
+**DISCRIMINATING PRE-REGISTRATION (in ink):** λ²=20: Zhu-form with T*=2πλ² ⟹ −ln μ ≈ 213.7, μ ≈ 5e-93; my quadratic fit (S2890) ⟹
+4e-98. Prediction: **μ_{√20} ∈ [5e-95, 5e-91] (Zhu-form ×100)**; a value near 4e-98 would favor the polynomial fit instead.
+Run launched (λ²=20, N=72…120).
