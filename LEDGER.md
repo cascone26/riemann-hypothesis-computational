@@ -52170,3 +52170,5 @@ In the free-zero picture: a roughly CONSTANT cost per free zero, κ ≈ 12.3.
 **Pre-registration (for a future long run):** slope 20→28 ∈ [12.3, 12.7], i.e. μ_{√28} ≈ e^{−(320±2)} ≈ 1e-139 (×10). Cost: N≈170 at
 ~800 digits on HP (≈8–12 h single-thread) — queued, not launched this cycle.
 **Ledger of tests in this lane:** λ²lnλ² ✗ · exp-in-λ² ✓✓ · Zhu T*=2πλ² ✗ · κ→2π² ✗ · κ-plateau ~12.3 (new, pending).
+
+**PAUSED 2026-11-05 08:08 CST by Jacob.** Loop stopped; the λ²=28 run (S2895 pre-registration) was killed seconds after launch — relaunch with: python operators/hp_mu_lambda.py 28:136:640 28:152:720 28:168:800. Resume point = this LEDGER tail.
