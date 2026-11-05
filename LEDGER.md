@@ -51851,3 +51851,21 @@ monotonicity in s ∈ [0,1] (no node crossing) — S2874 shows it numerically.
 (27+16 cases, 3 λ values); closed-form first-order shift ✓ (0.2%); sufficient explicit criterion I_k<0 ✓.
 **Next:** derive the "resolved" threshold (which k are resolved at given λ,N) from the closed form, and prove
 L2 to first order under γ_j>ν_j via I_k<0 (analytic bound), then handle the I_k>0 regime via the full tail term.
+
+## S2877 (2026-11-05 02:39 CST, HP center cycle 12) — I_k IS AN EXACT FINITE SUM (Plancherel); EXPLICIT CERTIFICATE FOR THE UPWARD SHIFT
+With P=P_k·(t²−γ_k²), P_k=Π_{j≠k}(t²−γ_j²): P/Q, P_k/Q ∈ E_N with coefficient vectors u_n = A(−ν_n)/Q'(−ν_n)
+(partial fractions), and Plancherel u·v=(1/2π)∫w φ_uφ_v dt gives EXACTLY
+   **I_k = π Σ_{|n|≤N} P_k(ν_n)² (ν_n²−γ_k²) / Q'(ν_n)²**   (`operators/hp_Ik_finite.py`)
+Matches S2876's quadrature: λ²=14 N=8 −9.428e14 (vs −9.43e14), N=16 −2.115e24 (vs −2.12e24); λ²=4 N=20 −2.161e5,
+N=30 +2236 (vs +2.24e3); λ²=2 N=8 +0.0132. Positive/|negative| part ratio when zeros dominate nodes: 3.1e-8 (14,8),
+1.6e-6…8e-14 (14,16), 1e-5…2e-8 (4,20); when they don't: 153–518 (4,30), 128–475 (2,8).
+Term ratio to the n=0 bulk (ν_m=hm, h=2π/L): T_m/|T_0| = −[Π_{j≠k}(1−ν_m²/γ_j²)]²·(ν_m²/γ_k²−1)·B_m²,
+B_m = (N!)²/((N+m)!(N−m)!) = C(2N,N+m)/C(2N,N) ≤ e^{−m²/N}-type decay.
+**Certificate C_k (sufficient for I_k<0, hence first-order upward shift under RH):**
+   2 Σ_{m: ν_m>γ_k} [Π_{j≠k}(1−ν_m²/γ_j²)]² (ν_m²/γ_k²−1) B_m² < 1 + (other negative terms)/|T_0|.
+Fully explicit in (γ_1..γ_N, L, N) — checkable with certified zero enclosures; Lean-able as a finite rational
+inequality per (λ,N,k).
+**Next (pivot test toward the crux):** sign of displacement vs sign of ε. L1 says t_k−γ_k ∝ ε. Plant an off-line
+pair ABOVE the node range (S2867 horizon: ε<0 small) and check whether the RESOLVED low nodes drop BELOW
+their zeros. If yes: "all resolved CCM nodes lie above their zeros ∀(λ,N)" is an RH-detector on the low
+spectrum — off-line zeros anywhere within the horizon flip the low nodes' displacement sign.
