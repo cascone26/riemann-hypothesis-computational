@@ -52025,3 +52025,20 @@ on Olympus; fresh recompile EXIT0; #print axioms = [propext, Classical.choice, Q
 Remaining for a full Lean S2884: the parity/nesting bookkeeping (Dev(k)=ν_k od(k)) and Cauchy interlacing (absent from
 this Mathlib — would need its own brick via Courant–Fischer).
 SESSION TALLY (HP center): Lean bricks S2861, S2862, S2885 — all gate-GREEN.
+
+## S2886 (2026-11-05 04:17 CST, HP center cycle 18) — LIMIT IDENTIFICATION ⟹ THE CRUX; NEW ANGLE: CROSSING ⟺ ANNIHILATING MEASURE
+**Identification analysis (zero side).** For zero-mean y, φ_{Dy}(t)=−tφ_y(t). A limit pencil eigenvalue θ (N→∞, fixed λ) needs
+Σ_ρ w_ρ φ_x(γ_ρ)(γ_ρ+θ)φ_y(γ_ρ)=0 ∀x; if the test space separates atoms ⟹ θ=±γ_ρ with φ_y vanishing at all other zeros. At
+fixed λ separation holds only to resolution μ_λ (L1: limits offset ~κμ_λ/|Ξ'|²), and μ_λ>0 at fixed λ (CCM Thm 3.6: discrete
+spectrum, min attained; a null vector would need f̂ vanishing at all zeros — impossible in PW_{L/2} since zeta zeros have
+unbounded density). ⟹ exact identification needs μ_λ→0 (λ→∞) = CCM Cor 3.8 criterion = RH. The S2884 monotone-limit theorem
+removes the EXISTENCE question; IDENTIFICATION is the crux itself. Recorded so no cycle mistakes it for a side gap.
+**New angle (crossing analysis).** μ_λ is continuous in λ and >0 for small λ (Yoshida/Connes–Consani). If it ever reached 0 at
+λ*, the minimizer f* (supp ⊂[0,L*]) is in the radical of Q_{λ*}: Q(f*,g)=0 ∀g. Via the explicit formula this says the discrete
+complex measure ν* := Σ_ρ f̂*(γ_ρ)·δ_{γ̄_ρ} (zero side, off-line terms included) ANNIHILATES PW_{L*/2}. So RH-failure at a first
+crossing ⟺ existence of a PW-annihilating measure supported on the zeta zeros with coefficients given by a PW function. Zeta's
+zero set has infinite Beurling density, so annihilating measures exist in abstract — the content is the coefficient constraint
+c_ρ = f̂*(γ_ρ) with f* itself in PW. That is a Beurling–Malliavin / completeness-of-exponentials question.
+**Next:** prior-art scan on (i) Weil positivity and Beurling–Malliavin / completeness of {e^{iγt}} on intervals, (ii) annihilating
+measures on zeta zeros; then test numerically whether the CCM minimizer at finite N approximately satisfies the annihilation
+identity (residual vs N) — a measurable proxy for "how close to a crossing".
