@@ -52016,3 +52016,12 @@ only: symmetry, the rank-2 displacement identity, zero-mean contrasts, parity, n
 Cauchy interlacing (check Mathlib); (b) the monotone-limit corollary turns certified positivity into existence of real limits;
 the remaining gap is IDENTIFYING the limits with the ζ ordinates (Shi's §4.9 transfer problem) — now a question about a
 monotone sequence with a known lower bound structure, not about existence.
+
+## S2885 (2026-11-05 03:59 CST, HP center cycle 17b) — LEAN BRICK: PencilDisplacementSwap.lean EXIT0, gate GREEN
+`PencilSwap.displacement_swap`: DS−SD = b1ᵀ−1bᵀ, Σu=Σv=0 ⟹ u·((SD)v) = (Dᵀu)·(Sv).
+`PencilSwap.form_vanishes`: additionally Dᵀu ∈ W and v S-orthogonal to W ⟹ u·((SD)v) = 0.
+These are steps (1)+(3)⟹(4) of S2884's triangularity lemma (the K-form vanishes above the diagonal). Compiled first try
+on Olympus; fresh recompile EXIT0; #print axioms = [propext, Classical.choice, Quot.sound]; axiom_gate GREEN.
+Remaining for a full Lean S2884: the parity/nesting bookkeeping (Dev(k)=ν_k od(k)) and Cauchy interlacing (absent from
+this Mathlib — would need its own brick via Courant–Fischer).
+SESSION TALLY (HP center): Lean bricks S2861, S2862, S2885 — all gate-GREEN.
