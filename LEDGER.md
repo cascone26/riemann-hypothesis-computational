@@ -52108,3 +52108,14 @@ Every finite verification of positivity must resolve margins at that scale — t
 "razor-edge" (§476) and why Zhu's certified range stops at small support. Compare Zhu 2608.24827's empirical law
 −ln λ_min ~ 2π²N(T*)/ln N(T*) (different normalization — reconcile next).
 **NEW PRE-REGISTRATION (in ink):** saturated μ at λ²=14 ∈ [2e-66, 2e-62] (linear 1.8e-63, quadratic 1.9e-65). Run launched (N up to 72).
+
+## S2890 (2026-11-05 05:21 CST, HP center cycle 20b) — SECOND PRE-REGISTERED PREDICTION CONFIRMED (λ²=14)
+λ²=14 saturation: N=40 1.4e-56 · 48 4.00e-60 · 56 1.44e-62 · 64 9.22e-64 · 72 2.52e-64 (step ratios 3.6e-3, 6.4e-2, 0.27 ⟹ saturating)
+⟹ μ_{√14} ≈ 1.5e-64. Pre-registered window [2e-66, 2e-62] (S2889) — **INSIDE ✓**, between the linear (1.8e-63) and quadratic (1.9e-65)
+forecasts. Seven saturated floors now (λ² = 3, 3.5, 4, 5, 7, 10, 14): −ln μ_λ is exponential-in-λ² with mild convexity (fits above).
+Prediction track record this lane: λ²lnλ² law FALSIFIED (S2888c); exponential law 2/2 CONFIRMED (λ²=10, 14).
+**Reading:** μ_λ ≈ exp(−(≈10.5 λ² + ≈0.09 λ⁴ − 16)) over λ²∈[3,14]: CCM's RH-criterion margin is a smooth, positive, steeply decaying
+function of the prime cutoff on everything we can resolve (to 1e-64). A sign change would have to appear as a break in this law.
+**Next:** (1) reconcile with Zhu's −ln λ_min ~ 2π²N(T*)/ln N(T*); (2) seek the analytic origin of the λ² rate (prolate eigenvalue
+asymptotics: Slepian's λ_n(c) ~ e^{−2c}-type decay with c ∝ L·bandwidth — test whether 11.7 ≈ a prolate constant); (3) Arb-certify the
+λ²=10/14 floors at large N (rigorous upper+lower brackets of μ).
