@@ -51908,3 +51908,10 @@ the cleanest quantitative statement of "how close Weil positivity at finite (λ,
 (2) prior-art: quantitative zero-free strips from finite Weil positivity (Yoshida, Bombieri's Rayleigh quotients,
 "Weil positivity at finite support ⟹ zero-free region" literature); (3) rigorous version: certify λ_min(τ_{14,24})>0
 with interval arithmetic (Olympus python-flint 0.9) and state the resulting certified strip for zeros below 57.
+**S2879 prior-art addendum (subagent, cited):** NO published result turns finite Weil positivity (λ_min ≥ ε) into a
+zero-location strip. Closest: Zhu arXiv:2608.24827 (interval-certified Q≥8.9e-18‖f‖² for supp⊂[−0.8,0.8]; empirical
+−ln λ_min ~ 2π²N(T*)/ln N(T*); no zero statement); Groskin 2607.02828 (two-sided tail certification rule, no RH claim);
+Palojärvi 1807.01506 (finite τ-Li coefficients ⟹ explicit zero-free region — the only finite-data→zero-region theorem
+found, different object); Kim et al. 2607.24830 (injected off-line zero ⟹ blow-up, qualitative). UNADDRESSED: the
+rank-2 perturbation theorem λ_min ≥ ε ⟹ no zero with δ > ε/‖∂_δQ_ρ‖ at height ≤ T, its combination with a certified ε,
+and the strip-width scaling. Our certification at L=log 14=2.64 would also exceed Zhu's certified support.
