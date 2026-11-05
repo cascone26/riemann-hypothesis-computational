@@ -51760,3 +51760,23 @@ and ε_{λ,N}→0 (Shi Thm 6.1 regime / CCM μ_λ). Also a CHECKABLE prediction 
 F_N(γ_k)Ξ'(γ_k)/ε_N ≈ const across k — test directly next (needs F_N at high precision at γ_k).
 **Next:** (1) direct test of F_N(γ_k)Ξ'(γ_k)/ε_N ≈ const (and its sign pattern); (2) derive κ from the
 quadrature identity; (3) λ-dependence of κ.
+
+## S2873 (2026-11-05 01:36 CST, HP center cycle 9b) — ONE-SIDED MONOTONE CONVERGENCE: CCM NODES ARE UPPER BOUNDS
+1. Residue test (`operators/hp_residue_test.py`, λ²=14, N=16, c=F(0)/Ξ(0)=−1.802): r_k = F_N(γ_k)Ξ'(γ_k)c/ε =
+   −0.118, −0.149, −0.228, −0.651, −1.41, −16.6 (k=1..6, resolved), garbage past ν_N=38 (unresolved).
+   Magnitude O(0.1) at low k, grows toward the edge (envelope factor m_N, S2864); SIGN UNIFORM (−).
+2. ⟹ predicted displacement direction t_k−γ_k = −F(γ_k)/F'(γ_k) > 0. Verified (`operators/hp_signed_err.py`):
+   λ²=14: N=8 [+1.3e-17, +7.8e-9]; N=12 [+2.1e-25, +1.6e-20, +5.7e-17, +3.3e-9, +6.7e-6];
+   N=16 [+1.6e-31 … +4.7e-5] (8); N=20 [+1.1e-36 … +1.2e-16] (8).  λ²=30: N=10 [+2.1e-24, +3.5e-13];
+   N=14 [+1.5e-34, +8.1e-28, +2.8e-22, +4.0e-12].   **27/27 positive, each k strictly decreasing in N.**
+**Law L2 (numerical): t_k(λ,N) ↓ γ_k — one-sided, monotone in N.** CCM nodes are UPPER BOUNDS on the zeta
+zeros, approaching from above — the Gauss-quadrature (Markov–Stieltjes / Chebyshev–Markov–Krein) separation
+picture for the Weil zero-measure.
+**Why it matters:** (a) a provable monotonicity would turn every finite CCM computation into rigorous
+one-sided zero bounds (Turing-method-grade, from primes alone); (b) monotone convergence is the classical
+route to existence-of-limit arguments — the limit t_k(λ,∞) exists by monotonicity, and L1'/S2872 pins it
+within κμ_λ/|Ξ'(γ_k)|² of γ_k; (c) CCM's convergence question reduces to μ_λ→0 (their Cor 3.8 direction)
+with an explicit, signed, monotone approach.
+**Next:** (1) prior art: monotonicity of Gauss/ORF quadrature nodes under enlarging the space (Markov–Stieltjes
+inequalities, Krein's separation theorems) — does it apply verbatim to nested lattices E_N ⊂ E_{N+1}?;
+(2) prove monotonicity in N via the quadrature nesting (E_N ⊂ E_{N+1} ⟹ interlacing of nodes); (3) λ-monotonicity?
