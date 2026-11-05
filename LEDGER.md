@@ -51915,3 +51915,22 @@ Palojärvi 1807.01506 (finite τ-Li coefficients ⟹ explicit zero-free region �
 found, different object); Kim et al. 2607.24830 (injected off-line zero ⟹ blow-up, qualitative). UNADDRESSED: the
 rank-2 perturbation theorem λ_min ≥ ε ⟹ no zero with δ > ε/‖∂_δQ_ρ‖ at height ≤ T, its combination with a certified ε,
 and the strip-width scaling. Our certification at L=log 14=2.64 would also exceed Zhu's certified support.
+
+## S2880 (2026-11-05 03:05 CST, HP center cycle 14) — RIGOROUS CERTIFICATE: λ_min(τ_{λ²=14, N=12}) > 2.4e-30  [HANDLE]
+`operators/hp_arb_tau_certify.py` (run on Olympus, python-flint 0.9 / Arb, prec 400 bits):
+- Build: W02 and prime-power terms exact in Arb balls; archimedean J_n=∫e^{x/2}sin(2πnx/L)/(e^x−e^{−x}) and diagonal
+  D_n via `acb.integral` on [10⁻⁶⁰, L] (rel_tol 2^{−380}) + explicit sup-bound on [0,10⁻⁶⁰]; entry radii ≤ 2.4e-56.
+- First attempt (naive ball LDLᵀ) FAILED to certify: radius blew up 1e-56 → 2e-9 (dependency/wrapping effect at
+  condition ~1e30) — not a sign problem. Fixed with the standard verified scheme:
+  λ_min(τ−eI) ≥ λ_min(mid τ − eI) − ‖rad τ‖₂,  ‖rad‖₂ ≤ M·maxrad (+ decimal-rounding slack) =: ρ = 1.2e-54,
+  and λ_min(mid τ − (e+ρ)I) > 0 proved by EXACT-RATIONAL LDLᵀ (Python Fraction): all pivots > 0 ⟺ PD (Sylvester).
+- Results (both polarities): e=0 → CERTIFIED (25/25 pivots >0); **e=2.4e-30 → CERTIFIED**; e=3.0e-30 → FAILS
+  (pivot 25 = −1.7e-12) — consistent with the mpmath value λ_min = 2.709e-30.
+**Statement (HANDLE):** the Weil quadratic form Q_W (CCM 2511.22755 truncation = Shi 2609.04908 S_{N,L}) restricted to
+E_12 ⊂ L²[0,L], L=log 14 (λ=√14, primes ≤13), is positive definite with smallest eigenvalue > 2.4e-30, rigorously.
+**Scope / honesty:** a FINITE-SUBSPACE certificate (25-dim), not Zhu-type positivity on all test functions of given
+support; correctness also rests on the τ formula (CCM Lemma 5.1/W_R regularization), which S2859's zero-side oracle
+matched to 2e-10 — a formula-level check, not a proof of the formula itself.
+**Opens:** feed certified ε into the (still unproved) rank-2 perturbation strip theorem (S2879): certified λ_min ⟹
+certified exclusion of off-line zeros with δ > C·ε in the window. Next: certify N=24 (λ_min≈7.3e-45, prec ~600) and
+derive C rigorously from the planted-term derivative ‖∂_δ term‖.
