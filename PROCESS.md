@@ -21299,3 +21299,4 @@ unaddressed in the literature. Decision: next is Lean for the two bounded lemmas
 - 23:40 CST S2861: chose the parity lemma as the first Lean brick (bounded, analytic-but-elementary, the
   exact combinatorial core of the S2860 law). Probed lemma names by compiling `#check` on Olympus before
   writing (cheat-sheet discipline); one rename round. Gate GREEN.
+- S2862: N=30 'miss' re-read as a sharper law (odd-count intervals), not dismissed; 10/10. Lean count corollary GREEN.

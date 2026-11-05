@@ -51493,3 +51493,27 @@ this Mathlib → `tendsto_finsetSum`.) HANDLE-tier.
 (a Finset induction) gives #sign-changes(u) ≥ (n−1) − #{intervals with a zero} unconditionally.
 **Next:** (1) the summed counting corollary; (2) Cauchy-determinant positivity ⟹ TP (S2859's band theorem).
 SESSION TALLY (HP center): 1 Lean brick, 2 theorems (+10 supporting lemmas), all gate-GREEN.
+
+## S2862 (2026-11-04 23:58 CST, HP center cycle 3) — LEAN BRICK GREEN + LAW SHARPENED BY A "FAILED" PREDICTION
+**1. `SignChangeCount.lean` EXIT0, gate GREEN (14/14 with S2861's module).**
+`PFSignChange.signChanges_ge`: x : Fin (m+1) → ℝ StrictMono, u nonzero ⟹
+#{j : u_j·u_{j+1} < 0} ≥ m − #{j : R has a zero in (x_j, x_{j+1})}. Proof: complement-of-bad ⊆ sign-change
+set via `mul_neg_of_no_zero_between` + `consecutive_out` (StrictMono ⟹ no other pole in the gap), card
+identity `Finset.card_filter_add_card_filter_not`, omega. Fresh recompile EXIT=0; axioms
+[propext, Classical.choice, Quot.sound]. HANDLE.
+**2. Stress test deep in CCM's regime (λ²=14, N=30, dps 160):** predicted 13/12 (17 zeros below ν₃₀=71.43)
+— got 15/14. Diagnosis: zeros 48.005 and 49.774 sit in the SAME node interval (k=20, spacing 2π/L=2.381),
+an even count ⟹ no parity flip — exactly the parity structure of the Lean lemma. **Refined law:**
+  sc(ground of parity block) = (dim−1) − #{k : (ν_k, ν_{k+1}) contains an ODD number of ζ zeros}
+**10/10 exact** across (λ²,N) = (14,8),(14,12),(14,30),(30,10),(30,12), both parities.
+**Meaning:** the explicit-side ground vector of τ_{λ,N} (no zeros used to build it) records, interval by
+interval, the PARITY of the ζ-zero count — Sturm-type information, verified deep into N ≫ γ₁L/2π.
+**Opens:** a conjectural Sturm theorem for τ: "ξ̂_N has an odd number of zeros in (ν_k,ν_{k+1}) ⟺ ζ does".
+Its RH-relevance: the ζ-side parity N_ζ(ν_{k+1})−N_ζ(ν_k) mod 2 is controlled by S(t) (argument of ζ),
+so this ties the CCM ground state to S(t)-parity — the fluctuation locus where (per the box-moment arc,
+cy332) RH actually lives.
+**Next:** (a) explain the parity match analytically: write ξ̂_N(ν_k)·ξ̂_N(ν_{k+1}) sign via the
+explicit-side identity ξ̂(ν_k) ∝ (−1)^k ξ_k and compare to the sign of Ξ(ν_k)Ξ(ν_{k+1}) (Ξ real on the
+line; parity of zeros in an interval = sign change of Ξ) — i.e. test sign(ξ_k ξ_{k+1}) vs
+sign(Ξ(ν_k)Ξ(ν_{k+1})) directly; (b) Cauchy-TP Lean brick for the sub-γ₁ band.
+SESSION TALLY (HP center): 2 Lean bricks (S2861, S2862), 3 headline theorems, gate GREEN 14/14.
