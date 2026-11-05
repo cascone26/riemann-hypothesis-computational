@@ -52144,3 +52144,12 @@ Testable: local slope d(−ln μ)/dλ² should keep rising toward 2π² (≈12.5
 cost vanish because ζ's zeros outnumber its capacity above T*. Under ¬RH, an off-line pair inside the window behaves like a
 zero the minimizer can't track on the line (S2865/S2878) — the mechanism a positivity proof must exploit: unmatched-zero
 cost vs off-line negative contribution, both measured in units of free zeros.
+
+## S2893 (2026-11-05 06:51 CST, HP center cycle 23b) — S2891's DISCRIMINATING PREDICTION FALSIFIED (Zhu-form with T*=2πλ²)
+λ²=20: N=72 8.73e-88 · N=88 7.99e-93 · **N=104 1.44e-95** (step ratio 1.8e-3, still falling). Since ε_{λ,N} is NON-INCREASING in N
+(Cauchy interlacing, principal submatrices), μ_{√20} ≤ 1.44e-95 < 5e-95 = lower edge of the pre-registered window [5e-95, 5e-91].
+**⟹ Zhu-form −ln μ ≈ 2π²N(2πλ²)/ln N(2πλ²) FALSIFIED at λ²=20** (it UNDER-predicts −ln μ: 213.7 vs ≥ 218.1). The 2%
+agreement at λ²=10, 14 (S2891) was a coincidence of the range, not predictive. The S2890 polynomial fit (4e-98) remains
+consistent; the S2892 free-zero mechanism (−ln μ ≈ κ·λ², κ slowly increasing) is unaffected and predicts a local slope ≥ 12.9
+here (−ln μ(20) ≥ 218.1 ⟹ slope from λ²=14 ≥ (218.1−147.0)/6 = 11.9; final value after N=120).
+Prediction record (this lane): λ²lnλ² ✗ (S2888c) · exponential-in-λ² ✓✓ (λ²=10,14) · Zhu-form T*=2πλ² ✗ (λ²=20).
