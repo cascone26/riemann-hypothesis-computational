@@ -52172,3 +52172,5 @@ In the free-zero picture: a roughly CONSTANT cost per free zero, κ ≈ 12.3.
 **Ledger of tests in this lane:** λ²lnλ² ✗ · exp-in-λ² ✓✓ · Zhu T*=2πλ² ✗ · κ→2π² ✗ · κ-plateau ~12.3 (new, pending).
 
 **PAUSED 2026-11-05 08:08 CST by Jacob.** Loop stopped; the λ²=28 run (S2895 pre-registration) was killed seconds after launch — relaunch with: python operators/hp_mu_lambda.py 28:136:640 28:152:720 28:168:800. Resume point = this LEDGER tail.
+
+**RESUMED 2026-11-07 17:42 CST by Jacob.** λ²=28 run relaunched per the pause marker (python operators/hp_mu_lambda.py 28:136:640 28:152:720 28:168:800 → results/hp_center/mu_lambda28.txt; tests S2895 pre-registration: slope 20→28 ∈ [12.3,12.7], μ_{√28} ≈ 1e-139 ×10). Previously-untracked artifacts committed (raw paper texts, oracle matrices, envelope/rate JSON). Autonomous RH Forge Protocol re-armed via ScheduleWakeup (standing cron prompt, AUTONOMOUS_FORGE_PROTOCOL.md).
