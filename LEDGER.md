@@ -52449,3 +52449,11 @@ zero side is now fully controlled in Lean, so the open content concentrates on t
 Next lane-1 bricks: sum over n ⟹ Σ c_k Re(−ζ'/ζ)(σ+ikγ) ≥ 0 for general P (lift §1357→§1355 pipeline with P as
 parameter), then the constant c(P) in β ≤ 1 − c(P)/log t as an explicit function of (c₀, c₁, Σc_k).
 λ²=28: N=168 row still pending (05:48).
+
+## S2921 — TrigPolyPositivityZeta.lean EXIT0 (2026-11-08 06:19 CST, HP center) — LANE 1: general-P positivity for −ζ'/ζ
+- `TrigPolyDLVP.trig_positivity_riemannZeta`: σ > 1, P(θ)=Σ_{k≤K} c_k cos(kθ) ≥ 0 ⟹ 0 ≤ Σ_k c_k Re(−ζ'/ζ)(σ+ikγ).
+  Generalizes §1358 (3-4-1) to arbitrary degree; proof = hasSum_sum over k of termwise S2920 + §1356 identification.
+- `p5841_positivity_riemannZeta`: the 5-8-4-1 instance.
+Next lane-1 brick: abstract the §1355 zero-free argument with P as a parameter — near a zero β+iγ the k=1 term
+contributes −c₁/(σ−β), the pole term c₀/(σ−1), the others ≤ c_k·A log t — giving β ≤ 1 − c(P)/log t with c(P)
+explicit in (c₀, c₁, Σ_{k≥2} c_k). λ²=28: N=168 still pending (06:19).
