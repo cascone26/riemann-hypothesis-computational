@@ -52337,3 +52337,12 @@ Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREE
 two-step (both ends) extension; the brick is the one-step leading-block form — apply twice with a permutation, or state for the
 symmetric embedding next cycle.)
 SESSION TALLY (HP center Lean): 18 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2910 (2026-11-08 00:27 CST, forge cycle) — LEAN BRICK: MatrixInterlaceAt.lean EXIT0 first try, gate GREEN — any-index deletion
+- `padAtIso p`: ℝ^m →ₗᵢ ℝ^{m+1}, insert 0 at position p (Fin.insertNth; norm via Fin.sum_univ_succAbove).
+- `compressionAt`: ⟪A'v,w⟫ = ⟪A(ι_p v), ι_p w⟫ for A' = A.submatrix (succAbove p) (succAbove p).
+- `min_eig_le_delete`: λ_min(A) ≤ λ_min(A') for deletion of ANY index p (via CauchyInterlaceIso.interlace_lower).
+Resolves S2909's caveat: the symmetric growth τ_{λ,N} ⊂ τ_{λ,N+1} (−N..N inside −N−1..N+1) = delete index 0, then the last index ⟹
+two applications ⟹ ε_{λ,N+1} ≤ ε_{λ,N}, hence μ_λ ≤ ε_{λ,N} ∀N, machine-verified for the actual CCM/Shi nesting.
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+SESSION TALLY (HP center Lean): 19 bricks, all gate-GREEN. λ²=28: still N=136 only.
