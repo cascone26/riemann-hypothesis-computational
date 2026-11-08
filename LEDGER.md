@@ -52438,3 +52438,14 @@ Cauchy/TP arc S2912–S2918 complete: det formula · positivity · TP · Cauchy�
 Remaining in this chain: (c) transfer zero-side TN → τ / μ_λ ≥ 0 (this IS the RH-equivalent step; the
 zero side is now fully controlled in Lean, so the open content concentrates on the arithmetic side W02−W_R−W_p).
 λ²=28: N=168 row still pending (05:14).
+
+## S2920 — TrigPolyTermNonneg.lean EXIT0 (2026-11-08 06:05 CST, HP center) — LANE 1: beyond 3-4-1
+- `TrigPolyDLVP.trig_term_combination_nonneg`: for ANY cosine polynomial P(θ)=Σ_{k≤K} c_k cos(kθ) ≥ 0 ∀θ,
+  Σ_k c_k · Re term(Λ)(σ + ikγ, n) ≥ 0 for every n (generalizes §1357's 3-4-1 case to arbitrary degree).
+- `term_re`: Re term(Λ)(σ+ib, n) = Λ(n) n^{-σ} cos(b log n) (clean closed form, reusable).
+- `p5841_nonneg`: 5 + 8cosθ + 4cos2θ + cos3θ = (1+cosθ)(1+2cosθ)² ≥ 0; `p5841_term_nonneg`: its Λ-combination ≥ 0.
+  Ratio c₁/c₀ = 8/5 = 1.6 vs 4/3 for 3-4-1 — this is the lever behind improved zero-free constants
+  (Stečkin/Kadiri/Mossinghoff–Trudgian). HANDLE.
+Next lane-1 bricks: sum over n ⟹ Σ c_k Re(−ζ'/ζ)(σ+ikγ) ≥ 0 for general P (lift §1357→§1355 pipeline with P as
+parameter), then the constant c(P) in β ≤ 1 − c(P)/log t as an explicit function of (c₀, c₁, Σc_k).
+λ²=28: N=168 row still pending (06:05).
