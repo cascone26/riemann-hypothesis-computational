@@ -52604,3 +52604,11 @@ hypothesis an explicit arithmetic condition on ordinates. `rayleigh_mono`, `trac
 and traces ↑, from S2937 Loewner monotonicity); `ccm_rayleigh_le`: xᵀG_ccm x ≤ (4/L)·xᵀ(CCᵀ)x; `ccm_trace_le`:
 tr G_ccm ≤ (4/L)·tr(CCᵀ). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional
 finite-truncation zero side.
+
+## S2940 — TrigPoly5841Scalar.lean EXIT0 (lane 1: 5-8-4-1 growth inputs in log-absorption form) — 2026-11-08 CST
+`cleanRHS_quarter_le` (σ-generic §1460): 1<σ≤2, |t|>1 ⇒ cleanRHS σ t (1/4) ≤ 32·log((3|t|+10)(3+1/(σ−1))).
+`zeta_region_5841_scalar`: at Rg=1/4, Rg'=1/2, using 1/(σ−1)=𝒦/ε, the growth hypotheses of S2938 become
+  32·log((3|2γ|+10)(3+𝒦/ε)) ≤ C₂,  32·log((3|3γ|+10)(3+𝒦/ε)) ≤ C₃   (|γ|>1),
+i.e. the (d·x+10)(3+…) shape with d=6 (log_sharp_close) and d=9 (log_sharp_close_wide/_3). Conclusion
+β ≤ 1 − ε(3−ε)/((5+ε)𝒦). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Next lane-1: instantiate
+C₂ = C₃ = 64·log|γ| with ε fixed, 𝒦/ε ≤ 6a+640·log|γ|, discharge via log_sharp_close; also the B (zero-input) sphere data.
