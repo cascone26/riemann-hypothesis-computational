@@ -52545,3 +52545,9 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - `ccm_form_le`: upper bracket xᵀGx ≤ (4/L)·‖Cᵀx‖².
 - HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: zero-side finite truncation with the actual CCM weights (RH-conditional in that γ real); arithmetic side W02−W_R−W_p and τ = zero-side identity still Report-tier.
 - λ²=28 (PID 1964): N=168 still pending at 11:5x.
+
+## S2932 — TrigPolyRegionPole.lean EXIT0 (lane 1: pole input discharged in the P-generic ζ region) — 2026-11-08 12:22 CST
+- `zeta_region_P_pole`: ∃ absolute A₀ ≥ 0 s.t. for EVERY nonnegative cosine polynomial P (c₀,c₁>0, c_k≥0), ε ∈ (0,𝒦], zero β+iγ with β<σ=1+ε/𝒦: zero input at iγ + growth inputs at ikγ ⇒ β ≤ 1 − ε(c₁−c₀−ε)/((c₀+ε)𝒦), 𝒦 = c₀A₀+c₁B+Σc_kC_k. Pole hypothesis eliminated via §1572 hpole_riemannZeta_box.
+- `Tz_zero` helper. Compiled first try.
+- HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Remaining for unconditional 5-8-4-1: zero input at iγ (tower partial-fraction bound) + growth constants instantiated (S2928 + S2930).
+- λ²=28: N=168 still pending at 12:2x.
