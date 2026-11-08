@@ -52457,3 +52457,13 @@ parameter), then the constant c(P) in β ≤ 1 − c(P)/log t as an explicit fun
 Next lane-1 brick: abstract the §1355 zero-free argument with P as a parameter — near a zero β+iγ the k=1 term
 contributes −c₁/(σ−β), the pole term c₀/(σ−1), the others ≤ c_k·A log t — giving β ≤ 1 − c(P)/log t with c(P)
 explicit in (c₀, c₁, Σ_{k≥2} c_k). λ²=28: N=168 still pending (06:19).
+
+## S2922 — TrigPolyZeroGap.lean EXIT0, gate GREEN (2026-11-08 06:52 CST, HP center) — LANE 1: P-parametrized zero-free region
+- `TrigPolyGap.gap_of_bounds`: 0 ≤ c₀T₀+c₁T₁+R, T₀ ≤ 1/(σ−1)+A, T₁ ≤ B−1/(σ−β), R ≤ D ⟹ σ−β ≥ c₁(σ−1)/(c₀+K(σ−1)),
+  K = c₀A+c₁B+D. (§1310 is the c₀=3, c₁=4 special case.)
+- `region_of_gap` / `region_of_bounds`: at σ = 1+ε/K, β ≤ 1 − ε(c₁−c₀−ε)/((c₀+ε)K) — the zero-free constant as an
+  explicit function of the polynomial. Compiled first try. HANDLE.
+Report-tier note (NOT a claim of improvement yet): raw c(P,ε)=ε(c₁−c₀−ε)/(c₀+ε) maxes ≈0.072 for 3-4-1 vs ≈0.35 for
+5-8-4-1, but K itself scales with the coefficients (A,B,D ∝ c_k log t), so the fair comparison is c(P)/(Σ_k c_k·weight_k);
+that normalization is the next brick, then wiring S2921 (positivity) + existing pole/zero/growth bounds as inputs.
+λ²=28: N=168 still pending (06:52).
