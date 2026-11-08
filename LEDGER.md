@@ -52375,3 +52375,13 @@ axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
 (each factor (x_n−x_i)>0, (y_n−y_j)>0, denominators >0) — TOTAL POSITIVITY of Cauchy matrices (all square submatrices are Cauchy) ⟹
 S2859's TP-band theorem.
 SESSION TALLY (HP center Lean): 22 bricks, all gate-GREEN.
+
+## S2914 (2026-11-08 02:35 CST, forge cycle) — LEAN BRICK: CauchyDetPos.lean EXIT0 first try, gate GREEN — CAUCHY DETERMINANT > 0
+`CauchyDet.det_cauchy_pos`: x, y : Fin n → ℝ strictly increasing, all x_i + y_j > 0 ⟹ det[1/(x_i+y_j)] > 0.
+Induction on n via det_cauchy_succ (S2913): every factor positive ((x_n−x_i), (y_n−y_j) > 0 by castSucc < last; denominators > 0).
+Since any k×k submatrix with increasing row/column choices is again such a Cauchy matrix, this is TOTAL POSITIVITY of Cauchy
+matrices — the engine of S2859's TP-band law (RH-conditional: parity blocks of τ = Cauchy-Gram in x=ν² with poles y=γ² above all nodes
+⟹ TP via Cauchy–Binet ⟹ Gantmacher–Krein simple spectrum). Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; GREEN.
+**Next:** Cauchy–Binet-style composition (sum of positive rank-one Cauchy products) ⟹ TP of the Gram S^± in the band; or a submatrix
+corollary (any increasing selection ⟹ minor > 0) as the explicit TP statement.
+SESSION TALLY (HP center Lean): 23 bricks, all gate-GREEN. λ²=28: still N=136 only.
