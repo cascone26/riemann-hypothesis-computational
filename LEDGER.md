@@ -52582,3 +52582,11 @@ Composes S2921 p5841_nonneg + S2932 zeta_region_P_pole + S2934 hzero_Tz + S2928 
 No abstract pole/zero/growth hypothesis remains. Axioms {propext, Classical.choice, Quot.sound}, gate GREEN 3/3, 0 sorry.
 HANDLE: compiled on Olympus. Remaining for unconditional σ>1−c/log t: discharge growthRHS ≤ C_k and B via S2930 log
 absorption (circularity 𝒦↔σ resolved as in 3-4-1 chain: 1/(σ−1)=𝒦/ε ≤ 640 log t).
+
+## S2937 — CCMLoewner.lean EXIT0 (lane 2: Loewner sandwich 0 ⪯ G_ccm ⪯ (4/L)·C·Cᵀ) — 2026-11-08 14:31 CST
+`CCMLoewner.gram_sub`: G_{w'} − G_w = C·diag(w'−w)·Cᵀ. `gram_mono`: w ≤ w' pointwise ⇒ G_{w'} − G_w PSD (Loewner monotonicity
+of the weighted Cauchy Gram). `ccm_gram_loewner_le`, `const_gram` (C·diag(a)·Cᵀ = a•(C·Cᵀ)), and
+`ccm_gram_sandwich`: G_ccm PSD ∧ (4/L)•(C·Cᵀ) − G_ccm PSD. Upgrades S2931's scalar form bound to a full operator
+inequality. Axioms {propext, Classical.choice, Quot.sound}, gate GREEN 5/5, 0 sorry. HANDLE: compiled on Olympus.
+Scope: RH-conditional finite-truncation zero side; arithmetic side W02−W_R−W_p not formalized. Fix note: a docstring
+containing "-/" closed the comment early (avoid "eigen-/..." in /-! blocks).
