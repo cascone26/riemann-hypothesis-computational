@@ -52478,3 +52478,14 @@ Reading in the CCM/Shi dictionary: a single certified negative value of τ's qua
 measures as μ_λ < 0) would certify failure of the on-line weight structure — the finite contrapositive of the Weil
 criterion, as Lean linear algebra. Conversely μ_λ ≥ 0 is what every Arb certificate (λ² ≤ 20) has confirmed.
 HANDLE. λ²=28: N=168 still pending (07:24).
+
+## S2924 — TrigPolyConstCompare.lean EXIT0 (2026-11-08 07:55 CST, HP center) — LANE 1: normalized constant, 5-8-4-1 > 3-4-1
+Normalization of S2922: with B ≈ a log t, D ≈ (Σ_{k≥2}c_k) a log t, K ≈ a log t (S−c₀), constant
+c*(P,ε) = ε(c₁−c₀−ε)/((c₀+ε)(S−c₀)). Numerics (HP python): max c* = 0.014359 (3-4-1, ε≈0.4641) vs 0.026991 (5-8-4-1, ε≈1.3246).
+Lean: `cstar_341_le` (∀ε>0, c*(3-4-1) ≤ 1/69, via discriminant 64²−4·69·15 < 0), `cstar_5841_val` (= 60/2223 at ε=4/3),
+`p5841_beats_341` (strict). HANDLE for the inequality between constants.
+Prior art (Report): higher-degree nonnegative cosine polynomials improving the dLVP constant is classical (Stečkin 1970,
+Kadiri 2005, Mossinghoff–Trudgian 2015) — this is a formalized instance, NOT a novelty claim. The forge's full
+pipeline still uses 3-4-1; next lane-1 brick = re-run the uniform region proof (ZetaZeroFreeUniform) with P as
+parameter so the improved constant propagates into the actual Lean region.
+λ²=28: N=168 still pending (07:55).
