@@ -52346,3 +52346,13 @@ Resolves S2909's caveat: the symmetric growth τ_{λ,N} ⊂ τ_{λ,N+1} (−N..N
 two applications ⟹ ε_{λ,N+1} ≤ ε_{λ,N}, hence μ_λ ≤ ε_{λ,N} ∀N, machine-verified for the actual CCM/Shi nesting.
 Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
 SESSION TALLY (HP center Lean): 19 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2911 (2026-11-08 01:00 CST, forge cycle) — LEAN BRICK: QuadratureWeightsPos.lean EXIT0, gate GREEN — quadrature weights ≥ 0
+- `exists_transpose_preimage`: C injective ⟹ ∀v ∃u, Cᵀu = v (left inverse via LinearMap.exists_leftInverse_of_injective + toMatrix').
+- `psd_of_sandwich`: T = C A Cᵀ ⪰ 0 (as a quadratic form) and C injective ⟹ A ⪰ 0.
+- `diag_nonneg`: ⟹ A_jj ≥ 0.
+With QuadratureDiagonal (S2896: A diagonal) and T = τ − λ_min I ⪰ 0, this machine-verifies S2868/S2870: τ − εI = Σ_j α_j c_{t_j}c_{t_j}ᵀ
+with **α_j ≥ 0** — the finite quadrature μ_N is a POSITIVE measure (CCM Lemma 5.4 in quadrature form, both halves now formal).
+3 fix rounds (mulVecLin has no toMatrix' lemma → switched to toLin'; nth_rewrite for one mulVec_transpose). Fresh recompile EXIT0;
+axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+SESSION TALLY (HP center Lean): 20 bricks, all gate-GREEN. λ²=28: still N=136 only.
