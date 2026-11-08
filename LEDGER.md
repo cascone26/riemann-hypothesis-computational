@@ -52211,3 +52211,15 @@ These are exactly the two halves of Cauchy interlacing. Fresh recompile EXIT0; a
 **Next:** Cauchy interlacing for a compression: for V ⊂ E of codim 1 and S = P_V T|_V with eigenvalues μ_0≥…≥μ_{n−2}:
 λ_{k+1} ≤ μ_k ≤ λ_k (take W = S-head/tail eigen-spans inside V, apply the two lemmas, ⟪Sx,x⟫=⟪Tx,x⟫ on V).
 λ²=28: no row yet.
+
+## S2899 (2026-11-07 19:29 CST, forge cycle — lane 2 infra) — LEAN BRICK: CauchyInterlacing.lean EXIT0, gate GREEN — CAUCHY INTERLACING PROVEN
+Absent from Mathlib; built on RayleighEigenTail (S2897) + CourantFischerMinMax (S2898). V ⊆ E, finrank V = m, finrank E = m+1,
+S : V →ₗ V symmetric with ⟪Sv,w⟫ = ⟪Tv,w⟫ (compression of symmetric T), eigenvalues sorted decreasingly:
+- `interlace_upper`: μ_k(S) ≤ λ_k(T)   (S-head span {c_i : i≤k}, dim k+1 → `exists_le_eigenvalue` + `rayleigh_head_ge`)
+- `interlace_lower`: λ_{k+1}(T) ≤ μ_k(S) (S-tail span {c_i : i≥k}, dim m−k → `exists_ge_eigenvalue` + `rayleigh_tail_le`)
+Helpers: `inner_eq_zero_of_mem_span` (orthonormal span ⟂ others), `finrank_span_sub`, `finrank_map_subtype`.
+Compiled on Olympus (1 fix: redundant omega); fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN 5/5.
+**Opens:** every ingredient of S2884 is now available in the forge — displacement swap (S2885) + triangularity bookkeeping +
+Cauchy interlacing (this) ⟹ next: state and prove S2884 itself in Lean (B lower-triangular ⟹ B_N B_Nᵀ principal compression
+of B_{N+1}B_{N+1}ᵀ ⟹ one-step interlacing of the pencil's θ's ⟹ monotone limits given positivity).
+SESSION TALLY (HP center Lean): S2861, S2862, S2885, S2896, S2897, S2898, S2899 — 7 bricks, all gate-GREEN.
