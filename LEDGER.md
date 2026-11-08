@@ -52294,3 +52294,14 @@ product is one instance; its existence is classical and not separately formalize
 Courant–Fischer · S2899/S2901/S2902 Cauchy interlacing (subspace / isometry / matrix) · S2900 block-lower Gram · S2903 θ² interlacing
 · S2904 parity displacement · S2905 lower-triangularity + capstone.
 SESSION TALLY (HP center Lean): 14 bricks, all gate-GREEN. λ²=28: still N=136 only (5.95e-134).
+
+## S2906 (2026-11-07 22:38 CST, forge cycle) — LEAN BRICK: PencilMonotoneLimit.lean EXIT0 first try, gate GREEN — S2884 COROLLARY (monotone limits)
+e M k = k-th largest squared pencil eigenvalue at level M; capstone ⟹ e(M+1)(k+1) ≤ e M k. Reindex g j n := e(n+j+1) n (j-th SMALLEST).
+- `g_antitone`: each g j is antitone in the level.
+- `g_tendsto`: if all values ≥ 0 (pencil positivity), ∃ l ≥ 0 with g j → l and l ≤ g j n ∀n — **the j-th smallest squared pencil
+  eigenvalue converges as N→∞**, unconditionally given positivity (numerically the limit is γ_j², from above — S2883).
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**Formal status of the CCM/Shi monotone-limit program:** existence of limits is now machine-verified given (i) S ≻ 0 (certifiable per
+(λ,N), S2880/81/88) and (ii) S-orthonormal nested families (Gram–Schmidt, classical). IDENTIFICATION of the limit with γ_j² remains
+the crux (⟺ μ_λ→0 ⟺ RH, S2886).
+SESSION TALLY (HP center Lean): 15 bricks, all gate-GREEN. λ²=28: still only N=136.
