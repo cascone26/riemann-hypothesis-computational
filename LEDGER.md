@@ -52467,3 +52467,14 @@ Report-tier note (NOT a claim of improvement yet): raw c(P,ε)=ε(c₁−c₀−
 5-8-4-1, but K itself scales with the coefficients (A,B,D ∝ c_k log t), so the fair comparison is c(P)/(Σ_k c_k·weight_k);
 that normalization is the next brick, then wiring S2921 (positivity) + existing pole/zero/growth bounds as inputs.
 λ²=28: N=168 still pending (06:52).
+
+## S2923 — GramWeilForm.lean EXIT0 (2026-11-08 07:24 CST, HP center) — LANE 2: finite Weil form of the zero side
+For G = C·diag(w)·Cᵀ (any real C):
+- `GramWeil.quad_form`: xᵀGx = Σ_j w_j (Cᵀx)_j².
+- `psd_of_nonneg` / `posSemidef_of_nonneg` (Mathlib PosSemidef): w ≥ 0 ⟹ G PSD.
+- `pos_of_pos`: w > 0 and Cᵀ injective ⟹ G positive definite.
+- `neg_weight_of_neg_form` (CERTIFICATE): ∃x, xᵀGx < 0 ⟹ ∃j, w_j < 0.
+Reading in the CCM/Shi dictionary: a single certified negative value of τ's quadratic form (what the Arb certifier
+measures as μ_λ < 0) would certify failure of the on-line weight structure — the finite contrapositive of the Weil
+criterion, as Lean linear algebra. Conversely μ_λ ≥ 0 is what every Arb certificate (λ² ≤ 20) has confirmed.
+HANDLE. λ²=28: N=168 still pending (07:24).
