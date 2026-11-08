@@ -52365,3 +52365,13 @@ diag((x_n−x_i)/(x_i+y_n)) · C · diag((y_n−y_j)/(x_n+y_j)). Fresh recompile
 **Next (step 2):** reindex Fin(n+1) ≃ Fin n ⊕ Fin 1, det_fromBlocks₂₂ with 1×1 invertible block, det of diagonal products ⟹
 det C_{n+1} = (x_n+y_n)⁻¹ Π_i u_i Π_j v_j det C_n; step 3: induction to the closed form.
 SESSION TALLY (HP center Lean): 21 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2913 (2026-11-08 02:04 CST, forge cycle) — LEAN BRICK: CauchyDetStep.lean EXIT0, gate GREEN — Cauchy determinant, step 2 (recursion)
+`CauchyDet.det_cauchy_succ`: det C_{n+1}(x,y) = (x_n+y_n)⁻¹ · Π_i (x_n−x_i)/(x_i+y_n) · det C_n(x',y') · Π_j (y_n−y_j)/(x_n+y_j)
+(over any field, all x_i+y_j ≠ 0). Proof: finSumFinEquiv reindex → fromBlocks (blocks by rfl), det_fromBlocks₂₂ with invertible 1×1 block
+(inverse checked by fin_cases), Schur complement = diag·C_n·diag (S2912), det_mul + det_diagonal. 3 fix rounds. Fresh recompile EXIT0;
+axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**Next (step 3):** induction ⟹ closed form; then the sign corollary: x increasing, y increasing, all x_i + y_j > 0 ⟹ det C > 0
+(each factor (x_n−x_i)>0, (y_n−y_j)>0, denominators >0) — TOTAL POSITIVITY of Cauchy matrices (all square submatrices are Cauchy) ⟹
+S2859's TP-band theorem.
+SESSION TALLY (HP center Lean): 22 bricks, all gate-GREEN.
