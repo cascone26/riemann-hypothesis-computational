@@ -52558,3 +52558,9 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - `ccm_gram_eig_pos`: every eigenvalue > 0 (strictly positive zero-side margin on the truncation).
 - HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: RH-conditional (γ real), finite truncation, zero side only; transfer to τ via the arithmetic side still open.
 - λ²=28: N=168 still pending at 12:5x.
+
+## S2934 — HzeroAtPoint.lean EXIT0 (lane 1: point-generic ζ zero input at σ+iγ) — 2026-11-08 13:25 CST
+- `hzero_at_point`: σ>1, zero ρ₀=β+iγ with β<σ, ρ₀ ∈ closedBall(σ+iγ, R/2) ∩ ball(·,R'), 1 ∉ ball(σ+iγ,R'), sphere bound ‖ζ‖≤Ms<Mζ on the R-sphere, 4log(Mζ/‖ζ(σ+iγ)‖)/(R/2) ≤ B ⇒ Re(−ζ'/ζ)(σ+iγ) ≤ B − 1/(σ−β). Extracted from the §1425/§1409 chain (previously only at σK=1+1/(2K)).
+- `TrigPolyRegion.hzero_Tz` / `Tz_one`: same as the `hzero` hypothesis of S2926/S2932.
+- HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. All three analytic inputs of the P-generic region are now compiled lemmas: pole (S2932), zero (S2934), growth (S2928 + S2930). Next: one composite theorem for 5-8-4-1 at σ=1+ε/𝒦 with the sphere data instantiated (ZetaSphereN1 / log_sharp_close_wide).
+- λ²=28: N=168 still pending at 13:3x.
