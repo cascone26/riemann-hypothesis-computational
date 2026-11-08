@@ -52489,3 +52489,11 @@ Kadiri 2005, Mossinghoff–Trudgian 2015) — this is a formalized instance, NOT
 pipeline still uses 3-4-1; next lane-1 brick = re-run the uniform region proof (ZetaZeroFreeUniform) with P as
 parameter so the improved constant propagates into the actual Lean region.
 λ²=28: N=168 still pending (07:55).
+
+## S2925 — GramTruncation.lean EXIT0, gate GREEN 6/6 (2026-11-08 08:28 CST, HP center) — LANE 2: zero-sum truncation control
+For the zero-side form xᵀ(C·diag(w)·Cᵀ)x: `form_mono` (Loewner-monotone in w), `form_add` (additive in w),
+`form_split` (kept zeros s + tail sᶜ), `col_sq_le` (Cauchy–Schwarz on a column), `tail_le`, and
+`bracket`: Σ_{j∈s} w_j(Cᵀx)_j² ≤ form ≤ Σ_{j∈s} w_j(Cᵀx)_j² + T‖x‖², T = Σ_{j∉s} w_j Σ_i C_ij².
+Use: a computed partial zero sum + an explicit tail T (dictionary: T ≤ (4/L)·N·Σ_{γ>Γ} 1/γ² ≈ O(N log Γ/Γ)) brackets
+the full zero side rigorously — the Lean form of the zero-truncation error bars our Arb pipeline uses. HANDLE.
+λ²=28: N=168 still pending (08:28).
