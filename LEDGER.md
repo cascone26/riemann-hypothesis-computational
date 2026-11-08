@@ -52316,3 +52316,13 @@ form, using gramSchmidt_orthogonal only on generators. Fresh recompile EXIT0; ax
 **Consequence:** S2884's family hypotheses are now DERIVED from S ≻ 0 (taking f = od in frequency order, K_j = f '' Iic j); the
 monotone-limit existence (S2906) depends only on certifiable positivity. (Even-side E_i: same construction on evc.)
 SESSION TALLY (HP center Lean): 16 bricks, all gate-GREEN.
+
+## S2908 (2026-11-07 23:33 CST, forge cycle) — LEAN BRICK: PencilTriangularPosDef.lean EXIT0, gate GREEN — triangularity from POSITIVITY ALONE
+`PencilPD.lower_triangular_of_posDef`: S ≻ 0, odd ν with ν(center)=0, Shi displacement, any frequency ordering freq ⟹ for the canonical
+S-Gram–Schmidt families E = gsS(evc∘freq), O = gsS(od∘freq):  E_iᵀ(S·diag ν)O_j = 0 for i < j. All family hypotheses of
+PencilTri.lower_triangular discharged by SGS (S2907) with K_i = freq '' Iic i. 1 fix (image composition → Set.image_image).
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**Status of the formal CCM/Shi monotone-limit chain:** input = S ≻ 0 (certifiable) + displacement structure (Shi 3.31, an identity of
+the explicit-formula matrix) ⟹ lower-triangular pencil (S2908) ⟹ one-step θ² interlacing (S2903/S2905) ⟹ monotone convergent
+j-th eigenvalues (S2906). Identification of limits with γ_j² = the crux (μ_λ→0 ⟺ RH).
+SESSION TALLY (HP center Lean): 17 bricks, all gate-GREEN. λ²=28: still N=136 only.
