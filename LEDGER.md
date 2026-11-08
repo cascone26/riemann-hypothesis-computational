@@ -52506,3 +52506,11 @@ analogue of §1310. Compiled first try. HANDLE.
 Remaining to propagate 5-8-4-1 into the unconditional sharp region: discharge the three inputs with the existing
 tower's lemmas (the 2iγ explicit-log bound §1452 is point-generic; the 3iγ instance is the same lemma at |3γ|).
 λ²=28: N=168 still pending (09:00).
+
+## S2927 — GramPerturb.lean EXIT0, gate GREEN 3/3 (2026-11-08 09:33 CST, HP center) — LANE 2: margin stability
+- `GramPert.form_sub`: form(w') − form(w) = Σ_j (w'_j − w_j)(Cᵀx)_j².
+- `form_perturb`: |w'_j − w_j| ≤ δ_j ⟹ |form(w') − form(w)| ≤ (Σ_j δ_j Σ_i C_ij²)‖x‖².
+- `margin_stable`: a certified margin μ at w gives μ − Σ_j δ_j Σ_i C_ij² at w'.
+With S2925 (truncation bracket) this is the full Lean error-budget for the zero side: truncation tail + weight error
+(e.g. from finite-precision γ_j, w_j = 4sin²(γ_jL/2)/L) both enter as explicit additive margin losses. HANDLE.
+λ²=28: N=168 still pending (09:33); process PID 1964 alive.
