@@ -52572,3 +52572,13 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - Fix log: `diag` was ambiguous; switched to explicit Matrix.trace unfold + mul_apply, closed the residual entry goal with simp [diagonal_apply]; ring.
 - HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: finite truncation, zero side.
 - λ²=28: N=168 still pending at 14:0x.
+
+## S2936 — TrigPoly5841Region.lean EXIT0 (lane 1: 5-8-4-1 region as ONE composite theorem) — 2026-11-08 14:01 CST
+`TrigPoly5841.zeta_region_5841`: ∃ absolute A₀ ≥ 0 s.t. with 𝒦 = 5A₀+8B+4C₂+C₃, σ = 1+ε/𝒦 (0<ε≤𝒦), every ζ zero
+β+iγ with β<σ satisfying BC sphere data at σ+iγ (R<R', 1∉ball, ρ₀∈closedBall(R/2), ‖ζ‖≤Ms<Mζ on sphere, 4log(Mζ/‖ζ(σ+iγ)‖)/(R/2)≤B)
+and growth scalars growthRHS(σ,2γ,Rg) ≤ C₂, growthRHS(σ,3γ,Rg) ≤ C₃ (0<Rg<1, Rg<Rg'≤|2γ|) obeys
+  β ≤ 1 − ε(3−ε)/((5+ε)𝒦).
+Composes S2921 p5841_nonneg + S2932 zeta_region_P_pole + S2934 hzero_Tz + S2928 growth_Tz (|3γ|≥|2γ| for k=3).
+No abstract pole/zero/growth hypothesis remains. Axioms {propext, Classical.choice, Quot.sound}, gate GREEN 3/3, 0 sorry.
+HANDLE: compiled on Olympus. Remaining for unconditional σ>1−c/log t: discharge growthRHS ≤ C_k and B via S2930 log
+absorption (circularity 𝒦↔σ resolved as in 3-4-1 chain: 1/(σ−1)=𝒦/ε ≤ 640 log t).
