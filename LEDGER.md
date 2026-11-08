@@ -52326,3 +52326,14 @@ Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREE
 the explicit-formula matrix) ⟹ lower-triangular pencil (S2908) ⟹ one-step θ² interlacing (S2903/S2905) ⟹ monotone convergent
 j-th eigenvalues (S2906). Identification of limits with γ_j² = the crux (μ_λ→0 ⟺ RH).
 SESSION TALLY (HP center Lean): 17 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2909 (2026-11-07 23:59 CST, forge cycle — crux-side) — LEAN BRICK: MinEigenMonotone.lean EXIT0 first try, gate GREEN — ε_N NON-INCREASING
+- `MinEig.min_eig_le_submatrix`: λ_min(A) ≤ λ_min(A.submatrix castSucc castSucc) for real symmetric A (case k = m−1 of S2902).
+- `MinEig.submatrix_min_ge`: any lower bound on λ_min(A) passes to the principal submatrix.
+For the nested Weil matrices τ_{λ,N} this machine-verifies ε_{λ,N+1} ≤ ε_{λ,N} and hence μ_λ ≤ ε_{λ,N} ∀N — the exact inference used in
+S2893 (μ_{√20} ≤ ε_104 = 1.44e-95 < 5e-95 ⟹ Zhu-form falsified, independent of larger N) and every margin-floor bracket S2887–S2895.
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+(Caveat recorded: τ_{λ,N} ⊂ τ_{λ,N+1} as a principal submatrix needs the symmetric index embedding −N..N ⊂ −N−1..N+1, i.e. a
+two-step (both ends) extension; the brick is the one-step leading-block form — apply twice with a permutation, or state for the
+symmetric embedding next cycle.)
+SESSION TALLY (HP center Lean): 18 bricks, all gate-GREEN. λ²=28: still N=136 only.
