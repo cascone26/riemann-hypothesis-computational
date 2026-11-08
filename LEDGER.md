@@ -52356,3 +52356,12 @@ with **α_j ≥ 0** — the finite quadrature μ_N is a POSITIVE measure (CCM Le
 3 fix rounds (mulVecLin has no toMatrix' lemma → switched to toLin'; nth_rewrite for one mulVec_transpose). Fresh recompile EXIT0;
 axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
 SESSION TALLY (HP center Lean): 20 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2912 (2026-11-08 01:32 CST, forge cycle) — LEAN BRICK: CauchyDetSchur.lean EXIT0 first try, gate GREEN — Cauchy determinant, step 1
+Cauchy determinant formula det[1/(x_i+y_j)] = Π_{i<j}(x_j−x_i)(y_j−y_i)/Π(x_i+y_j) is ABSENT from Mathlib (checked) and the forge had only
+nonvanishing (CauchyMatrixDet2x2/3x3/General). Needed for S2859's TP-band theorem (TP of Cauchy kernels ⟹ Gantmacher–Krein simplicity).
+Step 1 proven: `schur_entry` (field_simp; ring) and `schur_matrix`: the Schur complement of the last row/column of a Cauchy matrix is
+diag((x_n−x_i)/(x_i+y_n)) · C · diag((y_n−y_j)/(x_n+y_j)). Fresh recompile EXIT0; axioms clean; gate GREEN.
+**Next (step 2):** reindex Fin(n+1) ≃ Fin n ⊕ Fin 1, det_fromBlocks₂₂ with 1×1 invertible block, det of diagonal products ⟹
+det C_{n+1} = (x_n+y_n)⁻¹ Π_i u_i Π_j v_j det C_n; step 3: induction to the closed form.
+SESSION TALLY (HP center Lean): 21 bricks, all gate-GREEN. λ²=28: still N=136 only.
