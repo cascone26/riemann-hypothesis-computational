@@ -52174,3 +52174,16 @@ In the free-zero picture: a roughly CONSTANT cost per free zero, κ ≈ 12.3.
 **PAUSED 2026-11-05 08:08 CST by Jacob.** Loop stopped; the λ²=28 run (S2895 pre-registration) was killed seconds after launch — relaunch with: python operators/hp_mu_lambda.py 28:136:640 28:152:720 28:168:800. Resume point = this LEDGER tail.
 
 **RESUMED 2026-11-07 17:42 CST by Jacob.** λ²=28 run relaunched per the pause marker (python operators/hp_mu_lambda.py 28:136:640 28:152:720 28:168:800 → results/hp_center/mu_lambda28.txt; tests S2895 pre-registration: slope 20→28 ∈ [12.3,12.7], μ_{√28} ≈ 1e-139 ×10). Previously-untracked artifacts committed (raw paper texts, oracle matrices, envelope/rate JSON). Autonomous RH Forge Protocol re-armed via ScheduleWakeup (standing cron prompt, AUTONOMOUS_FORGE_PROTOCOL.md).
+
+## S2896 (2026-11-07 18:07 CST, forge protocol cycle — lane 2 / Weil-positivity frontier) — LEAN BRICK: QuadratureDiagonal.lean EXIT0, gate GREEN
+Generic linear-algebra form of S2868 (= quadrature face of CCM 2511.22755 Lemma 5.4):
+- `QuadDiag.theta_comm`: D,Θ,A symmetric; DT−TD = b1ᵀ−1bᵀ (Shi 3.31 displacement); T = CACᵀ; DC+CΘ = J (Cauchy columns);
+  C injective; ∃u, Cᵀu = 0 ∧ Σu ≠ 0 (Shi's he_sum / CCM's ⟨δ|ξ⟩=1) ⟹ **AΘ = ΘA**.
+  Proof: C(AΘ−ΘA)Cᵀ = w1ᵀ−1wᵀ with w = b + CA1; applying to u forces w ∥ 1 ⟹ RHS = 0; injectivity ⟹ AΘ=ΘA.
+- `QuadDiag.A_diagonal`: Θ = diag(θ), θ injective ⟹ A_ij = 0 for i≠j.
+Compiled on Olympus (3 fix rounds: helper-lemma index types, mulVec chaining, two over-closed goals); fresh recompile EXIT0;
+#print axioms both = [propext, Classical.choice, Quot.sound]; axiom_gate GREEN. HANDLE.
+Lane-1 status check this cycle: sharp dLVP region already proven (`riemannZeta_zero_free_region_sharp`, §1462) with its
+log-growth/truncated-representation chain (§1269, §1286) — lane 1's stated target is closed; next lane-1 target = beyond-dLVP.
+λ²=28 run: no row yet (first row N=136 at 640 digits — hours).
+SESSION TALLY (HP center Lean): S2861, S2862, S2885, S2896 — all gate-GREEN.
