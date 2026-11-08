@@ -52385,3 +52385,12 @@ matrices — the engine of S2859's TP-band law (RH-conditional: parity blocks of
 **Next:** Cauchy–Binet-style composition (sum of positive rank-one Cauchy products) ⟹ TP of the Gram S^± in the band; or a submatrix
 corollary (any increasing selection ⟹ minor > 0) as the explicit TP statement.
 SESSION TALLY (HP center Lean): 23 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2915 (2026-11-08 03:06 CST, forge cycle) — LEAN BRICK: CauchyTP.lean EXIT0, gate GREEN — TOTAL POSITIVITY of Cauchy matrices
+`CauchyTP.minor_pos`: x : Fin n → ℝ, y : Fin m → ℝ strictly increasing, x_i + y_j > 0 ⟹ every k×k minor with strictly increasing row and
+column selections is > 0 (submatrix = cauchy (x∘r)(y∘c), then det_cauchy_pos S2914). `entry_pos`: 1×1 case.
+1 fix (noncomputable def). Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN 4/4.
+**Cauchy arc complete (S2912–S2915):** Schur identity → recursion → det > 0 → total positivity — none of which was in Mathlib or the forge.
+**Next:** composition with a positive diagonal weight (Cauchy–Binet: C·W·Cᵀ minors = Σ of products of positive Cauchy minors × positive
+weights) ⟹ TP of the Gram matrices S^± in the band ν_N < γ₁ — the S2859 band theorem (RH-conditional form) in Lean.
+SESSION TALLY (HP center Lean): 24 bricks, all gate-GREEN. λ²=28: still N=136 only.
