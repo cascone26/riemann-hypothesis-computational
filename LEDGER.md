@@ -52416,3 +52416,16 @@ Pre-registration band (from μ_{√20}=e^{−220.9}, slope ∈ [12.3,12.7]): −
 ε_152 is an upper bound above the band ⟹ consistent, undecided. N=168 row decides it.
 Next brick (S2918): Cauchy–Binet with diagonal weight ⟹ every minor of C·diag(w)·Cᵀ (w>0, Cauchy C) is positive
 ⟹ TP of the Gram matrices in the band ν_N < γ₁ (S2859).
+
+## S2918 — CauchyGramTP.lean EXIT0, gate GREEN 2/2 — WEIGHTED CAUCHY GRAM MATRICES ARE TOTALLY POSITIVE (2026-11-08 04:50 CST, HP center)
+- `CauchyGram.gram_minor_pos`: C_ij = 1/(x_i+y_j), x,y strictly increasing, x_i+y_j>0, w>0, k ≤ m ⟹
+  every k×k minor (rows r, cols c strictly increasing) of G = C·diag(w)·Cᵀ is > 0.
+- `gram_principal_minor_pos`: principal case.
+Proof: G[r,c] = (C[r,:]·diag w)·(C[c,:])ᵀ; Cauchy–Binet (S2917) ⟹ Σ_S det C[r,S]·Πw_S·det C[c,S], every term > 0 by
+Cauchy TP (S2915); index set nonempty via Fin.castLEEmb. HANDLE.
+**Scope (Report vs Handle):** this is the finite-truncation, RH-conditional zero-side statement — with x = ν_m, y = γ
+(zeros sorted), w_ρ = 4 sin²(γL/2)/L > 0, the zero-side matrix S of CCM τ ≡ Shi S_{N,L} is such a G, so its truncations
+are TP. Not yet in Lean: (a) passage to the infinite zero sum (limits of TP minors are ≥ 0; strictness needs one
+term); (b) the w_ρ = 0 edge (sin(γL/2)=0) — strict positivity needs ≥ k zeros with w_ρ > 0; (c) the transfer to τ.
+Cauchy/TP arc S2912–S2918 complete: det formula · positivity · TP · Cauchy–Binet (2 bricks) · Gram TP.
+λ²=28: no N=168 row yet (04:42).
