@@ -52590,3 +52590,10 @@ of the weighted Cauchy Gram). `ccm_gram_loewner_le`, `const_gram` (C·diag(a)·C
 inequality. Axioms {propext, Classical.choice, Quot.sound}, gate GREEN 5/5, 0 sorry. HANDLE: compiled on Olympus.
 Scope: RH-conditional finite-truncation zero side; arithmetic side W02−W_R−W_p not formalized. Fix note: a docstring
 containing "-/" closed the comment early (avoid "eigen-/..." in /-! blocks).
+
+## S2938 — TrigPoly5841Clean.lean EXIT0 (lane 1: 5-8-4-1 region with norm-free growth hypotheses) — 2026-11-08 CST
+`TrigPoly5841.cleanRHS σ t R := 4·log((3+1/(|t|−R)+(σ+|t|+R)/(σ−R))·(3+1/(σ−1)))/(R/2)`; `growthRHS_le_clean` (via §1452
+hByscalar_of_explicit); `zeta_region_5841_clean`: S2936 with the growth hypotheses replaced by the real scalar
+inequalities cleanRHS σ (2γ) Rg ≤ C₂, cleanRHS σ (3γ) Rg ≤ C₃ (|3γ| ≥ |2γ| > Rg derived). Same conclusion
+β ≤ 1 − ε(3−ε)/((5+ε)𝒦). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Next lane-1 brick: discharge
+cleanRHS ≤ C_k with C_k = c·log|γ| via log_sharp_close (d=4/6 heights 2γ,3γ) under 1/(σ−1)=𝒦/ε bound.
