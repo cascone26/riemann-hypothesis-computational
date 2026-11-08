@@ -52235,3 +52235,13 @@ principal submatrix = compression to V = span{e_0..e_{m-1}} (finrank m) ⟹ Cauc
 of A vs A.submatrix castSucc castSucc; (b) instantiate A = B_{N+1}B_{N+1}ᵀ via S2900 ⟹ θ² interlacing; (c) the triangularity of B from
 the displacement swap (S2885) + parity/Gram–Schmidt bookkeeping (the longest remaining piece).
 SESSION TALLY (HP center Lean): 8 bricks, all gate-GREEN.
+
+## S2901 (2026-11-07 20:23 CST, forge cycle — S2884 roadmap step (a)) — LEAN BRICK: CauchyInterlacingIso.lean EXIT0 first try, gate GREEN
+Cauchy interlacing through a LINEAR ISOMETRY ι : F →ₗᵢ E (generalizes S2899's subspace form): finrank F = m, finrank E = m+1,
+S on F with ⟪Sv,w⟫ = ⟪T(ιv), ιw⟫ ⟹ `interlace_upper` μ_k ≤ λ_k, `interlace_lower` λ_{k+1} ≤ μ_k. Avoids eigenvalue transport
+(charpoly) entirely — for matrices take F=ℝ^m, E=ℝ^{m+1}, ι = extension by zero, S = A.submatrix castSucc castSucc, T = A.
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**Next (roadmap a→b):** construct ι (EuclideanSpace (Fin m) → EuclideanSpace (Fin (m+1)), extend by zero at last) as a LinearIsometry,
+prove the compression identity for A' = A.submatrix castSucc castSucc, and conclude matrix Cauchy interlacing; then instantiate with
+A = B Bᵀ via BlockLowerGram (S2900).
+SESSION TALLY (HP center Lean): 9 bricks, all gate-GREEN. λ²=28: no row yet.
