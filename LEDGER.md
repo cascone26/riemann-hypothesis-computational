@@ -52597,3 +52597,10 @@ hByscalar_of_explicit); `zeta_region_5841_clean`: S2936 with the growth hypothes
 inequalities cleanRHS σ (2γ) Rg ≤ C₂, cleanRHS σ (3γ) Rg ≤ C₃ (|3γ| ≥ |2γ| > Rg derived). Same conclusion
 β ≤ 1 − ε(3−ε)/((5+ε)𝒦). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Next lane-1 brick: discharge
 cleanRHS ≤ C_k with C_k = c·log|γ| via log_sharp_close (d=4/6 heights 2γ,3γ) under 1/(σ−1)=𝒦/ε bound.
+
+## S2939 — CCMResonance.lean EXIT0 (lane 2: CCM weight resonance set + Rayleigh/trace monotonicity) — 2026-11-08 CST
+`ccmW_eq_zero_iff` (L>0): w_γ = 0 ↔ ∃ k∈ℤ, γL = 2kπ; `ccmW_pos_iff`: w_γ > 0 ↔ γL ∉ 2πℤ — makes S2933's no-resonance
+hypothesis an explicit arithmetic condition on ordinates. `rayleigh_mono`, `trace_mono` (weights ↑ ⇒ Rayleigh forms
+and traces ↑, from S2937 Loewner monotonicity); `ccm_rayleigh_le`: xᵀG_ccm x ≤ (4/L)·xᵀ(CCᵀ)x; `ccm_trace_le`:
+tr G_ccm ≤ (4/L)·tr(CCᵀ). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional
+finite-truncation zero side.
