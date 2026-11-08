@@ -52429,3 +52429,12 @@ are TP. Not yet in Lean: (a) passage to the infinite zero sum (limits of TP mino
 term); (b) the w_ρ = 0 edge (sin(γL/2)=0) — strict positivity needs ≥ k zeros with w_ρ > 0; (c) the transfer to τ.
 Cauchy/TP arc S2912–S2918 complete: det formula · positivity · TP · Cauchy–Binet (2 bricks) · Gram TP.
 λ²=28: no N=168 row yet (04:42).
+
+## S2919 — CauchyGramLimit.lean EXIT0 (2026-11-08 05:20 CST, HP center) — gaps (a),(b) of S2918 closed
+- `CauchyGramLim.gram_minor_nonneg`: w ≥ 0 (allows w_ρ = 0, i.e. sin(γL/2)=0) ⟹ every minor of C·diag(w)·Cᵀ ≥ 0.
+- `minor_nonneg_of_tendsto`: minor ≥ 0 is closed under entrywise matrix limits (continuity of det∘submatrix).
+- `gram_limit_TN`: if truncated weighted Cauchy Grams (any growing zero lists y_N, weights w_N ≥ 0) converge to G₀,
+  then G₀ is totally nonnegative. ⟹ RH-conditional: the full zero-side S of CCM τ ≡ Shi S_{N,L} is TN.
+Remaining in this chain: (c) transfer zero-side TN → τ / μ_λ ≥ 0 (this IS the RH-equivalent step; the
+zero side is now fully controlled in Lean, so the open content concentrates on the arithmetic side W02−W_R−W_p).
+λ²=28: N=168 row still pending (05:14).
