@@ -52514,3 +52514,13 @@ tower's lemmas (the 2iγ explicit-log bound §1452 is point-generic; the 3iγ in
 With S2925 (truncation bracket) this is the full Lean error-budget for the zero side: truncation tail + weight error
 (e.g. from finite-precision γ_j, w_j = 4sin²(γ_jL/2)/L) both enter as explicit additive margin losses. HANDLE.
 λ²=28: N=168 still pending (09:33); process PID 1964 alive.
+
+## S2928 — GrowthAtKGamma.lean EXIT0 (2026-11-08 10:05 CST, HP center) — LANE 1: growth input at every kγ
+- `GrowthK.growth_at`: σ>1, 0<R<1, R<R'≤|t| ⟹ Re(−ζ'/ζ)(σ+it) ≤ 4log((Ms+1)(3+1/(σ−1)))/(R/2), Ms explicit
+  (composes §1555 + §1447 + §1371 + abs_le_norm_center_sub_one).
+- `growth_Tz`: the same at t = kγ in S2926's `Tz` form ⟹ discharges S2926's `hgrowth` for every k ≥ 2 — including the
+  3iγ term needed by 5-8-4-1 (absent from the 3-4-1 tower). HANDLE.
+Remaining for the unconditional 5-8-4-1 region: the pole input (hA_pole tower lemma, P-independent) and the zero input
+at iγ (the tower's partial-fraction bound), then the log-absorption at |3γ| (log_sharp_close with d=9).
+Repo sync: ZetaSphereN1.lean / PoleAvoidGeom.lean pulled from Olympus into the HP repo (were Olympus-only).
+λ²=28: N=168 still pending (10:05).
