@@ -52629,3 +52629,9 @@ log_sharp_close (d=6), at 3γ by log_sharp_close_wide (d=9). Axioms std, gate GR
 Remaining hypothesis: zero-input sphere data at σ+iγ (the iγ term, d=3 analogue — discharged in the 3-4-1 chain by the
 ZetaSphereN1/PoleAvoidGeom + log_sharp_close d=3 route; port next). Constant: 9/26/832 ≈ 4.16e-4 (vs 3-4-1 1/(14·(4+1))·…);
 optimizing ε and the 64 slack is a later tuning brick.
+
+## S2943 — CCMWeightShape.lean EXIT0 (lane 2: shape of the CCM/Shi weight) — 2026-11-08 CST
+`ccmW_eq_cos`: w_γ = 2(1−cos γL)/L (Fejér/1−cos kernel form); `ccmW_periodic` (L≠0): w(γ+2π/L) = w(γ);
+`ccmW_le_sq` (L>0): w_γ ≤ L·γ² (quadratic vanishing at γ=0); `ccmW_le_min`: w_γ ≤ min(4/L, Lγ²) — two-regime
+envelope for splitting low-lying vs high zeros in the zero-side Gram. Axioms std, gate GREEN, 0 sorry.
+HANDLE: compiled on Olympus. Scope: weight-level facts (unconditional); zero-side use is RH-conditional finite truncation.
