@@ -52202,3 +52202,12 @@ Quot.sound]; gate GREEN. HANDLE.
 **Next (half 2):** dimension-count step — any subspace W with dim W ≥ k+1 meets span{b_k..b_{n-1}} nontrivially ⟹
 max_{x∈W} Rayleigh ≥ λ_k (max-min form); then Cauchy interlacing for a codimension-1 restriction.
 λ²=28: no row yet.
+
+## S2898 (2026-11-07 19:02 CST, forge cycle — lane 2 infra) — LEAN BRICK: CourantFischerMinMax.lean EXIT0 first try, gate GREEN (Courant–Fischer, half 2)
+- `exists_orth_of_card_lt`: |S| < dim W ⟹ ∃ x∈W, x≠0, x ⊥ b_i ∀ i∈S (rank–nullity on W → (S→ℝ), x ↦ (⟪b_i,x⟫)).
+- `exists_le_eigenvalue`: dim W ≥ k+1 ⟹ ∃ x∈W∖0, ⟪Tx,x⟫ ≤ λ_k‖x‖²  (S = Iio k + RayleighEigenTail.rayleigh_tail_le).
+- `exists_ge_eigenvalue`: dim W ≥ n−k ⟹ ∃ x∈W∖0, λ_k‖x‖² ≤ ⟪Tx,x⟫  (S = Ioi k + rayleigh_head_ge).
+These are exactly the two halves of Cauchy interlacing. Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; GREEN.
+**Next:** Cauchy interlacing for a compression: for V ⊂ E of codim 1 and S = P_V T|_V with eigenvalues μ_0≥…≥μ_{n−2}:
+λ_{k+1} ≤ μ_k ≤ λ_k (take W = S-head/tail eigen-spans inside V, apply the two lemmas, ⟪Sx,x⟫=⟪Tx,x⟫ on V).
+λ²=28: no row yet.
