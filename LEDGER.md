@@ -52612,3 +52612,10 @@ finite-truncation zero side.
 i.e. the (d·x+10)(3+…) shape with d=6 (log_sharp_close) and d=9 (log_sharp_close_wide/_3). Conclusion
 β ≤ 1 − ε(3−ε)/((5+ε)𝒦). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Next lane-1: instantiate
 C₂ = C₃ = 64·log|γ| with ε fixed, 𝒦/ε ≤ 6a+640·log|γ|, discharge via log_sharp_close; also the B (zero-input) sphere data.
+
+## S2941 — CCMTruncMono.lean EXIT0 (lane 2: truncation monotonicity of the CCM zero side) — 2026-11-08 CST
+`truncW S w` = w·1_S; `truncW_mono` (S⊆T, w≥0); `gram_trunc_mono`: G_T − G_S PSD (adding zeros only increases the
+zero-side Gram, Loewner); `ccm_trunc_rayleigh_mono`: xᵀG_S x ≤ xᵀG_T x for CCM weights; `posDef_of_posDef_le`
+(A≻0, B−A⪰0 ⇒ B≻0); `ccm_trunc_posDef_mono`: PosDef of a truncated CCM zero side propagates to every larger
+truncation. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation;
+gives the formal direction for using finite Arb certificates (certify on S ⇒ holds on all T ⊇ S).
