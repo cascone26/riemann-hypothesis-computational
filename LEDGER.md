@@ -52551,3 +52551,10 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - `Tz_zero` helper. Compiled first try.
 - HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Remaining for unconditional 5-8-4-1: zero input at iγ (tower partial-fraction bound) + growth constants instantiated (S2928 + S2930).
 - λ²=28: N=168 still pending at 12:2x.
+
+## S2933 — CCMGramPosDef.lean EXIT0 (lane 2: zero-side CCM Gram strictly positive definite) — 2026-11-08 12:53 CST
+- `ccmW_pos`: sin(γL/2) ≠ 0 ⇒ w_γ = 4sin²(γL/2)/L > 0.
+- `ccm_gram_posDef`: no window resonance (∀j sin(γ_jL/2)≠0) + Cᵀ injective ⇒ C·diag(w_γ)·Cᵀ is Mathlib PosDef.
+- `ccm_gram_eig_pos`: every eigenvalue > 0 (strictly positive zero-side margin on the truncation).
+- HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: RH-conditional (γ real), finite truncation, zero side only; transfer to τ via the arithmetic side still open.
+- λ²=28: N=168 still pending at 12:5x.
