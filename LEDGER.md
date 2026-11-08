@@ -52187,3 +52187,18 @@ Lane-1 status check this cycle: sharp dLVP region already proven (`riemannZeta_z
 log-growth/truncated-representation chain (§1269, §1286) — lane 1's stated target is closed; next lane-1 target = beyond-dLVP.
 λ²=28 run: no row yet (first row N=136 at 640 digits — hours).
 SESSION TALLY (HP center Lean): S2861, S2862, S2885, S2896 — all gate-GREEN.
+
+## S2897 (2026-11-07 18:35 CST, forge cycle — lane 1 check → lane 2) — LEAN BRICK: RayleighEigenTail.lean EXIT0, gate GREEN (Courant–Fischer, half 1)
+**Lane 1 status (logged):** stated target fully closed in the forge — `riemannZeta_zero_free_region_uniform` (ZetaZeroFreeUniform):
+∃c>0 ∀ zeros β+iγ: β ≤ 1 − c/log(|γ|+2), plus sharp §1462, small-|γ| strip, zero-free ball. Next lane-1 step (Vinogradov–Korobov,
+β ≤ 1 − c/(log t)^{2/3}(loglog t)^{1/3}) needs exponential-sum mean-value machinery — research-scale formalization, not a one-cycle
+brick; lane 1 SATURATED at bounded-brick level. Alternated to lane 2.
+**Brick (lane 2 infrastructure for a full Lean S2884):** Mathlib has sorted eigenvalues (antitone) + orthonormal eigenvectorBasis +
+Rayleigh API but NO Courant–Fischer / Cauchy interlacing. Built half 1:
+- `inner_T_eq_sum`: ⟪Tx,x⟫ = Σ λ_i ⟪b_i,x⟫²;  `norm_sq_eq_sum`: ‖x‖² = Σ ⟪b_i,x⟫² (Parseval).
+- `rayleigh_tail_le`: x ⊥ b_i ∀i<k ⟹ ⟪Tx,x⟫ ≤ λ_k‖x‖².   `rayleigh_head_ge`: x ⊥ b_i ∀i>k ⟹ λ_k‖x‖² ≤ ⟪Tx,x⟫.
+Compiled on Olympus (1 fix: conv rewrote both x's → nth_rewrite 1); fresh recompile EXIT0; axioms [propext, Classical.choice,
+Quot.sound]; gate GREEN. HANDLE.
+**Next (half 2):** dimension-count step — any subspace W with dim W ≥ k+1 meets span{b_k..b_{n-1}} nontrivially ⟹
+max_{x∈W} Rayleigh ≥ λ_k (max-min form); then Cauchy interlacing for a codimension-1 restriction.
+λ²=28: no row yet.
