@@ -52279,3 +52279,18 @@ nesting (E_i ∈ span evc(≤i), O_j ⊥_S span od(<j)) ⟹ B_ij = 0 for i<j. Th
 **λ²=28 FIRST ROW:** N=136 ε=5.95e-134 (upper bound on μ_{√28}; still falling). S2895 pre-registration: μ ≈ 1e-139 (×10, i.e.
 slope 20→28 ∈ [12.3,12.7]). Pending N=152, 168.
 SESSION TALLY (HP center Lean): 12 bricks, all gate-GREEN.
+
+## S2905 (2026-11-07 22:11 CST, forge cycle) — S2884 FULLY FORMALIZED IN LEAN: PencilLowerTriangular.lean + S2884Interlacing.lean, EXIT0, gate GREEN
+- `PencilTri.lower_triangular` (algebraic half): for any E_i ∈ span{evc(k) : k∈K_i}, O_j in an odd span and S-orthogonal to
+  span{od(k) : k∈K_i} for i<j, with Shi's displacement DS−SD = b1ᵀ−1bᵀ, D = diag ν (ν odd, ν(center)=0) ⟹ E_iᵀ(SD)O_j = 0 (i<j).
+  Chain: D_span_le (S2904) + span ⟹ zero-mean (sum_evc/sum_od) + PencilSwap.form_vanishes (S2885).
+- `S2884.pencil_interlacing` (capstone): the pencil block B_ij := E_iᵀ(SD)O_j on m+1 levels has zero top-right column
+  (castSucc i < last), so by ThetaInterlace (S2903) ⟹ **θ²_{k+1}(m+1) ≤ θ²_k(m) ≤ θ²_k(m+1)** — the one-step interlacing theorem.
+Both compiled FIRST TRY; fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**Scope (honest):** the theorem is stated for ANY nested families with the S-orthogonality property (Gram–Schmidt in the S-inner
+product is one instance; its existence is classical and not separately formalized here); symmetry of BBᵀ is passed as hypotheses
+(hBig/hSmall, trivially satisfiable). Positivity of S (G ≻ 0) enters only through the existence of such S-orthonormal families.
+**Machine-verified chain for S2884 (12 HP-center bricks):** S2885 displacement swap · S2896 quadrature diagonality · S2897/S2898
+Courant–Fischer · S2899/S2901/S2902 Cauchy interlacing (subspace / isometry / matrix) · S2900 block-lower Gram · S2903 θ² interlacing
+· S2904 parity displacement · S2905 lower-triangularity + capstone.
+SESSION TALLY (HP center Lean): 14 bricks, all gate-GREEN. λ²=28: still N=136 only (5.95e-134).
