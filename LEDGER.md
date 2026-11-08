@@ -52538,3 +52538,10 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - `log_sharp_close_3`: d=9 instance — the |3γ| log absorption needed to run 5-8-4-1 through the sharp tower (iγ d=3, 2iγ d=6 already in §1461).
 - HANDLE: compiled EXIT0 on Olympus, axioms {propext, Classical.choice, Quot.sound}, zero sorry. Scope: elementary real inequality; one of the three open inputs for the unconditional 5-8-4-1 region (remaining: pole input hA_pole, zero input at iγ wired into TrigPolyRegion.zeta_region_P).
 - λ²=28 run (PID 1964): N=168 row still pending at 11:19 CST; N=136 −133.23, N=152 −136.18 unchanged.
+
+## S2931 — CCMWeightGram.lean EXIT0 (lane 2: CCM/Shi weights w_γ = 4sin²(γL/2)/L wired into the Gram framework) — 2026-11-08 11:50 CST
+- `ccmW` defined; `ccmW_nonneg`, `ccmW_le` (≤ 4/L), `ccmW_neg` (even in γ).
+- `ccm_gram_posSemidef` / `ccm_gram_hermitian` / `ccm_gram_eig_nonneg`: for any real ordinates γ_j and any C, C·diag(w_γ)·Cᵀ is PSD with all eigenvalues ≥ 0.
+- `ccm_form_le`: upper bracket xᵀGx ≤ (4/L)·‖Cᵀx‖².
+- HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: zero-side finite truncation with the actual CCM weights (RH-conditional in that γ real); arithmetic side W02−W_R−W_p and τ = zero-side identity still Report-tier.
+- λ²=28 (PID 1964): N=168 still pending at 11:5x.
