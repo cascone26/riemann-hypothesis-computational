@@ -52245,3 +52245,14 @@ Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREE
 prove the compression identity for A' = A.submatrix castSucc castSucc, and conclude matrix Cauchy interlacing; then instantiate with
 A = B Bᵀ via BlockLowerGram (S2900).
 SESSION TALLY (HP center Lean): 9 bricks, all gate-GREEN. λ²=28: no row yet.
+
+## S2902 (2026-11-07 20:50 CST, forge cycle — S2884 roadmap step (b)) — LEAN BRICK: MatrixCauchyInterlacing.lean EXIT0, gate GREEN — MATRIX CAUCHY INTERLACING
+- `padIso`: ℝ^m →ₗᵢ ℝ^{m+1} (pad by zero at last index; norm via Fin.sum_univ_castSucc).
+- `compression`: ⟪A'v, w⟫ = ⟪A(ιv), ιw⟫ for A' = A.submatrix castSucc castSucc.
+- `matrix_interlace`: A real symmetric (m+1)×(m+1) ⟹ λ_{k+1}(A) ≤ μ_k(A') ≤ λ_k(A) (eigenvalues of toEuclideanLin, decreasing).
+Via CauchyInterlaceIso (S2901). 1 fix round (Mathlib renamed toEuclideanLin apply lemma → used toEuclideanLin_apply). Fresh recompile
+EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**S2884 Lean status:** (1) displacement swap S2885 ✓ (2) quadrature diagonality S2896 ✓ (3) Courant–Fischer S2897/S2898 ✓
+(4) Cauchy interlacing S2899/S2901/S2902 ✓ (5) block-lower Gram S2900 ✓ ⟹ remaining: compose (5)+(4) into "θ² interlace" for
+B_{N+1} with zero top-right column (one short brick), then the triangularity bookkeeping (Gram–Schmidt/parity) that produces that B.
+SESSION TALLY (HP center Lean): 10 bricks, all gate-GREEN.
