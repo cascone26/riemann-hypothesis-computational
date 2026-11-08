@@ -52223,3 +52223,15 @@ Compiled on Olympus (1 fix: redundant omega); fresh recompile EXIT0; axioms [pro
 Cauchy interlacing (this) ⟹ next: state and prove S2884 itself in Lean (B lower-triangular ⟹ B_N B_Nᵀ principal compression
 of B_{N+1}B_{N+1}ᵀ ⟹ one-step interlacing of the pencil's θ's ⟹ monotone limits given positivity).
 SESSION TALLY (HP center Lean): S2861, S2862, S2885, S2896, S2897, S2898, S2899 — 7 bricks, all gate-GREEN.
+
+## S2900 (2026-11-07 19:56 CST, forge cycle — lane 2, S2884 formalization step 1) — LEAN BRICK: BlockLowerGram.lean EXIT0 first try, gate GREEN
+- `gram_principal_block`: B : Matrix (Fin (m+1)) (Fin (m+1)) ℝ with B (castSucc i) (last) = 0 ∀i ⟹
+  (B Bᵀ).submatrix castSucc castSucc = B' B'ᵀ, B' = B.submatrix castSucc castSucc  (Fin.sum_univ_castSucc split).
+- `gram_principal_block_symm`: that principal block is symmetric.
+This is S2884's structural step (lower-triangularity ⟹ B_N B_Nᵀ is the leading principal block of B_{N+1}B_{N+1}ᵀ).
+Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**S2884 Lean roadmap (remaining):** (a) glue — a symmetric matrix A on EuclideanSpace ℝ (Fin (m+1)) as a symmetric operator; its
+principal submatrix = compression to V = span{e_0..e_{m-1}} (finrank m) ⟹ Cauchy interlacing (S2899) gives eigenvalue interlacing
+of A vs A.submatrix castSucc castSucc; (b) instantiate A = B_{N+1}B_{N+1}ᵀ via S2900 ⟹ θ² interlacing; (c) the triangularity of B from
+the displacement swap (S2885) + parity/Gram–Schmidt bookkeeping (the longest remaining piece).
+SESSION TALLY (HP center Lean): 8 bricks, all gate-GREEN.
