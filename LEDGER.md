@@ -52497,3 +52497,12 @@ For the zero-side form xᵀ(C·diag(w)·Cᵀ)x: `form_mono` (Loewner-monotone in
 Use: a computed partial zero sum + an explicit tail T (dictionary: T ≤ (4/L)·N·Σ_{γ>Γ} 1/γ² ≈ O(N log Γ/Γ)) brackets
 the full zero side rigorously — the Lean form of the zero-truncation error bars our Arb pipeline uses. HANDLE.
 λ²=28: N=168 still pending (08:28).
+
+## S2926 — TrigPolyZetaRegion.lean EXIT0 (2026-11-08 09:00 CST, HP center) — LANE 1: ζ-level P-generic region
+`TrigPolyRegion.zeta_region_P`: for ANY nonnegative cosine polynomial (c₀,c₁ > 0, c_k ≥ 0), at σ = 1+ε/𝒦,
+pole bound at σ + zero bound at σ+iγ + growth bounds at σ+ikγ (k≥2) ⟹ β ≤ 1 − ε(c₁−c₀−ε)/((c₀+ε)𝒦),
+𝒦 = c₀A + c₁B + Σ_{k≥2} c_k C_k. Composes S2921 (positivity) + S2922 (gap/region) at the ζ level — the P-generic
+analogue of §1310. Compiled first try. HANDLE.
+Remaining to propagate 5-8-4-1 into the unconditional sharp region: discharge the three inputs with the existing
+tower's lemmas (the 2iγ explicit-log bound §1452 is point-generic; the 3iγ instance is the same lemma at |3γ|).
+λ²=28: N=168 still pending (09:00).
