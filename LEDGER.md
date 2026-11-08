@@ -52404,3 +52404,15 @@ Step 1, proven for rectangular A : m×n, B : n×m over any CommRing:
 Next (S2917): injective p = (strictly monotone p₀) ∘ (permutation τ); sign absorption ⟹ full
 Cauchy–Binet det(AB) = Σ_{S, |S|=m} det A[:,S]·det B[S,:] ⟹ TP of C·W·Cᵀ (S2859 band theorem).
 λ²=28 run: still only N=136 row (eps=5.9498e-134) at 03:38; N=152/168 pending.
+
+## S2917 — CauchyBinet.lean EXIT0, gate GREEN 4/4 — FULL CAUCHY–BINET (not in Mathlib) (2026-11-08 04:20 CST, HP center)
+- `CauchyBinet.cauchy_binet`: for A : k×n, B : n×k over any CommRing,
+  det(A·B) = Σ_{S ⊆ Fin n, |S|=k} det(A[:,S]) · det(B[S,:])   (S enumerated increasingly via orderEmbOfFin).
+- `term_expand`: per-subset sum over permutations (det_permute' sign absorption).
+Proof: S2916 injective-function expansion, then `Finset.sum_bij` from (S, τ) ↦ emb_S ∘ τ onto injective maps
+(injectivity via ranges; surjectivity by choice + Finite.injective_iff_bijective). Compiled first try. HANDLE.
+**λ²=28 SECOND ROW:** N=152 ε=6.63e-137 (log10 −136.18; step ratio vs N=136 = 1.1e-3 — NOT yet saturating).
+Pre-registration band (from μ_{√20}=e^{−220.9}, slope ∈ [12.3,12.7]): −ln μ_{√28} ∈ [319.3, 322.5], i.e. log10 μ ∈ [−140.1, −138.7].
+ε_152 is an upper bound above the band ⟹ consistent, undecided. N=168 row decides it.
+Next brick (S2918): Cauchy–Binet with diagonal weight ⟹ every minor of C·diag(w)·Cᵀ (w>0, Cauchy C) is positive
+⟹ TP of the Gram matrices in the band ν_N < γ₁ (S2859).
