@@ -52564,3 +52564,11 @@ i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled
 - `TrigPolyRegion.hzero_Tz` / `Tz_one`: same as the `hzero` hypothesis of S2926/S2932.
 - HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. All three analytic inputs of the P-generic region are now compiled lemmas: pole (S2932), zero (S2934), growth (S2928 + S2930). Next: one composite theorem for 5-8-4-1 at σ=1+ε/𝒦 with the sphere data instantiated (ZetaSphereN1 / log_sharp_close_wide).
 - λ²=28: N=168 still pending at 13:3x.
+
+## S2935 — GramTraceBound.lean EXIT0 (lane 2: trace UPPER bracket on the zero-side margin) — 2026-11-08 13:57 CST
+- `trace_gram`: tr(C·diag(w)·Cᵀ) = Σ_j w_j Σ_k C_kj².
+- `exists_eig_mul_card_le_trace`: real symmetric A, ∃ i, λ_i·|n| ≤ tr A (min eigenvalue ≤ average).
+- `ccm_exists_eig_le`: CCM weights ⇒ ∃ i, λ_i·|n| ≤ (4/L)·‖C‖_F² — rigorous ceiling on the zero-side margin, complementing the floors of S2929/S2933.
+- Fix log: `diag` was ambiguous; switched to explicit Matrix.trace unfold + mul_apply, closed the residual entry goal with simp [diagonal_apply]; ring.
+- HANDLE: EXIT0 on Olympus, GREEN gate, zero sorry. Scope: finite truncation, zero side.
+- λ²=28: N=168 still pending at 14:0x.
