@@ -52267,3 +52267,15 @@ squared pencil eigenvalues interlace one step" — i.e. the ENTIRE spectral half
 unshifted pencil in nested S-orthonormal parity bases IS lower-triangular (displacement swap S2885 ✓ + the D-maps-ev(k)→ν_k od(k)
 and Gram–Schmidt nesting bookkeeping).
 SESSION TALLY (HP center Lean): 11 bricks, all gate-GREEN. λ²=28: no row yet.
+
+## S2904 (2026-11-07 21:44 CST, forge cycle — S2884 algebraic half, parity step) — LEAN BRICK: ParityDisplacementBasis.lean EXIT0, gate GREEN
+On Fin (2N+1) with reflection rev, odd ν (ν(rev i) = −ν i), ν(center)=0, D = diag ν:
+- `D_ev`: D·ev(k) = ν_k·od(k)   · `D_center`: D·e_c = 0   · `D_evc`: D·(ev(k) − 2e_c) = ν_k·od(k)
+- `D_span_le`: D(span{evc(k) : k∈K}) ⊆ span{od(k) : k∈K}  — the frequency-preserving step of S2884's triangularity
+- `sum_od`, `sum_evc`: odd and corrected-even vectors are zero-mean (contrast space).
+1 fix (sum normalization). Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
+**S2884 algebraic half — remaining:** combine D_span_le + displacement swap (S2885: ⟪u,(SD)v⟫ = ⟪Dᵀu, Sv⟫ on zero-mean) + Gram–Schmidt
+nesting (E_i ∈ span evc(≤i), O_j ⊥_S span od(<j)) ⟹ B_ij = 0 for i<j. Then S2903 ⟹ full Lean S2884.
+**λ²=28 FIRST ROW:** N=136 ε=5.95e-134 (upper bound on μ_{√28}; still falling). S2895 pre-registration: μ ≈ 1e-139 (×10, i.e.
+slope 20→28 ∈ [12.3,12.7]). Pending N=152, 168.
+SESSION TALLY (HP center Lean): 12 bricks, all gate-GREEN.
