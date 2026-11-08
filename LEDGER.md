@@ -52524,3 +52524,11 @@ Remaining for the unconditional 5-8-4-1 region: the pole input (hA_pole tower le
 at iγ (the tower's partial-fraction bound), then the log-absorption at |3γ| (log_sharp_close with d=9).
 Repo sync: ZetaSphereN1.lean / PoleAvoidGeom.lean pulled from Olympus into the HP repo (were Olympus-only).
 λ²=28: N=168 still pending (10:05).
+
+## S2929 — GramEigenBound.lean EXIT0 (2026-11-08 10:37 CST, HP center) — LANE 2: form bounds ⟹ eigenvalue bounds
+- `GramEig.eig_ge_of_form_ge`: A Hermitian, ∀x μ‖x‖² ≤ xᵀAx ⟹ every eigenvalue ≥ μ (via Mathlib eigenvalues_eq + unit eigenvectors).
+- `gram_eig_nonneg`: weighted Gram with w ≥ 0 has all eigenvalues ≥ 0.
+- `gram_eig_stable`: certified margin μ at w ⟹ eigenvalues of G(w') ≥ μ − Σ_j δ_j Σ_i C_ij².
+Closes the zero-side spectral loop: Weil form (S2923) + truncation (S2925) + perturbation (S2927) → λ_min statements,
+i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled first try. HANDLE.
+λ²=28: N=168 still pending (10:37).
