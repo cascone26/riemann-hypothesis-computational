@@ -52635,3 +52635,13 @@ optimizing ε and the 64 slack is a later tuning brick.
 `ccmW_le_sq` (L>0): w_γ ≤ L·γ² (quadratic vanishing at γ=0); `ccmW_le_min`: w_γ ≤ min(4/L, Lγ²) — two-regime
 envelope for splitting low-lying vs high zeros in the zero-side Gram. Axioms std, gate GREEN, 0 sorry.
 HANDLE: compiled on Olympus. Scope: weight-level facts (unconditional); zero-side use is RH-conditional finite truncation.
+
+## S2944 — λ²=28 N=168 ROW LANDED: log10 ε = −137.96 — S2895 pre-registration NOT YET DECIDABLE (unsaturated) — 2026-11-08 17:56 CST
+Rows (results/hp_center/mu_lambda28.txt): N=136 −133.23 · N=152 −136.18 · **N=168 −137.96** (ε=1.0855e-138).
+Step ratio (168−152)/(152−136) = 0.60 — NOT saturated (λ²=20 floor was declared at ratio 0.17). N=168 is therefore an
+UPPER bound on log10 μ_{√28}: slope 20→28 ≥ 12.10. Geometric-tail extrapolation: floor ≈ −140.7 ⇒ slope ≈ 12.9 (Report, not Handle).
+Pre-registration S2895: log10 μ ∈ [−140.1, −138.7] / slope ∈ [12.3, 12.7]. Current data: consistent with the window
+(bound side) but the extrapolated floor sits slightly BELOW it (slope ~12.9 > 12.7, i.e. κ still rising past 4π=12.566).
+Verdict: OPEN. Next: extension run N=184 @880 digits, N=200 @960 digits launched 17:56 (PID 28140, appends to
+mu_lambda28.txt) to reach a saturated floor. Decision rule fixed now: if N=200 step ratio ≤ 0.3, floor = N=200 value;
+pass iff log10 ∈ [−140.1, −138.7]. If extrapolated κ > 12.7 holds, the "κ plateau ≈ 12.3–12.6 / 4π" hypothesis is refuted.
