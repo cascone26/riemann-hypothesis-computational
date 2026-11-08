@@ -52619,3 +52619,13 @@ zero-side Gram, Loewner); `ccm_trunc_rayleigh_mono`: xᵀG_S x ≤ xᵀG_T x for
 (A≻0, B−A⪰0 ⇒ B≻0); `ccm_trunc_posDef_mono`: PosDef of a truncated CCM zero side propagates to every larger
 truncation. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation;
 gives the formal direction for using finite Arb certificates (certify on S ⇒ holds on all T ⊇ S).
+
+## S2942 — TrigPoly5841Log.lean EXIT0 (lane 1: 5-8-4-1 growth constants DISCHARGED, C₂=C₃=64·log|γ|) — 2026-11-08 CST
+`zeta_region_5841_log`: ∃ A₀ ≥ 0 s.t. for |γ| ≥ e¹⁶ with 2·log(16(3+6A₀+640)) ≤ log|γ|, σ = 1 + (3/2)/(5A₀+832·log|γ|),
+every ζ zero β+iγ (β<σ) satisfying the zero-input sphere data with B = 64·log|γ| obeys
+  β ≤ 1 − (9/26)/(5A₀ + 832·log|γ|).
+Instantiates S2940 at ε=3/2, B=C₂=C₃=64L (𝒦 = 5A₀+832L, 𝒦/ε ≤ 6A₀+640L); growth at 2γ closed by S2930
+log_sharp_close (d=6), at 3γ by log_sharp_close_wide (d=9). Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus.
+Remaining hypothesis: zero-input sphere data at σ+iγ (the iγ term, d=3 analogue — discharged in the 3-4-1 chain by the
+ZetaSphereN1/PoleAvoidGeom + log_sharp_close d=3 route; port next). Constant: 9/26/832 ≈ 4.16e-4 (vs 3-4-1 1/(14·(4+1))·…);
+optimizing ε and the 64 slack is a later tuning brick.
