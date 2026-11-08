@@ -52532,3 +52532,9 @@ Repo sync: ZetaSphereN1.lean / PoleAvoidGeom.lean pulled from Olympus into the H
 Closes the zero-side spectral loop: Weil form (S2923) + truncation (S2925) + perturbation (S2927) → λ_min statements,
 i.e. the Lean reading of μ_λ as λ_min with an explicit error budget. Compiled first try. HANDLE.
 λ²=28: N=168 still pending (10:37).
+
+## S2930 — LogSharpCloseWide.lean EXIT0 (lane 1: log absorption widened to d ≤ 15; 3iγ instance) — 2026-11-08 11:19 CST
+- `log_sharp_close_wide`: 32·log((d·x+10)(3+6a+640·log x)) ≤ 64·log x for d ∈ [0,15], x ≥ e^16, same threshold as §1461.
+- `log_sharp_close_3`: d=9 instance — the |3γ| log absorption needed to run 5-8-4-1 through the sharp tower (iγ d=3, 2iγ d=6 already in §1461).
+- HANDLE: compiled EXIT0 on Olympus, axioms {propext, Classical.choice, Quot.sound}, zero sorry. Scope: elementary real inequality; one of the three open inputs for the unconditional 5-8-4-1 region (remaining: pole input hA_pole, zero input at iγ wired into TrigPolyRegion.zeta_region_P).
+- λ²=28 run (PID 1964): N=168 row still pending at 11:19 CST; N=136 −133.23, N=152 −136.18 unchanged.
