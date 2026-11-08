@@ -52645,3 +52645,16 @@ Pre-registration S2895: log10 μ ∈ [−140.1, −138.7] / slope ∈ [12.3, 12.
 Verdict: OPEN. Next: extension run N=184 @880 digits, N=200 @960 digits launched 17:56 (PID 28140, appends to
 mu_lambda28.txt) to reach a saturated floor. Decision rule fixed now: if N=200 step ratio ≤ 0.3, floor = N=200 value;
 pass iff log10 ∈ [−140.1, −138.7]. If extrapolated κ > 12.7 holds, the "κ plateau ≈ 12.3–12.6 / 4π" hypothesis is refuted.
+
+## S2945 — TrigPoly5841Full.lean EXIT0 — UNCONDITIONAL 5-8-4-1 ζ ZERO-FREE REGION (lane 1 milestone) — 2026-11-08 CST
+`TrigPoly5841.riemannZeta_zero_free_5841`:
+  ∃ A₀ ≥ 0, ∀ γ β : ℝ, e¹⁶ ≤ |γ| → 2·log(16(3+6A₀+640)) ≤ log|γ| → ζ(β+iγ) = 0 → β ≤ 1 − (9/26)/(5A₀ + 832·log|γ|).
+No analytic hypothesis remains. Chain: S2921 p5841_nonneg ((1+cosθ)(1+2cosθ)²) → S2926 P-generic region → S2932 pole
+(§1572) → S2934 zero input (BC sphere, discharged here: R=1/4, R'=1/2, §1447 N=1 Ms, Mζ=Ms+1, §1444 hBexplicit_of_ge,
+§1452, S2940 cleanRHS_quarter_le, S2930 log_sharp_close d=3, B=64 log|γ|) → S2928 growth at 2γ,3γ (S2942, d=6/9).
+Far case β<σ−1/8 is already left of the line (𝒦 ≥ 832·16); β ≥ σ > 1 impossible (ζ ≠ 0 on Re>1).
+Axioms {propext, Classical.choice, Quot.sound}, gate GREEN, 0 sorry. HANDLE: compiled on Olympus.
+Prior art (Report): the 5-8-4-1 / (1+cosθ)(1+2cosθ)² polynomial is classical (de la Vallée Poussin-type, used e.g. by
+Rosser–Schoenfeld / Kadiri lineage for better constants); NOT novel mathematics — novelty is the end-to-end Lean
+formalization over Mathlib's riemannZeta. Constant here (9/26)/832 ≈ 4.2e-4 is unoptimized (3-4-1 forge region also explicit);
+next lane-1 bricks: constant tuning (ε, 64-slack), uniform version (small |γ| strip as in ZetaZeroFreeUniform).
