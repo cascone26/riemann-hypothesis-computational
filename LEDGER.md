@@ -52394,3 +52394,13 @@ column selections is > 0 (submatrix = cauchy (x∘r)(y∘c), then det_cauchy_pos
 **Next:** composition with a positive diagonal weight (Cauchy–Binet: C·W·Cᵀ minors = Σ of products of positive Cauchy minors × positive
 weights) ⟹ TP of the Gram matrices S^± in the band ν_N < γ₁ — the S2859 band theorem (RH-conditional form) in Lean.
 SESSION TALLY (HP center Lean): 24 bricks, all gate-GREEN. λ²=28: still N=136 only.
+
+## S2916 — CauchyBinetExpand.lean EXIT0, gate GREEN 3/3 (2026-11-08 03:45 CST, HP center)
+Mathlib has NO Cauchy–Binet (grep of mathlib4 for "Binet": only Fibonacci + cross-product). Building it.
+Step 1, proven for rectangular A : m×n, B : n×m over any CommRing:
+- `CauchyBinet.det_mul_expand`: det(A·B) = Σ_{p : m→n} det(A.submatrix id p) · Π_i B (p i) i.
+- `det_submatrix_eq_zero_of_not_inj`: non-injective column selection ⟹ minor = 0.
+- `det_mul_expand_inj`: sum restricted to injective p.
+Next (S2917): injective p = (strictly monotone p₀) ∘ (permutation τ); sign absorption ⟹ full
+Cauchy–Binet det(AB) = Σ_{S, |S|=m} det A[:,S]·det B[S,:] ⟹ TP of C·W·Cᵀ (S2859 band theorem).
+λ²=28 run: still only N=136 row (eps=5.9498e-134) at 03:38; N=152/168 pending.
