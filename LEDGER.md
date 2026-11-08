@@ -52305,3 +52305,14 @@ Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREE
 (λ,N), S2880/81/88) and (ii) S-orthonormal nested families (Gram–Schmidt, classical). IDENTIFICATION of the limit with γ_j² remains
 the crux (⟺ μ_λ→0 ⟺ RH, S2886).
 SESSION TALLY (HP center Lean): 15 bricks, all gate-GREEN. λ²=28: still only N=136.
+
+## S2907 (2026-11-07 23:06 CST, forge cycle) — LEAN BRICK: SGramSchmidt.lean EXIT0, gate GREEN — S2884's family hypothesis from positivity
+Gram–Schmidt in the S-inner product (Mathlib `Matrix.toInnerProductSpace` from S ≻ 0 + `InnerProductSpace.gramSchmidt`):
+- `gsS_mem_span`: O_j ∈ span(f '' Iic j)  — supplies `hOmem` of PencilTri.lower_triangular / S2884.pencil_interlacing.
+- `gsS_orth`: i<j, w ∈ span(f '' Iic i) ⟹ w ⬝ᵥ (S *ᵥ O_j) = 0 — supplies `hO` exactly.
+Three fix rounds: (1) innerₛₗ/inner_add_left fail on the local-instance diamond (Normed vs Seminormed from toInnerProductSpace)
+⟹ (2) unfold ⟪x,y⟫_S = (S *ᵥ y) ⬝ᵥ star x by rfl (private but instance_reducible def) and (3) run span_induction in dotProduct
+form, using gramSchmidt_orthogonal only on generators. Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; GREEN.
+**Consequence:** S2884's family hypotheses are now DERIVED from S ≻ 0 (taking f = od in frequency order, K_j = f '' Iic j); the
+monotone-limit existence (S2906) depends only on certifiable positivity. (Even-side E_i: same construction on evc.)
+SESSION TALLY (HP center Lean): 16 bricks, all gate-GREEN.
