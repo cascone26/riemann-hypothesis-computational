@@ -52256,3 +52256,14 @@ EXIT0; axioms [propext, Classical.choice, Quot.sound]; gate GREEN.
 (4) Cauchy interlacing S2899/S2901/S2902 ✓ (5) block-lower Gram S2900 ✓ ⟹ remaining: compose (5)+(4) into "θ² interlace" for
 B_{N+1} with zero top-right column (one short brick), then the triangularity bookkeeping (Gram–Schmidt/parity) that produces that B.
 SESSION TALLY (HP center Lean): 10 bricks, all gate-GREEN.
+
+## S2903 (2026-11-07 21:17 CST, forge cycle — S2884 composition) — LEAN BRICK: PencilThetaInterlace.lean EXIT0, gate GREEN
+`ThetaInterlace.theta_sq_interlace`: B : Matrix (Fin (m+1)) (Fin (m+1)) ℝ with B (castSucc i) last = 0 ∀i (B_{N+1} = [[B_N,0],[yᵀ,β]])
+⟹ eigenvalues of B_N B_Nᵀ interlace with those of B_{N+1}B_{N+1}ᵀ:  θ²_{k+1}(N+1) ≤ θ²_k(N) ≤ θ²_k(N+1).
+Composes BlockLowerGram (S2900) + MatrixCauchyInterlacing (S2902); helper `eigenvalues_congr` (subst). 1 fix round (real
+conjTranspose → conjTranspose_eq_transpose_of_trivial). Fresh recompile EXIT0; axioms [propext, Classical.choice, Quot.sound]; GREEN.
+**S2884 in Lean — what is now machine-verified:** "if the pencil block B_{N+1} is lower-triangular (zero top-right column), then the
+squared pencil eigenvalues interlace one step" — i.e. the ENTIRE spectral half of S2884. Remaining: the algebraic half — that Shi's
+unshifted pencil in nested S-orthonormal parity bases IS lower-triangular (displacement swap S2885 ✓ + the D-maps-ev(k)→ν_k od(k)
+and Gram–Schmidt nesting bookkeeping).
+SESSION TALLY (HP center Lean): 11 bricks, all gate-GREEN. λ²=28: no row yet.
