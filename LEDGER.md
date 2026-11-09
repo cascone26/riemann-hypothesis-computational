@@ -52938,3 +52938,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   now with every structural piece (Löwner form of A, Cauchy form of G, weights, tail) formal or numerically pinned.
   Next lane-2: formal statement "A = G_T + μ_T𝟙𝟙ᵀ + E_T, ‖E_T‖ ≤ …" given the explicit-formula identity as hypothesis.
 - λ²=28 Olympus N=184/200 at 6h56m, no rows yet.
+
+## S2975 — ZetaImagAxisExact.lean EXIT0 (lane 1: exact |ζ(it)|, the convexity-strip endpoint) — 2026-11-09 08:4x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 3/3, 0 sorry; fixes: import Mathlib for riemannZeta, Real.sinh_pos_iff name, dead `ring`s):
+  * `norm_Gamma_one_sub_mul_I_sq`: ‖Γ(1−it)‖² = πt/sinh(πt)  (t>0; from forge norm_Gamma_mul_I_sq + Γ(s+1)=sΓ(s) + conj).
+  * `norm_zeta_mul_I_sq`: ‖ζ(it)‖²·(2π cosh(πt/2)) = t·sinh(πt/2)·‖ζ(1−it)‖²  ⇔  |ζ(it)|² = (t/2π)·tanh(πt/2)·|ζ(1−it)|² EXACTLY
+    (Mathlib riemannZeta_one_sub at s = 1−it, cos(π/2 − ix) = i sinh x, ‖(2π)^{−(1−it)}‖ = 1/(2π)).
+  * `norm_zeta_mul_I_sq_le`: ‖ζ(it)‖² ≤ (t/2π)‖ζ(1−it)‖².
+- Numeric cross-check (mpmath, dps 30): t = 1, 5, 14.1347, 30, 100 — both sides agree to 12 digits (e.g. t=100: 42.5068972332).
+- Role: Re s = 0 edge of the convexity strip (|ζ(it)| ≪ |t|^{1/2}·|ζ(1−it)|). Next lane-1: |ζ(1+it)| ≪ log t (forge has
+  sharp N-term bound) ⇒ |ζ(it)| ≪ |t|^{1/2} log t; then Phragmén–Lindelöf (three-lines / Hadamard on a strip) to
+  interpolate |ζ(σ+it)| ≪ |t|^{(1−σ)/2} log t → halves log M in the sharp pipeline (8 → ~4 leading).
+- λ²=28 Olympus N=184/200 at 7h26m, no rows yet.
