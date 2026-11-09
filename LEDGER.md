@@ -52812,3 +52812,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   super-linear margin decay in the window (μ ~ e^{−κλ²}) is NOT a zero-side effect alone — it must come from
   cancellation against the arithmetic side W02−W_R−W_p. Points the next lane-2 bricks at the arithmetic side.
 - λ²=28 Olympus runs alive 1h49m, no rows yet.
+
+## S2965 — TrigPoly5841Sharp.lean EXIT0 (lane 1: 5-8-4-1 region on the sharp growth input) — 2026-11-09 03:3x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN 4/4, 0 sorry):
+  * `zeta_region_5841_Tz`: S2936 region with growth input decoupled to `Tz σ γ 2 ≤ C₂`, `Tz σ γ 3 ≤ C₃`.
+  * `sharpRHS σ t R := 8 log|t| + (8/R)(log(1/(1−σ+R)+3+4/(σ−R)) + log(3+1/(σ−1)))`; `Tz_le_sharpRHS` (via S2963).
+  * `zeta_region_5841_sharp`: region with sharpRHS(2γ),(3γ) ≤ C₂,C₃ (σ≤2, 0<Rg<1, σ−Rg<1, |2γ|≥3).
+- C₂,C₃ leading coefficient now 8 (was 128/15 at the best rung). B (the iγ term, Mζ/|ζ(σ+iγ)| with N=1 sphere Ms)
+  still uses the old sphere bound — swap it to sharpMs too (same S2961 machinery) for the full gain.
+- Next lane-1: (a) B-term on sharpMs, (b) log absorption ⇒ explicit c₀ rung (Report estimate ≈3.2e-3).
+- λ²=28 Olympus runs alive 2h20m, no rows yet.
