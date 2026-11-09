@@ -53027,3 +53027,18 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   Remaining: (i) normaliser G(s) with |G| ≍ |s|^{−(3−σ)/2}, zero-free, holomorphic on the strip; (ii) growth hypothesis
   exp(B e^{c|t|}) for E·G on the open strip (polynomial forge strip bounds suffice); (iii) apply vertical_strip with C = const·log².
 - λ²=28: N=184 banked (S2981); N=200 still running.
+
+## S2983 — CCMTailMoment2.lean EXIT0 (lane 2: moment hierarchy level 2 on span{𝟙,ν,ν²}^⊥) — 2026-11-09 12:1x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 4/4, 0 sorry; fixes: t3/hnum made linear (nlinarith heartbeat timeout),
+  hPe `ring`, constant 28→29 since 256/9 = 28.44 — my arithmetic slip, caught by the checker):
+  * `pair_second_order`: |pair − 2/x² − 2(ab+a²+b²)/x⁴| ≤ 29V⁴/x⁶  (|a|,|b| ≤ V, |x| ≥ 2V).
+  * `quad_vecMulVec`: xᵀ(uvᵀ)x = (u·x)(v·x).   `near_matrix_quad`: entries within δ of P ⇒ |xᵀMx − xᵀPx| ≤ δ(Σ|x|)².
+  * `moment2_quad`: P = α𝟙𝟙ᵀ + β(ννᵀ + ν²𝟙ᵀ + 𝟙ν²ᵀ), x ⊥ 𝟙,ν,ν² ⇒ |xᵀMx| ≤ δ(Σ|x|)².
+- Numerics (HANDLE, λ²=20/28, N=6): δ₁n = 8.4e-2/7.5e-2 → δ₂n = 2.8e-2/2.7e-2 (×3 per level at V/x ~ 1/4…1/25);
+  actual |tail| on span{𝟙,ν,ν²}^⊥ = 1.5e-5/1.7e-5 (bound ~2000× loose: (Σ|x|)² ≤ n‖x‖² + constants);
+  margin(A on span^⊥) ~ −1e-17..−8e-17 = DOUBLE-PRECISION NOISE (true margin needs mpmath, as in the μ_λ runs).
+- Honest reading: the hierarchy converges slowly at small λ² because the first far zero is only ~2V; the right tool for the
+  fine structure is the exact Löwner generator (S2970/S2972/S2974): A − G_K = μ_K𝟙𝟙ᵀ + (tail Löwner matrix), whose generator
+  is an explicit smooth function. Next lane-2: bound the tail generator's divided differences (Löwner ⇒ entries are
+  derivatives of g_tail at intermediate points) — derivative bounds instead of entrywise expansion.
+- λ²=28 N=200 at 11h03m, no row yet.
