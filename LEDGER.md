@@ -53126,3 +53126,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `norm_zeta_mul_I_le_abs`: 2 ≤ |t| ⇒ ‖ζ(it)‖ ≤ √(|t|/2π)(log|t| + 5)  (t<0 via Mathlib riemannZeta_conj).
 - Convexity inventory: entire E ✓, edges |t| ≥ 2 both signs ✓, three-lines+Gaussian ✓, Gaussian localisation (poly+log) ✓.
   OPEN: |t| < 2 edge segment (compactness: E continuous ⇒ bounded on the two segments), hB (E·G_T bounded on the strip).
+
+## S2992 — CCMConfluentPerp.lean EXIT0 (lane 2: closed-form 𝟙^⊥ bound for the whole far tail, diagonal included) — 2026-11-09 16:1x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; fix: if_true for the diagonal branch):
+  * `confluent_lowner_perp`: g C² on [−V,V], |g''| ≤ D₂, ν injective in [−V,V], Σx = 0 ⇒
+    |xᵀ·lowner(−g'∘ν/π, g∘ν, ν)·x| ≤ (2V·D₂/π)(Σ|x|)².  (Far Cauchy tail has diagonal exactly −g'_tail/π — confluent Löwner.)
+- Numerics (HANDLE): bound holds (worst ratio 0.017–0.031 over 3000 random x ⊥ 𝟙). Spectral comparison on 𝟙^⊥:
+  true ‖tail‖ ≈ 6.4e-3..7.2e-3 vs bound·n ≈ 0.27–0.29 ⇒ ~40× loose (S2983 entrywise: ~2000×). Slack sources: (Σ|x|)² ≤ n‖x‖²
+  and |Δν| ≤ 2V; next refinement: weighted Schur test Σ_k |ν_i−ν_k||x_k| (keeps |Δν| per pair) → expected ≤ 10× loose.
+- Lane-2 arc summary (Report): CCM A = Löwner(g_A) exactly (S2970); zero side Cauchy/Löwner (S2972); numerically A = G_∞ (S2974);
+  far tail controlled through derivatives of one explicit generator (S2985 sharp level 1, S2987/S2990/S2992 level 2).
