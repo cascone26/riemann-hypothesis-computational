@@ -52950,3 +52950,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   sharp N-term bound) ⇒ |ζ(it)| ≪ |t|^{1/2} log t; then Phragmén–Lindelöf (three-lines / Hadamard on a strip) to
   interpolate |ζ(σ+it)| ≪ |t|^{(1−σ)/2} log t → halves log M in the sharp pipeline (8 → ~4 leading).
 - λ²=28 Olympus N=184/200 at 7h26m, no rows yet.
+
+## S2976 — CCMTailQuad.lean EXIT0 (lane 2: quadratic-form control of the far-zero tail) — 2026-11-09 09:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 2/2, 0 sorry; fix: sum_mul_sum before mul_sum):
+  * `near_const_quad`: ∀i k |M_ik − μ| ≤ δ ⇒ |xᵀMx − μ(Σx)²| ≤ δ(Σ|x|)².
+  * `far_zero_tail_quad`: far block T_ik = Σ_j w_j/((ν_i−x_j)(ν_k−x_j)), |ν|≤V, |x_j|≥2V, w≥0 ⇒
+    |xᵀTx − μ(Σx)²| ≤ (10V·Σ w_j/|x_j|³)(Σ|x|)², μ = Σ w_j/x_j².
+- Numeric check (HANDLE): λ²=20, N=12 (V=25.2), 140 far zeros, w=ccmW: bound holds (max lhs/rhs 0.017 over 2000 random x).
+  HONEST CAVEAT: here δ=2.0e-2 > μ=8.5e-3 — the 10V/|x|³ estimate is ~60× loose and only informative once far zeros ≫ 10V.
+  Next: sharpen (second-order expansion 1/((a−x)(b−x)) = 1/x² + (a+b)/x³ + O(V²/x⁴): the (a+b)/x³ term is odd in x and
+  cancels in ±γ pairs with even weight ⇒ δ improves to O(V²Σw/x⁴)).
+- λ²=28 Olympus N=184/200 at 7h57m, no rows yet.
