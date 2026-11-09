@@ -52793,3 +52793,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   μ small ⇒ d < π√(μL)/2. Zero side only, truncated, RH-conditional.
 - λ²=28 on Olympus: PIDs 3320939/3320940/3321514 alive at 47 min, 99% CPU, ~50MB RSS each; no rows yet (HP took ~24h for 3 rows).
 - Process note: loop dropped its wakeup 01:08→01:51 after an infra-only turn; hard rule now in memory (feedback_loop_wakeup_every_turn).
+
+## S2963 — GrowthSharpClean.lean EXIT0 (lane 1: growth input with leading coefficient 8, uniform in R) — 2026-11-09 02:3x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry):
+  * `sharpMs_floor_add_one_le`: 1<σ≤2, 0<R<1, σ−R<1, |t|≥3, N=⌊|t|⌋₊ ⇒ sharpMs+1 ≤ |t|^{1−σ+R}·(1/(1−σ+R) + 3 + 4/(σ−R)).
+  * `growth_at_sharp_clean`: (−ζ'/ζ(σ+it)).re ≤ 8·log|t| + (8/R)·(log(1/(1−σ+R)+3+4/(σ−R)) + log(3+1/(σ−1))).
+- Leading coefficient 8 for EVERY admissible R (N=1 route: 8/R → 32/3 at R=3/4, 128/15 at R=15/16). R now only in O(1).
+- Next lane-1: substitute into zeta_region_5841_clean (Rg = R) → B=C₂=C₃ ≈ 8L·(closing factor) → new c₀ rung
+  (expected ≈ 13·8.5 = 110.5L vs 118L ⇒ c₀ ≈ 3.17e-3, past the old 3.16e-3 pipeline ceiling). Report until compiled.
+- λ²=28 Olympus runs alive 1h18m, no rows yet.
