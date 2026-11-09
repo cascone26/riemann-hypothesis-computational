@@ -52971,3 +52971,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-1: Phragmén–Lindelöf on 0 ≤ Re s ≤ 1 (Mathlib has PhragmenLindelof.vertical_strip) applied to
   ζ(s)·(s−1)/(s+1)·(−i(s+... ))^{-(1−s)/2}-type normaliser ⇒ |ζ(σ+it)| ≪ |t|^{(1−σ)/2} log|t|; then plug into sharp pipeline.
 - λ²=28 Olympus N=184/200 at 8h28m, no rows yet.
+
+## S2978 — CCMTailPair.lean EXIT0 (lane 2: ±γ pairing ⇒ far-zero tail error O(V²/γ⁴); bound now INFORMATIVE) — 2026-11-09 10:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 3/3, 0 sorry; fix: open Matrix for ⬝ᵥ/*ᵥ notation):
+  * `pair_near_const`: |a|,|b| ≤ V, 2V ≤ |x| ⇒ |1/((a−x)(b−x)) + 1/((a+x)(b+x)) − 2/x²| ≤ 11V²/x⁴
+    (exact identity: = (2x²(ab+a²+b²) − 2a²b²)/(x²(x²−a²)(x²−b²)); odd (a+b)/x³ term cancels).
+  * `pair_tail_entry`, `pair_tail_quad`: |xᵀTx − μ(Σx)²| ≤ δ(Σ|x|)², μ = Σ2w/x², δ = 11V²Σw/x⁴.
+- Numeric (HANDLE): δ_new/δ_old ≈ 0.16–0.17; δ_new/μ = 0.384 (λ²=20,N=12), 0.392 (λ²=20,N=6), 0.380 (λ²=28,N=6) — now < 1
+  (S2976 had δ > μ). Bound holds (worst lhs/rhs 0.10–0.20 over 2000 random x).
+- Reading (Report): beyond height 2V, the zero side contributes μ(Σx)² ± 0.38μ(Σ|x|)² — on 𝟙^⊥ the far tail is bounded by
+  0.38μ(Σ|x|)², a certified-size perturbation; the CCM margin on 𝟙^⊥ is decided by zeros below 2V up to that error.
+- λ²=28 Olympus N=184/200 at 8h59m, no rows yet.
