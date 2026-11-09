@@ -53087,3 +53087,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-2: symmetrise (−(g'(ν_i)+g'(ν_k))/2π, error from g''' ) and assemble the 𝟙^⊥ quadratic-form bound with
   Σ|x_i||x_k||ν_i−ν_k| ≤ 2V(Σ|x|)²; then compare with the true CCM margin at mpmath precision.
 - λ²=28 N=200 at 13h07m, no row yet.
+
+## S2988 — GaussWeightLog.lean EXIT0 (lane 1: Gaussian moment bound with log factor) — 2026-11-09 14:4x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `log_one_add_abs_le`: log(1+|t|) ≤ log(1+|T|) + |t−T|.
+  * `gauss_poly_log_weight`: p, c ≥ 0 ⇒ (1+|t|)^p(log(1+|t|)+c)e^{−(t−T)²} ≤ (1+|T|)^p(log(1+|T|)+c+1)e^{(p+1)²/4}.
+- Three-lines inventory (convexity for ζ): S2979 entire E ✓, S2982 edges (t ≥ 2) ✓, S2984 three-lines w/ Gaussian ✓,
+  S2986/S2988 exact-exponent localisation ✓. OPEN: (i) uniform edge bounds for all t (t ≤ −2 by conj symmetry,
+  |t| < 2 by continuity/compactness), (ii) hB — boundedness of E·G_T on the closed strip (ζ near Re 0).
+- λ²=28 N=200 at 13h38m, no row yet.
