@@ -52774,3 +52774,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - S2960 addendum (2026-11-09 ~01:0x): λ²=28 N=184 relaunch was stopped by Claude Code low-memory reaper (HP 8GB). Not restarted pending Jacob; option = run on Olympus.
 
 - 2026-11-09 ~01:05 CST (Jacob-approved infra move): λ²=28 margin test MOVED TO OLYMPUS (31GB). ~/rhforge/hp_center/{operators,results}; PIDs 3320939 (28:184:880 -> results/mu_lambda28_N184.txt), 3320940 (28:200:960 -> _N200.txt), 3321514 (28:136:720 cross-check vs HP -133.23 -> _N136_check.txt). Bank rows into results/hp_center/mu_lambda28.txt when they land; S2944 decision rule applies.
+
+## S2961 — GrowthSharpN.lean EXIT0 (lane 1: wire S2959 sharp sphere bound into the growth input) — 2026-11-09 01:1x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry):
+  * `GrowthSharp.sharpMs σ t R N := (N^{1−a}−1)/(1−a) + 1 + N^{1−a}/(|t|−R) + (σ+|t|+R)·N^{−a}/a`, a := σ−R.
+  * `sphere_le_sharpMs`: σ>1, σ−R<1, R<R'≤|t| ⇒ ‖ζ‖ ≤ sharpMs on sphere(σ+it, R)  (real-ified S2959).
+  * `growth_at_sharpN`: (−ζ'/ζ(σ+it)).re ≤ 4·log((sharpMs+1)(3+1/(σ−1)))/(R/2)  (via hgrowth_riemannZeta_scalar).
+  * `growth_Tz_sharpN`: same at σ+i·kγ in S2926 `Tz` form — drop-in replacement for GrowthK.growth_Tz.
+- Payoff (Report until next brick compiles): N=⌊|t|⌋ ⇒ sharpMs ≪ |t|^{1−a}, 1−a = 1−σ+R < R ⇒ leading 8·log|t|
+  for ANY R (vs 8/R·log|t| at N=1). Next brick: clean scalar bound sharpRHS ≤ 8·log|t| + O_R(1) and the c₀ rung.
