@@ -52770,3 +52770,5 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Meaning: margin law μ_λ ~ e^{−κλ²} ⇒ some ordinate within O(e^{−κλ²/2}) of the resonance lattice (2π/L)ℤ
   (zero side only, truncated, RH-conditional as before). Report-tier interpretation; theorem is Handle.
 - λ²=28: N=184 relaunched 00:17, running (no row yet).
+
+- S2960 addendum (2026-11-09 ~01:0x): λ²=28 N=184 relaunch was stopped by Claude Code low-memory reaper (HP 8GB). Not restarted pending Jacob; option = run on Olympus.
