@@ -52802,3 +52802,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-1: substitute into zeta_region_5841_clean (Rg = R) → B=C₂=C₃ ≈ 8L·(closing factor) → new c₀ rung
   (expected ≈ 13·8.5 = 110.5L vs 118L ⇒ c₀ ≈ 3.17e-3, past the old 3.16e-3 pipeline ceiling). Report until compiled.
 - λ²=28 Olympus runs alive 1h18m, no rows yet.
+
+## S2964 — CCMWindowMult.lean EXIT0 (lane 2: window multiplication G_ccm(kL) ⪯ k·G_ccm(L)) — 2026-11-09 02:5x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN 4/4, 0 sorry):
+  * `CCMWindow.abs_sin_nat_mul_le`: |sin(kx)| ≤ k|sin x| (induction, addition formula).
+  * `ccmW_nat_mul_le`: k≥1, L>0 ⇒ ccmW(kL,γ) ≤ k·ccmW(L,γ).
+  * `ccm_gram_nat_mul_le`: k·G_ccm(L) − G_ccm(kL) ⪰ 0;  `ccm_rayleigh_nat_mul_le`: Rayleigh form.
+- Reading (Report): zero-side quadratic forms can shrink under window multiplication by at most the factor k, so
+  super-linear margin decay in the window (μ ~ e^{−κλ²}) is NOT a zero-side effect alone — it must come from
+  cancellation against the arithmetic side W02−W_R−W_p. Points the next lane-2 bricks at the arithmetic side.
+- λ²=28 Olympus runs alive 1h49m, no rows yet.
