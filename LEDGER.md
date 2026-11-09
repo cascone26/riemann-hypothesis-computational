@@ -52742,3 +52742,9 @@ the e^{−κλ²} margin law is the quantitative version of that degeneration.
 Pipeline absorption ceiling: c₀ → (221/630)/(13·128/15) ≈ 3.16e-3. Beyond it the levers are structural: (i) sharper sphere
 bound (|ζ| ≪ |t|^{1/2+} on Re ≥ σ−R → halves the leading 32·log x), (ii) different trig polynomial (higher-degree Kadiri-type),
 (iii) B-term via a separate local zero-counting argument. Axioms std, gate GREEN, 0 sorry. HANDLE.
+
+## S2958 — CCMSmallMargin.lean EXIT0 (lane 2: small zero-side margin forces a near-resonant ordinate) — 2026-11-08 23:47 CST
+`exists_near_resonant`: xᵀG_ccm x < (4δ²/L)·xᵀCCᵀx ⇒ ∃j, |sin(γ_jL/2)| < δ (contrapositive of S2956).
+`exists_near_resonant_sqrt`: relative margin < μ ⇒ ∃j, |sin(γ_jL/2)| < √(μL)/2. Structural reading of the numerical margin
+decay μ_λ ~ e^{−κλ²} (S2895): a relative margin μ certifies an ordinate within resonance distance √(μL)/2.
+Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation; relative-to-CCᵀ margin (not λ_min itself).
