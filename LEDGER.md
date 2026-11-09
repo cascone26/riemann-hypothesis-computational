@@ -52726,3 +52726,10 @@ Ladder (Handle): 1/8960 → 9/22464 → 221/332640 → 221/110880 → **221/8820
 R is capped by σ−R > 0 (σ→1⁺), so R→1 alone saturates at Jensen cost 8; further gains need the sharper sphere bound
 (N≥2 Euler–Maclaurin, ζ ≪ log t near σ=1) or the B-term (iγ) handled with a different radius than growth terms.
 Axioms std, gate GREEN, 0 sorry. HANDLE.
+
+## S2956 — CCMResonanceGap.lean EXIT0 (lane 2: quantitative positivity from a resonance gap) — 2026-11-08 22:44 CST
+`ccmW_ge_of_gap`: δ ≤ |sin(γL/2)| ⇒ 4δ²/L ≤ w_γ; `ccm_gram_ge_gap`: G_ccm − (4δ²/L)·CCᵀ ⪰ 0 when all ordinates have gap δ;
+`ccm_rayleigh_ge_gap`: (4δ²/L)·xᵀCCᵀx ≤ xᵀG_ccm x. With S2937: (4δ²/L)·CCᵀ ⪯ G_ccm ⪯ (4/L)·CCᵀ — the zero-side margin is
+pinned to the Cauchy Gram up to δ². Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation.
+Note: for the true zeros, inf_j |sin(γ_jL/2)| → 0 as truncation grows (equidistribution), consistent with μ_λ → 0 numerically;
+the e^{−κλ²} margin law is the quantitative version of that degeneration.
