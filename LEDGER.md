@@ -52658,3 +52658,9 @@ Prior art (Report): the 5-8-4-1 / (1+cosθ)(1+2cosθ)² polynomial is classical 
 Rosser–Schoenfeld / Kadiri lineage for better constants); NOT novel mathematics — novelty is the end-to-end Lean
 formalization over Mathlib's riemannZeta. Constant here (9/26)/832 ≈ 4.2e-4 is unoptimized (3-4-1 forge region also explicit);
 next lane-1 bricks: constant tuning (ε, 64-slack), uniform version (small |γ| strip as in ZetaZeroFreeUniform).
+
+## S2946 — CCMEnvelope.lean EXIT0 (lane 2: two-regime Loewner envelope for the CCM zero side) — 2026-11-08 18:29 CST
+`ccm_gram_le_envelope`: G_ccm ⪯ C·diag(min(4/L, Lγ_j²))·Cᵀ; `ccm_gram_le_quad`: G_ccm ⪯ C·diag(Lγ_j²)·Cᵀ (low-lying zeros
+contribute O(Lγ²)); Rayleigh and trace forms (`ccm_rayleigh_le_envelope`, `ccm_trace_le_envelope`, `ccm_trace_le_quad`).
+Composes S2943 ccmW_le_min/le_sq with S2937/S2939 monotonicity. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on
+Olympus. Scope: RH-conditional finite-truncation zero side. λ²=28 extension (PID 28140) running, no N=184 row yet.
