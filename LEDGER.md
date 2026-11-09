@@ -52715,3 +52715,14 @@ Constant ladder (Handle, all compiled here): 1/8960 (3-4-1) → 9/22464 → 221/
 G_cos := C·diag(cos γ_jL)·Cᵀ (S2951: G_ccm = (2/L)(CCᵀ − G_cos)). `osc_le`: CCᵀ − G_cos ⪰ 0; `osc_ge`: G_cos + CCᵀ ⪰ 0;
 `osc_rayleigh_abs`: |xᵀG_cos x| ≤ xᵀCCᵀx. The oscillatory Gram is a contraction relative to the fixed Cauchy Gram; the
 zero-side margin is exactly (2/L)(CCᵀ − G_cos). Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation.
+
+## S2954/S2955 — TrigPoly5841R1516.lean EXIT0 (lane 1: Jensen radius R=15/16, c₀ = 221/88200 ≈ 2.51e-3) — 2026-11-08 CST
+S2954 `log_sharp_close_40K`: 0≤d≤63, e²⁵⁶≤x, 8·log(64(3+6a+640)) ≤ log x ⇒ 32·log((dx+10)(3+6a+640·log x)) ≤ 40·log x
+(base 64 instead of 16 gives coefficient room d ≤ 63). S2955 `cleanRHS_1516_le`: |t|≥41 ⇒ cleanRHS σ t (15/16) ≤
+(128/15)·log((17|t|+10)(3+1/(σ−1))); heights γ,2γ,3γ ⇒ d = 17,34,51 ≤ 63 ⇒ B=C₂=C₃=(32/3)·log|γ|, 𝒦 = 5A₀+(416/3)·log|γ|.
+- `riemannZeta_zero_free_5841_R1516`: β ≤ 1 − (221/630)/(5A₀ + (416/3)·log|γ|)  (|γ|≥e²⁵⁶, threshold 8·log(64(3+6A₀+640))).
+- `riemannZeta_zero_free_5841_clean_R1516`: ∃T₀ ∀|γ|≥T₀: β ≤ 1 − (221/88200)/log|γ|.
+Ladder (Handle): 1/8960 → 9/22464 → 221/332640 → 221/110880 → **221/88200 ≈ 2.506e-3** (×1.26 over S2952, ×22.4 over 3-4-1).
+R is capped by σ−R > 0 (σ→1⁺), so R→1 alone saturates at Jensen cost 8; further gains need the sharper sphere bound
+(N≥2 Euler–Maclaurin, ζ ≪ log t near σ=1) or the B-term (iγ) handled with a different radius than growth terms.
+Axioms std, gate GREEN, 0 sorry. HANDLE.
