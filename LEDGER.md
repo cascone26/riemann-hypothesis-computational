@@ -52822,3 +52822,7 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   still uses the old sphere bound — swap it to sharpMs too (same S2961 machinery) for the full gain.
 - Next lane-1: (a) B-term on sharpMs, (b) log absorption ⇒ explicit c₀ rung (Report estimate ≈3.2e-3).
 - λ²=28 Olympus runs alive 2h20m, no rows yet.
+
+- 2026-11-09 03:55 CST: λ²=28 Olympus cross-check N=136 (dps 720) REPRODUCED HP row (dps 640) digit-for-digit:
+  eps=5.9498e-134, e1=1.485e-129, log10eps=−133.23 → Olympus pipeline validated (HANDLE: independent machine + precision).
+  N=184/N=200 (PIDs 3320939/3320940) still running at 2h51m.
