@@ -52982,3 +52982,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Reading (Report): beyond height 2V, the zero side contributes μ(Σx)² ± 0.38μ(Σ|x|)² — on 𝟙^⊥ the far tail is bounded by
   0.38μ(Σ|x|)², a certified-size perturbation; the CCM margin on 𝟙^⊥ is decided by zeros below 2V up to that error.
 - λ²=28 Olympus N=184/200 at 8h59m, no rows yet.
+
+## S2979 — ZetaEntireE.lean EXIT0 (lane 1: E(s) = (s−1)ζ(s) entire — Phragmén–Lindelöf input) — 2026-11-09 10:4x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `zetaE := update (s ↦ (s−1)ζ(s)) 1 1`; `zetaE_eq` (s ≠ 1), `zetaE_one`.
+  * `zetaE_differentiable : Differentiable ℂ zetaE` (removable singularity via riemannZeta_residue_one +
+    differentiableOn_compl_singleton_and_continuousAt_iff).
+  * `zetaE_diffContOnCl S` — exactly the regularity hypothesis of Mathlib `PhragmenLindelof.vertical_strip`.
+- Plan for the convexity brick (Report): f(s) = zetaE(s)·G(s) with G a zero-free normaliser of size |t|^{−(1−σ)/2−1}
+  on the strip (e.g. G(s) = (s+2)^{−(3−s)/2} via cpow, |G| = |s+2|^{−(3−σ)/2}·e^{arg·t/2} bounded factor);
+  edges: σ=1 from S2977 (|ζ(1+it)| ≤ log t + 5), σ=0 from S2975/S2977; growth hypothesis from forge polynomial strip bounds.
+- λ²=28 Olympus N=184/200 at 9h30m, no rows yet.
