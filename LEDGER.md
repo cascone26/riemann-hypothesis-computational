@@ -52993,3 +52993,16 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   on the strip (e.g. G(s) = (s+2)^{−(3−s)/2} via cpow, |G| = |s+2|^{−(3−σ)/2}·e^{arg·t/2} bounded factor);
   edges: σ=1 from S2977 (|ζ(1+it)| ≤ log t + 5), σ=0 from S2975/S2977; growth hypothesis from forge polynomial strip bounds.
 - λ²=28 Olympus N=184/200 at 9h30m, no rows yet.
+
+## S2980 — CCMTailPerp.lean EXIT0 (lane 2: margin transfer on 𝟙^⊥) + NEGATIVE numeric result — 2026-11-09 11:0x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `abs_sum_sq_le_card`: (Σ|x_i|)² ≤ n·Σx_i².  `near_const_quad_perp`: entries within δ of μ, Σx = 0 ⇒ |xᵀMx| ≤ δ·n·Σx².
+  * `margin_transfer_perp`: xᵀAx = xᵀGx + xᵀTx, xᵀGx ≥ m·Σx², T near-constant ⇒ xᵀAx ≥ (m − δn)·Σx² on 𝟙^⊥.
+- NEGATIVE (HANDLE numerics): splitting at 2V, the near-zero Gram has rank ≤ 2·#near < n−1 (0–3 near zeros for N=3,6), so
+  m(G_near on 𝟙^⊥) = 0 and the transfer bound is −δn ≈ −0.066/−0.084/−0.075, while the TRUE margin of A on 𝟙^⊥ is
+  ~1e-14..1e-17 (λ²=20 N=3,6; λ²=28 N=6). ⇒ the CCM margin is carried by the FINE structure of the far tail
+  (beyond the constant 𝟙𝟙ᵀ term), not by near zeros; a crude δ-bound cannot see it.
+- Next attempt (loaded): expand the paired tail to second order — pair − 2/x² = 2(ab+a²+b²)/x⁴ + O(V⁴/x⁶) — i.e. the
+  tail ≈ μ₀𝟙𝟙ᵀ + μ₂(ν𝟙ᵀ+𝟙νᵀ)²-type rank-3 moment block in span{𝟙, ν, ν²}; then project onto span{𝟙,ν,ν²}^⊥ where the
+  tail error drops to O(V⁴Σw/x⁶). Moment-hierarchy: margin on the k-th moment complement ~ Σ w/x^{2k}.
+- λ²=28 Olympus N=184/200 at 10h01m, no rows yet.
