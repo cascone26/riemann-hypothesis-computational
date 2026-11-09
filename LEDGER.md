@@ -52885,3 +52885,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   g_A(n) = −(c/4)·4πn/(L²+16π²n²) − Jsig(n) − Σ_k Λ(k)k^{-1/2} sin(2πn log k/L). Positivity ⇔ a statement about (d_A, g_A).
   Next: the same Löwner form for the zero side G = C diag(w) Cᵀ (Cauchy-like C) → compare generators g_A vs g_G.
 - λ²=28 Olympus N=184/200 at 4h55m, no rows yet.
+
+## S2971 — TrigPolyQuarticSharp.lean EXIT0 — degree-4 trig polynomial on the sharp pipeline: c₀ = 25063328/7218126100 ≈ 3.4723e-3 (lane 1) — 2026-11-09 06:4x CST
+- Search (Report→HANDLE numerics, operators/hp_trigpoly_search.py): score ε(c₁−c₀−ε)/((c₀+ε)Σ_{k≥1}c_k) over P = Π(b_i+cosθ)^{e_i}:
+  5-8-4-1 = 0.026991; best quartic (0.913+x)²(0.277+x)² = 0.028654 (Stechkin-type; prior art: classical, no novelty);
+  chosen rational (9/10+x)²(3/10+x)² = 0.028646.
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; one fix: maxHeartbeats 2e6 for the main theorem):
+  * `pQ_nonneg`: 14379 + 24480cosθ + 14900cos2θ + 6000cos3θ + 1250cos4θ = (27+120x+100x²)² ≥ 0.
+  * `riemannZeta_zero_free_quartic_sharp`: ∃A₀ ∀γ β (|γ| ≥ e^65536, threshold), ζ(β+iγ)=0 ⇒
+    β ≤ 1 − (25063328/18763)/(14379A₀ + (769395/2)log|γ|).   (zeta_region_P_pole, K=3, ε=4384, R=1/2, all-sharp B,C₂,C₃,C₄)
+  * `riemannZeta_zero_free_quartic_clean`: ∃T₀: β ≤ 1 − (25063328/7218126100)/log|γ|  ≈ 3.4723e-3.
+- Ladder: 221/74340 (2.973e-3) → 221/68040 (3.248e-3, S2969) → **3.472e-3 (+6.9%)**.
+- Next levers: higher degree (deg 5-6 search), κ→8 (thresholds), convexity bound via functional equation.
