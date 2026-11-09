@@ -52678,3 +52678,17 @@ Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus.
 (weighted Cauchy–Schwarz via Mathlib sum_mul_sq_le_sq_mul_sq with √w); `ccm_diag_le`: G^ccm_aa ≤ (4/L)Σ_j C_aj²;
 `ccm_entry_sq_le` (CCM instance). For Shi's C_mj = 1/(ν_m+γ_j): zero-side coupling of test functions m,n is bounded by
 their self-energies. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation.
+
+## S2949 — LogSharpClose40.lean EXIT0 (lane 1: tighter closing estimate, 40·log x) — 2026-11-08 CST
+`log_sharp_close_40`: 0≤a, 0≤d≤15, e²⁵⁶ ≤ x, 8·log(16(3+6a+640)) ≤ log x ⇒ 32·log((dx+10)(3+6a+640·log x)) ≤ 40·log x
+(absorbed terms charged 4L each via threshold ×8 and mul_log_le_self C=8; vs 64L in S2930). Axioms std, gate GREEN, 0 sorry. HANDLE.
+
+## S2950 — TrigPoly5841Tuned.lean EXIT0 (lane 1: TUNED unconditional 5-8-4-1 region) — 2026-11-08 CST
+ε = 13/10 (near the maximizer −5+√40 of ε(3−ε)/(5+ε)), B=C₂=C₃=40·log|γ|, 𝒦 = 5A₀+520·log|γ|:
+- `riemannZeta_zero_free_5841_40`: ∃A₀≥0 ∀γ β, e²⁵⁶ ≤ |γ| → 8·log(16(3+6A₀+640)) ≤ log|γ| → ζ(β+iγ)=0 →
+  β ≤ 1 − (221/630)/(5A₀ + 520·log|γ|).
+- `riemannZeta_zero_free_5841_clean40`: ∃T₀ ∀|γ|≥T₀: β ≤ 1 − (221/332640)/log|γ|.
+Constant ladder (all compiled in this forge, Handle): 3-4-1 clean 1/8960 ≈ 1.116e-4 → 5-8-4-1 (S2947) 9/22464 ≈ 4.006e-4 →
+5-8-4-1 tuned 221/332640 ≈ 6.644e-4 (×1.66 over S2947, ×5.95 over 3-4-1). Literature (Report): Kadiri c≈1/5.70 — the gap is
+the BC/Jensen sphere step (factor 4/(R/2)=32 per log) and the crude N=1 sphere bound; next tuning targets: radius R, the
+Jensen constant, and absorbing log|γ| via the convexity bound ζ ≪ t^{1/2}... Axioms std, gate GREEN 4/4, 0 sorry. HANDLE.
