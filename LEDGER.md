@@ -52910,3 +52910,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   divided differences of ONE generator Γ(n) = g_A(n) − π·Σ_γ w_γ/(2πn/L − γ). Next: identify Γ with the
   explicit-formula remainder (it should vanish/shrink under RH-exact zero sums) — numerics first on parts(20,N).
 - λ²=28 Olympus N=184/200 at 5h55m, no rows yet.
+
+## S2973 — TrigPolyQuartic64.lean EXIT0 (lane 1: quartic + κ → 8+1/64): c₀ = 25063328/7013609400 ≈ 3.5735e-3 — 2026-11-09 07:3x CST
+- NEGATIVE RESULT first (HANDLE numerics): Nelder-Mead over squares of cubic/quartic polys (trig degree 6, 8) re-converges to
+  the S2971 quartic (score 0.0286539 at every degree); product families deg 5/6 score 0.02841/0.02806. With uniform growth
+  cost κL per coefficient, the quartic is optimal among squares → degree lever needs DIFFERENTIATED costs (e.g. cheaper C_k
+  for large k via convexity), not just higher degree.
+- So the next lever was run instead: κ = 513/64 (vs 33/4) — HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `riemannZeta_zero_free_quartic_sharp64`: |γ| ≥ e^{4096²} + threshold ⇒ β ≤ 1 − (25063328/18763)/(14379A₀ + (11960595/32)log|γ|).
+  * `riemannZeta_zero_free_quartic_clean64`: β ≤ 1 − (25063328/7013609400)/log|γ| ≈ 3.5735e-3 /log|γ| for |γ| ≥ T₀.
+- Ladder: 3.248e-3 (S2969) → 3.472e-3 (S2971) → **3.5735e-3 (S2973)**. Pipeline limit κ→8: 0.028646/8 ≈ 3.581e-3.
+- Next lane-1: convexity bound |ζ(σ+it)| ≪ |t|^{(1−σ)/2+ε} (functional equation) → cuts the 8·log|t| itself.
