@@ -52961,3 +52961,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   Next: sharpen (second-order expansion 1/((a−x)(b−x)) = 1/x² + (a+b)/x³ + O(V²/x⁴): the (a+b)/x³ term is odd in x and
   cancels in ±γ pairs with even weight ⇒ δ improves to O(V²Σw/x⁴)).
 - λ²=28 Olympus N=184/200 at 7h57m, no rows yet.
+
+## S2977 — ZetaImagAxisBound.lean EXIT0 (lane 1: ζ on Re s = 1 and |ζ(it)| ≪ |t|^{1/2} log|t|) — 2026-11-09 09:3x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN 3/3, 0 sorry):
+  * `norm_riemannZeta_le_re_one`: Re s = 1, s ≠ 1, N ≥ 1 ⇒ ‖ζ s‖ ≤ log N + 1 + 1/‖s−1‖ + ‖s‖/N (ON the line: harmonic sum ≤ log N).
+  * `norm_zeta_one_sub_mul_I_le`: t ≥ 2 ⇒ ‖ζ(1−it)‖ ≤ log t + 5.
+  * `norm_zeta_mul_I_sq_le_log`: t ≥ 2 ⇒ ‖ζ(it)‖² ≤ (t/2π)(log t + 5)²  (via S2975 exact identity).
+- Numeric check (mpmath): t = 2,10,14.13,100,1000 all satisfied (e.g. t=1000: |ζ(it)|² = 141.2 ≤ 22567).
+- Next lane-1: Phragmén–Lindelöf on 0 ≤ Re s ≤ 1 (Mathlib has PhragmenLindelof.vertical_strip) applied to
+  ζ(s)·(s−1)/(s+1)·(−i(s+... ))^{-(1−s)/2}-type normaliser ⇒ |ζ(σ+it)| ≪ |t|^{(1−σ)/2} log|t|; then plug into sharp pipeline.
+- λ²=28 Olympus N=184/200 at 8h28m, no rows yet.
