@@ -52692,3 +52692,10 @@ Constant ladder (all compiled in this forge, Handle): 3-4-1 clean 1/8960 ≈ 1.1
 5-8-4-1 tuned 221/332640 ≈ 6.644e-4 (×1.66 over S2947, ×5.95 over 3-4-1). Literature (Report): Kadiri c≈1/5.70 — the gap is
 the BC/Jensen sphere step (factor 4/(R/2)=32 per log) and the crude N=1 sphere bound; next tuning targets: radius R, the
 Jensen constant, and absorbing log|γ| via the convexity bound ζ ≪ t^{1/2}... Axioms std, gate GREEN 4/4, 0 sorry. HANDLE.
+
+## S2951 — CCMFejerSplit.lean EXIT0 (lane 2: weight-linearity + Fejér split of the CCM zero side) — 2026-11-08 CST
+`gram_add`, `gram_smul` (W ↦ C·diag(W)·Cᵀ linear); `truncW_split`, `gram_trunc_split`: G_T = G_S + G_{T∖S} (S⊆T);
+`ccm_gram_fejer`: G_ccm = (2/L)·C·Cᵀ − (2/L)·C·diag(cos γ_jL)·Cᵀ — the zero side splits into a γ-independent Cauchy Gram
+and an oscillatory Gram carrying all the zero dependence (from S2943 w = 2(1−cos γL)/L). Axioms std, gate GREEN, 0 sorry.
+HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation. Use: the oscillatory Gram is where cancellation
+(explicit-formula / Weil side) must enter; the non-oscillating part is a fixed positive Cauchy Gram.
