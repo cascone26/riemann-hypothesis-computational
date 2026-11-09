@@ -52849,3 +52849,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-1: log absorption (log|kγ| ≤ log|γ| + log 3, R-dependent O(1) + log(3+1/(σ−1)) absorbed as in S2949/S2957)
   ⇒ explicit c₀ rung. Report estimate: 𝒦 ≈ 104(1+δ)L ⇒ c₀ ≈ 2.21/(6.3·~110) ≈ 3.2e-3 (beats 221/74340 ≈ 2.97e-3).
 - λ²=28 Olympus N=184/200 at 3h22m, no rows yet.
+
+## S2968 — CCMLownerDisplacement.lean EXIT0 (lane 2, arithmetic side: W_R, W_P are Löwner with rank-2 displacement) — 2026-11-09 05:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; one fix iteration: diag-case `ring`, removed dead `ring`):
+  * `CCMLowner.lowner d g ν` := d_i on diagonal, (g_j − g_i)/(π(ν_i − ν_j)) off-diagonal.
+  * `lowner_symm`: Mᵀ = M.  `lowner_add`: lowner d g + lowner d' g' = lowner (d+d') (g+g')  ⇒ W_R + W_P is ONE Löwner matrix.
+  * `lowner_displacement`: ν injective ⇒ diag(ν)M − M diag(ν) = (1/π)(𝟙gᵀ − g𝟙ᵀ)  (rank ≤ 2, independent of d).
+- Matches ccm_parts.py: W_R (g = Jsig, d = archconst + D_diag), W_P (g_n = Σ Λ(k)k^{-1/2} sin(2πn log k/L), d = Σ … cos …).
+- Numeric cross-check (HANDLE, python parts(20,8)): [diag(n), ·] has rank 2 for W_R, W_P AND W02; all exactly symmetric.
+- Reading (Report): the full arithmetic matrix A = W02 − W_R − W_P has displacement rank ≤ 2+2 (numerically small) w.r.t.
+  diag(n) — same Cauchy/Löwner structure as the zero side G = C·diag(w)·Cᵀ. Next: formalize [diag(ν), W02] explicitly
+  (via νu = (L/4π)v, 16π²ν²u = L − L²u) and compare displacement generators of A vs G — a structural route to A − G.
+- λ²=28 Olympus N=184/200 at 3h53m, no rows yet.
