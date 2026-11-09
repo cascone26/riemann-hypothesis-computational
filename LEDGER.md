@@ -52873,3 +52873,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Literature context (Report): Kadiri ~0.175 (vs ours 3.25e-3) — remaining gap is the trig polynomial degree +
   convexity/zero-counting levers, not the formal pipeline.
 - Next lane-1 levers: κ → 8 (thresholds), convexity |ζ| ≪ t^{(1-σ)/2+} via functional equation, higher-degree trig poly.
+
+## S2970 — CCMArithLowner.lean EXIT0 (lane 2: the whole arithmetic matrix A = W02 − W_R − W_P is ONE Löwner matrix) — 2026-11-09 06:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; one fix: conv_lhs to stop rw touching the RHS diagonal):
+  * `W02_offdiag`: ν_i ≠ ν_j ⇒ W02_ij = (g₀_j − g₀_i)/(π(ν_i − ν_j)), g₀ = −(c/4)·v  (identity ν_iD_j − ν_jD_i = (ν_i−ν_j)(L²−16π²ν_iν_j)).
+  * `W02_eq_lowner`: W02 = lowner(diag W02, g₀, ν) for injective ν.  `lowner_neg`, `lowner_sub` (linearity in (d,g)).
+  * `ccm_arith_lowner`: W02 − lowner(d_R,g_R) − lowner(d_P,g_P) = lowner(d₀−d_R−d_P, g₀−g_R−g_P).
+  * `ccm_arith_displacement`: [diag ν, A] = (1/π)(𝟙g_Aᵀ − g_A𝟙ᵀ), g_A = g₀ − g_R − g_P.
+- Numeric cross-check (HANDLE): python parts(20,8): max|W02 − lowner(g₀)| = 8.3e-17 at scale 7.2.
+- Reading (Report): the CCM Weil matrix = diagonal d_A + divided-difference matrix of ONE generator
+  g_A(n) = −(c/4)·4πn/(L²+16π²n²) − Jsig(n) − Σ_k Λ(k)k^{-1/2} sin(2πn log k/L). Positivity ⇔ a statement about (d_A, g_A).
+  Next: the same Löwner form for the zero side G = C diag(w) Cᵀ (Cauchy-like C) → compare generators g_A vs g_G.
+- λ²=28 Olympus N=184/200 at 4h55m, no rows yet.
