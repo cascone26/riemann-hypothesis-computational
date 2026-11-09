@@ -53119,3 +53119,10 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Lane-2 hierarchy now: level 1 sup|g'|/π (S2985, sharp to 2–4%), level 2 on 𝟙^⊥: 2V·sup|g''|/π (this brick).
   Next: assemble with the diagonal (Löwner diagonal d_i handled separately: tail diagonal = Σ w·(1/(ν−x)²+1/(ν+x)²) = −g'_tail(ν_i)/π
   exactly — i.e. the diagonal IS the u_i+u_k pattern at i=k), giving a closed-form bound for the whole tail on 𝟙^⊥.
+
+## S2991 — ZetaEdgesUniform.lean EXIT0 (lane 1: convexity edges for both signs, |t| ≥ 2) — 2026-11-09 15:4x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; fix: le_or_lt → le_or_gt):
+  * `norm_zeta_one_add_mul_I_le_abs`: 2 ≤ |t| ⇒ ‖ζ(1+it)‖ ≤ log|t| + 5  (t<0 via S2977's ζ(1−i|t|) bound).
+  * `norm_zeta_mul_I_le_abs`: 2 ≤ |t| ⇒ ‖ζ(it)‖ ≤ √(|t|/2π)(log|t| + 5)  (t<0 via Mathlib riemannZeta_conj).
+- Convexity inventory: entire E ✓, edges |t| ≥ 2 both signs ✓, three-lines+Gaussian ✓, Gaussian localisation (poly+log) ✓.
+  OPEN: |t| < 2 edge segment (compactness: E continuous ⇒ bounded on the two segments), hB (E·G_T bounded on the strip).
