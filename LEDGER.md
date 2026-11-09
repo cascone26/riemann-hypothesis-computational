@@ -53136,3 +53136,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   and |Δν| ≤ 2V; next refinement: weighted Schur test Σ_k |ν_i−ν_k||x_k| (keeps |Δν| per pair) → expected ≤ 10× loose.
 - Lane-2 arc summary (Report): CCM A = Löwner(g_A) exactly (S2970); zero side Cauchy/Löwner (S2972); numerically A = G_∞ (S2974);
   far tail controlled through derivatives of one explicit generator (S2985 sharp level 1, S2987/S2990/S2992 level 2).
+
+## S2993 — ZetaEdgesAll.lean EXIT0 (lane 1: uniform convexity edges for ALL real t) — 2026-11-09 16:4x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `exists_bound_small`: ∃M ≥ 0, |t| ≤ 2 ⇒ ‖E(it)‖, ‖E(1+it)‖ ≤ M (IsCompact.exists_bound_of_continuousOn, E entire).
+  * `left_edge_all`: ∃K ∀t, ‖E(it)‖ ≤ K(1+|t|)^{3/2}(log(1+|t|)+5).
+  * `right_edge_all`: ∃K ∀t, ‖E(1+it)‖ ≤ K(1+|t|)(log(1+|t|)+5).
+- Convexity inventory: E entire ✓; edges ALL t ✓ (this brick); Gaussian localisation p=3/2,1 with log ✓ (S2986/S2988);
+  three-lines ✓ (S2984). ONLY OPEN INPUT: hB — boundedness of E·G_T on the closed strip 0 ≤ Re ≤ 1.
+  Plan for hB: E·G_T is continuous; on |t−T| ≥ R the Gaussian e^{−(t−T)²} kills any e^{c|t|} growth of E on the strip;
+  forge Λ₀ strip bounds (CompletedZeta0StripBound) + |Γℝ(s)|^{-1} ≤ e^{π|t|/4}·poly give |E| ≪ e^{c|t|} on the strip.
