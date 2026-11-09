@@ -53006,3 +53006,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   tail ≈ μ₀𝟙𝟙ᵀ + μ₂(ν𝟙ᵀ+𝟙νᵀ)²-type rank-3 moment block in span{𝟙, ν, ν²}; then project onto span{𝟙,ν,ν²}^⊥ where the
   tail error drops to O(V⁴Σw/x⁶). Moment-hierarchy: margin on the k-th moment complement ~ Σ w/x^{2k}.
 - λ²=28 Olympus N=184/200 at 10h01m, no rows yet.
+
+## S2981 — λ²=28 N=184 ROW LANDED (Olympus, dps 880): log10 ε = −138.51 — S2895 test PROVISIONAL — 2026-11-09 11:36 CST
+- HANDLE (numeric row, Olympus PID 3320939, 10h31m): `lam2=28 L=3.3322 N=184: eps=3.0973e-139 e1=1.379e-134 log10eps=-138.51`
+  (banked into results/hp_center/mu_lambda28.txt).
+- Saturation: steps 136→152 2.95, 152→168 1.78 (ratio 0.60), 168→184 0.55 (ratio 0.31). Geometric tail at r≈0.31 ⇒
+  floor ≈ −138.76 (Report).
+- S2895 pre-registration (slope 20→28 ∈ [12.3,12.7]; λ²=20 floor −ln μ = 220.9):
+  * raw N=184: −ln μ = 318.9 ⇒ slope 12.25 (just BELOW window);
+  * extrapolated floor: −ln μ ≈ 319.5 ⇒ slope 12.33 (INSIDE, low end).
+  Decision rule (S2944): if N=200 step ratio ≤ 0.3, N=200 value is the floor and the test passes iff in window. N=200 (PID 3320940) still running.
+- Note: κ plateau reading (12.3 between 14→20, ≈12.3 between 20→28) is consistent with a constant per-zero cost; 4π=12.566 now
+  looks too high unless N=200 drops further (Report).
