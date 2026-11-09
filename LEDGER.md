@@ -52748,3 +52748,16 @@ bound (|ζ| ≪ |t|^{1/2+} on Re ≥ σ−R → halves the leading 32·log x), (
 `exists_near_resonant_sqrt`: relative margin < μ ⇒ ∃j, |sin(γ_jL/2)| < √(μL)/2. Structural reading of the numerical margin
 decay μ_λ ~ e^{−κλ²} (S2895): a relative margin μ certifies an ordinate within resonance distance √(μL)/2.
 Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation; relative-to-CCᵀ margin (not λ_min itself).
+
+## S2959 — ZetaSphereSharpN.lean EXIT0 (lane 1 structural: sharp N-term ζ sphere bound) — 2026-11-09 00:3x CST
+- HANDLE (compiled Olympus EXIT0, axiom_gate GREEN 3/3, 0 sorry):
+  * `sum_rpow_neg_mono_exp`: a ≤ x ⇒ Σ_{1<k≤N} k^{-x} ≤ Σ_{1<k≤N} k^{-a}.
+  * `norm_riemannZeta_le_sphere_sharpN`: z ∈ sphere c R, a := c.re−R ∈ (0,1), R < ‖c−1‖ ⇒
+    ‖ζ z‖ ≤ (N^{1−a}−1)/(1−a) + 1 + N^{1−a}/(‖c−1‖−R) + (‖c‖+R)·N^{−a}/a.  Sphere may straddle Re=1.
+  * `..._clean`: ≤ N^{1−a}(1/(1−a) + 1/(‖c−1‖−R)) + 1 + (‖c‖+R)N^{−a}/a.
+- Meaning: replaces the N=1 sphere bound (log M ≍ log|t|) by one with N ≍ |t| giving log M ≈ (1−a)·log|t| + O(1).
+  In the 5-8-4-1 pipeline the leading coefficient is (8/R)·log M; with R=15/16, a≈1/16 this is ≈ 8·log|t|
+  (vs 128/15 ≈ 8.53), ~6% on each of B,C2,C3. Standard (Titchmarsh §3.5-type); no novelty claimed.
+- Next lane-1: wire sharpN into cleanRHS (choose N = ⌊|t|⌋), new constant ladder rung; then the bigger lever
+  (convexity-type t^{(1−σ)/2} via functional equation) for the ~2x gain.
+- λ²=28: extension PID 28140 died silently (empty .err, likely low-memory kill); relaunched N=184 alone 00:3x.
