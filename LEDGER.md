@@ -52826,3 +52826,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - 2026-11-09 03:55 CST: λ²=28 Olympus cross-check N=136 (dps 720) REPRODUCED HP row (dps 640) digit-for-digit:
   eps=5.9498e-134, e1=1.485e-129, log10eps=−133.23 → Olympus pipeline validated (HANDLE: independent machine + precision).
   N=184/N=200 (PIDs 3320939/3320940) still running at 2h51m.
+
+## S2966 — CCMW02Rank2.lean EXIT0 (lane 2, FIRST arithmetic-side brick: W02 rank 2, signature (1,1)) — 2026-11-09 04:0x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN 16/16, 0 sorry):
+  * `CCMW02.W02` (verbatim ccm_parts.py formula), `uW_i = L/(L²+16π²ν_i²)`, `vW_i = 4πν_i/(L²+16π²ν_i²)`, `cW = 32L sinh²(L/4)`.
+  * `W02_eq`: W02 = cW • (uuᵀ − vvᵀ).  `quad_vecMulVec_self`: xᵀ(wwᵀ)x = (w·x)².
+  * `W02_quad`: xᵀW02x = cW((u·x)² − (v·x)²);  `W02_quad_le`: ≤ cW(u·x)²;
+    `W02_quad_nonpos_of_perp`: u·x=0 ⇒ ≤ 0;  `W02_quad_nonneg_of_perp_v`: v·x=0 ⇒ ≥ 0.
+- Numeric cross-check (HANDLE, python parts(20,12)): W02 has exactly 2 nonzero eigenvalues {−1.187, +7.244} ✓.
+- Reading (Report): pole block gives positivity in ONE direction only; on u^⊥ the CCM margin must come from
+  −(W_R + W_p). With S2964 (zero side ≤ linear under window scaling), the e^{−κλ²} margin lives in the
+  archimedean+prime blocks on u^⊥. Next arithmetic bricks: W_R (archconst + D_diag, Hilbert-type off-diagonal), W_p.
+- λ²=28 Olympus N=184/200 still running (2h5xm).
