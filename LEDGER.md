@@ -53154,3 +53154,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   Schur 1.47e-1 (20×); λ²=20 N=12: 45× → 22×; λ²=28 N=6: 42× → 21×. Exactly the predicted factor 2.
 - Remaining 20× slack: (i) MVT-vs-Taylor factor 2 in S2987; (ii) D₂ = sup|g''| over [−V,V] vs typical; (iii) the
   Schur test itself vs the true top eigenvalue. Next: Taylor (½ factor) + local D₂(ν_i,ν_k) on the segment.
+
+## S2995 — InvGammaStrip.lean EXIT0 (lane 1: |1/Γ| ≤ (2/π)e^{π|Im z|} on 0 ≤ Re z ≤ 1/2 — hB input) — 2026-11-09 17:5x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 3/3, 0 sorry; fix: reflection algebra via eq_div_iff + linear_combination):
+  * `Gamma_le_inv`: 0 < x ≤ 1 ⇒ Γ(x) ≤ 1/x  (Real.convexOn_Gamma on [1,2], Γ(x+1) = xΓ(x)).
+  * `norm_sin_le_exp`: ‖sin w‖ ≤ e^{|Im w|}.
+  * `norm_inv_Gamma_le`: 0 ≤ Re z ≤ 1/2 ⇒ ‖Γ(z)⁻¹‖ ≤ (2/π)e^{π|Im z|} (Γ(z)Γ(1−z) = π/sin πz; forge norm_Gamma_le_Gamma_re).
+- Numeric sanity (mpmath): max |1/Γ|/bound over Re ∈ {0.001,…,0.5}, Im ∈ {0,…,±20} printed in-session (< 1).
+- hB plan: ζ(s) = Λ(s)·π^{s/2}/Γ(s/2) ⇒ |E(s)| ≤ |s−1|·|Λ₀(s) − 1/s − 1/(1−s)|·π^{σ/2}·(2/π)e^{π|t|/2} on 0 ≤ σ ≤ 1, |t| ≥ 1
+  (Λ₀ via forge strip/reflect bounds — polynomial); then |E·G_T| ≤ poly·e^{π|t|/2 − (t−T)² + σ²} is bounded. Next lane-1 brick: assemble.
