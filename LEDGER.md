@@ -52772,3 +52772,5 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - λ²=28: N=184 relaunched 00:17, running (no row yet).
 
 - S2960 addendum (2026-11-09 ~01:0x): λ²=28 N=184 relaunch was stopped by Claude Code low-memory reaper (HP 8GB). Not restarted pending Jacob; option = run on Olympus.
+
+- 2026-11-09 ~01:05 CST (Jacob-approved infra move): λ²=28 margin test MOVED TO OLYMPUS (31GB). ~/rhforge/hp_center/{operators,results}; PIDs 3320939 (28:184:880 -> results/mu_lambda28_N184.txt), 3320940 (28:200:960 -> _N200.txt), 3321514 (28:136:720 cross-check vs HP -133.23 -> _N136_check.txt). Bank rows into results/hp_center/mu_lambda28.txt when they land; S2944 decision rule applies.
