@@ -52761,3 +52761,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-1: wire sharpN into cleanRHS (choose N = ⌊|t|⌋), new constant ladder rung; then the bigger lever
   (convexity-type t^{(1−σ)/2} via functional equation) for the ~2x gain.
 - λ²=28: extension PID 28140 died silently (empty .err, likely low-memory kill); relaunched N=184 alone 00:3x.
+
+## S2960 — CCMLatticeLocate.lean EXIT0 (lane 2: near-resonance locates an ordinate on (2π/L)ℤ) — 2026-11-09 00:5x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry):
+  * `CCMLattice.abs_sin_ge_jordan`: |x| ≤ π/2 ⇒ (2/π)|x| ≤ |sin x| (Jordan, both signs).
+  * `near_lattice_of_abs_sin_lt`: |sin(y/2)| < δ ⇒ ∃k:ℤ, |y − 2πk| < πδ (k = round(y/2π)).
+  * `exists_near_lattice_of_margin`: CCM zero-side margin < μ (rel. CCᵀ) ⇒ ∃ j k, |γ_j L − 2πk| < π√(μL)/2.
+- Meaning: margin law μ_λ ~ e^{−κλ²} ⇒ some ordinate within O(e^{−κλ²/2}) of the resonance lattice (2π/L)ℤ
+  (zero side only, truncated, RH-conditional as before). Report-tier interpretation; theorem is Handle.
+- λ²=28: N=184 relaunched 00:17, running (no row yet).
