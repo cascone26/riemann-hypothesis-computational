@@ -52710,3 +52710,8 @@ S2938 zeta_region_5841_clean; zero-input sphere data discharged as in S2945, far
 Constant ladder (Handle, all compiled here): 1/8960 (3-4-1) → 9/22464 → 221/332640 → **221/110880 ≈ 1.99e-3** (×3.0 over S2950,
 ×17.9 over forge 3-4-1). Literature (Report): Kadiri ≈ 0.175 — remaining gap: N=1 sphere bound and R<1 restriction
 (σ−R>0); next: R→1⁻ with a wider d-lemma, or a sharper sphere bound. Axioms std, gate GREEN, 0 sorry. HANDLE.
+
+## S2953 — CCMOscBounds.lean EXIT0 (lane 2: Loewner bounds on the oscillatory part of the CCM zero side) — 2026-11-08 21:41 CST
+G_cos := C·diag(cos γ_jL)·Cᵀ (S2951: G_ccm = (2/L)(CCᵀ − G_cos)). `osc_le`: CCᵀ − G_cos ⪰ 0; `osc_ge`: G_cos + CCᵀ ⪰ 0;
+`osc_rayleigh_abs`: |xᵀG_cos x| ≤ xᵀCCᵀx. The oscillatory Gram is a contraction relative to the fixed Cauchy Gram; the
+zero-side margin is exactly (2/L)(CCᵀ − G_cos). Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation.
