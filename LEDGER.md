@@ -52921,3 +52921,20 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `riemannZeta_zero_free_quartic_clean64`: β ≤ 1 − (25063328/7013609400)/log|γ| ≈ 3.5735e-3 /log|γ| for |γ| ≥ T₀.
 - Ladder: 3.248e-3 (S2969) → 3.472e-3 (S2971) → **3.5735e-3 (S2973)**. Pipeline limit κ→8: 0.028646/8 ≈ 3.581e-3.
 - Next lane-1: convexity bound |ζ(σ+it)| ≪ |t|^{(1−σ)/2+ε} (functional equation) → cuts the 8·log|t| itself.
+
+## S2974 — CCMTailConst.lean EXIT0 + numerics: forge zero-side model REPRODUCES the CCM arithmetic matrix (lane 2) — 2026-11-09 08:1x CST
+- NUMERICS (HANDLE-grade cross-checks, python, parts(λ²,12), first K of 150 zeros, Report-tier interpretation):
+  * Löwner generator g_A recovered from A = W02 − W_R − W_P exactly (consistency residual 0). Fit g_A = a + bν + k·Σ_γ sin²(γL/2)·2ν/(ν²−γ²):
+    k = 2.00001 (λ²=20), 2.00000 (λ²=28); rel. residual 5e-5; without the zero term 0.86–0.89 unexplained.
+  * slope b vs Riemann–von Mangoldt tail prediction −2(log(T/2π)+1)/(2πT): K=30 −0.01233/−0.01188, K=60 −0.008165/−0.008310,
+    K=100 −0.006225/−0.006229, K=150 −0.004908/−0.004918 (<1%).
+  * In ν = 2πn/L units: weight = ccmW = 4sin²(γL/2)/L EXACTLY (forge S2937+ weight), x_γ = ±γ. Then A − G_K ≈ μ_K·𝟙𝟙ᵀ:
+    entries 6.1e-3 (K=50) / 3.3e-3 (K=150), spread ≤1.5e-4 / 1.8e-5 (λ²=20; λ²=28 same). I.e. A = G_∞ (explicit formula) to numerics.
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; fix: gcongr closed side goal):
+  * `CCMTail.cauchy_pair_near_const`: |a|,|b| ≤ V, 2V ≤ |x| ⇒ |1/((a−x)(b−x)) − 1/x²| ≤ 10V/|x|³.
+  * `cauchy_tail_entry_near_const`: far-zero block entries within 10V·Σ w_j/|x_j|³ of the constant Σ w_j/x_j².
+  ⇒ explains the observed rank-one constant tail μ_K𝟙𝟙ᵀ.
+- Significance (Report): A ⪰ 0 ⟺ G_∞ ⪰ 0, and G_∞ = Σ_γ w_γ c_γ c_γᵀ is a PSD Gram iff all γ real (RH) — the CCM criterion,
+  now with every structural piece (Löwner form of A, Cauchy form of G, weights, tail) formal or numerically pinned.
+  Next lane-2: formal statement "A = G_T + μ_T𝟙𝟙ᵀ + E_T, ‖E_T‖ ≤ …" given the explicit-formula identity as hypothesis.
+- λ²=28 Olympus N=184/200 at 6h56m, no rows yet.
