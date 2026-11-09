@@ -53075,3 +53075,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Role: localises polynomial edge bounds with NO exponent loss: left edge |E(it)| ≪ (1+|t|)^{3/2}·log ⇒ a ≪ (1+T)^{3/2}·log;
   right edge |E(1+it)| ≪ (1+|t|)·log ⇒ b ≪ (1+T)·log. Remaining for convexity: log-factor version + hB (ζ near Re 0).
 - λ²=28 N=200 at 12h36m, no row yet.
+
+## S2987 — CCMLownerDeriv2.lean EXIT0 (lane 2: second-level Löwner control via g'') — 2026-11-09 14:1x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 3/3, 0 sorry; fixes: HasDerivWithinAt.sub lambda-vs-Pi form → build h2 from
+  hasDerivWithinAt_id.const_mul and rw mul_one):
+  * `deriv_lipschitz`: |g''| ≤ D₂ ⇒ |g'(x) − g'(a)| ≤ D₂|x − a|.
+  * `divdiff_sub_deriv`: |g b − g a − g'(a)(b − a)| ≤ D₂(b − a)²  (MVT on uIcc for g − g'(a)x).
+  * `lowner_entry_sub_rowconst`: |(g b − g a)/(π(a−b)) + g'(a)/π| ≤ D₂|b − a|/π.
+- Numeric (HANDLE, λ²=20 N=6 far tail, D₂ = 2.82e-3): worst lhs/rhs = 0.448 over all off-diagonal pairs (valid, factor ~2 = the
+  MVT-vs-Taylor ½ we gave up). Off-diagonal tail = row-constant −g'(ν_i)/π (vanishes on 𝟙^⊥ after symmetrising) + O(D₂|Δν|/π).
+- Next lane-2: symmetrise (−(g'(ν_i)+g'(ν_k))/2π, error from g''' ) and assemble the 𝟙^⊥ quadratic-form bound with
+  Σ|x_i||x_k||ν_i−ν_k| ≤ 2V(Σ|x|)²; then compare with the true CCM margin at mpmath precision.
+- λ²=28 N=200 at 13h07m, no row yet.
