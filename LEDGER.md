@@ -53146,3 +53146,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   three-lines ✓ (S2984). ONLY OPEN INPUT: hB — boundedness of E·G_T on the closed strip 0 ≤ Re ≤ 1.
   Plan for hB: E·G_T is continuous; on |t−T| ≥ R the Gaussian e^{−(t−T)²} kills any e^{c|t|} growth of E on the strip;
   forge Λ₀ strip bounds (CompletedZeta0StripBound) + |Γℝ(s)|^{-1} ≤ e^{π|t|/4}·poly give |E| ≪ e^{c|t|} on the strip.
+
+## S2994 — CCMSchurTest.lean EXIT0 (lane 2: Schur test, per-pair |Δν| kept; tail bound 41–45× → 20–22× loose) — 2026-11-09 17:1x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `schur_quad`: |M_ik − P_ik| ≤ δ_ik, δ symmetric, Σ_k δ_ik ≤ S ∀i ⇒ |xᵀMx − xᵀPx| ≤ S·Σx².
+- Numerics (HANDLE): far tail on 𝟙^⊥ (P = u𝟙ᵀ+𝟙uᵀ, δ_ik = D₂|ν_i−ν_k|/π): λ²=20 N=6: true 7.24e-3, S2992 2.94e-1 (41×),
+  Schur 1.47e-1 (20×); λ²=20 N=12: 45× → 22×; λ²=28 N=6: 42× → 21×. Exactly the predicted factor 2.
+- Remaining 20× slack: (i) MVT-vs-Taylor factor 2 in S2987; (ii) D₂ = sup|g''| over [−V,V] vs typical; (iii) the
+  Schur test itself vs the true top eigenvalue. Next: Taylor (½ factor) + local D₂(ν_i,ν_k) on the segment.
