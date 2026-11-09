@@ -53066,3 +53066,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Next lane-2: higher divided differences ↔ higher derivatives of g (Hermite–Genocchi): the restriction of a Löwner matrix
   to the complement of span{𝟙,ν,…,ν^{k−1}} is controlled by sup|g^{(k+1)}| — a sharp moment hierarchy.
 - λ²=28 N=200 at 12h05m, no row yet.
+
+## S2986 — GaussWeight.lean EXIT0 (lane 1: exact-exponent Gaussian moment bound for three-lines edges) — 2026-11-09 13:4x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `one_add_abs_le_mul`: 1+|t| ≤ (1+|T|)(1+|t−T|).  `one_add_rpow_le_exp`: (1+u)^p ≤ e^{pu} (u,p ≥ 0).
+  * `gauss_poly_weight`: p ≥ 0 ⇒ (1+|t|)^p·e^{−(t−T)²} ≤ (1+|T|)^p·e^{p²/4} for all real t, T.
+- Numeric sanity (p = 1, 1.5, 2; T = 0, 10, 1000): bound holds; sharp-ish (ratio printed in session).
+- Role: localises polynomial edge bounds with NO exponent loss: left edge |E(it)| ≪ (1+|t|)^{3/2}·log ⇒ a ≪ (1+T)^{3/2}·log;
+  right edge |E(1+it)| ≪ (1+|t|)·log ⇒ b ≪ (1+T)·log. Remaining for convexity: log-factor version + hB (ζ near Re 0).
+- λ²=28 N=200 at 12h36m, no row yet.
