@@ -52664,3 +52664,11 @@ next lane-1 bricks: constant tuning (ε, 64-slack), uniform version (small |γ| 
 contribute O(Lγ²)); Rayleigh and trace forms (`ccm_rayleigh_le_envelope`, `ccm_trace_le_envelope`, `ccm_trace_le_quad`).
 Composes S2943 ccmW_le_min/le_sq with S2937/S2939 monotonicity. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on
 Olympus. Scope: RH-conditional finite-truncation zero side. λ²=28 extension (PID 28140) running, no N=184 row yet.
+
+## S2947 — TrigPoly5841Uniform.lean EXIT0 (lane 1: clean + UNIFORM 5-8-4-1 zero-free regions) — 2026-11-08 CST
+`riemannZeta_zero_free_5841_clean`: ∃T₀ ∀|γ|≥T₀, ζ(β+iγ)=0 ⇒ β ≤ 1 − (9/22464)/log|γ|  (A₀ absorbed via |γ| ≥ exp(5A₀/32)).
+`riemannZeta_zero_free_5841_uniform`: ∃c>0 ∀ zeros, β ≤ 1 − c/log(|γ|+2) (clean region + SmallTZeroFreeStripT).
+Constant comparison (same unoptimized forge pipeline, Handle-tier both): 5-8-4-1 clean c₀ = 9/22464 ≈ 4.006e-4 vs 3-4-1
+clean c₀ = 1/8960 ≈ 1.116e-4 (ZetaZeroFreeClean) — factor 3.59 improvement, now a compiled fact. Classical literature
+constants are far better (Kadiri ~1/5.70); tuning ε / the 64-slack / R remains open lane-1 work.
+Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus.
