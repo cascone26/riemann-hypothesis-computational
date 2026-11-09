@@ -53096,3 +53096,17 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   S2986/S2988 exact-exponent localisation ✓. OPEN: (i) uniform edge bounds for all t (t ≤ −2 by conj symmetry,
   |t| < 2 by continuity/compactness), (ii) hB — boundedness of E·G_T on the closed strip (ζ near Re 0).
 - λ²=28 N=200 at 13h38m, no row yet.
+
+## S2989 — λ²=28 N=200 ROW LANDED: S2895 PRE-REGISTERED TEST VERDICT — slope NARROW MISS (12.29 vs [12.3,12.7]), magnitude PASS — 2026-11-09 15:13 CST
+- HANDLE (numeric row, Olympus PID 3320940, ~13.6 h at 960 digits):
+  `lam2=28 L=3.3322 N=200: eps=2.36e-139 e1=1.084e-134 log10eps=-138.63` (banked into results/hp_center/mu_lambda28.txt).
+- Saturation: steps 2.95, 1.78, 0.55, 0.12 — ratio 184→200 = 0.22 ≤ 0.3 ⇒ by the S2944 decision rule the N=200 value IS the floor.
+- Pre-registration (S2895): (a) slope d(−ln μ)/dλ² from 20 → 28 ∈ [12.3, 12.7]; (b) μ_{√28} ≈ 1e-139 (×10).
+  * (a) floor −ln μ = 138.63·ln10 = 319.21; λ²=20 floor 220.9 ⇒ slope = 12.288. **FAIL by 0.012** (below window).
+    (Geometric remaining tail ≈ 0.03 decade ⇒ 12.297 — still just below; the miss is robust to the saturation estimate.)
+  * (b) μ_{√28} = 2.36e-139 — **PASS** (within ×10 of 1e-139).
+- Reading (Report): the local decay rate is FLAT at κ ≈ 12.29–12.3 across 14→20 (12.3) and 20→28 (12.29) — the plateau is real and
+  slightly LOWER than predicted; 4π = 12.566 is now disfavoured as the limit (would need the slope to keep rising). The law
+  μ_λ ≈ C e^{−κλ²} with κ ≈ 12.29 holds over λ² = 14…28.
+- Next numerics: λ²=36 pre-registration: slope 28→36 ∈ [12.1, 12.5] (plateau ±0.2), μ_{6} ≈ e^{−(319.2+98.3)} ≈ e^{−417.5} ≈ 1e-181 (×10);
+  needs N≈240 at ~1200 digits on Olympus (est. 30–40 h). Queue when Jacob approves (long Olympus run).
