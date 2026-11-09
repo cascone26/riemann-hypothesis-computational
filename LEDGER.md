@@ -53018,3 +53018,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   Decision rule (S2944): if N=200 step ratio ≤ 0.3, N=200 value is the floor and the test passes iff in window. N=200 (PID 3320940) still running.
 - Note: κ plateau reading (12.3 between 14→20, ≈12.3 between 20→28) is consistent with a constant per-zero cost; 4π=12.566 now
   looks too high unless N=200 drops further (Report).
+
+## S2982 — ZetaEEdges.lean EXIT0 (lane 1: Phragmén–Lindelöf edge bounds for E(s) = (s−1)ζ(s)) — 2026-11-09 11:4x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `norm_zeta_one_add_mul_I_le`: t ≥ 2 ⇒ ‖ζ(1+it)‖ ≤ log t + 5.   `norm_zeta_mul_I_le`: t ≥ 2 ⇒ ‖ζ(it)‖ ≤ √(t/2π)(log t + 5).
+  * `norm_zetaE_one_add_mul_I_le`: ‖E(1+it)‖ ≤ t(log t + 5).   `norm_zetaE_mul_I_le`: ‖E(it)‖ ≤ (1+t)√(t/2π)(log t + 5).
+- PL inventory now: regularity (S2979 zetaE_diffContOnCl) ✓, both edges for t ≥ 2 ✓ (t ≤ −2 by conjugation, |t| < 2 compact).
+  Remaining: (i) normaliser G(s) with |G| ≍ |s|^{−(3−σ)/2}, zero-free, holomorphic on the strip; (ii) growth hypothesis
+  exp(B e^{c|t|}) for E·G on the open strip (polynomial forge strip bounds suffice); (iii) apply vertical_strip with C = const·log².
+- λ²=28: N=184 banked (S2981); N=200 still running.
