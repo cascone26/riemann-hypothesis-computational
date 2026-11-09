@@ -53042,3 +53042,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   is an explicit smooth function. Next lane-2: bound the tail generator's divided differences (Löwner ⇒ entries are
   derivatives of g_tail at intermediate points) — derivative bounds instead of entrywise expansion.
 - λ²=28 N=200 at 11h03m, no row yet.
+
+## S2984 — ZetaThreeLines.lean EXIT0 (lane 1: Hadamard three-lines + Gaussian localiser for (s−1)ζ(s)) — 2026-11-09 12:4x CST
+- Route change (decision): complex-power PL normalisers (s+2)^{−(3−s)/2} carry e^{−arg(s+2)·t/2} ≈ e^{−π|t|/4} — awkward on both
+  half-strips. Replaced by the ENTIRE Gaussian localiser G_T(s) = exp((s−iT)²) + Mathlib's Hadamard three-lines theorem.
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `norm_gauss`: ‖exp((s−iT)²)‖ = exp(Re(s)² − (Im(s)−T)²).
+  * `zetaE_three_lines`: [hB: E·G_T bounded on 0≤Re≤1] ∧ ∀t ‖E(it)‖e^{−(t−T)²} ≤ a ∧ ‖E(1+it)‖e^{1−(t−T)²} ≤ b
+    ⇒ ‖E(σ+iT)‖e^{σ²} ≤ a^{1−σ} b^σ (0 ≤ σ ≤ 1).
+- With S2982 edges: a ≍ T^{3/2} log T, b ≍ T log T ⇒ |ζ(σ+iT)| ≪ T^{(1−σ)/2} log T (Report until hB + edge sup lemmas land).
+- Remaining: (1) hB — polynomial bound of ζ on 0 ≤ Re ≤ 1/2 (FE + Gamma-ratio lower bound |Γ(s/2)| ≫ e^{−π|t|/4}|t|^{(σ−1)/2});
+  (2) sup lemmas: sup_t |t|^k log|t| e^{−(t−T)²} ≤ C(T+1)^k log(T+2) (Gaussian moment bound); (3) small |t| < 2 by compactness.
+- λ²=28 N=200 at 11h34m, no row yet.
