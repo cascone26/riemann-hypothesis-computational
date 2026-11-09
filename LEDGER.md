@@ -52897,3 +52897,16 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `riemannZeta_zero_free_quartic_clean`: ∃T₀: β ≤ 1 − (25063328/7218126100)/log|γ|  ≈ 3.4723e-3.
 - Ladder: 221/74340 (2.973e-3) → 221/68040 (3.248e-3, S2969) → **3.472e-3 (+6.9%)**.
 - Next levers: higher degree (deg 5-6 search), κ→8 (thresholds), convexity bound via functional equation.
+
+## S2972 — CCMCauchyLowner.lean EXIT0 (lane 2: zero side is Löwner too; A − G is ONE Löwner matrix) — 2026-11-09 07:0x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN 4/4, 0 sorry; fixes: DecidableEq m, rw mul_apply before mul_diagonal):
+  * `cauchy_gram_comm_entry`: Cauchy C ((ν_i − x_j)C_ij = 1) ⇒ (ν_i − ν_k)·(C diag(w) Cᵀ)_ik = (Cw)_k − (Cw)_i.
+  * `cauchy_gram_displacement`: [diag ν, G] = 𝟙(Cw)ᵀ − (Cw)𝟙ᵀ.
+  * `cauchy_gram_eq_lowner`: injective ν ⇒ G = lowner(diag G, π·Cw, ν).
+  * `ccm_full_lowner`: (W02 − W_R − W_P) − G = lowner(d_A − diag G, g_A − π·Cw, ν).
+- Numeric cross-check (random Cauchy, 13×9): |[D,G] − (𝟙hᵀ − h𝟙ᵀ)| = 1.7e-16.
+- Reading (Report): CCM zero vectors ⟨e_n, ρ_γ⟩ ∝ (e^{−iγL}−1)/(i(2πn/L − γ)) are Cauchy with x_γ = γ after moving
+  |e^{−iγL}−1|² = 4sin²(γL/2) into w (= ccmW·L). So the whole explicit-formula comparison A − G is a diagonal plus the
+  divided differences of ONE generator Γ(n) = g_A(n) − π·Σ_γ w_γ/(2πn/L − γ). Next: identify Γ with the
+  explicit-formula remainder (it should vanish/shrink under RH-exact zero sums) — numerics first on parts(20,N).
+- λ²=28 Olympus N=184/200 at 5h55m, no rows yet.
