@@ -52783,3 +52783,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `growth_Tz_sharpN`: same at σ+i·kγ in S2926 `Tz` form — drop-in replacement for GrowthK.growth_Tz.
 - Payoff (Report until next brick compiles): N=⌊|t|⌋ ⇒ sharpMs ≪ |t|^{1−a}, 1−a = 1−σ+R < R ⇒ leading 8·log|t|
   for ANY R (vs 8/R·log|t| at N=1). Next brick: clean scalar bound sharpRHS ≤ 8·log|t| + O_R(1) and the c₀ rung.
+
+## S2962 — CCMLatticeGap.lean EXIT0 (lane 2: lattice distance ⇒ quantitative zero-side positivity) — 2026-11-09 01:5x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry):
+  * `exists_k_abs_sin_half_ge`: ∀y ∃k:ℤ, |y−2πk| ≤ π ∧ |y−2πk|/π ≤ |sin(y/2)|.
+  * `abs_sin_half_ge_of_lattice_gap`: (∀k, η ≤ |y−2πk|) ⇒ η/π ≤ |sin(y/2)|.
+  * `ccm_gram_ge_lattice_gap` / `ccm_rayleigh_ge_lattice_gap`: (∀ j k, η ≤ |γ_jL−2πk|) ⇒ G_ccm ⪰ (4η²/(π²L))·CCᵀ.
+- With S2960 this is a two-sided dictionary: relative margin μ vs min lattice distance d: d ≥ η ⇒ μ ≥ 4η²/(π²L);
+  μ small ⇒ d < π√(μL)/2. Zero side only, truncated, RH-conditional.
+- λ²=28 on Olympus: PIDs 3320939/3320940/3321514 alive at 47 min, 99% CPU, ~50MB RSS each; no rows yet (HP took ~24h for 3 rows).
+- Process note: loop dropped its wakeup 01:08→01:51 after an infra-only turn; hard rule now in memory (feedback_loop_wakeup_every_turn).
