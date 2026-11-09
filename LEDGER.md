@@ -52733,3 +52733,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE.
 pinned to the Cauchy Gram up to δ². Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation.
 Note: for the true zeros, inf_j |sin(γ_jL/2)| → 0 as truncation grows (equidistribution), consistent with μ_λ → 0 numerically;
 the e^{−κλ²} margin law is the quantitative version of that degeneration.
+
+## S2957 — TrigPoly5841R34L.lean EXIT0 (lane 1: 34·log closing estimate, c₀ = 221/74340 ≈ 2.97e-3) — 2026-11-08 CST
+`log_sharp_close_34K`: d ≤ 63, e⁴⁰⁹⁶ ≤ x, 32·log(64(3+6a+640)) ≤ log x ⇒ 32·log((dx+10)(3+6a+640·log x)) ≤ 34·log x
+(mul_log_le_self C=32: 32·loglog x ≤ log x). At R=15/16: B=C₂=C₃=(136/15)·log|γ|, 𝒦=5A₀+(1768/15)·log|γ|.
+- `riemannZeta_zero_free_5841_R34L`: β ≤ 1 − (221/630)/(5A₀ + (1768/15)·log|γ|).
+- `riemannZeta_zero_free_5841_clean_R34L`: ∃T₀ ∀|γ|≥T₀: β ≤ 1 − (221/74340)/log|γ|  (+18.6% over S2955; ×26.6 over forge 3-4-1).
+Pipeline absorption ceiling: c₀ → (221/630)/(13·128/15) ≈ 3.16e-3. Beyond it the levers are structural: (i) sharper sphere
+bound (|ζ| ≪ |t|^{1/2+} on Re ≥ σ−R → halves the leading 32·log x), (ii) different trig polynomial (higher-degree Kadiri-type),
+(iii) B-term via a separate local zero-counting argument. Axioms std, gate GREEN, 0 sorry. HANDLE.
