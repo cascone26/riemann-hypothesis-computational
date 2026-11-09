@@ -53110,3 +53110,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   μ_λ ≈ C e^{−κλ²} with κ ≈ 12.29 holds over λ² = 14…28.
 - Next numerics: λ²=36 pre-registration: slope 28→36 ∈ [12.1, 12.5] (plateau ±0.2), μ_{6} ≈ e^{−(319.2+98.3)} ≈ e^{−417.5} ≈ 1e-181 (×10);
   needs N≈240 at ~1200 digits on Olympus (est. 30–40 h). Queue when Jacob approves (long Olympus run).
+
+## S2990 — CCMLownerSym.lean EXIT0 (lane 2: symmetrised second level; on 𝟙^⊥ the Löwner tail costs O(V·sup|g''|)) — 2026-11-09 15:1x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `lowner_entry_sym`: |(g b − g a)/(π(a−b)) + (g'(a)+g'(b))/(2π)| ≤ D₂|b−a|/π  (S2987 at both endpoints, averaged).
+  * `quad_rowsum_zero`: Σx = 0 ⇒ xᵀ(u𝟙ᵀ + 𝟙uᵀ)x = 0.
+  * `near_rowsum_quad_perp`: |M_ik − (u_i+u_k)| ≤ δ ∀ i,k and Σx = 0 ⇒ |xᵀMx| ≤ δ(Σ|x|)².
+- Lane-2 hierarchy now: level 1 sup|g'|/π (S2985, sharp to 2–4%), level 2 on 𝟙^⊥: 2V·sup|g''|/π (this brick).
+  Next: assemble with the diagonal (Löwner diagonal d_i handled separately: tail diagonal = Σ w·(1/(ν−x)²+1/(ν+x)²) = −g'_tail(ν_i)/π
+  exactly — i.e. the diagonal IS the u_i+u_k pattern at i=k), giving a closed-form bound for the whole tail on 𝟙^⊥.
