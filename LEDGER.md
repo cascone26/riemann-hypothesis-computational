@@ -52838,3 +52838,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   −(W_R + W_p). With S2964 (zero side ≤ linear under window scaling), the e^{−κλ²} margin lives in the
   archimedean+prime blocks on u^⊥. Next arithmetic bricks: W_R (archconst + D_diag, Hilbert-type off-diagonal), W_p.
 - λ²=28 Olympus N=184/200 still running (2h5xm).
+
+## S2967 — TrigPoly5841AllSharp.lean EXIT0 (lane 1: ALL THREE growth terms B, C₂, C₃ on the sharp bound) — 2026-11-09 04:3x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN, 0 sorry):
+  * `scalar_le_sharpRHS`: 4·log((sharpMs+1)(3+1/(σ−1)))/(R/2) ≤ sharpRHS σ t R  (N=⌊|t|⌋₊, |t|≥3).
+  * `sharpMs_nonneg`; `hB_sharp`: 4·log((sharpMs+1)/‖ζ(σ+iγ)‖)/(R/2) ≤ sharpRHS σ γ R.
+  * `zeta_region_5841_allsharp`: ∃A₀ ∀…, sharpRHS σ (kγ) R ≤ B, C₂, C₃ (k=1,2,3), real side conditions only
+    (σ≤2, 0<R<R'≤|γ|, R<1, σ−R<1, |γ|≥3, zero ρ in ball R' ∩ closedBall R/2) ⇒ β ≤ 1 − ε(3−ε)/((5+ε)𝒦).
+- 𝒦 leading term now 13·8·log|γ| (×log absorption) for EVERY R, vs 13·(8/R)·log|γ| before.
+- Next lane-1: log absorption (log|kγ| ≤ log|γ| + log 3, R-dependent O(1) + log(3+1/(σ−1)) absorbed as in S2949/S2957)
+  ⇒ explicit c₀ rung. Report estimate: 𝒦 ≈ 104(1+δ)L ⇒ c₀ ≈ 2.21/(6.3·~110) ≈ 3.2e-3 (beats 221/74340 ≈ 2.97e-3).
+- λ²=28 Olympus N=184/200 at 3h22m, no rows yet.
