@@ -52861,3 +52861,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   diag(n) — same Cauchy/Löwner structure as the zero side G = C·diag(w)·Cᵀ. Next: formalize [diag(ν), W02] explicitly
   (via νu = (L/4π)v, 16π²ν²u = L − L²u) and compare displacement generators of A vs G — a structural route to A − G.
 - λ²=28 Olympus N=184/200 at 3h53m, no rows yet.
+
+## S2969 — TrigPoly5841SharpC0.lean EXIT0 — MILESTONE: c₀ = 221/68040 ≈ 3.248e-3, past the old N=1 pipeline ceiling (lane 1) — 2026-11-09 05:3x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `riemannZeta_zero_free_5841_sharpc0`: ∃A₀≥0 ∀γ β, e^65536 ≤ |γ|, 8(8log3+16log15+16log(3+4A₀+83)) ≤ log|γ|,
+    ζ(β+iγ)=0 ⇒ β ≤ 1 − (221/630)/(5A₀ + (429/4)·log|γ|).   (R=1/2, R'=1, ε=13/10, B=C₂=C₃=(33/4)L)
+  * `riemannZeta_zero_free_5841_clean_sharpc0`: ∃T₀ ∀ zeros with |γ| ≥ T₀: β ≤ 1 − (221/68040)/log|γ|.
+- Ladder: 1/8960 → 9/22464 → 221/332640 → 221/110880 → 221/88200 → 221/74340 (2.973e-3, S2957)
+  → **221/68040 (3.248e-3, +9.3%)**. Old N=1 pipeline ceiling ≈3.16e-3 BROKEN by the structural lever
+  (sharp N-term sphere bound S2959 → S2961 → S2963 → S2965 → S2967 → here). New pipeline ceiling (κ→8): (221/630)/104 ≈ 3.373e-3.
+- Literature context (Report): Kadiri ~0.175 (vs ours 3.25e-3) — remaining gap is the trig polynomial degree +
+  convexity/zero-counting levers, not the formal pipeline.
+- Next lane-1 levers: κ → 8 (thresholds), convexity |ζ| ≪ t^{(1-σ)/2+} via functional equation, higher-degree trig poly.
