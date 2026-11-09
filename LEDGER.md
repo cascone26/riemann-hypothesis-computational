@@ -52699,3 +52699,14 @@ Jensen constant, and absorbing log|γ| via the convexity bound ζ ≪ t^{1/2}...
 and an oscillatory Gram carrying all the zero dependence (from S2943 w = 2(1−cos γL)/L). Axioms std, gate GREEN, 0 sorry.
 HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation. Use: the oscillatory Gram is where cancellation
 (explicit-formula / Weil side) must enter; the non-oscillating part is a fixed positive Cauchy Gram.
+
+## S2952 — TrigPoly5841R34.lean EXIT0 (lane 1: Jensen radius R=3/4 — 5-8-4-1 constant ×3) — 2026-11-08 CST
+`cleanRHS_34_le`: 1<σ≤2, |t|≥5 ⇒ cleanRHS σ t (3/4) ≤ (32/3)·log((5|t|+10)(3+1/(σ−1))) (BC/Jensen cost 8/R: 32 → 32/3).
+Heights γ,2γ,3γ ⇒ d = 5,10,15, all within S2949 log_sharp_close_40 (d ≤ 15, rescaled d := 5|t|/|γ|) ⇒
+B = C₂ = C₃ = (40/3)·log|γ|, 𝒦 = 5A₀ + (520/3)·log|γ|, ε = 13/10, R = Rg = 3/4, R' = Rg' = 1 (built directly on
+S2938 zeta_region_5841_clean; zero-input sphere data discharged as in S2945, far case β < σ − 3/8).
+- `riemannZeta_zero_free_5841_R34`: ∃A₀≥0 ∀γ β, e²⁵⁶≤|γ| → 8·log(16(3+6A₀+640)) ≤ log|γ| → ζ=0 → β ≤ 1 − (221/630)/(5A₀+(520/3)log|γ|).
+- `riemannZeta_zero_free_5841_clean_R34`: ∃T₀ ∀|γ|≥T₀, β ≤ 1 − (221/110880)/log|γ|  (≈ 1.993e-3).
+Constant ladder (Handle, all compiled here): 1/8960 (3-4-1) → 9/22464 → 221/332640 → **221/110880 ≈ 1.99e-3** (×3.0 over S2950,
+×17.9 over forge 3-4-1). Literature (Report): Kadiri ≈ 0.175 — remaining gap: N=1 sphere bound and R<1 restriction
+(σ−R>0); next: R→1⁻ with a wider d-lemma, or a sharper sphere bound. Axioms std, gate GREEN, 0 sorry. HANDLE.
