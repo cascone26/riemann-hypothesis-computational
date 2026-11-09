@@ -53054,3 +53054,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Remaining: (1) hB — polynomial bound of ζ on 0 ≤ Re ≤ 1/2 (FE + Gamma-ratio lower bound |Γ(s/2)| ≫ e^{−π|t|/4}|t|^{(σ−1)/2});
   (2) sup lemmas: sup_t |t|^k log|t| e^{−(t−T)²} ≤ C(T+1)^k log(T+2) (Gaussian moment bound); (3) small |t| < 2 by compactness.
 - λ²=28 N=200 at 11h34m, no row yet.
+
+## S2985 — CCMLownerDeriv.lean EXIT0 (lane 2: Löwner entries = difference quotients ⇒ derivative control, NEARLY SHARP) — 2026-11-09 13:1x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN 2/2, 0 sorry):
+  * `lowner_entry_le_of_deriv`: HasDerivWithinAt g g' on [−V,V], |g'| ≤ D ⇒ |(g b − g a)/(π(a−b))| ≤ D/π (MVT,
+    Convex.norm_image_sub_le_of_norm_hasDerivWithin_le).
+  * `lowner_offdiag_le_of_deriv`: every off-diagonal entry of lowner d (g∘ν) ν is ≤ D/π.
+- Numeric (HANDLE): exact far-tail generator g_tail(ν) = πΣw·2ν/(ν²−x²), D = sup|g'_tail| on [−V,V]:
+  λ²=20 N=6: max|offdiag tail| = 2.015e-2 vs D/π = 2.099e-2 (ratio 0.960); N=12: 1.052e-2 vs 1.075e-2 (0.979).
+  ⇒ derivative control is SHARP to ~2–4% (vs S2983's entrywise expansion, ~2000× loose). This is the right instrument.
+- Next lane-2: higher divided differences ↔ higher derivatives of g (Hermite–Genocchi): the restriction of a Löwner matrix
+  to the complement of span{𝟙,ν,…,ν^{k−1}} is controlled by sup|g^{(k+1)}| — a sharp moment hierarchy.
+- λ²=28 N=200 at 12h05m, no row yet.
