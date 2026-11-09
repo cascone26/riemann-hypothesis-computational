@@ -52672,3 +52672,9 @@ Constant comparison (same unoptimized forge pipeline, Handle-tier both): 5-8-4-1
 clean c₀ = 1/8960 ≈ 1.116e-4 (ZetaZeroFreeClean) — factor 3.59 improvement, now a compiled fact. Classical literature
 constants are far better (Kadiri ~1/5.70); tuning ε / the 64-slack / R remains open lane-1 work.
 Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus.
+
+## S2948 — CCMEntryBounds.lean EXIT0 (lane 2: entrywise structure of the CCM zero-side Gram) — 2026-11-08 CST
+`gram_entry`: (C·diag(w)·Cᵀ)_ab = Σ_j w_j C_aj C_bj; `gram_diag_nonneg` (w≥0); `gram_entry_sq_le`: G_ab² ≤ G_aa·G_bb
+(weighted Cauchy–Schwarz via Mathlib sum_mul_sq_le_sq_mul_sq with √w); `ccm_diag_le`: G^ccm_aa ≤ (4/L)Σ_j C_aj²;
+`ccm_entry_sq_le` (CCM instance). For Shi's C_mj = 1/(ν_m+γ_j): zero-side coupling of test functions m,n is bounded by
+their self-energies. Axioms std, gate GREEN, 0 sorry. HANDLE: compiled on Olympus. Scope: RH-conditional finite truncation.
