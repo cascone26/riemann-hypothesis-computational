@@ -40,3 +40,9 @@ maxrad = max(float(s.rad()) for s in steps)
 print(f"lam2={lam2s} N={N} prec={precs}: certified N(V+1)={nz} zeros removed (V+1={float(Vp):.4f}); "
       f"Loewner residual balls contain 0: {resid_ok} (max |resid| upper={resid_max:.2e}); "
       f"min step lower bound={mnlow:.6e} max step radius={maxrad:.2e}; DETECTOR CERTIFIED QUIET (all steps > 0): {cert}", flush=True)
+# S3021 (additive): optional per-step dump for the nu-normalised statistic. Set DUMP=path.
+if os.environ.get('DUMP'):
+    with open(os.environ['DUMP'], 'w') as fh:
+        fh.write('# j nu_j nu_{j+1} step_mid step_lower\n')
+        for j, s in enumerate(steps):
+            fh.write(f"{j} {float(nu[j].mid()):.10f} {float(nu[j+1].mid()):.10f} {float(s.mid()):.12e} {float(s.lower()):.12e}\n")

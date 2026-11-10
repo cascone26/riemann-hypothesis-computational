@@ -53411,3 +53411,23 @@ Next lane-1 levers: (a) Jensen/local zero counting to drop the zeros-in-half-dis
 construction — use R/2 → αR with α→1 and the Schwarz–Pick sharp form); (b) a better convexity/subconvexity exponent near
 σ=1 (growth |ζ| ≪ t^{(1−σ)/2} is the input; any t^{θ(1−σ)} with θ<1/2 scales κ by 2θ); (c) larger-degree positive trig
 polynomials reweighted for the new κ ratio (re-run operators/hp_trigpoly_search.py with B-coefficient weights).
+
+## S3021 (2026-11-10 05:38 CST, lane 2) — N=96 certified quiet (height 169) + certified steps = ZERO-TAIL sum (explicit formula, per step)
+**(a) Arb, λ²=36, N=96:** N(V+1)=63 certified zeros removed (V+1=169.32); Löwner residual balls ∋ 0 (≤5.9e-58); min step LOWER
+bound 8.0077e-03 — DETECTOR CERTIFIED QUIET [HANDLE]. step_min(N) at λ²=36: 3.38e-2, 2.11e-2, 1.25e-2, 8.01e-3 (N=12..96).
+**(b) Step profile** (additive DUMP flag in operators/arb_offline_detector_cert.py; dumps in results/hp_center/steps/):
+the minimum step is at the CENTRE ν≈0 and rises toward the window edges (near the removed poles ±(V+1)).
+**(c) Zero-tail prediction** (operators/predict_detector_steps.py): pred_j = −Δ[π Σ_{V+1<γ≤T} (4/L)sin²(γL/2)(1/(ν−γ)+1/(ν+γ))]/π
+over the zeros ABOVE the window (acb.zeta_zeros, T=12000, ≈12500 zeros), compared with the Arb-certified (prime-side) steps:
+| λ² | N | zeros used | cert−pred (all j) | spread over j | analytic tail est (γ>T) | ratio |
+| 36 | 24 | #8–#12519 | 2.220077e-4 | 2.4e-9 | 2.220590e-4 | 0.99977 |
+| 36 | 48 | #24–#12519 | 2.220102e-4 | 9.9e-9 | 2.220590e-4 | 0.99978 |
+| 10 | 24 | #16–#12519 | 5.378490e-4 | 1.4e-8 | 5.378442e-4 | 1.00001 |
+(T=3000: cert−pred = 7.436e-4 vs tail est 7.44e-4.) The certified arithmetic-side generator steps equal the sum over the
+critical-line zeros above the window, step-for-step, with a ν-INDEPENDENT residual exactly matching the γ>T tail (~2e-4 rel.).
+Reading (Report): this is the explicit-formula identity A = G_∞ (S2859/S3007) verified per step at certified-left /
+double-right precision across 12.5k zeros; it explains step_min(N) ~ Δν·Σ_{γ>V} 2w/γ² ~ log V/V (ratio ≈0.6 per doubling, as
+observed). ν-normalised quiet statistic: cert_j / pred_j(T=∞) → 1 under RH-consistent tails; an off-line zero would add a
+non-Pick term with a ν-dependent residual — the spread column (≤1.4e-8) is the sensitivity floor.
+Next lane 2: Arb-certify the zero side too (ball zeros + rigorous tail bound) to make (c) a Handle; Lean: residual-spread ⇒
+bound on any single non-Pick term's contribution.
