@@ -53386,3 +53386,11 @@ Diagnosis: every growth term of the zero-free pipeline goes through §1367–§1
 Consequence (Report, to be made Handle): rebuilding §1378→§1401→§1410→§1419→§1424→§1429→§1444→hgrowth_riemannZeta_scalar
 with the sharp lemma replaces 4·log(...)/(R/2) by 2·log(...)/(R/2) everywhere, so convRHS's leading 4·log(2+|t|) → 2·log,
 κ → 2, c₀ ≈ (25063328/18763)/(46630·2) ≈ 1.43e-2 — DOUBLING S3016's 7.161e-3. Next lane-1 cycle: generate the sharp chain.
+(S3018 timestamp correction: banked 04:40 CST, not ~05:00.)
+
+## S3019 (2026-11-10 04:41 CST, lane 2) — Arb detector at λ²=36, N=48: CERTIFIED QUIET, height 85  [HANDLE]
+N(V+1)=23 certified zeros removed (V+1=85.16); Löwner residual balls ∋ 0 (≤3.0e-58); min step LOWER bound 1.2499e-02; radius 4.7e-59.
+step_min at λ²=36: N=12 3.38e-2 → N=24 2.11e-2 → N=48 1.25e-2 (≈ N^-0.75). Decays as the window extends to larger ν
+(steps at large ν shrink, consistent with a 1/ν-type generator) — the quiet margin per step is not uniform in N, but stays
+≫ formula error (S3017 quiet_robust: tolerance π·s/2 ≈ 2e-2 vs 2e-10). Next lane 2: normalise steps by the expected
+pole-free decay (ν²·step) to get an N-uniform quiet statistic; N=96 run.
