@@ -53494,3 +53494,20 @@ Next brick 4 (instantiation): ζ(c + w) = (∏(w − a)^m)·g₀(c + w) on close
 S = zeros in ball c R, R chosen so the sphere carries none), G zero-free & differentiable on a neighbourhood of closedBall,
 sharp BC on radius R ⇒ (−Re ζ'/ζ(c)) ≤ 2·log(M/‖ζ(c)‖)/R − (1/(σ−β) − (σ−β)/R²). Then brick 5: quartic rerun at κ → 1.
 (S3026 correction: banked 07:39 CST, not 07:41.)
+
+## S3027 (2026-11-10 08:05 CST, lane 2) — rigorous tail-variation bound θ ⇒ certified weight caps; detector's reach quantified
+`operators/arb_tail_variation.py`: the γ > T zero tail's step profile is Δν·H(ν+Δν/2) with H even ⇒ variation ≤ Δν·sup|H''|·U²,
+|H''| ≤ 12/(γ−V−2Δν)⁴; weights ≤ 4/L; partial summation with Trudgian N(t) ⇒
+θ ≤ (4/L)Δν·12U²·(4k⁵/2π)(3log(T/2π)+1)/(9T³)  [rigorous modulo Trudgian; float-evaluated with margin].
+| λ² | N | η (S3023) | θ (T=12000) | cap |w| for an extra unit-profile term at x = V+5 / 2V / 100 / 1000 |
+| 36 | 24 | 2.4e-9 | 4.46e-8 | 9.3e-7 / 8.3e-5 / 1.9e-4 / 2.6 |
+| 36 | 48 | 9.9e-9 | 1.74e-7 | 3.6e-6 / 1.3e-3 / 3.1e-5 / 2.5 |
+| 10 | 24 | 1.4e-8 | 2.64e-7 | 4.0e-6 / 7.6e-4 / 1.7e-4 / 4.1 |
+(cap = (η+θ)/max_j|e_j − e_center| via S3025 `weight_le`; profile contrast float-evaluated — Report.)
+HONEST READING: the detector certifies |w| ≲ 1e-6 for an extra term just above the window and ≲ 1e-4 out to ~2V, but is
+blunt (|w| ≲ 3, vs natural 4/L ≈ 1) by height 1000 — and every height below T=12000 is already covered by the Turing-certified
+zero list. So at these window sizes the detector is a high-precision CONSISTENCY certificate of the explicit formula, not an
+independent RH lever above T. Reach scales with V (∝ N/L): detecting at height x needs N ≈ L·x/2π.
+NEXT lane 2 (redirect): back to the RH-relevant frontier — far-tail positivity ⇔ Pick property of the arithmetic tail generator
+(S3007/S3009): attack it from the PRIME side (show the prime-side generator is Pick for ν beyond a window, i.e. its imaginary
+part on the upper half-plane is ≥ 0), starting with the archimedean piece W_R alone (explicit, Γ-function: Im ψ-type terms).
