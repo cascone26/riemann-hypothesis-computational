@@ -53668,3 +53668,4 @@ ball 0 ρ, ρ = min(r', r²/μ) > r (μ < r bounds ‖a‖, `exists_norm_bound`)
 (S3034) at radius r; Re ∘ circleAverage via reCLM.circleAverage_comp_comm; |G| = |F| on the sphere.
 Program: P1 ✓ P2a ✓ P2b ✓ P4 ✓ — remaining P3 (pointwise convexity of log|ζ| along the circle + right-half lower bound, then
 integrate with P4 ⇒ (1/4)log t + O(loglog t)), P5 ζ assembly (ZeroGap radius + factorization as in S3030), P6 quartic rerun.
+(S3039 correction: banked 11:36 CST, not 11:43.)
