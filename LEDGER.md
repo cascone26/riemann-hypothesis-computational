@@ -53291,3 +53291,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
     (S3008 Ms into hgrowth_riemannZeta_scalar).
 - Leading term (8/R)((1−σ+R)/2)log|t| ≤ 4·log|t|. Next lane-1: clean scalar form (analogue of S2963 growth_at_sharp_clean:
   ≤ 4log|t| + (8/R)(log stuff)) then the quartic region rung with κ ≈ 4+δ ⇒ c₀ ≈ 0.028646/4.1 ≈ 7e-3 (Report).
+
+## S3011 — CCMOffLineDetector.lean EXIT0 (lane 2: off-line-zero detector from generator monotonicity) — 2026-11-10 01:3x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN 2/2, 0 sorry):
+  * `exists_neg_weight_of_increase`: a ≤ b, poles outside [a,b], Σw/(b−x) > Σw/(a−x) ⇒ ∃ j, w_j < 0.
+  * `pick_iff_detector_quiet`: all w ≥ 0 ⇒ no increase on any pole-free interval.
+- Reading (Report): one certified increase of the ARITHMETIC tail generator on a zero-free window ⇒ off-line zero above T.
+  Detector is quiet on S3007 windows (λ²=20, 28). Next lane-2 numerics: scan larger λ² / finer windows at mpmath precision
+  with interval arithmetic (Arb) — a certified-quiet detector is a new RH-consistency check from primes.
