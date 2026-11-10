@@ -53221,3 +53221,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Pipeline wiring plan (next lane-1 bricks): sphere(σ₀+iγ, R), σ₀ ≈ 1: for Re z ≤ 1 use this (log|ζ| ≤ ((1−Re z)/2)log|γ| + O(loglog));
   for Re z > 1 use Re-z>1 Dirichlet bound / sharp N-term (log|ζ| = O(loglog)); ⇒ log Ms ≤ (R/2)log|γ| + O(loglog|γ|)
   ⇒ growth (8/R)·log Ms ≈ 4·log|γ| (vs 8) ⇒ c₀ ≈ 0.028646/4 ≈ 7.2e-3 (Report).
+
+## S3003 — CCMMarginSchur.lean EXIT0 (lane 2: margin transfer with the sharp tail bound — certificate shape) — 2026-11-09 21:2x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `margin_transfer_sharp`: xᵀAx = xᵀGx + xᵀ(confluent tail)x, xᵀGx ≥ mΣx² on 𝟙^⊥ ⇒ xᵀAx ≥ (m − D₂S/(2π))Σx² on 𝟙^⊥.
+- Honest status (Report): informative only when the near block G has ≥ n−1 zeros (S2980: at λ²=20, N=6 there are 0–3), i.e. needs
+  larger λ² or smaller N relative to the zero count; the λ²/N regime where m > D₂S/(2π) is the next numeric scan (mpmath).
+- Lane-2 arc today: A = Löwner(g_A) (S2970) · G Cauchy-Löwner (S2972) · A = G_∞ numerically (S2974) · far tail via generator
+  derivatives, 2000× → 10× (S2983–S3001) · certificate shape (S3003).
