@@ -1,0 +1,3 @@
+lam2=36 N=24 T=12000: certified zeros #8..#12519; D_j in [2.220068e-04, 2.220092e-04], spread<=2.42e-09; U=8.976464e-04; 0<D_j: True; D_j<=U: True
+lam2=36 N=48 T=12000: certified zeros #24..#12519; D_j in [2.220068e-04, 2.220167e-04], spread<=9.86e-09; U=9.071901e-04; 0<D_j: True; D_j<=U: True
+lam2=10 N=24 T=12000: certified zeros #16..#12519; D_j in [5.378441e-04, 5.378583e-04], spread<=1.42e-08; U=2.186988e-03; 0<D_j: True; D_j<=U: True

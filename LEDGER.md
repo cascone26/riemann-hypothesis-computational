@@ -53445,3 +53445,19 @@ Titchmarsh). Dividing ζ by ∏_{|ρ−c|<R} b_ρ(z−c) makes g zero-free on th
 Next bricks: (2) finite Blaschke product B = ∏ b_ρ^{m_ρ}: |B| = 1 on sphere, logDeriv sum; (3) g = ζ/B analytic zero-free on
 ball c R (from the §1343 factorization data, zeros in closedBall avoided by choosing R off the finite zero-radius set);
 (4) growth lemma at radius R; (5) quartic region rerun.
+(S3022 correction: axiom_gate reported checked=7 clean=7, not 6/6; banked 05:56, not 06:00.)
+
+## S3023 (2026-11-10 06:26 CST, lane 2) — ZERO SIDE CERTIFIED: detector steps = critical-line zero tail, both sides in balls  [HANDLE*]
+`operators/arb_zero_side_steps.py` (Olympus, Arb prec 200, ~2 min/run): P_j(T) = Σ_{V+1<γ≤T} (4/L)sin²(γL/2)[Δ_j(1/(ν−γ)+1/(ν+γ))]
+with CERTIFIED ordinates (acb.zeta_zeros — Turing-method certified on the line) and certified completeness (arb.zeta_nzeros(T));
+rigorous γ>T remainder U = (8/π)Δν k³(log(T/2π)+1)/(LT), k = T/(T−V) (term ≤ (4/L)·2Δν/(γ−V)², partial summation with
+N(t) ≤ (t/2π)log(t/2π) for t ≥ 12000 — from Trudgian's explicit N(T) bound [*literature input, Report]).
+| λ² | N | zeros | D_j = s_j − P_j(T) ∈ | spread over j | U | 0 < D_j | D_j ≤ U |
+| 36 | 24 | #8–#12519 | [2.220068e-4, 2.220092e-4] | 2.4e-9 | 8.98e-4 | ALL | ALL |
+| 36 | 48 | #24–#12519 | [2.220068e-4, 2.220167e-4] | 9.9e-9 | 9.07e-4 | ALL | ALL |
+| 10 | 24 | #16–#12519 | [5.378441e-4, 5.378583e-4] | 1.4e-8 | 2.19e-3 | ALL | ALL |
+Statement: for every grid step, the Arb-certified ARITHMETIC-side step (τ = W02−W_R−W_P, S2880 formula) minus the certified sum
+over the 12.5k critical-line zeros above the window lies in (0, U] — exactly what A = G_∞ with all zeros ≤ 12000 on the line
+predicts. Upgrades S3021(c) Report → Handle (modulo Trudgian N(T) and the τ formula). D_j ≈ U/4 as expected (mean weight
+2/L vs bound 4/L; k³≈1). Next lane 2: (i) Lean lemma: residual spread ≤ η across the grid + a non-Pick term w_*/(ν−x_*)
+with x_* in a window ⇒ |w_*| ≤ η·(geometry) (detector sensitivity, quantified); (ii) larger T via interval tail lower bound.
