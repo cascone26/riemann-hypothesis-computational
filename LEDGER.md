@@ -53347,3 +53347,15 @@ by S2859's zero oracle, not itself proved). **Next:** larger N / more windows (�
 certified step positivity into the S3011 detector's "no off-line zero in window" conclusion; lane 1: κ → 4.
 
 (S3015 timestamp correction: banked 03:23 CST, not 03:40.)
+
+## S3016 (2026-11-10 03:46 CST, lane 1) — TrigPolyQuarticK4.lean EXIT0: κ = 4 + 2⁻¹², c₀ = 25063328/3499918679 ≈ 7.1611e-3  [HANDLE]
+`rhforge/forge/TrigPolyQuarticK4.lean` (imports S3014; Olympus EXIT0 in 43 s first try; axiom_gate GREEN 2/2; 0 sorry).
+Same proof as S3014 with the growth slack κ−4 cut 1/16 → 1/4096 by raising the (ineffective) height threshold:
+log|γ| ≥ 2³⁸ (mul_log_le_self C=2¹⁸ ⇒ 32·log L ≤ L/8192) and 8192·(4log6+16log(C+1)+16log2+16log(3+4A₀+44)) ≤ log|γ|.
+Coefficient of log|γ| is exactly 46630·κ (46630 = 24480+14900+6000+1250) = 382016275/2048.
+- `riemannZeta_zero_free_quartic_k4`: β ≤ 1 − (25063328/18763)/(14379A₀ + (382016275/2048)·log|γ|).
+- `riemannZeta_zero_free_quartic_k4_clean`: ∃T₀, |γ| ≥ T₀ ⇒ β ≤ 1 − (25063328/3499918679)/log|γ|  (threshold incl. exp(14379A₀)).
+c₀ ladder: 3.5735e-3 (S2973) → 7.049e-3 (S3014) → **7.1611e-3** (S3016); pipeline limit κ→4 is 7.1617e-3 — the κ lever is
+now EXHAUSTED to 4 digits. Next lane-1 levers (structural): (a) local zero counting to sharpen the B term (the 4·log factor
+from Borel–Carathéodory at R=1/2), (b) optimise radius R / ε=4384 jointly with the convexity exponent (1−σ+R)/2 rather than
+the crude ≤R/2, (c) Heath-Brown-style smoothing of −ζ'/ζ (literature: Kadiri ≈ 0.175 shows ~25× headroom).
