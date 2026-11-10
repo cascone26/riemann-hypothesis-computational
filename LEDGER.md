@@ -53359,3 +53359,19 @@ c₀ ladder: 3.5735e-3 (S2973) → 7.049e-3 (S3014) → **7.1611e-3** (S3016); p
 now EXHAUSTED to 4 digits. Next lane-1 levers (structural): (a) local zero counting to sharpen the B term (the 4·log factor
 from Borel–Carathéodory at R=1/2), (b) optimise radius R / ε=4384 jointly with the convexity exponent (1−σ+R)/2 rather than
 the crude ≤R/2, (c) Heath-Brown-style smoothing of −ζ'/ζ (literature: Kadiri ≈ 0.175 shows ~25× headroom).
+
+## S3017 (2026-11-10 04:14 CST, lane 2) — N=24 Arb detector certificates + CCMDetectorChain.lean EXIT0  [HANDLE]
+**(a) Arb certificates at N=24** (same script as S3015, prec 400; appended to results/hp_center/arb_offline_detector_cert.txt):
+| λ² | N | certified N(V+1) zeros removed | V+1 | Löwner residual balls ∋ 0 | min step LOWER bound | certified quiet |
+| 10 | 24 | 15 | 66.49 | yes (≤3.6e-58) | 3.9724e-02 | YES |
+| 20 | 24 | 10 | 51.34 | yes (≤2.1e-58) | 2.4699e-02 | YES |
+| 28 | 24 | 8 | 46.25 | yes (≤1.7e-58) | 2.3285e-02 | YES |
+| 36 | 24 | 7 | 43.08 | yes (≤1.5e-58) | 2.1084e-02 | YES |
+Windows now reach height 66 (15 zeros). Min step decays slowly with λ² and N (0.060→0.021) — still O(1e-2), not e^{-κλ²}:
+the detector margin does NOT inherit the tiny Weil-form margin μ ~ e^{-12λ²}. (Worth tracking: fit step_min(λ²,N).)
+**(b) `rhforge/forge/CCMDetectorChain.lean`** (EXIT0, gate GREEN 3/3, 0 sorry): `drop_ge_of_steps` (steps ≥ s ⇒ drop ≥ (j−i)s),
+`strictAnti_of_steps` (grid chain), `quiet_robust` (|g − f| ≤ η on the grid, 2η < s ⇒ g still strictly decreasing).
+Reading (Report): with s = π·2.1e-2 the quiet verdict survives ANY error < 3.3e-2 in g̃ coming from the (unproved) τ formula —
+eight orders above S2859's formula check (2e-10). The certificate's dependence on CCM Lemma 5.1 is therefore robust, not tight.
+Next lane 2: fit step_min(λ², N) (does it stay bounded away from 0 as N→∞? that is the far-tail Pick question, S3007);
+N=48 at λ²=36. Next lane 1: structural lever — joint (R, ε) optimisation with exact convexity exponent.
