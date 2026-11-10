@@ -53345,3 +53345,5 @@ Matches S3013 mpmath (min steps 0.034–0.060) — upgrades it Report → Handle
 **Scope:** rigorous for the finite (2N+1) truncation at these windows; rests on the τ formula (CCM Lemma 5.1, matched to 2e-10
 by S2859's zero oracle, not itself proved). **Next:** larger N / more windows (λ² up to 36, N=24) and a Lean brick turning
 certified step positivity into the S3011 detector's "no off-line zero in window" conclusion; lane 1: κ → 4.
+
+(S3015 timestamp correction: banked 03:23 CST, not 03:40.)
