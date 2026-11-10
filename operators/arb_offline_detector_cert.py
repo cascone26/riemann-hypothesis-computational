@@ -69,3 +69,16 @@ if os.environ.get('PARTS'):
             arith = a + b + p
             print(f"PARTS h={h:2d} {name:6s} s02={a.str(6)} -sR={b.str(6)} -sP={p.str(6)} arith={arith.str(6)} -sZ={z.str(6)} "
                   f"total={(arith + z).str(6)}  CERT arith>0:{arith > 0}  CERT explicit>|prime|:{(a + b) > abs(p)}", flush=True)
+# S3038 (additive): ALL-grid-point certified smoothed dominance. Set PARTSALL="h1,h2,..." (requires PARTS=1).
+if os.environ.get('PARTS') and os.environ.get('PARTSALL'):
+    for h in [int(x) for x in os.environ['PARTSALL'].split(',')]:
+        js = [j for j in range(h, M - 1 - h)]
+        nA = nE = 0; worst = None
+        for j in js:
+            a, b, p = sm(S02, h, j), sm(SR, h, j), sm(SP, h, j)
+            if (a + b + p) > 0: nA += 1
+            if (a + b) > abs(p): nE += 1
+            r = float(abs(p).upper()) / max(float((a + b).lower()), 1e-300)
+            if worst is None or r > worst[0]: worst = (r, j)
+        print(f"PARTSALL h={h:2d}: grid points {len(js)}: CERT arith>0 at {nA}/{len(js)}; CERT explicit>|prime| at {nE}/{len(js)}; "
+              f"worst |prime|/explicit = {worst[0]:.3f} at j={worst[1]} (nu={float(nu[worst[1]].mid()):.2f})", flush=True)

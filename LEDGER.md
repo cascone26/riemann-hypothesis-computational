@@ -53637,3 +53637,11 @@ Mathlib integral_cos / integral_cos_sq. The first gives the κ = (2/R)(2π)⁻¹
 Poisson–Landau status: P1 (S3034 Schwarz derivative) ✓, P4 ✓. Next: P2 (log branch / harmonic log‖G‖ on a disk ⊃ closed
 radius-R disk, avoiding zeros near the sphere), P3 (pointwise convexity in θ-form), P5 assemble, P6 quartic rerun.
 (S3036 correction: banked 10:41 CST, not 10:44; gate checked=6 clean=6 incl. helper lemmas.)
+
+## S3037 (2026-11-10 11:07 CST, lane 1) — ZeroGap.lean EXIT0 first try: radius gap avoiding the zeros (Poisson–Landau P2a)  [HANDLE]
+`ZeroGap.exists_gap`: finite T ⊆ ℝ, a < b ⇒ ∃ a < r < r' < b with every t ∈ T outside [r, r'] (Finset induction, split the
+current gap at the new point, keep the longer side). Gate GREEN, 0 sorry. Use: T = zero-norms ‖u − c‖ ⇒ G = ζ/B (zeros in
+ball c r) is zero-free on ball c r', |G| = |ζ| on sphere c r ⇒ Schwarz formula (S3034) at radius r; the 1/4 coefficient is
+r-independent. Program: P1 ✓ P2a ✓ P4 ✓ — next P2b (BlaschkeDivide at radius r with log branch on ball r'), P3, P5, P6.
+Lane 2 (S3038, launched): all-grid-point certified smoothed dominance, PARTSALL λ²=36 N=48 (h=8..32) and N=96 (h=16..64),
+~/rhforge/hp_center/arbpartsall_l36_N{48,96}.out.
