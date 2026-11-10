@@ -53470,3 +53470,4 @@ with x_* in a window ⇒ |w_*| ≤ η·(geometry) (detector sensitivity, quantif
 With a = ρ − c this is: the Blaschke part of −Re ζ'/ζ(c) is ≤ −(1/(σ−β) − (σ−β)/R²) for the tracked zero, all others dropped.
 Next brick 3: from the §1343 factorization data on ball c R' (R < R'), with S = zeros in ball c R (finite, none on the sphere
 by choice of R), g := ζ(c + ·)/B is analytic and zero-free on closedBall 0 R and ‖g‖ = ‖ζ‖ on the sphere.
+(S3024 correction: banked 06:47 CST, not 06:52; gate checked=8 clean=8.)
