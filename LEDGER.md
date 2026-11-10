@@ -53572,3 +53572,22 @@ Next lane-1 levers: (a) exponent: convexity (1−σ_z)/2 → any θ<1/2 near σ=
 (b) trig polynomial re-optimisation for the NEW structure: B-term now costs κL with coefficient c1 and the zero term carries
 −(σ−β)/R² — re-run hp_trigpoly_search.py with the exact objective ε(c1−c0−ε)/((c0+ε)Σc_k); (c) radius R → optimise
 (R=1/2 fixed so far; growth independent of R at leading order, but the correction (σ−β)/R² and pole terms favour larger R).
+
+## S3033 (2026-11-10 09:50 CST, lane 2) — Fejér-SMOOTHED step decomposition: the prime oscillation is tamed (Report)
+`operators/ccm_smoothed_steps.py lam2 N h-list` (mpmath dps 25): steps smoothed with triangular weights, half-width h.
+λ²=36, N=48 (ν-grid Δν=1.75), ratio |prime part|/|total| at three points:
+| h | centre | quarter | eighth |
+|  0 | 133.6 | 80.0 | 20.2 |
+|  4 | 28.0 | 7.2 | 10.9 |
+|  8 | 10.8 | 1.9 | 5.1 |
+| 16 | 1.9 | 1.2 | 1.0 |
+| 24 | 0.9 | — | 0.1 |
+(N=24 same trend: centre 79 → 6.3 at h=8.) The smoothed total is stable (0.0125–0.0139, smoothing of a positive sequence),
+while the O(1) prime part decays ~1/h and drops BELOW the total at h ≈ 24 (ν-window ≈ 84). At h=24 centre:
+s02 = +0.0157, −sR = +0.0347, −sP = −0.0114, −sZ(removed low zeros) = −0.0261, total = +0.0130.
+READING: after smoothing the arithmetic side (W02 + W_R + primes) is dominated by the EXPLICIT archimedean terms; the
+RH-sensitive balance is then explicit-terms vs low zeros + far tail — a Weil-type positivity with a smooth test function,
+which is where certification is tractable (finite prime sum, explicit Γ terms). This reverses S3029's negative for the
+smoothed version. NEXT lane 2: (1) Arb-certify the smoothed arithmetic side at h=24, N=48; (2) Lean: positive weights ×
+positive steps ⇒ positive smoothed tail, and the converse direction via the S3025 sensitivity lemma with smoothed profiles;
+(3) push h with N (N=96, h=48) to see the prime part → 0 at fixed relative window.
