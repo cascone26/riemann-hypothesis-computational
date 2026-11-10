@@ -53307,3 +53307,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - vs S2963 (sharp N-term): 8·log|t| + (8/R)(…). LEADING COEFFICIENT HALVED (8 → 4).
 - Constraint noted: σ − 1 ≤ R (needed for the convexity exponent ≥ 0) and σ+R ≤ 2 — compatible with the quartic pipeline
   (σ = 1 + ε/𝒦 ≈ 1, R = 1/2). Next lane-1: quartic region rung with B = C_k = κL, κ = 4 + δ ⇒ c₀ ≈ 0.028646/(4+δ) (Report ≈ 7e-3).
+
+## S3013 — off-line-zero detector at 40 digits: QUIET at λ² = 10, 20, 28, 36 (lane 2 numerics) — 2026-11-10 02:3x CST
+- HANDLE (numerics, operators/hp_offline_detector.py, mpmath dps 40; generator recovered EXACTLY from row n=0 of
+  A = W02 − W_R − W_P, all zeros with γ < V+1 subtracted with mpmath zetazero ordinates):
+  | λ² | N | zeros removed | Löwner residual (all pairs) | min step of −g_tail/π | monotone |
+  | 10 | 10 | 3 | 4.6e-40 | 0.0600 | ✓ |
+  | 20 | 12 | 3 | 2.1e-40 | 0.0416 | ✓ |
+  | 28 | 12 | 2 | 3.9e-40 | 0.0341 | ✓ |
+  | 36 | 12 | 2 | 2.1e-40 | 0.0338 | ✓ |
+- (i) S2970's theorem (A is ONE Löwner matrix) confirmed to 40 digits on real CCM data; (ii) S3011 detector quiet with margins
+  ~10^38 above working precision — no off-line zero signal above T from the prime side, as RH predicts. Report-tier
+  (floating 40-digit, not interval arithmetic); next: Arb interval version for a certified-quiet statement.
