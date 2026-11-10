@@ -53591,3 +53591,19 @@ which is where certification is tractable (finite prime sum, explicit Γ terms).
 smoothed version. NEXT lane 2: (1) Arb-certify the smoothed arithmetic side at h=24, N=48; (2) Lean: positive weights ×
 positive steps ⇒ positive smoothed tail, and the converse direction via the S3025 sensitivity lemma with smoothed profiles;
 (3) push h with N (N=96, h=48) to see the prime part → 0 at fixed relative window.
+(S3033 correction: banked 09:48 CST, not 09:50.)
+
+## S3034 (2026-11-10 10:24 CST, lane 1) — SchwarzDeriv.lean EXIT0: Schwarz-integral derivative formula (Poisson–Landau brick P1)  [HANDLE]
+`rhforge/forge/SchwarzDeriv.lean` (EXIT0 after 1 fix, gate GREEN, 0 sorry).
+- `deriv_eq_zero_of_re_eq_zero`: F'(0) exists and Re F ≡ 0 near 0 ⇒ F'(0) = 0 (real direction + imaginary direction).
+- `deriv_eq_schwarz`: H analytic on ball 0 R', 0 < R < R' ⇒ H'(0) = circleAverage(ζ ↦ (2ζ/ζ²)·Re H(ζ)) over |ζ| = R,
+  via Mathlib's Herglotz–Riesz kernel (Kebekus et al. 2026: hasDerivAt_circleAverage_herglotzRieszKernel_smul,
+  HarmonicOnNhd.circleAverage_re_herglotzRieszKernel_smul, AnalyticAt.harmonicAt_re).
+PROGRAM (Report, new lane-1 rung): with H = log G, G = ζ/B (S3026) zero-free, Re H = log|ζ| on the circle:
+Re(−G'/G(c)) = −(2/R)·avg_θ[cos θ · log|ζ(c+Re^{iθ})|]. Left half (cos<0): log|ζ| ≤ ((1−Re z)/2)log t + O(loglog t) (pointwise
+convexity, S3000-type) ⇒ ≤ (2/R)·(R/2)·avg(cos²·1_{cos<0})·log t = (1/4)log t; right half (cos>0): log|ζ| ≥ −log(3+1/(σ−1))
+(NormZetaGeExplicit) ⇒ O(log log t). So κ → 1/4 (vs 1 now): target c₀ ≈ 4 × 2.864e-2 ≈ 0.115 (Kadiri 0.175).
+Next bricks: P2 log branch H of G on ball (exists_holo_branch_on_ball is on open ball; need analytic on ball 0 R' ⊃ closed
+disk ⇒ require G zero-free on ball 0 R' — choose R < R'' with no zeros in R < |w| < R'' (finite zero set) or use the
+harmonic log‖G‖ directly); P3 pointwise convexity log|ζ(σ'+it)| ≤ ((1−σ')⁺/2)·log t + C·loglog t; P4 the θ-integrals
+(avg cos²·1_{cos<0} = 1/4, avg |cos| = 2/π); P5 assemble Poisson–Landau; P6 quartic rerun at κ = 1/4.
