@@ -53482,3 +53482,4 @@ Honest scope: the detector is sharp for extra terms NEAR the window and blunt fa
 zero list already excludes off-line zeros, so the detector's job is the far tail — where sensitivity must come from larger
 windows (V ↑) rather than more digits. Next lane 2: quantify θ (tail-variation bound across the grid, rigorous) so the cap is
 fully certified; scale window V with T (N ≈ L·T/2π) to keep contrast O(1/V²).
+(S3025 CORRECTION — the numeric line above was written before the computation finished; computed values: profile contrast 2.445e-4 (x=100), 1.790e-8 (x=1000), 8.61e-13 (x=12000) ⇒ |w| ≲ 9.8e-6, 0.134, 2.8e3 vs 4/L ≈ 1.12. Conclusion unchanged: sharp near the window, blunt far above.)
