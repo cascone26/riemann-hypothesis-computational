@@ -53170,3 +53170,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `taylor_half`: a ≤ b in [−V,V], |g''| ≤ D₂ ⇒ |g b − g a − g'(a)(b−a)| ≤ D₂(b−a)²/2.
 - Numeric (HANDLE, λ²=20 N=6 far tail): worst ratio 0.896 (S2987's D₂(b−a)² version: 0.448) ⇒ the factor 2 is recovered;
   the second-level estimate is now within ~10% of sharp. Plugging into S2990/S2994: 𝟙^⊥ tail bound 20× → ~10× loose.
+
+## S2997 — ZetaEStripGrowth.lean EXIT0 (lane 1: E = (s−1)ζ(s) grows at most like poly·e^{π|t|/2} on the closed strip) — 2026-11-09 18:5x CST
+- HANDLE (Olympus EXIT0 FIRST TRY, axiom_gate GREEN, 0 sorry):
+  * `strip_term_le`: forge Λ₀ strip RHS at u (1/2 ≤ Re u ≤ 1, |Im u| ≥ 1) ≤ 14 + 12|Im u|.
+  * `norm_lam0_le`: 0 ≤ σ ≤ 1, |t| ≥ 1 ⇒ ‖Λ₀(s)‖ ≤ 14 + 12|t| (direct σ ≥ 1/2 / reflected σ < 1/2).
+  * `norm_zeta_strip_le`: ‖ζ(s)‖ ≤ (16 + 12|t|)·2e^{π|t|/2} (ζ = Λ/Γℝ, Mathlib riemannZeta_def_of_ne_zero, S2995).
+  * `norm_zetaE_strip_le`: ‖E(s)‖ ≤ (1+|t|)(16+12|t|)·2e^{π|t|/2}.
+- Numeric sanity (mpmath): |ζ|/bound over σ∈{0,…,1}, t∈{1,3,14.13,50,−20} (printed in session, ≪ 1 — crude but valid).
+- hB is now one packaging step away: on 0≤σ≤1, |E·G_T| ≤ poly(t)·e^{π|t|/2+1−(t−T)²} (|t|≥1) and continuous on |t|≤1 ⇒ BddAbove.
