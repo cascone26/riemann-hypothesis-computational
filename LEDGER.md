@@ -53525,3 +53525,15 @@ Next brick 4b (ζ instantiation): translate F(w) = ζ(c + w); factorization on b
 exists_factorization_riemannZeta_at_center + smul_factor_eq_split with p = (· ∈ ball c R) (pointwise version of
 zeta_eq_split_on_sphere for z ∈ ball c R'); a = u − c, Re a = Re u − Re c ≤ 0 (zeros have Re < 1 < Re c).
 (S3028 correction: banked 08:31 CST, not 08:33.)
+
+## S3029 (2026-11-10 08:58 CST, lane 2) — step DECOMPOSITION: who carries the Pick monotonicity? (Report, mpmath dps 30)
+`operators/ccm_step_decomposition.py`: detector step s_j = s02 − sR − sP − sZ(removed zeros), centre-row Löwner generators.
+λ²=36,N=24 (λ²=10 similar): away from the centre |s02| ~ 2e-3–4e-2, |sR| ~ 5e-5–9e-4 (negligible); the PRIME part −sP is O(1)
+and oscillatory (−1.92 … +0.27) and is cancelled by the removed low zeros −sZ (+1.96 … −0.23) to leave total 0.02–0.05.
+At the centre: s02 = +1.23, −sR = +0.48, −sP = −1.67, −sZ = −0.013 → total 0.021.
+READING: the certified positive step (the far-tail Pick residual) is a 1–3% remainder of an O(1) prime–zero cancellation —
+no single piece (W02, W_R, W_P) is monotone by itself, so a prime-side Pick proof must control Σ Λ(k)k^{-1/2}·sin(ν log k)
+to ~1% uniformly: as hard as the explicit formula with the low zeros. NEGATIVE for the "W_R alone / prime side alone" route.
+NEXT lane-2 attempt (loaded): smooth before testing — apply a nonnegative (Fejér/Beurling–Selberg) kernel in ν to the steps;
+positivity of the smoothed tail is implied by Pick, kills the prime oscillation (k ≤ λ² terms average out over ν-windows
+≫ 2π/log k), and its prime side becomes a finite positive-definite-kernel check (Weil-type) amenable to certification.
