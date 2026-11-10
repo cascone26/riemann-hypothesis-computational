@@ -53163,3 +53163,10 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Numeric sanity (mpmath): max |1/Γ|/bound over Re ∈ {0.001,…,0.5}, Im ∈ {0,…,±20} printed in-session (< 1).
 - hB plan: ζ(s) = Λ(s)·π^{s/2}/Γ(s/2) ⇒ |E(s)| ≤ |s−1|·|Λ₀(s) − 1/s − 1/(1−s)|·π^{σ/2}·(2/π)e^{π|t|/2} on 0 ≤ σ ≤ 1, |t| ≥ 1
   (Λ₀ via forge strip/reflect bounds — polynomial); then |E·G_T| ≤ poly·e^{π|t|/2 − (t−T)² + σ²} is bounded. Next lane-1 brick: assemble.
+
+## S2996 — CCMTaylorHalf.lean EXIT0 (lane 2: Taylor's ½ — second-level Löwner error now near-sharp) — 2026-11-09 18:2x CST
+- HANDLE (Olympus EXIT0 0 warnings, axiom_gate GREEN 2/2, 0 sorry; fixes: hasDerivAt_id' + congr_deriv instead of convert):
+  * `half_aux`: φ± = D₂(x−a)²/2 ∓ (g x − g a − g'(a)(x−a)) ≥ 0 at b via MVT (exists_hasDerivAt_eq_slope) and φ±' ≥ 0.
+  * `taylor_half`: a ≤ b in [−V,V], |g''| ≤ D₂ ⇒ |g b − g a − g'(a)(b−a)| ≤ D₂(b−a)²/2.
+- Numeric (HANDLE, λ²=20 N=6 far tail): worst ratio 0.896 (S2987's D₂(b−a)² version: 0.448) ⇒ the factor 2 is recovered;
+  the second-level estimate is now within ~10% of sharp. Plugging into S2990/S2994: 𝟙^⊥ tail bound 20× → ~10× loose.
