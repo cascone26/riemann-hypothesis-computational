@@ -53461,3 +53461,12 @@ over the 12.5k critical-line zeros above the window lies in (0, U] — exactly w
 predicts. Upgrades S3021(c) Report → Handle (modulo Trudgian N(T) and the τ formula). D_j ≈ U/4 as expected (mean weight
 2/L vs bound 4/L; k³≈1). Next lane 2: (i) Lean lemma: residual spread ≤ η across the grid + a non-Pick term w_*/(ν−x_*)
 with x_* in a window ⇒ |w_*| ≤ η·(geometry) (detector sensitivity, quantified); (ii) larger T via interval tail lower bound.
+
+## S3024 (2026-11-10 06:52 CST, lane 1) — BlaschkeProduct.lean EXIT0 first try: brick 2 of the κ 2 → 1 program  [HANDLE]
+`rhforge/forge/BlaschkeProduct.lean` (gate GREEN, 0 sorry). B(w) = ∏_{a∈S} b_R(a,w)^{m a}, all |a| < R:
+`bprod_norm_sphere` (‖w‖=R ⇒ ‖B‖=1), `bprod_norm_le_one`, `bprod_ne_zero` (w ∉ S), `bprod_logDeriv_zero`
+(0 ∉ S ⇒ logDeriv B 0 = Σ m a(−1/a + ā/R²); via Mathlib logDeriv_prod + logDeriv_fun_pow), and the downstream form
+`bprod_neg_logDeriv_re_le`: Re a ≤ 0 on S ⇒ Re(−logDeriv B 0) ≤ −m a₀·(Re(1/(−a₀)) + Re a₀/R²) for any a₀ ∈ S.
+With a = ρ − c this is: the Blaschke part of −Re ζ'/ζ(c) is ≤ −(1/(σ−β) − (σ−β)/R²) for the tracked zero, all others dropped.
+Next brick 3: from the §1343 factorization data on ball c R' (R < R'), with S = zeros in ball c R (finite, none on the sphere
+by choice of R), g := ζ(c + ·)/B is analytic and zero-free on closedBall 0 R and ‖g‖ = ‖ζ‖ on the sphere.
