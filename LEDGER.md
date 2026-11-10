@@ -53188,3 +53188,19 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Numeric (HANDLE, λ²=20 N=6 far tail): worst ratio 0.276 — the trapezoid (symmetric) error is really O(g'''·|Δ|²), so a
   g'''-level bound is the next sharpening (one more MVT level); with D₂ the constant is now optimal up to ~3.6×.
 - Effect: S2994 Schur 𝟙^⊥ tail bound halves again: ~20× → ~10× loose.
+
+## S2999 + S3000 — MILESTONE: THE CONVEXITY BOUND FOR ζ IS FULLY FORMAL (lane 1) — 2026-11-09 20:0x CST
+- S2999 ZetaThreeLinesHB.lean — HANDLE (EXIT0, GREEN, 0 sorry; fix: e^{4u} = e^{2u}·e^{2u} identity):
+  * `norm_F_far`: 0≤σ≤1, |t|≥1 ⇒ ‖E·G_T‖ ≤ 32e·e^{4|T|+4}.  * `zetaE_gauss_bddAbove`: BddAbove on the closed strip (hB).
+- S3000 ZetaConvexity.lean — HANDLE (EXIT0, axiom_gate GREEN 2/2, 0 sorry; fix: final calc instead of le_of_eq_of_le):
+  * `rpow_mix_le`: A^{1−σ}B^σ ≤ max(A,B).
+  * **`zetaE_convexity`: ∃C ≥ 0 ∀T ∀σ∈[0,1], ‖(s−1)ζ(s)‖ ≤ C·(1+|T|)^{(3−σ)/2}·(log(1+|T|)+6) at s = σ+iT**
+    ⇔ |ζ(σ+iT)| ≪ |T|^{(1−σ)/2}·log|T| — the classical convexity bound, unconditional, std axioms only.
+- Chain (all HANDLE this session): S2975 exact |ζ(it)| (functional eq.) → S2977/S2982/S2991/S2993 edges all t → S2979 E entire
+  → S2984 three-lines + Gaussian → S2986/S2988 exact-exponent Gaussian moments → S2995 1/Γ growth → S2997 strip growth
+  → S2999 hB → S3000.
+- Numeric sanity (mpmath): |E|/((1+T)^{(3−σ)/2}(log(1+T)+6)) at T = 1e2,1e3,1e4: σ=0: .061,.029,.020; σ=½: .079,.014,.002;
+  σ=1: .152,.073,.051 — bounded (decreasing), consistent with the theorem.
+- Prior art: classical (Phragmén–Lindelöf / Titchmarsh §5.1); novelty = a complete Lean 4 formalisation in this forge.
+- Next lane-1: feed convexity into the zero-free pipeline: sphere bound log M ≈ ((1−σ+R)/2)·log t instead of (1−σ+R)·log t
+  ⇒ leading growth coefficient 8 → ~4 (Report estimate) ⇒ c₀ roughly ×2 (≈7e-3).
