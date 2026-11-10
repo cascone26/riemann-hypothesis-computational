@@ -53684,3 +53684,15 @@ Reading (Report): consistent with Fejér smoothing over a window of width ∝ N 
 by ~1/(window) while the archimedean part stays O(1). NEXT lane 2: (i) N=192 (h=128) to confirm the 1/N law; (ii) formulate
 the uniform statement (fixed λ², N→∞) as a Lean-checkable inequality: explicit lower bound on smoothed W02−W_R vs explicit
 upper bound Σ Λ(k)k^{-1/2}·|Fejér kernel transform at log k|.
+(S3040 correction: banked 11:38 CST, not 11:41. N=192 h=128 run launched: ~/rhforge/hp_center/arbpartsall_l36_N192.out.)
+
+## S3041 (2026-11-10 12:00 CST, lane 1) — PoissonAvgBound.lean EXIT0: the κ = 1/4 circle-average bound (Poisson–Landau P3)  [HANDLE]
+`rhforge/forge/PoissonAvgBound.lean` (EXIT0 after 3 fixes, gate GREEN, 0 sorry).
+- `re_kernel_circleMap`: Re((2ζ/ζ²)·x) = (2cos θ/r)·x on ζ = r e^{iθ}.
+- `neg_avg_le`: u continuous on |ζ| = r, u ≤ A + (L/2)·max(−Re ζ, 0), and Re ζ ≥ 0 ⇒ u ≥ −D (A, D, L ≥ 0) ⇒
+     −avg_{|ζ|=r} Re((2ζ/ζ²)·u(ζ)) ≤ L/4 + 2(A + D)/(π r).
+Combined with S3039 (PoissonBlaschke): Re(−F'/F(0)) ≤ L/4 + 2(A+D)/(πr) − (Blaschke zero term), where for F(w) = ζ(c+w):
+L = log(2+|γ|) (convexity slope: log|ζ(σ'+iT)| ≤ ((1−σ')/2)·log(1+|T|) + log C + loglog, and 1−σ' ≤ −Re ζ since σ > 1),
+A = log C' + log(log(2+|γ|)+6), D = log(3 + 1/(σ−1)) — so κ = 1/4 with O(loglog t + log(1/(σ−1))) lower order.
+Program: P1 ✓ P2a ✓ P2b ✓ P3 ✓ P4 ✓ — remaining P5 (ζ instantiation: ZeroGap radius r ∈ (3/8, 1/2), factorization split as in
+S3030, convexity → hup, NormZetaGeExplicit → hlo) and P6 (quartic rerun at κ = 1/4 + slack; target c₀ ≈ 0.115).
