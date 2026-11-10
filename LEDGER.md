@@ -53229,3 +53229,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   larger λ² or smaller N relative to the zero count; the λ²/N regime where m > D₂S/(2π) is the next numeric scan (mpmath).
 - Lane-2 arc today: A = Löwner(g_A) (S2970) · G Cauchy-Löwner (S2972) · A = G_∞ numerically (S2974) · far tail via generator
   derivatives, 2000× → 10× (S2983–S3001) · certificate shape (S3003).
+
+## S3004 — ConvexSphere.lean EXIT0 (lane 1: convexity on the pipeline sphere, Re z ≤ 1 part) — 2026-11-09 21:5x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry):
+  * `zeta_le_on_sphere_left`: ∃C ∀σ₀ γ R z, 0≤R≤1, |γ|≥2, z ∈ sphere(σ₀+iγ, R), 0 ≤ Re z ≤ 1 ⇒
+    ‖ζ(z)‖ ≤ C(2+|γ|)^{(1−(σ₀−R))/2}(log(2+|γ|)+6).
+- ⇒ log Ms (left part) = ((1−σ₀+R)/2)·log|γ| + O(loglog) — half of the S2961/S2963 exponent (1−σ₀+R).
+- Remaining for the pipeline: Re z > 1 part (O(loglog) via Dirichlet/N-term), the combined sphere Ms, then re-run the
+  quartic region (S2971/S2973 template) with growth (8/R)·log Ms ≈ 4·log|γ| ⇒ c₀ ≈ 7e-3 (Report).
