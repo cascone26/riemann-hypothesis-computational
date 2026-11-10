@@ -53537,3 +53537,17 @@ to ~1% uniformly: as hard as the explicit formula with the low zeros. NEGATIVE f
 NEXT lane-2 attempt (loaded): smooth before testing — apply a nonnegative (Fejér/Beurling–Selberg) kernel in ν to the steps;
 positivity of the smoothed tail is implied by Pick, kills the prime oscillation (k ≤ λ² terms average out over ν-windows
 ≫ 2π/log k), and its prime side becomes a finite positive-definite-kernel check (Weil-type) amenable to certification.
+(S3029 correction: banked 08:56 CST, not 08:58.)
+
+## S3030 (2026-11-10 08:58 CST, lane 1) — ZetaBlaschkeLandau.lean EXIT0 FIRST TRY: brick 4b, ζ one-radius Landau  [HANDLE]
+`rhforge/forge/ZetaBlaschkeLandau.lean` (gate GREEN 1/1, 0 sorry). `zeta_landau_blaschke`: 1 < Re c, R < R', 1 ∉ ball c R',
+‖ζ‖ ≤ Ms < Mζ on sphere c R, ζ(ρ) = 0 with ρ ∈ ball c R ⇒
+   Re(−ζ'/ζ(c)) ≤ 2·(log Mζ − log‖ζ(c)‖)/R − (Re 1/(c−ρ) + Re(ρ−c)/R²).
+Proof: §1343 factorization on ball c R', split by p = (· ∈ ball c R) (smul_factor_eq_split + eq_of_codiscreteWithin pointwise),
+translate to centre 0 (zeros a = u − c via Finset.image, multiplicity m'(a) = divisor(a+c)), Re a < 0 from
+divisor_filter_support_re_lt, ρ ∈ filter (zeta_zero_mem_filter), multiplicity ≥ 1 (one_le_divisor_riemannZeta_at_zero),
+apply S3028, logDeriv of the translate via logDeriv_comp, drop multiplicity using the S3022 nonneg bracket.
+vs pipeline hzero (two-radii): growth 2·log(…)/(R/2). HALVED. Remaining for the c₀ ≈ 2.86e-2 rung (brick 5):
+(i) zero-free variant (no tracked ρ: drop all zeros) for the k = 2,3,4 terms; (ii) scalar bound with the convexity sphere
+bound (convRHS1 = log(2+|t|) + (2/R)(log(C+1)+log(log(2+|t|)+6)+log(3+1/(σ−1)))); (iii) re-derive the quartic gap with the
+correction −(σ−β)/R² (R=1/2: 4(σ−β) ≤ 4·(ε/𝒦) — absorbed into ε bookkeeping); (iv) quartic rerun, κ = 1 + 2⁻¹².
