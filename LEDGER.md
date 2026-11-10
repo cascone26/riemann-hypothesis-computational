@@ -53511,3 +53511,16 @@ independent RH lever above T. Reach scales with V (∝ N/L): detecting at height
 NEXT lane 2 (redirect): back to the RH-relevant frontier — far-tail positivity ⇔ Pick property of the arithmetic tail generator
 (S3007/S3009): attack it from the PRIME side (show the prime-side generator is Pick for ν beyond a window, i.e. its imaginary
 part on the upper half-plane is ≥ 0), starting with the archimedean piece W_R alone (explicit, Γ-function: Im ψ-type terms).
+
+## S3028 (2026-11-10 08:33 CST, lane 1) — BlaschkeLandau.lean EXIT0 FIRST TRY: one-radius sharp Landau lemma (brick 4a)  [HANDLE]
+`rhforge/forge/BlaschkeLandau.lean` (gate GREEN, 0 sorry). `Blaschke.landau_blaschke`: F = (∏_{a∈S}(w−a)^{m a})·g₀ on
+ball 0 R' (R<R'), S ⊆ ball 0 R, 0 ∉ S, Re a ≤ 0 on S, a₀ ∈ S, g₀ analytic on ball 0 R' & zero-free on ball 0 R,
+‖F‖ ≤ Ms < Mζ on sphere 0 R, F(0) ≠ 0 ⇒
+   Re(−F'/F(0)) ≤ 2(log Mζ − log‖F(0)‖)/R − m a₀·(Re(1/(−a₀)) + Re a₀/R²).
+Chain: F = B·G (S3026) on closedBall; G analytic on ball 0 R' and zero-free on ball 0 R; ‖G‖ = ‖F‖ ≤ Ms on the sphere ⇒ max
+modulus (Mathlib Complex.norm_le_of_forall_mem_frontier_norm_le) ⇒ ‖G‖ ≤ Ms on the disk; sharp BC (S3018) at radius R;
+Blaschke part (S3024); ‖F 0‖ ≤ ‖G 0‖ (‖B 0‖ ≤ 1). Zeros on the sphere are harmless (kept in g₀).
+vs current pipeline (two-radii): 2·log(…)/(R/2) − Σ_{half-disk} — growth term HALVED ⇒ κ 2 → 1 (target c₀ ≈ 2.86e-2).
+Next brick 4b (ζ instantiation): translate F(w) = ζ(c + w); factorization on ball c R' from
+exists_factorization_riemannZeta_at_center + smul_factor_eq_split with p = (· ∈ ball c R) (pointwise version of
+zeta_eq_split_on_sphere for z ∈ ball c R'); a = u − c, Re a = Re u − Re c ≤ 0 (zeros have Re < 1 < Re c).
