@@ -53214,3 +53214,10 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Remaining 10×: g'''-level trapezoid error (S2998 noted ratio 0.276) and Schur vs eigenvalue. Next lane-2 options:
   (a) g''' trapezoid bound (one more MVT level), (b) apply the tail machinery at mpmath precision to bound the CCM margin
   from below by (finite-zero Gram margin) − (tail bound), testing whether the bound can certify μ_λ at small λ².
+
+## S3002 — ZetaConvexityZeta.lean EXIT0 (lane 1: convexity bound for ζ itself) — 2026-11-09 20:5x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; fix: cancel positive factor via le_of_mul_le_mul_left):
+  * `zeta_convexity`: ∃C ≥ 0 ∀T (|T| ≥ 1) ∀σ∈[0,1], ‖ζ(σ+iT)‖ ≤ C(1+|T|)^{(1−σ)/2}(log(1+|T|)+6).
+- Pipeline wiring plan (next lane-1 bricks): sphere(σ₀+iγ, R), σ₀ ≈ 1: for Re z ≤ 1 use this (log|ζ| ≤ ((1−Re z)/2)log|γ| + O(loglog));
+  for Re z > 1 use Re-z>1 Dirichlet bound / sharp N-term (log|ζ| = O(loglog)); ⇒ log Ms ≤ (R/2)log|γ| + O(loglog|γ|)
+  ⇒ growth (8/R)·log Ms ≈ 4·log|γ| (vs 8) ⇒ c₀ ≈ 0.028646/4 ≈ 7.2e-3 (Report).
