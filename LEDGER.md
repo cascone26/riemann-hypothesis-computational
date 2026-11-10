@@ -53267,3 +53267,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Reading (Report): RH above T ⇔ −g_tail/π = Σ_γ w_γ/(γ − ν) has nonnegative pole weights ⇔ Pick function on the window
   (Löwner/Nevanlinna). The arithmetic generator minus finitely many zero poles behaves exactly as a Pick function numerically.
   Lane-2 target is now one-variable: prove the Pick (Herglotz) property of g_A − π·C_K w_K from the prime side.
+
+## S3008 — ConvexSphereMs.lean EXIT0 (lane 1: combined convexity sphere bound Ms) — 2026-11-10 00:0x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `convex_sphere_Ms`: ∃C ≥ 1 ∀σ₀>1, σ₀−1 ≤ R ≤ 1, σ₀+R ≤ 2, |γ| ≥ 3, z ∈ sphere(σ₀+iγ, R):
+    ‖ζ(z)‖ ≤ C(2+|γ|)^{(1−σ₀+R)/2}(log(2+|γ|)+6)   (S3004 for Re z ≤ 1, S3006 for Re z > 1).
+- ⇒ (8/R)·log(Ms+1) ≈ (8/R)·((1−σ₀+R)/2)·log|γ| ≤ 4·log|γ| + O_R(log log|γ|) — half the sharp N-term growth (S2963).
+- Next lane-1: the convexity growth lemma (analogue of S2963 `growth_at_sharp_clean` with Ms from S3008), then the quartic
+  region rung (S2971 template) ⇒ target c₀ ≈ 0.028646/κ with κ → 4 (≈ 7e-3).
