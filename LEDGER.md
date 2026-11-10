@@ -53636,3 +53636,4 @@ and the decomposition inequality chain.
 Mathlib integral_cos / integral_cos_sq. The first gives the κ = (2/R)(2π)⁻¹(R/2)(π/2) = 1/4 leading coefficient.
 Poisson–Landau status: P1 (S3034 Schwarz derivative) ✓, P4 ✓. Next: P2 (log branch / harmonic log‖G‖ on a disk ⊃ closed
 radius-R disk, avoiding zeros near the sphere), P3 (pointwise convexity in θ-form), P5 assemble, P6 quartic rerun.
+(S3036 correction: banked 10:41 CST, not 10:44; gate checked=6 clean=6 incl. helper lemmas.)
