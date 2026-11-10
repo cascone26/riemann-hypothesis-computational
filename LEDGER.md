@@ -53551,3 +53551,24 @@ vs pipeline hzero (two-radii): growth 2·log(…)/(R/2). HALVED. Remaining for t
 (i) zero-free variant (no tracked ρ: drop all zeros) for the k = 2,3,4 terms; (ii) scalar bound with the convexity sphere
 bound (convRHS1 = log(2+|t|) + (2/R)(log(C+1)+log(log(2+|t|)+6)+log(3+1/(σ−1)))); (iii) re-derive the quartic gap with the
 correction −(σ−β)/R² (R=1/2: 4(σ−β) ≤ 4·(ε/𝒦) — absorbed into ε bookkeeping); (iv) quartic rerun, κ = 1 + 2⁻¹².
+
+## S3031 (2026-11-10 09:24 CST, lane 1) — ZetaOneRadiusGrowth.lean EXIT0 first try (brick 5a)  [HANDLE]
+`OneRadius.growth_one_radius` (no tracked zero: zero-in-ball case via S3030 + nonneg bracket; zero-free case via max modulus +
+sharp BC directly), `growth_one_radius_scalar` (≤ 2·log((Ms+1)(3+1/(Re c−1)))/R), `zero_one_radius_scalar`
+(≤ 2·log((Ms+1)(3+1/(σ−1)))/R + (σ−β)/R² − 1/(σ−β)).
+
+## S3032 (2026-11-10 09:26 CST, lane 1) — TrigPolyQuarticBlaschke.lean EXIT0: c₀ = 25063328/875162609 ≈ 2.8638e-2  [HANDLE, MILESTONE]
+`rhforge/forge/TrigPolyQuarticBlaschke.lean` (generator tmp/gen_q1.py from S3020; 3 small fixes: numeral power in hsb,
+implicit R pinned, habs/hsc split). axiom_gate GREEN 35/35 over the whole κ→1 stack (TrigPolyQuarticBlaschke,
+ZetaOneRadiusGrowth, ZetaBlaschkeLandau, BlaschkeLandau, BlaschkeDivide, BlaschkeProduct, BlaschkeFactor,
+SharpBorelCaratheodory); 0 sorry.
+- `riemannZeta_zero_free_quartic_blaschke`: log|γ| ≥ 2³⁴, 8192(log6 + 4log(C+1) + 4log2 + 4log(3+4A₀+44) + 1) ≤ log|γ|,
+  ζ(β+iγ) = 0 ⇒ β ≤ 1 − (25063328/18763)/(14379A₀ + (95521555/2048)·log|γ|)   (κ = 4097/4096).
+- `riemannZeta_zero_free_quartic_blaschke_clean`: ∃T₀, |γ| ≥ T₀ ⇒ β ≤ 1 − (25063328/875162609)/log|γ|  (≈ 0.028638).
+c₀ LADDER (all Lean-verified): 2.973e-3 → 3.248e-3 → 3.472e-3 → 3.5735e-3 → 7.049e-3 (convexity, S3014) → 7.161e-3 (κ→4,
+S3016) → 1.4321e-2 (sharp BC, S3020) → **2.8638e-2 (one-radius Blaschke–Landau, S3032)**. ×9.6 since S2973 (start of night).
+Pipeline limit at κ→1: 1335.785/46630 ≈ 2.8646e-2. Literature (Report): Kadiri ≈ 0.175 (≈6× headroom).
+Next lane-1 levers: (a) exponent: convexity (1−σ_z)/2 → any θ<1/2 near σ=1 scales κ by 2θ (needs subconvexity/vdC — big);
+(b) trig polynomial re-optimisation for the NEW structure: B-term now costs κL with coefficient c1 and the zero term carries
+−(σ−β)/R² — re-run hp_trigpoly_search.py with the exact objective ε(c1−c0−ε)/((c0+ε)Σc_k); (c) radius R → optimise
+(R=1/2 fixed so far; growth independent of R at leading order, but the correction (σ−β)/R² and pole terms favour larger R).
