@@ -1,0 +1,4 @@
+PARTSALL h= 8: grid points 80: CERT arith>0 at 46/80; CERT explicit>|prime| at 12/80; worst ratio = inf (explicit<=0 somewhere) at j=38 (nu=-17.53)
+PARTSALL h=16: grid points 64: CERT arith>0 at 36/64; CERT explicit>|prime| at 26/64; worst ratio = inf (explicit<=0 somewhere) at j=24 (nu=-42.08)
+PARTSALL h=24: grid points 48: CERT arith>0 at 48/48; CERT explicit>|prime| at 44/48; worst ratio = inf (explicit<=0 somewhere) at j=24 (nu=-42.08)
+PARTSALL h=32: grid points 32: CERT arith>0 at 32/32; CERT explicit>|prime| at 32/32; worst |prime|/explicit = 0.316 at j=32 (nu=-28.05)

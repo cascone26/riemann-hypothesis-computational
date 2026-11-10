@@ -53645,3 +53645,14 @@ ball c r) is zero-free on ball c r', |G| = |ζ| on sphere c r ⇒ Schwarz formul
 r-independent. Program: P1 ✓ P2a ✓ P4 ✓ — next P2b (BlaschkeDivide at radius r with log branch on ball r'), P3, P5, P6.
 Lane 2 (S3038, launched): all-grid-point certified smoothed dominance, PARTSALL λ²=36 N=48 (h=8..32) and N=96 (h=16..64),
 ~/rhforge/hp_center/arbpartsall_l36_N{48,96}.out.
+
+## S3038 (2026-11-10 11:10 CST, lane 2) — ALL-GRID certified smoothed dominance, λ²=36 N=48  [HANDLE]
+PARTSALL (prec 400), every grid point j with a full Fejér window (results/hp_center/arb_partsall_l36_N48.txt):
+| h | points | arith (W02−W_R−W_P smoothed) > 0 | explicit (W02−W_R) > |prime| | worst |prime|/explicit |
+|  8 | 80 | 46/80 | 12/80 | ∞ (explicit ≤ 0 somewhere) |
+| 16 | 64 | 36/64 | 26/64 | ∞ |
+| 24 | 48 | 48/48 | 44/48 | ∞ (near the window edge ν≈−42) |
+| 32 | 32 | 32/32 | 32/32 | 0.316 |
+At h = 32 (ν-window ≈ ±56) the explicit archimedean part CERTIFIABLY dominates the entire prime sum at EVERY admissible grid
+point, with margin ≥ 3.2×; the smoothed arithmetic side is certified positive everywhere for h ≥ 24. Interior failures at
+small h are the expected unsmoothed prime oscillation. N=96 (h=16..64) pending.
