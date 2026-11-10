@@ -53697,3 +53697,8 @@ A = log C' + log(log(2+|γ|)+6), D = log(3 + 1/(σ−1)) — so κ = 1/4 with O(
 Program: P1 ✓ P2a ✓ P2b ✓ P3 ✓ P4 ✓ — remaining P5 (ζ instantiation: ZeroGap radius r ∈ (3/8, 1/2), factorization split as in
 S3030, convexity → hup, NormZetaGeExplicit → hlo) and P6 (quartic rerun at κ = 1/4 + slack; target c₀ ≈ 0.115).
 (S3041 correction: banked 11:41 CST, not 12:00.)
+
+## S3042 (2026-11-10 12:04 CST, lane 1) — PoissonBlaschkeDrop.lean EXIT0 first try (Poisson–Landau P5a)  [HANDLE]
+`bprod_neg_logDeriv_re_nonpos` (Re a ≤ 0 on S ⇒ Re(−B'/B(0)) ≤ 0) and `poisson_blaschke_drop` (S3039 without a tracked
+zero; S may be empty): Re(−F'/F(0)) ≤ −avg_{|ζ|=r} Re((2ζ/ζ²)·log‖F ζ‖). Gate GREEN, 0 sorry. Generated from S3039 by
+replacing the Blaschke-part step. Program: P1 P2a P2b P3 P4 P5a ✓; next P5b (ζ instantiation) and P6 (quartic rerun).
