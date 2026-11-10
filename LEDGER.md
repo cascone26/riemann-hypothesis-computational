@@ -53696,3 +53696,4 @@ L = log(2+|γ|) (convexity slope: log|ζ(σ'+iT)| ≤ ((1−σ')/2)·log(1+|T|) 
 A = log C' + log(log(2+|γ|)+6), D = log(3 + 1/(σ−1)) — so κ = 1/4 with O(loglog t + log(1/(σ−1))) lower order.
 Program: P1 ✓ P2a ✓ P2b ✓ P3 ✓ P4 ✓ — remaining P5 (ζ instantiation: ZeroGap radius r ∈ (3/8, 1/2), factorization split as in
 S3030, convexity → hup, NormZetaGeExplicit → hlo) and P6 (quartic rerun at κ = 1/4 + slack; target c₀ ≈ 0.115).
+(S3041 correction: banked 11:41 CST, not 12:00.)
