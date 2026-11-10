@@ -53656,3 +53656,15 @@ PARTSALL (prec 400), every grid point j with a full Fejér window (results/hp_ce
 At h = 32 (ν-window ≈ ±56) the explicit archimedean part CERTIFIABLY dominates the entire prime sum at EVERY admissible grid
 point, with margin ≥ 3.2×; the smoothed arithmetic side is certified positive everywhere for h ≥ 24. Interior failures at
 small h are the expected unsmoothed prime oscillation. N=96 (h=16..64) pending.
+(S3038 correction: banked 11:07 CST, not 11:10.)
+
+## S3039 (2026-11-10 11:43 CST, lane 1) — PoissonBlaschke.lean EXIT0: Poisson–Blaschke bound (Poisson–Landau P2b)  [HANDLE]
+`rhforge/forge/PoissonBlaschke.lean` (EXIT0 after 3 fixes, gate GREEN, 0 sorry).
+`PoissonBlaschke.poisson_blaschke`: F = (∏_{a∈S}(w−a)^{m a})·g₀ on ball 0 R', S ⊆ ball 0 r, g₀ analytic on ball 0 R' and
+zero-free on ball 0 r' (r < r' ≤ R'), 0 ∉ S, Re a ≤ 0 on S, a₀ ∈ S ⇒
+   Re(−F'/F(0)) ≤ −avg_{|ζ|=r} Re((2ζ/ζ²)·log‖F ζ‖) − m a₀·(Re(1/(−a₀)) + Re a₀/r²).
+The growth term is now the CIRCLE AVERAGE of (2Re ζ/r²)·log|F| (Schwarz kernel), not a sup: G = Gfac (S3026) is zero-free on
+ball 0 ρ, ρ = min(r', r²/μ) > r (μ < r bounds ‖a‖, `exists_norm_bound`); holomorphic log branch on ball 0 ρ; Schwarz formula
+(S3034) at radius r; Re ∘ circleAverage via reCLM.circleAverage_comp_comm; |G| = |F| on the sphere.
+Program: P1 ✓ P2a ✓ P2b ✓ P4 ✓ — remaining P3 (pointwise convexity of log|ζ| along the circle + right-half lower bound, then
+integrate with P4 ⇒ (1/4)log t + O(loglog t)), P5 ζ assembly (ZeroGap radius + factorization as in S3030), P6 quartic rerun.
