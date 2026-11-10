@@ -53702,3 +53702,11 @@ S3030, convexity → hup, NormZetaGeExplicit → hlo) and P6 (quartic rerun at �
 `bprod_neg_logDeriv_re_nonpos` (Re a ≤ 0 on S ⇒ Re(−B'/B(0)) ≤ 0) and `poisson_blaschke_drop` (S3039 without a tracked
 zero; S may be empty): Re(−F'/F(0)) ≤ −avg_{|ζ|=r} Re((2ζ/ζ²)·log‖F ζ‖). Gate GREEN, 0 sorry. Generated from S3039 by
 replacing the Blaschke-part step. Program: P1 P2a P2b P3 P4 P5a ✓; next P5b (ζ instantiation) and P6 (quartic rerun).
+
+## S3043 (2026-11-10 12:05 CST, lane 2) — N=192 (height 339) all-grid certified smoothed dominance: 128/128  [HANDLE]
+λ²=36, N=192, h=128 (= 2N/3), prec 400: CERT arith > 0 at 128/128, CERT explicit (W02−W_R) > |prime| at 128/128, worst
+|prime|/explicit = 0.112 (ν = −103.45). results/hp_center/arb_partsall_l36_N192.txt.
+Worst-ratio sequence at h = 2N/3: N=48 0.316 → N=96 0.158 → N=192 0.112. HONEST: the second step is ×0.71, not ×0.5 —
+the decay slows (≈N^{-1} then ≈N^{-0.5}); the S3040 "1/N law" is NOT confirmed beyond N=96. Still monotone and well below 1.
+Next lane 2: fit worst-ratio(N) with N=384 (h=256) and a different smoothing kernel (Fejér² / Jackson) to see whether the
+plateau is kernel-limited (Fejér's slow 1/h² sidelobe decay) rather than intrinsic.

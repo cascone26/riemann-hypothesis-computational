@@ -1,0 +1,2 @@
+lam2=36 N=192 prec=400: certified N(V+1)=161 zeros removed (V+1=337.6444); Loewner residual balls contain 0: True (max |resid| upper=1.18e-57); min step lower bound=4.577664e-03 max step radius=1.87e-58; DETECTOR CERTIFIED QUIET (all steps > 0): True
+PARTSALL h=128: grid points 128: CERT arith>0 at 128/128; CERT explicit>|prime| at 128/128; worst |prime|/explicit = 0.112 at j=133 (nu=-103.45)
