@@ -53283,3 +53283,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Reading (Report): real far zeros ⇒ far-tail generator decreasing on zero-free windows — the S3007 numerics on the
   ARITHMETIC generator show exactly this. Contrapositive: an increase of the arithmetic tail generator on a zero-free
   window would certify an off-line zero above T. Gives a one-variable numerical detector for off-line zeros from primes.
+
+## S3010 — GrowthConvex.lean EXIT0 (lane 1: growth input from the convexity sphere bound) — 2026-11-10 01:0x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `growth_at_convex`: ∃C ≥ 1 ∀σ t R R', 1<σ, σ−1 ≤ R ≤ 1, σ+R ≤ 2, 0<R<R' ≤ |t|, |t| ≥ 3 ⇒
+    (−ζ'/ζ(σ+it)).re ≤ 4·log((C(2+|t|)^{(1−σ+R)/2}(log(2+|t|)+6) + 1)(3+1/(σ−1)))/(R/2)
+    (S3008 Ms into hgrowth_riemannZeta_scalar).
+- Leading term (8/R)((1−σ+R)/2)log|t| ≤ 4·log|t|. Next lane-1: clean scalar form (analogue of S2963 growth_at_sharp_clean:
+  ≤ 4log|t| + (8/R)(log stuff)) then the quartic region rung with κ ≈ 4+δ ⇒ c₀ ≈ 0.028646/4.1 ≈ 7e-3 (Report).
