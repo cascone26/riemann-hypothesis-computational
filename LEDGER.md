@@ -53760,3 +53760,20 @@ Added to `rhforge/forge/ZetaPoissonLandau.lean` (gate GREEN, 0 sorry). `ZetaPois
    Re(−ζ'/ζ(σ+iγ)) ≤ L/4 + 2(A₁ + log(L+6) + log(3+1/(σ−1))) + 2 − 1/(σ−β),  L = log(2+|γ|).
 (poisson_blaschke with a₀ = ρ − c real negative; multiplicity ≥ 1 dropped; correction (σ−β)/r² ≤ (1/4)/(9/64) < 2.)
 Both inputs of the quartic region are now in κ = 1/4 form with NO sphere-sup Ms: P6 next (quartic rerun).
+
+## S3051 (2026-11-10 13:28 CST, lane 1) — TrigPolyQuarticPoisson.lean EXIT0 FIRST TRY: c₀ = 25063328/218964210 ≈ 0.11446  [HANDLE, MILESTONE]
+`rhforge/forge/TrigPolyQuarticPoisson.lean` (generated from S3032 by swapping in the Poisson–Landau inputs; no sphere sup Ms);
+axiom_gate GREEN 22/22 over the Poisson–Landau stack (TrigPolyQuarticPoisson, ZetaPoissonLandau, ZetaCircleLogBounds,
+PoissonBlaschkeDrop, PoissonBlaschke, PoissonAvgBound, CosHalfIntegrals, ZeroGap, SchwarzDeriv); 0 sorry.
+- `riemannZeta_zero_free_quartic_poisson`: log|γ| ≥ 2³², 8192(log6/4 + 2C + 2log2 + 2log(3+4A₀+44) + 2) ≤ log|γ|, ζ(β+iγ)=0 ⇒
+  β ≤ 1 − (25063328/18763)/(14379A₀ + (23897875/2048)·log|γ|)     (κ = 1025/4096 = 1/4 + 2⁻¹²).
+- `riemannZeta_zero_free_quartic_poisson_clean`: ∃T₀, |γ| ≥ T₀ ⇒ β ≤ 1 − (25063328/218964210)/log|γ|   (≈ 0.11446 = 1/8.737).
+c₀ LADDER (all Lean-verified, this session): 3.5735e-3 → 7.049e-3 (convexity) → 7.161e-3 (κ→4) → 1.4321e-2 (sharp BC) →
+2.8638e-2 (one-radius Blaschke) → **0.11446 (Poisson–Landau, κ = 1/4)**. ×32 since the start of the night.
+PRIOR ART (Report — no novelty claim on the constant): classical de la Vallée Poussin-type constants: Westphal/Rosser–Schoenfeld
+1/9.645 ≈ 0.1037, Stechkin-type ≈ 1/9.6, Kadiri 2005 1/5.6969 ≈ 0.1755 (best classical), Mossinghoff–Trudgian 1/5.558 (2015).
+Our 1/8.737 sits between Rosser–Schoenfeld and Kadiri — consistent with a convexity + Jensen/Poisson + quartic-polynomial
+argument. What IS new here: a fully machine-checked (Lean 4/Mathlib, std axioms only) zero-free region at this strength.
+Pipeline limit at κ→1/4: 1335.785/11657.5 ≈ 0.11458. Next lane-1 levers toward Kadiri's 0.1755: (a) trig polynomial
+re-optimisation (the 46630 = Σc_k weighting now multiplies κ=1/4 — try higher degree / Mossinghoff–Trudgian polynomials);
+(b) zero-density/smoothing refinements (Kadiri) — big; (c) explicit T₀ (currently ineffective via A₀, C).
