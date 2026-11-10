@@ -53299,3 +53299,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Reading (Report): one certified increase of the ARITHMETIC tail generator on a zero-free window ⇒ off-line zero above T.
   Detector is quiet on S3007 windows (λ²=20, 28). Next lane-2 numerics: scan larger λ² / finer windows at mpmath precision
   with interval arithmetic (Arb) — a certified-quiet detector is a new RH-consistency check from primes.
+
+## S3012 — GrowthConvexClean.lean EXIT0 (lane 1: clean convexity growth, leading coefficient 4) — 2026-11-10 02:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; fix: `; ring` for log_mul association):
+  * `growth_convex_clean`: ∃C ≥ 1 ∀ admissible σ t R R' (1<σ, σ−1 ≤ R ≤ 1, σ+R ≤ 2, 0<R<R' ≤ |t|, |t| ≥ 3):
+    (−ζ'/ζ(σ+it)).re ≤ 4·log(2+|t|) + (8/R)(log(C+1) + log(log(2+|t|)+6) + log(3+1/(σ−1))).
+- vs S2963 (sharp N-term): 8·log|t| + (8/R)(…). LEADING COEFFICIENT HALVED (8 → 4).
+- Constraint noted: σ − 1 ≤ R (needed for the convexity exponent ≥ 0) and σ+R ≤ 2 — compatible with the quartic pipeline
+  (σ = 1 + ε/𝒦 ≈ 1, R = 1/2). Next lane-1: quartic region rung with B = C_k = κL, κ = 4 + δ ⇒ c₀ ≈ 0.028646/(4+δ) (Report ≈ 7e-3).
