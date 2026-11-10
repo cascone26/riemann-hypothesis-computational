@@ -53628,3 +53628,11 @@ same order as arith (−0.026 vs 0.039 at h=24) — the far-tail positivity ⇔ 
 the explicit side now provably prime-dominated-free. Next lane 2: (1) do this for ALL grid points (not just 2) and larger N
 (96) to see if "explicit > |prime|" holds uniformly at h ∝ N; (2) Lean brick: positive Fejér weights preserve step positivity
 and the decomposition inequality chain.
+(S3035 correction: banked 10:40 CST, not 10:42.)
+
+## S3036 (2026-11-10 10:44 CST, lane 1) — CosHalfIntegrals.lean EXIT0 first try: θ-integrals of the Poisson–Landau bound (P4)  [HANDLE]
+`rhforge/forge/CosHalfIntegrals.lean` (gate GREEN 3/3, 0 sorry): ∫₀^{2π} max(−cos θ,0)² = π/2 (`integral_negcos_pos_sq`),
+∫₀^{2π} max(cos θ,0) = 2 (`integral_cos_pos`), ∫₀^{2π} max(−cos θ,0) = 2 (`integral_negcos_pos`) — split at π/2, 3π/2,
+Mathlib integral_cos / integral_cos_sq. The first gives the κ = (2/R)(2π)⁻¹(R/2)(π/2) = 1/4 leading coefficient.
+Poisson–Landau status: P1 (S3034 Schwarz derivative) ✓, P4 ✓. Next: P2 (log branch / harmonic log‖G‖ on a disk ⊃ closed
+radius-R disk, avoiding zeros near the sphere), P3 (pointwise convexity in θ-form), P5 assemble, P6 quartic rerun.
