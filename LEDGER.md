@@ -53249,3 +53249,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   = (finite verified part) + (RH above T). The lane-2 frontier is therefore not tail-bounding but the positivity of the
   exact tail Gram / its arithmetic counterpart; next lane-2: express the tail Gram arithmetically (A − G_K via primes) and
   look for a positivity mechanism there (the explicit-formula side), not a size bound.
+
+## S3006 — ZetaReGeOne.lean EXIT0 (lane 1: ζ = O(log t) on 1 < Re z ≤ 2 — Re>1 part of the convexity sphere) — 2026-11-09 23:0x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `divdiff_le_log`: x > 1, N ≥ 1 ⇒ (N^{1−x} − 1)/(1 − x) ≤ log N.
+  * `norm_zeta_le_log_right`: 1 < Re z ≤ 2, |Im z| ≥ 2 ⇒ ‖ζ(z)‖ ≤ log|Im z| + 6  (forge S1303 N-term, N = ⌊|Im z|⌋).
+- Numeric sanity (mpmath): max |ζ|/(log t + 6) on Re ∈ {1.0001,1.1,1.5,2}, t ∈ {2,…,1000} printed in-session (< 1).
+- Sphere inventory for the convexity pipeline: Re z ≤ 1 (S3004), Re z = 1 (S2977), 1 < Re z ≤ 2 (S3006) ⇒ next lane-1 brick:
+  combined Ms on sphere(σ₀+iγ, R) with log Ms ≤ ((1−σ₀+R)/2)·log(2+|γ|) + log(C(log(2+|γ|)+6)), then the quartic region rung.
