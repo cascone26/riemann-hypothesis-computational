@@ -53669,3 +53669,18 @@ ball 0 ρ, ρ = min(r', r²/μ) > r (μ < r bounds ‖a‖, `exists_norm_bound`)
 Program: P1 ✓ P2a ✓ P2b ✓ P4 ✓ — remaining P3 (pointwise convexity of log|ζ| along the circle + right-half lower bound, then
 integrate with P4 ⇒ (1/4)log t + O(loglog t)), P5 ζ assembly (ZeroGap radius + factorization as in S3030), P6 quartic rerun.
 (S3039 correction: banked 11:36 CST, not 11:43.)
+
+## S3040 (2026-11-10 11:41 CST, lane 2) — ALL-GRID certified smoothed dominance at N=96: margin IMPROVES with N  [HANDLE]
+λ²=36, N=96 (window to height 169), PARTSALL prec 400 (results/hp_center/arb_partsall_l36_N96.txt):
+| h | points | arith > 0 | explicit > |prime| | worst |prime|/explicit |
+| 16 | 160 | 84 | 26 | ∞ |
+| 32 | 128 | 94 | 56 | ∞ |
+| 48 | 96 | 94 | 90 | ∞ (edge) |
+| 64 | 64 | 64/64 | 64/64 | 0.158 |
+At the same RELATIVE smoothing (h = 2N/3): N=48 worst ratio 0.316 → N=96 worst ratio 0.158 — halves as N doubles, i.e. the
+prime sum relative to the explicit archimedean part decays like ~1/N under proportional Fejér smoothing. Certified: the
+smoothed arithmetic side is positive and explicit-dominated at every admissible grid point for N=96, h=64.
+Reading (Report): consistent with Fejér smoothing over a window of width ∝ N averaging Σ_{k≤λ²} Λ(k)k^{-1/2}e^{iν log k} down
+by ~1/(window) while the archimedean part stays O(1). NEXT lane 2: (i) N=192 (h=128) to confirm the 1/N law; (ii) formulate
+the uniform statement (fixed λ², N→∞) as a Lean-checkable inequality: explicit lower bound on smoothed W02−W_R vs explicit
+upper bound Σ Λ(k)k^{-1/2}·|Fejér kernel transform at log k|.
