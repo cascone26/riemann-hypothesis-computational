@@ -53728,3 +53728,11 @@ operators/hp_mu_lambda.py (same pipeline as λ²=28), three parallel PIDs 675554
   36:240:1200 → .../mu_lambda36_N240.txt      (est. 30–40 h; N=240 is the pre-registered size, 208/224 give saturation steps)
 PRE-REGISTRATION (S2989, unchanged): slope d(−ln μ)/dλ² from 28 → 36 ∈ [12.1, 12.5]; μ_6 ≈ 1e-181 (×10).
 Floor rule: saturation step 224→240 ≤ 0.3 × previous step ⇒ N=240 is the floor (S2944). Olympus load avg ~9–10 at launch.
+
+## S3048 (2026-11-10 13:01 CST, lane 1) — ZetaPoissonLandau.lean EXIT0 FIRST TRY: Re(−ζ'/ζ) ≤ (1/4)·log t + O(loglog)  [HANDLE]
+`ZetaPoisson.zeta_poisson_growth` (gate GREEN, 0 sorry): ∃ A₁ ≥ 0, ∀ 1 < σ ≤ 9/8, |γ| ≥ 3, L = log(2+|γ|):
+   Re(−ζ'/ζ(σ+iγ)) ≤ L/4 + 2·(A₁ + log(L+6) + log(3 + 1/(σ−1))).
+LEADING COEFFICIENT 1/4 (S3031 one-radius: 1; S3020 sharp BC: 2; S3014: 4). Assembly of P1–P5a + S3044: factorization on ball c 1,
+ZeroGap radius 3/8<r<r'<1/2 avoiding all zero distances, split at ball c r, translate, poisson_blaschke_drop at radius r,
+neg_avg_le with hup/hlo from ZetaCircleLogBounds, πr > 1. Remaining: zero form (tracked ρ, same assembly with
+poisson_blaschke) and P6 quartic rerun at κ = 1/4 + slack ⇒ target c₀ ≈ 0.11.
