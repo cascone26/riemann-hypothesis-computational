@@ -53431,3 +53431,17 @@ observed). ν-normalised quiet statistic: cert_j / pred_j(T=∞) → 1 under RH-
 non-Pick term with a ν-dependent residual — the spread column (≤1.4e-8) is the sensitivity floor.
 Next lane 2: Arb-certify the zero side too (ball zeros + rigorous tail bound) to make (c) a Handle; Lean: residual-spread ⇒
 bound on any single non-Pick term's contribution.
+
+## S3022 (2026-11-10 06:00 CST, lane 1) — BlaschkeFactor.lean EXIT0: brick 1 of the κ 2 → 1 (Jensen/Blaschke) program  [HANDLE]
+`rhforge/forge/BlaschkeFactor.lean` (EXIT0 after 2 fixes, gate GREEN 6/6, 0 sorry). b(w) = R(w−a)/(R² − ā w):
+`blaschke_identity` |R²−āw|² − R²|w−a|² = (R²−|a|²)(R²−|w|²); `blaschke_den_ne`; `blaschke_norm_le_one` (|w| ≤ R);
+`blaschke_norm_sphere` (|w| = R ⇒ |b| = 1); `blaschke_logDeriv_zero` logDeriv b 0 = −1/a + ā/R²;
+`blaschke_zero_term_nonneg` (|a| ≤ R, Re a ≤ 0 ⇒ Re(1/(−a)) + Re a/R² ≥ 0).
+Program (Report): current growth = 2·log(M/|ζ(c)|)/(R/2) because zeros are removed only from the half disk (two-radii
+Titchmarsh). Dividing ζ by ∏_{|ρ−c|<R} b_ρ(z−c) makes g zero-free on the whole disk with |g| = |ζ| on the sphere, so sharp BC
+(S3018) applies at radius R: growth 2·log(M/|ζ(c)|)/R ⇒ convRHS leading coefficient 1, κ → 1, c₀ → ≈ 2.86e-2 (double again).
+−Re ζ'/ζ(c) = −Re g'/g(c) − Σ_ρ [Re 1/(c−ρ) + Re(ρ−c)/R²], each bracket ≥ 0 (this brick), keep only ρ = β+iγ:
+1/(σ−β) − (σ−β)/R² (the correction (σ−β)/R² ≤ 4(σ−β) is O(1/log t), absorbed).
+Next bricks: (2) finite Blaschke product B = ∏ b_ρ^{m_ρ}: |B| = 1 on sphere, logDeriv sum; (3) g = ζ/B analytic zero-free on
+ball c R (from the §1343 factorization data, zeros in closedBall avoided by choosing R off the finite zero-radius set);
+(4) growth lemma at radius R; (5) quartic region rerun.
