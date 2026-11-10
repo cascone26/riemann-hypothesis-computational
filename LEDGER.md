@@ -53719,3 +53719,12 @@ plateau is kernel-limited (Fejér's slow 1/h² sidelobe decay) rather than intri
 These are hup/hlo of S3041 with A = A₁ + log(L+6), D = log(3+1/(σ−1)) ⇒ growth (1/4)L + 2(A+D)/(πr).
 Remaining: P5b-2 (assemble: ZeroGap radius in (3/8,1/2) from the divisor-support zero norms, split factorization on ball c 1
 as S3030, PoissonBlaschke(Drop) + PoissonAvgBound; continuity of log‖ζ‖ on the gap sphere), P6 quartic rerun.
+(S3044 correction: banked 12:31 CST, not 12:33.)
+
+## S3047 (2026-11-10 12:57 CST) — λ²=36 MARGIN RUN LAUNCHED on Olympus (Jacob approved 2026-11-10)
+operators/hp_mu_lambda.py (same pipeline as λ²=28), three parallel PIDs 675554/675559/675564:
+  36:208:1040 → ~/rhforge/hp_center/results/mu_lambda36_N208.txt
+  36:224:1120 → .../mu_lambda36_N224.txt
+  36:240:1200 → .../mu_lambda36_N240.txt      (est. 30–40 h; N=240 is the pre-registered size, 208/224 give saturation steps)
+PRE-REGISTRATION (S2989, unchanged): slope d(−ln μ)/dλ² from 28 → 36 ∈ [12.1, 12.5]; μ_6 ≈ 1e-181 (×10).
+Floor rule: saturation step 224→240 ≤ 0.3 × previous step ⇒ N=240 is the floor (S2944). Olympus load avg ~9–10 at launch.

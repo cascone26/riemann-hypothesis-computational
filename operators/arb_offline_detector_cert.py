@@ -82,3 +82,25 @@ if os.environ.get('PARTS') and os.environ.get('PARTSALL'):
             if worst is None or r > worst[0]: worst = (r, j)
         print(f"PARTSALL h={h:2d}: grid points {len(js)}: CERT arith>0 at {nA}/{len(js)}; CERT explicit>|prime| at {nE}/{len(js)}; "
               f"worst |prime|/explicit = {worst[0]:.3f} at j={worst[1]} (nu={float(nu[worst[1]].mid()):.2f})", flush=True)
+# S3045 (additive): JACKSON kernel (Fejer * Fejer) all-grid dominance. Set PARTSJ="h1,..." (requires PARTS=1); support 2h.
+if os.environ.get('PARTS') and os.environ.get('PARTSJ'):
+    def jw(h):
+        tri = [h + 1 - abs(i) for i in range(-h, h + 1)]
+        w = [0] * (4 * h + 1)
+        for i, a in enumerate(tri):
+            for k, b in enumerate(tri): w[i + k] += a * b
+        return [arb(x) for x in w]
+    def smj(a, h, j):
+        w = jw(h); W = sum(w, arb(0))
+        return sum((wi * a[j + i - 2 * h] for i, wi in enumerate(w)), arb(0)) / W
+    for h in [int(x) for x in os.environ['PARTSJ'].split(',')]:
+        js = [j for j in range(2 * h, M - 1 - 2 * h)]
+        nA = nE = 0; worst = None
+        for j in js:
+            a, b, p = smj(S02, h, j), smj(SR, h, j), smj(SP, h, j)
+            if (a + b + p) > 0: nA += 1
+            if (a + b) > abs(p): nE += 1
+            lo = float((a + b).lower()); r = float(abs(p).upper()) / lo if lo > 0 else float('inf')
+            if worst is None or r > worst[0]: worst = (r, j)
+        print(f"PARTSJ jackson h={h:2d} (support {4*h+1}): points {len(js)}: CERT arith>0 at {nA}/{len(js)}; CERT explicit>|prime| at {nE}/{len(js)}; "
+              f"worst |prime|/explicit = {worst[0]:.3f} at nu={float(nu[worst[1]].mid()):.2f}", flush=True)
