@@ -53710,3 +53710,12 @@ Worst-ratio sequence at h = 2N/3: N=48 0.316 → N=96 0.158 → N=192 0.112. HON
 the decay slows (≈N^{-1} then ≈N^{-0.5}); the S3040 "1/N law" is NOT confirmed beyond N=96. Still monotone and well below 1.
 Next lane 2: fit worst-ratio(N) with N=384 (h=256) and a different smoothing kernel (Fejér² / Jackson) to see whether the
 plateau is kernel-limited (Fejér's slow 1/h² sidelobe decay) rather than intrinsic.
+
+## S3044 (2026-11-10 12:33 CST, lane 1) — ZetaCircleLogBounds.lean EXIT0: pointwise log|ζ| bounds on the Poisson circle (P5b-1)  [HANDLE]
+(EXIT0 after 1 fix, gate GREEN, 0 sorry). c = σ+iγ, 1 < σ ≤ 3/2, |γ| ≥ 3, ‖w‖ ≤ 1/2, L = log(2+|γ|):
+- `log_zeta_upper`: ∃A₁ ≥ 0, log‖ζ(c+w)‖ ≤ A₁ + log(L+6) + (L/2)·max(−Re w, 0)   (convexity S3002 left of Re=1 with exponent
+  (1−σ')/2 ≤ max(−Re w,0)/2 and base 1+|T| ≤ 2+|γ|; ‖ζ‖ ≤ log|t|+6 right of Re=1, S3006; log 0 = 0 case trivial).
+- `log_zeta_lower`: Re w ≥ 0 ⇒ log‖ζ(c+w)‖ ≥ −log(3+1/(σ−1))   (NormZetaGeExplicit, monotone in Re).
+These are hup/hlo of S3041 with A = A₁ + log(L+6), D = log(3+1/(σ−1)) ⇒ growth (1/4)L + 2(A+D)/(πr).
+Remaining: P5b-2 (assemble: ZeroGap radius in (3/8,1/2) from the divisor-support zero norms, split factorization on ball c 1
+as S3030, PoissonBlaschke(Drop) + PoissonAvgBound; continuity of log‖ζ‖ on the gap sphere), P6 quartic rerun.
