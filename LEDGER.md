@@ -53394,3 +53394,20 @@ step_min at λ²=36: N=12 3.38e-2 → N=24 2.11e-2 → N=48 1.25e-2 (≈ N^-0.75
 (steps at large ν shrink, consistent with a 1/ν-type generator) — the quiet margin per step is not uniform in N, but stays
 ≫ formula error (S3017 quiet_robust: tolerance π·s/2 ≈ 2e-2 vs 2e-10). Next lane 2: normalise steps by the expected
 pole-free decay (ν²·step) to get an N-uniform quiet statistic; N=96 run.
+
+## S3020 (2026-11-10 05:07 CST, lane 1) — SHARP BC CHAIN + TrigPolyQuarticSharpBC.lean EXIT0: c₀ = 25063328/1750081299 ≈ 1.4321e-2  [HANDLE, MILESTONE]
+Regenerated the 10-file growth chain with S3018's sharp Borel–Carathéodory lemma (generator tmp/gen_sharp_chain.py; copies
+suffixed `Sh`, theorems `_sh`, every BC constant 4·…/(R/2) → 2·…/(R/2)): HgBFromFactorTwoRadiiSh, HgBConcreteSh,
+HgBConcreteZpowSh, ZetaHdecompHgBOfFactorSh, BoundLeExplicitSh, HdecompHgBRelaxedOfSphereSh, ReNegLogDerivLeBOfSphereSh,
+HBexplicitOfGeSh, HgrowthRiemannZetaScalarSh, HzeroAtPointSh — all EXIT0 (one fix: qualified #print name).
+`rhforge/forge/TrigPolyQuarticSharpBC.lean` EXIT0 FIRST TRY; axiom_gate GREEN 17/17 over all 11 modules; 0 sorry.
+- `scalar_le_convRHS`: 2·log(…)/(R/2) ≤ 2·log(2+|t|) + (4/R)(log(C+1)+log(log(2+|t|)+6)+log(3+1/(σ−1))) (leading coeff 2).
+- `riemannZeta_zero_free_quartic_sharpbc`: log|γ| ≥ 2³⁶, 8192(2log6+8log(C+1)+8log2+8log(3+4A₀+44)) ≤ log|γ|, ζ(β+iγ)=0 ⇒
+  β ≤ 1 − (25063328/18763)/(14379A₀ + (191019795/2048)·log|γ|)   (κ = 8193/4096 = 2 + 2⁻¹²).
+- `riemannZeta_zero_free_quartic_sharpbc_clean`: ∃T₀, |γ| ≥ T₀ ⇒ β ≤ 1 − (25063328/1750081299)/log|γ|  (≈ 0.014321).
+c₀ ladder: 2.973e-3 → 3.248e-3 → 3.472e-3 → 3.5735e-3 → 7.049e-3 (convexity) → 7.161e-3 (κ→4) → **1.4321e-2 (sharp BC)**.
+Pipeline limit now κ→2: 1335.785/93260 ≈ 1.4323e-2. Literature (Report): Kadiri ≈ 0.175 (≈12× headroom left).
+Next lane-1 levers: (a) Jensen/local zero counting to drop the zeros-in-half-disk loss (sphere radius R vs R/2 two-radii
+construction — use R/2 → αR with α→1 and the Schwarz–Pick sharp form); (b) a better convexity/subconvexity exponent near
+σ=1 (growth |ζ| ≪ t^{(1−σ)/2} is the input; any t^{θ(1−σ)} with θ<1/2 scales κ by 2θ); (c) larger-degree positive trig
+polynomials reweighted for the new κ ratio (re-run operators/hp_trigpoly_search.py with B-coefficient weights).
