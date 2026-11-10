@@ -53237,3 +53237,15 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - ⇒ log Ms (left part) = ((1−σ₀+R)/2)·log|γ| + O(loglog) — half of the S2961/S2963 exponent (1−σ₀+R).
 - Remaining for the pipeline: Re z > 1 part (O(loglog) via Dirichlet/N-term), the combined sphere Ms, then re-run the
   quartic region (S2971/S2973 template) with growth (8/R)·log Ms ≈ 4·log|γ| ⇒ c₀ ≈ 7e-3 (Report).
+
+## S3005 — NEGATIVE regime scan + CCMTailExact.lean EXIT0 (lane 2: tail must be used exactly) — 2026-11-09 22:3x CST
+- NEGATIVE (HANDLE numerics): λ² ∈ {3,5,10,20}, N ∈ {1,2,3,4,6}: near block below 2V has 0–16 zeros vs 2n−2 needed (±γ), so the
+  near-Gram margin on 𝟙^⊥ is 0; and the S3001 tail bound (1.8e-3 … 1.6e-1) exceeds the true margin e^{−12.3λ²}
+  (9e-17 … 2e-107) by 15–100 orders. ⇒ BOUNDING the far tail can never certify CCM margins (they are exponentially small).
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN 2/2, 0 sorry):
+  * `tail_gram_nonneg`: w ≥ 0 ⇒ xᵀ(C diag(w) Cᵀ)x ≥ 0.
+  * `margin_from_near_and_real_tail`: xᵀAx = xᵀG_Kx + xᵀ(C_f diag(w_f) C_fᵀ)x, w_f ≥ 0 ⇒ xᵀG_Kx ≤ xᵀAx.
+- Reading (Report): the far tail helps exactly when the far zeros are real (w = ccmW ≥ 0 ⇔ real γ) — i.e. CCM positivity
+  = (finite verified part) + (RH above T). The lane-2 frontier is therefore not tail-bounding but the positivity of the
+  exact tail Gram / its arithmetic counterpart; next lane-2: express the tail Gram arithmetically (A − G_K via primes) and
+  look for a positivity mechanism there (the explicit-formula side), not a size bound.
