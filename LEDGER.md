@@ -53319,3 +53319,14 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - (i) S2970's theorem (A is ONE Löwner matrix) confirmed to 40 digits on real CCM data; (ii) S3011 detector quiet with margins
   ~10^38 above working precision — no off-line zero signal above T from the prime side, as RH predicts. Report-tier
   (floating 40-digit, not interval arithmetic); next: Arb interval version for a certified-quiet statement.
+
+## S3014 — MILESTONE: TrigPolyQuarticConvex.lean EXIT0 — c₀ = 25063328/3555588500 ≈ 7.049e-3 (lane 1, ×1.97) — 2026-11-10 03:0x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN, 0 sorry; one fix: TrigPolyQuartic.pQ_nonneg namespace):
+  * `scalar_le_convRHS`, `Tz_le_conv` (growth at kγ from the convexity sphere bound S3008 via hgrowth_riemannZeta_scalar).
+  * `riemannZeta_zero_free_quartic_convex`: ∃A₀ C ≥ 0 ∀γ β (|γ| ≥ e^{4194304}, threshold in A₀, C), ζ(β+iγ)=0 ⇒
+    β ≤ 1 − (25063328/18763)/(14379A₀ + (1515475/8)·log|γ|)   (quartic P, ε = 4384, R = 1/2, B = C₂ = C₃ = C₄ = (65/16)L).
+  * `riemannZeta_zero_free_quartic_convex_clean`: ∃T₀ ∀ zeros with |γ| ≥ T₀: β ≤ 1 − (25063328/3555588500)/log|γ| ≈ 7.049e-3/log|γ|.
+- Ladder: 1/8960 (1.1e-4) → … → 221/68040 (3.248e-3, S2969) → 3.472e-3 (S2971) → 3.5735e-3 (S2973) → **7.049e-3 (S3014)**.
+  Factor ×1.97 from the formal CONVEXITY BOUND (S3000) wired through the sphere bound (S3004/S3006/S3008) and growth (S3010/S3012).
+- Context (Report): Kadiri's literature constant ≈ 0.175 (vs ours 7.05e-3): remaining gap = zero-density/local zero counting
+  (smoothing of the B-term), sharper sphere radii, and κ → 4 limit (c₀ → 0.028646/4 ≈ 7.16e-3 in this pipeline).
