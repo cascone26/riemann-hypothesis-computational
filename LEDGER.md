@@ -53330,3 +53330,18 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   Factor ×1.97 from the formal CONVEXITY BOUND (S3000) wired through the sphere bound (S3004/S3006/S3008) and growth (S3010/S3012).
 - Context (Report): Kadiri's literature constant ≈ 0.175 (vs ours 7.05e-3): remaining gap = zero-density/local zero counting
   (smoothing of the B-term), sharper sphere radii, and κ → 4 limit (c₀ → 0.028646/4 ≈ 7.16e-3 in this pipeline).
+
+## S3015 (2026-11-10 03:40 CST, lane 2) — ARB-CERTIFIED off-line-zero detector: QUIET at λ²=10,20,28,36  [HANDLE]
+`operators/arb_offline_detector_cert.py` (Olympus, python-flint 0.9 / Arb, prec 400 bits; reuses the S2880 rigorous τ builder,
+eshift=0). Centre-row Löwner generator g_j = π(ν_c−ν_j)τ[c,j], ν_n=2πn/L; certified zeros removed via acb.zeta_zeros with
+completeness from arb.zeta_nzeros(V+1); steps s_j = −(g̃_{j+1}−g̃_j)/π as balls.
+| λ² | N | N(V+1) removed | Löwner residual balls ∋ 0 | min step LOWER bound | max step radius | certified quiet |
+| 10 | 10 | 3 | yes (≤1.5e-58) | 6.0022e-02 | 2.3e-59 | YES |
+| 20 | 12 | 3 | yes (≤1.1e-58) | 4.1584e-02 | 1.6e-59 | YES |
+| 28 | 12 | 2 | yes (≤8.5e-59) | 3.4143e-02 | 1.3e-59 | YES |
+| 36 | 12 | 2 | yes (≤7.4e-59) | 3.3785e-02 | 1.1e-59 | YES |
+Matches S3013 mpmath (min steps 0.034–0.060) — upgrades it Report → Handle. First attempt at prec 160 gave J radius = inf
+(e^x−e^{−x} cancellation at x≈1e-60); prec 400 as in S2880 fixes it. Output: results/hp_center/arb_offline_detector_cert.txt.
+**Scope:** rigorous for the finite (2N+1) truncation at these windows; rests on the τ formula (CCM Lemma 5.1, matched to 2e-10
+by S2859's zero oracle, not itself proved). **Next:** larger N / more windows (λ² up to 36, N=24) and a Lean brick turning
+certified step positivity into the S3011 detector's "no off-line zero in window" conclusion; lane 1: κ → 4.
