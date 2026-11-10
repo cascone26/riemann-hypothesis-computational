@@ -53483,3 +53483,13 @@ zero list already excludes off-line zeros, so the detector's job is the far tail
 windows (V ↑) rather than more digits. Next lane 2: quantify θ (tail-variation bound across the grid, rigorous) so the cap is
 fully certified; scale window V with T (N ≈ L·T/2π) to keep contrast O(1/V²).
 (S3025 CORRECTION — the numeric line above was written before the computation finished; computed values: profile contrast 2.445e-4 (x=100), 1.790e-8 (x=1000), 8.61e-13 (x=12000) ⇒ |w| ≲ 9.8e-6, 0.134, 2.8e3 vs 4/L ≈ 1.12. Conclusion unchanged: sharp near the window, blunt far above.)
+
+## S3026 (2026-11-10 07:41 CST, lane 1) — BlaschkeDivide.lean EXIT0: brick 3 of the κ 2 → 1 program (generic division)  [HANDLE]
+`rhforge/forge/BlaschkeDivide.lean` (EXIT0 after 2 trivial fixes, gate GREEN 6/6, 0 sorry). For f = (∏_{a∈S}(w−a)^{m a})·g₀:
+`lin_eq_b_mul` (w − a = b·(R² − āw)/R), `fac_eq_bprod_mul` (f = B·G on the closed disk, G := g₀·∏((R²−āw)/R)^m),
+`Gfac_ne_zero` (G zero-free wherever g₀ is — every zero of f in the disk lives in B), `Gfac_norm_sphere` (‖G‖ = ‖f‖ on the
+sphere), `logDeriv_split` (f = B·G near 0 ⇒ logDeriv f 0 = logDeriv B 0 + logDeriv G 0).
+With bricks 1–2: −Re f'/f(0) = −Re G'/G(0) − Re logDeriv B 0 ≤ [sharp BC on G, radius R] − (1/(σ−β) − (σ−β)/R²).
+Next brick 4 (instantiation): ζ(c + w) = (∏(w − a)^m)·g₀(c + w) on closedBall 0 R from the §1343/§1391 factorization (with
+S = zeros in ball c R, R chosen so the sphere carries none), G zero-free & differentiable on a neighbourhood of closedBall,
+sharp BC on radius R ⇒ (−Re ζ'/ζ(c)) ≤ 2·log(M/‖ζ(c)‖)/R − (1/(σ−β) − (σ−β)/R²). Then brick 5: quartic rerun at κ → 1.
