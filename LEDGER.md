@@ -53608,3 +53608,23 @@ disk ⇒ require G zero-free on ball 0 R' — choose R < R'' with no zeros in R 
 harmonic log‖G‖ directly); P3 pointwise convexity log|ζ(σ'+it)| ≤ ((1−σ')⁺/2)·log t + C·loglog t; P4 the θ-integrals
 (avg cos²·1_{cos<0} = 1/4, avg |cos| = 2/π); P5 assemble Poisson–Landau; P6 quartic rerun at κ = 1/4.
 (S3034 correction: banked 10:16 CST, not 10:24.)
+
+## S3035 (2026-11-10 10:42 CST, lane 2) — ARB-CERTIFIED smoothed decomposition (λ²=36, N=48): the smoothed ARITHMETIC side is positive  [HANDLE]
+`operators/arb_offline_detector_cert.py` additive PARTS=1 block (prec 400): certified centre-row generators of W02, W_R, W_P
+separately + certified removed-zero part, Fejér-smoothed in balls. results/hp_center/arb_smoothed_parts_l36_N48.txt.
+| h | point | s02 | −sR | −sP (primes) | arith = s02−sR−sP | −sZ (low zeros) | total | arith>0 | explicit>|prime| |
+|  0 | centre | 1.22655 | 0.47754 | −1.66956 | 0.034528 | −0.022029 | 0.012499 | YES | YES (barely) |
+|  0 | 8th | −0.00849 | −0.00017 | +0.26596 | 0.257297 | −0.244147 | 0.013150 | YES | no |
+|  8 | centre | 0.08785 | 0.09418 | −0.13552 | 0.046511 | −0.033959 | 0.012552 | YES | YES |
+|  8 | 8th | −0.01187 | −0.00024 | +0.06714 | 0.055023 | −0.041797 | 0.013226 | YES | no |
+| 16 | centre | 0.03046 | 0.05078 | −0.02447 | 0.056770 | −0.044073 | 0.012696 | YES | YES |
+| 16 | 8th | −0.00073 | 0.01364 | +0.01284 | 0.025740 | −0.012299 | 0.013441 | YES | YES |
+| 24 | centre | 0.01572 | 0.03474 | −0.01141 | 0.039048 | −0.026095 | 0.012953 | YES | YES |
+| 24 | 8th | 0.00233 | 0.01758 | +0.00101 | 0.020924 | −0.007071 | 0.013854 | YES | YES |
+(all values certified balls; displayed to 6 digits.) At h ≥ 16 the explicit archimedean part (W02 + W_R) CERTIFIABLY dominates
+the whole prime sum at both test points: positivity of the smoothed arithmetic side follows from explicit terms alone.
+Structure of the RH-relevant balance after smoothing: total = arith − (low zeros removed) and the low-zero part is the
+same order as arith (−0.026 vs 0.039 at h=24) — the far-tail positivity ⇔ arith > low-zero sum, a Weil-type inequality with
+the explicit side now provably prime-dominated-free. Next lane 2: (1) do this for ALL grid points (not just 2) and larger N
+(96) to see if "explicit > |prime|" holds uniformly at h ∝ N; (2) Lean brick: positive Fejér weights preserve step positivity
+and the decomposition inequality chain.
