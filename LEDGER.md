@@ -53493,3 +53493,4 @@ With bricks 1–2: −Re f'/f(0) = −Re G'/G(0) − Re logDeriv B 0 ≤ [sharp 
 Next brick 4 (instantiation): ζ(c + w) = (∏(w − a)^m)·g₀(c + w) on closedBall 0 R from the §1343/§1391 factorization (with
 S = zeros in ball c R, R chosen so the sphere carries none), G zero-free & differentiable on a neighbourhood of closedBall,
 sharp BC on radius R ⇒ (−Re ζ'/ζ(c)) ≤ 2·log(M/‖ζ(c)‖)/R − (1/(σ−β) − (σ−β)/R²). Then brick 5: quartic rerun at κ → 1.
+(S3026 correction: banked 07:39 CST, not 07:41.)
