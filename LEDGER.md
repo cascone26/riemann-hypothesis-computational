@@ -53607,3 +53607,4 @@ Next bricks: P2 log branch H of G on ball (exists_holo_branch_on_ball is on open
 disk ⇒ require G zero-free on ball 0 R' — choose R < R'' with no zeros in R < |w| < R'' (finite zero set) or use the
 harmonic log‖G‖ directly); P3 pointwise convexity log|ζ(σ'+it)| ≤ ((1−σ')⁺/2)·log t + C·loglog t; P4 the θ-integrals
 (avg cos²·1_{cos<0} = 1/4, avg |cos| = 2/π); P5 assemble Poisson–Landau; P6 quartic rerun at κ = 1/4.
+(S3034 correction: banked 10:16 CST, not 10:24.)
