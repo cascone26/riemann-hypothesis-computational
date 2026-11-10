@@ -53204,3 +53204,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Prior art: classical (Phragmén–Lindelöf / Titchmarsh §5.1); novelty = a complete Lean 4 formalisation in this forge.
 - Next lane-1: feed convexity into the zero-free pipeline: sphere bound log M ≈ ((1−σ+R)/2)·log t instead of (1−σ+R)·log t
   ⇒ leading growth coefficient 8 → ~4 (Report estimate) ⇒ c₀ roughly ×2 (≈7e-3).
+
+## S3001 — CCMTailFinal.lean EXIT0 (lane 2: sharpest closed-form 𝟙^⊥ far-tail bound, ~10× of true) — 2026-11-09 20:2x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `confluent_perp_schur_half`: g C², |g''| ≤ D₂, ν injective in [−V,V], Σ_k|ν_i−ν_k| ≤ S ∀i, Σx = 0 ⇒
+    |xᵀ·lowner(−g'∘ν/π, g∘ν, ν)·x| ≤ (D₂/(2π))·S·Σx²   (S2998 + S2994 + S2990).
+- Numeric (HANDLE): true ‖tail‖ on 𝟙^⊥ vs bound: λ²=20 N=6 7.24e-3 vs 7.35e-2 (10.2×); N=12 6.40e-3 vs 7.14e-2 (11.2×);
+  λ²=28 N=6 6.52e-3 vs 6.82e-2 (10.5×). Arc: entrywise 2000× (S2983) → 41× (S2992) → 20× (S2994) → 10× (S3001).
+- Remaining 10×: g'''-level trapezoid error (S2998 noted ratio 0.276) and Schur vs eigenvalue. Next lane-2 options:
+  (a) g''' trapezoid bound (one more MVT level), (b) apply the tail machinery at mpmath precision to bound the CCM margin
+  from below by (finite-zero Gram margin) − (tail bound), testing whether the bound can certify μ_λ at small λ².
