@@ -53179,3 +53179,12 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
   * `norm_zetaE_strip_le`: ‖E(s)‖ ≤ (1+|t|)(16+12|t|)·2e^{π|t|/2}.
 - Numeric sanity (mpmath): |ζ|/bound over σ∈{0,…,1}, t∈{1,3,14.13,50,−20} (printed in session, ≪ 1 — crude but valid).
 - hB is now one packaging step away: on 0≤σ≤1, |E·G_T| ≤ poly(t)·e^{π|t|/2+1−(t−T)²} (|t|≥1) and continuous on |t|≤1 ⇒ BddAbove.
+
+## S2998 — CCMSymHalf.lean EXIT0 (lane 2: symmetrised Löwner entry with Taylor ½ at both ends) — 2026-11-09 19:2x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 2/2, 0 sorry; fixes: scomp+congr_deriv (not simpa: instance mismatch),
+  b ≤ a branch expansions swapped):
+  * `taylor_half_right`: a ≤ b ⇒ |g a − g b − g'(b)(a−b)| ≤ D₂(b−a)²/2 (S2996 on h(x) = g(−x) via HasDerivWithinAt.scomp).
+  * `lowner_entry_sym_half`: |(g b − g a)/(π(a−b)) + (g'(a)+g'(b))/(2π)| ≤ D₂|b−a|/(2π)  (half of S2990's constant).
+- Numeric (HANDLE, λ²=20 N=6 far tail): worst ratio 0.276 — the trapezoid (symmetric) error is really O(g'''·|Δ|²), so a
+  g'''-level bound is the next sharpening (one more MVT level); with D₂ the constant is now optimal up to ~3.6×.
+- Effect: S2994 Schur 𝟙^⊥ tail bound halves again: ~20× → ~10× loose.
