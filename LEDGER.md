@@ -53736,3 +53736,20 @@ LEADING COEFFICIENT 1/4 (S3031 one-radius: 1; S3020 sharp BC: 2; S3014: 4). Asse
 ZeroGap radius 3/8<r<r'<1/2 avoiding all zero distances, split at ball c r, translate, poisson_blaschke_drop at radius r,
 neg_avg_le with hup/hlo from ZetaCircleLogBounds, πr > 1. Remaining: zero form (tracked ρ, same assembly with
 poisson_blaschke) and P6 quartic rerun at κ = 1/4 + slack ⇒ target c₀ ≈ 0.11.
+(S3048 correction: banked 12:59 CST, not 13:01.)
+
+## S3049 (2026-11-10 13:23 CST, lane 2) — JACKSON kernel: dominance margin collapses ×10 per doubling (kernel-limited, as suspected)  [HANDLE]
+Jackson = Fejér⋆Fejér weights (support 4h+1), PARTSJ all-grid certified (prec 400), results/hp_center/arb_jackson_l36.txt:
+| N | Jackson h (support) | points | arith > 0 | explicit > |prime| | worst |prime|/explicit | (Fejér, same support) |
+|  96 | 16 (65)  | 128 | 50  | 42  | ∞     | — |
+|  96 | 32 (129) |  64 | 64/64 | 64/64 | **0.022** | 0.158 (h=64) |
+| 192 | 32 (129) | 256 | 102 | 90  | ∞     | — |
+| 192 | 64 (257) | 128 | 128/128 | 128/128 | **0.002** | 0.112 (h=128) |
+At support ≈ 2N/3·2: worst ratio 0.022 (N=96) → 0.002 (N=192): ×0.09 per doubling (vs Fejér ×0.71). S3043's slowdown was the
+Fejér kernel's 1/h² sidelobes, NOT intrinsic: with a smoother kernel the prime sum is suppressed ≳N^{-3} relative to the
+explicit archimedean part. CERTIFIED: N=192, Jackson h=64 — explicit (W02 − W_R) exceeds the entire prime sum by ≥500× at every
+admissible grid point (window to height 339).
+Reading (Report): smoothed far-tail positivity reduces, to excellent precision, to EXPLICIT archimedean vs low-zero terms; the
+prime side becomes negligible with smooth enough kernels (as in Weil's explicit formula with smooth test functions).
+Next lane 2: (i) formal Lean statement: Jackson-kernel transform bound |K̂_h(log k)| ≤ C/(h log k)^4 ⇒ prime-sum bound;
+(ii) quantify the remaining balance arith vs low zeros (is it Weil positivity for the Jackson test function?).

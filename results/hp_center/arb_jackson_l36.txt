@@ -1,0 +1,4 @@
+N=96 PARTSJ jackson h=16 (support 65): points 128: CERT arith>0 at 50/128; CERT explicit>|prime| at 42/128; worst |prime|/explicit = inf at nu=-112.21
+N=96 PARTSJ jackson h=32 (support 129): points 64: CERT arith>0 at 64/64; CERT explicit>|prime| at 64/64; worst |prime|/explicit = 0.022 at nu=-43.83
+N=192 PARTSJ jackson h=32 (support 129): points 256: CERT arith>0 at 102/256; CERT explicit>|prime| at 90/256; worst |prime|/explicit = inf at nu=-224.43
+N=192 PARTSJ jackson h=64 (support 257): points 128: CERT arith>0 at 128/128; CERT explicit>|prime| at 128/128; worst |prime|/explicit = 0.002 at nu=-108.71
