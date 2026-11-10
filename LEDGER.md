@@ -53375,3 +53375,14 @@ Reading (Report): with s = π·2.1e-2 the quiet verdict survives ANY error < 3.3
 eight orders above S2859's formula check (2e-10). The certificate's dependence on CCM Lemma 5.1 is therefore robust, not tight.
 Next lane 2: fit step_min(λ², N) (does it stay bounded away from 0 as N→∞? that is the far-tail Pick question, S3007);
 N=48 at λ²=36. Next lane 1: structural lever — joint (R, ε) optimisation with exact convexity exponent.
+
+## S3018 (2026-11-10 ~05:00 CST, lane 1) — SharpBorelCaratheodory.lean EXIT0: Borel–Carathéodory constant 4 → 2 (sharp)  [HANDLE]
+`rhforge/forge/SharpBorelCaratheodory.lean` (EXIT0 after 2 fixes, gate GREEN 3/3, 0 sorry).
+Diagnosis: every growth term of the zero-free pipeline goes through §1367–§1369's normalized BC bound −(4A/R) ≤ Re f'(0)
+(A = M − Re f(0)); the sharp constant is 2. Proof: g = f − f(0), φ = g/(2A − g) maps ball 0 R into the closed unit disk
+(|g| ≤ |2A − g| ⟺ Re g ≤ A), φ(0)=0, φ'(0) = f'(0)/(2A); Mathlib Schwarz `Complex.norm_deriv_le_div_of_mapsTo_ball`.
+- `SharpBC.re_deriv_ge_of_re_le_sharp`: −(2A/R) ≤ Re f'(0).
+- `SharpBC.re_logDeriv_ge_of_bounded_sharp` / `_at`: −(2(log M' − log‖h c‖)/R) ≤ Re logDeriv h c (drop-in for §1368/§1369).
+Consequence (Report, to be made Handle): rebuilding §1378→§1401→§1410→§1419→§1424→§1429→§1444→hgrowth_riemannZeta_scalar
+with the sharp lemma replaces 4·log(...)/(R/2) by 2·log(...)/(R/2) everywhere, so convRHS's leading 4·log(2+|t|) → 2·log,
+κ → 2, c₀ ≈ (25063328/18763)/(46630·2) ≈ 1.43e-2 — DOUBLING S3016's 7.161e-3. Next lane-1 cycle: generate the sharp chain.
