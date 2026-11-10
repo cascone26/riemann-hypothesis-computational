@@ -53471,3 +53471,14 @@ With a = ρ − c this is: the Blaschke part of −Re ζ'/ζ(c) is ≤ −(1/(σ
 Next brick 3: from the §1343 factorization data on ball c R' (R < R'), with S = zeros in ball c R (finite, none on the sphere
 by choice of R), g := ζ(c + ·)/B is analytic and zero-free on closedBall 0 R and ‖g‖ = ‖ζ‖ on the sphere.
 (S3024 correction: banked 06:47 CST, not 06:52; gate checked=8 clean=8.)
+
+## S3025 (2026-11-10 07:13 CST, lane 2) — CCMDetectorSensitivity.lean EXIT0: certified spread ⇒ cap on an extra term  [HANDLE + Report]
+`rhforge/forge/CCMDetectorSensitivity.lean` (EXIT0 first try, gate GREEN 3/3, 0 sorry): if D_j = t_j + w·e_j with
+D_j ∈ [d, d+η] (certified, S3023) and t_j ∈ [τ, τ+θ], then |w|·|e_i − e_k| ≤ η + θ (`weight_mul_le`), |w| ≤ (η+θ)/|e_i−e_k|
+(`weight_le`), for every pair on the grid (`weight_le_of_all`).
+Numeric reading (Report, λ²=36 N=24, η = 2.4e-9, θ→0): an extra unit-profile term at height x has edge-to-centre profile
+contrast ~1.4e-3 (x=100), 1.4e-6 (x=1000), 8e-10 (x=12000) ⇒ |w| ≲ 1.7e-6, 1.7e-3, 3 vs natural weight scale 4/L ≈ 1.1.
+Honest scope: the detector is sharp for extra terms NEAR the window and blunt far above it; below T=12000 the Turing-certified
+zero list already excludes off-line zeros, so the detector's job is the far tail — where sensitivity must come from larger
+windows (V ↑) rather than more digits. Next lane 2: quantify θ (tail-variation bound across the grid, rigorous) so the cap is
+fully certified; scale window V with T (N ≈ L·T/2π) to keep contrast O(1/V²).
