@@ -53524,3 +53524,4 @@ vs current pipeline (two-radii): 2·log(…)/(R/2) − Σ_{half-disk} — growth
 Next brick 4b (ζ instantiation): translate F(w) = ζ(c + w); factorization on ball c R' from
 exists_factorization_riemannZeta_at_center + smul_factor_eq_split with p = (· ∈ ball c R) (pointwise version of
 zeta_eq_split_on_sphere for z ∈ ball c R'); a = u − c, Re a = Re u − Re c ≤ 0 (zeros have Re < 1 < Re c).
+(S3028 correction: banked 08:31 CST, not 08:33.)
