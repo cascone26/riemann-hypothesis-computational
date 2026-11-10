@@ -53753,3 +53753,10 @@ Reading (Report): smoothed far-tail positivity reduces, to excellent precision, 
 prime side becomes negligible with smooth enough kernels (as in Weil's explicit formula with smooth test functions).
 Next lane 2: (i) formal Lean statement: Jackson-kernel transform bound |K̂_h(log k)| ≤ C/(h log k)^4 ⇒ prime-sum bound;
 (ii) quantify the remaining balance arith vs low zeros (is it Weil positivity for the Jackson test function?).
+
+## S3050 (2026-11-10 13:25 CST, lane 1) — zeta_poisson_zero EXIT0 FIRST TRY (Poisson–Landau zero form)  [HANDLE]
+Added to `rhforge/forge/ZetaPoissonLandau.lean` (gate GREEN, 0 sorry). `ZetaPoisson.zeta_poisson_zero`: ∃ A₁ ≥ 0,
+∀ 1 < σ ≤ 9/8, |γ| ≥ 3, σ − 1/4 ≤ β < σ, ζ(β+iγ) = 0:
+   Re(−ζ'/ζ(σ+iγ)) ≤ L/4 + 2(A₁ + log(L+6) + log(3+1/(σ−1))) + 2 − 1/(σ−β),  L = log(2+|γ|).
+(poisson_blaschke with a₀ = ρ − c real negative; multiplicity ≥ 1 dropped; correction (σ−β)/r² ≤ (1/4)/(9/64) < 2.)
+Both inputs of the quartic region are now in κ = 1/4 form with NO sphere-sup Ms: P6 next (quartic rerun).
