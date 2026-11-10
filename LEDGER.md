@@ -53257,3 +53257,13 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - Numeric sanity (mpmath): max |ζ|/(log t + 6) on Re ∈ {1.0001,1.1,1.5,2}, t ∈ {2,…,1000} printed in-session (< 1).
 - Sphere inventory for the convexity pipeline: Re z ≤ 1 (S3004), Re z = 1 (S2977), 1 < Re z ≤ 2 (S3006) ⇒ next lane-1 brick:
   combined Ms on sphere(σ₀+iγ, R) with log Ms ≤ ((1−σ₀+R)/2)·log(2+|γ|) + log(C(log(2+|γ|)+6)), then the quartic region rung.
+
+## S3007 — CCMPickGenerator.lean EXIT0 (lane 2: zero-side positivity = Pick property of the tail generator) — 2026-11-09 23:3x CST
+- HANDLE (Olympus EXIT0 first try, axiom_gate GREEN, 0 sorry):
+  * `lowner_cauchy_psd`: w ≥ 0, Cauchy C, ν injective ⇒ xᵀ·lowner(diag G, π·Cw, ν)·x ≥ 0 (S2972 + S3005).
+- Numeric (HANDLE, generator recovered from the ARITHMETIC matrix A = W02−W_R−W_P, near zeros subtracted):
+  λ²=20 N=12 K=5: −g_tail/π strictly increasing on the window (min step 3.2e-2) ✓; λ²=28 K=5: ✓ (2.5e-2);
+  K=0 (zeros inside the window not removed): NOT monotone (−1.7) — poles inside the window, as predicted.
+- Reading (Report): RH above T ⇔ −g_tail/π = Σ_γ w_γ/(γ − ν) has nonnegative pole weights ⇔ Pick function on the window
+  (Löwner/Nevanlinna). The arithmetic generator minus finitely many zero poles behaves exactly as a Pick function numerically.
+  Lane-2 target is now one-variable: prove the Pick (Herglotz) property of g_A − π·C_K w_K from the prime side.
