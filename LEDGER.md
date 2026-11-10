@@ -53275,3 +53275,11 @@ Axioms std, gate GREEN, 0 sorry. HANDLE. Scope: RH-conditional finite truncation
 - ⇒ (8/R)·log(Ms+1) ≈ (8/R)·((1−σ₀+R)/2)·log|γ| ≤ 4·log|γ| + O_R(log log|γ|) — half the sharp N-term growth (S2963).
 - Next lane-1: the convexity growth lemma (analogue of S2963 `growth_at_sharp_clean` with Ms from S3008), then the quartic
   region rung (S2971 template) ⇒ target c₀ ≈ 0.028646/κ with κ → 4 (≈ 7e-3).
+
+## S3009 — CCMPickMono.lean EXIT0 (lane 2: Pick generators are monotone between poles) — 2026-11-10 00:3x CST
+- HANDLE (Olympus EXIT0, axiom_gate GREEN 2/2, 0 sorry; fix: direct identity 1/(a−x) − 1/(b−x) = (b−a)/((a−x)(b−x))):
+  * `cauchy_term_antitone`: a ≤ b, (a−x)(b−x) > 0 ⇒ 1/(b−x) ≤ 1/(a−x).
+  * `pick_generator_antitone`: w ≥ 0, every pole outside [a,b] ⇒ Σ w_j/(b−x_j) ≤ Σ w_j/(a−x_j).
+- Reading (Report): real far zeros ⇒ far-tail generator decreasing on zero-free windows — the S3007 numerics on the
+  ARITHMETIC generator show exactly this. Contrapositive: an increase of the arithmetic tail generator on a zero-free
+  window would certify an off-line zero above T. Gives a one-variable numerical detector for off-line zeros from primes.
